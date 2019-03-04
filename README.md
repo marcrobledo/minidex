@@ -8,8 +8,10 @@ This lightweight and minimalist webapp compiles all the locations of all Pokémo
 * users can keep track of their regional Pokédex progress by marking mark caught Pokémon
 * made in Vanilla JS, very lightweight
 * design focused on speed and usability
-* responsive design for best user experience in both desktop and mobile
+* responsive design for best user experience in both desktop and mobile (swipe can be used to navigate through Pokémon)
 * can be installed as a webapp and run completely offline
+
+It's aimed mostly for completionists, since there is no competitive information (direct links to other famous sites are shown though, just in case user needs them).
 
 ### Translations ###
 French, detsch and italian translations are partially translated.
