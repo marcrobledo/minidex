@@ -11,6 +11,7 @@ This lightweight and minimalist webapp compiles all the locations of all Pokémo
 * responsive design for best user experience in both desktop and mobile
 * can be installed as a webapp and run completely offline
 
-**Translations**
-French, detsch and italian translations are not completed.
-All GUI strings, Pokémon names and ability names are not translated. Feel free to contribute by translating
+### Translations ###
+French, detsch and italian translations are partially translated.
+
+Only location names are translated. GUI strings, Pokémon and ability names are not translated. Feel free to contribute by translating them!
