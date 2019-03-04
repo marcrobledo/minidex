@@ -1,0 +1,134 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Minidex</title>
+
+	<meta charset="UTF-8"/>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+	<meta name="description" content="This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!"/>
+	<meta name="keywords" content="pokedex,online,pokemon,app,html5,webapp,pwa,minidex,x,y,xy,oras,ruby,omega,rubi,alpha,alfa,zafiro,sapphire,ultra,sol,luna,sun,moon,lets go,sword,shield,espada,escudo"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+
+	<link rel="shortcut icon" href="./favicon.png"/>
+
+	<!-- MANIFEST for Chrome-->	
+	<meta name="theme-color" content="#353d46"/> <!-- <M46: specify Android bar color -->
+	<link rel="manifest" href="manifest.json"/> <!-- M39 -->
+	<link rel="icon" sizes="128x128" href="favicon.png"/> <!-- M31-M38 -->
+	<meta name="mobile-web-app-capable" content="yes"/> <!-- M31-M38/Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#353d46"/><!-- Safari -->
+
+	<link type="text/css" rel="stylesheet" href="./minidex.css" media="all"/>
+
+	<script type="text/javascript" src="./resources/data/database.min.js"></script>
+	<script type="text/javascript" src="./minidex.js"></script>
+	<script type="text/javascript" src="./resources/data/locale_en.js"></script>
+	<script type="text/javascript" src="./resources/data/locale_es.js"></script>
+	<script type="text/javascript" src="./resources/data/more_info.js"></script>
+</head>
+
+<body>
+	<div class="top-buttons">
+		<i id="button-back" class="sprite back clickable" onclick="forceGoToHome()"></i>
+		<i id="button-search" class="sprite search clickable" onclick="focusSearch(true)"></i>
+		<input type="text" id="search" class="sprite" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+		<div id="search-results"></div>
+	</div>
+	<div id="home">
+		<header>
+			<div class="text-center"><h1>Minidex</h1></div>
+
+			<div id="donate-warning">
+				<a href="https://www.paypal.me/marcrobledo/5" target="_blank" rel="nofollow" onclick="hideDonateWarning()"><i class="sprite heart"></i><span> Donate</span></a><span class="close-donate" title="Dismiss" onclick="hideDonateWarning()"><i class="sprite close"></i></span>
+			</div>
+
+			<div class="text-center"><label for="select-language">Language</label></div>
+			<div class="text-center">
+				<select id="select-language" onchange="setLanguage(parseInt(this.value));MinidexSettings.save();if(this.value!=0 && this.value!=4)alert('Note: only location names will appear translated');">
+					<option value="0">English</option>
+					<option value="1">Français*</option>
+					<option value="2">Deutsch*</option>
+					<option value="3">Italiano*</option>
+					<option value="4">Español</option>
+				</select>
+			</div>
+
+			<div class="text-center"><label for="select-game" data-translate="games">Games</label></div>
+			<div class="text-center">
+				<select id="select-game" onchange="setGame(parseInt(this.value));focusSearch();"></select>
+			</div>
+
+			<div class="text-center"><label for="select-dex">Pokédex</label></div>
+			<div class="text-center">
+				<select id="select-dex" onchange="setDex(this.value);focusSearch();">
+					<optgroup label="Regional Pokédex">
+						<option id="regional-dex" value="regional"></option>
+						<option id="extras" value="extras">Extras</option>
+					</optgroup>
+					<optgroup id="generational-dexes" label="National Pokédex"></optgroup>
+				</select>
+				<input id="hide-caught" type="checkbox" onchange="refreshDex(currentDex)" /><label for="hide-caught" data-translate="hide_caught">Hide caught</label>
+			</div>
+		</header>
+
+
+		<div id="dex-results"></div>
+
+		<br style="clear:both;display:block" />
+
+
+
+
+		<footer>
+			Developed and designed by <a href="https://www.marcrobledo.com">Marc Robledo</a><br/><a href="https://github.com/marcrobledo/minidex/" target="_blank">See Minidex in GitHub</a><br/><br/>
+			<small>
+				This is a fan created site, no copyright or trademark infringement is intended.<br/>
+				Pokémon and all respective names are trademark &amp; &copy; of Nintendo/Creatures Inc./GAME FREAK inc. TM 1996-2019
+			</small>
+		</footer>
+	</div>
+
+
+
+
+	<div id="pokemon" class="screen">
+		<div class="screen-title">
+			<i class="sprite pokeball"></i><span id="pokemon-title"></span>
+		</div>
+		<!-- INFO -->
+		<div id="block-top" class="block block-top">
+			<div id="dex-img-container">
+				<div id="dex-img"></div>
+				<div id="form-cycler"></div>
+			</div>
+			<div id="dex-info">
+				<b data-translate="type">Types</b> <span id="dex-types"></span><br/>
+				<b data-translate="abilities">Abilities</b> <span id="dex-abilities"></span>
+			</div>
+		</div>
+
+		<!-- LOCATION -->
+		<div id="block-location" class="block block-location"></div>
+
+		<!-- EVOLUTION -->
+		<div class="block block-evolution"><h2 data-translate="evoline">Evolution line</h2><div id="evoline"></div></div>
+
+		<!-- MORE INFO -->
+		<div class="block block-moreinfo"><h2 data-translate="more_info">More information</h2><ul id="extra-links"></ul></div>
+	</div>
+
+	<div id="location" class="screen">
+		<div class="screen-title">
+			<i class="sprite location"></i><span id="location-title"></span>
+		</div>
+		<div class="block block-location">
+			<table id="table-location" class="table-encounters"></table>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>
