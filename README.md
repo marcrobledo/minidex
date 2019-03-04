@@ -1,6 +1,8 @@
 # Minidex
 This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
 
+![Minidex preview 1](/_preview/minidex_preview1.png?raw=true) ![Minidex preview 2](/_preview/minidex_preview2.png?raw=true)
+
 **Features:**
 * all regional+national Pokédex from RBY up to Let's go
 * quick Pokémon search (name or number) at anytime
@@ -11,7 +13,11 @@ This lightweight and minimalist webapp compiles all the locations of all Pokémo
 * responsive design for best user experience in both desktop and mobile (swipe can be used to navigate through Pokémon)
 * can be installed as a webapp and run completely offline
 
+![Minidex preview 3](/_preview/minidex_preview3.png?raw=true) ![Minidex preview 4](/_preview/minidex_preview4.png?raw=true)
+
 It's aimed mostly for completionists, since there is no competitive information (direct links to other famous sites are shown though, just in case user needs them).
+
+
 
 ### Translations ###
 French, detsch and italian translations are partially translated.
