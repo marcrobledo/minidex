@@ -22,6 +22,7 @@
 	<link type="text/css" rel="stylesheet" href="./minidex.css" media="all"/>
 
 	<script type="text/javascript" src="./resources/data/database.min.js"></script>
+	<!-- <script type="text/javascript" src="./resources/data/database_learnsets.min.js"></script> -->
 	<script type="text/javascript" src="./minidex.js"></script>
 	<script type="text/javascript" src="./resources/data/locale_en.js"></script>
 	<script type="text/javascript" src="./resources/data/locale_es.js"></script>
@@ -30,7 +31,7 @@
 
 <body>
 	<div class="top-buttons">
-		<i id="button-back" class="sprite back clickable" onclick="forceGoToHome()"></i>
+		<i id="button-menu" class="sprite settings clickable" onclick="forceGoToHome()"></i>
 		<i id="button-search" class="sprite search clickable" onclick="focusSearch(true)"></i>
 		<input type="text" id="search" class="sprite" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
 		<div id="search-results"></div>
@@ -43,20 +44,10 @@
 				<a href="https://www.paypal.me/marcrobledo/5" target="_blank" rel="nofollow" onclick="hideDonateWarning()"><i class="sprite heart"></i><span> Donate</span></a><span class="close-donate" title="Dismiss" onclick="hideDonateWarning()"><i class="sprite close"></i></span>
 			</div>
 
-			<div class="text-center"><label for="select-language">Language</label></div>
-			<div class="text-center">
-				<select id="select-language" onchange="setLanguage(parseInt(this.value));MinidexSettings.save();if(this.value!=0 && this.value!=4)alert('Note: only location names will appear translated');">
-					<option value="0">English</option>
-					<option value="1">Français*</option>
-					<option value="2">Deutsch*</option>
-					<option value="3">Italiano*</option>
-					<option value="4">Español</option>
-				</select>
-			</div>
-
 			<div class="text-center"><label for="select-game" data-translate="games">Games</label></div>
 			<div class="text-center">
 				<select id="select-game" onchange="setGame(parseInt(this.value));focusSearch();"></select>
+				<span id="game-icons"></span>
 			</div>
 
 			<div class="text-center"><label for="select-dex">Pokédex</label></div>
@@ -114,6 +105,9 @@
 		<!-- EVOLUTION -->
 		<div class="block block-evolution"><h2 data-translate="evoline">Evolution line</h2><div id="evoline"></div></div>
 
+		<!-- LEARNSET -->
+		<div id="block-learnset"></div>
+
 		<!-- MORE INFO -->
 		<div class="block block-moreinfo"><h2 data-translate="more_info">More information</h2><ul id="extra-links"></ul></div>
 	</div>
@@ -126,6 +120,38 @@
 			<table id="table-location" class="table-encounters"></table>
 		</div>
 	</div>
+
+	<div id="settings" class="screen">
+		<div class="screen-title" data-translate="settings">Settings</div>
+
+		<div class="block block-location">
+			<div class="setting">
+				<label for="select-language">Language</label>
+				<select id="select-language" onchange="setLanguage(parseInt(this.value));MinidexSettings.save();if(this.value!=0 && this.value!=4)alert('Note: only location names will appear translated');">
+					<option value="0">English</option>
+					<option value="1">Français*</option>
+					<option value="2">Deutsch*</option>
+					<option value="3">Italiano*</option>
+					<option value="4">Español</option>
+				</select>
+			</div>
+
+			<div class="setting">
+				<label for="checkbox-locations" data-translate="settings_locations">Show locations</label>
+				<input type="checkbox" id="checkbox-locations" onchange="MinidexSettings.showLocations=this.checked;MinidexSettings.save()"/>
+			</div>
+
+			<div class="setting">
+				<label for="checkbox-learnsets" data-translate="settings_learnsets">Show learnsets</label>
+				<input type="checkbox" id="checkbox-learnsets" onchange="MinidexSettings.showMeYourMoves=this.checked;MinidexSettings.save()"/>
+			</div>
+
+			<!-- <br/>
+			<label for="checkbox-learnsets">Show base stats</label>
+			<input type="checkbox" id="checkbox-basestats" onchange="MinidexSettings.baseStats=this.checked;MinidexSettings.save()"/> -->
+		</div>
+	</div>
+
 
 
 

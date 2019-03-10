@@ -13,6 +13,7 @@ var GEN1={
 			name:['Yellow',,,,'Amarillo']
 		}
 	],
+	icons:[6,9,25],
 	regionalDex:['Kanto',generateRange(1,151)],
 
 	locations:[

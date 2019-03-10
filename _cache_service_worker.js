@@ -14,7 +14,7 @@ limitations under the License.
 */
 
 
-const PRECACHE = 'precache-v1';
+const PRECACHE = 'precache-v2';
 const RUNTIME = 'runtime';
 const PRECACHE_URLS = [
 	'index.html','./',
@@ -28,10 +28,10 @@ const PRECACHE_URLS = [
 	'resources/icons.png',
 	'resources/bg.png',
 	'resources/bghome.png',
-	'resources/icon0.png',
 	'resources/qr_magearna.png',
 	'resources/qr_pikachu_cap.png',
 	'resources/data/database.min.js',
+	'resources/data/database_learnsets.min.js',
 	'resources/data/locale_en.js',
 	'resources/data/locale_es.js',
 	'resources/data/more_info.js'

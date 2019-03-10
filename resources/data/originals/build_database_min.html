@@ -200,10 +200,19 @@ function generate(){
 		}
 	}
 	document.getElementById('textarea').innerHTML+='const POKEMON_ICONS='+JSON.stringify(POKEMON_ICONS)+';';
+
+	/* generate moves+learnsets */
+	document.getElementById('textarea2').innerHTML='const ALL_MOVES='+JSON.stringify(ALL_MOVES).replace(/null/g,'')+';';
+	document.getElementById('textarea2').innerHTML+='const TMs='+JSON.stringify(TMs).replace(/null/g,'')+';';
+	document.getElementById('textarea2').innerHTML+='const HMs='+JSON.stringify(HMs).replace(/null/g,'')+';';
+	document.getElementById('textarea2').innerHTML+='const LEARNSETS='+JSON.stringify(LEARNSETS).replace(/null/g,'').replace(/"/g,'')+';';
 }
 
 
 	--></script>
+	<script type="text/javascript" src="pokemon.js"></script>
+	<script type="text/javascript" src="moves.js"></script>
+	<script type="text/javascript" src="learnsets.js"></script>
 	<script type="text/javascript" src="gen1.js"></script>
 	<script type="text/javascript" src="gen2.js"></script>
 	<script type="text/javascript" src="gen3rse.js"></script>
@@ -217,7 +226,13 @@ function generate(){
 	<script type="text/javascript" src="gen7sm.js"></script>
 	<script type="text/javascript" src="gen7usum.js"></script>
 	<script type="text/javascript" src="gen7letsgo.js"></script>
-	<script type="text/javascript" src="pokemon.js"></script>
 </head>
 
-<body><button onclick="generate()">Generate DB</button><textarea id="textarea" style="width:100%" rows="30"></textarea></body></html>
+<body>
+	<button onclick="generate()">Build databases</button>
+	<hr/>
+	<h3>database.min.js</h3>
+	<textarea id="textarea" style="width:100%" rows="30"></textarea>
+	<h3>database_learnsets.min.js</h3>
+	<textarea id="textarea2" style="width:100%" rows="30"></textarea>
+</body></html>

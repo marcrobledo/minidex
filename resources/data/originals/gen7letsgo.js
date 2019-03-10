@@ -12,6 +12,7 @@ var GEN7LETSGO={
 		}
 	],
 	regionalDex:['Kanto',generateRange(1,151).concat([808,809]),153],
+	icons:[25,133],
 
 	locations:[
 		{
@@ -27,8 +28,8 @@ var GEN7LETSGO={
 				[16,[0,1],'flying',60],
 				[17,[0,1],'flying',35],
 				[18,[0,1],'flying',5],
-				[25,0,'starter'],
-				[133,1,'starter']
+				[alternateForm(25,13),0,'starter'],
+				[alternateForm(133,1),1,'starter']
 			]
 		},{
 			name:['Route 1',,,'Percorso 1','Ruta 1'],encounters:[

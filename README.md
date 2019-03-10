@@ -15,7 +15,7 @@ This lightweight and minimalist webapp compiles all the locations of all Pokémo
 
 ![Minidex preview 3](/_preview/minidex_preview3.png?raw=true) ![Minidex preview 4](/_preview/minidex_preview4.png?raw=true)
 
-It's aimed mostly for completionists, since there is no competitive information (direct links to other famous sites are shown though, just in case user needs them).
+It's aimed mostly for completionists, but there is also some basic competitive information. Direct links to other famous sites are shown though, just in case user needs them.
 
 
 
