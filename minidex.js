@@ -1583,6 +1583,7 @@ addEvent(window,'load',function(){
 
 	/* startup, load settings */
 	MinidexSettings.load();
+	el('checkbox-locations').checked=MinidexSettings.showLocations;
 	el('checkbox-learnsets').checked=MinidexSettings.showMeYourMoves;
 	el('select-language').value=MinidexSettings.lang;
 	setLanguage(MinidexSettings.lang);
