@@ -18,7 +18,7 @@ const MORE_INFO=[
 	},{
 		title:['Honey tree explanation',,,,'Explicación Árbol de miel'],
 		getInfo:function(gameInfo, nationalId){
-			if(gameInfo.generation===4 && nationalId===446)
+			if(gameInfo.generation===4 && gameInfo.id==='dppt' && nationalId===446)
 				return 'https://bulbapedia.bulbagarden.net/wiki/Honey#Munchlax_trees'
 			else
 				return null
@@ -26,12 +26,12 @@ const MORE_INFO=[
 	},{
 		title:['QR code',,,,'Código QR'],
 		getInfo:function(gameInfo, nationalId){
-			if(gameInfo.generation===7 && nationalId===25)
-				return './resources/qr_pikachu_cap.png'
-			else if(gameInfo.generation===7 && nationalId===801)
-				return './resources/qr_magearna.png'
-			else
-				return null
+			if(gameInfo.id==='sm' || gameInfo.id==='usum')
+				if(nationalId===25)
+					return './resources/qr_pikachu_cap.png'
+				else if(nationalId===801)
+					return './resources/qr_magearna.png'
+			return null
 		}
 	},{
 		title:['Safari Zone details',,,,'Detalles Zona Safari'],
@@ -57,7 +57,7 @@ const MORE_INFO=[
 	},{
 		title:['Special Lycanroc',,,,'Lycanroc especial'],
 		getInfo:function(gameInfo, nationalId){
-			if((gameInfo.id==='sm' || gameInfo.id==='usum') && (nationalId===744 || nationalId===745))
+			if(gameInfo.generation===7 && (nationalId===744 || nationalId===745))
 				return ['Lycanroc Dusk form can only be evolved from special event Rockruff',,,,'La forma crepuscular de Lycanroc solo puede evolucionarse desde un Rockruff especial de evento']
 			else
 				return null

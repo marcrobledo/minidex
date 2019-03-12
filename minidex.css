@@ -72,6 +72,7 @@ i.sprite{
 .sprite.night{background-position: -24px -60px;width:12px;height:12px}
 .sprite.extlink{background-position:-36px -60px;width:14px;height:16px}
 .sprite.settings{background-position:-54px -62px}
+#settings .sprite.settings{background-position:-60px -68px;width:30px;height:30px}
 .sprite.heart{background-position: -0px -72px;width:20px;height:18px}
 .sprite.close{background-position: -20px -72px;width:12px;height:18px}
 .sprite.move-cat-0{background-position: -0 -90px;width:22px;height:16px}
@@ -370,6 +371,7 @@ span.type{
 .type:first-child{border-top-left-radius:3px;border-bottom-left-radius:3px}
 .type:last-child{border-top-right-radius:3px;border-bottom-right-radius:3px}
 
+.table-moves tr>td:first-child div{white-space:nowrap;}
 .table-moves .type{display:inline-block;box-sizing:border-box;height:20px;text-align:center}
 .table-moves .type>.sprite{vertical-align:bottom;}
 .table-moves .type:first-child{width:80px}
@@ -461,6 +463,16 @@ table td{
 	box-sizing:border-box;
 	background-color:#deecf1;
 	border-radius:20px;
+}
+.block-moreinfo .games{margin:0}
+.block-moreinfo .games:first-child{margin-left:4px}
+.block-moreinfo .game{
+	width: 6px;
+	height: 6px;
+}
+.block-moreinfo .game.game-not-available{
+	/* background-color:#eafee8; */
+	display:none
 }
 .rates{white-space: nowrap;}
 

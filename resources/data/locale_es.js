@@ -31,7 +31,7 @@ STRINGS:{
 'tm':'MT',
 'hm':'MO',
 'settings_locations':'Mostrar localizaciones',
-'settings_learnsets':'Mostar movimientos',
+'settings_learnsets':'Mostrar movimientos',
 'power':'Potencia',
 'accuracy':'Precisión',
 'pp':'PP',

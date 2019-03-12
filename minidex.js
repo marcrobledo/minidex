@@ -1,4 +1,4 @@
-/* Minidex v20190305 - Marc Robledo 2013-2019 - http://www.marcrobledo.com/license */
+/* Minidex v20190311 - Marc Robledo 2013-2019 - http://www.marcrobledo.com/license */
 
 const FORCE_HTTPS=true;
 
@@ -748,29 +748,23 @@ function showLocation(gameInfo, location){
 
 
 
-const THIRD_GAMES=[,0,1,2,4];
+const NON_REMAKES=[,0,1,2,4,6,8,10];
 const REMAKES=[,,,3,5,7,9,11];
 function padMachine(number){
 	return number<10?'0'+number:number;
 }
 function getMachine(gameInfo, moveIndex){
-	if(gameInfo.generation===6 && moveIndex===249)
-		return localize('tm')+'94<sup>XY</sup>';
+	if(gameInfo.generation===6 && (moveIndex===249 || moveIndex===290))
+		return '<small>'+localize('tm')+'</small>94';
 
-	else if(gameInfo.generation===6 && moveIndex===290)
-		return localize('tm')+'94<sup>ORAS</sup>';
-
-	else if(gameInfo.generation===4 && moveIndex===432)
-		return localize('hm')+'05<sup>DPPt</sup>';
-
-	else if(gameInfo.generation===4 && moveIndex===250)
-		return localize('hm')+'05<sup>HGSS</sup>';
+	else if(gameInfo.generation===4 && (moveIndex===432 || moveIndex===250))
+		return '<small>'+localize('hm')+'</small>05<sup>';
 
 	else if(gameInfo.generation>=1 && gameInfo.generation<=6 && HMs[gameInfo.generation].indexOf(moveIndex)>0)
-		return localize('hm')+padMachine(HMs[gameInfo.generation].indexOf(moveIndex));
+		return '<small>'+localize('hm')+'</small>0'+HMs[gameInfo.generation].indexOf(moveIndex);
 
 	else
-		return localize('tm')+padMachine(TMs[gameInfo.id==='letsgo'?0:gameInfo.generation].indexOf(moveIndex));
+		return '<small>'+localize('tm')+'</small>'+padMachine(TMs[gameInfo.id==='letsgo'?0:gameInfo.generation].indexOf(moveIndex));
 }
 
 function createLearnsetTable(type, form, headerTitle){
@@ -787,32 +781,18 @@ function createLearnsetTable(type, form, headerTitle){
 	div.appendChild(h2);
 	div.appendChild(table);
 	
-	el('block-learnset').appendChild(div);
 	return table;
 }
 function renderLearnsets2(nationalId, form, gameInfo, learnset, type, exclusiveThird, exclusiveRemake){
 	var table;
 
 	var headerTitle='';
-	if(typeof form==='number')
+	if(typeof form==='number' && typeof POKEMON[nationalId][5][form]!=='undefined')
 		headerTitle+=' ('+localize(POKEMON[nationalId][5][form][0])+')';
 
 
 	if(type==='levelup'){
-
-		if(!exclusiveThird && !exclusiveRemake){
-			table=createLearnsetTable(type, form, localize('learnset_levelup')+' '+(gameInfo.id==='letsgo'?'Let\'s go!':'Gen '+gameInfo.generation)+headerTitle);
-		}else{
-			if(exclusiveThird || exclusiveRemake)
-				headerTitle+='<br/>';
-			if(exclusiveThird)
-				headerTitle+=' '+localize(GAMES[THIRD_GAMES[gameInfo.generation]].games[2].name);
-			if(exclusiveThird && exclusiveRemake)
-				headerTitle+=' / ';
-			if(exclusiveRemake)
-				headerTitle+=' '+getGamesTitle(GAMES[REMAKES[gameInfo.generation]]);
-			table=createLearnsetTable(type, form, localize('learnset_levelup')+headerTitle);
-		}
+		table=createLearnsetTable(type, form, localize('learnset_levelup')+' '+(gameInfo.id==='letsgo'?'Let\'s go!':'Gen '+gameInfo.generation)+headerTitle);
 	}else{
 		if(el('table-moves-'+type+'-'+form))
 			table=el('table-moves-'+type+'-'+form);
@@ -838,19 +818,77 @@ function renderLearnsets2(nationalId, form, gameInfo, learnset, type, exclusiveT
 			tr.appendChild(td1);
 			var move;
 			if(type==='levelup'){
-				td0.innerHTML=moves[i][1]===1?'-':moves[i][1];
-				td1.innerHTML=localize(ALL_MOVES[moves[i][0]][0]);
 				move=moves[i][0];
+
+				if(typeof moves[i][1] ==='number'){
+					var span=createElement('div');
+					if(typeof moves[i][2] ==='number' || typeof moves[i][3] ==='number')
+						span.appendChild(parseAvailableGames(GAMES[NON_REMAKES[gameInfo.generation]], 3));
+					if(moves[i][1]===0)
+						span.innerHTML+='Evo.';
+					else if(moves[i][1]===1)
+						span.innerHTML+='-';
+					else
+						span.innerHTML+=moves[i][1];
+					td0.appendChild(span);
+				}
+				if(typeof moves[i][2] ==='number'){
+					var span=createElement('div');
+					span.appendChild(parseAvailableGames(GAMES[REMAKES[gameInfo.generation]], 3));
+					if(moves[i][2]===0)
+						span.innerHTML+='Evo.';
+					else if(moves[i][2]===1)
+						span.innerHTML+='-';
+					else
+						span.innerHTML+=moves[i][2];
+					td0.appendChild(span);
+				}
+				if(typeof moves[i][3] ==='number'){
+					var span=createElement('div');
+					span.appendChild(parseAvailableGames(GAMES[NON_REMAKES[gameInfo.generation]], 4));
+					if(moves[i][3]===0)
+						span.innerHTML+='Evo.';
+					else if(moves[i][3]===1)
+						span.innerHTML+='-';
+					else
+						span.innerHTML+=moves[i][3];
+					td0.appendChild(span);
+				}
+				td1.innerHTML=localize(ALL_MOVES[moves[i][0]][0]);
 			}else{
+				move=moves[i];
+
+				td1.innerHTML=localize(ALL_MOVES[moves[i]][0]);
+
 				if(type==='machine'){
 					td0.innerHTML=getMachine(gameInfo, moves[i]);
+
+					/* fix rb mewtwo */
+					if(gameInfo.generation===1 && move===6 && nationalId===150){
+						td1.appendChild(parseAvailableGames(gameInfo, 3));
+					}else if(gameInfo.generation===4){
+						/* fix gen4 HM05 */
+						if(move===432)
+							td1.appendChild(parseAvailableGames(GAMES[4], 7));
+						else if(move===250)
+							td1.appendChild(parseAvailableGames(GAMES[5], 3));
+					}else if(gameInfo.generation===6){
+						/* fix gen6 TM94 */
+						if(move===249)
+							td1.appendChild(parseAvailableGames(GAMES[8], 3));
+						else if(move===290)
+							td1.appendChild(parseAvailableGames(GAMES[9], 3));
+					}
+				}else if(type==='egg' && gameInfo.id==='gsc' && ((move===211 && (nationalId===16 || nationalId===83 || nationalId===142)) || (move===230 && nationalId===46))){
+					/* fix gs exclusive eggs */
+					td1.appendChild(parseAvailableGames(gameInfo, 3));
 				}
-				td1.innerHTML=localize(ALL_MOVES[moves[i]][0]);
-				move=moves[i];
+
+
 				if(exclusiveThird)
-					td1.innerHTML+='<sup title="'+localize(GAMES[THIRD_GAMES[gameInfo.generation]].games[2].name)+'">'+localize(GAMES[THIRD_GAMES[gameInfo.generation]].games[2].abbr)+'</sup>';
+					td1.appendChild(parseAvailableGames(GAMES[NON_REMAKES[gameInfo.generation]], 4));
 				if(exclusiveRemake)
-					td1.innerHTML+='<sup title="'+getGamesTitle(GAMES[REMAKES[gameInfo.generation]])+'">'+getGamesAbbr(GAMES[REMAKES[gameInfo.generation]])+'</sup>';
+					td1.appendChild(parseAvailableGames(GAMES[REMAKES[gameInfo.generation]], 3));
 			}
 
 			//type+category
@@ -881,13 +919,18 @@ function renderLearnsets2(nationalId, form, gameInfo, learnset, type, exclusiveT
 	}
 
 	if(!exclusiveThird && !exclusiveRemake){
-		field=type.charAt(0);
-		if(typeof learnset[field+'3r']!=='undefined')
-			renderLearnsets2(nationalId, form, gameInfo, learnset, type, true, true);
-		if(typeof learnset[field+'3']!=='undefined')
-			renderLearnsets2(nationalId, form, gameInfo, learnset, type, true, false);
-		if(typeof learnset[field+'r']!=='undefined')
-			renderLearnsets2(nationalId, form, gameInfo, learnset, type, false, true);
+		if(table.children.length)
+			el('block-learnset').appendChild(table.parentElement);
+
+		if(type!=='levelup'){
+			field=type.charAt(0);
+			if(typeof learnset[field+'3r']!=='undefined')
+				renderLearnsets2(nationalId, form, gameInfo, learnset, type, true, true);
+			if(typeof learnset[field+'3']!=='undefined')
+				renderLearnsets2(nationalId, form, gameInfo, learnset, type, true, false);
+			if(typeof learnset[field+'r']!=='undefined')
+				renderLearnsets2(nationalId, form, gameInfo, learnset, type, false, true);
+		}
 
 		if(typeof learnset.forms !== 'undefined'){
 			for(var i=0; i<learnset.forms.length; i++)
@@ -895,8 +938,6 @@ function renderLearnsets2(nationalId, form, gameInfo, learnset, type, exclusiveT
 					renderLearnsets2(nationalId, i, gameInfo, learnset.forms[i], type, false, false);
 		}
 		
-		if(table.children.length===0)
-			table.parentElement.parentElement.removeChild(table.parentElement);
 	}
 }
 function renderAllLearnsets(nationalId, gameInfo){
