@@ -758,11 +758,11 @@ var GEN7LETSGO={
 				{group:'1f',encounters:[
 					[113,[0,1],'cave','very_rare']
 				]},
-				{group:'b1f',encounters:[
+				{group:'2f',encounters:[
 					[106,[0,1],'cave','very_rare'],
 					[146,[0,1],'interact']
 				]},
-				{group:'b2f',encounters:[
+				{group:'3f',encounters:[
 					[107,[0,1],'cave','very_rare']
 				]}
 			]

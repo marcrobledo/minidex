@@ -14,7 +14,7 @@ limitations under the License.
 */
 
 
-const PRECACHE = 'precache-v3b';
+const PRECACHE = 'precache-v3c';
 const RUNTIME = 'runtime';
 const PRECACHE_URLS = [
 	'index.html','./',
