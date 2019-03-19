@@ -420,7 +420,7 @@
 [["Ice Shard","Éclats Glace","Eissplitter","Geloscheggia","Canto Helado","こおりのつぶて"],14,PHYSICAL,30,40,100],
 [["Shadow Claw","Griffe Ombre","Dunkelklaue","Ombrartigli","Garra Umbría","シャドークロー"],7,PHYSICAL,15,70,100],
 [["Thunder Fang","Crocs Éclair","Donnerzahn","Fulmindenti","Colmillo Rayo","かみなりのキバ"],12,PHYSICAL,15,65,95],
-[["Ice Fang","Crocs Givre","Eiszahn","Gelodenti","Colmillo HieloColm. Hielo (Generation IV - V)","こおりのキバ"],14,PHYSICAL,15,65,95],
+[["Ice Fang","Crocs Givre","Eiszahn","Gelodenti","Colmillo Hielo","こおりのキバ"],14,PHYSICAL,15,65,95],
 [["Fire Fang","Crocs Feu","Feuerzahn","Rogodenti","Colmillo Ígneo","ほのおのキバ"],9,PHYSICAL,15,65,95],
 [["Shadow Sneak","Ombre Portée","Schattenstoß","Furtivombra","Sombra Vil","かげうち"],7,PHYSICAL,30,40,100],
 [["Mud Bomb","Boue-Bombe","Schlammbombe","Pantanobomba","Bomba Fango","どろばくだん"],4,SPECIAL,10,65,85],
