@@ -210,10 +210,10 @@ function pushState(url,doNotPush){
 
 
 const ROMAN_NUMBERS=['I','II','III','IV','V','VI','VII','VIII'];
-const MAX_POKEMON_BY_GENERATION=[0,151,251,386,493,649,721,809];
-const MAX_GENERATION=7;
+const MAX_POKEMON_BY_GENERATION=[0,151,251,386,493,649,721,809,890];
+const MAX_GENERATION=8;
 const MAX_POKEMON=MAX_POKEMON_BY_GENERATION[MAX_GENERATION];
-const DEFAULT_GAME=11;
+const DEFAULT_GAME=13;
 
 
 
@@ -942,7 +942,9 @@ function renderLearnsets2(nationalId, form, gameInfo, learnset, type, exclusiveT
 }
 function renderAllLearnsets(nationalId, gameInfo){
 	var learnset;
-	if(gameInfo.id==='letsgo')
+	if(gameInfo.id==='swsh')
+		return false;
+	else if(gameInfo.id==='letsgo')
 		learnset=LEARNSETS[nationalId][0];
 	else
 		learnset=LEARNSETS[nationalId][gameInfo.generation];
@@ -1017,11 +1019,20 @@ function generateIcon(id,form,size/*,fixedSize*/){
 	//ICON_COLS=32,ICON_WIDTH=40,ICON_HEIGHT=30
 	var span=createElement('span',{class:'poke-icon'});
 	
-	span.style.background='url(./resources/icons.png) -'+((pos%32)*40*size)+'px -'+(parseInt(pos/32)*30*size)+'px';
-	if(size>1){
-		span.style.backgroundSize=(1280*size)+'px '+(960*size)+'px';
-		span.style.width=(40*size)+'px';
-		span.style.height=(30*size)+'px';
+	if(id<810){
+		span.style.background='url(./resources/icons.png) -'+((pos%32)*40*size)+'px -'+(parseInt(pos/32)*30*size)+'px';
+		if(size>1){
+			span.style.backgroundSize=(1280*size)+'px '+(960*size)+'px';
+			span.style.width=(40*size)+'px';
+			span.style.height=(30*size)+'px';
+		}
+	}else{
+		span.style.background='url(./resources/icon_unknown.png)';
+		if(size>1){
+			span.style.backgroundSize=(40*size)+'px '+(30*size)+'px';
+			span.style.width=(40*size)+'px';
+			span.style.height=(30*size)+'px';
+		}
 	}
 
 	return span
@@ -1614,14 +1625,16 @@ function focusSearch(force){
 }
 
 
-addEvent(window,'load',function(){
-	/* service worker */
-	if(location.protocol==='http:' && FORCE_HTTPS){
-		location.href=window.location.href.replace('http:','https:');
-	}else if(location.protocol==='https:' && 'serviceWorker' in navigator){
-		navigator.serviceWorker.register('_cache_service_worker.js');
-	}
+/* service worker */
+const FORCE_HTTPS=true;
+if(FORCE_HTTPS && location.protocol==='http:')
+	location.href=window.location.href.replace('http:','https:');
+else if(location.protocol==='https:' && 'serviceWorker' in navigator)
+	navigator.serviceWorker.register('/minidex/_cache_service_worker.js', {scope: '/minidex/'});
 
+
+
+addEvent(window,'load',function(){
 	/* startup, load settings */
 	MinidexSettings.load();
 	el('checkbox-locations').checked=MinidexSettings.showLocations;

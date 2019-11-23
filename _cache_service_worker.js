@@ -1,41 +1,95 @@
 /*
-original: https://github.com/GoogleChrome/samples/blob/gh-pages/service-worker/basic/service-worker.js
-
-Copyright 2016 Google Inc. All Rights Reserved.
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-	http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+	Cache Service Worker template by mrc 2019
+	mostly based in:
+	https://github.com/GoogleChrome/samples/blob/gh-pages/service-worker/basic/service-worker.js
+	https://github.com/chriscoyier/Simple-Offline-Site/blob/master/js/service-worker.js
+	https://gist.github.com/kosamari/7c5d1e8449b2fbc97d372675f16b566e	
+	
+	Note for GitHub Pages:
+	there can be an unexpected behaviour (cache not updating) when site is accessed from
+	https://user.github.io/repo/ (without index.html) in some browsers (Firefox)
+	use absolute paths if hosted in GitHub Pages in order to avoid it
+	also invoke sw with an absolute path:
+	navigator.serviceWorker.register('/repo/_cache_service_worker.js', {scope: '/repo/'})
 */
 
 
-const PRECACHE = 'precache-v5';
-const RUNTIME = 'runtime';
-const PRECACHE_URLS = [
-	'index.html','./',
-	'favicon.png',
-	'favicon192.png',
-	'manifest.json',
-	'minidex.css',
-	'minidex.js',
-	'resources/lato.woff2',
-	'resources/sprites.png',
-	'resources/icons.png',
-	'resources/bg.png',
-	'resources/bghome.png',
-	'resources/qr_magearna.png',
-	'resources/qr_pikachu_cap.png',
-	'resources/data/database.min.js',
-	'resources/data/database_learnsets.min.js',
-	'resources/data/locale_en.js',
-	'resources/data/locale_es.js',
-	'resources/data/more_info.js'
+/* MOD: fix old caches for mrc */
+caches.keys().then(function(cacheNames){
+	for(var i=0; i<cacheNames.length; i++){
+		if(
+			cacheNames[i]==='runtime' ||
+			/^precache-\w+$/.test(cacheNames[i]) ||
+			/^v?\d+\w?$/.test(cacheNames[i])
+		){
+			console.log('deleting old cache: '+cacheNames[i]);
+			caches.delete(cacheNames[i]);
+		}
+	}
+});
+
+
+var PRECACHE_ID='minidex';
+var PRECACHE_VERSION='v6';
+var PRECACHE_URLS=[
+'/minidex/index.html','/minidex/',
+'/minidex/favicon.png',
+'/minidex/favicon192.png',
+'/minidex/manifest.json',
+'/minidex/minidex.css',
+'/minidex/minidex.js',
+'/minidex/resources/lato.woff2',
+'/minidex/resources/sprites.png',
+'/minidex/resources/icons.png',
+'/minidex/resources/bg.png',
+'/minidex/resources/bghome.png',
+'/minidex/resources/qr_magearna.png',
+'/minidex/resources/qr_pikachu_cap.png',
+'/minidex/resources/data/database.min.js',
+'/minidex/resources/data/database_learnsets.min.js',
+'/minidex/resources/data/locale_en.js',
+'/minidex/resources/data/locale_es.js',
+'/minidex/resources/data/more_info.js'
 ];
 
 
-self.addEventListener('install', event => {event.waitUntil(caches.open(PRECACHE).then(cache => cache.addAll(PRECACHE_URLS)).then(self.skipWaiting()));});self.addEventListener('activate', event => {const currentCaches = [PRECACHE, RUNTIME];event.waitUntil(caches.keys().then(cacheNames => {return cacheNames.filter(cacheName => !currentCaches.includes(cacheName));}).then(cachesToDelete => {return Promise.all(cachesToDelete.map(cacheToDelete => {return caches.delete(cacheToDelete);}));}).then(() => self.clients.claim()));});self.addEventListener('fetch', event => {if (event.request.url.startsWith(self.location.origin)) {event.respondWith(caches.match(event.request).then(cachedResponse => {if (cachedResponse) {return cachedResponse;}return caches.open(RUNTIME).then(cache => {return fetch(event.request).then(response => {return cache.put(event.request, response.clone()).then(() => {return response;});});});}));}});
+
+// install event (fired when sw is first installed): opens a new cache
+self.addEventListener('install', evt => {
+	evt.waitUntil(
+		caches.open('precache-'+PRECACHE_ID+'-'+PRECACHE_VERSION)
+			.then(cache => cache.addAll(PRECACHE_URLS))
+			.then(self.skipWaiting())
+	);
+});
+
+
+// activate event (fired when sw is has been successfully installed): cleans up old outdated caches
+self.addEventListener('activate', evt => {
+	evt.waitUntil(
+		caches.keys().then(cacheNames => {
+			return cacheNames.filter(cacheName => (cacheName.startsWith('precache-'+PRECACHE_ID+'-') && !cacheName.endsWith('-'+PRECACHE_VERSION)));
+		}).then(cachesToDelete => {
+			return Promise.all(cachesToDelete.map(cacheToDelete => {
+				console.log('delete '+cacheToDelete);
+				return caches.delete(cacheToDelete);
+			}));
+		}).then(() => self.clients.claim())
+	);
+});
+
+
+// fetch event (fired when requesting a resource): returns cached resource when possible
+self.addEventListener('fetch', evt => {
+	if(evt.request.url.startsWith(self.location.origin)){ //skip cross-origin requests
+		evt.respondWith(
+			caches.match(evt.request).then(cachedResource => {
+				if (cachedResource) {
+					return cachedResource;
+				}else{
+					return fetch(evt.request);
+				}
+			})
+		);
+	}
+});

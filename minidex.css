@@ -6,6 +6,15 @@
 	unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/*@font-face {
+	font-family: 'Alata';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local('Alata Regular'), local('Alata-Regular'), url('./resources/alata.woff2') format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}*/
+
 body{
 	font:15px 'Lato', sans-serif;
 	margin:0;
@@ -161,10 +170,10 @@ header option{background-color:#282e36}
 	color:white;
 	position:relative;
 }
-#dex-results .poke-icon{
+/*#dex-results .poke-icon{
 	background-size: 2560px 1920px;
 	width:80px;height:60px;
-}
+}*/
 #dex-results a:hover{
 	background-color:#474e55;
 }
@@ -521,6 +530,9 @@ table td{
 
 .games-letsgo .game-p{background-color:#f5da26; color:black}
 .games-letsgo .game-e{background-color:#d4924b; color:black}
+
+.games-swsh .game-sw{background-color:#00a1e9; color:white}
+.games-swsh .game-sh{background-color:#bf004f; color:white}
 
 
 

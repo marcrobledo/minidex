@@ -78,6 +78,8 @@ const MORE_INFO=[
 				dexId='-xy';
 			else if(gameInfo.generation===7 && nationalId<=809)
 				dexId='-sm';
+			else if(gameInfo.generation===8 && nationalId<=890)
+				dexId='-swsh';
 			return 'https://www.serebii.net/pokedex'+dexId+'/'+getCurrentDexNumber(nationalId, true)+'.shtml';
 		}
 	},{
@@ -103,6 +105,8 @@ const MORE_INFO=[
 				dexId='xy';
 			else if(gameInfo.generation===7 && nationalId<=807)
 				dexId='sm';
+			else if(gameInfo.generation===8 && nationalId<=890)
+				dexId='ss';
 			return 'https://www.smogon.com/dex/'+dexId+'/pokemon/'+name.clean()+'/';
 		}
 	},{
