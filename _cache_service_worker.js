@@ -30,7 +30,7 @@ caches.keys().then(function(cacheNames){
 
 
 var PRECACHE_ID='minidex';
-var PRECACHE_VERSION='v6';
+var PRECACHE_VERSION='v7';
 var PRECACHE_URLS=[
 '/minidex/index.html','/minidex/',
 '/minidex/favicon.png',

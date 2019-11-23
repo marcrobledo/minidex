@@ -1,6 +1,5 @@
 /* Minidex v20190311 - Marc Robledo 2013-2019 - http://www.marcrobledo.com/license */
 
-const FORCE_HTTPS=true;
 
 const IS_MOBILE=/android|blackberry|iphone|ip(a|o)d|opera m(ob|in)i|iemobile|wpdekstop|kindle|mobile|pocket|psp/i.test(navigator.userAgent||navigator.vendor||window.opera);
 
