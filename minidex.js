@@ -1,5 +1,12 @@
 /* Minidex v20190311 - Marc Robledo 2013-2019 - http://www.marcrobledo.com/license */
 
+/* service worker */
+const FORCE_HTTPS=true;
+if(FORCE_HTTPS && location.protocol==='http:')
+	location.href=window.location.href.replace('http:','https:');
+else if(location.protocol==='https:' && 'serviceWorker' in navigator)
+	navigator.serviceWorker.register('/minidex/_cache_service_worker.js', {scope: '/minidex/'});
+
 
 const IS_MOBILE=/android|blackberry|iphone|ip(a|o)d|opera m(ob|in)i|iemobile|wpdekstop|kindle|mobile|pocket|psp/i.test(navigator.userAgent||navigator.vendor||window.opera);
 
@@ -1624,12 +1631,6 @@ function focusSearch(force){
 }
 
 
-/* service worker */
-const FORCE_HTTPS=true;
-if(FORCE_HTTPS && location.protocol==='http:')
-	location.href=window.location.href.replace('http:','https:');
-else if(location.protocol==='https:' && 'serviceWorker' in navigator)
-	navigator.serviceWorker.register('/minidex/_cache_service_worker.js', {scope: '/minidex/'});
 
 
 
