@@ -90,6 +90,23 @@ i.sprite{
 .sprite.search,#search.sprite{background-position:right -106px}
 
 
+.sprite.no_weather,.sprite.overcast,.sprite.raining,.sprite.thunderstorm,.sprite.snowing,.sprite.snowstorm,.sprite.intense_sun,.sprite.sandstorm,.sprite.heavy_fog{
+	background-image:url(./resources/weathers_swsh.png);
+	background-size:216px 24px;
+	width:24px;height:24px;
+}
+.sprite.no_weather{background-position: -0px 0px}
+.sprite.overcast{background-position: -24px 0px}
+.sprite.raining{background-position: -48px 0px}
+.sprite.thunderstorm{background-position: -72px 0px}
+.sprite.snowing{background-position: -96px 0px}
+.sprite.snowstorm{background-position: -120px 0px}
+.sprite.intense_sun{background-position: -144px 0px}
+.sprite.sandstorm{background-position: -168px 0px}
+.sprite.heavy_fog{background-position: -192px 0px}
+
+
+
 
 #home,.screen,.top-buttons{
 	max-width:540px;
@@ -484,6 +501,7 @@ table td{
 	display:none
 }
 .rates{white-space: nowrap;}
+.rates small{font-size:80%}
 
 
 
@@ -556,8 +574,6 @@ table td{
 
 .poke-icon{
 	display:inline-block;
-	width:40px;
-	height:30px;
 	
 	vertical-align:middle;
 
@@ -576,12 +592,13 @@ table td{
 	background-color:rgba(255,255,255,.5) !important
 }
 
-.poke-icon.2x{
-	width:80px;
-	height:60px
-}
-.poke-icon.crop{margin:0 -4px}
-.poke-icon.crop2{margin:0 -10px}
+#dex-results .poke-icon.big,
+#block-location .poke-icon.big,
+#evoline .poke-icon.big{margin: -24px -12px 0;}
+
+.poke-icon.crop{margin-left:-4px;margin-right:-4px}
+.poke-icon.crop2{margin-left:-10px;margin-right:-10px}
+.poke-icon.big.crop2{margin: -20px -20px 0;}
 
 
 

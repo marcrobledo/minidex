@@ -81,7 +81,19 @@ STRINGS:{
 'evolve':'Evolucionar',
 'ditto':/*criar con */'Ditto',
 
+'gigantamax':'Gigamax',
+
 //Encounters
+'raid_1s':'Incursión &#9733;',
+'raid_2s':'Incursión &#9733;&#9733;',
+'raid_3s':'Incursión &#9733;&#9733;&#9733;',
+'raid_4s':'Incursión &#9733;&#9733;&#9733;&#9733;',
+'raid_5s':'Incursión &#9733;&#9733;&#9733;&#9733;&#9733;',
+'rare_raid_1s':'Incursión rara &#9733;',
+'rare_raid_2s':'Incursión rara &#9733;&#9733;',
+'rare_raid_3s':'Incursión rara &#9733;&#9733;&#9733;',
+'rare_raid_4s':'Incursión rara &#9733;&#9733;&#9733;&#9733;',
+'rare_raid_5s':'Incursión rara &#9733;&#9733;&#9733;&#9733;&#9733;',
 'grass':'Hierba',
 'grass_dark':'Hierba oscura',
 'grass_tall':'Hierba alta',

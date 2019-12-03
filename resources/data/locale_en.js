@@ -106,7 +106,19 @@ STRINGS:{
 'evolve':'Evolve',
 'ditto':/*breed with */'Ditto',
 
+'gigantamax':'Gigantamax',
+
 //Encounters
+'raid_1s':'Raid &#9733;',
+'raid_2s':'Raid &#9733;&#9733;',
+'raid_3s':'Raid &#9733;&#9733;&#9733;',
+'raid_4s':'Raid &#9733;&#9733;&#9733;&#9733;',
+'raid_5s':'Raid &#9733;&#9733;&#9733;&#9733;&#9733;',
+'rare_raid_1s':'Rare raid &#9733;',
+'rare_raid_2s':'Rare raid &#9733;&#9733;',
+'rare_raid_3s':'Rare raid &#9733;&#9733;&#9733;',
+'rare_raid_4s':'Rare raid &#9733;&#9733;&#9733;&#9733;',
+'rare_raid_5s':'Rare raid &#9733;&#9733;&#9733;&#9733;&#9733;',
 'grass':'Grass',
 'grass_dark':'Dark grass',
 'grass_tall':'Tall grass',
