@@ -42,6 +42,23 @@ const MORE_INFO=[
 				return null
 		}
 	},{
+		title:['Max Raid den map',,,,'Mapa de nidos'],
+		getInfo:function(gameInfo, nationalId, name, encounters){
+			if(gameInfo.id==='swsh' && encounters.length){ /* last encounter must be raid */
+			
+				for(var i=0; i<encounters.length; i++){
+					if(/raid_/.test(encounters[i][2])){
+						if(MinidexSettings.lang===4)
+							return './resources/swsh_wild_area_map_es.png';
+						else
+							return './resources/swsh_wild_area_map.png';
+					}
+				}
+				return null;
+			}else
+				return null
+		}
+	},{
 		title:['Poké Pelago details',,,,'Detalles Poké Resort'],
 		getInfo:function(gameInfo, nationalId, name, encounters){
 			if(encounters.length && encounters[encounters.length-1][4]==gameInfo.locations.length-1) /* poke pelago must be last location in database */

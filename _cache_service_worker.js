@@ -30,7 +30,7 @@ caches.keys().then(function(cacheNames){
 
 
 var PRECACHE_ID='minidex';
-var PRECACHE_VERSION='v11';
+var PRECACHE_VERSION='v12';
 var PRECACHE_URLS=[
 '/minidex/index.html','/minidex/',
 '/minidex/favicon.png',
@@ -47,6 +47,8 @@ var PRECACHE_URLS=[
 '/minidex/resources/bghome.png',
 '/minidex/resources/qr_magearna.png',
 '/minidex/resources/qr_pikachu_cap.png',
+'/minidex/resources/swsh_wild_area_map.png',
+'/minidex/resources/swsh_wild_area_map_es.png',
 '/minidex/resources/data/database.min.js',
 '/minidex/resources/data/database_learnsets.min.js',
 '/minidex/resources/data/locale_en.js',
