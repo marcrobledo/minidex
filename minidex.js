@@ -589,6 +589,8 @@ function renderEncounters(encounters, gameInfo){
 		a.addEventListener('click', _clickLink, false);
 		a.innerHTML=localize(gameInfo.locations[encounters[i][4]].name)+' ';
 		if(encounters[i][5]){
+			if(gameInfo.id==='swsh')
+				a.innerHTML+='<br/>';
 			if(gameInfo.id==='xy' && /typeslot_/.test(encounters[i][5])){
 				var matches=encounters[i][5].match(/typeslot_(\d+)_(\d+)/);
 				encounters[i][5]=localize('typeslot').replace('%s', TYPES[parseInt(matches[1])]).replace('%s', matches[2]);
