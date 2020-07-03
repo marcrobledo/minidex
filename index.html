@@ -7,158 +7,201 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 
 	<meta name="description" content="This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!"/>
-	<meta name="keywords" content="pokedex,online,pokemon,app,html5,webapp,pwa,minidex,sword,shield,espada,escudo,x,y,xy,oras,ruby,omega,rubi,alpha,alfa,zafiro,sapphire,ultra,sol,luna,sun,moon,lets go,sword,shield,espada,escudo"/>
+	<meta name="keywords" content="pokedex,online,pokemon,app,html5,webapp,pwa,minidex,sword,shield,espada,escudo,x,y,xy,oras,ruby,omega,rubi,alpha,alfa,zafiro,sapphire,ultra,sol,luna,sun,moon,lets go"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
-	<link rel="shortcut icon" href="./favicon.png" type="image/png" sizes="16x16"/>
-	<link rel="shortcut icon" href="./favicon192.png" type="image/png" sizes="192x192"/>
+	<link rel="shortcut icon" href="./resources/favicon.png" type="image/png" sizes="16x16"/>
+	<link rel="shortcut icon" href="./resources/favicon192.png" type="image/png" sizes="192x192"/>
 	<!-- iOS icons -->
-	<link rel="apple-touch-icon" sizes="16x16" href="./favicon.png" />
-	<link rel="apple-touch-icon" href="./favicon192.png" />
+	<link rel="apple-touch-icon" sizes="16x16" href="./resources/favicon.png" />
+	<link rel="apple-touch-icon" href="./resources/favicon192.png" />
 
-	<!-- MANIFEST for Chrome-->	
-	<meta name="theme-color" content="#353d46"/> <!-- <M46: specify Android bar color -->
-	<link rel="manifest" href="manifest.json"/> <!-- M39 -->
-	<link rel="icon" sizes="128x128" href="favicon.png"/> <!-- M31-M38 -->
-	<meta name="mobile-web-app-capable" content="yes"/> <!-- M31-M38/Safari -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="#353d46"/><!-- Safari -->
 
-	<link type="text/css" rel="stylesheet" href="./minidex.css" media="all"/>
 
-	<script type="text/javascript" src="./resources/data/database.min.js"></script>
-	<!-- <script type="text/javascript" src="./resources/data/database_learnsets.min.js"></script> -->
-	<script type="text/javascript" src="./minidex.js"></script>
-	<script type="text/javascript" src="./resources/data/locale_en.js"></script>
-	<script type="text/javascript" src="./resources/data/locale_es.js"></script>
-	<script type="text/javascript" src="./resources/data/more_info.js"></script>
+	<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500;700&display=swap');
+
+body{
+	font:15px 'Roboto', sans-serif;
+	margin:0;
+	background-color:#202b37;
+
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	cursor:default
+}
+
+.text-center{text-align:center}
+
+main,footer{
+	text-align:center;
+	max-width:540px;
+	margin: 0 auto;
+}
+
+
+header{
+	background: #33414e; /* Old browsers */
+	background-repeat: no-repeat;
+
+	height:380px;
+	background-size:540px auto, 1920px auto, auto auto;
+	background-position:center 88px, center bottom, 0% 0%;
+
+	background-image: url(./resources/header_gen1.png), url(./resources/header_common.png), -moz-linear-gradient(bottom, #3a5369 0%, #273a4b 100%); /* FF3.6-15 */
+	background-image: url(./resources/header_gen1.png), url(./resources/header_common.png), -webkit-linear-gradient(bottom, #3a5369 0%,#273a4b 100%); /* Chrome10-25,Safari5.1-6 */
+	background-image: url(./resources/header_gen1.png), url(./resources/header_common.png), linear-gradient(to bottom, #3a5369 0%,#273a4b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+h1{
+	display:inline-block;
+	font-size:220%;
+	border-top:5px solid #f94343;
+	margin: 20px 0;
+	text-transform:uppercase;
+	color:white;
+}
+
+main{
+	color:white;
+	padding-left:10px;padding-right:10px;
+	margin-top:-50px;
+}
+ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+ul a{
+	display:block;
+	color:white;
+	text-decoration:none;
+	background-color:#1b252f;
+	border-radius:113px;
+	margin-bottom:10px;
+	font-weight:bold;
+	font-size:120%;
+	padding: 10px 0;
+}
+ul a:hover{
+	background-color:#e63636;
+}
+ul small{
+	font-size:80%;
+	font-weight:normal;
+	display:block;
+	color:#505962;
+}
+.game a:hover small{
+	color:#f76d6d;
+}
+
+
+
+
+footer{
+	text-align:center;
+	color:#425060;
+	margin-bottom:10px;
+}
+footer a{color:#708091}
+footer a:hover{color:white}
+
+
+
+/*
+.game a{
+	background-size:cover;
+	background-position:center center;
+	background-blend-mode:overlay;
+}
+.game a:hover{
+	background-blend-mode:multiply;
+}
+.game.gen1rby a{background-image:url(./resources/index/index_gen1rby.png)}
+.game.gen2gsc a{background-image:url(./resources/index/index_gen2gsc.png)}
+.game.gen3rse a{background-image:url(./resources/index/index_gen3rse.png)}
+.game.gen3frlg a{background-image:url(./resources/index/index_gen3frlg.png)}
+.game.gen4dppt a{background-image:url(./resources/index/index_gen4dppt.png)}
+.game.gen4hgss a{background-image:url(./resources/index/index_gen2gsc.png)}
+.game.gen5bw a{background-image:url(./resources/index/index_gen5bw.png)}
+.game.gen5b2w2 a{background-image:url(./resources/index/index_gen5b2w2.png)}
+.game.gen6xy a{background-image:url(./resources/index/index_gen6xy.png)}
+.game.gen6oras a{background-image:url(./resources/index/index_gen6oras.png)}
+.game.gen7sm a{background-image:url(./resources/index/index_gen7sm.png)}
+.game.gen7usum a{background-image:url(./resources/index/index_gen7usum.png)}
+.game.gen7letsgo a{background-image:url(./resources/index/index_gen7letsgo.png)}
+.game.gen8swsh a{background-image:url(./resources/index/index_gen8swsh.png)}
+*/
+
+
+
+
+
+
+
+/* RESPONSIVE DESIGN */
+@media only screen and (max-width:641px){
+	body{
+		font-size:14px;
+		margin:0 auto
+	}
+
+	header{
+		height:200px;
+		background-size:264px auto, auto 80px, auto auto;
+		background-position:center 72px, center 160px, 0% 0%;
+	}
+	main{
+		margin-top:-10px;
+	}
+}
+
+	</style>
+	
+	<script type="text/javascript"><!--
+window.addEventListener('load', function(evt){
+	
+}, false);
+	--></script>
 </head>
 
 <body>
-	<div class="top-buttons">
-		<i id="button-menu" class="sprite settings clickable" onclick="forceGoToHome()"></i>
-		<i id="button-search" class="sprite search clickable" onclick="focusSearch(true)"></i>
-		<input type="text" id="search" class="sprite" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
-		<div id="search-results"></div>
-	</div>
-	<div id="home">
-		<header>
-			<div class="text-center"><h1>Minidex</h1></div>
+	<header><div class="text-center"><h1>Minidex</h1></div></header>
 
-			<div id="donate-warning">
-				<a href="https://www.paypal.me/marcrobledo/5" target="_blank" rel="nofollow" onclick="hideDonateWarning()"><i class="sprite heart"></i><span> Donate</span></a><span class="close-donate" title="Dismiss" onclick="hideDonateWarning()"><i class="sprite close"></i></span>
-			</div>
-
-			<div class="text-center"><label for="select-game" data-translate="games">Games</label></div>
-			<div class="text-center">
-				<select id="select-game" onchange="setGame(parseInt(this.value));focusSearch();"></select>
-				<span id="game-icons"></span>
-			</div>
-
-			<div class="text-center"><label for="select-dex">Pokédex</label></div>
-			<div class="text-center">
-				<select id="select-dex" onchange="setDex(this.value);focusSearch();">
-					<optgroup label="Regional Pokédex">
-						<option id="regional-dex" value="regional"></option>
-						<option id="extras" value="extras">Extras</option>
-					</optgroup>
-					<optgroup id="generational-dexes" label="National Pokédex"></optgroup>
-				</select>
-				<input id="hide-caught" type="checkbox" onchange="refreshDex(currentDex)" /><label for="hide-caught" data-translate="hide_caught">Hide caught</label>
-			</div>
-		</header>
-
-
-		<div id="dex-results"></div>
-
-		<br style="clear:both;display:block" />
-
-
-
-
-		<footer>
-			Developed and designed by <a href="https://www.marcrobledo.com">Marc Robledo</a><br/><a href="https://github.com/marcrobledo/minidex/" target="_blank">See Minidex in GitHub</a><br/><br/>
-			<small>
-				This is a fan created site, no copyright or trademark infringement is intended.<br/>
-				Pokémon and all respective names are trademark &amp; &copy; of Nintendo/Creatures Inc./GAME FREAK inc. TM 1996-2019
-			</small>
-		</footer>
-	</div>
-
-
-
-
-	<div id="pokemon" class="screen">
-		<div class="screen-title">
-			<i class="sprite pokeball"></i><span id="pokemon-title"></span>
-		</div>
-		<!-- INFO -->
-		<div id="block-top" class="block block-top">
-			<div id="dex-img-container">
-				<div id="dex-img"></div>
-				<div id="form-cycler"></div>
-			</div>
-			<div id="dex-info">
-				<b data-translate="type">Types</b> <span id="dex-types"></span><br/>
-				<b data-translate="abilities">Abilities</b> <span id="dex-abilities"></span>
-			</div>
-		</div>
-
-		<!-- LOCATION -->
-		<div id="block-location" class="block block-location"></div>
-
-		<!-- EVOLUTION -->
-		<div class="block block-evolution"><h2 data-translate="evoline">Evolution line</h2><div id="evoline"></div></div>
-
-		<!-- LEARNSET -->
-		<div id="block-learnset"></div>
-
-		<!-- MORE INFO -->
-		<div class="block block-moreinfo"><h2 data-translate="more_info">More information</h2><ul id="extra-links"></ul></div>
-	</div>
-
-	<div id="location" class="screen">
-		<div class="screen-title">
-			<i class="sprite location"></i><span id="location-title"></span>
-		</div>
-		<div class="block block-location">
-			<table id="table-location" class="table-encounters"></table>
-		</div>
-	</div>
-
-	<div id="settings" class="screen">
-		<div class="screen-title"><i class="sprite settings"></i><span data-translate="settings">Settings</span></div>
-
-		<div class="block block-location">
-			<div class="setting">
-				<label for="select-language">Language</label>
-				<select id="select-language" onchange="setLanguage(parseInt(this.value));MinidexSettings.save();if(this.value!=0 && this.value!=4)alert('Note: only location names will appear translated');">
-					<option value="0">English</option>
-					<option value="1">Français*</option>
-					<option value="2">Deutsch*</option>
-					<option value="3">Italiano*</option>
-					<option value="4">Español</option>
-				</select>
-			</div>
-
-			<div class="setting">
-				<label for="checkbox-locations" data-translate="settings_locations">Show locations</label>
-				<input type="checkbox" id="checkbox-locations" onchange="MinidexSettings.showLocations=this.checked;MinidexSettings.save()"/>
-			</div>
-
-			<div class="setting">
-				<label for="checkbox-learnsets" data-translate="settings_learnsets">Show learnsets</label>
-				<input type="checkbox" id="checkbox-learnsets" onchange="MinidexSettings.showMeYourMoves=this.checked;MinidexSettings.save()"/>
-			</div>
-
-			<!-- <br/>
-			<label for="checkbox-learnsets">Show base stats</label>
-			<input type="checkbox" id="checkbox-basestats" onchange="MinidexSettings.baseStats=this.checked;MinidexSettings.save()"/> -->
-		</div>
-	</div>
-
-
-
-
-
+	<main>
+		<p>
+		This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
+		</p>
+		<ul>
+			<li class="game gen8swsh"><a href="swsh/"><small>Gen VIII</small>Sword Shield</a></li>
+			<li class="game gen7letsgo"><a href="letsgo/"><small>Gen VII</small>Let's go!</a></li>
+			<li class="game gen7usum"><a href="usum/"><small>Gen VII</small>Ultra Sun Ultra Moon</a></li>
+			<li class="game gen7sm"><a href="sm/"><small>Gen VII</small>Sun Moon</a></li>
+			<li class="game gen6oras"><a href="oras/"><small>Gen VI</small>Omega Ruby Alpha Sapphire</a></li>
+			<li class="game gen6xy"><a href="xy/"><small>Gen VI</small>XY</a></li>
+			<li class="game gen5b2w2"><a href="b2w2/"><small>Gen V</small>Black 2 White 2</a></li>
+			<li class="game gen5bw"><a href="bw/"><small>Gen V</small>Black White</a></li>
+			<li class="game gen4hgss"><a href="hgss/"><small>Gen IV</small>HeartGold SoulSilver</a></li>
+			<li class="game gen4dppt"><a href="dppt/"><small>Gen IV</small>Diamond Pearl Platinum</a></li>
+			<li class="game gen3frlg"><a href="frlg/"><small>Gen III</small>Fire Red Leaf Green</a></li>
+			<li class="game gen3rse"><a href="rse/"><small>Gen III</small>Ruby Sapphire Emerald</a></li>
+			<li class="game gen2gsc"><a href="gsc/"><small>Gen II</small>Gold Silver Crystal</a></li>
+			<li class="game gen1rby"><a href="rby/"><small>Gen I</small>Red Blue Yellow</a></li>
+		</ul>
+	</main>
+	<footer>
+		Developed and designed by <a href="https://www.marcrobledo.com">Marc Robledo</a><br/><a href="https://github.com/marcrobledo/minidex/" target="_blank">See Minidex in GitHub</a><br/><br/>
+		<small>
+			This is a fan created site, no copyright or trademark infringement is intended.<br/>
+			Pokémon and all respective names are trademark &amp; &copy; of Nintendo/Creatures Inc./GAME FREAK inc. TM 1996-2020
+		</small>
+	</footer>
 </body>
 </html>

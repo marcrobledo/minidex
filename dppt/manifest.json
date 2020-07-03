@@ -1,0 +1,23 @@
+{
+	"short_name":"Minidex DPPt",
+	"name":"Minidex DPPt",
+	"icons":[
+		{
+			"src": "/minidex/resources/favicon.png",
+			"sizes": "16x16",
+			"type": "image/png",
+			"density": "1.0"
+		},
+		{
+			"src": "/minidex/resources/favicon_gen4dppt.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"density": "1.0"
+		}
+	],
+	"start_url": "/minidex/dppt/index.html",
+	"display": "standalone",
+	"orientation": "portrait",
+	"theme_color": "#202b37",
+	"background_color": "#202b37"
+}

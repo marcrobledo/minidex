@@ -1,0 +1,1058 @@
+const S=1<<0;
+const M=1<<1;
+const SM=S|M;
+
+const LOCATIONS=[
+{
+	name:['Iki Town',,,'Lili','Pueblo Lilii'],encounters:[
+		[722,,'starter'],
+		[725,,'starter'],
+		[728,,'starter']
+	]
+},{
+	name:['Route 1',,,'Percorso 1','Ruta 1'],encounters:[
+		[10,,['sos_ally',11]],
+		[25,,['sos_ally',172]],
+		[440,,['sos_ally',172]],
+		[185,,['sos_ally',438]],
+		[440,,['sos_ally',438]],
+		[143,,['sos_ally',446]],
+		[440,,['sos_ally',446]],
+		{group:['East and north grass',,,,'Hierba este y norte'],encounters:[
+			[10,,'grass',20],
+			[alternateForm(19,1),,'grass',[,30]],
+			[165,,'grass',[20]],
+			[167,,'grass',[,20]],
+			[731,,'grass',30],
+			[734,,'grass',[30]]
+		]},
+		{group:'west',encounters:[
+			[10,,'grass',10],
+			[11,,'grass',10],
+			[alternateForm(19,1),,'grass',[,30]],
+			[165,,'grass',[15]],
+			[167,,'grass',[,15]],
+			[172,,'grass',5],
+			[731,,'grass',20],
+			[734,,'grass',[30]],
+			[736,,'grass',10]
+		]},
+		{group:'south',encounters:[
+			[10,,'grass',10],
+			[11,,'grass',10],
+			[alternateForm(19,1),,'grass',[,30]],
+			[165,,'grass',[10]],
+			[167,,'grass',[,10]],
+			[438,,'grass',15],
+			[446,,'grass',5],
+			[731,,'grass',20],
+			[734,,'grass',[30]]
+		]},
+		{group:['Hau\'oli Outskirts',,,,'Afueras de Hau\'oli'],encounters:[
+			[alternateForm(19,1),,'grass',[,30]],
+			[79,,'grass',20],
+			[278,,'grass',50],
+			[734,,'grass',[30]],
+			[72,,'surf',40],
+			[278,,'surf',20],
+			[456,,'surf',40]
+		]}
+	]
+},{
+	name:['Trainers\' School','École de Dresseurs','Trainerschule','Scuola Allenatori','Escuela Entrenadores'],encounters:[
+		[alternateForm(52,1),,'grass',30],
+		[81,,'grass',50],
+		[alternateForm(88,1),,'grass',20]
+	]
+},{
+	name:['Hau\'oli City','Ekaeka','Hauholi City','Hau\'oli','Ciudad Hauoli'],encounters:[
+		[alternateForm(19,1),,'grass',[,20]],
+		[alternateForm(52,1),,'grass',10],
+		[63,,'grass',25],
+		[81,,'grass',10],
+		[alternateForm(88,1),,'grass',10],
+		[172,,'grass',5],
+		[25,,['sos_ally',172]],
+		[440,,['sos_ally',172]],
+		[278,,'grass',20],
+		[734,,'grass',[20]],
+		[72,,'surf',40],
+		[278,,'surf',20],
+		[456,,'surf',40],
+		[599,,['grass','thursday','island_scan']],
+		[801,,['gift','postgame']]
+	]
+},{
+	name:['Route 2',,,'Percorso 2','Ruta 2'],encounters:[
+		[alternateForm(19,1),,'grass',[,10]],
+		[734,,'grass',[10]],
+		[alternateForm(19,1),,'grass_rustling',[,70]],
+		[296,,'grass_rustling',30],
+		[734,,'grass_rustling',[70]],
+		[739,,'berry_pile',100],
+		[66,,['trade',21]],
+		[152,,['grass','friday','island_scan']],
+		{group:'south',encounters:[
+			[alternateForm(52,1),,'grass',30],
+			[63,,'grass',20],
+			[96,,'grass',20],
+			[235,,'grass',20],
+		]},
+		{group:'north',encounters:[
+			[21,,'grass',40],
+			[58,,'grass',20],
+			[235,,'grass',10],
+			[742,,'grass',20]
+		]}
+	]
+},{
+	name:['Hau\'oli Cemetery','Cimetière d\'Ekaeka','Hauholi-Friedhof','Cimitero di Hau\'oli','Cementerio de Hauoli'],encounters:[
+		[41,,'grass',20],
+		[92,,'grass',50],
+		[200,,'grass',[,30]],
+		[425,,'grass',[30]],
+		[607,,['grass','saturday','island_scan']]
+	]
+},{
+	name:['Verdant Cavern','Grotte Verdoyante','Vegetationshöhle','Grotta Sottobosco','Cueva Sotobosque'],encounters:[
+		[41,,'cave',70],
+		[50,,'cave',30],
+		[alternateForm(19,1),M,'dust_cloud',100],
+		[734,S,'dust_cloud',100],
+		[795,M,'cave']
+	]
+},{
+	name:['Route 3',,,'Percorso 3','Ruta 3'],encounters:[
+		[alternateForm(19,1),,'grass',[,10]],
+		[56,,'grass',20],
+		[734,,'grass',[10]],
+		[742,,'grass',20],
+		[21,,'from_sky',70],
+		[627,S,'from_sky',30],
+		[629,M,'from_sky',30],
+		[739,,'berry_pile',100],
+		[155,,['grass','sunday','island_scan']],
+		{group:'north',encounters:[
+			[21,,'grass',40],
+			[225,,'grass',10]
+		]},
+		{group:'south',encounters:[
+			[21,,'grass',49],
+			[371,,'grass',1],
+			[373,,['sos_ally',371]]
+		]}
+	]
+},{
+	name:['Melemele Meadow','Jardin de Mele-Mele','Mele-Mele-Blumenmeer','Prato Mele Mele','Jardines de Melemele'],encounters:[
+		[10,,'flowers_yellow',10],
+		[12,,['sos_ally',10]],
+		[11,,'flowers_yellow',9],
+		[10,,['sos_ally',11]],
+		[12,,['sos_ally',11]],
+		[12,,'flowers_yellow',1],
+		[546,S,'flowers_yellow',30],
+		[548,M,'flowers_yellow',30],
+		[alternateForm(741,1),,'flowers_yellow',20],
+		[742,,'flowers_yellow',30],
+		[794,S,'flowers_yellow']
+	]
+},{
+	name:['Seaward Cave','Grotte Verlamer','Meereshöhle','Grotta Pratomare','Gruta Unemar'],encounters:[
+		[41,,'cave',70],
+		[50,,'cave',30],
+		[41,,'surf',80],
+		[54,,'surf',20],
+		[129,,'fish',99],
+		[339,,'fish',1],
+		[129,,'fish_special',50],
+		[130,,['sos_ally',129]],
+		[340,,['sos_ally',339]],
+		[339,,'fish_special',50],
+		[158,,['cave','monday','island_scan']]
+	]
+},{
+	name:['Ten Carat Hill','Colline Dicarat','Tenkarat-Hügel','Collina Diecicarati','Colina Dequilate'],encounters:[
+		[41,,'cave',30],
+		[50,,'cave',20],
+		[524,,'cave',30],
+		[703,,'cave',20],
+		[302,,['sos_ally',703]],
+		[41,,'surf',80],
+		[54,,'surf',20],
+		[633,,['cave','tuesday','island_scan']],
+		[66,,'grass',30],
+		[327,,'grass',10],
+		[524,,'grass',20],
+		[703,,'grass',20],
+		[744,,'grass',20],
+		[800,,'grass']
+	]
+},{
+	name:['Route 4',,,'Percorso 4','Ruta 4'],encounters:[
+		[alternateForm(19,1),,'grass',[,10]],
+		[133,,'grass',[5,5]],
+		[174,,'grass',[10]],
+		[196,,['sos_ally',133],[5]],
+		[197,,['sos_ally',133],[,5]],
+		[39,,['sos_ally',174]],
+		[440,,['sos_ally',174]],
+		[506,,'grass',30],
+		[731,,'grass',[15,25]],
+		[734,,'grass',[10]],
+		[736,,'grass',10],
+		[749,,'grass',20],
+		[739,,'berry_pile',100],
+		[543,,['grass','thursday','island_scan']]
+	]
+},{
+	name:['Paniola Town','Ohana','Ohana','Ohana','Pueblo Ohana'],encounters:[
+		[129,,'fish',99],
+		[339,,'fish',1],
+		[129,,'fish_special',50],
+		[339,,'fish_special',50],
+		[130,,['sos_ally',129]],
+		[340,,['sos_ally',339]]
+	]
+},{
+	name:['Paniola Ranch','Ranch Ohana','Ohana-Farm','Fattoria Ohana','Rancho Ohana'],encounters:[
+		[128,,'grass',5],
+		[241,,['sos_ally',128]],
+		[241,,'grass',5],
+		[128,,['sos_ally',241]],
+		[506,,'grass',40],
+		[749,,'grass',50],
+		[133,,'gift_egg']
+	]
+},{
+	name:['Route 5',,,'Percorso 5','Ruta 5'],encounters:[
+		[736,,'grass',10],
+		[12,,['sos_ally',10]],
+		[10,,['sos_ally',11]],
+		[12,,['sos_ally',11]],
+		[185,,['sos_ally',438]],
+		[440,,['sos_ally',438]],
+		[731,,['sos_ally',732]],
+		[69,,['grass','friday','island_scan']],
+		{group:'south',encounters:[
+			[10,,'grass',10],
+			[11,,'grass',9],
+			[12,,'grass',1],
+			[506,,'grass',30],
+			[731,,'grass',20],
+			[753,,'grass',20],
+			[739,,'berry_pile',100],
+			[761,,['trade',506]]
+		]},
+		{group:'north',encounters:[
+			[10,,'grass',15],
+			[11,,'grass',10],
+			[12,,'grass',5],
+			[438,,'grass',10],
+			[732,,'grass',20],
+			[753,,'grass',30],
+			[50,,'dust_cloud',100]
+		]}
+	]
+},{
+	name:['Brooklet Hill','Colline Clapotis','Plätscherhügel','Collina Scrosciante','Colina Saltagua'],encounters:[
+		[54,,'grass',30],
+		[54,,'grass',30],
+		[54,,'surf',20],
+		[60,,'surf',40],
+		[283,,'surf',[,40]],
+		[751,,'surf',[40]],
+		[118,,'fish',29],
+		[119,,['sos_ally',118]],
+		[129,,'fish',70],
+		[130,,['sos_ally',129]],
+		[349,,'fish',1],
+		[118,,'fish_special',45],
+		[119,,['fish_special','sos_ally',118]],
+		[129,,'fish_special',50],
+		[130,,['fish_special','sos_ally',129]],
+		[349,,'fish_special',5],
+		[183,,['grass','saturday','island_scan']],
+		{group:'north',encounters:[
+			[46,,'grass',[20]],
+			[60,,'grass',10],
+			[278,,'grass',10],
+			[283,,'grass',[,10]],
+			[506,,'grass',20],
+			[751,,'grass',[10]],
+			[755,,'grass',[,20]]
+		]},
+		{group:'south',encounters:[
+			[60,,'grass',20],
+			[278,,'grass',30],
+			[283,,'grass',[,20]],
+			[751,,'grass',[20]]
+		]},
+		{group:['Totem\'s Den',,,,'Sala del dominante'],encounters:[
+			[72,,'surf',40],
+			[278,,'surf',20],
+			[456,,'surf',40],
+			[129,,'fish',79],
+			[130,,['sos_ally',129]],
+			[594,,'fish',1],
+			[746,,'fish',20],
+			[129,,'fish_special',50],
+			[130,,['fish_special','sos_ally',129]],
+			[594,,'fish_special',20],
+			[746,,'fish_special',30]
+		]}
+	]
+},{
+	name:['Route 6',,,'Percorso 6','Ruta 6'],encounters:[
+		[alternateForm(19,1),,'grass',[,10]],
+		[133,,'grass',5],
+		[174,,'grass',[10]],
+		[506,,'grass',30],
+		[731,,'grass',[15,25]],
+		[734,,'grass',[10]],
+		[736,,'grass',10],
+		[196,,['sos_ally',133],[5]],
+		[197,,['sos_ally',133],[,5]],
+		[39,,['sos_ally',174]],
+		[440,,['sos_ally',174]],
+		[574,,['grass','sunday','island_scan']],
+		{group:'north',encounters:[
+			[749,,'grass',20]
+		]},
+		{group:'south',encounters:[
+			[alternateForm(741,2),,'grass',20]
+		]}
+	]
+},{
+	name:['Route 7',,,'Percorso 7','Ruta 7'],encounters:[
+		[50,,'dust_cloud',100],
+		[72,,'surf',30],
+		[278,,'surf',20],
+		[456,,'surf',30],
+		[771,,'surf',20],
+		[120,,'fish',1],
+		[129,,'fish',79],
+		[746,,'fish',20],
+		[120,,'fish_special',20],
+		[129,,'fish_special',60],
+		[746,,'fish_special',20],
+		[121,,['sos_ally',120]],
+		[130,,['sos_ally',129]],
+		[363,,['surf','monday','island_scan']]
+	]
+},{
+	name:['Wela Volcano Park','Parc Volcanique','Wela-Vulkanpark','Parco Vulcano Wela','Área Volcánica Wela'],encounters:[
+		[104,,'grass',24],
+		[115,,['sos_ally',104]],
+		[115,,'grass',1],
+		[240,,'grass',15],
+		[126,,['sos_ally',240]],
+		[661,,'grass',30],
+		[757,,'grass',30],
+		[793,,'grass']
+	]
+},{
+	name:['Melemele Sea','Mer de Mele-Mele','Meer von Mele-Mele','Mare di Mele Mele','Mar de Melemele'],encounters:[
+		[72,,'surf',40],
+		[278,,'surf',20],
+		[456,,'surf',40],
+		[129,,'fish',78],
+		[130,,['sos_ally',129]],
+		[747,,['sos_ally',222]],
+		[222,,'fish',1],
+		[370,,'fish',1],
+		[746,,'fish',20],
+		[129,,'fish_special',20],
+		[222,,'fish_special',20],
+		[370,,'fish_special',40],
+		[746,,'fish_special',20]
+	]
+},{
+	name:['Kala\'e Bay','Baie de Kala\'e','Kala\'e-Bucht','Baia Kala\'e','Bahía Kalae'],encounters:[
+		[alternateForm(19,1),,'grass',[,30]],
+		[79,,'grass',20],
+		[80,,['sos_ally',79]],
+		[278,,'grass',40],
+		[371,,'grass',10],
+		[372,,['sos_ally',371]],
+		[734,,'grass',[30]],
+		[72,,'surf',40],
+		[278,,'surf',20],
+		[456,,'surf',40],
+		[90,,'fish',1],
+		[129,,'fish',79],
+		[130,,['sos_ally',129]],
+		[746,,'fish',20],
+		[90,,'fish_special',20],
+		[129,,'fish_special',50],
+		[746,,'fish_special',30],
+		[116,,['surf','wednesday','island_scan']]
+	]
+},{
+	name:['Route 8',,,'Percorso 8','Ruta 8'],encounters:[
+		[alternateForm(19,1),,'grass',[,30]],
+		[662,,'grass',15],
+		[732,,'grass',30],
+		[731,,['sos_ally',732]],
+		[734,,'grass',[30]],
+		[757,,'grass',20],
+		[759,,'grass',5],
+		[739,,'berry_pile',100],
+		[767,,'chase',100],
+		[72,,'surf',40],
+		[278,,'surf',20],
+		[456,,'surf',40],
+		[129,,'fish',79],
+		[170,,'fish',1],
+		[746,,'fish',20],
+		[129,,'fish_special',60],
+		[130,,['sos_ally',129]],
+		[170,,'fish_special',20],
+		[746,,'fish_special',20],
+		[404,,['grass','tuesday','island_scan']],
+		[408,,'revive_fossil'],
+		[410,,'revive_fossil'],
+		[564,,'revive_fossil'],
+		[566,,'revive_fossil']
+	]
+},{
+	name:['Lush Jungle','Jungle Sombrefeuille','Schattendschungel','Giungla Ombrosa','Jungla Umbría'],mossRock:true,encounters:[
+		[764,,'grass',5],
+		[765,M,'grass',5],
+		[732,M,['sos_ally',765]],
+		[766,S,'grass',5],
+		[732,S,['sos_ally',766]],
+		[704,,'sos_ally_weather_rain',10],
+		[351,,'sos_ally_weather_rain',1],
+		[351,,'sos_ally_weather_hail_sandstorm',10],
+		[753,,'rustling_tree',100],
+		[796,,'grass'],
+		[41,,'cave',70],
+		[50,,'cave',30],
+		[796,,'cave'],
+		{group:['Central area',,,,'Area central'],encounters:[
+			[10,,'grass',10],
+			[12,,['sos_ally',10]],
+			[11,,'grass',10],
+			[10,,['sos_ally',11]],
+			[12,,['sos_ally',11]],
+			[46,,'grass',[20]],
+			[438,,'grass',10],
+			[185,,['sos_ally',438]],
+			[440,,['sos_ally',438]],
+			[732,,'grass',20],
+			[753,,'grass',20],
+			[755,,'grass',[,20]]
+		]},
+		{group:['Northwest',,,,'Noroeste'],encounters:[
+			[46,,'grass',[10]],
+			[732,,'grass',20],
+			[753,,'grass',20],
+			[755,,'grass',[,10]],
+			[761,,'grass',40]
+		]},
+		{group:'north',encounters:[
+			[46,,'grass',[30]],
+			[127,,'grass',10],
+			[732,,'grass',20],
+			[753,,'grass',30],
+			[755,,'grass',[,30]]
+		]}
+	]
+},{
+	name:['Diglett\'s Tunnel','Tunnel Taupiqueur','Digda-Tunnel','Tunnel Diglett','Túnel Diglett'],encounters:[
+		[41,,'cave',70],
+		[50,,'cave',30],
+		[50,,'dust_cloud',100],
+		[793,,'cave']
+	]
+},{
+	name:['Route 9',,,'Percorso 9','Ruta 9'],encounters:[
+		[129,,'fish',15],
+		[130,,['sos_ally',129]],
+		[747,,['sos_ally',222]],
+		[222,,'fish',5],
+		[370,,'fish',70],
+		[746,,'fish',10]
+	]
+},{
+	name:['Konikoni City',,,,'Ciudad Konikoni'],encounters:[
+		[61,,['trade',41]]
+	]
+},{
+	name:['Memorial Hill','Colline Memento','Hügel des Gedenkens','Colle della Memoria','Colina del Recuerdo'],encounters:[
+		[41,,'grass',20],
+		[92,,'grass',50],
+		[708,,'grass',30],
+		[796,,'grass']
+	]
+},{
+	name:['Akala Outskirts','Côte Reculée d\'Akala','Akala-Küstenstreifen','Punta Akala','Afueras de Akala'],encounters:[
+		[alternateForm(20,1),,'grass',[,30]],
+		[278,,'grass',50],
+		[299,,'grass',15],
+		[735,,'grass',[30]],
+		[759,,'grass',5],
+		[129,,'fish',79],
+		[130,,['sos_ally',129]],
+		[170,,'fish',1],
+		[746,,'fish',20],
+		[129,,'fish_special',60],
+		[130,,['fish_special','sos_ally',129]],
+		[170,,'fish_special',20],
+		[746,,'fish_special',20],
+		[679,,['grass','wednesday','island_scan']]
+	]
+},{
+	name:['Ruins of Life','Ruines de l\'Éveil','Ruinen des Lebens','Tempio della Vita','Ruinas de la Vida'],encounters:[
+		[786,,'interact']
+	]
+},{
+	name:['Hano Beach','Plage Hano-Hano','Hanohano-Strand','Spiaggia Hanu Hanu','Playa de Hanohano'],encounters:[
+		[120,,'dust_cloud',80],
+		[769,,'dust_cloud',20],
+		[72,,'surf_special',100],
+		[72,,'surf',30],
+		[278,,'surf',20],
+		[456,,'surf',30],
+		[771,,'surf',20]
+	]
+},{
+	name:['Malie City','Malié','Malihe City','Malie','Ciudad Malíe'],encounters:[
+		[alternateForm(20,1),,'grass',[,20]],
+		[81,,'grass',20],
+		[alternateForm(88,1),,'grass',30],
+		[568,,'grass',30],
+		[569,,['sos_ally',568]],
+		[735,,'grass',[20]],
+		[440,,['trade',674]]
+	]
+},{
+	name:['Malie Garden','Parc de Malié','Malihe-Ziergarten','Giardino di Malie','Parque de Malíe'],encounters:[
+		[alternateForm(52,1),,'grass',20],
+		[54,,'grass',10],
+		[60,,'grass',20],
+		[166,,'grass',[20]],
+		[168,,'grass',[,20]],
+		[284,,'grass',[,20]],
+		[546,S,'grass',10],
+		[548,M,'grass',10],
+		[752,,'grass',[20]],
+		[61,,'sos_ally_weather_rain',10],
+		[62,,'sos_ally_weather_rain',1],
+		[186,,'sos_ally_weather_rain'],
+		[351,,'sos_ally_weather_hail_sandstorm',10],
+		[118,,'fish',60],
+		[119,,['sos_ally',118]],
+		[129,,'fish',40],
+		[130,,['sos_ally',129]],
+		[118,,'fish_special',50],
+		[129,,'fish_special',50],
+		[797,M,'grass'],
+		[798,S,'grass']
+	]
+},{
+	name:['Route 10',,,'Percorso 10','Ruta 10'],encounters:[
+		[alternateForm(20,1),,'grass',[,30]],
+		[22,,'grass',30],
+		[166,,'grass',[20]],
+		[168,,'grass',[,20]],
+		[227,,'grass',10],
+		[674,,'grass',10],
+		[675,,['sos_ally',674]],
+		[735,,'grass',[30]],
+		[22,,'rustling_tree',80],
+		[227,,'rustling_tree',20],
+		[739,,'berry_pile',100],
+		[397,,['grass','thursday','island_scan']]
+	]
+},{
+	name:['Mount Hokulani','Mont Hokulani','Hokulani-Berg','Picco Hokulani','Pico Hokulani'],encounters:[
+		[22,,'grass',[40,30]],
+		[132,,'grass',10],
+		[173,,'grass',[,10]],
+		[35,,['sos_ally',173]],
+		[113,,['sos_ally',173]],
+		[227,,'grass',10],
+		[374,,'grass',10],
+		[774,,'grass',30],
+		[610,,['grass','saturday','island_scan']]
+	]
+},{
+	name:['Route 11',,,'Percorso 11','Ruta 11'],encounters:[
+		[alternateForm(20,1),,'grass',[,20]],
+		[46,,'grass',[10]],
+		[166,,'grass',[20]],
+		[168,,'grass',[,20]],
+		[674,,'grass',20],
+		[675,,['sos_ally',674]],
+		[732,,'grass',20],
+		[735,,'grass',[20]],
+		[755,,'grass',[,10]],
+		[775,,'grass',10],
+		[288,,['grass','friday','island_scan']]
+	]
+},{
+	name:['Route 12',,,'Percorso 12','Ruta 12'],encounters:[
+		[alternateForm(74,1),,'grass',40],
+		[239,,'grass',10],
+		[324,,'grass',20],
+		[749,,'grass',30],
+		[125,,['sos_ally',239]],
+		[113,,['sos_ally',239]]
+	]
+},{
+	name:['Ula\'ula Beach','Côte Sauvage','Küste von Ula-Ula','Lido di Ula Ula','Playa Menor'],encounters:[
+		[739,,'berry_pile',100],
+		[72,,'surf',40],
+		[279,,'surf',20],
+		[456,,'surf',40],
+		[129,,'fish',79],
+		[746,,'fish',20],
+		[779,,'fish',1],
+		[129,,'fish_special',50],
+		[746,,'fish_special',30],
+		[779,,'fish_special',20],
+		[130,,['sos_ally',129]]
+	]
+},{
+	name:['Blush Mountain','Mont Ardent','Glühberg','Monte Tepore','Monte Rubor'],encounters:[
+		[alternateForm(74,1),,'grass',30],
+		[239,,'grass',10],
+		[125,,['sos_ally',239]],
+		[113,,['sos_ally',239]],
+		[324,S,'grass',10],
+		[324,M,'grass',20],
+		[737,,'grass',10],
+		[749,,'grass',20],
+		[776,S,'grass',10],
+		[777,,'grass',10],
+		[111,,['grass','sunday','island_scan']]
+	]
+},{
+	name:['Route 13',,,'Percorso 13','Ruta 13'],encounters:[
+		[129,,'fish',79],
+		[746,,'fish',20],
+		[779,,'fish',1],
+		[129,,'fish_special',50],
+		[746,,'fish_special',30],
+		[779,,'fish_special',20],
+		[130,,['sos_ally',129]]
+	]
+},{
+	name:['Tapu Village','Village Toko','Dorf der Kapu','Villaggio Tapu','Aldea Tapu'],encounters:[
+		[alternateForm(20,1),,'grass',[,30]],
+		[alternateForm(27,1),M,'grass',10],
+		[alternateForm(37,1),S,'grass',10],
+		[279,,'grass',30],
+		[359,,'grass',10],
+		[361,,'grass',20],
+		[735,,'grass',[30]],
+		[582,,'sos_ally_weather_hail',10],
+		[351,,'sos_ally_weather_hail',1],
+		[351,,'sos_ally_weather_rain_sandstorm',10],
+		[alternateForm(75,1),,['trade',93]],
+		[220,,['grass','monday','island_scan']]
+	]
+},{
+	name:['Route 15',,,'Percorso 15','Ruta 15'],encounters:[
+		[alternateForm(20,1),,'grass',[,30]],
+		[79,,'grass',20],
+		[279,,'grass',50],
+		[735,,'grass',[30]],
+		[72,,'surf',40],
+		[279,,'surf',20],
+		[456,,'surf',40],
+		[129,,'fish',79],
+		[746,,'fish',20],
+		[779,,'fish',1],
+		[129,,'fish_special',50],
+		[746,,'fish_special',30],
+		[779,,'fish_special',20],
+		[130,,['sos_ally',129]]
+	]
+},{
+	name:['Aether House','Foyer Æther','Æther-Haus','Residenza Æther','Casa Æther'],encounters:[
+		[137,,['gift','postgame']]
+	]
+},{
+	name:['Route 14',,,'Percorso 14','Ruta 14'],encounters:[
+		[72,,'surf',40],
+		[279,,'surf',20],
+		[456,,'surf',40],
+		[129,,'fish',79],
+		[746,,'fish',20],
+		[779,,'fish',1],
+		[129,,'fish_special',50],
+		[746,,'fish_special',30],
+		[779,,'fish_special',20],
+		[130,,['sos_ally',129]]
+	]
+},{
+	name:['Thrifty Megamart (Abandoned Site)','Site désaffecté Bradley Prix','Verlassener Schnäppchenparadies','Supermarket Affaroni (Edificio Abbandonato)','Súper Ultraganga abandonado'],encounters:[
+		[42,,'walk',40],
+		[93,,'walk',40],
+		[94,,['sos_ally',93]],
+		[707,,'walk',15],
+		[778,,'walk',5]
+	]
+},{
+	name:['Haina Desert','Désert Haina','Haina-Wüste','Deserto Haina','Desierto de Haina'],encounters:[
+		[alternateForm(51,1),,'deep_sand',30],
+		[551,,'deep_sand',70],
+		[alternateForm(51,1),,'dust_cloud',20],
+		[328,,'dust_cloud',10],
+		[551,,'dust_cloud',70],
+		[444,,'sos_ally_weather_sandstorm',10],
+		[351,,'sos_ally_weather_sandstorm',1],
+		[351,,'sos_ally_weather_rain_hail',10],
+		[797,M,'deep_sand']
+	]
+},{
+	name:['Route 16',,,'Percorso 16','Ruta 16'],encounters:[
+		[alternateForm(20,1),,'grass',[,30]],
+		[79,,'grass',20],
+		[279,,'grass',50],
+		[735,,'grass',[30]],
+		[739,,'berry_pile',100],
+		[718,,'gift'],
+		[578,,['grass','tuesday','island_scan']]
+	]
+},{
+	name:['Ula\'ula Meadow','Jardin d\'Ula-Ula','Ula-Ula-Blumenmeer','Prato Ula Ula','Jardines de Ula-Ula'],encounters:[
+		[166,,'flowers_red',[20]],
+		[168,,'flowers_red',[,20]],
+		[546,S,'flowers_red',30],
+		[548,M,'flowers_red',30],
+		[741,,'flowers_red',20],
+		[743,,'flowers_red',30],
+		[166,,'grass_tall',[20]],
+		[168,,'grass_tall',[,20]],
+		[546,S,'grass_tall',30],
+		[548,M,'grass_tall',30],
+		[741,,'grass_tall',20],
+		[743,,'grass_tall',30],
+		[315,,['grass_tall','wednesday','island_scan']],
+		[315,,['flowers_red','wednesday','island_scan']]
+	]
+},{
+	name:['Route 17',,,'Percorso 17','Ruta 17'],encounters:[
+		[alternateForm(20,1),,'grass',[,30]],
+		[22,,'grass',30],
+		[166,,'grass',[20]],
+		[168,,'grass',[,20]],
+		[674,,'grass',20],
+		[735,,'grass',[30]],
+		[675,,['sos_ally',674]],
+		[704,,'sos_ally_weather_rain',10],
+		[351,,'sos_ally_weather_rain',1],
+		[351,,'sos_ally_weather_hail_sandstorm',10],
+		[739,,'berry_pile',100],
+		[798,S,'grass'],
+		{group:['Brown grass',,,,'Hierba marrón'],encounters:[
+			[alternateForm(75,1),,'grass',20],
+			[227,,'grass',10],
+			[674,,'grass',10]
+		]}
+	]
+},{
+	name:['Aether Paradise','Paradis Æther','Æther-Paradies','Æther Paradise','Paraíso Æther'],encounters:[
+		[772,,['gift','postgame']]
+	]
+},{
+	name:['Seafolk Village','Village Flottant','Dorf des Seevolkes','Villaggio del Mare','Aldea Marina'],encounters:[
+		[129,,'fish',79],
+		[320,,'fish',20],
+		[781,,'fish',1],
+		[129,,'fish_special',50],
+		[320,,'fish_special',40],
+		[781,,'fish_special',10],
+		[130,,['sos_ally',129]],
+		[321,,['sos_ally',320]],
+		[142,,'gift'],
+		[762,,['trade',210]]
+	]
+},{
+	name:['Poni Wilds','Prairie de Poni','Wildnis von Poni','Piana di Poni','Prado de Poni'],encounters:[
+		[alternateForm(20,1),,'grass',[,30]],
+		[102,,'grass',10],
+		[210,,'grass',20],
+		[279,,'grass',30],
+		[alternateForm(423,1),,'grass',10],
+		[735,,'grass',[30]],
+		[739,,'berry_pile',100],
+		[767,,'chase',100],
+		[320,,'surf_special',90],
+		[321,,'surf_special',10],
+		[73,,'surf',30],
+		[131,,'surf',5],
+		[279,,'surf',20],
+		[alternateForm(423,1),,'surf',20],
+		[457,,'surf',25],
+		[129,,'fish',79],
+		[320,,'fish',20],
+		[369,,'fish',1],
+		[129,,'fish_special',50],
+		[320,,'fish_special',40],
+		[369,,'fish_special',10],
+		[457,,['sos_ally',73]],
+		[130,,['sos_ally',129]],
+		[321,,['sos_ally',320]],
+		[503,,['grass','friday','island_scan']]
+	]
+},{
+	name:['Ancient Poni Path','Vieille Route','Alter Pfad von Poni','Via Antica di Poni','Antiguo Paso de Poni'],encounters:[
+		[alternateForm(20,1),,'grass',[,30]],
+		[102,,'grass',10],
+		[210,,'grass',20],
+		[279,,'grass',30],
+		[alternateForm(423,1),,'grass',10],
+		[735,,'grass',[30]],
+		[500,,['grass','saturday','island_scan']]
+	]
+},{
+	name:['Poni Breaker Coast','Récif de Poni','Felsenküste von Poni','Scogliera di Poni','Arrecife de Poni'],encounters:[
+		[767,,'chase',100],
+		[129,,'fish',79],
+		[130,,['sos_ally',129]],
+		[321,,['sos_ally',320]],
+		[319,,'fish',1],
+		[320,,'fish',20],
+		[129,,'fish_special',50],
+		[319,,'fish_special',10],
+		[320,,'fish_special',40]
+	]
+},{
+	name:['Ruins of Hope','Ruines de l\'Au-Delà','Ruinen der Heimkehr','Tempio del Passaggio','Ruinas del Tránsito'],encounters:[
+		[788,,'interact']
+	]
+},{
+	name:['Exeggutor Island','Île Noadkoko','Kokowei-Eiland','Isola Exeggutor','Isla Exeggutor'],encounters:[
+		[102,,'grass',40],
+		[alternateForm(103,1),,'grass',20],
+		[279,,'grass',30],
+		[alternateForm(423,1),,'grass',10],
+		[705,,'sos_ally_weather_rain',10],
+		[351,,'sos_ally_weather_rain',1],
+		[351,,'sos_ally_weather_hail_sandstorm',10],
+		[alternateForm(103,1),,'interact'],
+		[497,,['grass','thursday','island_scan']]
+	]
+},{
+	name:['Vast Poni Canyon','Grand Canyon de Poni','Canyon von Poni','Canyon di Poni','Cañón de Poni'],magneticField:true,encounters:[
+		[67,,'grass',30],
+		[198,,'grass',10],
+		[227,,'grass',10],
+		[525,,'grass',10],
+		[703,,'grass',15],
+		[745,,'grass',[20]],
+		[alternateForm(745,1),,'grass',[,20]],
+		[782,,'grass',5],
+		[784,,['sos_ally',782]],
+		[783,,['sos_ally',782]],
+		[42,,'cave',30],
+		[alternateForm(51,1),,'cave',20],
+		[525,,'cave',30],
+		[703,,'cave',20],
+		[302,,['sos_ally',703]],
+		[alternateForm(51,1),,'dust_cloud',100],
+		[42,,'surf',80],
+		[55,,'surf',20],
+		[129,,'fish',59],
+		[147,,'fish',1],
+		[339,,'fish',40],
+		[129,,'fish_special',50],
+		[147,,'fish_special',10],
+		[339,,'fish_special',40],
+		[130,,['sos_ally',129]],
+		[148,,['sos_ally',147]],
+		[340,,['sos_ally',339]]
+	]
+},{
+	name:['Lake of the Sunne','Lac du Halo Solaire','Sonnenkreis-See','Lago Solare','Lago Corosol'],encounters:[
+		[789,S,'gift']
+	]
+},{
+	name:['Lake of the Moone','Lac du Halo Lunaire','Mondscheiben-See','Lago Lunare','Lago Coroluna'],encounters:[
+		[789,M,'gift']
+	]
+},{
+	name:['Poni Grove','Forêt de Poni','Wald von Poni','Foresta di Poni','Bosque de Poni'],encounters:[
+		[alternateForm(20,1),,'grass',[,30]],
+		[127,,'grass',10],
+		[210,,'grass',20],
+		[447,,'grass',10],
+		[448,,['sos_ally',447]],
+		[113,,['sos_ally',447]],
+		[732,,'grass',30],
+		[735,,'grass',[30]],
+		[604,,['grass','sunday','island_scan']]
+	]
+},{
+	name:['Poni Plains','Plaine de Poni','Ebene von Poni','Prateria di Poni','Llanura de Poni'],encounters:[
+		[128,,'grass',10],
+		[241,,'grass',10],
+		[546,S,'grass',20],
+		[548,M,'grass',20],
+		[241,,['sos_ally',128]],
+		[128,,['sos_ally',241]],
+		[alternateForm(20,1),,'grass_rustling',[,70]],
+		[297,,'grass_rustling',30],
+		[735,,'grass_rustling',[70]],
+		[22,,'from_sky',70],
+		[628,S,'from_sky',30],
+		[630,M,'from_sky',30],
+		[57,,'rustling_tree',80],
+		[587,,'rustling_tree',20],
+		[123,,'bush',30],
+		[546,S,'bush',70],
+		[548,M,'bush',70],
+		[739,,'berry_pile',100],
+		[534,,['grass','monday','island_scan']],
+		{group:['Center',,,,'Centro'],encounters:[
+			[alternateForm(20,1),,'grass',[,30]],
+			[732,,'grass',30],
+			[735,,'grass',[30]]
+		]},
+		{group:['Around central tree',,,,'Alrededor de árbol central'],encounters:[
+			[alternateForm(20,1),,'grass',[,30]],
+			[97,,'grass',20],
+			[732,,'grass',10],
+			[735,,'grass',[30]]
+		]},
+		{group:['By the mountains',,,,'Cerca de la montaña'],encounters:[
+			[alternateForm(20,1),,'grass',[,10]],
+			[22,,'grass',20],
+			[732,,'grass',10],
+			[735,,'grass',[10]],
+			[750,,'grass',20]
+		]},
+		{group:'east',encounters:[
+			[alternateForm(20,1),,'grass',[,30]],
+			[279,,'grass',20],
+			[732,,'grass',10],
+			[735,,'grass',[30]]
+		]}
+	]
+},{
+	name:['Poni Meadow','Jardin de Poni','Poni-Blumenmeer','Prato Poni','Jardines de Poni'],encounters:[
+		[546,S,'grass',50],
+		[548,M,'grass',50],
+		[alternateForm(741,3),,'grass',20],
+		[743,,'grass',30],
+		[129,,'fish',59],
+		[130,,['sos_ally',129]],
+		[148,,['sos_ally',147]],
+		[340,,['sos_ally',339]],
+		[147,,'fish',1],
+		[339,,'fish',40],
+		[129,,'fish_special',50],
+		[147,,'fish_special',10],
+		[339,,'fish_special',40],
+		[542,,['grass','wednesday','island_scan']]
+	]
+},{
+	name:['Resolution Cave','Caverne Coda','Finalhöhle','Caverna Climax','Gruta Desenlace'],encounters:[
+		[42,,'cave',70],
+		[alternateForm(51,1),,'cave',30],
+		[169,,['sos_ally',42]],
+		[799,,'cave']
+	]
+},{
+	name:['Poni Coast','Côte de Poni','Küste von Poni','Costa di Poni','Costa de Poni'],encounters:[
+		[alternateForm(51,1),,'dust_cloud',100]
+	]
+},{
+	name:['Poni Gauntlet','Chemin du Défi','Beschwerlicher Pfad','Erta di Poni','Pendiente de Poni'],encounters:[
+		[alternateForm(20,1),,'grass',[,30]],
+		[55,,'grass',15],
+		[210,,'grass',20],
+		[279,,'grass',30],
+		[735,,'grass',[30]],
+		[760,,'grass',5],
+		[129,,'fish',59],
+		[130,,['sos_ally',129]],
+		[148,,['sos_ally',147]],
+		[149,,['sos_ally',147]],
+		[340,,['sos_ally',339]],
+		[147,,'fish',1],
+		[339,,'fish',40],
+		[129,,'fish_special',50],
+		[147,,'fish_special',10],
+		[339,,'fish_special',40],
+		[663,,['trade',760]],
+		[468,,['grass','tuesday','island_scan']]
+	]
+},{
+	name:['Mount Lanakila','Mont Lanakila',,'Monte Lanakila','Monte Lanakila'],iceRock:true,encounters:[
+		{group:'exterior',encounters:[
+			[alternateForm(27,1),M,'grass',30],
+			[alternateForm(37,1),S,'grass',30],
+			[215,,'grass',20],
+			[359,,'grass',20],
+			[361,,'grass',30],
+			[362,,['sos_ally',361]],
+			[583,,'sos_ally_weather_hail',10],
+			[351,,'sos_ally_weather_hail',1],
+			[351,,'sos_ally_weather_rain_sandstorm',10]
+		]},
+		{group:'interior',encounters:[
+			[42,,'cave',30],
+			[215,,'cave',20],
+			[359,S,'cave',20],
+			[359,M,'cave',10],
+			[361,,'cave',30],
+			[362,,['sos_ally',361]],
+			[780,M,'cave',10]
+		]}
+	]
+},{
+	name:['Altar of the Sunne','Autel du Soleil','Sonnenkreis-Podium','Altare Solare','Altar del Sol'],encounters:[
+		[791,S,'interact']
+	]
+},{
+	name:['Altar of the Moone','Autel de la Lune','Mondscheiben-Podium','Altare Lunare','Altar de la Luna'],encounters:[
+		[792,M,'interact']
+	]
+},{
+	name:['Ruins of Abundance','Ruines de l\'Essor','Ruinen des Gedeihens','Tempio del Raccolto','Ruinas de la Cosecha'],encounters:[
+		[787,,'interact']
+	]
+},{
+	name:['Ruins of Conflict','Ruines du Conflit','Ruinen des Krieges','Tempio del Conflitto','Ruinas de la Guerra'],encounters:[
+		[785,,'interact']
+	]
+},{
+	name:['Special Demo Version',,,,'Demo Especial'],encounters:[
+		[alternateForm(658,1),,'gift']
+	]
+},{
+	name:['Poké Pelago','Poké Loisir','Pokémon-Resort','Poké Resort','Poké Resort'],encounters:[
+		[21,,'gift',4.4],
+		[41,,'gift',4.4],
+		[60,,'gift',4.4],
+		[64,,'gift',2.2],
+		[81,,'gift',4.4],
+		[90,,'gift',4.4],
+		[92,,'gift',4.4],
+		[120,,'gift',4.4],
+		[123,,'gift',6.6],
+		[127,,'gift',4.4],
+		[131,,'gift',6.6],
+		[198,,'gift',2.2],
+		[227,,'gift',4.4],
+		[278,,'gift',4.4],
+		[375,,'gift',2.2],
+		[426,,'gift',2.2],
+		[429,,'gift',2.2],
+		[587,,'gift',6.6],
+		[627,S,'gift',2.2],
+		[629,M,'gift',2.2],
+		[661,,'gift',4.4],
+		[703,,'gift',3.3],
+		[707,,'gift',4.4],
+		[709,,'gift',2.2],
+		[731,,'gift',4.4],
+		[771,,'gift',4.4]
+	]
+}
+];

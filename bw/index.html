@@ -1,0 +1,150 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Minidex BW</title>
+
+	<meta charset="UTF-8"/>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+	<meta name="description" content="This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!"/>
+	<meta name="keywords" content="pokedex,online,pokemon,app,html5,webapp,pwa,responsive,minidex,sword,shield,espada,escudo,x,y,xy,oras,ruby,omega,rubi,alpha,alfa,zafiro,sapphire,ultra,sol,luna,sun,moon,lets go"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+
+	<link rel="shortcut icon" href="../resources/favicon.png" type="image/png" sizes="16x16"/>
+	<link rel="shortcut icon" href="../resources/favicon_gen5bw.png" type="image/png" sizes="192x192"/>
+	<!-- iOS icons -->
+	<link rel="apple-touch-icon" sizes="16x16" href="../resources/favicon.png" />
+	<link rel="apple-touch-icon" href="../resources/favicon_gen5bw.png" />
+
+	<!-- MANIFEST for Chrome-->	
+	<meta id="mobile-header-chrome" name="theme-color" content="#202b37"/><!-- <M46: specify Android bar color -->
+	<meta id="mobile-header-safari" name="apple-mobile-web-app-status-bar-style" content="#202b37"/><!-- Safari -->
+	<meta name="mobile-web-app-capable" content="yes"/>
+	<link rel="manifest" href="manifest.json"/> <!-- M39 -->
+
+
+	<link type="text/css" rel="stylesheet" href="../minidex.css" media="all"/>
+
+	<!-- Minidex core -->
+	<script type="text/javascript" src="../minidex.js"></script>
+	<script type="text/javascript" src="../resources/locale_en.js"></script>
+	<script type="text/javascript" src="../resources/locale_es.js"></script>
+
+	<!-- Specific game databases -->
+	<script type="text/javascript" src="../resources/data/game_gen5_bw.js"></script>
+	<script type="text/javascript" src="../resources/data/pokemon_gen5.js"></script>
+	<script type="text/javascript" src="../resources/data/encounters_gen5_bw.js"></script>
+	<script type="text/javascript" src="../resources/data/more_info_gen5.js"></script>
+	<!-- learnset database is loaded on background after booting for speeding up purposes -->
+
+	<!-- Service worker for -->
+	<script type="text/javascript"><!--
+		const FORCE_HTTPS=true;
+		if(FORCE_HTTPS && location.protocol==='http:')
+			location.href=window.location.href.replace('http:','https:');
+		else if(location.protocol==='https:' && 'serviceWorker' in navigator)
+			navigator.serviceWorker.register('/minidex/bw/_cache_service_worker.js', {scope: '/minidex/bw/'});
+	--></script>
+</head>
+
+<body>
+	<div id="home">
+		<header><div class="text-center"><h1>Minidex</h1></div></header>
+
+		<div class="text-right">
+			<select id="select-language" onchange="setLanguage(this.selectedIndex);MinidexSettings.save();">
+				<option value="0">English</option>
+				<option value="1">Français*</option>
+				<option value="2">Deutsch*</option>
+				<option value="3">Italiano*</option>
+				<option value="4">Español</option>
+				<option value="5">日本語*</option>
+			</select>
+		</div>
+
+		<nav>
+			<div id="dex-status" class="text-center">
+				<div id="dex-navigator"><ul></ul></div>
+				<div id="progress-bar"><div></div></div>
+			</div>
+
+			<div id="dex-search" class="text-center">
+				<input type="text" id="search" class="sprite" onfocus="this.select()" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+			</div>
+		</nav>
+		
+		<div id="donate-warning">
+			<a href="https://www.paypal.me/marcrobledo/5" target="_blank" rel="nofollow" onclick="hideDonateWarning()"><i class="sprite heart"></i><span> Donate</span></a><span class="close-donate" title="Dismiss" onclick="hideDonateWarning()"><i class="sprite close"></i></span>
+		</div>
+
+
+		<br style="clear:both; display:block" />
+
+		<div id="dex-results"><div class="text-center">Now loading...</div></div>
+
+		<br style="clear:both;display:block" />
+
+
+
+
+		<footer>
+			Developed and designed by <a href="https://www.marcrobledo.com">Marc Robledo</a><br/>
+			<a href="../" target="_blank">More games</a> | <a href="https://github.com/marcrobledo/minidex/" target="_blank">View on GitHub</a><br/><br/>
+			<small>
+				This is a fan created site, no copyright or trademark infringement is intended.<br/>
+				Pokémon and all respective names are trademark &amp; &copy; of Nintendo/Creatures Inc./GAME FREAK inc. TM 1996-2020
+			</small>
+		</footer>
+	</div>
+
+
+
+
+	<div id="pokemon" class="screen">
+		<div class="screen-title">
+			<i class="back-button sprite back clickable" onclick="forceGoToHome()"></i>
+			<i class="sprite pokeball"></i><span id="pokemon-title"></span>
+		</div>
+		<!-- INFO -->
+		<div id="block-top" class="block block-top">
+			<div id="dex-img-container">
+				<div id="dex-img"></div>
+			</div>
+			<div class="text-center">
+				<span id="dex-types"></span>
+			</div>
+			<div id="tabs">
+				<span data-translate="collection" onclick="showCollection()">Collection</span>
+				<span data-translate="competitive" onclick="showCompetitive()">Competitive</span>
+			</div>
+		</div>
+
+		<!-- COLLECTION -->
+		<div id="tab-collection">
+			<div id="block-forms" class="block block-blue"><h2 data-translate="forms">Forms</h2><div id="forms" class="text-center"></div></div>
+			<div id="block-location" class="block block-blue"><h2 data-translate="location">Location</h2><div id="table-encounters-container"><table id="table-encounters" class="table-encounters"></table></div></div>
+			<div id="block-evolution" class="block block-blue"><h2 data-translate="evoline">Evolution line</h2><div id="evoline"></div></div>
+			<div id="block-moreinfo" class="block block-green"><h2 data-translate="more_info">More information</h2><table id="extra-links"></table></div>
+		</div>
+
+		<!-- COMPETITIVE -->
+		<div id="tab-competitive">
+			<div id="block-abilities" class="block block-blue"><h2 data-translate="abilities">Abilities</h2><table><tr id="abilities"></tr></table></div>
+			<div id="block-damages" class="block block-blue"><h2 data-translate="damage_taken">Damage taken</h2><table id="dex-damages"></table></div>
+			<div id="block-learnset"></div>
+		</div>
+	</div>
+
+
+
+
+	<div id="location" class="screen">
+		<div class="screen-title">
+			<i class="back-button sprite back clickable" onclick="forceGoToHome()"></i>
+			<i id="location-icon" class="sprite location"></i><span id="location-title"></span>
+		</div>
+		<div id="location-encounters"></div>
+	</div>
+
+</body>
+</html>

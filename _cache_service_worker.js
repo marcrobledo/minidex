@@ -30,30 +30,15 @@ caches.keys().then(function(cacheNames){
 
 
 var PRECACHE_ID='minidex';
-var PRECACHE_VERSION='v12c';
+var PRECACHE_VERSION='v13';
 var PRECACHE_URLS=[
 '/minidex/index.html','/minidex/',
-'/minidex/favicon.png',
-'/minidex/favicon192.png',
-'/minidex/manifest.json',
 '/minidex/minidex.css',
 '/minidex/minidex.js',
-'/minidex/resources/lato.woff2',
-'/minidex/resources/sprites.png',
-'/minidex/resources/weathers_swsh.png',
-'/minidex/resources/icons.png',
-'/minidex/resources/icons_swsh.png',
-'/minidex/resources/bg.png',
-'/minidex/resources/bghome.png',
-'/minidex/resources/qr_magearna.png',
-'/minidex/resources/qr_pikachu_cap.png',
-'/minidex/resources/swsh_wild_area_map.png',
-'/minidex/resources/swsh_wild_area_map_es.png',
-'/minidex/resources/data/database.min.js',
-'/minidex/resources/data/database_learnsets.min.js',
-'/minidex/resources/data/locale_en.js',
-'/minidex/resources/data/locale_es.js',
-'/minidex/resources/data/more_info.js'
+'/minidex/resources/favicon.png',
+'/minidex/resources/favicon192.png',
+'/minidex/resources/header_common.png',
+'/minidex/resources/header_gen1.png'
 ];
 
 

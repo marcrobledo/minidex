@@ -1,27 +1,32 @@
-/* Minidex v20190311 - Marc Robledo 2013-2019 - http://www.marcrobledo.com/license */
+/* Minidex v20200703 - Marc Robledo 2013-2020 - http://www.marcrobledo.com/license */
 
-/* service worker */
-const FORCE_HTTPS=true;
-if(FORCE_HTTPS && location.protocol==='http:')
-	location.href=window.location.href.replace('http:','https:');
-else if(location.protocol==='https:' && 'serviceWorker' in navigator)
-	navigator.serviceWorker.register('/minidex/_cache_service_worker.js', {scope: '/minidex/'});
+/*
+	to-do:
+		additional translations (FR, DE, IT, JP)
+		pokemon shadow headers for every generation
+		add pokemon base stats in learnsets.js? --> allow search bar to show uber pokemon?
+		need to clean, scope and comment code (code is an unreadable mess, I can do it much better!)
+*/
 
 
-const IS_MOBILE=/android|blackberry|iphone|ip(a|o)d|opera m(ob|in)i|iemobile|wpdekstop|kindle|mobile|pocket|psp/i.test(navigator.userAgent||navigator.vendor||window.opera);
+
+const IS_MOBILE=/android|blackberry|iphone|ip(a|o)d|opera m(ob|in)i|iemobile|wpdesktop|kindle|mobile|pocket|psp/i.test(navigator.userAgent||navigator.vendor||window.opera);
 
 /* BitArray.js */
-const BIT_ARRAY_SIZE=32;function BitArray(t){t%BIT_ARRAY_SIZE==0?(this._array=new Array(parseInt(t/BIT_ARRAY_SIZE)),this.length=t):(this._array=new Array(parseInt(t/BIT_ARRAY_SIZE)+1),this.length=this._array.length*BIT_ARRAY_SIZE),this.reset()}BitArray.prototype._getBitMask=function(t){return 1<<BIT_ARRAY_SIZE-t%BIT_ARRAY_SIZE-1},BitArray.prototype.reset=function(t){for(var r=0;r<this._array.length;r++)this._array[r]=0},BitArray.prototype.get=function(t){return!!(this._array[parseInt(t/BIT_ARRAY_SIZE)]&this._getBitMask(t))},BitArray.prototype.set=function(t){t<this.length&&(this._array[parseInt(t/BIT_ARRAY_SIZE)]|=this._getBitMask(t))},BitArray.prototype.unset=function(t){t<this.length&&(this._array[parseInt(t/BIT_ARRAY_SIZE)]&=~this._getBitMask(t))},BitArray.prototype.toggle=function(t){this.get(t)?this.unset(t):this.set(t)},BitArray.prototype.import=function(t){this.reset();for(var r=0;r<this._array.length&&r<t.length;r++)this._array[r]=t[r]>>>0};
+const BIT_ARRAY_SIZE=32;function BitArray(t){this.realLength=t;t%BIT_ARRAY_SIZE==0?(this._array=new Array(parseInt(t/BIT_ARRAY_SIZE)),this.length=t):(this._array=new Array(parseInt(t/BIT_ARRAY_SIZE)+1),this.length=this._array.length*BIT_ARRAY_SIZE),this.reset()}BitArray.prototype._getBitMask=function(t){return 1<<BIT_ARRAY_SIZE-t%BIT_ARRAY_SIZE-1},BitArray.prototype.reset=function(t){for(var r=0;r<this._array.length;r++)this._array[r]=0},BitArray.prototype.get=function(t){return!!(this._array[parseInt(t/BIT_ARRAY_SIZE)]&this._getBitMask(t))},BitArray.prototype.set=function(t){t<this.length&&(this._array[parseInt(t/BIT_ARRAY_SIZE)]|=this._getBitMask(t))},BitArray.prototype.unset=function(t){t<this.length&&(this._array[parseInt(t/BIT_ARRAY_SIZE)]&=~this._getBitMask(t))},BitArray.prototype.count=function(o,t){o=o||0;t=t||this.realLength;var c=0;for(var i=0;i<t;i++)c+=this.get(o+i);return c},BitArray.prototype.toggle=function(t){this.get(t)?this.unset(t):this.set(t)},BitArray.prototype.import=function(t){this.reset();for(var r=0;r<this._array.length&&r<t.length;r++)this._array[r]=t[r]>>>0};
 
-/* add String.clean to prototype */
-MarcStringCleaner=function(){var a=[/[\xc0\xc1\xc2\xc4\xe0\xe1\xe2\xe4]/g,"a",/[\xc8\xc9\xca\xcb\xe8\xe9\xea\xeb]/g,"e",/[\xcc\xcd\xce\xcf\xec\xed\xee\xef]/g,"i",/[\xd2\xd3\xd4\xd6\xf2\xf3\xf4\xf6]/g,"o",/[\xd9\xda\xdb\xdc\xf9\xfa\xfb\xfc]/g,"u",/[\xd1\xf1]/g,"n",/[\xc7\xe7]/g,"c",/[\xc6\xe6]/g,"ae",/\x26/g,"and",/\u20ac/g,"euro",/[^\w- ]/g,"",/( |-)/g,"_",/_+/g,"_",/^_|_$/g,""];String.prototype.clean||(String.prototype.clean=function(){for(var b=this.toLowerCase(),c=0;c<a.length;c+=2)b=b.replace(a[c],a[c+1]);return b})}();
+/* String.slug */
+(function(){var a=[/[\xc0\xc1\xc2\xc4\xe0\xe1\xe2\xe4]/g,"a",/[\xc8\xc9\xca\xcb\xe8\xe9\xea\xeb]/g,"e",/[\xcc\xcd\xce\xcf\xec\xed\xee\xef]/g,"i",/[\xd2\xd3\xd4\xd6\xf2\xf3\xf4\xf6]/g,"o",/[\xd9\xda\xdb\xdc\xf9\xfa\xfb\xfc]/g,"u",/[\xd1\xf1]/g,"n",/[\xc7\xe7]/g,"c",/[\xc6\xe6]/g,"ae",/\x26/g,"and",/\u20ac/g,"euro",/[^\w\- ]/g,"",/( |_)/g,"-",/-+/g,"-",/^-|-$/g,""];String.prototype.slug||(String.prototype.slug=function(){for(var b=this.toLowerCase().replace(/&.*?;/g,''),c=0;c<a.length;c+=2)b=b.replace(a[c],a[c+1]);return b})}());
 
 
 function el(e){return document.getElementById(e)}
 function show(e){el(e).style.display=(/sprite/.test(el(e).className))?'inline-block':'block'}
 function hide(e){el(e).style.display='none'}
+function show2(e){el(e).style.visibility='visible'}
+function hide2(e){el(e).style.visibility='hidden'}
 function addEvent(e,v,f){e.addEventListener(v,f,false)}
 function empty(e){var e2=(typeof e==='string')?e2=el(e):e2=e;while(e2.firstChild)e2.removeChild(e2.firstChild)}
+function emptyBlock(e){var e2=(typeof e==='string')?e2=el(e):e2=e;while(e2.children.length>1)e2.removeChild(e2.lastChild)}
 function createElement(t,ps){var e=document.createElement(t);for(var p in ps)if(ps.hasOwnProperty(p))if(p==='html')e.innerHTML=ps[p];else if(p==='class')e.className=ps[p];else e[p]=ps[p];return e}
 function getPokeProp(pk,f,p){if(f && POKEMON[pk][5][f] && POKEMON[pk][5][f][p])return POKEMON[pk][5][f][p];else return POKEMON[pk][p]}
 function localize(a){
@@ -33,15 +38,14 @@ function localize(a){
 }
 
 
-
 function stopPropagation(e){if(typeof e.stopPropagation!=='undefined')e.stopPropagation();else e.cancelBubble=true}
 function preventDefault(e){if(e.preventDefault)e.preventDefault();else e.returnValue=false}
 
 
 
 const ALT_FORM_BITS=10;
-const ALT_FORM_MASK=~(0x1f << ALT_FORM_BITS);
 function alternateForm(id,form){return id+(form<<ALT_FORM_BITS)}
+const ALT_FORM_MASK=~(0x1f << ALT_FORM_BITS);
 function getPokemonId(mergedId){return mergedId & ALT_FORM_MASK}
 function getAlternateForm(mergedId){return mergedId>>ALT_FORM_BITS}
 
@@ -50,30 +54,7 @@ function getAlternateForm(mergedId){return mergedId>>ALT_FORM_BITS}
 
 
 function getPokeName(nationalId){return POKEMON_NAMES[nationalId] || POKEMON[nationalId][0]}
-function getCurrentDexNumberInt(nationalId, forceNational){
-	if(nationalMode || forceNational){
-		return nationalId
-	}else{
-		var index=getRegionalIndex(nationalId);
-		if(index===-1 || index>=currentGame.regionalDex[2]){
-			return -1;
-		}else if(currentGame.id==='xy'){
-			if(index<150){
-				return index+1;
-			}else if(index<303){
-				return index-149;
-			}else if(index<454){
-				return index-302;
-			}else{
-				return nationalId; /* return something */
-			}
-		}else if(currentGame.generation===5){
-			return index;
-		}else{
-			return index+1;
-		}
-	}
-}
+
 function formatDexNumber(number){
 	if(number<10)
 		return '00'+number;
@@ -82,107 +63,104 @@ function formatDexNumber(number){
 	else
 		return number.toString();
 }
-function getCurrentDexNumber(nationalId, forceNational){
-	var dexIndex=forceNational?nationalId:getCurrentDexNumberInt(nationalId);
+function getPokemonDexIndex(nationalId, regionalDexIndex){
+	if(!nationalMode && regionalDexIndex){
+		var index=currentDex.indexOf(nationalId, dexRegionalNumerationIndexes[regionalDexIndex]);
+		if(index===-1)
+			return getPokemonDexIndex(nationalId, regionalDexIndex-1);
 
-	if(dexIndex===-1)
-		return '---';
-	else
-		return formatDexNumber(dexIndex);
+		return index;
+	}
+	return currentDex.indexOf(nationalId)
 }
-
-
-function getCurrentDexIndex(nationalId){
+function getPokemonDexIndexRegional(nationalId){
+	return dexRegional.indexOf(nationalId);
+}
+function getCurrentDexNumber(nationalId, regionalDexIndex){
 	if(nationalMode){
-		return nationalId-1;
+		return formatDexNumber(nationalId);
 	}else{
-		return getRegionalIndex(nationalId);
-	}
-}
-function getRegionalIndex(nationalId){
-	return currentGame.regionalDex[1].indexOf(nationalId);
-}
+		if(typeof regionalDexIndex==='undefined')
+			regionalDexIndex=1;
+		
+		if(regionalDexIndex===0 && GENERATION===5)
+			return formatDexNumber(REGIONAL_DEXES[regionalDexIndex][1].indexOf(nationalId));
+		else if(regionalDexIndex===0 || (GAME_ID==='xy' && regionalDexIndex<3))
+			return formatDexNumber(REGIONAL_DEXES[regionalDexIndex][1].indexOf(nationalId)+1);
+		else if(GAME_ID==='swsh' && regionalDexIndex===1)
+			return 'A'+formatDexNumber(REGIONAL_DEXES[regionalDexIndex][1].indexOf(nationalId)+1);
+		/*else if(GAME_ID==='swsh' && regionalDexIndex===2)
+			return 'C'+formatDexNumber(REGIONAL_DEXES[regionalDexIndex][1].indexOf(nationalId)+1);*/
 
-
-
-
-function getGamesAbbr(game){
-	var abbr='';
-	for(var i=0; i<game.games.length; i++)
-		abbr+=localize(game.games[i].abbr);
-	return abbr
-}
-function getGamesTitle(game){
-	if(game.abbr){
-		//return {abbr:localize(game.abbr),title:localize(game.abbr)}
-		return localize(game.abbr)
-	}else{
-		//var abbr='';
-		var title='';
-			for(var i=0; i<game.games.length; i++){
-			//abbr+=localize(game.games[i].abbr);
-			if(title!=='')
-				title+=' / ';
-			title+=localize(game.games[i].name);
-		}
-		return title
+		return '---';
 	}
 }
 
 
 
+function reqAnimFrame(f){
+	if(typeof window.requestAnimationFrame !=='undefined')
+		window.requestAnimationFrame(f);
+	else if(typeof window.mozRequestAnimationFrame !=='undefined') // old Firefox
+		window.mozRequestAnimationFrame(f);
+	else if(typeof window.msRequestAnimationFrame !=='undefined') // IE 10
+		window.msRequestAnimationFrame(f);
+	else if(typeof window.webkitRequestAnimationFrame !=='undefined') // old Chrome/Webkit
+		window.webkitRequestAnimationFrame(f);
+	else
+		f.call()
+}
 
-function goToTop(){
-	if(document.body.scrollIntoView)
-		document.body.scrollIntoView({behavior:'smooth'});
+function goToTop(noSmooth){
+	if(document.body.scroll && !noSmooth)
+		document.body.scroll({top:0, behavior:'smooth'});
 	else
 		document.body.scrollTop=0
 }
+function scrollHomeDexToTop(){
+	if(document.body.scroll)
+		document.body.scroll({top:el('dex-results').offsetTop-document.getElementsByTagName('nav')[0].offsetHeight, behavior:'smooth'});
+	else
+		document.body.scrollTop=el('dex-results').offsetTop-document.getElementsByTagName('nav')[0].offsetHeight
+}
+
+
+
 function setWindowTitle(title){document.title=title}
+function setAndroidColor(c){
+	//document.body.style.backgroundColor=c;
+	el('mobile-header-chrome').content=el('mobile-header-safari').content=c;
+}
+
+
+
+
+
+
+
+
 
 
 
 
 var currentDistanceFromHome=0;
 function pushState(url,doNotPush){
-	if(/^#\w+\/\d+(\/form\/\d+)?/.test(url)){
-		var matches=url.match(/(\w+)\/(\d+)(\/form\/(\d+))?/);
-		
-		var dex=matches[1];
-		var id;
+	url=url.toLowerCase().replace(/[^\w\-]/g,'');
+	var nationalId=pokemonIdByName.indexOf(url.replace(/-\d+$/,''));
+	if(nationalId>=1){
 		var form=0;
-		if(matches[3])
-			form=parseInt(matches[4]);
-		if(dex==='national'){
-			if(!nationalMode){
-				el('select-game').value=DEFAULT_GAME;
-				setGame(DEFAULT_GAME);
-				el('select-dex').value='nat'+GAMES[DEFAULT_GAME].generation;
-				setDex(el('select-dex').value);
-			}
-			id=parseInt(matches[2]);
-		}else{
-			var game=getGameById(matches[1]);
-			if(currentGame!==game){
-				el('select-game').value=i;
-				setGame(GAMES.indexOf(game));
-			}
+		var matches=url.match(/-(\d+)$/);
+		if(matches)
+			form=parseInt(matches[1]);
 
-			if(currentGame.generation===5)
-				id=currentGame.regionalDex[1][parseInt(matches[2])];
-			else
-				id=currentGame.regionalDex[1][parseInt(matches[2])-1];
-		}
-		if(currentPoke===id)
+		if(currentPoke===nationalId)
 			doNotPush=true;
-		showPokemon(id, form);
-	}else if(/\w+\/location\/\d+/.test(url)){
-		var matches=url.match(/(\w+)\/location\/(\d+)/);
-		showLocation(getGameById(matches[1]), parseInt(matches[2]));
 
-	}else if(/settings/.test(url)){
-		hide('home');
-		show('settings');
+		showPokemon(nationalId, form);
+		setAndroidColor('#e63636');
+	}else if(typeof locationsHash[url]==='number'){
+		showLocation(locationsHash[url]);
+		setAndroidColor('#e63636');
 	}else{
 		url='';
 
@@ -190,25 +168,27 @@ function pushState(url,doNotPush){
 		currentForm=0;
 		currentDistanceFromHome=0;
 		setWindowTitle('Minidex');
-		focusSearch();
 		show('home');
 		hide('pokemon');
 		hide('location');
-		hide('settings');
-		goToTop();
-	}
 
-
-
-	if(!doNotPush){
-		currentDistanceFromHome++;
-		history.pushState({page:url,distanceFromHome:currentDistanceFromHome}, false, url);
-
-		if(currentDistanceFromHome)
-			el('button-menu').className='sprite back clickable';
+		if(homeScroll)
+			reqAnimFrame(function(){document.body.scrollTop=homeScroll;});
 		else
-			el('button-menu').className='sprite settings clickable';
+			goToTop();
+
+		setAndroidColor('#202b37');
 	}
+
+
+
+	if(!doNotPush && currentDistanceFromHome<49){ /* firefox and chrome (and probably others) have a 50 history limit, if limit is reached, do not push any more states so home screen can  */
+		currentDistanceFromHome++;
+		//history.pushState({page:url,distanceFromHome:currentDistanceFromHome}, false, url);
+		history.pushState({page:url,distanceFromHome:currentDistanceFromHome}, false, '#'+url);
+	}
+	
+	reqAnimFrame(refreshCurrentHeaders);
 }
 
 
@@ -216,27 +196,21 @@ function pushState(url,doNotPush){
 
 
 const ROMAN_NUMBERS=['I','II','III','IV','V','VI','VII','VIII'];
-const MAX_POKEMON_BY_GENERATION=[0,151,251,386,493,649,721,809,890];
-const MAX_GENERATION=8;
-const MAX_POKEMON=MAX_POKEMON_BY_GENERATION[MAX_GENERATION];
-const DEFAULT_GAME=13;
-
-
+const MAX_NATIONAL_BY_GENERATION=[0,151,251,386,493,649,721,809,893];
 
 var currentPoke,currentForm=0;
-var currentDex, currentGame, nationalMode;
-var hideSearchDelay;
-var loadedLearnsets=0;
-
-
-
+var currentDex, dexRegional, dexNational, regionalMode, nationalMode, dexRegionalNumerationIndexes, currentRegionalNumeration;
+var homeScroll=0;
+var moveInfoOverlay;
+var locationsHash={};
+var pokemonIdByName;
 
 
 
 
 
 function showPokemon(id,form){
-	if(!(id>=1 && id<=MAX_POKEMON) || (currentPoke===id && currentForm===form))
+	if(!(id>=1 && id<=MAX_NATIONAL) || (currentPoke===id && currentForm===form))
 		return false;
 	currentPoke=id;
 	currentForm=form;
@@ -244,7 +218,7 @@ function showPokemon(id,form){
 	hide('home');
 	hide('location');
 	show('pokemon');
-	el('caught-button').regionalIndex=getRegionalIndex(id);
+	el('caught-button').regionalIndex=getPokemonDexIndexRegional(id);
 	if(el('caught-button').regionalIndex!==-1){
 		refreshCaughtButton(el('caught-button'));
 	}else{
@@ -255,7 +229,26 @@ function showPokemon(id,form){
 	var poke=parsePokemon(id,form);
 
 
-	var pokeNumber=getCurrentDexNumber(id);
+	if(!nationalMode){
+		if(dexRegional.indexOf(id)!==-1){
+			/* if regional dex is different, guess new regional numeration */
+			var index=getPokemonDexIndex(id, currentRegionalNumeration);
+			for(var i=dexRegionalNumerationIndexes.length-1; i>=0; i--){
+				if(index>=dexRegionalNumerationIndexes[i]){
+					currentRegionalNumeration=i;
+					break;
+				}
+			}
+		}else{
+			for(var i=1; i<MAX_NATIONAL_BY_GENERATION.length; i++){
+				if(id<=MAX_NATIONAL_BY_GENERATION[i]){
+					setNationalDex(i);
+					break;
+				}
+			}
+		}
+	}
+	var pokeNumber=getCurrentDexNumber(id, currentRegionalNumeration);
 	
 	/* set window title */
 	setWindowTitle('#'+pokeNumber+' '+poke.name);
@@ -264,19 +257,29 @@ function showPokemon(id,form){
 
 	/* set big image */
 	empty('dex-img');
-	el('dex-img').appendChild(generateIcon(id,form,4));
+	el('dex-img').appendChild(generateIcon(id,form,Icons.IS_BIG? 3:4));
 
 	/* forms */
-	empty('form-cycler');
 	if(POKEMON[id][5]){
+		empty('forms');
+		var availableForms=0;
 		for(var i=0; i<POKEMON[id][5].length; i++){
-			el('form-cycler').appendChild(generateIconClickable(id,i));
-			if(i===currentForm){
-				el('form-cycler').children[i].className='poke-icon crop';
-			}else{
-				el('form-cycler').children[i].className='poke-icon crop disabled';
+			if(typeof isFormAvailable==='undefined' || isFormAvailable(id,i)){
+				el('forms').appendChild(generateIconClickable(id,i));
+				if(i===currentForm){
+					el('forms').children[i].className='poke-icon';
+				}else{
+					el('forms').children[i].className='poke-icon disabled';
+				}
+				availableForms++;
 			}
 		}
+		if(availableForms)
+			show('block-forms');
+		else
+			hide('block-forms');
+	}else{
+		hide('block-forms');
 	}
 
 	/* set types */
@@ -284,16 +287,38 @@ function showPokemon(id,form){
 	for(var i=0; i<poke.types.length && i<2; i++){
 		var span=document.createElement('span');
 		span.className='type type-'+poke.types[i];
-		span.innerHTML=localize(TYPES[poke.types[i]]);
+		span.innerHTML=TYPES[poke.types[i]];
 		
 		el('dex-types').appendChild(span);
 	}
 
 	/* set abilities */
-	if(currentGame.generation===1 || currentGame.generation===2 || currentGame.id==='letsgo'){
-		el('dex-abilities').innerHTML='-';
-	}else{
-		el('dex-abilities').innerHTML=poke.abilities.join(', ');
+	if(GENERATION>2 && GAME_ID!=='letsgo'){
+		empty('abilities');
+		var nAbilities=0;
+		for(var i=0; i<poke.abilities.length; i++){
+			if(poke.abilities[i])
+				nAbilities++;
+		}
+		for(var i=0; i<poke.abilities.length; i++){
+			if(poke.abilities[i]){				
+				var td=document.createElement('td');
+				if(nAbilities===1)
+					td.width='100%';
+				else if(nAbilities===2)
+					td.width='50%';
+				else if(nAbilities===3)
+					td.width='33.3%';
+				td.appendChild(createExternalLink(ABILITIES[poke.abilities[i]], getAbilityLink(poke.abilities[i])));
+				td.appendChild(document.createElement('br'));
+				if(i===2){
+					var spanHidden=document.createElement('small');
+					spanHidden.innerHTML=STRINGS.ability_hidden;
+					td.appendChild(spanHidden);
+				}
+				el('abilities').appendChild(td);
+			}
+		}
 	}
 
 	/* evo line */
@@ -303,12 +328,10 @@ function showPokemon(id,form){
 	el('evoline').appendChild(previousLi);
 	var start=poke.evoLine;
 
-	if(start>MAX_POKEMON_BY_GENERATION[currentGame.generation]){
-		if(typeof POKEMON[start][4][0]==='number')
-			start=POKEMON[start][4][0];
-		else
-			start=POKEMON[start][4][0][0];
-	}
+	/*if(typeof POKEMON[start][4][0]==='number')
+		start=POKEMON[start][4][0];
+	else
+		start=POKEMON[start][4][0][0];*/
 
 	var icon;
 	if(start===id){
@@ -324,129 +347,94 @@ function showPokemon(id,form){
 	generateEvoBranch(start, previousLi);
 	if(POKEMON[start][6]){
 		var breedDiv=document.createElement('div');
-		breedDiv.innerHTML='&laquo; '+localize(STRINGS['breed_with']).replace('%s', localize(STRINGS[POKEMON[start][6]]));
+		breedDiv.innerHTML='&laquo; '+localize('breed_with').replace('%s', localize(POKEMON[start][6]));
 		el('evoline').appendChild(breedDiv);
 	}
 
 	/* encounters */
-	empty('block-location');
-	var totalEncounters=filterEncounters(id, currentGame);
-	if(MinidexSettings.showLocations){
-		show('block-location');
-		/*var h2=createElement('h2');
-		h2.innerHTML=localize('location')+' '+getGamesTitle(GAMES[i]).abbr;
-		el('block-location').appendChild(h2);*/
-		
-		var table=document.createElement('table');
-		table.id='table-encounters-'+currentGame.id;
-		table.className='table-encounters';
-		el('block-location').appendChild(table);
-		
-		if(totalEncounters.length){
-			renderEncounters(totalEncounters, currentGame);
-		}else if(currentPoke<=MAX_POKEMON_BY_GENERATION[currentGame.generation]){
-			//look for available evolutions
-			var evolutionAvailability=0;
-			if(POKEMON[id][4]){
-				evolutionAvailability=searchBranchAvailability(id, currentGame, false);
+	empty('table-encounters');
+	var totalEncounters=filterEncounters(id);
+	if(totalEncounters.length){
+		renderEncounters(totalEncounters);
+	}else if(currentPoke<=MAX_NATIONAL){
+		//look for available evolutions
+		var evolutionAvailability=0;
+		if(POKEMON[id][4]){
+			evolutionAvailability=searchBranchAvailability(id, false);
 
-				if(evolutionAvailability && currentPoke!==790){ //cosmoem
-					var icons=[];
-					for(var j=0; j<POKEMON[id][4].length; j++)
-						icons.push(generateIconClickable(POKEMON[id][4][j][0],0));
+			if(evolutionAvailability && currentPoke!==790){ //cosmoem
+				var icons=[];
+				for(var j=0; j<POKEMON[id][4].length; j++)
+					icons.push(generateIconClickable(POKEMON[id][4][j][0],0));
 
-					renderSimpleEncounter('breed', evolutionAvailability, currentGame, icons);
-				}
+				renderSimpleEncounter('breed', evolutionAvailability, icons);
 			}
-
-			//look for available preevos
-			var preevosAvailable=0;
-			if(POKEMON[id][3]!==id){
-				preevosAvailable=searchBranchAvailability(POKEMON[id][3], currentGame, id);
-
-				if(preevosAvailable)
-					renderSimpleEncounter('evolve', preevosAvailable, currentGame, [generateIconClickable(getPreEvolution(id),0)]);
-			}
-
-			if(!evolutionAvailability && !preevosAvailable)
-				renderSimpleEncounter('not_available', 0, currentGame);
-		}else{
-			renderSimpleEncounter('not_available', 0, currentGame);
 		}
+
+		//look for available preevos
+		var preevosAvailable=0;
+		if(POKEMON[id][3]!==id){
+			preevosAvailable=searchBranchAvailability(POKEMON[id][3], id);
+
+			if(preevosAvailable)
+				renderSimpleEncounter('evolve', preevosAvailable, [generateIconClickable(getPreEvolution(id),0)]);
+		}
+
+		if(!evolutionAvailability && !preevosAvailable)
+			renderSimpleEncounter('not_available', 0);
 	}else{
-		hide('block-location');
+		renderSimpleEncounter('not_available', 0);
 	}
+
+	/* calculate weaknesses */
+	empty('dex-damages');
+	calculateWeaknesses();
 
 	/* learnset */
 	empty('block-learnset');
-	if(MinidexSettings.showMeYourMoves){
-		if(loadedLearnsets==='loaded'){
-			renderAllLearnsets(currentPoke, currentGame);
-		}else{
-			el('block-learnset').innerHTML='<div class="block block-more-info"><h2>Loading learnsets database...</h2></div>';
-			if(loadedLearnsets!=='loading'){
-				loadedLearnsets='loading';
-
-				var script=document.createElement('script');
-				addEvent(script,'load',function(){
-					loadedLearnsets='loaded';
-					el('block-learnset').innerHTML='';
-					renderAllLearnsets(currentPoke, currentGame);
-				});
-				script.src='./resources/data/database_learnsets.min.js';
-
-				document.head.appendChild(script);
-			}
-		}
-	}
+	if(competitiveDatabaseLoaded)
+		renderAllLearnsets(currentPoke);
 
 	/* more info links */
 	empty('extra-links');
 	for(var i=0; i<MORE_INFO.length; i++){
-		var moreInfo=MORE_INFO[i].getInfo(currentGame, currentPoke, getPokeName(currentPoke), totalEncounters);
-		if(/^(https?:|.?\/)/.test(moreInfo)){
+		var moreInfo=MORE_INFO[i].getInfo(currentPoke, getPokeName(currentPoke), totalEncounters);
+		var tr=document.createElement('tr');
+		if(/^(https?:|.*\/)/.test(moreInfo)){
 			var a=document.createElement('a');
 			a.target='_blank';
 			a.href=moreInfo;
-			if(/^http/.test(moreInfo))
-				a.innerHTML='<i class="sprite extlink"></i> '+localize(MORE_INFO[i].title);
-			else
-				a.innerHTML=localize(MORE_INFO[i].title);
-			var li=document.createElement('li');
-			li.appendChild(a);
-			el('extra-links').appendChild(li);
+			a.innerHTML='';
+			var td0=document.createElement('td');
+			if(/\.(png|jpe?g)$/.test(moreInfo)){
+				var sprite=document.createElement('i');
+				sprite.className='sprite pic';
+				td0.appendChild(sprite);
+			}else{
+				var sprite=document.createElement('i');
+				sprite.className='sprite extlink';
+				td0.appendChild(sprite);
+			}
+			a.innerHTML+=localize(MORE_INFO[i].title);
+			var td1=document.createElement('td');
+			td1.appendChild(a);
+			tr.appendChild(td0);
+			tr.appendChild(td1);
+			el('extra-links').appendChild(tr);
 		}else if(moreInfo){
-			var li=document.createElement('li');
-			li.innerHTML=localize(moreInfo);
-			el('extra-links').appendChild(li);
+			var td0=document.createElement('td');
+			td0.innerHTML=localize(moreInfo);
+			td0.colSpan=2;
+			tr.appendChild(td0);
+			el('extra-links').appendChild(tr);
 		}
 	}
 
 	/* smooth scroll to top */
-	goToTop();
-}
-
-
-
-function searchBranchAvailability(startingId, gameInfo, stopAt){
-	var availability=0;
-
-	startingId=getPokemonId(startingId);
-
-	if(stopAt)
-		availability|=getAvailability(startingId, gameInfo);
-
-	if(POKEMON[startingId][4]){
-		for(var i=0; i<POKEMON[startingId][4].length; i++){
-			var evoId=getPokemonId(POKEMON[startingId][4][i][0]);
-			availability|=getAvailability(evoId, gameInfo);
-			if(POKEMON[evoId][4] && POKEMON[evoId][4]!==stopAt){
-				availability|=searchBranchAvailability(evoId, gameInfo, stopAt);
-			}
-		}
-	}
-
-	return availability;
+	if(currentDistanceFromHome===0)
+		goToTop(true);
+	else
+		goToTop();
 }
 
 
@@ -455,43 +443,34 @@ function searchBranchAvailability(startingId, gameInfo, stopAt){
 
 
 
-function getGameById(id){
-	for(var i=0; i<GAMES.length; i++)
-		if(GAMES[i].id===id)
-			return GAMES[i];
-	return -1;
-}
-function getGameTitlesByAvailability(gameInfo,available){
-	var titles=[]
-	for(var i=0; i<gameInfo.games.length; i++){
-		if(available & (1 << i))
-			titles.push(localize(gameInfo.games[i].name));
-	}
-	return titles.join('/')
-}
-function parseAvailableGames(gameInfo,available){
+
+
+
+function parseExclusiveGames(gameId, games, availability){
 	var spans=document.createElement('span');
-	spans.className='games games-'+gameInfo.id;
+	spans.className='games games-'+gameId;
+
+	if(!availability)
+		return spans;
 
 	var titles=[]
-	for(var i=0; i<gameInfo.games.length; i++){
-		if(available & (1 << i)){
-			spans.innerHTML+='<span class="game game-'+gameInfo.games[i].abbr[0].clean()+'"></span>';
-			titles.push(localize(gameInfo.games[i].name));
-		}else{
-			spans.innerHTML+='<span class="game game-not-available"></span>';
+	for(var i=0; i<games.length; i++){
+		if(availability & (1 << i)){
+			spans.innerHTML+='<span class="game game-'+gameId+i+'"></span>';
+			titles.push(localize(games[i]));
 		}
 	}
-	spans.title=localize('available_in')+' '+titles.join('/');
+	spans.title=localize('exclusively_in')+' '+titles.join('/');
 	return spans
 }
 
 
 function parseEncounterMethod(method, pokeId){
+	pokeId=getPokemonId(pokeId);
 	if(method==='revive_fossil'){
-		return localize(STRINGS[method] || method).replace('%s', STRINGS['fossil_'+pokeId]);
+		return localize(method).replace('%s', STRINGS['fossil_'+pokeId]);
 	}else if(typeof method==='string'){
-		return localize(STRINGS[method] || method);
+		return localize(method);
 	}else{
 		var str='';
 
@@ -510,37 +489,42 @@ function parseEncounterMethod(method, pokeId){
 
 
 function mergeRates(rates, sprites){
-	var rateText='';
 	var validRates={};
 	for(var i=0; i<rates.length; i++){
 		if(rates[i]){
 			if(!validRates[rates[i]])
 				validRates[rates[i]]='';
-			validRates[rates[i]]+='<i class="sprite '+sprites[i]+'" title="'+localize(sprites[i])+'"></i> ';
+			validRates[rates[i]]+='<i class="sprite encounter-condition '+sprites[i]+'" title="'+localize(sprites[i])+'"></i> ';
 		}
 	}
 
+	var rateText='';
+	var nRates=0;
 	for(rate in validRates){
 		rateText+=validRates[rate]+rate+'<small>%</small><br/>';
-	}
-	
+		nRates++;
+		if(nRates%3===0)
+			rateText+='<br/>';
+	}	
 	return rateText;
 }
 
 
-function parseRateEncounter(generation, rates){
+function parseRateEncounter(rates){
 	if(typeof rates ==='number'){
 		return rates+'<small>%</small>';
 	}else if(typeof rates ==='string'){
+		if(/^fossil_/.test(rates))
+			return '';
 		return localize(rates);
 	}else if(typeof rates==='object'){
-		if(generation===2 || generation===4){
+		if(GENERATION===2 || GENERATION===4){
 			return mergeRates(rates, ['morning','day','night']);
-		}else if(generation===5){
+		}else if(GENERATION===5){
 			return mergeRates(rates, ['spring','summer','autumn','winter']);
-		}else if(generation===7){
+		}else if(GENERATION===7){
 			return mergeRates(rates, ['day','night']);
-		}else if(generation===8){
+		}else if(GENERATION===8){
 			return mergeRates(rates, ['no_weather','overcast','raining','thunderstorm','snowing','snowstorm','intense_sun','sandstorm','heavy_fog']);
 		}
 	}else{
@@ -560,7 +544,7 @@ function equals(a,b){
 		return a===b;
 }
 
-function renderSimpleEncounter(text, availability, gameInfo, icons){
+function renderSimpleEncounter(text, availability, icons){
 	var tr=createElement('tr');
 	var td0=createElement('td');
 	var td1=createElement('td', {innerHTML:localize(text)});
@@ -571,30 +555,26 @@ function renderSimpleEncounter(text, availability, gameInfo, icons){
 			td1.appendChild(icons[i]);
 	}
 	var td2=createElement('td', {className:'text-center'});
-	td2.appendChild(parseAvailableGames(currentGame, availability));
+	td2.appendChild(parseExclusiveGames(GAME_ID, GAMES, availability));
 
 	tr.appendChild(td0);
 	tr.appendChild(td1);
 	tr.appendChild(td2);
 	
-	el('table-encounters-'+gameInfo.id).appendChild(tr);
+	el('table-encounters').appendChild(tr);
 }
-function renderEncounters(encounters, gameInfo){
+function renderEncounters(encounters){
 	var showFormIcons=false;
 	for(var i=0; i<encounters.length; i++){
 		var a=document.createElement('a');
-		a.href='#'+gameInfo.id+'/location/'+encounters[i][4];
-		a.locationGame=gameInfo.id;
+		a.href='#'+LOCATIONS[encounters[i][4]].name[0].slug();
+		a.locationGame=GAME_ID;
 		a.locationId=encounters[i][4];
 		a.addEventListener('click', _clickLink, false);
-		a.innerHTML=localize(gameInfo.locations[encounters[i][4]].name)+' ';
+		a.innerHTML=localize(LOCATIONS[encounters[i][4]].name)+' ';
 		if(encounters[i][5]){
-			if(gameInfo.id==='swsh')
+			if(GAME_ID==='swsh')
 				a.innerHTML+='<br/>';
-			if(gameInfo.id==='xy' && /typeslot_/.test(encounters[i][5])){
-				var matches=encounters[i][5].match(/typeslot_(\d+)_(\d+)/);
-				encounters[i][5]=localize('typeslot').replace('%s', TYPES[parseInt(matches[1])]).replace('%s', matches[2]);
-			}
 			a.appendChild(createElement('small',{html:encounters[i][5]}));
 
 		}else{
@@ -622,7 +602,6 @@ function renderEncounters(encounters, gameInfo){
 		var td0=createElement('td');
 		var td1=createElement('td',{className:'location-name'});
 		var td2=createElement('td',{className:'text-right no-wrap'});
-		var td3=createElement('td',{className:'text-center'});
 		var td4=createElement('td',{className:'text-right'});
 
 		td1.appendChild(a);
@@ -633,7 +612,7 @@ function renderEncounters(encounters, gameInfo){
 			//td0.appendChild(generateIcon(getPokemonId(encounters[i][0]),tr.form,1), td0.children[0]);
 			td0.appendChild(generateIcon(getPokemonId(encounters[i][0]),tr.form,1));
 			if(!showFormIcons){
-				var trs=el('table-encounters-'+gameInfo.id).children;
+				var trs=el('table-encounters').children;
 				for(var j=0; j<trs.length; j++){
 					trs[j].children[0].appendChild(generateIcon(getPokemonId(encounters[i][0]),trs[j].form,1));
 				}
@@ -641,19 +620,17 @@ function renderEncounters(encounters, gameInfo){
 			}
 		}
 		td2.innerHTML=parseEncounterMethod(encounters[i][2],encounters[i][0]);
+		td2.appendChild(parseExclusiveGames(GAME_ID, GAMES, encounters[i][1]));
 
-
-		td3.appendChild(parseAvailableGames(gameInfo, encounters[i][1]));
-		td4.appendChild(createElement('span', {className:'rates',html:parseRateEncounter(gameInfo.generation, encounters[i][3])}));
+		td4.appendChild(createElement('span', {className:'rates',html:parseRateEncounter(encounters[i][3])}));
 
 		//tr.pokeId=encounters[i][0];
 		tr.appendChild(td0);
 		tr.appendChild(td1);
 		tr.appendChild(td2);
-		tr.appendChild(td3);
 		tr.appendChild(td4);
 
-		el('table-encounters-'+gameInfo.id).appendChild(tr);
+		el('table-encounters').appendChild(tr);
 	}
 	/*if(showFormIcons){
 		var trs=;
@@ -664,10 +641,10 @@ function renderEncounters(encounters, gameInfo){
 
 
 
-function filterEncounters(nationalId, gameInfo){
+function filterEncounters(nationalId){
 	var filteredEncounters=[];
-	for(var i=0; i<gameInfo.locations.length; i++){
-		filteredEncounters=filteredEncounters.concat(filterEncountersByGroup(nationalId, gameInfo.locations[i].encounters, i, null));
+	for(var i=0; i<LOCATIONS.length; i++){
+		filteredEncounters=filteredEncounters.concat(filterEncountersByGroup(nationalId, LOCATIONS[i].encounters, i, null));
 	}
 	return filteredEncounters;
 }
@@ -688,98 +665,185 @@ function filterEncountersByGroup(nationalId, encounters, locationIndex, groupNam
 	}
 	return filteredEncountersByLocation
 }
-function getAvailability(nationalId, gameInfo){
+function getAvailability(nationalId){
 	var availability=0;
-	var encounters=filterEncounters(nationalId, gameInfo);
+	var encounters=filterEncounters(nationalId);
 	for(var i=0; i<encounters.length; i++)
-		availability|=encounters[i][1];
+		availability|=encounters[i][1] || 0xff; // 0xff=all bits set to 1, make sure all non-exclusive evos/preevos are available
+	return availability;
+}
+
+function searchBranchAvailability(startingId, stopAt){
+	var availability=0;
+
+	startingId=getPokemonId(startingId);
+
+	if(stopAt)
+		availability|=getAvailability(startingId);
+
+	if(POKEMON[startingId][4]){
+		for(var i=0; i<POKEMON[startingId][4].length; i++){
+			var evoId=getPokemonId(POKEMON[startingId][4][i][0]);
+			availability|=getAvailability(evoId);
+			if(POKEMON[evoId][4] && POKEMON[evoId][4]!==stopAt){
+				availability|=searchBranchAvailability(evoId, stopAt);
+			}
+		}
+	}
+
 	return availability;
 }
 
 
+function renderLocationEncounters(encounters, groupName, showAsGrid){
+	var currentBlock=document.createElement('div');
+	currentBlock.className='block block-red';
+	var currentTable=document.createElement('table');
+	if(showAsGrid)
+		currentTable.className='grid-encounters';
+	else
+		currentTable.className='table-encounters';
 
-function renderLocationEncounters(gameInfo, encounters, groupName){
-	if(gameInfo.id==='xy' && /typeslot_/.test(groupName)){
-		var matches=groupName.match(/typeslot_(\d+)_(\d+)/);
-		groupName=localize('typeslot').replace('%s', TYPES[parseInt(matches[1])]).replace('%s', matches[2]);
+	el('location-encounters').appendChild(currentBlock);
+	if(groupName){
+		var h2=document.createElement('h2');
+		h2.innerHTML=groupName;
+		currentBlock.appendChild(h2);
 	}
-
+	currentBlock.appendChild(currentTable);
+	
+	
+	var lastMethod;
 	for(var i=0; i<encounters.length; i++){
 		if(encounters[i].group){
-			renderLocationEncounters(gameInfo, encounters[i].encounters, groupName+' '+localize(encounters[i].group));
+			renderLocationEncounters(encounters[i].encounters, groupName+' '+localize(encounters[i].group), encounters[i].showAsGrid);
 		}else{
-			var tr=createElement('tr');
-			var td0=document.createElement('td');
-			var td1=document.createElement('td');
-			var td2=document.createElement('td');
-			var td3=document.createElement('td');
-			var td4=document.createElement('td');
+			if(showAsGrid){
+				var currentMethod=parseEncounterMethod(encounters[i][2], encounters[i][0]);
+				if(lastMethod!==currentMethod){
+					lastMethod=currentMethod;
+					
+					var tr=createElement('tr');
+					var td0=document.createElement('td');
+					td0.className='text-center';
+					var encounterMethodHeader=document.createElement('div');
+					
+					encounterMethodHeader.innerHTML=localize(currentMethod);
+					
+					td0.appendChild(encounterMethodHeader);
+					tr.appendChild(td0);
+					
+					currentTable.appendChild(tr);
+				}
+				
+				var div=createElement('div');
+				div.className='grid-encounter';
+				var div0=document.createElement('div');
+				var div1=document.createElement('div');
 
-			td0.appendChild(generateIconClickable(getPokemonId(encounters[i][0]),getAlternateForm(encounters[i][0]),1));
-			td1.className='location-name';
-			td1.innerHTML=groupName;
-			td2.innerHTML=parseEncounterMethod(encounters[i][2],encounters[i][0]);
-			td3.appendChild(parseAvailableGames(gameInfo, encounters[i][1]));
-			td4.innerHTML=parseRateEncounter(gameInfo.generation, encounters[i][3]);
-			
-			tr.appendChild(td0);
-			tr.appendChild(td1);
-			tr.appendChild(td2);
-			tr.appendChild(td3);
-			tr.appendChild(td4);
-			
-			el('table-location').appendChild(tr);
+				div.appendChild(generateIconClickable(getPokemonId(encounters[i][0]),getAlternateForm(encounters[i][0]),1));
+
+				div0.innerHTML=localize(POKEMON_NAMES[getPokemonId(encounters[i][0])] || POKEMON[getPokemonId(encounters[i][0])][0]);
+				div1.innerHTML=parseRateEncounter(encounters[i][3]);
+				if(encounters[i][1])
+					div1.appendChild(parseExclusiveGames(GAME_ID, GAMES, encounters[i][1]));
+				
+				div.appendChild(div0);
+				div.appendChild(div1);
+
+				currentTable.lastChild.children[0].appendChild(div);
+				
+			}else{
+				var tr=createElement('tr');
+				var td0=document.createElement('td');
+				var td1=document.createElement('td');
+				var td2=document.createElement('td');
+				var td3=document.createElement('td');
+				var td4=document.createElement('td');
+					
+				td0.appendChild(generateIconClickable(getPokemonId(encounters[i][0]),getAlternateForm(encounters[i][0]),1));
+				//td1.innerHTML=groupName;
+				td1.innerHTML=localize(POKEMON_NAMES[getPokemonId(encounters[i][0])] || POKEMON[getPokemonId(encounters[i][0])][0]);
+				td2.innerHTML=parseEncounterMethod(encounters[i][2],encounters[i][0]);
+				td3.appendChild(parseExclusiveGames(GAME_ID, GAMES, encounters[i][1]));
+				td4.innerHTML=parseRateEncounter(encounters[i][3]);
+				
+				tr.appendChild(td0);
+				tr.appendChild(td1);
+				tr.appendChild(td2);
+				tr.appendChild(td3);
+				tr.appendChild(td4);
+
+				currentTable.appendChild(tr);
+			}
+
+			var regionalIndex=getPokemonDexIndexRegional(getPokemonId(encounters[i][0]));
+			if(regionalIndex!==-1){
+				if(MinidexSettings.caughtDatabase.get(regionalIndex)){
+					var sprite=document.createElement('i');
+					sprite.className='sprite caught-mini';
+					if(!showAsGrid)
+						currentTable.lastChild.children[1].appendChild(sprite);
+					else
+						div0.appendChild(sprite);
+
+				}else if(el('location-icon').className==='sprite location1'){
+					el('location-icon').className='sprite location0';
+				}
+			}
 		}
 	}
 }
 
 
-function showLocation(gameInfo, location){
+function showLocation(location){
 	currentPoke=0;
 	currentForm=0;
 	hide('home');
 	hide('pokemon');
 	show('location');
 	
-	empty('table-location');
-	if(gameInfo && gameInfo.locations[location]){
-		setWindowTitle(localize(gameInfo.locations[location].name));
-		el('location-title').innerHTML=localize(gameInfo.locations[location].name);
-		renderLocationEncounters(gameInfo, gameInfo.locations[location].encounters, '');
+	empty('location-encounters');
+	if(LOCATIONS[location]){
+		el('location-title').innerHTML=localize(LOCATIONS[location].name);
+		el('location-icon').className='sprite location1';
+		setWindowTitle(localize(LOCATIONS[location].name));
+		renderLocationEncounters(LOCATIONS[location].encounters, '', LOCATIONS[location].showAsGrid);
 	}else{
-		console.error(gameId);
 		console.error(location);
-		console.error('invalid game id and/or location');
+		console.error('invalid location');
 	}
-	goToTop();
+	goToTop(true);
 }
 
 
 
 
 
-const NON_REMAKES=[,0,1,2,4,6,8,10];
-const REMAKES=[,,,3,5,7,9,11];
+
 function padMachine(number){
 	return number<10?'0'+number:number;
 }
-function getMachine(gameInfo, moveIndex){
-	if(gameInfo.generation===6 && (moveIndex===249 || moveIndex===290))
+function getMachine(moveIndex){		
+	if(GENERATION===6 && (moveIndex===249 || moveIndex===290))
 		return '<small>'+localize('tm')+'</small>94';
 
-	else if(gameInfo.generation===4 && (moveIndex===432 || moveIndex===250))
+	else if(GENERATION===4 && (moveIndex===432 || moveIndex===250))
 		return '<small>'+localize('hm')+'</small>05<sup>';
 
-	else if(gameInfo.generation>=1 && gameInfo.generation<=6 && HMs[gameInfo.generation].indexOf(moveIndex)>0)
-		return '<small>'+localize('hm')+'</small>0'+HMs[gameInfo.generation].indexOf(moveIndex);
+	else if(GENERATION>=1 && GENERATION<=6 && HMs.indexOf(moveIndex)>0)
+		return '<small>'+localize('hm')+'</small>0'+HMs.indexOf(moveIndex);
+
+	else if(GENERATION===8 && TRs.indexOf(moveIndex)>0)
+		return '<small>'+localize('tr')+'</small>'+padMachine(TRs.indexOf(moveIndex));
 
 	else
-		return '<small>'+localize('tm')+'</small>'+padMachine(TMs[gameInfo.id==='letsgo'?0:gameInfo.generation].indexOf(moveIndex));
+		return '<small>'+localize('tm')+'</small>'+padMachine(TMs.indexOf(moveIndex));
 }
 
 function createLearnsetTable(type, form, headerTitle){
 	var div=document.createElement('div');
-	div.className='block block-moreinfo';
+	div.className='block block-green';
 
 	var h2=document.createElement('h2');
 	h2.innerHTML=headerTitle;
@@ -793,7 +857,7 @@ function createLearnsetTable(type, form, headerTitle){
 	
 	return table;
 }
-function renderLearnsets2(nationalId, form, gameInfo, learnset, type, exclusiveThird, exclusiveRemake){
+function renderLearnsets2(nationalId, form, learnset, type, exclusiveThird, exclusiveRemake){
 	var table;
 
 	var headerTitle='';
@@ -801,14 +865,14 @@ function renderLearnsets2(nationalId, form, gameInfo, learnset, type, exclusiveT
 		headerTitle+=' ('+localize(POKEMON[nationalId][5][form][0])+')';
 
 
-	if(type==='levelup'){
-		table=createLearnsetTable(type, form, localize('learnset_levelup')+' '+(gameInfo.id==='letsgo'?'Let\'s go!':'Gen '+gameInfo.generation)+headerTitle);
-	}else{
-		if(el('table-moves-'+type+'-'+form))
-			table=el('table-moves-'+type+'-'+form);
-		else
-			table=createLearnsetTable(type, form, localize('learnset_'+type)+headerTitle);
-	}
+	if(type==='levelup')
+		table=createLearnsetTable(type, form, localize('learnset_levelup')+' '+(GAME_ID==='letsgo'?'Let\'s go!':'Gen '+ROMAN_NUMBERS[GENERATION-1])+headerTitle);
+	else if(el('table-moves-'+type+'-'+form))
+		table=el('table-moves-'+type+'-'+form);
+	else if(type==='machine' && GENERATION>=7)
+		table=createLearnsetTable(type, form, localize('learnset_machine'+GENERATION)+headerTitle);
+	else
+		table=createLearnsetTable(type, form, localize('learnset_'+type)+headerTitle);
 
 
 	var field=type.charAt(0);
@@ -823,7 +887,6 @@ function renderLearnsets2(nationalId, form, gameInfo, learnset, type, exclusiveT
 			var tr=document.createElement('tr');
 			var td0=document.createElement('td');
 			var td1=document.createElement('td');
-
 			tr.appendChild(td0);
 			tr.appendChild(td1);
 			var move;
@@ -833,7 +896,7 @@ function renderLearnsets2(nationalId, form, gameInfo, learnset, type, exclusiveT
 				if(typeof moves[i][1] ==='number'){
 					var span=createElement('div');
 					if(typeof moves[i][2] ==='number' || typeof moves[i][3] ==='number')
-						span.appendChild(parseAvailableGames(GAMES[NON_REMAKES[gameInfo.generation]], 3));
+						span.appendChild(parseExclusiveGames(LEARNSET_GAMES_ID, LEARNSET_GAMES, 3));
 					if(moves[i][1]===0)
 						span.innerHTML+='Evo.';
 					else if(moves[i][1]===1)
@@ -844,7 +907,7 @@ function renderLearnsets2(nationalId, form, gameInfo, learnset, type, exclusiveT
 				}
 				if(typeof moves[i][2] ==='number'){
 					var span=createElement('div');
-					span.appendChild(parseAvailableGames(GAMES[REMAKES[gameInfo.generation]], 3));
+					span.appendChild(parseExclusiveGames(LEARNSET_REMAKES_ID, LEARNSET_REMAKES, 3));
 					if(moves[i][2]===0)
 						span.innerHTML+='Evo.';
 					else if(moves[i][2]===1)
@@ -855,7 +918,7 @@ function renderLearnsets2(nationalId, form, gameInfo, learnset, type, exclusiveT
 				}
 				if(typeof moves[i][3] ==='number'){
 					var span=createElement('div');
-					span.appendChild(parseAvailableGames(GAMES[NON_REMAKES[gameInfo.generation]], 4));
+					span.appendChild(parseExclusiveGames(LEARNSET_GAMES_ID, LEARNSET_GAMES, 4));
 					if(moves[i][3]===0)
 						span.innerHTML+='Evo.';
 					else if(moves[i][3]===1)
@@ -864,111 +927,101 @@ function renderLearnsets2(nationalId, form, gameInfo, learnset, type, exclusiveT
 						span.innerHTML+=moves[i][3];
 					td0.appendChild(span);
 				}
-				td1.innerHTML=localize(ALL_MOVES[moves[i][0]][0]);
+				td1.appendChild(createExternalLink(localize(MOVES[moves[i][0]][0]), getMoveLink(move)));
 			}else{
 				move=moves[i];
 
-				td1.innerHTML=localize(ALL_MOVES[moves[i]][0]);
+				td1.appendChild(createExternalLink(localize(MOVES[moves[i]][0]), getMoveLink(move)));
 
 				if(type==='machine'){
-					td0.innerHTML=getMachine(gameInfo, moves[i]);
+					td0.innerHTML=getMachine(moves[i]);
 
 					/* fix rb mewtwo */
-					if(gameInfo.generation===1 && move===6 && nationalId===150){
-						td1.appendChild(parseAvailableGames(gameInfo, 3));
-					}else if(gameInfo.generation===4){
+					if(GENERATION===1 && move===6 && nationalId===150){
+						td1.appendChild(parseExclusiveGames(LEARNSET_GAMES_ID, LEARNSET_GAMES, 3));
+					}else if(GENERATION===4){
 						/* fix gen4 HM05 */
 						if(move===432)
-							td1.appendChild(parseAvailableGames(GAMES[4], 7));
+							td1.appendChild(parseExclusiveGames(LEARNSET_GAMES_ID, LEARNSET_GAMES, 7));
 						else if(move===250)
-							td1.appendChild(parseAvailableGames(GAMES[5], 3));
-					}else if(gameInfo.generation===6){
+							td1.appendChild(parseExclusiveGames(LEARNSET_REMAKES_ID, LEARNSET_REMAKES, 3));
+					}else if(GENERATION==6){
 						/* fix gen6 TM94 */
 						if(move===249)
-							td1.appendChild(parseAvailableGames(GAMES[8], 3));
+							td1.appendChild(parseExclusiveGames(LEARNSET_GAMES_ID, LEARNSET_GAMES, 7));
 						else if(move===290)
-							td1.appendChild(parseAvailableGames(GAMES[9], 3));
+							td1.appendChild(parseExclusiveGames(LEARNSET_REMAKES_ID, LEARNSET_REMAKES, 3));
 					}
-				}else if(type==='egg' && gameInfo.id==='gsc' && ((move===211 && (nationalId===16 || nationalId===83 || nationalId===142)) || (move===230 && nationalId===46))){
+				}else if(type==='egg' && GENERATION===2 && ((move===211 && (nationalId===16 || nationalId===83 || nationalId===142)) || (move===230 && nationalId===46))){
 					/* fix gs exclusive eggs */
-					td1.appendChild(parseAvailableGames(gameInfo, 3));
+					td1.appendChild(parseExclusiveGames(LEARNSET_GAMES_ID, LEARNSET_GAMES, 3));
 				}
 
 
 				if(exclusiveThird)
-					td1.appendChild(parseAvailableGames(GAMES[NON_REMAKES[gameInfo.generation]], 4));
+					td1.appendChild(parseExclusiveGames(LEARNSET_GAMES_ID, LEARNSET_GAMES, 4));
 				if(exclusiveRemake)
-					td1.appendChild(parseAvailableGames(GAMES[REMAKES[gameInfo.generation]], 3));
+					td1.appendChild(parseExclusiveGames(LEARNSET_REMAKES_ID, LEARNSET_REMAKES, 3));
 			}
 
-			//type+category
-			td2=document.createElement('td');
+			var td2=document.createElement('td');
 			var span=document.createElement('span');
-			span.className='type type-'+ALL_MOVES[move][1];
-			span.innerHTML=localize(TYPES[ALL_MOVES[move][1]]);
+			if(MOVES[move][1]!==-1){
+				span.className='type type-'+MOVES[move][1];
+				span.innerHTML=TYPES[MOVES[move][1]];
+			}else{
+				span.className='type type-unknown';
+				span.innerHTML='???';
+			}
 			td2.appendChild(span);
 			span=document.createElement('span');
-			span.className='type cat-'+[ALL_MOVES[move][2]];
-			span.innerHTML='<i class="sprite move-cat-'+ALL_MOVES[move][2]+'"></i>';
+			span.className='type cat-'+[MOVES[move][2]];
+			span.innerHTML='<i class="sprite move-cat-'+MOVES[move][2]+'"></i>';
 			td2.appendChild(span);
 			tr.appendChild(td2);
 
-			//power+accuracy+pp
-			td2=document.createElement('td');
-			if(ALL_MOVES[move][4])
-				td2.innerHTML='<b>'+localize('power')+': </b>'+ALL_MOVES[move][4];
-			if(ALL_MOVES[move][5])
-				td2.innerHTML+=' <b>'+localize('accuracy')+': </b>'+ALL_MOVES[move][5]+'<small>%</small>';
-			if(ALL_MOVES[move][3])
-				td2.innerHTML+=' <b>'+localize('pp')+': </b>'+ALL_MOVES[move][3];
-			tr.appendChild(td2);
-
+			tr.moveIndex=move;
+			addEvent(tr, 'mouseover', showMoveInfo);
 
 			table.appendChild(tr);
 		}
 	}
 
-	if(!exclusiveThird && !exclusiveRemake){
-		if(table.children.length)
-			el('block-learnset').appendChild(table.parentElement);
+	if(table.children.length)
+		el('block-learnset').appendChild(table.parentElement);
 
+	if(!exclusiveThird && !exclusiveRemake){
 		if(type!=='levelup'){
 			field=type.charAt(0);
 			if(typeof learnset[field+'3r']!=='undefined')
-				renderLearnsets2(nationalId, form, gameInfo, learnset, type, true, true);
+				renderLearnsets2(nationalId, form, learnset, type, true, true);
 			if(typeof learnset[field+'3']!=='undefined')
-				renderLearnsets2(nationalId, form, gameInfo, learnset, type, true, false);
+				renderLearnsets2(nationalId, form, learnset, type, true, false);
 			if(typeof learnset[field+'r']!=='undefined')
-				renderLearnsets2(nationalId, form, gameInfo, learnset, type, false, true);
+				renderLearnsets2(nationalId, form, learnset, type, false, true);
 		}
 
 		if(typeof learnset.forms !== 'undefined'){
 			for(var i=0; i<learnset.forms.length; i++)
 				if(typeof learnset.forms[i] !== 'undefined')
-					renderLearnsets2(nationalId, i, gameInfo, learnset.forms[i], type, false, false);
+					renderLearnsets2(nationalId, i, learnset.forms[i], type, false, false);
 		}
 		
 	}
 }
-function renderAllLearnsets(nationalId, gameInfo){
-	var learnset;
-	if(gameInfo.id==='swsh')
-		return false;
-	else if(gameInfo.id==='letsgo')
-		learnset=LEARNSETS[nationalId][0];
-	else
-		learnset=LEARNSETS[nationalId][gameInfo.generation];
+function renderAllLearnsets(nationalId){
+	var learnset=LEARNSETS[nationalId];
 
 	if(typeof learnset === 'undefined')
 		return false;
 
-	renderLearnsets2(nationalId, false, gameInfo, learnset, 'levelup', false, false);
-	renderLearnsets2(nationalId, false, gameInfo, learnset, 'machine', false, false);
-	if(gameInfo.generation>1 && gameInfo.id!=='letsgo')
-		renderLearnsets2(nationalId, false, gameInfo, learnset, 'egg', false, false);
-	renderLearnsets2(nationalId, false, gameInfo, learnset, 'tutor', false, false);
-	renderLearnsets2(nationalId, false, gameInfo, learnset, 'change', false, false);
-	renderLearnsets2(nationalId, false, gameInfo, learnset, 'special', false, false);
+	renderLearnsets2(nationalId, false, learnset, 'levelup', false, false);
+	renderLearnsets2(nationalId, false, learnset, 'machine', false, false);
+	if(GENERATION>1 && GAME_ID!=='letsgo')
+		renderLearnsets2(nationalId, false, learnset, 'egg', false, false);
+	renderLearnsets2(nationalId, false, learnset, 'tutor', false, false);
+	renderLearnsets2(nationalId, false, learnset, 'change', false, false);
+	renderLearnsets2(nationalId, false, learnset, 'special', false, false);
 }
 
 
@@ -987,33 +1040,64 @@ function renderAllLearnsets(nationalId, gameInfo){
 	return stats
 }*/
 
+function createExternalLink(title, href){
+	var a=document.createElement('a');
+	a.target='_blank';
+	a.href=href;
+	a.innerHTML=title;
+	return a;
+}
+function getAbilityLink(abilityIndex){
+	if(MinidexSettings.lang===4)
+		return 'https://pokemon.fandom.com/es/wiki/'+LANG_ES.ABILITIES[abilityIndex].replace(/ /g, '_')
+	else
+		return 'https://bulbapedia.bulbagarden.net/wiki/'+LANG_EN.ABILITIES[abilityIndex].replace(/ /g, '_')+'_(ability)';
+
+}
+function getMoveLink(moveIndex){
+	if(MinidexSettings.lang===4)
+		return 'https://pokemon.fandom.com/es/wiki/'+(MOVES[moveIndex][0][4] || MOVES[moveIndex][0][0]).replace(/ /g, '_')
+	else
+		return 'https://bulbapedia.bulbagarden.net/wiki/'+MOVES[moveIndex][0][0].replace(/ /g, '_')+'_(move)';
+}
+function showMoveInfo(){
+	moveInfoOverlay.innerHTML='';
+
+	if(MOVES[this.moveIndex][4])
+		moveInfoOverlay.innerHTML+='<b>'+localize('power')+': </b>'+MOVES[this.moveIndex][4];
+	if(MOVES[this.moveIndex][5])
+		moveInfoOverlay.innerHTML+=' <b>'+localize('accuracy')+': </b>'+MOVES[this.moveIndex][5]+'<small>%</small>';
+	if(MOVES[this.moveIndex][3])
+		moveInfoOverlay.innerHTML+=' <b>'+localize('pp')+': </b>'+MOVES[this.moveIndex][3];
+	
+	this.appendChild(moveInfoOverlay);
+}
+
 
 
 function _clickLink(evt){
 	preventDefault(evt);
+	if(currentDistanceFromHome===0)
+		homeScroll=window.scrollY;
+
+	if(typeof this.regionalDexIndex==='number')
+		currentRegionalNumeration=this.regionalDexIndex;
+
 	pushState(this.href.substring(this.href.indexOf('#')));
 }
 function generatePokemonLink(id,form){
-	var link;
-	if(nationalMode)
-		link='#national/'+formatDexNumber(id);
-	else{
-		link='#'+currentGame.id+'/';
-		if(currentGame.generation===5)
-			link+=formatDexNumber(getRegionalIndex(id));
+	if(pokemonIdByName[id]){
+		if(form)
+			return '#'+pokemonIdByName[id]+'-'+form
 		else
-			link+=formatDexNumber(getRegionalIndex(id)+1);
-	}
-
-	if(form)
-		link+='/form/'+form;
-
-	return link;
+			return '#'+pokemonIdByName[id]
+	}else
+		return '#home';
 }
 function generateIconClickable(id,form){
 	var a=document.createElement('a');
 
-
+	a.title=localize(POKEMON_NAMES[getPokemonId(id)] || POKEMON[getPokemonId(id)][0])
 	a.href=generatePokemonLink(id, form);
 
 	a.appendChild(generateIcon(id, form,1));
@@ -1024,105 +1108,36 @@ function generateIconClickable(id,form){
 	return a
 }
 
-const ICONS_IMAGES=[
-	{
-		image:'icons',
-		big:false,
-		width:1280,
-		height:960,
-		iconWidth:40,
-		iconHeight:30,
-		cols:32,
-		maxNational:809,
-		icons:[0,1,2,3,5,6,7,10,11,12,14,15,16,17,18,19,21,22,23,25,27,29,30,31,32,33,47,49,51,53,54,55,56,57,58,59,60,61,63,65,66,67,68,69,70,71,72,73,74,75,76,78,80,82,84,85,86,87,88,89,90,91,92,93,94,95,97,98,99,100,101,102,103,104,105,107,109,111,112,113,114,116,117,118,119,120,121,122,123,125,127,128,129,130,131,133,134,135,136,137,138,139,140,141,143,144,146,147,148,149,150,151,152,153,154,155,157,158,159,160,161,162,163,164,165,166,167,168,170,171,172,174,175,176,178,179,180,181,182,183,184,185,186,188,189,190,191,192,193,194,195,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,221,222,223,224,225,226,227,228,229,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,246,247,248,249,250,278,279,280,281,282,283,284,286,287,288,289,291,292,294,295,296,297,298,299,300,301,302,303,304,305,306,307,308,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324,325,326,327,328,330,331,332,333,334,335,337,338,339,341,342,343,345,346,347,348,349,350,351,352,353,354,355,356,357,358,359,360,361,362,363,364,365,366,368,369,370,371,372,373,374,375,376,377,378,379,380,381,382,383,384,385,386,387,389,391,392,393,395,396,398,399,401,402,403,404,405,406,407,408,409,411,412,413,414,416,417,418,419,420,421,422,423,424,425,426,428,429,430,431,432,433,434,435,436,437,438,439,440,441,442,443,444,448,449,450,452,453,454,455,456,458,459,460,462,463,464,465,466,467,468,469,470,471,472,474,475,476,478,479,480,481,483,485,487,489,491,492,496,497,498,499,500,501,502,503,504,505,506,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,524,527,528,529,530,531,532,533,534,536,538,540,541,542,543,544,546,547,548,549,550,551,552,553,554,555,556,557,558,559,560,561,562,564,565,566,568,569,570,571,572,573,574,575,576,577,578,579,581,582,583,584,585,586,587,588,589,590,591,592,593,594,595,597,598,599,600,606,607,608,609,610,611,612,613,615,616,617,618,619,621,622,623,624,625,626,627,628,629,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,649,651,652,653,654,655,656,657,658,659,660,662,663,664,665,666,667,668,669,670,671,672,673,674,675,676,677,678,679,680,682,683,684,685,686,688,689,690,691,692,693,694,695,696,697,698,699,700,701,702,703,704,705,706,707,708,709,710,711,712,713,714,715,716,717,721,725,726,727,728,729,730,732,734,735,736,737,738,739,740,741,742,743,744,745,746,747,748,749,750,751,752,753,754,755,756,757,758,759,760,761,762,763,764,765,766,767,768,769,770,771,772,773,774,775,776,777,778,779,780,781,783,785,786,787,789,792,794,796,797,798,799,800,801,802,803,804,805,807,808,809,810,811,812,813,814,834,835,837,842,848,853,854,855,856,857,867,868,870,871,872,874,875,876,877,878,879,880,881,882,883,884,885,886,887,888,889,890,891,892,893,894,895,896,897,898,899,900,901,902,903,904,905,906,907,908,910,911,914,916,918,919,920,921,922,923,924,925,926,927,928,929,930,931,932,933,934,935,936,937,938,942,943,944,945,948,950,951,952,953,954,955,956,957,958,959,960,961,962,963,964,965,966,967,968,969,970,971,972,973,974,975,976,977,985,986,987,988,989,990,991,992,993,994,995,996,997,998,999,1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1014,1016,1017,1018,1019,1020,1021,1022,1023]
-	},{
-		image:'icons_letsgo',
-		big:true,
-		width:680,
-		height:1082,
-		iconWidth:68,
-		iconHeight:56,
-		cols:10,
-		maxNational:809,
-		icons:[]
-	},{
-		image:'icons_swsh',
-		big:true,
-		width:1632,
-		height:1232,
-		iconWidth:68,
-		iconHeight:56,
-		cols:24,
-		maxNational:890,
-		icons:[,1,2,3,4,5,6,8,9,10,11,12,13,,,,,,,,,,,,,15,24,,,,,,,,,26,27,28,30,,,,,32,33,34,,,,,35,37,39,43,,,,,45,46,,,,,,,47,48,49,,,,,,,,,51,53,,,,,55,,,,,,,57,58,59,60,61,63,,,64,65,,,,,,,67,68,,69,70,72,73,,,,,,74,75,,,76,,,,,,,78,79,80,82,83,85,86,87,,,,,,,88,,,,,,,90,91,,,,,,,,,,,,92,93,,,,,,94,95,96,97,,98,99,100,101,,,,102,,,103,,,,,,,,,104,105,106,107,,,,,108,,,,,,109,,,110,,111,,112,,,,,113,114,115,117,118,119,120,,,,,,,,,,121,122,,,,,,,,,123,124,125,,,126,,,,,,,,,,,,127,129,,,,,,131,132,133,134,135,136,,,137,138,139,140,141,,,,,,,,142,143,144,,,,,,,,,,145,146,,,,,,147,148,,,,,149,,,,,150,151,,,152,,,,153,154,155,,,,,,,156,157,158,159,160,161,162,163,,,,,164,165,,,,,166,167,,,,168,169,170,,,,,,,,,,,,,,,,,,,,,,,171,,,,,,,,,,,,,,,,,,,,,172,173,,,,,,,,174,175,,,,176,177,179,181,,183,184,,,,,,,,185,186,187,188,189,190,,,,,,,191,192,193,194,195,196,197,198,199,,,,200,201,202,203,,,204,,,,205,,206,207,,208,,209,,210,211,212,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,218,219,,,,,,,220,221,222,223,224,,,226,227,228,229,230,231,232,,233,234,235,236,237,238,239,240,,,,,,,241,242,,,243,,,,245,247,251,252,253,254,255,256,257,259,,,,,260,261,,,263,264,265,266,267,268,269,270,,,271,272,273,,,,274,275,,,276,278,,280,281,282,283,284,285,286,,,,287,288,289,290,291,292,293,294,295,296,,297,298,299,,,,301,302,303,304,,305,306,307,308,309,310,311,312,313,,,314,315,316,,,317,318,,319,322,,,,,,,,,,,,324,325,,,,,,,,,,,,,,326,327,,328,329,331,332,333,335,336,337,338,339,340,341,342,,,,,343,344,,,,,345,346,,,347,348,349,,350,351,352,353,354,355,356,357,,,,,,,358,359,360,361,362,363,364,365,366,,,,,,367,368,369,,,,370,371,,,372,374,375,376,377,378,379,,,380,381,382,383,384,385,386,387,388,,389,390,391,392,,,393,394,395,,,396,397,398,,399,400,401,402,403,,,,,404,405,406,407,,,,,,,,408,,411,,,,,412,413,414,416,417,418,419,420,421,422,423,424,425,426,427,428,429,431,432,433,435,436,437,438,439,440,441,442,444,445,446,447,448,450,451,453,455,456,458,461,462,463,464,467,468,470,471,472,473,474,475,476,478,479,480,482,483,484,485,486,487,488,489,499,500,501,502,503,504,506,508,510,511,513,514,515,516,517,519,520,521,522,524,526]
-	}
-];
-var currentIcons=ICONS_IMAGES[0];
-
-function isUnobtainableFormSwSh(id, form){
-	if(form && currentGame.id==='swsh'){
-		if(
-			((id===3 || id===9 || id===94 || id===130 || id===208 || id===248 || id===282 || id===303 || id===310 || id===362 || id===448 || id===475 || id===460) && form===1) || //megas
-			((id===6 || id===150) && (form===1 || form===2)) || //megas XY
-			(id===25 && (form>=1 && form<=5)) || //pikachu cosplay
-			(id===25 && form===13) || //pikachu partner
-			(id===133 && form===1) || //eevee partner
-			(id===800 && form===3)//necrozma ultra
-		){
-			return form
-		}
-	}
-	return 0;
-}
 
 function generateIcon(id,form,size/*,fixedSize*/){
 	form=form || 0;
-	var iconFix=0;
-	if(form && currentGame.id==='swsh'){
-		iconFix=isUnobtainableFormSwSh(id, form);
-		if(iconFix){
-			return document.createElement('span');
-		}else if(id===6){ //fix charizard
-			if(form===3){
-				iconFix+=2;
-			}
-		}else if(id===94){ //fix gengar
-			if(form===2){
-				iconFix+=1;
-			}
-		}else if(id===25){ //fix pikachu forms
-			if(form>=6 && form<=12){
-				iconFix+=5;
-			}else if(form===14){
-				iconFix+=5+1;
-			}
+
+	var span=createElement('span',{class:Icons.IS_BIG?'poke-icon big':'poke-icon'});
+
+	var pos=Icons.ICONS[id];
+	pos=pos || 0;
+
+
+	if(form){
+		pos+=form;
+
+		if(id===25 && GENERATION===7) /*gen 7 has no cosplay pikachu */
+			pos+=5;
+		else if(id===710 || id===711 || id===744 || id===854) // Pumpkaboo && Gourgeist, Rockruff, Sinistea
+			pos-=form;
+		else if(id===841) //Flapple
+			pos++;
+		else if(id===892){ //Urshifu
+			pos--;
 		}
 	}
 
 
+	span.style.background='url('+Icons.IMAGE+') -'+((pos%Icons.COLS)*Icons.ICON_WIDTH*size)+'px -'+(parseInt(pos/Icons.COLS)*Icons.ICON_HEIGHT*size)+'px';
 
-
-
-
-
-	var span=createElement('span',{class:currentIcons.big?'poke-icon big':'poke-icon'});
-
-	var pos=currentIcons.icons[id];
-	pos=pos || 0;
-
-	if(id===854)
-		form=0;
-
-	if(form)
-		pos+=form;
-
-
-	pos-=iconFix;
-	span.style.background='url(./resources/'+currentIcons.image+'.png) -'+((pos%currentIcons.cols)*currentIcons.iconWidth*size)+'px -'+(parseInt(pos/currentIcons.cols)*currentIcons.iconHeight*size)+'px';
-
-	span.style.backgroundSize=(currentIcons.width*size)+'px '+(currentIcons.height*size)+'px';
-	span.style.width=(currentIcons.iconWidth*size)+'px';
-	span.style.height=(currentIcons.iconHeight*size)+'px';
+	span.style.backgroundSize=(Icons.WIDTH*size)+'px '+(Icons.HEIGHT*size)+'px';
+	span.style.width=(Icons.ICON_WIDTH*size)+'px';
+	span.style.height=(Icons.ICON_HEIGHT*size)+'px';
 
 	return span
 }
@@ -1142,9 +1157,6 @@ function generateEvoBranch(id, previousLi){
 		POKEMON[id][4]=[POKEMON[id][4]];
 
 	for(var i=0;i<POKEMON[id][4].length; i++){
-		if(getPokemonId(POKEMON[id][4][i][0])>MAX_POKEMON_BY_GENERATION[currentGame.generation]){
-			continue;
-		}
 		var li=document.createElement('li');
 		var evoId=getPokemonId(POKEMON[id][4][i][0]);
 		var icon=generateIconClickable(evoId,getAlternateForm(POKEMON[id][4][i][0]));
@@ -1152,25 +1164,20 @@ function generateEvoBranch(id, previousLi){
 		var method=POKEMON[id][4][i][1];
 		var span=createElement('span', {html:''});
 		span.style.verticalAlign='middle';
-		span.innerHTML=localize(STRINGS[method] || method)+' &raquo;';
+		span.innerHTML=localize(method)+' &raquo;';
 		if(/%s/.test(span.innerHTML)){
 			var methodString=POKEMON[id][4][i][2];
 			if(method==='levelup_move'){
-				methodString=MOVES[methodString];
+				methodString=localize(MOVES[methodString][0]);
 			}else if(method==='trade_for'){
 				methodString=getPokeName(methodString);
-			}else if(method==='levelup_at' && currentGame[toCamelCase(methodString)]){
-				methodString='<span title="'+localize(currentGame.locations[currentGame[toCamelCase(methodString)]].name)+'">'+localize(POKEMON[id][4][i][2])+'</span>';
+			}else if(method==='levelup_at' && locationsHash[toCamelCase(methodString)]){
+				methodString='<span title="'+localize(locationsHash[toCamelCase(methodString)].name)+'">'+localize(POKEMON[id][4][i][2])+'</span>';
 			}else if(STRINGS[methodString]){
 				methodString=STRINGS[methodString];
 			}
 			span.innerHTML=span.innerHTML.replace('%s',methodString);
 		}
-		/*if(txts[1]===17){
-			span.innerHTML='&laquo; '+span.innerHTML;
-		}else{
-			span.innerHTML+=' &raquo;';
-		}*/
 		li.appendChild(span);
 		li.appendChild(icon);
 
@@ -1193,7 +1200,7 @@ function toCamelCase(str) {
 function parsePokemon(id, form){
 	var poke=POKEMON[id];
 
-	var completeId=getCurrentDexNumber(id);
+	var completeId=getCurrentDexNumber(id, regionalMode-1);
 
 	var name=POKEMON_NAMES[id] || POKEMON[id][0];
 	var nameHTML=name;
@@ -1208,16 +1215,9 @@ function parsePokemon(id, form){
 		image+=String.fromCharCode(97+form);
 
 
-	var abilities=[];
-	var abilitiesId=getPokeProp(id, form, 2);
-	if(typeof abilitiesId==='number'){
-		abilities[0]=ABILITIES[abilitiesId];
-	}else{
-		abilities.push(ABILITIES[abilitiesId[0]]);
-		if(abilitiesId[1])
-			abilities.push(ABILITIES[abilitiesId[1]]);
-		if(abilitiesId[2])
-			abilities.push('<span title="'+STRINGS.ability_hidden+'" class="help">'+ABILITIES[abilitiesId[2]]+'&starf;</span>');
+	var abilities=getPokeProp(id, form, 2);
+	if(typeof abilities==='number'){
+		abilities=[abilities];
 	}
 
 	var types;
@@ -1227,22 +1227,6 @@ function parsePokemon(id, form){
 	}else{
 		types=types2;
 	}
-
-	if(currentGame.generation<2 && types.length===2 && types[1]===8){ /* remove 2nd steel type: magnemite */
-		types=[types[0]];
-	}else if(currentGame.generation<5 && id===479){ /* rotom is always electric/ghost in Gen IV regardless its form */
-		types=[12,7];
-	}else if(currentGame.generation<6 && types.length===1 && types[0]===17){ /* set pure fairy types to normal: cleffa/snubbull/togepi */
-		types=[0];
-	}else if(currentGame.generation<6 && types.length===2 && types[1]===17){ /* remove 2nd fairy type: igglybuff/mime jr/azurill/mawile/ralts/cottonee */
-		types=[types[0]];
-	}
-
-
-
-
-
-
 
 	return{
 		id:id,
@@ -1262,101 +1246,171 @@ function parsePokemon(id, form){
 }
 
 
-function setGame(gameId){
-	currentGame=GAMES[gameId];
-	MinidexSettings.selectedGame=gameId;
-	currentIcons=gameId===13?ICONS_IMAGES[2]:ICONS_IMAGES[0];
-
-	var previousGeneration=el('generational-dexes').children.length;
-	while(el('generational-dexes').children.length>currentGame.generation){
-		el('generational-dexes').removeChild(el('generational-dexes').lastChild);
-	}
-
-	for(var i=previousGeneration; i<currentGame.generation; i++){
-		var option=document.createElement('option');
-		option.id='dex-nat'+(i+1);
-		option.value='nat'+(i+1);
-		option.innerHTML='Gen '+ROMAN_NUMBERS[i]+': '+getCurrentDexNumber(MAX_POKEMON_BY_GENERATION[i]+1, true)+'-'+MAX_POKEMON_BY_GENERATION[i+1];
-		el('generational-dexes').appendChild(option);
-	}
-
-	el('regional-dex').innerHTML=localize(currentGame.regionalDex[0]);
-
-
-
-	setDex(el('select-dex').value);
-	
-	empty('game-icons');
-	for(var i=0; i<currentGame.icons.length; i++){
-		el('game-icons').appendChild(generateIcon(getPokemonId(currentGame.icons[i]), getAlternateForm(currentGame.icons[i]), 1));
-		el('game-icons').children[i].className+=' crop2';
-	}
-
-	MinidexSettings.save();
-}
-
-function setDex(newDex){	
-	if(newDex==='regional'){
-		nationalMode=0;
-		currentDex=currentGame.regionalDex[1].slice(0, currentGame.regionalDex[2]);
-		el('search').placeholder=localize('search_regional');
-	}else if(newDex==='extras'){
-		nationalMode=0;
-		if(currentGame.regionalDex[2] < currentGame.regionalDex[1].length){
-			currentDex=currentGame.regionalDex[1].slice(currentGame.regionalDex[2], currentGame.regionalDex[1].length);
-		}else{
-			currentDex=[];
+var blueHeader,greenHeader;
+function refreshCurrentHeaders(){
+	if(el('pokemon').style.display==='block'){
+		if(el('tab-collection').style.display==='block'){
+			if(el('block-forms').style.display==='block')
+				blueHeader=el('block-forms');
+			else
+				blueHeader=el('block-location');
+			greenHeader=el('block-moreinfo');
+		}else if(el('tab-competitive').style.display==='block'){
+			if(GENERATION>2 && GAME_ID!=='letsgo')
+				blueHeader=el('block-abilities');
+			else
+				blueHeader=el('block-damages');
+			greenHeader=el('block-learnset');
 		}
-		el('search').placeholder=localize('search_extras');
-	}else if(/nat\d+/.test(newDex)){
-		nationalMode=parseInt(newDex.replace('nat',''));
-		currentDex=generateRange(1, MAX_POKEMON_BY_GENERATION[currentGame.generation]);
-		el('search').placeholder=localize('search_national');
-	}
-
-	
-	refreshSearchResults(searchPokemon(el('search').value));
-	refreshDex(currentDex);
-}
-
-const ALOLAN_FORMS=[19,20,26,52,53,88,89,50,51,105,74,75,76,27,28,37,38,103];
-const GALAR_FORMS=[52,77,78,83,110,122,222,263,264,554,555,562,618];
-function refreshDex(nationalIds){
-	empty('dex-results');
-	var start, end;
-	if(nationalMode){
-		start=MAX_POKEMON_BY_GENERATION[nationalMode-1];
-		end=MAX_POKEMON_BY_GENERATION[nationalMode];
 	}else{
-		start=0;
-		end=nationalIds.length;
+		blueHeader=null;
+		greenHeader=null;
 	}
-	for(var i=start; i<end; i++){
-		var regionalIndex=getRegionalIndex(currentDex[i]);
-		var caught=MinidexSettings.caughtDatabases[MinidexSettings.selectedGame].get(regionalIndex);
-		if(el('hide-caught').checked && regionalIndex!==-1 && caught){
-			continue;
-		}
-		var form=0;
-		if(!nationalMode && (currentGame.id==='sm' || currentGame.id==='usum') && ALOLAN_FORMS.indexOf(nationalIds[i])!==-1)
-			form=1;
-		else if(!nationalMode && currentGame.id==='swsh' && GALAR_FORMS.indexOf(nationalIds[i])!==-1)
-			form=(nationalIds[i]===52)?2:1;
-		
-		var a=document.createElement('a');
-		a.href=generatePokemonLink(currentDex[i], form);
+	
+	scrollEvent();
+}
+function scrollEvent(evt){
+	if(currentPoke && blueHeader && greenHeader){
+		if(greenHeader.getBoundingClientRect().top<=0)
+			setAndroidColor('#58ae54');	
+		else if(blueHeader.getBoundingClientRect().top<=0)
+			setAndroidColor('#5e66e1');
+		else 
+			setAndroidColor('#e63636');
+	}/*else if(el('location').style.display==='block'){
+	}else{
+	}*/
+	return false;
+}
 
 
-		addEvent(a, 'click', _clickLink);
-		a.appendChild(generateIcon(nationalIds[i], form, 2));
-		a.appendChild(createElement('span',{html:'<span class="mono">'+getCurrentDexNumber(nationalIds[i])+'</span> '+getPokeName(nationalIds[i])}));
 
-		el('dex-results').appendChild(a);
+function showCollection(){
+	show('tab-collection');
+	hide('tab-competitive');
+	
+	el('tabs').children[0].className='selected';
+	el('tabs').children[1].className='';
+	
+	refreshCurrentHeaders();
+}
+function showCompetitive(){
+	hide('tab-collection');
+	show('tab-competitive');
+	
+	el('tabs').children[0].className='';
+	el('tabs').children[1].className='selected';
+	
+	refreshCurrentHeaders();
+}
 
-		if(regionalIndex!==-1){
-			a.appendChild(createCaughtButton(regionalIndex));
+function previousDex(){
+	if(nationalMode && nationalMode>1)
+		setNationalDex(nationalMode-1);
+	else if(nationalMode)
+		setRegionalDex(REGIONAL_DEXES.length);
+	else if(regionalMode>1)
+		setRegionalDex(regionalMode-1);
+}
+function nextDex(){
+	if(nationalMode && nationalMode<GENERATION)
+		setNationalDex(nationalMode+1);
+	else if(regionalMode===REGIONAL_DEXES.length && NATIONAL_DEX)
+		setNationalDex(1);
+	else if(!nationalMode && regionalMode<REGIONAL_DEXES.length)
+		setRegionalDex(regionalMode+1);
+}
+
+
+function refreshDexNavScroll(selectedDex){
+	var dexesWidth=el('dex-navigator').getBoundingClientRect().width;
+	var dexElementWidth=el('dex-navigator').children[0].children[0].getBoundingClientRect().width;
+
+	el('dex-navigator').children[0].style.left=parseInt((dexesWidth/2)-(dexElementWidth/2)-(selectedDex+0)*dexElementWidth)+'px';
+	
+}
+function refreshDexNav(){	
+	var nDexes=REGIONAL_DEXES.length;
+	if(NATIONAL_DEX)
+		nDexes+=GENERATION;
+	var selectedDex;
+	if(nationalMode)
+		selectedDex=REGIONAL_DEXES.length+nationalMode-1;
+	else
+		selectedDex=regionalMode-1;
+
+	for(var i=0; i<nDexes; i++){
+		el('dex-navigator').children[0].children[i].className='clickable';
+	}
+	el('dex-navigator').children[0].children[selectedDex].className='selected';
+
+	refreshDexNavScroll(selectedDex);
+}
+function setRegionalDex(newDex){
+	var forceRefreshHomeDex=nationalMode && el('search').value;
+
+	if(currentDex!==dexRegional){
+		currentDex=dexRegional;
+		el('search').placeholder=localize('search_regional').replace('%s', getRegionName());
+		nationalMode=0;
+	}
+
+	if(regionalMode!==newDex){
+		regionalMode=newDex;
+		currentRegionalNumeration=newDex-1;
+
+		refreshDexNav();
+		refreshProgressBar();
+	}
+
+	if(forceRefreshHomeDex){
+		refreshSearchResults(forceRefreshHomeDex);
+	}else if(!hideCaught() && !searchType()){
+		homeDexReset();
+		for(var i=0; i<REGIONAL_DEXES[newDex-1][1].length; i++)
+			homeDexAdd(REGIONAL_DEXES[newDex-1][1][i], newDex-1);
+	}
+}
+function setNationalDex(newDex){	
+	var forceRefreshHomeDex=regionalMode && el('search').value;
+
+	if(currentDex!==dexNational){
+		currentDex=dexNational;
+		el('search').placeholder=localize('search_national');
+		regionalMode=0;
+	}
+
+	if(nationalMode!==newDex){
+		nationalMode=newDex;
+		currentRegionalNumeration=0;
+
+		refreshDexNav();
+		refreshProgressBar();
+	}
+
+	if(forceRefreshHomeDex){
+		refreshSearchResults(forceRefreshHomeDex);
+	}else if(!hideCaught() && !searchType()){
+		homeDexReset();
+		var genPokemon=generateRange(MAX_NATIONAL_BY_GENERATION[nationalMode-1]+1, MAX_NATIONAL_BY_GENERATION[nationalMode]);
+		for(var i=0; i<genPokemon.length; i++)
+			homeDexAdd(genPokemon[i], 0);
+	}
+}
+
+
+function hideCaught(){
+	return /^((hide|not)-(captured|caught|obtained)|missing|pending|(ocultar|no|por|sin|falta)-(captura|caza|consegui)(do|r)s?|(me-)?faltan?|pendientes?)$/.test(el('search').value.slug());
+}
+function searchType(){
+	var matches=el('search').value.slug().match(/^(tipo-)?(\w+)(-type)?$/);
+	if(matches){
+		for(var i=0; i<TYPES.length; i++){
+			if(matches[2]===TYPES[i].slug())
+				return i+1;
 		}
 	}
+	return false;
 }
 
 function checkBreedAvailability(game, pokeId){
@@ -1386,7 +1440,7 @@ function checkAvailability(game, pokeId){
 
 function getPreEvolution(id){
 	for(var i=1; i<POKEMON.length; i++){
-		if(POKEMON[i][4]){
+		if(POKEMON[i] && POKEMON[i][4]){
 			for(var j=0; j<POKEMON[i][4].length; j++){
 				var pokeId=getPokemonId(POKEMON[i][4][j][0]);
 				if(pokeId===id){
@@ -1413,51 +1467,271 @@ function checkIfAvailable(id,encounters){
 	}
 	return available;
 }
-function checkIfAvailableGame(id,game){
-	var available=0;
-	for(var i=0; i<game.locations.length; i++){
-		available|=checkIfAvailable(id, game.locations[i].encounters);
-	}
-	return available;
-}
+
 
 
 function refreshCaughtButton(button){
-	button.className='sprite clickable caught';
-	if(MinidexSettings.caughtDatabases[MinidexSettings.selectedGame].get(button.regionalIndex)){
-		button.className+='1';
-	}else{
-		button.className+='0';
-	}
+	if(MinidexSettings.caughtDatabase.get(button.regionalIndex))
+		button.className='sprite clickable caught1';
+	else
+		button.className='sprite clickable caught0';
 }
-function toggleCaughtButton(evt){
+function _clickCaughtButton(evt){
 	preventDefault(evt);
 	stopPropagation(evt);
 	if(this.regionalIndex!==-1){
-		MinidexSettings.caughtDatabases[MinidexSettings.selectedGame].toggle(this.regionalIndex);
+		MinidexSettings.caughtDatabase.toggle(this.regionalIndex);
 		refreshCaughtButton(this);
-		if(el('hide-caught').checked){
-			refreshDex(currentDex);
+
+		if(GAME_ID==='swsh' && this.regionalIndex<400){
+			/* some original Galar dex can reappear in isle of armor/crown of tundra dexes, toggle all coincidences for progress bar percentage counting purposes */
+			var newValue=MinidexSettings.caughtDatabase.get(this.regionalIndex);
+
+			for(var i=1; i<2; i++){
+				var regionalIndex=getPokemonDexIndex(REGIONAL_DEXES[0][1][this.regionalIndex], i);
+				if(regionalIndex!==-1){ //to-do: crown tundra
+					if(newValue)
+						MinidexSettings.caughtDatabase.set(regionalIndex);
+					else
+						MinidexSettings.caughtDatabase.unset(regionalIndex);
+				}
+			}
+			
+			if(this!==el('caught-button') && !nationalMode && el('search').value){
+				var maxMatches=2; //to-do: crown tundra
+				for(var i=0; i<el('dex-results').children.length && maxMatches; i++){
+					if(this!==el('dex-results').children[i].children[2] && this.regionalIndex===el('dex-results').children[i].children[2].regionalIndex){
+						el('dex-results').children[i].children[2].className=this.className;
+						maxMatches--;
+					}
+				}
+			}
 		}
+
+
+		if(this===el('caught-button')){
+			var maxMatches=1;
+			if(GAME_ID==='swsh')
+				maxMatches=2;
+				//maxMatches=3; //to-do: crown tundra
+
+			for(var i=0; i<el('dex-results').children.length && maxMatches; i++){
+				if(this!==el('dex-results').children[i].children[2] && this.regionalIndex===el('dex-results').children[i].children[2].regionalIndex){
+					el('dex-results').children[i].children[2].className=this.className;
+					maxMatches--;
+				}
+			}
+		}
+
+		if(hideCaught()){
+			// to-do: remove item from home dex
+		}
+		refreshProgressBar();
 		MinidexSettings.save();
 	}
 }
 function createCaughtButton(regionalIndex){
 	var i=document.createElement('i');
-	addEvent(i, 'click', toggleCaughtButton);
-	if(regionalIndex===false){
-		addEvent(i, 'click', function(){
+	addEvent(i, 'click', _clickCaughtButton);
+	if(typeof regionalIndex==='undefined'){
+		addEvent(i, 'click', function(evt){
 			for(var i=0; i<el('dex-results').children.length; i++){
 				if(el('dex-results').children[i].children.length===3 && this.regionalIndex===el('dex-results').children[i].children[2].regionalIndex)
 					refreshCaughtButton(el('dex-results').children[i].children[2]);
 			}
-		});
+		});		
 	}else{
 		i.regionalIndex=regionalIndex;
 		refreshCaughtButton(i);
 	}
 	return i;
 }
+
+
+function refreshProgressBar(){
+	var percentage;
+	if(nationalMode){
+		percentage=(
+			MinidexSettings.caughtDatabase.count()
+			/
+			dexRegional.length
+			*100
+		);
+	}else{
+		percentage=(
+			MinidexSettings.caughtDatabase.count(dexRegionalNumerationIndexes[regionalMode-1], REGIONAL_DEXES[regionalMode-1][1].length)
+			/
+			REGIONAL_DEXES[regionalMode-1][1].length
+			*100
+		);
+	}
+	if(percentage>0 && percentage<1)
+		percentage=1;
+	else if(percentage>99 && percentage<100)
+		percentage=99;
+
+	el('progress-bar').children[0].style.width=percentage+'%';
+	el('progress-bar').className=percentage===100?'complete':'';
+}
+
+
+
+const TYPE_CHART_GEN1=[
+[1,1,1,1,1,0.5,1,0,null,1,1,1,1,1,1,1],
+[2,1,0.5,0.5,1,2,0.5,0,null,1,1,1,1,0.5,2,1],
+[1,2,1,1,1,0.5,2,1,null,1,1,2,0.5,1,1,1],
+[1,1,1,0.5,0.5,0.5,2,0.5,null,1,1,2,1,1,1,1], //poison
+[1,1,0,2,1,2,0.5,1,null,2,1,0.5,2,1,1,1],
+[1,0.5,2,1,0.5,1,2,1,null,2,1,1,1,1,2,1],
+[1,0.5,0.5,2,1,1,1,0.5,null,0.5,1,2,1,2,1,1],
+[0,1,1,1,1,1,1,2,null,1,1,1,1,0,1,1],
+, //steel
+[1,1,1,1,1,0.5,2,1,null,0.5,0.5,2,1,1,2,0.5],
+[1,1,1,1,2,2,1,1,null,2,0.5,0.5,1,1,1,0.5],
+[1,1,0.5,0.5,2,2,0.5,1,null,0.5,2,0.5,1,1,1,0.5], //grass
+[1,1,2,1,0,1,1,1,null,1,2,0.5,0.5,1,1,0.5],
+[1,2,1,2,1,1,1,1,null,1,1,1,1,0.5,1,1],
+[1,1,2,1,2,1,1,1,null,1,0.5,2,1,1,0.5,2],
+[1,1,1,1,1,1,1,1,null,1,1,1,1,1,1,2]
+];
+
+const TYPE_CHART_STEEL_DARK=[
+[1,1,1,1,1,0.5,1,0,0.5,1,1,1,1,1,1,1,1],
+[2,1,0.5,0.5,1,2,0.5,0,2,1,1,1,1,0.5,2,1,2],
+[1,2,1,1,1,0.5,2,1,0.5,1,1,2,0.5,1,1,1,1],
+[1,1,1,0.5,0.5,0.5,1,0.5,0,1,1,2,1,1,1,1,1],
+[1,1,0,2,1,2,0.5,1,2,2,1,0.5,2,1,1,1,1],
+[1,0.5,2,1,0.5,1,2,1,0.5,2,1,1,1,1,2,1,1],
+[1,0.5,0.5,0.5,1,1,1,0.5,0.5,0.5,1,2,1,2,1,1,2],
+[0,1,1,1,1,1,1,2,0.5,1,1,1,1,2,1,1,0.5],
+[1,1,1,1,1,2,1,1,0.5,0.5,0.5,1,0.5,1,2,1,1],
+[1,1,1,1,1,0.5,2,1,2,0.5,0.5,2,1,1,2,0.5,1],
+[1,1,1,1,2,2,1,1,1,2,0.5,0.5,1,1,1,0.5,1],
+[1,1,0.5,0.5,2,2,0.5,1,0.5,0.5,2,0.5,1,1,1,0.5,1],
+[1,1,2,1,0,1,1,1,1,1,2,0.5,0.5,1,1,0.5,1],
+[1,2,1,2,1,1,1,1,0.5,1,1,1,1,0.5,1,1,0],
+[1,1,2,1,2,1,1,1,0.5,0.5,0.5,2,1,1,0.5,2,1],
+[1,1,1,1,1,1,1,1,0.5,1,1,1,1,1,1,2,1],
+[1,0.5,1,1,1,1,1,2,0.5,1,1,1,1,2,1,1,0.5]
+];
+
+const TYPE_CHART_FAIRY=[
+[1,1,1,1,1,0.5,1,0,0.5,1,1,1,1,1,1,1,1,1],
+[2,1,0.5,0.5,1,2,0.5,0,2,1,1,1,1,0.5,2,1,2,0.5],
+[1,2,1,1,1,0.5,2,1,0.5,1,1,2,0.5,1,1,1,1,1],
+[1,1,1,0.5,0.5,0.5,1,0.5,0,1,1,2,1,1,1,1,1,2],
+[1,1,0,2,1,2,0.5,1,2,2,1,0.5,2,1,1,1,1,1],
+[1,0.5,2,1,0.5,1,2,1,0.5,2,1,1,1,1,2,1,1,1],
+[1,0.5,0.5,0.5,1,1,1,0.5,0.5,0.5,1,2,1,2,1,1,2,0.5],
+[0,1,1,1,1,1,1,2,1,1,1,1,1,2,1,1,0.5,1],
+[1,1,1,1,1,2,1,1,0.5,0.5,0.5,1,0.5,1,2,1,1,2],
+[1,1,1,1,1,0.5,2,1,2,0.5,0.5,2,1,1,2,0.5,1,1],
+[1,1,1,1,2,2,1,1,1,2,0.5,0.5,1,1,1,0.5,1,1],
+[1,1,0.5,0.5,2,2,0.5,1,0.5,0.5,2,0.5,1,1,1,0.5,1,1],
+[1,1,2,1,0,1,1,1,1,1,2,0.5,0.5,1,1,0.5,1,1],
+[1,2,1,2,1,1,1,1,0.5,1,1,1,1,0.5,1,1,0,1],
+[1,1,2,1,2,1,1,1,0.5,0.5,0.5,2,1,1,0.5,2,1,1],
+[1,1,1,1,1,1,1,1,0.5,1,1,1,1,1,1,2,1,0],
+[1,0.5,1,1,1,1,1,2,1,1,1,1,1,2,1,1,0.5,0.5],
+[1,2,1,0.5,1,1,1,1,0.5,0.5,1,1,1,1,1,2,2,1]
+];
+
+function calculateWeaknesses(){	
+	var parsedPokemon=parsePokemon(currentPoke, currentForm);
+	var types=parsedPokemon.types;
+	var abilities=parsedPokemon.abilities;
+
+	var typeChart;
+	if(GENERATION===1)
+		typeChart=TYPE_CHART_GEN1;
+	else if(GENERATION<6)
+		typeChart=TYPE_CHART_STEEL_DARK;
+	else
+		typeChart=TYPE_CHART_FAIRY;
+
+	var damages=[];
+	for(var i=0; i<typeChart.length; i++){
+		if(GENERATION>1 || i!==8){ //ignore steel type in gen1
+			if(types.length===2)
+				damages[i]=typeChart[i][types[0]]*typeChart[i][types[1]];
+			else
+				damages[i]=typeChart[i][types[0]];
+		}
+	}
+
+	/*if(abilities.indexOf(26)===0){//levitate+ground
+		if(abilities.length===1)
+			damages[4]=0;
+		else
+			damages[4]+='/0*';
+	}*/
+
+	var SORTED_DAMAGES=[4,2,0.5,0.25, 0];
+	
+	var tr0=document.createElement('tr');
+	var tr1=document.createElement('tr');
+
+	el('dex-damages').appendChild(tr0);
+	el('dex-damages').appendChild(tr1);
+	for(var i=0; i<SORTED_DAMAGES.length; i++){
+		var damage=SORTED_DAMAGES[i];
+
+		var td0=document.createElement('td');
+		var span=document.createElement('span');
+
+		span.className='weakness';
+		if(damage>1)
+			span.className+=' green';
+		else if(damage===0)
+			span.className+=' red';
+		else if(damage<1)
+			span.className+=' orange';
+
+		if(damage===0.5)
+			span.innerHTML='&frac12;';
+		else if(damage===0.25)
+			span.innerHTML='&frac14;';
+		else
+			span.innerHTML=damage;
+		span.innerHTML+='&times;';
+
+		td0.appendChild(span);
+		var visible=false;
+		for(var j=0; j<damages.length; j++){
+			if(damages[j]===SORTED_DAMAGES[i]){
+				tr0.appendChild(td0);
+			}
+		}
+	}
+
+	for(var i=0; i<SORTED_DAMAGES.length; i++){
+		var damage=SORTED_DAMAGES[i];
+
+		var td1=document.createElement('td');
+
+		var visible=false;
+		for(var j=0; j<damages.length; j++){
+			if(damages[j]===SORTED_DAMAGES[i]){
+				var span=document.createElement('span');
+				span.className='type type-'+j;
+				span.innerHTML=TYPES[j];
+
+				td1.appendChild(span);
+				visible=true;
+			}
+		}
+		
+		if(visible)
+			tr1.appendChild(td1);
+	}
+}
+
+
+
+
+
+
+
 
 
 
@@ -1472,43 +1746,40 @@ function hideDonateWarning(){
 }
 var MinidexSettings=(function(){
 	var IS_STORAGE_AVAILABLE=typeof(Storage)!=='undefined';
-	var ITEM_NAME='minidexSettings';
-
-	var caughtDatabases=[];
-	for(var i=0; i<GAMES.length; i++){
-		caughtDatabases[i]=new BitArray(GAMES[i].regionalDex[1].length);
-	}
 
 	var defaultLanguage=0;
 	var userLang=(navigator.language || navigator.userLanguage).substr(0,2);
-	if(userLang==='fr'){
+	if(userLang==='fr')
 		defaultLanguage=1;
-	}else if(userLang==='de'){
+	else if(userLang==='de')
 		defaultLanguage=2;
-	}else if(userLang==='it'){
+	else if(userLang==='it')
 		defaultLanguage=3;
-	}else if(userLang==='es'){
+	else if(userLang==='es')
 		defaultLanguage=4;
-	}/*else if(userLang==='ja'){
+	else if(userLang==='jp')
 		defaultLanguage=5;
-	}*/
+
+
 
 	return{
 		/* default settings */
 		lang:defaultLanguage,
-		selectedGame:DEFAULT_GAME,
-		caughtDatabases:caughtDatabases,
+		caughtDatabase:null,
 		donateWarning:0,
-		showLocations:true,
-		showMeYourMoves:false, //haha
 
 		save:function(){
 			if(IS_STORAGE_AVAILABLE)
-				localStorage.setItem(ITEM_NAME, JSON.stringify(this));
+				localStorage.setItem('minidex-'+GAME_ID, JSON.stringify(this));
 		},
 		load:function(){
-			if(IS_STORAGE_AVAILABLE && localStorage.getItem(ITEM_NAME)){
-				var loadedSettings=JSON.parse(localStorage.getItem(ITEM_NAME));
+			var allRegionalDexSize=0;
+			for(var i=0; i<REGIONAL_DEXES.length; i++)
+				allRegionalDexSize+=REGIONAL_DEXES[i][1].length;
+			this.caughtDatabase=new BitArray(allRegionalDexSize);
+
+			if(IS_STORAGE_AVAILABLE && localStorage.getItem('minidex-'+GAME_ID)){				
+				var loadedSettings=JSON.parse(localStorage.getItem('minidex-'+GAME_ID));
 				if(typeof loadedSettings.lang==='number' && loadedSettings.lang>=0 && loadedSettings.lang<=4){
 					this.lang=loadedSettings.lang;
 				}
@@ -1516,21 +1787,10 @@ var MinidexSettings=(function(){
 				if(typeof loadedSettings.donateWarning==='number')
 					this.donateWarning=loadedSettings.donateWarning;
 
-				if(loadedSettings.showLocations===false)
-					this.showLocations=false;
-
-				if(loadedSettings.showMeYourMoves===true)
-					this.showMeYourMoves=true;
-
-				if(typeof loadedSettings.selectedGame==='number' && loadedSettings.selectedGame>=0 && loadedSettings.selectedGame<=12)
-					this.selectedGame=loadedSettings.selectedGame;
-
-				if(typeof loadedSettings.caughtDatabases==='object'){
-					for(var i=0; i<this.caughtDatabases.length && i<loadedSettings.caughtDatabases.length; i++){
-						this.caughtDatabases[i].import(loadedSettings.caughtDatabases[i]._array)
-					}
+				if(typeof loadedSettings.caughtDatabase==='object'){
+					this.caughtDatabase.import(loadedSettings.caughtDatabase._array)
 				}
-				
+
 			}
 		}
 	}
@@ -1549,91 +1809,155 @@ function generateRange(min,max){
 	return a
 }
 
+function homeDexReset(custom){
+	empty('dex-results');
+}
+function homeDexAdd(nationalId, regionalDexIndex){
+	if(!POKEMON[nationalId])
+		return false;
 
 
-function searchPokemon(q){
-	var results=[];
+	var form=0;
+	if(!nationalMode && typeof getDefaultForm==='function')
+		form=getDefaultForm(nationalId);
 
-	q=q.clean().replace(/^0+/,'').replace(/_0+/,'');
+	var a=document.createElement('a');
+	a.href=generatePokemonLink(nationalId, form);
+
+	addEvent(a, 'click', _clickLink);
+
+	a.appendChild(generateIcon(nationalId, form, 2));
+	a.appendChild(createElement('span',{html:'<span class="mono">'+getCurrentDexNumber(nationalId, regionalDexIndex)+'</span> '+getPokeName(nationalId)}));
+
+	if(typeof regionalDexIndex==='number')
+		a.regionalDexIndex=regionalDexIndex;
+
+	var caughtIndex=dexRegional.indexOf(nationalId);
+	if(caughtIndex!==-1)
+		a.appendChild(createCaughtButton(caughtIndex));
+
+	el('dex-results').appendChild(a);
+}
+function refreshSearchResults(q){
+	q=q.slug().replace(/^0+/,'').replace(/_0+/,'');
+	
 	if(q){
-		if(/^\d+$/.test(q)){
-			q=parseInt(q);
-			for(var i=0; i<currentDex.length; i++)
-				if(getCurrentDexNumberInt(currentDex[i], nationalMode)===q)
-					results.push(currentDex[i]);
+		homeDexReset();
+
+		if(hideCaught()){
+			if(nationalMode){
+				for(var i=0; i<currentDex.length; i++){
+					if(!MinidexSettings.caughtDatabase.get(getPokemonDexIndexRegional(currentDex[i])))
+						homeDexAdd(currentDex[i]);
+				}
+			}else{
+				for(var i=0; i<REGIONAL_DEXES.length; i++){
+					for(var j=0; j<REGIONAL_DEXES[i][1].length; j++){
+						if(!MinidexSettings.caughtDatabase.get(getPokemonDexIndexRegional(REGIONAL_DEXES[i][1][j])))
+							homeDexAdd(REGIONAL_DEXES[i][1][j], i);
+					}
+				}
+			}
+		}else if(searchType()){
+			var type=searchType()-1;
+			if(nationalMode){
+				for(var i=0; i<currentDex.length; i++){
+					if(POKEMON[currentDex[i]][1]===type || (typeof POKEMON[currentDex[i]][1]==='object' && POKEMON[currentDex[i]][1].indexOf(type)!==-1))
+						homeDexAdd(currentDex[i]);
+				}
+			}else{
+				for(var i=0; i<REGIONAL_DEXES.length; i++){
+					for(var j=0; j<REGIONAL_DEXES[i][1].length; j++){
+						if(POKEMON[REGIONAL_DEXES[i][1][j]][1]===type || (typeof POKEMON[REGIONAL_DEXES[i][1][j]][1]==='object' && POKEMON[REGIONAL_DEXES[i][1][j]][1].indexOf(type)!==-1))
+							homeDexAdd(REGIONAL_DEXES[i][1][j], i);
+					}
+				}
+			}
 		}else{
-			var queryRegex=new RegExp(q);
-			for(var i=0; i<currentDex.length && results.length<5; i++){
-				if(queryRegex.test(getPokeName(currentDex[i]).clean()))
-					results.push(currentDex[i]);
+			if(/^\d+$/.test(q)){
+				q=parseInt(q);
+
+				if(nationalMode){
+					if(q && POKEMON[q])
+						homeDexAdd(q);
+				}else{
+					if(GENERATION!==5)
+						q--;
+
+					for(var i=0; i<REGIONAL_DEXES.length; i++)
+						homeDexAdd(REGIONAL_DEXES[i][1][q], i);
+				}
+			}else if(nationalMode){
+				var queryRegex=new RegExp(q);
+
+				var results=0;
+				for(var i=0; i<dexNational.length && results<10; i++){
+					if(queryRegex.test(pokemonIdByName[dexNational[i]])){
+						homeDexAdd(dexNational[i], 0);
+						results++;
+					}
+				}
+			}else{
+				var queryRegex=new RegExp(q);
+
+				var results=0;
+				for(var i=0; i<REGIONAL_DEXES.length && results<10; i++){
+					var dexSearch=REGIONAL_DEXES[i][1];
+					for(var j=0; j<dexSearch.length && results<10; j++){
+						if(queryRegex.test(pokemonIdByName[dexSearch[j]])){
+							homeDexAdd(dexSearch[j], i);
+							results++;
+						}
+					}
+				}
 			}
 		}
+
+		//hide('dex-navigator');
+	}else{
+		if(nationalMode)
+			setNationalDex(nationalMode);
+		else
+			setRegionalDex(regionalMode);
+
+		//show('dex-navigator');
 	}
-
-	return results
-}
-
-
-function refreshSearchResults(nationalIds){
-	empty('search-results');
-	for(var i=0; i<nationalIds.length; i++){
-		var regionalIndex=getRegionalIndex(nationalIds[i]);
-		var caught=MinidexSettings.caughtDatabases[MinidexSettings.selectedGame].get(regionalIndex);
-
-		var form=0;
-		if(!nationalMode && (currentGame.id==='sm' || currentGame.id==='usum') && ALOLAN_FORMS.indexOf(nationalIds[i])!==-1)
-			form=1;
-
-		var a=document.createElement('a');
-		a.href=generatePokemonLink(nationalIds[i], form);
-
-
-		addEvent(a, 'click', _clickLink);
-		a.appendChild(generateIcon(nationalIds[i], form, 1));
-		a.appendChild(createElement('span',{html:'<span class="mono">'+getCurrentDexNumber(nationalIds[i])+'</span> '+getPokeName(nationalIds[i])}));
-
-		el('search-results').appendChild(a);
-
-		if(regionalIndex!==-1 && caught)
-			a.appendChild(createElement('i',{class:'sprite caught-mini'}));
-	}
-	if(el('search-results').children.length)
-		el('search-results').className='visible';
-	else
-		el('search-results').className='';
 }
 
 
 function forceGoToHome(){
-	if(currentDistanceFromHome && !currentPoke) /* location or settings */
+	if(currentDistanceFromHome && !currentPoke) /* location */
 		window.history.go(-1);
 	else if(currentDistanceFromHome>0)
 		window.history.go(-currentDistanceFromHome);
-	else /* go to settings */
-		pushState('#settings');
+	
+	if(el('search').value && !hideCaught() && !searchType())
+		reqAnimFrame(focusSearch);
 }
 function nextPokemon(){
-	var index=currentDex.indexOf(currentPoke);
+	var index=getPokemonDexIndex(currentPoke, currentRegionalNumeration);
 	if(index<(currentDex.length-1) && index!==-1){
-		if(nationalMode){
-			pushState('#national/'+(currentPoke+1));
-		}else{
-			if(currentGame.generation!==5)
-				index++;
-			pushState('#'+currentGame.id+'/'+formatDexNumber(index+1));
+		var nextPage='#'+pokemonIdByName[currentDex[index+1]];
+		
+		if(!nationalMode && typeof getDefaultForm==='function'){
+			var form=getDefaultForm(currentDex[index+1]);
+			if(form)
+				nextPage+='-'+form;
 		}
+		pushState(nextPage);
 	}
 }
 function previousPokemon(){
-	var index=currentDex.indexOf(currentPoke);
+	var index=getPokemonDexIndex(currentPoke, currentRegionalNumeration);
 	if(index>0){
-		if(nationalMode){
-			pushState('#national/'+(currentPoke-1));
-		}else{
-			if(currentGame.generation!==5)
-				index++;
-			pushState('#'+currentGame.id+'/'+formatDexNumber(index-1));
+		var nextPage='#'+pokemonIdByName[currentDex[index-1]];
+		
+		if(!nationalMode && typeof getDefaultForm==='function'){
+			var form=getDefaultForm(currentDex[index-1]);
+			if(form)
+				nextPage+='-'+form;
 		}
+		pushState(nextPage);
 	}
 }
 
@@ -1643,13 +1967,11 @@ function setLanguage(l){
 	if(l===4){
 		TYPES=LANG_ES.TYPES;
 		ABILITIES=LANG_ES.ABILITIES;
-		MOVES=LANG_ES.MOVES;
 		POKEMON_NAMES=LANG_ES.POKEMON_NAMES;
 		STRINGS=LANG_ES.STRINGS;
 	}else{
 		TYPES=LANG_EN.TYPES;
 		ABILITIES=LANG_EN.ABILITIES;
-		MOVES=LANG_EN.MOVES;
 		POKEMON_NAMES=LANG_EN.POKEMON_NAMES;
 		STRINGS=LANG_EN.STRINGS;
 	}
@@ -1660,13 +1982,44 @@ function resetGUIStrings(l){
 	var translatableElements=document.querySelectorAll('[data-translate]');
 	for(var i=0;i<translatableElements.length;i++)
 		translatableElements[i].innerHTML=localize(translatableElements[i].getAttribute('data-translate'));
-}
+	
+	el('search').placeholder=nationalMode? localize('search_national') : localize('search_regional').replace('%s', getRegionName());
+	
 
+	if(el('dex-navigator').children[0].children.length){
+		/* create dex selector */
+		for(var i=0; i<REGIONAL_DEXES.length; i++){
+			el('dex-navigator').children[0].children[i].innerHTML=localize(REGIONAL_DEXES[i][0]);
+		}
+		if(NATIONAL_DEX){
+			for(var i=0; i<GENERATION; i++){
+				el('dex-navigator').children[0].children[REGIONAL_DEXES.length+i].innerHTML=localize('national_dex').replace('%s', ROMAN_NUMBERS[i]);
+			}
+		}
+	}
+}
+function getRegionName(){
+	if(GAME_ID==='xy'){
+		return 'Kalos';
+	}else if(GENERATION===5){
+		if(MinidexSettings.lang===1)
+			return 'Unys';
+		else if(MinidexSettings.lang===2)
+			return 'Einall';
+		else if(MinidexSettings.lang===3)
+			return 'Unima';
+		else if(MinidexSettings.lang===4)
+			return 'Teselia';
+		return 'Unova';
+	}else{
+		return REGIONAL_DEXES[0][0][0].replace(' Pokédex', '');
+	}
+}
 
 
 // credit: http://www.javascriptkit.com/javatutors/touchevents2.shtml
 function addTouchEvents(){
-	var THRESOLD=120, //required min distance traveled to be considered swipe
+	var THRESOLD=110, //required min distance traveled to be considered swipe
 	RESTRAINT=50, // maximum distance allowed at the same time in perpendicular direction
 	ALLOWED_TIME=300; // maximum time allowed to travel that distance
 
@@ -1675,22 +2028,20 @@ function addTouchEvents(){
 	startTime;
 
 
-	addEvent(el('pokemon'), 'touchstart', function(evt){
+	addEvent(el('block-top'), 'touchstart', function(evt){
 		startX=evt.changedTouches[0].pageX,
 		startY=evt.changedTouches[0].pageY,
 		startTime=new Date().getTime(); // record time when finger first makes contact with surface
 		//evt.preventDefault();
-	});
-  
-	/*addEvent(el('pokemon'), 'touchmove', function(evt){
+	});  
+	/*addEvent(el('block-top'), 'touchmove', function(evt){
 		evt.preventDefault() // prevent scrolling when inside DIV
-	}, false)*/
-  
-	addEvent(el('pokemon'), 'touchend', function(evt){
+	}, false)*/  
+	addEvent(el('block-top'), 'touchend', function(evt){
 		distX = evt.changedTouches[0].pageX - startX // get horizontal dist traveled by finger while in contact with surface
 		distY = evt.changedTouches[0].pageY - startY // get vertical dist traveled by finger while in contact with surface
 
-		if ((new Date().getTime() - startTime) <= ALLOWED_TIME){ // first condition for awipe met
+		if ((new Date().getTime() - startTime) <= ALLOWED_TIME){ // first condition for swipe met
 			if (Math.abs(distX) >= THRESOLD && Math.abs(distY) <= RESTRAINT){ // 2nd condition for horizontal swipe met
 				if(distX<0){// if dist traveled is negative, it indicates left swipe
 					nextPokemon();
@@ -1700,7 +2051,7 @@ function addTouchEvents(){
 			}
 		}
 		//evt.preventDefault()
-	}, false)
+	}, false);
 }
   
 
@@ -1711,30 +2062,95 @@ function addTouchEvents(){
 
 
 
-function focusSearch(force){
-	if(!IS_MOBILE || force){
-		el('search').focus();
-	}
+function focusSearch(){
+	el('search').focus();
+	el('search').select();
 }
 
 
-
-
-
-addEvent(window,'load',function(){
+function initialize(){
 	/* startup, load settings */
 	MinidexSettings.load();
-	el('checkbox-locations').checked=MinidexSettings.showLocations;
-	el('checkbox-learnsets').checked=MinidexSettings.showMeYourMoves;
 	el('select-language').value=MinidexSettings.lang;
 	setLanguage(MinidexSettings.lang);
 	if(!MinidexSettings.donateWarning || MinidexSettings.donateWarning<((new Date()).getTime()-1296000000)){
 		show('donate-warning');
 	}
 
+	/* merge all regional dexes into one, for searching/navigation purposes */
+	dexRegional=[];
+	dexRegionalNumerationIndexes=new Array(REGIONAL_DEXES.length);
+	var temp=0;
+	for(var i=0; i<REGIONAL_DEXES.length; i++){
+		dexRegional=dexRegional.concat(REGIONAL_DEXES[i][1]);
+		dexRegionalNumerationIndexes[i]=temp;
+		temp+=REGIONAL_DEXES[i][1].length;
+	}
+
+	/* create dex selector */
+	for(var i=0; i<REGIONAL_DEXES.length; i++){
+		var li=document.createElement('li');
+		li.innerHTML=localize(REGIONAL_DEXES[i][0]);
+		el('dex-navigator').children[0].appendChild(li);
+		li.regionalDex=i+1;
+		addEvent(li, 'click', function(){
+			if(this.className==='clickable'){
+				setRegionalDex(this.regionalDex);
+				scrollHomeDexToTop();
+			}
+		});
+	}
+	if(NATIONAL_DEX){
+		for(var i=0; i<GENERATION; i++){
+			var li=document.createElement('li');
+			li.innerHTML=localize('national_dex').replace('%s', ROMAN_NUMBERS[i]);
+			el('dex-navigator').children[0].appendChild(li);
+			li.nationalDex=i+1;
+			addEvent(li, 'click', function(){
+				if(this.className==='clickable'){
+					setNationalDex(this.nationalDex);
+					scrollHomeDexToTop();
+				}
+			});
+		}
+	}
+	el('dex-navigator').children[0].style.width=el('dex-navigator').children[0].children[0].getBoundingClientRect().width*el('dex-navigator').children[0].children.length+'px';
+
+	addEvent(window,'resize',function(evt){
+			if(nationalMode)
+				refreshDexNavScroll(REGIONAL_DEXES.length+nationalMode-1);
+			else
+				refreshDexNavScroll(regionalMode-1);
+	});
+
+
+	/* build pokemon names hash + national dex */
+	pokemonIdByName=new Array(POKEMON.length);
+	dexNational=[];
+	for(var i=1; i<POKEMON.length; i++){
+		if(POKEMON[i]){
+			pokemonIdByName[i]=POKEMON[i][0].slug();
+
+			if(i===29) /* nidoran */
+				pokemonIdByName[i]+='-female';
+			else if(i===32)
+				pokemonIdByName[i]+='-male';
+
+			dexNational.push(i);
+		}
+	}
+	
+	/* calculate icon images columns */
+	Icons.COLS=Icons.WIDTH/Icons.ICON_WIDTH;
 
 	/* add touch events */
 	addTouchEvents();
+
+	/* hide competitive */
+	showCollection();
+
+	/* add scroll event */
+	addEvent(window,'scroll', scrollEvent);
 
 	/* add keyboard events */
 	addEvent(window,'keyup',function(evt){
@@ -1745,27 +2161,22 @@ addEvent(window,'load',function(){
 				nextPokemon()
 			else if(evt.keyCode===27)
 				forceGoToHome();
+		}else if(document.activeElement!==el('search')){
+			if(evt.keyCode===37){
+				previousDex();
+				scrollHomeDexToTop();
+			}else if(evt.keyCode===39){
+				nextDex();
+				scrollHomeDexToTop();
+			}
 		}
 	});
-	addEvent(el('search'),'focus',function(evt){
-		if(hideSearchDelay)
-			clearTimeout(hideSearchDelay);
-		if(el('search-results').children.length)
-			el('search-results').className='visible';
-	});
-	addEvent(el('search'),'blur',function(evt){
-		if(hideSearchDelay)
-			clearTimeout(hideSearchDelay);
-		hideSearchDelay=window.setTimeout(function(){
-			el('search-results').className='';
-		}, 150);
-	});
 	addEvent(el('search'),'input',function(evt){
-		refreshSearchResults(searchPokemon(this.value));
+		refreshSearchResults(this.value);
 	});
 	addEvent(el('search'),'keyup',function(evt){
-		if(evt.keyCode===13 && el('search-results').children.length===1){
-			el('search-results').children[0].click();
+		if(evt.keyCode===13 && el('dex-results').children.length===1){
+			el('dex-results').children[0].click();
 			el('search').blur();
 		}
 	});
@@ -1774,42 +2185,77 @@ addEvent(window,'load',function(){
 		if(!evt.state || !evt.state.page){
 			pushState('', true);
 			currentDistanceFromHome=0;
-			focusSearch();
-			el('button-menu').className='sprite settings clickable';
 		}else{
 			pushState(evt.state.page, true);
 			currentDistanceFromHome=evt.state.distanceFromHome;
-			el('button-menu').className='sprite back clickable';
 		}
 	});
 
-
-	/* create checkboxes for games */
-	var optGroups=new Array(MAX_GENERATION);
-	for(var i=0; i<MAX_GENERATION; i++){
-		optGroups[i]=document.createElement('optgroup');
-		optGroups[i].label='Generation '+ROMAN_NUMBERS[i];
-		el('select-game').appendChild(optGroups[i]);
+	/* find evolution locations */
+	if(GENERATION>3 && GENERATION<8 && GAME_ID!=='letsgo'){
+		for(var i=0; i<LOCATIONS.length; i++){
+			if(LOCATIONS[i].magneticField===true){
+				locationsHash.magneticField=LOCATIONS[i];
+			}else if(LOCATIONS[i].mossRock===true){
+				locationsHash.mossRock=LOCATIONS[i];
+			}else if(LOCATIONS[i].iceRock===true){
+				locationsHash.iceRock=LOCATIONS[i];
+			}
+		}
 	}
-	for(var i=0; i<GAMES.length; i++){
-		var option=document.createElement('option');
-		option.value=i;
-		option.innerHTML=getGamesTitle(GAMES[i]);
-		optGroups[GAMES[i].generation-1].appendChild(option);
-	}
-	el('select-game').value=MinidexSettings.selectedGame;
-	setGame(MinidexSettings.selectedGame);
 
-	var caughtButton=createCaughtButton(false);
-	caughtButton.id='caught-button';
-	el('pokemon').children[0].appendChild(caughtButton);
+	/* show/hide abilites */
+	if(GENERATION>2 && GAME_ID!=='letsgo'){
+		show('block-abilities');
+	}else{
+		hide('block-abilities');
+	}
+
+	/* create move info overlay */
+	moveInfoOverlay=document.createElement('td');
+	moveInfoOverlay.id='move-info-overlay';
+	//document.body.appendChild(moveInfoOverlay);
+
+	/* generate locations hash */
+	for(var i=0; i<LOCATIONS.length; i++){
+		locationsHash[LOCATIONS[i].name[0].slug()]=i;
+	}
+
+	/* set dex */
+	MAX_NATIONAL_BY_GENERATION[GENERATION]=MAX_NATIONAL;
+	setRegionalDex(1);
+
+	MinidexSettings.save();
+
+	var mainCaughtButton=createCaughtButton(false);
+	mainCaughtButton.id='caught-button';
+	el('pokemon').children[0].appendChild(mainCaughtButton);
 
 	/* parse parameter */
-	if(/#(\w+\/\d+(\/form\/\d+)?|\w+\/location\/\d+)$/.test(window.location.href)){
+	if(/#(\d{1,3}([\w\-]+)?|[\w+\-]+)$/.test(window.location.href)){
 		var url=window.location.href.substring(window.location.href.indexOf('#'));
 		history.replaceState('', false, '#home');
 		pushState(url);
-	}else{
+	}else if(!IS_MOBILE){
 		focusSearch();
 	}
-});
+	
+	
+	
+	
+	
+	/* after app is fully loaded, start downloading competitive database, which is the biggest file but not a priority */
+	var script=document.createElement('script');
+	script.type='text/javascript';
+	script.src='../resources/data/learnsets_gen'+(GAME_ID==='letsgo'?'7_letsgo':GENERATION)+'.js';
+	script.onload=function(){
+		competitiveDatabaseLoaded=true;
+		/* render learnsets if user is viewing a pokemon entry */
+		if(currentPoke)
+			renderAllLearnsets(currentPoke);
+	}
+	document.getElementsByTagName('head')[0].appendChild(script);
+};
+
+var competitiveDatabaseLoaded=false;
+addEvent(window,'load', initialize);
