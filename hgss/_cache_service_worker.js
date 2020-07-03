@@ -26,11 +26,11 @@ var PRECACHE_URLS=[
 '/minidex/resources/locale_es.js',
 
 /* specific game data */
-'/minidex/resources/game_gen4_hgss.js',
-'/minidex/resources/pokemon_gen4.js',
-'/minidex/resources/encounters_gen4_hgss.js',
-'/minidex/resources/more_info_gen4.js',
-'/minidex/resources/learnsets_gen4.js',
+'/minidex/resources/data/game_gen4_hgss.js',
+'/minidex/resources/data/pokemon_gen4.js',
+'/minidex/resources/data/encounters_gen4_hgss.js',
+'/minidex/resources/data/more_info_gen4.js',
+'/minidex/resources/data/learnsets_gen4.js',
 
 /* specific assets */
 '/minidex/resources/favicon_gen4hgss.png',
