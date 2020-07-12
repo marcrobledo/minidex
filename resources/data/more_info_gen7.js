@@ -10,7 +10,7 @@ const MORE_INFO=[
 		}
 	},{
 		title:['Poké Pelago details',,,,'Detalles Poké Resort'],
-		getInfo:function(nationalId, name, encounters){
+		getInfo:function(nationalId, encounters){
 			if(encounters.length && encounters[encounters.length-1][4]===LOCATIONS.length-1) /* poke pelago must be last location in database */
 				if(GAME_ID==='sm')
 					return 'https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9_Pelago#Pok.C3.A9mon_Sun_and_Moon'
@@ -36,19 +36,19 @@ const MORE_INFO=[
 		}
 	},{
 		title:'Bulbapedia',
-		getInfo:function(nationalId,name){
-			return 'https://bulbapedia.bulbagarden.net/wiki/'+name.replace(/ /g,'_')+'_(Pok%C3%A9mon)'
+		getInfo:function(nationalId){
+			return 'https://bulbapedia.bulbagarden.net/wiki/'+getPokeNameEn(nationalId).replace(/ /g,'_')+'_(Pok%C3%A9mon)'
 		}
 	},{
 		title:'Smogon',
-		getInfo:function(nationalId,name){
-			return 'https://www.smogon.com/dex/sm/pokemon/'+name.slug()+'/';
+		getInfo:function(nationalId){
+			return 'https://www.smogon.com/dex/sm/pokemon/'+getPokeNameEn(nationalId).slug()+'/';
 		}
 	},{
 		title:'Wikidex',
-		getInfo:function(nationalId,name){
+		getInfo:function(nationalId){
 			if(MinidexSettings.lang===4){
-				return 'https://pokemon.fandom.com/es/wiki/'+name.replace(/ /g,'_')
+				return 'https://www.wikidex.net/wiki/'+getPokeName(nationalId).replace(/ /g,'_')
 			}else{
 				return null;
 			}

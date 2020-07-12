@@ -3,7 +3,7 @@ TYPES:['Normal','Lucha','Volador','Veneno','Tierra','Roca','Bicho','Fantasma','A
 
 ABILITIES:[,'Hedor','Llovizna','Impulso','Armadura Batalla','Robustez','Humedad','Flexibilidad','Velo Arena','Elec. Estática','Absorbe Elec','Absorbe Agua','Despiste','Aclimatación','Ojo Compuesto','Insomnio','Cambio Color','Inmunidad','Absorbe Fuego','Polvo Escudo','Ritmo Propio','Ventosas','Intimidación','Sombra Trampa','Piel Tosca','Superguarda','Levitación','Efecto Espora','Sincronía','Cuerpo Puro','Cura Natural','Pararrayos','Dicha','Nado Rápido','Clorofila','Iluminación','Rastro','Potencia','Punto Tóxico','Foco Interno','Escudo Magma','Velo Agua','Imán','Insonorizar','Cura Lluvia','Chorro Arena','Presión','Sebo','Madrugar','Cuerpo Llama','Fuga','Vista Lince','Corte Fuerte','Recogida','Ausente','Entusiasmo','Gran Encanto','Más','Menos','Predicción','Viscosidad','Mudar','Agallas','Escama Especial','Lodo Líquido','Espesura','Mar Llamas','Torrente','Enjambre','Cabeza Roca','Sequía','Trampa Arena','Espíritu Vital','Humo Blanco','Energía pura','Caparazón','Bucle Aire','Tumbos','Electromotor','Rivalidad','Impasible','Manto Níveo','Gula','Irascible','Liviano','Ignífugo','Simple','Piel Seca','Descarga','Puño Férreo','Antídoto','Adaptable','Encadenado','Hidratación','Poder Solar','Pies Rápidos','Normalidad','Francotirador','Muro Mágico','Indefenso','Rezagado','Experto','Defensa Hoja','Zoquete','Rompemoldes','Afortunado','Resquicio','Anticipación','Alerta','Ignorante','Cromolente','Filtro','Inicio Lento','Intrépido','Colector','Gélido','Roca Sólida','Nevada','Recogemiel','Cacheo','Audaz','Multitipo','Don Floral','Mal Sueño','Hurto','Potencia Bruta','Respondón','Nerviosismo','Competitivo','Flaqueza','Cuerpo Maldito','Alma Cura','Compiescolta','Armadura Frágil','Metal Pesado','Metal Liviano','Compensación','Ímpetu Tóxico','Ímpetu Ardiente','Cosecha','Telepatía','Veleta','Funda','Toque Tóxico','Regeneración','Sacapecho','Ímpetu Arena','Piel Milagro','Cálculo Final','Ilusión','Impostor','Allanamiento','Momia','Autoestima','Justiciero','Cobardía','Espejo Mágico','Herbívoro','Bromista','Poder Arena','Punta Acero','Modo Daruma','Tinovictoria','Turbollama','Terravoltaje','Velo Aroma','Velo Flor','Carrillo','Mutatipo','Pelaje Recio','Prestidigitador','Antibalas','Tenacidad','Mandíbula Fuerte','Piel Helada','Velo Dulce','Cambio Táctico','Alas Vendaval','Megadisparador','Manto Frondoso','Simbiosis','Garra Dura','Piel Feérica','Baba','Piel Celeste','Amor Filial','Aura Oscura','Aura Feérica','Rompeaura','Mar del Albor','Tierra del Ocaso','Ráfaga Delta','Firmeza','Huida','Retirada','Hidrorrefuerzo','Ensañamiento','Escudo Limitado','Vigilante','Pompa','Acero Templado','Cólera','Quitanieves','Remoto','Voz Fluida','Primer Auxilio','Piel Eléctrica','Cola Surf','Banco','Disfraz','Fuerte Afecto','Agrupamiento','Corrosión','Letargo Perenne','Regia Presencia','Revés','Pareja de Baile','Batería','Peluche','Cuerpo Vívido','Coránima','Rizos Rebeldes','Receptor','Reacción Química','Ultraimpulso','Sistema Alfa','Electrogénesis','Psicogénesis','Nebulogénesis','Herbogénesis','Guardia Metálica','Guardia Espectro','Armadura Prisma','Fuerza Cerebral','Espada Indómita','Escudo Recio','Líbero','Recogebolas','Pelusa','Hélice Caudal','Coraza Reflejo','Tragamisil','Acérrimo','Combustible','Punk Rock','Expulsarena','Escama de Hielo','Maduración','Cara de Hielo','Fuente Energía','Mimetismo','Antibarrera','Alma Acerada','Cuerpo Mortal','Alma Errante','Monotema','Gas Reactivo','Velo Pastel','Mutapetito','Mano Rápida','Puño Invisible'],
 
-POKEMON_NAMES:{772:'Código: Cero'},
+POKEMON_NAMES:{772:'Código Cero'},
 
 STRINGS:{
 //gui
@@ -17,7 +17,12 @@ STRINGS:{
 'national_dex':'Nacional Gen. %s',
 'search_national':'Buscar en nacional',
 'search_regional':'Buscar en %s',
-'hide_caught':'Ocultar cazados',
+'donate_intro':'¡Considera un pequeño aporte si te ha gustado esta app!',
+'donate':'Donar',
+'donate_no':'Ahora no',
+'developed_by':'Desarrollado y diseñador por',
+'more_games':'Más juegos',
+'view_on_github':'Ver en GitHub',
 'ability_hidden':'Habilidad oculta',
 'exclusively_in':'Exclusivo de',
 'learnset_levelup':'Movimientos por nivel',

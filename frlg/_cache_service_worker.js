@@ -14,7 +14,7 @@
 */
 
 var PRECACHE_ID='minidex-frlg';
-var PRECACHE_VERSION='v1';
+var PRECACHE_VERSION='v1b';
 var PRECACHE_URLS=[
 '/minidex/frlg/index.html','/minidex/frlg/',
 '/minidex/frlg/manifest.json',

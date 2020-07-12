@@ -30,7 +30,7 @@ caches.keys().then(function(cacheNames){
 
 
 var PRECACHE_ID='minidex';
-var PRECACHE_VERSION='v13';
+var PRECACHE_VERSION='v14';
 var PRECACHE_URLS=[
 '/minidex/index.html','/minidex/',
 '/minidex/minidex.css',
@@ -38,7 +38,20 @@ var PRECACHE_URLS=[
 '/minidex/resources/favicon.png',
 '/minidex/resources/favicon192.png',
 '/minidex/resources/header_common.png',
-'/minidex/resources/header_gen1.png'
+'/minidex/resources/header_gen1.png',
+'/minidex/resources/index/index_gen1rby.jpg',
+'/minidex/resources/index/index_gen2gsc.jpg',
+'/minidex/resources/index/index_gen3frlg.jpg',
+'/minidex/resources/index/index_gen3rse.jpg',
+'/minidex/resources/index/index_gen4dppt.jpg',
+'/minidex/resources/index/index_gen5b2w2.jpg',
+'/minidex/resources/index/index_gen5bw.jpg',
+'/minidex/resources/index/index_gen6oras.jpg',
+'/minidex/resources/index/index_gen6xy.jpg',
+'/minidex/resources/index/index_gen7letsgo.jpg',
+'/minidex/resources/index/index_gen7sm.jpg',
+'/minidex/resources/index/index_gen7usum.jpg',
+'/minidex/resources/index/index_gen8swsh.jpg'
 ];
 
 

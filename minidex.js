@@ -1,9 +1,9 @@
-/* Minidex v20200703 - Marc Robledo 2013-2020 - http://www.marcrobledo.com/license */
+/* Minidex v20200710 - Marc Robledo 2013-2020 - http://www.marcrobledo.com/license */
 
 /*
 	to-do:
 		additional translations (FR, DE, IT, JP)
-		pokemon shadow headers for every generation
+		pokemon shadows title headers for every generation
 		add pokemon base stats in learnsets.js? --> allow search bar to show uber pokemon?
 		need to clean, scope and comment code (code is an unreadable mess, I can do it much better!)
 */
@@ -53,6 +53,7 @@ function getAlternateForm(mergedId){return mergedId>>ALT_FORM_BITS}
 
 
 
+function getPokeNameEn(nationalId){return POKEMON[nationalId][0]}
 function getPokeName(nationalId){return POKEMON_NAMES[nationalId] || POKEMON[nationalId][0]}
 
 function formatDexNumber(number){
@@ -146,7 +147,7 @@ function setAndroidColor(c){
 var currentDistanceFromHome=0;
 function pushState(url,doNotPush){
 	url=url.toLowerCase().replace(/[^\w\-]/g,'');
-	var nationalId=pokemonIdByName.indexOf(url.replace(/-\d+$/,''));
+	var nationalId=pokemonNameById.indexOf(url.replace(/-\d+$/,''));
 	if(nationalId>=1){
 		var form=0;
 		var matches=url.match(/-(\d+)$/);
@@ -203,7 +204,7 @@ var currentDex, dexRegional, dexNational, regionalMode, nationalMode, dexRegiona
 var homeScroll=0;
 var moveInfoOverlay;
 var locationsHash={};
-var pokemonIdByName;
+var pokemonNameById;
 
 
 
@@ -398,7 +399,7 @@ function showPokemon(id,form){
 	/* more info links */
 	empty('extra-links');
 	for(var i=0; i<MORE_INFO.length; i++){
-		var moreInfo=MORE_INFO[i].getInfo(currentPoke, getPokeName(currentPoke), totalEncounters);
+		var moreInfo=MORE_INFO[i].getInfo(currentPoke, totalEncounters);
 		var tr=document.createElement('tr');
 		if(/^(https?:|.*\/)/.test(moreInfo)){
 			var a=document.createElement('a');
@@ -829,12 +830,12 @@ function getMachine(moveIndex){
 		return '<small>'+localize('tm')+'</small>94';
 
 	else if(GENERATION===4 && (moveIndex===432 || moveIndex===250))
-		return '<small>'+localize('hm')+'</small>05<sup>';
+		return '<small>'+localize('hm')+'</small>05';
 
 	else if(GENERATION>=1 && GENERATION<=6 && HMs.indexOf(moveIndex)>0)
 		return '<small>'+localize('hm')+'</small>0'+HMs.indexOf(moveIndex);
 
-	else if(GENERATION===8 && TRs.indexOf(moveIndex)>0)
+	else if(GENERATION===8 && TRs.indexOf(moveIndex)>=0)
 		return '<small>'+localize('tr')+'</small>'+padMachine(TRs.indexOf(moveIndex));
 
 	else
@@ -1049,14 +1050,14 @@ function createExternalLink(title, href){
 }
 function getAbilityLink(abilityIndex){
 	if(MinidexSettings.lang===4)
-		return 'https://pokemon.fandom.com/es/wiki/'+LANG_ES.ABILITIES[abilityIndex].replace(/ /g, '_')
+		return 'https://www.wikidex.net/wiki/'+LANG_ES.ABILITIES[abilityIndex].replace(/ /g, '_')
 	else
 		return 'https://bulbapedia.bulbagarden.net/wiki/'+LANG_EN.ABILITIES[abilityIndex].replace(/ /g, '_')+'_(ability)';
 
 }
 function getMoveLink(moveIndex){
 	if(MinidexSettings.lang===4)
-		return 'https://pokemon.fandom.com/es/wiki/'+(MOVES[moveIndex][0][4] || MOVES[moveIndex][0][0]).replace(/ /g, '_')
+		return 'https://www.wikidex.net/wiki/'+(MOVES[moveIndex][0][4] || MOVES[moveIndex][0][0]).replace(/ /g, '_')
 	else
 		return 'https://bulbapedia.bulbagarden.net/wiki/'+MOVES[moveIndex][0][0].replace(/ /g, '_')+'_(move)';
 }
@@ -1086,11 +1087,11 @@ function _clickLink(evt){
 	pushState(this.href.substring(this.href.indexOf('#')));
 }
 function generatePokemonLink(id,form){
-	if(pokemonIdByName[id]){
+	if(pokemonNameById[id]){
 		if(form)
-			return '#'+pokemonIdByName[id]+'-'+form
+			return '#'+pokemonNameById[id]+'-'+form
 		else
-			return '#'+pokemonIdByName[id]
+			return '#'+pokemonNameById[id]
 	}else
 		return '#home';
 }
@@ -1121,15 +1122,16 @@ function generateIcon(id,form,size/*,fixedSize*/){
 	if(form){
 		pos+=form;
 
-		if(id===25 && GENERATION===7) /*gen 7 has no cosplay pikachu */
+		if(id===25 && GENERATION===7 && GAME_ID!=='letsgo') /*gen 7 has no cosplay pikachu */
 			pos+=5;
 		else if(id===710 || id===711 || id===744 || id===854) // Pumpkaboo && Gourgeist, Rockruff, Sinistea
 			pos-=form;
 		else if(id===841) //Flapple
 			pos++;
-		else if(id===892){ //Urshifu
+		else if(id===892) //Urshifu
 			pos--;
-		}
+		else if(id===150 && GAME_ID==='letsgo') //Mewtwo Let's go!
+			pos=pos-form+1;
 	}
 
 
@@ -1892,7 +1894,7 @@ function refreshSearchResults(q){
 
 				var results=0;
 				for(var i=0; i<dexNational.length && results<10; i++){
-					if(queryRegex.test(pokemonIdByName[dexNational[i]])){
+					if(queryRegex.test(pokemonNameById[dexNational[i]]) || (POKEMON_NAMES[dexNational[i]] && queryRegex.test(POKEMON_NAMES[dexNational[i]].slug()))){ //this does the trick for spanish (as Type: Null is the only changed name) but wouldn't be very efficient for french/german names, and totally incompatible for japanese
 						homeDexAdd(dexNational[i], 0);
 						results++;
 					}
@@ -1904,7 +1906,7 @@ function refreshSearchResults(q){
 				for(var i=0; i<REGIONAL_DEXES.length && results<10; i++){
 					var dexSearch=REGIONAL_DEXES[i][1];
 					for(var j=0; j<dexSearch.length && results<10; j++){
-						if(queryRegex.test(pokemonIdByName[dexSearch[j]])){
+						if(queryRegex.test(pokemonNameById[dexSearch[j]]) || (POKEMON_NAMES[dexSearch[j]] && queryRegex.test(POKEMON_NAMES[dexSearch[j]].slug()))){ //this does the trick for spanish (as Type: Null is the only changed name) but wouldn't be very efficient for french/german names, and totally incompatible for japanese
 							homeDexAdd(dexSearch[j], i);
 							results++;
 						}
@@ -1937,7 +1939,7 @@ function forceGoToHome(){
 function nextPokemon(){
 	var index=getPokemonDexIndex(currentPoke, currentRegionalNumeration);
 	if(index<(currentDex.length-1) && index!==-1){
-		var nextPage='#'+pokemonIdByName[currentDex[index+1]];
+		var nextPage='#'+pokemonNameById[currentDex[index+1]];
 		
 		if(!nationalMode && typeof getDefaultForm==='function'){
 			var form=getDefaultForm(currentDex[index+1]);
@@ -1950,7 +1952,7 @@ function nextPokemon(){
 function previousPokemon(){
 	var index=getPokemonDexIndex(currentPoke, currentRegionalNumeration);
 	if(index>0){
-		var nextPage='#'+pokemonIdByName[currentDex[index-1]];
+		var nextPage='#'+pokemonNameById[currentDex[index-1]];
 		
 		if(!nationalMode && typeof getDefaultForm==='function'){
 			var form=getDefaultForm(currentDex[index-1]);
@@ -2125,16 +2127,16 @@ function initialize(){
 
 
 	/* build pokemon names hash + national dex */
-	pokemonIdByName=new Array(POKEMON.length);
+	pokemonNameById=new Array(POKEMON.length);
 	dexNational=[];
 	for(var i=1; i<POKEMON.length; i++){
 		if(POKEMON[i]){
-			pokemonIdByName[i]=POKEMON[i][0].slug();
+			pokemonNameById[i]=POKEMON[i][0].slug();
 
 			if(i===29) /* nidoran */
-				pokemonIdByName[i]+='-female';
+				pokemonNameById[i]+='-female';
 			else if(i===32)
-				pokemonIdByName[i]+='-male';
+				pokemonNameById[i]+='-male';
 
 			dexNational.push(i);
 		}
@@ -2173,6 +2175,8 @@ function initialize(){
 	});
 	addEvent(el('search'),'input',function(evt){
 		refreshSearchResults(this.value);
+		if(document.body.scrollTop>(el('dex-results').offsetTop-document.getElementsByTagName('nav')[0].offsetHeight))
+			document.body.scrollTop=(el('dex-results').offsetTop-document.getElementsByTagName('nav')[0].offsetHeight);
 	});
 	addEvent(el('search'),'keyup',function(evt){
 		if(evt.keyCode===13 && el('dex-results').children.length===1){

@@ -16,7 +16,7 @@ const LOCATIONS=[
 		[16,,'flying',60],
 		[17,,'flying',35],
 		[18,,'flying',5],
-		[alternateForm(25,13),P,'starter'],
+		[alternateForm(25,1),P,'starter'],
 		[alternateForm(133,1),E,'starter']
 	]
 },{

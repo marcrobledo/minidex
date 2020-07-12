@@ -14,7 +14,7 @@
 */
 
 var PRECACHE_ID='minidex-xy';
-var PRECACHE_VERSION='v1';
+var PRECACHE_VERSION='v1b';
 var PRECACHE_URLS=[
 '/minidex/xy/index.html','/minidex/xy/',
 '/minidex/xy/manifest.json',

@@ -19,24 +19,45 @@ body{
 	display:none;
 	margin: 0px auto 30px;
 	text-align:center;
+	
+	max-width: 480px;
+	box-sizing:border-box;
+	padding:16px;
+	border: 1px solid #3b5065;
+	border-radius: 3px;
+	font-size:90%;
 }
 
-#donate-warning a,#donate-warning .close-donate{
+#donate-intro{margin:0 auto 10px;line-height:1.4}
+#donate-actions{margin:0 auto}
+
+#donate-warning a{
 	display:inline-block;
 	text-align:center;
-	padding: 13px 14px;
+	padding: 10px 14px;
 	color:white;
 	text-decoration:none;
+	background-color:#d80082;
+	border-radius:3px;
+	margin-right:10px;
+	font-size:110%;
+	font-weight:bold;
 }
-#donate-warning a:hover,#donate-warning .close-donate:hover{
+#donate-warning a:hover{
 	background-color:#e81092;
 	cursor:pointer;
+}
+#donate-warning .close-donate{
+	padding:8px;
+}
+#donate-warning .close-donate:hover{
+	cursor:pointer;
+	text-decoration:underline;
 }
 .sprite.heart{
 	margin-right:4px;
 }
-#donate-warning a{background-color:#d80082;border-radius:3px 0 0 3px}
-#donate-warning .close-donate{background-color:#af1370;border-radius:0 3px 3px 0}
+
 #donate-warning span{display:inline-block;vertical-align:middle}
 
 
@@ -94,7 +115,6 @@ i.sprite{
 .sprite.pic{background-position:-76px -16px;width:14px;height:16px}
 
 .sprite.heart{background-position: -70px -96px;width:20px;height:18px}
-.sprite.close{background-position: -78px -30px;width:12px;height:18px}
 .sprite.move-cat-0{background-position: -0 -184px;width:22px;height:16px}
 .sprite.move-cat-1{background-position: -22px -184px;width:18px;height:16px}
 .sprite.move-cat-2{background-position: -40px -184px;width:19px;height:16px}
@@ -505,7 +525,8 @@ table td{
 #dex-damages td{text-align:center}
 #dex-damages tr:nth-child(2)>td{vertical-align:top}
 #dex-damages .type{
-	width:80px;
+	width:96px;
+	box-sizing:border-box;
 	display:block;
 	text-align:center;
 	margin:2px auto 0;
@@ -836,6 +857,12 @@ header{
 		right:12px;
 	}
 
+	#donate-warning{
+		max-width: none;
+		border-radius:0;
+		border:none;
+		background-color:#293d4f;
+	}
 	.block{padding:12px 4px}
 	#location-encounters .block{padding:0 4px}
 
@@ -857,8 +884,10 @@ header{
 	#tab-collection .block:last-child, #tab-competitive .block:last-child, #location-encounters{border-radius:0}
 
 	#dex-damages .type{
-		width:50px;
+		width:68px;
 		font-size:80%;
+		padding-left:2px;
+		padding-right:2px;
 	}
 	nav{
 		margin-top:0px;

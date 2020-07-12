@@ -6,19 +6,19 @@ const MORE_INFO=[
 		}
 	},{
 		title:'Bulbapedia',
-		getInfo:function(nationalId,name){
-			return 'https://bulbapedia.bulbagarden.net/wiki/'+name.replace(/ /g,'_')+'_(Pok%C3%A9mon)'
+		getInfo:function(nationalId){
+			return 'https://bulbapedia.bulbagarden.net/wiki/'+getPokeNameEn(nationalId).replace(/ /g,'_')+'_(Pok%C3%A9mon)'
 		}
 	},{
 		title:'Smogon',
-		getInfo:function(nationalId,name){
-			return 'https://www.smogon.com/dex/bw/pokemon/'+name.slug()+'/';
+		getInfo:function(nationalId){
+			return 'https://www.smogon.com/dex/bw/pokemon/'+getPokeNameEn(nationalId).slug()+'/';
 		}
 	},{
 		title:'Wikidex',
-		getInfo:function(nationalId,name){
+		getInfo:function(nationalId){
 			if(MinidexSettings.lang===4){
-				return 'https://pokemon.fandom.com/es/wiki/'+name.replace(/ /g,'_')
+				return 'https://www.wikidex.net/wiki/'+getPokeName(nationalId).replace(/ /g,'_')
 			}else{
 				return null;
 			}

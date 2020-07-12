@@ -14,7 +14,7 @@
 */
 
 var PRECACHE_ID='minidex-hgss';
-var PRECACHE_VERSION='v1';
+var PRECACHE_VERSION='v1b';
 var PRECACHE_URLS=[
 '/minidex/hgss/index.html','/minidex/hgss/',
 '/minidex/hgss/manifest.json',

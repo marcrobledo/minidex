@@ -14,7 +14,7 @@
 */
 
 var PRECACHE_ID='minidex-oras';
-var PRECACHE_VERSION='v1';
+var PRECACHE_VERSION='v1b';
 var PRECACHE_URLS=[
 '/minidex/oras/index.html','/minidex/oras/',
 '/minidex/oras/manifest.json',

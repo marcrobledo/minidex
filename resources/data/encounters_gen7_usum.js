@@ -271,7 +271,7 @@ const LOCATIONS=[
 	]
 },{
 	name:['Pikachu Valley','Plaine des Pikachu','Pikachu-Tal','Valle dei Pikachu','Valle de los Pikachu'],encounters:[
-		[alternateForm(25,12),,'gift']
+		[alternateForm(25,7),,'gift']
 	]
 },{
 	name:['Paniola Town','Ohana','Ohana','Ohana','Pueblo Ohana'],encounters:[

@@ -14,7 +14,7 @@
 */
 
 var PRECACHE_ID='minidex-gsc';
-var PRECACHE_VERSION='v1';
+var PRECACHE_VERSION='v1b';
 var PRECACHE_URLS=[
 '/minidex/gsc/index.html','/minidex/gsc/',
 '/minidex/gsc/manifest.json',

@@ -14,7 +14,7 @@
 */
 
 var PRECACHE_ID='minidex-rse';
-var PRECACHE_VERSION='v1';
+var PRECACHE_VERSION='v1b';
 var PRECACHE_URLS=[
 '/minidex/rse/index.html','/minidex/rse/',
 '/minidex/rse/manifest.json',

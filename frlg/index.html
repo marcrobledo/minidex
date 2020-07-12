@@ -5,6 +5,7 @@
 
 	<meta charset="UTF-8"/>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="google" content="notranslate" />
 
 	<meta name="description" content="This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!"/>
 	<meta name="keywords" content="pokedex,online,pokemon,app,html5,webapp,pwa,responsive,minidex,sword,shield,espada,escudo,x,y,xy,oras,ruby,omega,rubi,alpha,alfa,zafiro,sapphire,ultra,sol,luna,sun,moon,lets go"/>
@@ -74,7 +75,11 @@
 		</nav>
 		
 		<div id="donate-warning">
-			<a href="https://www.paypal.me/marcrobledo/5" target="_blank" rel="nofollow" onclick="hideDonateWarning()"><i class="sprite heart"></i><span> Donate</span></a><span class="close-donate" title="Dismiss" onclick="hideDonateWarning()"><i class="sprite close"></i></span>
+			<p id="donate-intro" data-translate="donate_intro">Consider a small donation if you find this app useful!</p>
+			<p id="donate-actions">
+				<a href="https://www.paypal.me/marcrobledo/5" target="_blank" rel="nofollow" onclick="hideDonateWarning()"><i class="sprite heart"></i> <span data-translate="donate">Donate</span></a>
+				<span class="close-donate" onclick="hideDonateWarning()" data-translate="donate_no">Not now</span>
+			</p>
 		</div>
 
 
@@ -88,8 +93,8 @@
 
 
 		<footer>
-			Developed and designed by <a href="https://www.marcrobledo.com">Marc Robledo</a><br/>
-			<a href="../" target="_blank">More games</a> | <a href="https://github.com/marcrobledo/minidex/" target="_blank">View on GitHub</a><br/><br/>
+			<span data-translate="developed_by">Developed and designed by</span> <a href="https://www.marcrobledo.com">Marc Robledo</a><br/>
+			<a href="../" target="_blank" data-translate="more_games">More games</a> | <a href="https://github.com/marcrobledo/minidex/" target="_blank" data-translate="view_on_github">View on GitHub</a><br/><br/>
 			<small>
 				This is a fan created site, no copyright or trademark infringement is intended.<br/>
 				Pokémon and all respective names are trademark &amp; &copy; of Nintendo/Creatures Inc./GAME FREAK inc. TM 1996-2020

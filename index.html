@@ -5,6 +5,7 @@
 
 	<meta charset="UTF-8"/>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta name="google" content="notranslate" />
 
 	<meta name="description" content="This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!"/>
 	<meta name="keywords" content="pokedex,online,pokemon,app,html5,webapp,pwa,minidex,sword,shield,espada,escudo,x,y,xy,oras,ruby,omega,rubi,alpha,alfa,zafiro,sapphire,ultra,sol,luna,sun,moon,lets go"/>
@@ -36,7 +37,9 @@ body{
 	cursor:default
 }
 
+.hidden{display:none}
 .text-center{text-align:center}
+.text-right{text-align:right}
 
 main,footer{
 	text-align:center;
@@ -88,6 +91,7 @@ ul a{
 	font-weight:bold;
 	font-size:120%;
 	padding: 10px 0;
+	position:relative;
 }
 ul a:hover{
 	background-color:#e63636;
@@ -115,7 +119,7 @@ footer a:hover{color:white}
 
 
 
-/*
+
 .game a{
 	background-size:cover;
 	background-position:center center;
@@ -124,25 +128,49 @@ footer a:hover{color:white}
 .game a:hover{
 	background-blend-mode:multiply;
 }
-.game.gen1rby a{background-image:url(./resources/index/index_gen1rby.png)}
-.game.gen2gsc a{background-image:url(./resources/index/index_gen2gsc.png)}
-.game.gen3rse a{background-image:url(./resources/index/index_gen3rse.png)}
-.game.gen3frlg a{background-image:url(./resources/index/index_gen3frlg.png)}
-.game.gen4dppt a{background-image:url(./resources/index/index_gen4dppt.png)}
-.game.gen4hgss a{background-image:url(./resources/index/index_gen2gsc.png)}
-.game.gen5bw a{background-image:url(./resources/index/index_gen5bw.png)}
-.game.gen5b2w2 a{background-image:url(./resources/index/index_gen5b2w2.png)}
-.game.gen6xy a{background-image:url(./resources/index/index_gen6xy.png)}
-.game.gen6oras a{background-image:url(./resources/index/index_gen6oras.png)}
-.game.gen7sm a{background-image:url(./resources/index/index_gen7sm.png)}
-.game.gen7usum a{background-image:url(./resources/index/index_gen7usum.png)}
-.game.gen7letsgo a{background-image:url(./resources/index/index_gen7letsgo.png)}
-.game.gen8swsh a{background-image:url(./resources/index/index_gen8swsh.png)}
-*/
+.game.gen1rby a{background-image:url(./resources/index/index_gen1rby.jpg)}
+.game.gen2gsc a{background-image:url(./resources/index/index_gen2gsc.jpg)}
+.game.gen3rse a{background-image:url(./resources/index/index_gen3rse.jpg)}
+.game.gen3frlg a{background-image:url(./resources/index/index_gen3frlg.jpg)}
+.game.gen4dppt a{background-image:url(./resources/index/index_gen4dppt.jpg)}
+.game.gen4hgss a{background-image:url(./resources/index/index_gen2gsc.jpg)}
+.game.gen5bw a{background-image:url(./resources/index/index_gen5bw.jpg)}
+.game.gen5b2w2 a{background-image:url(./resources/index/index_gen5b2w2.jpg)}
+.game.gen6xy a{background-image:url(./resources/index/index_gen6xy.jpg)}
+.game.gen6oras a{background-image:url(./resources/index/index_gen6oras.jpg)}
+.game.gen7sm a{background-image:url(./resources/index/index_gen7sm.jpg)}
+.game.gen7usum a{background-image:url(./resources/index/index_gen7usum.jpg)}
+.game.gen7letsgo a{background-image:url(./resources/index/index_gen7letsgo.jpg)}
+.game.gen8swsh a{background-image:url(./resources/index/index_gen8swsh.jpg)}
 
 
 
+#select-language{
+	font-family:inherit;
+	font-size:100%;
+	border:0;
+	background-color:#334251;
+	background-color:#2f4457;
+	color:inherit;
+	text-align:center;
+	color:white;
 
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	text-overflow:'';
+	vertical-align:middle;
+	padding: 4px 2px 4px 2px;
+	border-radius:80px;
+	
+	position:absolute;
+	top:16px;
+	right:16px;
+}
+#select-language:hover{
+	cursor:pointer;
+	background-color:#181c20;
+}
+#select-language option{background-color:#282e36}
 
 
 
@@ -151,6 +179,13 @@ footer a:hover{color:white}
 	body{
 		font-size:14px;
 		margin:0 auto
+	}
+
+	#select-language{
+		font-size:13px;
+
+		top:16px;
+		right:12px;
 	}
 
 	header{
@@ -166,8 +201,37 @@ footer a:hover{color:white}
 	</style>
 	
 	<script type="text/javascript"><!--
+
+const GAMES=[
+	['Sword Shield',,,,'Espada Escudo'],
+	['Let\'s go!',,,,'Let\'s go!'],
+	['Ultra Sun Ultra Moon',,,,'Ultra Sol Ultra Luna'],
+	['Sun Moon',,,,'Sol Luna'],
+	['Omega Ruby Alpha Sapphire',,,,'Rubí Omega Zafiro Alfa'],
+	['XY',,,,'XY'],
+	['Black 2 White 2',,,,'Negro 2 Blanco 2'],
+	['Black White',,,,'Negro Blanco'],
+	['HeartGold SoulSilver',,,,'HeartGold SoulSilver'],
+	['Diamond Pearl Platinum',,,,'Diamante Perla Platino'],
+	['Fire Red Leaf Green',,,,'Rojo Fuego Verde Hoja'],
+	['Ruby Sapphire Emerald',,,,'Rubí Zafiro Esmeralda'],
+	['Gold Silver Crystal',,,,'Oro Plata Cristal'],
+	['Red Blue Yellow',,,,'Rojo Azul Amarillo']
+];
+
+function setLanguage(langIndex){
+	var lis=document.getElementById('games').children;
+	for(var i=0; i<lis.length; i++)
+		lis[i].children[0].children[1].innerHTML=GAMES[i][langIndex] || GAMES[i][0];
+
+	for(var i=0; i<6; i++)
+		document.getElementById('description-'+i).style.display=langIndex===i?'block':'none';
+}
+
+
 window.addEventListener('load', function(evt){
-	
+	if(document.getElementById('select-language').selectedIndex)
+		setLanguage(document.getElementById('select-language').selectedIndex);
 }, false);
 	--></script>
 </head>
@@ -175,29 +239,59 @@ window.addEventListener('load', function(evt){
 <body>
 	<header><div class="text-center"><h1>Minidex</h1></div></header>
 
+	<div class="text-right">
+		<select id="select-language" onchange="setLanguage(this.selectedIndex)">
+			<option value="0">English</option>
+			<option value="1">Français*</option>
+			<option value="2">Deutsch*</option>
+			<option value="3">Italiano*</option>
+			<option value="4">Español</option>
+			<option value="5">日本語*</option>
+		</select>
+	</div>
+
 	<main>
-		<p>
-		This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
+		<p id="description-0" lang="en">
+			This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
 		</p>
-		<ul>
-			<li class="game gen8swsh"><a href="swsh/"><small>Gen VIII</small>Sword Shield</a></li>
-			<li class="game gen7letsgo"><a href="letsgo/"><small>Gen VII</small>Let's go!</a></li>
-			<li class="game gen7usum"><a href="usum/"><small>Gen VII</small>Ultra Sun Ultra Moon</a></li>
-			<li class="game gen7sm"><a href="sm/"><small>Gen VII</small>Sun Moon</a></li>
-			<li class="game gen6oras"><a href="oras/"><small>Gen VI</small>Omega Ruby Alpha Sapphire</a></li>
-			<li class="game gen6xy"><a href="xy/"><small>Gen VI</small>XY</a></li>
-			<li class="game gen5b2w2"><a href="b2w2/"><small>Gen V</small>Black 2 White 2</a></li>
-			<li class="game gen5bw"><a href="bw/"><small>Gen V</small>Black White</a></li>
-			<li class="game gen4hgss"><a href="hgss/"><small>Gen IV</small>HeartGold SoulSilver</a></li>
-			<li class="game gen4dppt"><a href="dppt/"><small>Gen IV</small>Diamond Pearl Platinum</a></li>
-			<li class="game gen3frlg"><a href="frlg/"><small>Gen III</small>Fire Red Leaf Green</a></li>
-			<li class="game gen3rse"><a href="rse/"><small>Gen III</small>Ruby Sapphire Emerald</a></li>
-			<li class="game gen2gsc"><a href="gsc/"><small>Gen II</small>Gold Silver Crystal</a></li>
-			<li class="game gen1rby"><a href="rby/"><small>Gen I</small>Red Blue Yellow</a></li>
+		<p id="description-1" lang="fr" class="hidden">
+			This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
+			<strong>Note: French translation is incomplete.</strong>
+		</p>
+		<p id="description-2" lang="de" class="hidden">
+			This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
+			<strong>Note: German translation is incomplete.</strong>
+		</p>
+		<p id="description-3" lang="it" class="hidden">
+			This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
+			<strong>Note: Italian translation is incomplete.</strong>
+		</p>
+		<p id="description-4" lang="es" class="hidden">
+			Esta webapp minimalista y ligera recopila todas las localizaciones de todos los Pokémon a lo largo de cada juego de la saga. Encuentra información de los Pokémon rápidamente y mantén un seguimiento del progreso de tu Pokédex. ¡No requiere registro ni instalación!
+		</p>
+		<p id="description-5" lang="jp" class="hidden">
+			This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
+			<strong>Note: Japanese translation is incomplete.</strong>
+		</p>
+		<ul id="games">
+			<li class="game gen8swsh"><a href="swsh/"><small>Gen VIII</small><span>Sword Shield</span></a></li>
+			<li class="game gen7letsgo"><a href="letsgo/"><small>Gen VII</small><span>Let's go!</span></a></li>
+			<li class="game gen7usum"><a href="usum/"><small>Gen VII</small><span>Ultra Sun Ultra Moon</span></a></li>
+			<li class="game gen7sm"><a href="sm/"><small>Gen VII</small><span>Sun Moon</span></a></li>
+			<li class="game gen6oras"><a href="oras/"><small>Gen VI</small><span>Omega Ruby Alpha Sapphire</span></a></li>
+			<li class="game gen6xy"><a href="xy/"><small>Gen VI</small><span>XY</span></a></li>
+			<li class="game gen5b2w2"><a href="b2w2/"><small>Gen V</small><span>Black 2 White 2</span></a></li>
+			<li class="game gen5bw"><a href="bw/"><small>Gen V</small><span>Black White</span></a></li>
+			<li class="game gen4hgss"><a href="hgss/"><small>Gen IV</small><span>HeartGold SoulSilver</span></a></li>
+			<li class="game gen4dppt"><a href="dppt/"><small>Gen IV</small><span>Diamond Pearl Platinum</span></a></li>
+			<li class="game gen3frlg"><a href="frlg/"><small>Gen III</small><span>Fire Red Leaf Green</span></a></li>
+			<li class="game gen3rse"><a href="rse/"><small>Gen III</small><span>Ruby Sapphire Emerald</span></a></li>
+			<li class="game gen2gsc"><a href="gsc/"><small>Gen II</small><span>Gold Silver Crystal</span></a></li>
+			<li class="game gen1rby"><a href="rby/"><small>Gen I</small><span>Red Blue Yellow</span></a></li>
 		</ul>
 	</main>
 	<footer>
-		Developed and designed by <a href="https://www.marcrobledo.com">Marc Robledo</a><br/><a href="https://github.com/marcrobledo/minidex/" target="_blank">See Minidex in GitHub</a><br/><br/>
+		Developed and designed by <a href="https://www.marcrobledo.com">Marc Robledo</a><br/><a href="https://github.com/marcrobledo/minidex/" target="_blank">View on GitHub</a><br/><br/>
 		<small>
 			This is a fan created site, no copyright or trademark infringement is intended.<br/>
 			Pokémon and all respective names are trademark &amp; &copy; of Nintendo/Creatures Inc./GAME FREAK inc. TM 1996-2020
