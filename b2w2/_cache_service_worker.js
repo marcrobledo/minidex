@@ -14,7 +14,7 @@
 */
 
 var PRECACHE_ID='minidex-b2w2';
-var PRECACHE_VERSION='v1b';
+var PRECACHE_VERSION='v2';
 var PRECACHE_URLS=[
 '/minidex/b2w2/index.html','/minidex/b2w2/',
 '/minidex/b2w2/manifest.json',

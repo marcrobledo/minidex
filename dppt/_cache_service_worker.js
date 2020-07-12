@@ -14,7 +14,7 @@
 */
 
 var PRECACHE_ID='minidex-dppt';
-var PRECACHE_VERSION='v1b';
+var PRECACHE_VERSION='v2';
 var PRECACHE_URLS=[
 '/minidex/dppt/index.html','/minidex/dppt/',
 '/minidex/dppt/manifest.json',

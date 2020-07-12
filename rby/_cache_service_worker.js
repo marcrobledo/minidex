@@ -14,7 +14,7 @@
 */
 
 var PRECACHE_ID='minidex-rby';
-var PRECACHE_VERSION='v1b';
+var PRECACHE_VERSION='v2';
 var PRECACHE_URLS=[
 '/minidex/rby/index.html','/minidex/rby/',
 '/minidex/rby/manifest.json',

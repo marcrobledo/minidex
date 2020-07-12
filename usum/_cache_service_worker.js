@@ -14,7 +14,7 @@
 */
 
 var PRECACHE_ID='minidex-usum';
-var PRECACHE_VERSION='v1b';
+var PRECACHE_VERSION='v2';
 var PRECACHE_URLS=[
 '/minidex/usum/index.html','/minidex/usum/',
 '/minidex/usum/manifest.json',
