@@ -14,7 +14,7 @@
 */
 
 var PRECACHE_ID='minidex-letsgo';
-var PRECACHE_VERSION='v2';
+var PRECACHE_VERSION='v3';
 var PRECACHE_URLS=[
 '/minidex/letsgo/index.html','/minidex/letsgo/',
 '/minidex/letsgo/manifest.json',

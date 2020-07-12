@@ -14,7 +14,7 @@
 */
 
 var PRECACHE_ID='minidex-swsh';
-var PRECACHE_VERSION='v2';
+var PRECACHE_VERSION='v3';
 var PRECACHE_URLS=[
 '/minidex/swsh/index.html','/minidex/swsh/',
 '/minidex/swsh/manifest.json',

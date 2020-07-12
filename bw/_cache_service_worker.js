@@ -14,7 +14,7 @@
 */
 
 var PRECACHE_ID='minidex-bw';
-var PRECACHE_VERSION='v2';
+var PRECACHE_VERSION='v3';
 var PRECACHE_URLS=[
 '/minidex/bw/index.html','/minidex/bw/',
 '/minidex/bw/manifest.json',
