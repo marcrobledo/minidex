@@ -11,11 +11,11 @@
 	<meta name="keywords" content="pokedex,online,pokemon,app,html5,webapp,pwa,responsive,minidex,sword,shield,espada,escudo,x,y,xy,oras,ruby,omega,rubi,alpha,alfa,zafiro,sapphire,ultra,sol,luna,sun,moon,lets go"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
-	<link rel="shortcut icon" href="../resources/favicon.png" type="image/png" sizes="16x16"/>
-	<link rel="shortcut icon" href="../resources/favicon_gen3frlg.png" type="image/png" sizes="192x192"/>
+	<link rel="shortcut icon" href="./resources/favicon16.png" type="image/png" sizes="16x16"/>
+	<link rel="shortcut icon" href="./resources/favicon192.png" type="image/png" sizes="192x192"/>
 	<!-- iOS icons -->
-	<link rel="apple-touch-icon" sizes="16x16" href="../resources/favicon.png" />
-	<link rel="apple-touch-icon" href="../resources/favicon_gen3frlg.png" />
+	<link rel="apple-touch-icon" sizes="16x16" href="./resources/favicon16.png" />
+	<link rel="apple-touch-icon" href="./resources/favicon192.png" />
 
 	<!-- MANIFEST for Chrome-->	
 	<meta id="mobile-header-chrome" name="theme-color" content="#202b37"/><!-- <M46: specify Android bar color -->
@@ -23,19 +23,17 @@
 	<meta name="mobile-web-app-capable" content="yes"/>
 	<link rel="manifest" href="manifest.json"/> <!-- M39 -->
 
-
-	<link type="text/css" rel="stylesheet" href="../minidex.css" media="all"/>
-
 	<!-- Minidex core -->
-	<script type="text/javascript" src="../minidex.js"></script>
-	<script type="text/javascript" src="../resources/locale_en.js"></script>
-	<script type="text/javascript" src="../resources/locale_es.js"></script>
+	<link type="text/css" rel="stylesheet" href="../core/minidex.css" media="all"/>
+	<script type="text/javascript" src="../core/minidex.js"></script>
+	<script type="text/javascript" src="../core/locale_en.js"></script>
+	<script type="text/javascript" src="../core/locale_es.js"></script>
 
 	<!-- Specific game databases -->
-	<script type="text/javascript" src="../resources/data/game_gen3_frlg.js"></script>
-	<script type="text/javascript" src="../resources/data/pokemon_gen3.js"></script>
-	<script type="text/javascript" src="../resources/data/encounters_gen3_frlg.js"></script>
-	<script type="text/javascript" src="../resources/data/more_info_gen3.js"></script>
+	<script type="text/javascript" src="../core/data/game_gen3_frlg.js"></script>
+	<script type="text/javascript" src="../core/data/pokemon_gen3.js"></script>
+	<script type="text/javascript" src="../core/data/encounters_gen3_frlg.js"></script>
+	<script type="text/javascript" src="../core/data/more_info_gen3.js"></script>
 	<!-- learnset database is loaded on background after booting for speeding up purposes -->
 
 	<!-- Service worker for -->

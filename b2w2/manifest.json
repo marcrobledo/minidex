@@ -3,13 +3,13 @@
 	"name":"Minidex B2W2",
 	"icons":[
 		{
-			"src": "/minidex/resources/favicon.png",
+			"src": "/minidex/b2w2/resources/favicon16.png",
 			"sizes": "16x16",
 			"type": "image/png",
 			"density": "1.0"
 		},
 		{
-			"src": "/minidex/resources/favicon_gen5b2w2.png",
+			"src": "/minidex/b2w2/resources/favicon192.png",
 			"sizes": "192x192",
 			"type": "image/png",
 			"density": "1.0"

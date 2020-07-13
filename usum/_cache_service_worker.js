@@ -14,37 +14,37 @@
 */
 
 var PRECACHE_ID='minidex-usum';
-var PRECACHE_VERSION='v3';
+var PRECACHE_VERSION='v4';
 var PRECACHE_URLS=[
 '/minidex/usum/index.html','/minidex/usum/',
 '/minidex/usum/manifest.json',
 
 /* core */
-'/minidex/minidex.css',
-'/minidex/minidex.js',
-'/minidex/resources/locale_en.js',
-'/minidex/resources/locale_es.js',
+'/minidex/core/minidex.css',
+'/minidex/core/minidex.js',
+'/minidex/core/locale_en.js',
+'/minidex/core/locale_es.js',
 
 /* specific game data */
-'/minidex/resources/data/game_gen7_usum.js',
-'/minidex/resources/data/pokemon_gen7.js',
-'/minidex/resources/data/encounters_gen7_usum.js',
-'/minidex/resources/data/more_info_gen7.js',
-'/minidex/resources/data/learnsets_gen7.js',
+'/minidex/core/data/game_gen7_usum.js',
+'/minidex/core/data/pokemon_gen7.js',
+'/minidex/core/data/encounters_gen7_usum.js',
+'/minidex/core/data/more_info_gen7.js',
+'/minidex/core/data/learnsets_gen7.js',
 
 /* specific assets */
-'/minidex/resources/favicon_gen7usum.png',
-'/minidex/resources/icons_3ds.png',
-'/minidex/resources/gen7_qr_magearna.png',
-'/minidex/resources/gen7_qr_pikachu_cap.png',
+'/minidex/usum/resources/favicon16.png',
+'/minidex/usum/resources/favicon192.png',
+'/minidex/core/icons_3ds.png',
+'/minidex/usum/resources/gen7_qr_magearna.png',
+'/minidex/usum/resources/gen7_qr_pikachu_cap.png',
 
 /* common assets */
-'/minidex/resources/favicon.png',
-'/minidex/resources/pokemon_top.png',
-'/minidex/resources/pokemon_header.png',
-'/minidex/resources/header_common.png',
-'/minidex/resources/header_gen1.png',
-'/minidex/resources/sprites.png'
+'/minidex/core/pokemon_top.png',
+'/minidex/core/pokemon_header.png',
+'/minidex/core/header_common.png',
+'/minidex/core/header_gen1.png',
+'/minidex/core/sprites.png'
 ];
 
 

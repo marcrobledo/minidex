@@ -3,13 +3,13 @@
 	"name":"Minidex USUM",
 	"icons":[
 		{
-			"src": "/minidex/resources/favicon.png",
+			"src": "/minidex/usum/resources/favicon16.png",
 			"sizes": "16x16",
 			"type": "image/png",
 			"density": "1.0"
 		},
 		{
-			"src": "/minidex/resources/favicon_gen7usum.png",
+			"src": "/minidex/usum/resources/favicon192.png",
 			"sizes": "192x192",
 			"type": "image/png",
 			"density": "1.0"

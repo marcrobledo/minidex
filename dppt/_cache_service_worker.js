@@ -14,35 +14,35 @@
 */
 
 var PRECACHE_ID='minidex-dppt';
-var PRECACHE_VERSION='v3';
+var PRECACHE_VERSION='v4';
 var PRECACHE_URLS=[
 '/minidex/dppt/index.html','/minidex/dppt/',
 '/minidex/dppt/manifest.json',
 
 /* core */
-'/minidex/minidex.css',
-'/minidex/minidex.js',
-'/minidex/resources/locale_en.js',
-'/minidex/resources/locale_es.js',
+'/minidex/core/minidex.css',
+'/minidex/core/minidex.js',
+'/minidex/core/locale_en.js',
+'/minidex/core/locale_es.js',
 
 /* specific game data */
-'/minidex/resources/data/game_gen4_dppt.js',
-'/minidex/resources/data/pokemon_gen4.js',
-'/minidex/resources/data/encounters_gen4_dppt.js',
-'/minidex/resources/data/more_info_gen4.js',
-'/minidex/resources/data/learnsets_gen4.js',
+'/minidex/core/data/game_gen4_dppt.js',
+'/minidex/core/data/pokemon_gen4.js',
+'/minidex/core/data/encounters_gen4_dppt.js',
+'/minidex/core/data/more_info_gen4.js',
+'/minidex/core/data/learnsets_gen4.js',
 
 /* specific assets */
-'/minidex/resources/favicon_gen4dppt.png',
-'/minidex/resources/icons_3ds.png',
+'/minidex/dppt/resources/favicon16.png',
+'/minidex/dppt/resources/favicon192.png',
+'/minidex/core/icons_3ds.png',
 
 /* common assets */
-'/minidex/resources/favicon.png',
-'/minidex/resources/pokemon_top.png',
-'/minidex/resources/pokemon_header.png',
-'/minidex/resources/header_common.png',
-'/minidex/resources/header_gen1.png',
-'/minidex/resources/sprites.png'
+'/minidex/core/pokemon_top.png',
+'/minidex/core/pokemon_header.png',
+'/minidex/core/header_common.png',
+'/minidex/core/header_gen1.png',
+'/minidex/core/sprites.png'
 ];
 
 
