@@ -1,4 +1,4 @@
-/* Minidex v20200713 - Marc Robledo 2013-2020 - http://www.marcrobledo.com/license */
+/* Minidex v20201024 - Marc Robledo 2013-2020 - http://www.marcrobledo.com/license */
 
 /*
 	to-do:
@@ -83,15 +83,15 @@ function getCurrentDexNumber(nationalId, regionalDexIndex){
 	}else{
 		if(typeof regionalDexIndex==='undefined')
 			regionalDexIndex=1;
-		
+
 		if(regionalDexIndex===0 && GENERATION===5)
 			return formatDexNumber(REGIONAL_DEXES[regionalDexIndex][1].indexOf(nationalId));
 		else if(regionalDexIndex===0 || (GAME_ID==='xy' && regionalDexIndex<3))
 			return formatDexNumber(REGIONAL_DEXES[regionalDexIndex][1].indexOf(nationalId)+1);
-		else if(GAME_ID==='swsh' && regionalDexIndex===1)
+		else if(GAME_ID==='swsh' && regionalDexIndex===1 && REGIONAL_DEXES[regionalDexIndex][1].indexOf(nationalId)+1<=211)
 			return 'A'+formatDexNumber(REGIONAL_DEXES[regionalDexIndex][1].indexOf(nationalId)+1);
-		/*else if(GAME_ID==='swsh' && regionalDexIndex===2)
-			return 'C'+formatDexNumber(REGIONAL_DEXES[regionalDexIndex][1].indexOf(nationalId)+1);*/
+		else if(GAME_ID==='swsh' && regionalDexIndex===2 && REGIONAL_DEXES[regionalDexIndex][1].indexOf(nationalId)+1<=210)
+			return 'C'+formatDexNumber(REGIONAL_DEXES[regionalDexIndex][1].indexOf(nationalId)+1);
 
 		return '---';
 	}
@@ -429,6 +429,31 @@ function showPokemon(id,form){
 			tr.appendChild(td0);
 			el('extra-links').appendChild(tr);
 		}
+	}
+	if(typeof navigator.share!=='undefined' && navigator.canShare()){
+		var tr=document.createElement('tr');
+		var a=document.createElement('a');
+		a.target='_blank';
+		a.href='#'+pokemonNameById[currentPoke];
+		addEvent(a, 'click', function(evt){
+			preventDefault(evt);
+			
+			navigator.share({
+				title:'#'+currentPoke+' '+POKEMON[currentPoke][0]+' - Minidex',
+				text:'Learn all about '+POKEMON[currentPoke][0]+'!',
+				url:window.location.href
+			});
+		});
+		var td0=document.createElement('td');
+		var sprite=document.createElement('i');
+		sprite.className='sprite share';
+		td0.appendChild(sprite);
+		a.innerHTML+=localize('share');
+		var td1=document.createElement('td');
+		td1.appendChild(a);
+		tr.appendChild(td0);
+		tr.appendChild(td1);
+		el('extra-links').appendChild(tr);
 	}
 
 	/* smooth scroll to top */
@@ -1052,7 +1077,7 @@ function getAbilityLink(abilityIndex){
 	if(MinidexSettings.lang===4)
 		return 'https://www.wikidex.net/wiki/'+LANG_ES.ABILITIES[abilityIndex].replace(/ /g, '_')
 	else
-		return 'https://bulbapedia.bulbagarden.net/wiki/'+LANG_EN.ABILITIES[abilityIndex].replace(/ /g, '_')+'_(ability)';
+		return 'https://bulbapedia.bulbagarden.net/wiki/'+LANG_EN.ABILITIES[abilityIndex].replace(/ /g, '_')+'_(Ability)';
 
 }
 function getMoveLink(moveIndex){
@@ -1135,7 +1160,9 @@ function generateIcon(id,form,size/*,fixedSize*/){
 	}
 
 
-	span.style.background='url('+Icons.IMAGE+') -'+((pos%Icons.COLS)*Icons.ICON_WIDTH*size)+'px -'+(parseInt(pos/Icons.COLS)*Icons.ICON_HEIGHT*size)+'px';
+	span.style.backgroundImage='url('+Icons.IMAGE+')';
+	span.style.backgroundPosition='-'+((pos%Icons.COLS)*Icons.ICON_WIDTH*size)+'px -'+(parseInt(pos/Icons.COLS)*Icons.ICON_HEIGHT*size)+'px';
+	//span.style.background='url('+Icons.IMAGE+') -'+((pos%Icons.COLS)*Icons.ICON_WIDTH*size)+'px -'+(parseInt(pos/Icons.COLS)*Icons.ICON_HEIGHT*size)+'px';
 
 	span.style.backgroundSize=(Icons.WIDTH*size)+'px '+(Icons.HEIGHT*size)+'px';
 	span.style.width=(Icons.ICON_WIDTH*size)+'px';
@@ -1404,6 +1431,9 @@ function setNationalDex(newDex){
 function hideCaught(){
 	return /^((hide|not)-(captured|caught|obtained)|missing|pending|(ocultar|no|por|sin|falta)-(captura|caza|consegui)(do|r)s?|(me-)?faltan?|pendientes?)$/.test(el('search').value.slug());
 }
+function searchLocations(){
+	return !nationalMode && /^(locations?|routes|places?|zones?|lugar|lugares|sitios?|localizacion|localizaciones|rutas|zonas?)?$/.test(el('search').value.slug());
+}
 function searchType(){
 	var matches=el('search').value.slug().match(/^(tipo-)?(\w+)(-type)?$/);
 	if(matches){
@@ -1485,13 +1515,13 @@ function _clickCaughtButton(evt){
 		MinidexSettings.caughtDatabase.toggle(this.regionalIndex);
 		refreshCaughtButton(this);
 
-		if(GAME_ID==='swsh' && this.regionalIndex<400){
+		if(GAME_ID==='swsh' && this.regionalIndex<(400+211)){ /* to-do: crown of tundra: how many pokemon */
 			/* some original Galar dex can reappear in isle of armor/crown of tundra dexes, toggle all coincidences for progress bar percentage counting purposes */
 			var newValue=MinidexSettings.caughtDatabase.get(this.regionalIndex);
 
-			for(var i=1; i<2; i++){
+			for(var i=1; i<3; i++){
 				var regionalIndex=getPokemonDexIndex(REGIONAL_DEXES[0][1][this.regionalIndex], i);
-				if(regionalIndex!==-1){ //to-do: crown tundra
+				if(regionalIndex!==-1){
 					if(newValue)
 						MinidexSettings.caughtDatabase.set(regionalIndex);
 					else
@@ -1500,7 +1530,7 @@ function _clickCaughtButton(evt){
 			}
 			
 			if(this!==el('caught-button') && !nationalMode && el('search').value){
-				var maxMatches=2; //to-do: crown tundra
+				var maxMatches=3;
 				for(var i=0; i<el('dex-results').children.length && maxMatches; i++){
 					if(this!==el('dex-results').children[i].children[2] && this.regionalIndex===el('dex-results').children[i].children[2].regionalIndex){
 						el('dex-results').children[i].children[2].className=this.className;
@@ -1514,11 +1544,10 @@ function _clickCaughtButton(evt){
 		if(this===el('caught-button')){
 			var maxMatches=1;
 			if(GAME_ID==='swsh')
-				maxMatches=2;
-				//maxMatches=3; //to-do: crown tundra
+				maxMatches=3; //isle of armor and crown tundra dexes can have repeat pokemon
 
 			for(var i=0; i<el('dex-results').children.length && maxMatches; i++){
-				if(this!==el('dex-results').children[i].children[2] && this.regionalIndex===el('dex-results').children[i].children[2].regionalIndex){
+				if(el('dex-results').children[i].children.length===3 && this.regionalIndex===el('dex-results').children[i].children[2].regionalIndex){
 					el('dex-results').children[i].children[2].className=this.className;
 					maxMatches--;
 				}
@@ -1799,7 +1828,19 @@ var MinidexSettings=(function(){
 }());
 
 
+function checkIfLocationAllCaught(encounters){
+	for(var i=0; i<encounters.length; i++){
+		if(encounters[i].group){
+			if(!checkIfLocationAllCaught(encounters[i].encounters))
+				return false;
+		}else{
+			if(!MinidexSettings.caughtDatabase.get(getPokemonDexIndexRegional(getPokemonId(encounters[i][0]))))
+				return false;
+		}
+	}
 
+	return true;
+}
 
 
 
@@ -1813,6 +1854,30 @@ function generateRange(min,max){
 
 function homeDexReset(custom){
 	empty('dex-results');
+}
+function homeLocationAdd(locationHashId){
+	var locationIndex=locationsHash[locationHashId];
+
+	if(typeof locationIndex!=='number')
+		return false;
+
+	var a=document.createElement('a');
+	a.className='location-link';
+	a.href='#'+locationHashId;
+
+	addEvent(a, 'click', _clickLink);
+
+	a.appendChild(createElement('span',{html:localize(LOCATIONS[locationIndex].name)}));
+
+
+	var i=document.createElement('i');
+	if(checkIfLocationAllCaught(LOCATIONS[locationIndex].encounters))
+		i.className='sprite location1';
+	else
+		i.className='sprite location0';
+	a.appendChild(i);
+
+	el('dex-results').appendChild(a);
 }
 function homeDexAdd(nationalId, regionalDexIndex){
 	if(!POKEMON[nationalId])
@@ -1875,6 +1940,10 @@ function refreshSearchResults(q){
 					}
 				}
 			}
+		}else if(searchLocations()){
+			for(var i=0; i<LOCATIONS.length; i++){
+				homeLocationAdd(LOCATIONS[i].name[0].slug());
+			}
 		}else{
 			if(/^\d+$/.test(q)){
 				q=parseInt(q);
@@ -1910,6 +1979,15 @@ function refreshSearchResults(q){
 							homeDexAdd(dexSearch[j], i);
 							results++;
 						}
+					}
+				}
+				
+				//search region locations
+				for(var i=0; i<LOCATIONS.length && results<20; i++){
+					var locationSlug=localize(LOCATIONS[i].name).slug();
+					if(queryRegex.test(locationSlug)){
+						homeLocationAdd(LOCATIONS[i].name[0].slug());
+						results++;
 					}
 				}
 			}

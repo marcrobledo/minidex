@@ -24,8 +24,8 @@
 	<link rel="manifest" href="manifest.json"/> <!-- M39 -->
 
 	<!-- Minidex core -->
-	<link type="text/css" rel="stylesheet" href="../core/minidex.css" media="all"/>
-	<script type="text/javascript" src="../core/minidex.js"></script>
+	<link type="text/css" rel="stylesheet" href="../core/minidex_v1.css" media="all"/>
+	<script type="text/javascript" src="../core/minidex_v1.js"></script>
 	<script type="text/javascript" src="../core/locale_en.js"></script>
 	<script type="text/javascript" src="../core/locale_es.js"></script>
 
@@ -36,13 +36,29 @@
 	<script type="text/javascript" src="../core/data/more_info_gen8.js"></script>
 	<!-- learnset database is loaded on background after booting for speeding up purposes -->
 
-	<!-- Service worker for -->
+	<!-- Service worker for PWA -->
 	<script type="text/javascript"><!--
 		const FORCE_HTTPS=true;
 		if(FORCE_HTTPS && location.protocol==='http:')
 			location.href=window.location.href.replace('http:','https:');
 		else if(location.protocol==='https:' && 'serviceWorker' in navigator)
 			navigator.serviceWorker.register('/minidex/swsh/_cache_service_worker.js', {scope: '/minidex/swsh/'});
+	--></script>
+
+	<!-- fix for DLC2 dexes rearrangement -->
+	<script type="text/javascript"><!--
+		if(typeof(Storage)!=='undefined' && localStorage.getItem('minidex-swsh')){
+			var tempSettings=JSON.parse(localStorage.getItem('minidex-swsh'));
+			
+			if(tempSettings.caughtDatabase && tempSettings.caughtDatabase.realLength<901){
+				for(var i=20; i<tempSettings.caughtDatabase._array.length; i++){
+					tempSettings.caughtDatabase._array[i]=0x00;
+				}
+				alert('Pokémon have been rearranged for Crown of Tundra.');
+				
+				localStorage.setItem('minidex-swsh', JSON.stringify(tempSettings));
+			}
+		}
 	--></script>
 </head>
 

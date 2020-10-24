@@ -14,14 +14,14 @@
 */
 
 var PRECACHE_ID='minidex-usum';
-var PRECACHE_VERSION='v4';
+var PRECACHE_VERSION='v5';
 var PRECACHE_URLS=[
 '/minidex/usum/index.html','/minidex/usum/',
 '/minidex/usum/manifest.json',
 
 /* core */
-'/minidex/core/minidex.css',
-'/minidex/core/minidex.js',
+'/minidex/core/minidex_v1.css',
+'/minidex/core/minidex_v1.js',
 '/minidex/core/locale_en.js',
 '/minidex/core/locale_es.js',
 

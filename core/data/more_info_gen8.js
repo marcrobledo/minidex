@@ -5,6 +5,8 @@ const MORE_INFO=[
 				return ['Available in v1.1.0 update',,,,'Disponible en actualización v1.1.0'];
 			else if(getPokemonDexIndexRegional(nationalId)>=400 && getPokemonDexIndexRegional(nationalId)<=610)
 				return ['Available in v1.2.0 update',,,,'Disponible en actualización v1.2.0'];
+			else if(getPokemonDexIndexRegional(nationalId)>=620 && getPokemonDexIndexRegional(nationalId)<=888)
+				return ['Available in v1.3.0 update',,,,'Disponible en actualización v1.3.0'];
 			return null;
 		}
 	},{
@@ -21,11 +23,21 @@ const MORE_INFO=[
 			return null;
 		}
 	},{
-		title:['Max Raid den map (Isle of Armor)',,,,'Mapa de nidos (Isla de la armadura)	'],
+		title:['Max Raid den map (Isle of Armor)',,,,'Mapa de nidos (Isla de la armadura)'],
 		getInfo:function(nationalId, encounters){
 			for(var i=0; i<encounters.length; i++){ //search a raid encounter
 				if(encounters[i][1] & Ar && /raid_/.test(encounters[i][2])){
 					return './resources/swsh_dlc1_map.png';
+				}
+			}
+			return null;
+		}
+	},{
+		title:['Max Raid den map (Crown of Tundra)',,,,'Mapa de nidos (Nieves de la Corona)'],
+		getInfo:function(nationalId, encounters){
+			for(var i=0; i<encounters.length; i++){ //search a raid encounter
+				if(encounters[i][1] & Cr && /raid_/.test(encounters[i][2])){
+					return './resources/swsh_dlc2_map.png';
 				}
 			}
 			return null;

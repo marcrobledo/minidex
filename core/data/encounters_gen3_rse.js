@@ -908,7 +908,9 @@ const LOCATIONS=[
 	]
 },{
 	name:['Route 130',,,'Percorso 130','Ruta 130'],encounters:[
-		[360,,'grass',100],
+		{group:['Mirage Island',,'Wundereiland','Isola Miraggio','Isla Espejismo'], encounters:[
+			[360,,'grass',100]
+		]},
 		[72,,'surf',60],
 		[278,,'surf',35],
 		[279,,'surf',5],
@@ -919,10 +921,6 @@ const LOCATIONS=[
 		[320,,'fish_good',20],
 		[319,,'fish_super',40],
 		[320,,'fish_super',60]
-	]
-},{
-	name:['Mirage Island',,'Wundereiland','Isola Miraggio','Isla Espejismo'],encounters:[
-		[360,,'grass',100]
 	]
 },{
 	name:['Route 131',,,'Percorso 131','Ruta 131'],encounters:[

@@ -14,14 +14,14 @@
 */
 
 var PRECACHE_ID='minidex-oras';
-var PRECACHE_VERSION='v4';
+var PRECACHE_VERSION='v5';
 var PRECACHE_URLS=[
 '/minidex/oras/index.html','/minidex/oras/',
 '/minidex/oras/manifest.json',
 
 /* core */
-'/minidex/core/minidex.css',
-'/minidex/core/minidex.js',
+'/minidex/core/minidex_v1.css',
+'/minidex/core/minidex_v1.js',
 '/minidex/core/locale_en.js',
 '/minidex/core/locale_es.js',
 

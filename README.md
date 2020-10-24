@@ -4,8 +4,9 @@ This lightweight and minimalist webapp compiles all the locations of all Pokémo
 ![Minidex preview 1](/_preview/minidex_preview1.png?raw=true) ![Minidex preview 2](/_preview/minidex_preview2.png?raw=true)
 
 **Features:**
-* all regional+national Pokédex from RBY up to Sword and Shield
+* all regional+national Pokédex from RBY up to Sword and Shield+DLC
 * quick Pokémon search (name or number) at anytime
+* search also by location or Pokémon type
 * click in a location title to get a list of all Pokémon in that location
 * users can keep track of their regional Pokédex progress by marking mark caught Pokémon
 * made in Vanilla JS, very lightweight

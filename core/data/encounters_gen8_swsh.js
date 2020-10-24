@@ -8,12 +8,12 @@
 const Sw=1<<0;
 const Sh=1<<1;
 const Ar=1<<2;
-const Tu=1<<3;
+const Cr=1<<3;
 const SwSh=Sw|Sh;
 const SwAr=Sw|Ar;
 const ShAr=Sh|Ar;
-const SwTu=Sw|Tu;
-const ShTu=Sh|Tu;
+const SwCr=Sw|Cr;
+const ShCr=Sh|Cr;
 
 
 const RAID_POOLS=[,
@@ -2465,7 +2465,10 @@ const LOCATIONS=[
 
 {name:['Wild Area',,,,'Área Silvestre'],encounters:[
 	[alternateForm(143,1),,'event'],
-	[alternateForm(849,2),,'event']
+	[alternateForm(849,2),,'event'],
+	
+	
+	[alternateForm(145,1),Cr,'roaming']
 ]},
 {name:['Meetup Spot',,,,'Punto de Encuentro'],encounters:[
 	[alternateForm(25,9),,'gift'],
@@ -2666,11 +2669,7 @@ const LOCATIONS=[
 	[362,,'wanderer',[,,,,100,100]], //Glalie
 
 	generateRaidDen(15, 2, 50),
-	generateRaidDen(16, 6, 47),
-	{group:['Raid Den #?',,,,'Nido #?'], encounters:[
-		[246, [0,1], 'raid_event', 100],
-		[782, [0,1], 'raid_event', 100]
-	]},
+	generateRaidDen(16, 6, 47)
 ]},
 {name:['East Lake Axewell',,,,'Lago Axew (este)'],encounters:[
 	[759,,'overworld',[50,50,35,25,25,25,10,10,25]],
@@ -3957,6 +3956,19 @@ const LOCATIONS=[
 ]},
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 {name:['Isle of Armor',,,,'Isla Armadura'],encounters:[
 	[52,Ar,['trade',alternateForm(52,2)]],
 	[83,SwAr,['trade',alternateForm(83,1)]],
@@ -3969,7 +3981,9 @@ const LOCATIONS=[
 	[618,Ar,['trade',alternateForm(618,1)]],
 	[110,Ar,['trade',alternateForm(110,1)]],
 	[103,Ar,['trade',alternateForm(103,1)]],
-	[105,Ar,['trade',alternateForm(105,1)]]
+	[105,Ar,['trade',alternateForm(105,1)]],
+	
+	[alternateForm(146,1),Cr,'roaming']
 ]},
 {name:['Master Dojo'],encounters:[
 	[1,Ar,'gift'],
@@ -3990,54 +4004,54 @@ const LOCATIONS=[
 	[728,Ar,'gift'],
 	[alternateForm(50,1),,'gift'],
 
-	[427,Ar,"overworld",[56,36,36,36,,,36,56,36]],
-	[39,Ar,"overworld",32],
-	[63,Ar,"overworld",5],
-	[707,Ar,"overworld",5],
-	[113,Ar,"overworld",[2,2,2,2,,,2,2]],
-	[686,Ar,"overworld",[,20]],
-	[98,Ar,"overworld",[,,20,20]],
-	[753,Ar,"overworld",[,,,,,,20]],
-	[280,Ar,"overworld",[,,,,,,,,20]],
-	[242,Ar,"overworld",[,,,,,,,,2]],
-	[824,Ar,"hidden",30],
-	[427,Ar,"hidden",30],
-	[39,Ar,"hidden",[30,15,15,15,,,15,30,15]],
-	[440,Ar,"hidden",10],
-	[686,Ar,"hidden",[,15]],
-	[98,Ar,"hidden",[,,15,15]],
-	[753,Ar,"hidden",[,,,,,,15]],
-	[280,Ar,"hidden",[,,,,,,,,15]],
-	[819,Ar,"shake_tree",70],
-	[840,Ar,"shake_tree",30],
-	[129,Ar,"fish",50],
-	[223,Ar,"fish",40],
-	[224,Ar,"fish",10],
+	[427,Ar,'overworld',[56,36,36,36,,,36,56,36]],
+	[39,Ar,'overworld',32],
+	[63,Ar,'overworld',5],
+	[707,Ar,'overworld',5],
+	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
+	[686,Ar,'overworld',[,20]],
+	[98,Ar,'overworld',[,,20,20]],
+	[753,Ar,'overworld',[,,,,,,20]],
+	[280,Ar,'overworld',[,,,,,,,,20]],
+	[242,Ar,'overworld',[,,,,,,,,2]],
+	[824,Ar,'hidden',30],
+	[427,Ar,'hidden',30],
+	[39,Ar,'hidden',[30,15,15,15,,,15,30,15]],
+	[440,Ar,'hidden',10],
+	[686,Ar,'hidden',[,15]],
+	[98,Ar,'hidden',[,,15,15]],
+	[753,Ar,'hidden',[,,,,,,15]],
+	[280,Ar,'hidden',[,,,,,,,,15]],
+	[819,Ar,'shake_tree',70],
+	[840,Ar,'shake_tree',30],
+	[129,Ar,'fish',50],
+	[223,Ar,'fish',40],
+	[224,Ar,'fish',10],
 
-	[72,Ar,"surf",[35,35,35,35,,,50,35,35]],
-	[278,Ar,"surf",35],
-	[458,Ar,"surf",[30,15,15,15,,,15,30,15]],
-	[73,Ar,"surf",[,15]],
-	[279,Ar,"surf",[,,15,15]],
-	[425,Ar,"surf",[,,,,,,,,15]],
+	[72,Ar,'surf',[35,35,35,35,,,50,35,35]],
+	[278,Ar,'surf',35],
+	[458,Ar,'surf',[30,15,15,15,,,15,30,15]],
+	[73,Ar,'surf',[,15]],
+	[279,Ar,'surf',[,,15,15]],
+	[425,Ar,'surf',[,,,,,,,,15]],
 
-	[alternateForm(79,1),Ar,"underground",100],
+	[alternateForm(79,1),Ar,'underground',100],
 
-	[99,Ar,"wanderer",[100,100,100,100,,,100,100]], //Kingler
-	[744,Ar,"wanderer",[100,,,,,,100]], //Rockruff
-	[428,Ar,"wanderer",[100,,,,,,100,100]], //Lopunny
-	[121,Ar,"wanderer"], //Starmie
-	[748,Ar,"wanderer",[100,100,,,,,,,100]], //Toxapex
-	[764,Ar,"wanderer",[100,,,,,,,100]], //Comfey
-	[570,Ar,"wanderer",[,100,,,,,,,100]], //Zorua
-	[687,Ar,"wanderer",[,100,100]], //Malamar
-	[183,Ar,"wanderer",[,,100]], //Marill
-	[25,Ar,"wanderer",[,,,100]], //Pikachu
-	[404,Ar,"wanderer",[,,,100]], //Luxio
-	[834,Ar,"wanderer",[,,,,,,100]], //Drednaw
-	[662,Ar,"wanderer",[,,,,,,100]], //Fletchinder
-	[40,Ar,"wanderer",[,,,,,,,,100]], //Wigglytuff
-	[64,Ar,"wanderer",[,,,,,,,,100]], //Kadabra
+	[99,Ar,'wanderer',[100,100,100,100,,,100,100]], //Kingler
+	[744,Ar,'wanderer',[100,,,,,,100]], //Rockruff
+	[428,Ar,'wanderer',[100,,,,,,100,100]], //Lopunny
+	[121,Ar,'wanderer'], //Starmie
+	[748,Ar,'wanderer',[100,100,,,,,,,100]], //Toxapex
+	[764,Ar,'wanderer',[100,,,,,,,100]], //Comfey
+	[570,Ar,'wanderer',[,100,,,,,,,100]], //Zorua
+	[687,Ar,'wanderer',[,100,100]], //Malamar
+	[183,Ar,'wanderer',[,,100]], //Marill
+	[25,Ar,'wanderer',[,,,100]], //Pikachu
+	[404,Ar,'wanderer',[,,,100]], //Luxio
+	[834,Ar,'wanderer',[,,,,,,100]], //Drednaw
+	[662,Ar,'wanderer',[,,,,,,100]], //Fletchinder
+	[40,Ar,'wanderer',[,,,,,,,,100]], //Wigglytuff
+	[64,Ar,'wanderer',[,,,,,,,,100]], //Kadabra
 
 	generateRaidDen('A01',115,116),
 	generateRaidDen('A02',125,126),
@@ -4051,62 +4065,62 @@ const LOCATIONS=[
 	generateRaidDen('A10',137,138)	
 ]},
 {name:['Soothing Wetlands',,,,'Humedal Frescor'],encounters:[ //908A63718CA37333
-	[451,Ar,"overworld",[56,36,36,36,,,36,56,56]],
-	[206,Ar,"overworld",16],
-	[194,Ar,"overworld",16],
-	[626,Ar,"overworld",5],
-	[108,Ar,"overworld",5],
-	[113,Ar,"overworld",[2,2,2,2,,,2,2]],
-	[624,SwAr,"overworld",[,20]],
-	[341,SwAr,"overworld",[,,20,20]],
-	[753,Ar,"overworld",[,,,,,,20]],
-	[242,Ar,"overworld",[,,,,,,,,2]],
-	[616,Ar,"hidden",30],
-	[451,Ar,"hidden",30],
-	[206,Ar,"hidden",[30,15,15,15,,,15,30,30]],
-	[440,Ar,"hidden",10],
-	[624,Ar,"hidden",[,15]],
-	[341,Ar,"hidden",[,,15,15]],
-	[753,Ar,"hidden",[,,,,,,15]],
-	[819,Ar,"shake_tree",70],
-	[840,Ar,"shake_tree",30],
-	[129,Ar,"fish",50],
-	[339,Ar,"fish",40],
-	[340,Ar,"fish",10],
-	[624,ShAr,"overworld",[,10]],
-	[453,ShAr,"overworld",[,10]],
-	[341,ShAr,"overworld",[,,10,10]],
-	[704,ShAr,"overworld",[,,10,10]],
+	[451,Ar,'overworld',[56,36,36,36,,,36,56,56]],
+	[206,Ar,'overworld',16],
+	[194,Ar,'overworld',16],
+	[626,Ar,'overworld',5],
+	[108,Ar,'overworld',5],
+	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
+	[624,SwAr,'overworld',[,20]],
+	[341,SwAr,'overworld',[,,20,20]],
+	[753,Ar,'overworld',[,,,,,,20]],
+	[242,Ar,'overworld',[,,,,,,,,2]],
+	[616,Ar,'hidden',30],
+	[451,Ar,'hidden',30],
+	[206,Ar,'hidden',[30,15,15,15,,,15,30,30]],
+	[440,Ar,'hidden',10],
+	[624,Ar,'hidden',[,15]],
+	[341,Ar,'hidden',[,,15,15]],
+	[753,Ar,'hidden',[,,,,,,15]],
+	[819,Ar,'shake_tree',70],
+	[840,Ar,'shake_tree',30],
+	[129,Ar,'fish',50],
+	[339,Ar,'fish',40],
+	[340,Ar,'fish',10],
+	[624,ShAr,'overworld',[,10]],
+	[453,ShAr,'overworld',[,10]],
+	[341,ShAr,'overworld',[,,10,10]],
+	[704,ShAr,'overworld',[,,10,10]],
 
-	[194,Ar,"surf",50],
-	[833,Ar,"surf",50],
+	[194,Ar,'surf',50],
+	[833,Ar,'surf',50],
 
-	[626,Ar,"wanderer",[100,100,100,100,,,100,100]], //Bouffalant
-	[463,Ar,"wanderer",[100,,100,,,,,100]], //Lickilicky
-	[428,Ar,"wanderer",[100,,,,,,,100]], //Lopunny
-	[744,Ar,"wanderer",[100]], //Rockruff
-	[195,Ar,"wanderer",[100,100,100,,,,100,100,100]], //Quagsire
-	[452,Ar,"wanderer",[100,100,100,,,,,100]], //Drapion
-	[834,Ar,"wanderer",[100,100,,,,,100,100]], //Drednaw
-	[764,Ar,"wanderer",[100,,,,,,100,100,100]], //Comfey
-	[687,Ar,"wanderer",[,100,100]], //Malamar
-	[570,Ar,"wanderer",[,100,,,,,,,100]], //Zorua
-	[559,SwAr,"wanderer",[,100]], //Scraggy
-	[453,ShAr,"wanderer",[,100]], //Croagunk
-	[183,Ar,"wanderer",[,,100]], //Marill
-	[61,Ar,"wanderer",[,,100,100,,,,,100]], //Poliwhirl
-	[186,Ar,"wanderer",[,,100,100]], //Politoed
-	[405,Ar,"wanderer",[,,,100]], //Luxray
-	[404,Ar,"wanderer",[,,,100]], //Luxio
-	[26,Ar,"wanderer",[,,,100]], //Raichu
-	[25,Ar,"wanderer",[,,,100]], //Pikachu
-	[663,Ar,"wanderer",[,,,,,,100]], //Talonflame
-	[549,Ar,"wanderer",[,,,,,,100]], //Lilligant
-	[662,Ar,"wanderer",[,,,,,,100]], //Fletchinder
-	[64,Ar,"wanderer",[,,,,,,,,100]], //Kadabra
-	[40,Ar,"wanderer",[,,,,,,,,100]], //Wigglytuff
-	[242,Ar,"wanderer",[,,,,,,,,100]], //Blissey
-	[184,Ar,"wanderer",[,,,,,,,,100]], //Azumarill
+	[626,Ar,'wanderer',[100,100,100,100,,,100,100]], //Bouffalant
+	[463,Ar,'wanderer',[100,,100,,,,,100]], //Lickilicky
+	[428,Ar,'wanderer',[100,,,,,,,100]], //Lopunny
+	[744,Ar,'wanderer',[100]], //Rockruff
+	[195,Ar,'wanderer',[100,100,100,,,,100,100,100]], //Quagsire
+	[452,Ar,'wanderer',[100,100,100,,,,,100]], //Drapion
+	[834,Ar,'wanderer',[100,100,,,,,100,100]], //Drednaw
+	[764,Ar,'wanderer',[100,,,,,,100,100,100]], //Comfey
+	[687,Ar,'wanderer',[,100,100]], //Malamar
+	[570,Ar,'wanderer',[,100,,,,,,,100]], //Zorua
+	[559,SwAr,'wanderer',[,100]], //Scraggy
+	[453,ShAr,'wanderer',[,100]], //Croagunk
+	[183,Ar,'wanderer',[,,100]], //Marill
+	[61,Ar,'wanderer',[,,100,100,,,,,100]], //Poliwhirl
+	[186,Ar,'wanderer',[,,100,100]], //Politoed
+	[405,Ar,'wanderer',[,,,100]], //Luxray
+	[404,Ar,'wanderer',[,,,100]], //Luxio
+	[26,Ar,'wanderer',[,,,100]], //Raichu
+	[25,Ar,'wanderer',[,,,100]], //Pikachu
+	[663,Ar,'wanderer',[,,,,,,100]], //Talonflame
+	[549,Ar,'wanderer',[,,,,,,100]], //Lilligant
+	[662,Ar,'wanderer',[,,,,,,100]], //Fletchinder
+	[64,Ar,'wanderer',[,,,,,,,,100]], //Kadabra
+	[40,Ar,'wanderer',[,,,,,,,,100]], //Wigglytuff
+	[242,Ar,'wanderer',[,,,,,,,,100]], //Blissey
+	[184,Ar,'wanderer',[,,,,,,,,100]], //Azumarill
 
 	generateRaidDen('A11',135,136),
 	generateRaidDen('A12',111,112),
@@ -4119,91 +4133,91 @@ const LOCATIONS=[
 	generateRaidDen('A19',133,134)
 ]},
 {name:['Forest of Focus',,,,'Bosque Concentración'],encounters:[ //908A62718CA37180
-	[543,Ar,"overworld",[56,36,36,36,,,36,46,46]],
-	[590,Ar,"overworld",16],
-	[114,Ar,"overworld",16],
-	[25,Ar,"overworld",5],
-	[766,SwAr,"overworld",5],
-	[113,Ar,"overworld",[2,2,2,2,,,2,2]],
-	[624,SwAr,"overworld",[,20]],
-	[341,Ar,"overworld",[,,20,20]],
-	[753,Ar,"overworld",[,,,,,,20]],
-	[843,Ar,"overworld",[,,,,,,,10]],
-	[570,Ar,"overworld",[,,,,,,,,10]],
-	[242,Ar,"overworld",[,,,,,,,,2]],
-	[588,Ar,"hidden",30],
-	[543,Ar,"hidden",30],
-	[590,Ar,"hidden",[30,15,15,15,,,15,15,15]],
-	[440,Ar,"hidden",10],
-	[624,Ar,"hidden",[,15]],
-	[341,Ar,"hidden",[,,15,15]],
-	[753,Ar,"hidden",[,,,,,,15]],
-	[843,Ar,"hidden",[,,,,,,,15]],
-	[570,Ar,"hidden",[,,,,,,,,15]],
-	[819,Ar,"shake_tree",60],
-	[840,Ar,"shake_tree",30],
-	[587,Ar,"shake_tree",10],
-	[129,Ar,"fish",40],
-	[118,Ar,"fish",40],
-	[846,Ar,"fish",20],
-	[765,ShAr,"overworld",5],
-	[624,ShAr,"overworld",[,10]],
-	[453,ShAr,"overworld",[,10]],
+	[543,Ar,'overworld',[56,36,36,36,,,36,46,46]],
+	[590,Ar,'overworld',16],
+	[114,Ar,'overworld',16],
+	[25,Ar,'overworld',5],
+	[766,SwAr,'overworld',5],
+	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
+	[624,SwAr,'overworld',[,20]],
+	[341,Ar,'overworld',[,,20,20]],
+	[753,Ar,'overworld',[,,,,,,20]],
+	[843,Ar,'overworld',[,,,,,,,10]],
+	[570,Ar,'overworld',[,,,,,,,,10]],
+	[242,Ar,'overworld',[,,,,,,,,2]],
+	[588,Ar,'hidden',30],
+	[543,Ar,'hidden',30],
+	[590,Ar,'hidden',[30,15,15,15,,,15,15,15]],
+	[440,Ar,'hidden',10],
+	[624,Ar,'hidden',[,15]],
+	[341,Ar,'hidden',[,,15,15]],
+	[753,Ar,'hidden',[,,,,,,15]],
+	[843,Ar,'hidden',[,,,,,,,15]],
+	[570,Ar,'hidden',[,,,,,,,,15]],
+	[819,Ar,'shake_tree',60],
+	[840,Ar,'shake_tree',30],
+	[587,Ar,'shake_tree',10],
+	[129,Ar,'fish',40],
+	[118,Ar,'fish',40],
+	[846,Ar,'fish',20],
+	[765,ShAr,'overworld',5],
+	[624,ShAr,'overworld',[,10]],
+	[453,ShAr,'overworld',[,10]],
 
-	[341,Ar,"surf",45],
-	[846,Ar,"surf",45],
-	[845,Ar,"surf",10],
+	[341,Ar,'surf',45],
+	[846,Ar,'surf',45],
+	[845,Ar,'surf',10],
 
-	[587,Ar,"flying",100],
+	[587,Ar,'flying',100],
 
-	[766,SwAr,"wanderer",[100]], //Passimian
-	[25,Ar,"wanderer",[100,100,100,100]], //Pikachu
-	[465,Ar,"wanderer",[100,,,,,,100]], //Tangrowth
-	[591,Ar,"wanderer",[100,100,100,,,,100]], //Amoonguss
-	[845,Ar,"wanderer",[100,,100,,,,100,,100]], //Cramorant
-	[587,Ar,"wanderer",[100,100,100,100,,,100,100]], //Emolga
-	[765,ShAr,"wanderer",[100]], //Oranguru
-	[340,SwAr,"wanderer_surf",[100,100,,,,,100,100]], //Whiscash
-	[340,ShAr,"wanderer_surf",[100,100,,,,,100]], //Whiscash
-	[545,Ar,"wanderer",[,100]], //Scolipede
-	[342,Ar,"wanderer",[,100,100,100]], //Crawdaunt
-	[616,SwAr,"wanderer",[,,100,100]], //Shelmet
-	[617,Ar,"wanderer",[,,100]], //Accelgor
-	[55,Ar,"wanderer",[,,100]], //Golduck
-	[704,ShAr,"wanderer",[,,100,100]], //Goomy
-	[847,SwAr,"wanderer_surf",[,,100,100,,,,,100]], //Barraskewda
-	[847,ShAr,"wanderer_surf",[,,100,100]], //Barraskewda
-	[26,Ar,"wanderer",[,,,100]], //Raichu
-	[405,Ar,"wanderer",[,,,100]], //Luxray
-	[172,Ar,"wanderer",[,,,100]], //Pichu
-	[127,SwAr,"wanderer",[,,,,,,100]], //Pinsir
-	[754,Ar,"wanderer",[,,,,,,100]], //Lurantis
-	[636,Ar,"wanderer",[,,,,,,100]], //Larvesta
-	[764,Ar,"wanderer",[,,,,,,100,,100]], //Comfey
-	[214,ShAr,"wanderer",[,,,,,,100]], //Heracross
-	[28,Ar,"wanderer",[,,,,,,,100]], //Sandslash
-	[589,Ar,"wanderer",[,,,,,,,100]], //Escavalier
-	[104,Ar,"wanderer",[,,,,,,,100]], //Cubone
-	[40,Ar,"wanderer",[,,,,,,,,100]], //Wigglytuff
-	[570,Ar,"wanderer",[,,,,,,,,100]], //Zorua
-	[184,Ar,"wanderer",[,,,,,,,,100]], //Azumarill
-	[282,Ar,"wanderer",[,,,,,,,,100]], //Gardevoir
-	[39,Ar,"wanderer",[,,,,,,,,100]], //Jigglypuff
+	[766,SwAr,'wanderer',[100]], //Passimian
+	[25,Ar,'wanderer',[100,100,100,100]], //Pikachu
+	[465,Ar,'wanderer',[100,,,,,,100]], //Tangrowth
+	[591,Ar,'wanderer',[100,100,100,,,,100]], //Amoonguss
+	[845,Ar,'wanderer',[100,,100,,,,100,,100]], //Cramorant
+	[587,Ar,'wanderer',[100,100,100,100,,,100,100]], //Emolga
+	[765,ShAr,'wanderer',[100]], //Oranguru
+	[340,SwAr,'wanderer_surf',[100,100,,,,,100,100]], //Whiscash
+	[340,ShAr,'wanderer_surf',[100,100,,,,,100]], //Whiscash
+	[545,Ar,'wanderer',[,100]], //Scolipede
+	[342,Ar,'wanderer',[,100,100,100]], //Crawdaunt
+	[616,SwAr,'wanderer',[,,100,100]], //Shelmet
+	[617,Ar,'wanderer',[,,100]], //Accelgor
+	[55,Ar,'wanderer',[,,100]], //Golduck
+	[704,ShAr,'wanderer',[,,100,100]], //Goomy
+	[847,SwAr,'wanderer_surf',[,,100,100,,,,,100]], //Barraskewda
+	[847,ShAr,'wanderer_surf',[,,100,100]], //Barraskewda
+	[26,Ar,'wanderer',[,,,100]], //Raichu
+	[405,Ar,'wanderer',[,,,100]], //Luxray
+	[172,Ar,'wanderer',[,,,100]], //Pichu
+	[127,SwAr,'wanderer',[,,,,,,100]], //Pinsir
+	[754,Ar,'wanderer',[,,,,,,100]], //Lurantis
+	[636,Ar,'wanderer',[,,,,,,100]], //Larvesta
+	[764,Ar,'wanderer',[,,,,,,100,,100]], //Comfey
+	[214,ShAr,'wanderer',[,,,,,,100]], //Heracross
+	[28,Ar,'wanderer',[,,,,,,,100]], //Sandslash
+	[589,Ar,'wanderer',[,,,,,,,100]], //Escavalier
+	[104,Ar,'wanderer',[,,,,,,,100]], //Cubone
+	[40,Ar,'wanderer',[,,,,,,,,100]], //Wigglytuff
+	[570,Ar,'wanderer',[,,,,,,,,100]], //Zorua
+	[184,Ar,'wanderer',[,,,,,,,,100]], //Azumarill
+	[282,Ar,'wanderer',[,,,,,,,,100]], //Gardevoir
+	[39,Ar,'wanderer',[,,,,,,,,100]], //Jigglypuff
 
 	{
 		group:['Area 2',,,,'Área 2'],encounters:[
-			[824,Ar,"hidden",30],
-			[427,Ar,"hidden",30],
-			[39,Ar,"hidden",[30,15,15,15,,,15,30,30]],
-			[440,Ar,"hidden",10],
-			[686,Ar,"hidden",[,15]],
-			[403,Ar,"hidden",[,,15,15]],
-			[753,Ar,"hidden",[,,,,,,15]],
-			[819,Ar,"shake_tree",70],
-			[840,Ar,"shake_tree",30],
-			[129,Ar,"fish",50],
-			[746,Ar,"fish",40],
-			[781,Ar,"fish",10]
+			[824,Ar,'hidden',30],
+			[427,Ar,'hidden',30],
+			[39,Ar,'hidden',[30,15,15,15,,,15,30,30]],
+			[440,Ar,'hidden',10],
+			[686,Ar,'hidden',[,15]],
+			[403,Ar,'hidden',[,,15,15]],
+			[753,Ar,'hidden',[,,,,,,15]],
+			[819,Ar,'shake_tree',70],
+			[840,Ar,'shake_tree',30],
+			[129,Ar,'fish',50],
+			[746,Ar,'fish',40],
+			[781,Ar,'fish',10]
 		]
 	},
 
@@ -4215,60 +4229,60 @@ const LOCATIONS=[
 	generateRaidDen('A25',135,136)
 ]},
 {name:['Challenge Beach',,,,'Playa Desafío'],encounters:[ //908A69718CA37D65
-	[81,Ar,"overworld",[56,36,36,36,,,36,56,56]],
-	[54,Ar,"overworld",32],
-	[702,Ar,"overworld",5],
-	[877,Ar,"overworld",5],
-	[113,Ar,"overworld",[2,2,2,2,,,2,2]],
-	[686,Ar,"overworld",[,20]],
-	[403,Ar,"overworld",[,,20,20]],
-	[753,Ar,"overworld",[,,,,,,20]],
-	[242,Ar,"overworld",[,,,,,,,,2]],
+	[81,Ar,'overworld',[56,36,36,36,,,36,56,56]],
+	[54,Ar,'overworld',32],
+	[702,Ar,'overworld',5],
+	[877,Ar,'overworld',5],
+	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
+	[686,Ar,'overworld',[,20]],
+	[403,Ar,'overworld',[,,20,20]],
+	[753,Ar,'overworld',[,,,,,,20]],
+	[242,Ar,'overworld',[,,,,,,,,2]],
 	
-	[120,Ar,"underground",100],
+	[120,Ar,'underground',100],
 
-	[72,Ar,"surf",[50,35,35,35,,,50,50,35]],
-	[278,Ar,"surf",50],
-	[73,Ar,"surf",[,15]],
-	[279,Ar,"surf",[,,15,15]],
-	[425,Ar,"overworld",[,,,,,,,,15]],
+	[72,Ar,'surf',[50,35,35,35,,,50,50,35]],
+	[278,Ar,'surf',50],
+	[73,Ar,'surf',[,15]],
+	[279,Ar,'surf',[,,15,15]],
+	[425,Ar,'overworld',[,,,,,,,,15]],
 
-	[428,Ar,"wanderer",[100,,,,,,,100,100]], //Lopunny
-	[764,Ar,"wanderer",[100,,,,,,100,,100]], //Comfey
-	[279,Ar,"wanderer"], //Pelipper
-	[834,Ar,"wanderer",[100,100,,100,,,100,100]], //Drednaw
-	[877,Ar,"wanderer",[100,100,100,100]], //Morpeko
-	[702,Ar,"wanderer",[100,,100,100,,,,100]], //Dedenne
-	[183,Ar,"wanderer",[100,,,,,,,100]], //Marill
-	[845,Ar,"wanderer",[100,100,100,,,,100,100,100]], //Cramorant
-	[99,Ar,"wanderer",[100,,100,,,,100,100]], //Kingler
-	[121,Ar,"wanderer"], //Starmie
-	[224,Ar,"wanderer_surf",[100,,,,,,100,100]], //Octillery
-	[130,Ar,"wanderer_surf",[100,,100,,,,100,100]], //Gyarados
-	[73,Ar,"wanderer_surf",[100,100,100,,,,100,100]], //Tentacruel
-	[847,Ar,"wanderer_surf",[100,,100,100,,,100,100,100]], //Barraskewda
-	[452,Ar,"wanderer",[,100,100]], //Drapion
-	[687,Ar,"wanderer",[,100,100]], //Malamar
-	[342,Ar,"wanderer",[,100,100]], //Crawdaunt
-	[426,Ar,"wanderer",[,100,,,,,,,100]], //Drifblim
-	[528,Ar,"wanderer",[,100]], //Swoobat
-	[748,Ar,"wanderer",[,100,100,100,,,,,100]], //Toxapex
-	[593,Ar,"wanderer_surf",[,100,100,,,,,,100]], //Jellicent
-	[342,Ar,"wanderer_surf",[,100]], //Crawdaunt
-	[768,Ar,"wanderer",[,,100]], //Golisopod
-	[91,Ar,"wanderer_surf",[,,100,,,,,,100]], //Cloyster
-	[82,Ar,"wanderer",[,,,100]], //Magneton
-	[26,Ar,"wanderer",[,,,100]], //Raichu
-	[55,Ar,"wanderer",[,,,100,,,100]], //Golduck
-	[405,Ar,"wanderer",[,,,100]], //Luxray
-	[462,Ar,"wanderer",[,,,100]], //Magnezone
-	[171,Ar,"wanderer_surf",[,,,100,,,,,100]], //Lanturn
-	[549,Ar,"wanderer",[,,,,,,100]], //Lilligant
-	[754,Ar,"wanderer",[,,,,,,100]], //Lurantis
-	[662,Ar,"wanderer",[,,,,,,100]], //Fletchinder
-	[637,Ar,"wanderer",[,,,,,,100]], //Volcarona
-	[40,Ar,"wanderer",[,,,,,,,,100]], //Wigglytuff
-	[184,Ar,"wanderer",[,,,,,,,,100]], //Azumarill
+	[428,Ar,'wanderer',[100,,,,,,,100,100]], //Lopunny
+	[764,Ar,'wanderer',[100,,,,,,100,,100]], //Comfey
+	[279,Ar,'wanderer'], //Pelipper
+	[834,Ar,'wanderer',[100,100,,100,,,100,100]], //Drednaw
+	[877,Ar,'wanderer',[100,100,100,100]], //Morpeko
+	[702,Ar,'wanderer',[100,,100,100,,,,100]], //Dedenne
+	[183,Ar,'wanderer',[100,,,,,,,100]], //Marill
+	[845,Ar,'wanderer',[100,100,100,,,,100,100,100]], //Cramorant
+	[99,Ar,'wanderer',[100,,100,,,,100,100]], //Kingler
+	[121,Ar,'wanderer'], //Starmie
+	[224,Ar,'wanderer_surf',[100,,,,,,100,100]], //Octillery
+	[130,Ar,'wanderer_surf',[100,,100,,,,100,100]], //Gyarados
+	[73,Ar,'wanderer_surf',[100,100,100,,,,100,100]], //Tentacruel
+	[847,Ar,'wanderer_surf',[100,,100,100,,,100,100,100]], //Barraskewda
+	[452,Ar,'wanderer',[,100,100]], //Drapion
+	[687,Ar,'wanderer',[,100,100]], //Malamar
+	[342,Ar,'wanderer',[,100,100]], //Crawdaunt
+	[426,Ar,'wanderer',[,100,,,,,,,100]], //Drifblim
+	[528,Ar,'wanderer',[,100]], //Swoobat
+	[748,Ar,'wanderer',[,100,100,100,,,,,100]], //Toxapex
+	[593,Ar,'wanderer_surf',[,100,100,,,,,,100]], //Jellicent
+	[342,Ar,'wanderer_surf',[,100]], //Crawdaunt
+	[768,Ar,'wanderer',[,,100]], //Golisopod
+	[91,Ar,'wanderer_surf',[,,100,,,,,,100]], //Cloyster
+	[82,Ar,'wanderer',[,,,100]], //Magneton
+	[26,Ar,'wanderer',[,,,100]], //Raichu
+	[55,Ar,'wanderer',[,,,100,,,100]], //Golduck
+	[405,Ar,'wanderer',[,,,100]], //Luxray
+	[462,Ar,'wanderer',[,,,100]], //Magnezone
+	[171,Ar,'wanderer_surf',[,,,100,,,,,100]], //Lanturn
+	[549,Ar,'wanderer',[,,,,,,100]], //Lilligant
+	[754,Ar,'wanderer',[,,,,,,100]], //Lurantis
+	[662,Ar,'wanderer',[,,,,,,100]], //Fletchinder
+	[637,Ar,'wanderer',[,,,,,,100]], //Volcarona
+	[40,Ar,'wanderer',[,,,,,,,,100]], //Wigglytuff
+	[184,Ar,'wanderer',[,,,,,,,,100]], //Azumarill
 
 	generateRaidDen('A26',113,114),
 	generateRaidDen('A27',135,136),
@@ -4280,72 +4294,72 @@ const LOCATIONS=[
 	generateRaidDen('A33',127,128)
 ]},
 {name:['Brawlers\' Cave',,,,'Cueva Contienda'],encounters:[ //908A68718CA37BB2
-	[293,Ar,"overworld",56],
-	[527,Ar,"overworld",16],
-	[60,Ar,"overworld",[16,16,16,16,,,16]],
-	[298,Ar,"overworld",5],
-	[108,Ar,"overworld",5],
-	[113,Ar,"overworld",[2,2,2,2,,,2,2]],
-	[54,Ar,"overworld",[,,,,,,,16,16]],
-	[242,Ar,"overworld",[,,,,,,,,2]],
+	[293,Ar,'overworld',56],
+	[527,Ar,'overworld',16],
+	[60,Ar,'overworld',[16,16,16,16,,,16]],
+	[298,Ar,'overworld',5],
+	[108,Ar,'overworld',5],
+	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
+	[54,Ar,'overworld',[,,,,,,,16,16]],
+	[242,Ar,'overworld',[,,,,,,,,2]],
 
-	[60,Ar,"surf",50],
-	[339,Ar,"surf",50],
+	[60,Ar,'surf',50],
+	[339,Ar,'surf',50],
 
-	[62,Ar,"wanderer"], //Poliwrath
-	[294,Ar,"wanderer"], //Loudred
-	[528,Ar,"wanderer"], //Swoobat
-	[621,Ar,"wanderer"], //Druddigon
-	[55,Ar,"wanderer"], //Golduck
-	[526,Ar,"wanderer"], //Gigalith
-	[340,Ar,"wanderer_surf"], //Whiscash
+	[62,Ar,'wanderer'], //Poliwrath
+	[294,Ar,'wanderer'], //Loudred
+	[528,Ar,'wanderer'], //Swoobat
+	[621,Ar,'wanderer'], //Druddigon
+	[55,Ar,'wanderer'], //Golduck
+	[526,Ar,'wanderer'], //Gigalith
+	[340,Ar,'wanderer_surf'], //Whiscash
 
 	generateRaidDen('A34',129,130)
 ]},
 {name:['Challenge Road',,,,'Ruta Desafío'],encounters:[ //908A67718CA379FF
-	[524,Ar,"overworld",[56,36,36,36,,,36,36,56]],
-	[619,Ar,"overworld",16],
-	[757,Ar,"overworld",16],
-	[227,Ar,"overworld",5],
-	[744,Ar,"overworld",5],
-	[113,Ar,"overworld",[2,2,2,2,,,2,2]],
-	[624,SwAr,"overworld",[,10]],
-	[782,SwAr,"overworld",[,10]],
-	[403,Ar,"overworld",[,,20,20]],
-	[661,Ar,"overworld",[,,,,,,20]],
-	[843,SwAr,"overworld",[,,,,,,,10]],
-	[559,SwAr,"overworld",[,,,,,,,10]],
-	[242,Ar,"overworld",[,,,,,,,,2]],
-	[824,Ar,"hidden",30],
-	[524,Ar,"hidden",30],
-	[619,Ar,"hidden",[30,15,15,15,,,15,15,30]],
-	[440,Ar,"hidden",10],
-	[624,Ar,"hidden",[,15]],
-	[403,Ar,"hidden",[,,15,15]],
-	[661,Ar,"hidden",[,,,,,,15]],
-	[843,Ar,"hidden",[,,,,,,,15]],
-	[624,ShAr,"overworld",[,20]],
-	[843,ShAr,"overworld",[,,,,,,,20]],
+	[524,Ar,'overworld',[56,36,36,36,,,36,36,56]],
+	[619,Ar,'overworld',16],
+	[757,Ar,'overworld',16],
+	[227,Ar,'overworld',5],
+	[744,Ar,'overworld',5],
+	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
+	[624,SwAr,'overworld',[,10]],
+	[782,SwAr,'overworld',[,10]],
+	[403,Ar,'overworld',[,,20,20]],
+	[661,Ar,'overworld',[,,,,,,20]],
+	[843,SwAr,'overworld',[,,,,,,,10]],
+	[559,SwAr,'overworld',[,,,,,,,10]],
+	[242,Ar,'overworld',[,,,,,,,,2]],
+	[824,Ar,'hidden',30],
+	[524,Ar,'hidden',30],
+	[619,Ar,'hidden',[30,15,15,15,,,15,15,30]],
+	[440,Ar,'hidden',10],
+	[624,Ar,'hidden',[,15]],
+	[403,Ar,'hidden',[,,15,15]],
+	[661,Ar,'hidden',[,,,,,,15]],
+	[843,Ar,'hidden',[,,,,,,,15]],
+	[624,ShAr,'overworld',[,20]],
+	[843,ShAr,'overworld',[,,,,,,,20]],
 
-	[620,Ar,"wanderer",[100]], //Mienshao
-	[745,Ar,"wanderer",[100,100]], //Lycanroc
-	[744,SwAr,"wanderer",[100,100]], //Rockruff
-	[227,Ar,"wanderer",[100,,100,,,,100,100]], //Skarmory
-	[744,ShAr,"wanderer",[100,100,,,,,100,,100]], //Rockruff
-	[625,Ar,"wanderer",[,100]], //Bisharp
-	[628,SwAr,"wanderer",[,100]], //Braviary
-	[630,ShAr,"wanderer",[,100]], //Mandibuzz
-	[560,SwAr,"wanderer",[,,100,100]], //Scrafty
-	[454,ShAr,"wanderer",[,,100,100]], //Toxicroak
-	[82,Ar,"wanderer",[,,,100]], //Magneton
-	[758,Ar,"wanderer",[,,,,,,100]], //Salazzle
-	[127,SwAr,"wanderer",[,,,,,,100]], //Pinsir
-	[782,SwAr,"wanderer",[,,,,,,100,100,100]], //Jangmo-o
-	[214,ShAr,"wanderer",[,,,,,,100]], //Heracross
-	[558,Ar,"wanderer",[,,,,,,,100]], //Crustle
-	[212,Ar,"wanderer",[,,,,,,,100]], //Scizor
-	[475,Ar,"wanderer",[,,,,,,,,100]], //Gallade
-	[426,Ar,"wanderer",[,,,,,,,,100]], //Drifblim
+	[620,Ar,'wanderer',[100]], //Mienshao
+	[745,Ar,'wanderer',[100,100]], //Lycanroc
+	[744,SwAr,'wanderer',[100,100]], //Rockruff
+	[227,Ar,'wanderer',[100,,100,,,,100,100]], //Skarmory
+	[744,ShAr,'wanderer',[100,100,,,,,100,,100]], //Rockruff
+	[625,Ar,'wanderer',[,100]], //Bisharp
+	[628,SwAr,'wanderer',[,100]], //Braviary
+	[630,ShAr,'wanderer',[,100]], //Mandibuzz
+	[560,SwAr,'wanderer',[,,100,100]], //Scrafty
+	[454,ShAr,'wanderer',[,,100,100]], //Toxicroak
+	[82,Ar,'wanderer',[,,,100]], //Magneton
+	[758,Ar,'wanderer',[,,,,,,100]], //Salazzle
+	[127,SwAr,'wanderer',[,,,,,,100]], //Pinsir
+	[782,SwAr,'wanderer',[,,,,,,100,100,100]], //Jangmo-o
+	[214,ShAr,'wanderer',[,,,,,,100]], //Heracross
+	[558,Ar,'wanderer',[,,,,,,,100]], //Crustle
+	[212,Ar,'wanderer',[,,,,,,,100]], //Scizor
+	[475,Ar,'wanderer',[,,,,,,,,100]], //Gallade
+	[426,Ar,'wanderer',[,,,,,,,,100]], //Drifblim
 
 	generateRaidDen('A35',123,124),
 	generateRaidDen('A36',156,157),
@@ -4353,28 +4367,28 @@ const LOCATIONS=[
 	generateRaidDen('A38',121,122)
 ]},
 {name:['Courageous Cavern',,,,'Cueva Tenacidad'],encounters:[ //908A66718CA3784C
-	[833,Ar,"overworld",56],
-	[527,Ar,"overworld",16],
-	[767,Ar,"overworld",16],
-	[871,Ar,"overworld",5],
-	[557,Ar,"overworld",5],
-	[113,Ar,"overworld",[2,2,2,2,,,2,2]],
-	[242,Ar,"overworld",[,,,,,,,,2]],
-	[833,Ar,"hidden",100],
-	[129,Ar,"fish",50],
-	[90,Ar,"fish",40],
-	[91,Ar,"fish",10],
+	[833,Ar,'overworld',56],
+	[527,Ar,'overworld',16],
+	[767,Ar,'overworld',16],
+	[871,Ar,'overworld',5],
+	[557,Ar,'overworld',5],
+	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
+	[242,Ar,'overworld',[,,,,,,,,2]],
+	[833,Ar,'hidden',100],
+	[129,Ar,'fish',50],
+	[90,Ar,'fish',40],
+	[91,Ar,'fish',10],
 
-	[72,Ar,"surf",60],
-	[852,Ar,"surf",40],
+	[72,Ar,'surf',60],
+	[852,Ar,'surf',40],
 
-	[558,Ar,"wanderer"], //Crustle
-	[621,Ar,"wanderer"], //Druddigon
-	[768,Ar,"wanderer"], //Golisopod
-	[528,Ar,"wanderer"], //Swoobat
-	[834,Ar,"wanderer"], //Drednaw
-	[73,Ar,"wanderer_surf"], //Tentacruel
-	[340,Ar,"wanderer_surf"], //Whiscash
+	[558,Ar,'wanderer'], //Crustle
+	[621,Ar,'wanderer'], //Druddigon
+	[768,Ar,'wanderer'], //Golisopod
+	[528,Ar,'wanderer'], //Swoobat
+	[834,Ar,'wanderer'], //Drednaw
+	[73,Ar,'wanderer_surf'], //Tentacruel
+	[340,Ar,'wanderer_surf'], //Whiscash
 
 	generateRaidDen('A39',103,104),
 	generateRaidDen('A40',135,148),
@@ -4384,63 +4398,63 @@ const LOCATIONS=[
 	generateRaidDen('A44',101,102)
 ]},
 {name:['Loop Lagoon',,,,'Bahía Circular'],encounters:[ //908A6D718CA38431
-	[852,Ar,"overworld",[56,36,36,36,,,36,56,36]],
-	[278,Ar,"overworld",16],
-	[747,Ar,"overworld",16],
-	[871,Ar,"overworld",5],
-	[557,Ar,"overworld",5],
-	[113,Ar,"overworld",[2,2,2,2,,,2,2]],
-	[686,Ar,"overworld",[,20]],
-	[98,Ar,"overworld",[,,20,20]],
-	[661,Ar,"overworld",[,,,,,,20]],
-	[425,Ar,"overworld",[,,,,,,,,20]],
-	[242,Ar,"overworld",[,,,,,,,,2]],
-	[824,Ar,"hidden",30],
-	[852,Ar,"hidden",30],
-	[278,Ar,"hidden",[30,15,15,15,,,15,30,15]],
-	[440,Ar,"hidden",10],
-	[686,Ar,"hidden",[,15]],
-	[98,Ar,"hidden",[,,15,15]],
-	[661,Ar,"hidden",[,,,,,,15]],
-	[425,Ar,"hidden",[,,,,,,,,15]],
-	[819,Ar,"shake_tree",70],
-	[840,Ar,"shake_tree",30],
-	[129,Ar,"fish",50],
-	[90,Ar,"fish",40],
-	[91,Ar,"fish",10],
+	[852,Ar,'overworld',[56,36,36,36,,,36,56,36]],
+	[278,Ar,'overworld',16],
+	[747,Ar,'overworld',16],
+	[871,Ar,'overworld',5],
+	[557,Ar,'overworld',5],
+	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
+	[686,Ar,'overworld',[,20]],
+	[98,Ar,'overworld',[,,20,20]],
+	[661,Ar,'overworld',[,,,,,,20]],
+	[425,Ar,'overworld',[,,,,,,,,20]],
+	[242,Ar,'overworld',[,,,,,,,,2]],
+	[824,Ar,'hidden',30],
+	[852,Ar,'hidden',30],
+	[278,Ar,'hidden',[30,15,15,15,,,15,30,15]],
+	[440,Ar,'hidden',10],
+	[686,Ar,'hidden',[,15]],
+	[98,Ar,'hidden',[,,15,15]],
+	[661,Ar,'hidden',[,,,,,,15]],
+	[425,Ar,'hidden',[,,,,,,,,15]],
+	[819,Ar,'shake_tree',70],
+	[840,Ar,'shake_tree',30],
+	[129,Ar,'fish',50],
+	[90,Ar,'fish',40],
+	[91,Ar,'fish',10],
 	
-	[769,Ar,"underground",100],
+	[769,Ar,'underground',100],
 
-	[72,Ar,"surf",[45,30,30,30,,,30,45,30]],
-	[278,Ar,"surf",30],
-	[852,Ar,"surf",25],
-	[73,Ar,"surf",[,15]],
-	[279,Ar,"surf",[,,15,15]],
-	[662,Ar,"surf",[,,,,,,15]],
-	[425,Ar,"surf",[,,,,,,,,15]],
+	[72,Ar,'surf',[45,30,30,30,,,30,45,30]],
+	[278,Ar,'surf',30],
+	[852,Ar,'surf',25],
+	[73,Ar,'surf',[,15]],
+	[279,Ar,'surf',[,,15,15]],
+	[662,Ar,'surf',[,,,,,,15]],
+	[425,Ar,'surf',[,,,,,,,,15]],
 
-	[834,Ar,"wanderer",[100,,,,,,100,100]], //Drednaw
-	[871,Ar,"wanderer",[100,,100,100,,,,,100]], //Pincurchin
-	[853,Ar,"wanderer",[100,100,,,,,100,100,100]], //Grapploct
-	[65,Ar,"wanderer",[100,,100,,,,,100]], //Alakazam
-	[744,Ar,"wanderer",[100]], //Rockruff
-	[130,Ar,"wanderer_surf",[100,,100,100,,,100,100]], //Gyarados
-	[73,Ar,"wanderer_surf",[100,100,100,,,,100,100]], //Tentacruel
-	[224,Ar,"wanderer_surf",[100,,,,,,100,100]], //Octillery
-	[687,Ar,"wanderer",[,100,100]], //Malamar
-	[748,Ar,"wanderer",[,100,100,,,,,,100]], //Toxapex
-	[770,Ar,"wanderer",[,100,,,,,,100,100]], //Palossand
-	[571,Ar,"wanderer",[,100,,,,,,,100]], //Zoroark
-	[593,Ar,"wanderer_surf",[,100,,,,,,,100]], //Jellicent
-	[279,Ar,"wanderer",[,,100]], //Pelipper
-	[91,Ar,"wanderer_surf",[,,100]], //Cloyster
-	[404,Ar,"wanderer",[,,,100]], //Luxio
-	[462,Ar,"wanderer",[,,,100]], //Magnezone
-	[405,Ar,"wanderer",[,,,100]], //Luxray
-	[171,Ar,"wanderer_surf",[,,,100]], //Lanturn
-	[636,Ar,"wanderer",[,,,,,,100,100]], //Larvesta
-	[663,Ar,"wanderer",[,,,,,,100]], //Talonflame
-	[40,Ar,"wanderer",[,,,,,,,,100]], //Wigglytuff
+	[834,Ar,'wanderer',[100,,,,,,100,100]], //Drednaw
+	[871,Ar,'wanderer',[100,,100,100,,,,,100]], //Pincurchin
+	[853,Ar,'wanderer',[100,100,,,,,100,100,100]], //Grapploct
+	[65,Ar,'wanderer',[100,,100,,,,,100]], //Alakazam
+	[744,Ar,'wanderer',[100]], //Rockruff
+	[130,Ar,'wanderer_surf',[100,,100,100,,,100,100]], //Gyarados
+	[73,Ar,'wanderer_surf',[100,100,100,,,,100,100]], //Tentacruel
+	[224,Ar,'wanderer_surf',[100,,,,,,100,100]], //Octillery
+	[687,Ar,'wanderer',[,100,100]], //Malamar
+	[748,Ar,'wanderer',[,100,100,,,,,,100]], //Toxapex
+	[770,Ar,'wanderer',[,100,,,,,,100,100]], //Palossand
+	[571,Ar,'wanderer',[,100,,,,,,,100]], //Zoroark
+	[593,Ar,'wanderer_surf',[,100,,,,,,,100]], //Jellicent
+	[279,Ar,'wanderer',[,,100]], //Pelipper
+	[91,Ar,'wanderer_surf',[,,100]], //Cloyster
+	[404,Ar,'wanderer',[,,,100]], //Luxio
+	[462,Ar,'wanderer',[,,,100]], //Magnezone
+	[405,Ar,'wanderer',[,,,100]], //Luxray
+	[171,Ar,'wanderer_surf',[,,,100]], //Lanturn
+	[636,Ar,'wanderer',[,,,,,,100,100]], //Larvesta
+	[663,Ar,'wanderer',[,,,,,,100]], //Talonflame
+	[40,Ar,'wanderer',[,,,,,,,,100]], //Wigglytuff
 
 	generateRaidDen('A45',113,114),
 	generateRaidDen('A46',131,151),
@@ -4448,76 +4462,76 @@ const LOCATIONS=[
 	generateRaidDen('A48',107,108)
 ]},
 {name:['Training Lowlands',,,,'Llano Entrenamiento'],encounters:[ //908A6C718CA3827E
-	[824,Ar,"hidden",30],
-	[506,Ar,"hidden",[60,45,45,45,,,45,45,60]],
-	[440,Ar,"hidden",10],
-	[686,Ar,"hidden",[,15]],
-	[403,Ar,"hidden",[,,15,15]],
-	[753,Ar,"hidden",[,,,,,,15]],
-	[843,Ar,"hidden",[,,,,,,,15]],
-	[819,Ar,"shake_tree",70],
-	[840,Ar,"shake_tree",30],
-	[129,Ar,"fish",50],
-	[318,Ar,"fish",40],
-	[319,Ar,"fish",10],
+	[824,Ar,'hidden',30],
+	[506,Ar,'hidden',[60,45,45,45,,,45,45,60]],
+	[440,Ar,'hidden',10],
+	[686,Ar,'hidden',[,15]],
+	[403,Ar,'hidden',[,,15,15]],
+	[753,Ar,'hidden',[,,,,,,15]],
+	[843,Ar,'hidden',[,,,,,,,15]],
+	[819,Ar,'shake_tree',70],
+	[840,Ar,'shake_tree',30],
+	[129,Ar,'fish',50],
+	[318,Ar,'fish',40],
+	[319,Ar,'fish',10],
 	
-	[506,Ar,"overworld",[56,36,36,36,,,36,36,56]],
-	[128,Ar,"overworld",16],
-	[241,Ar,"overworld",16],
-	[123,Ar,"overworld",5],
-	[127,SwAr,"overworld",5],
-	[113,Ar,"overworld",[2,2,2,2,,,2,2]],
-	[686,Ar,"overworld",[,20]],
-	[403,Ar,"overworld",[,,20,20]],
-	[753,Ar,"overworld",[,,,,,,20]],
-	[843,Ar,"overworld",[,,,,,,,20]],
-	[242,Ar,"overworld",[,,,,,,,,2]],
-	[214,ShAr,"overworld",5],
+	[506,Ar,'overworld',[56,36,36,36,,,36,36,56]],
+	[128,Ar,'overworld',16],
+	[241,Ar,'overworld',16],
+	[123,Ar,'overworld',5],
+	[127,SwAr,'overworld',5],
+	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
+	[686,Ar,'overworld',[,20]],
+	[403,Ar,'overworld',[,,20,20]],
+	[753,Ar,'overworld',[,,,,,,20]],
+	[843,Ar,'overworld',[,,,,,,,20]],
+	[242,Ar,'overworld',[,,,,,,,,2]],
+	[214,ShAr,'overworld',5],
 	
-	[120,Ar,"underground",100],
+	[120,Ar,'underground',100],
 
-	[341,Ar,"surf",45],
-	[846,Ar,"surf",45],
-	[845,Ar,"surf",10],
+	[341,Ar,'surf',45],
+	[846,Ar,'surf',45],
+	[845,Ar,'surf',10],
 
-	[508,Ar,"wanderer",[100]], //Stoutland
-	[115,Ar,"wanderer",[100,100]], //Kangaskhan
-	[123,Ar,"wanderer",[100,,,,,,100]], //Scyther
-	[127,SwAr,"wanderer",[100,,,,,,100]], //Pinsir
-	[128,Ar,"wanderer"], //Tauros
-	[507,Ar,"wanderer",[100,,,,,,,,100]], //Herdier
-	[55,Ar,"wanderer",[100,100,100,100,,,100]], //Golduck
-	[241,Ar,"wanderer",[100,100,,,,,100]], //Miltank
-	[99,Ar,"wanderer",[100,100,100,100,,,100,100]], //Kingler
-	[214,ShAr,"wanderer",[100,,,,,,100]], //Heracross
-	[847,Ar,"wanderer_surf",[100,,100,100,,,100,100,100]], //Barraskewda
-	[625,Ar,"wanderer",[,100]], //Bisharp
-	[452,Ar,"wanderer",[,100,,,,,100]], //Drapion
-	[528,Ar,"wanderer",[,100]], //Swoobat
-	[588,Ar,"wanderer",[,100]], //Karrablast
-	[687,Ar,"wanderer",[,100,100]], //Malamar
-	[342,Ar,"wanderer_surf",[,100]], //Crawdaunt
-	[279,Ar,"wanderer",[,,100]], //Pelipper
-	[616,Ar,"wanderer",[,,100]], //Shelmet
-	[560,SwAr,"wanderer",[,,100,100]], //Scrafty
-	[454,ShAr,"wanderer",[,,100,100]], //Toxicroak
-	[405,Ar,"wanderer",[,,,100]], //Luxray
-	[404,Ar,"wanderer",[,,,100]], //Luxio
-	[82,Ar,"wanderer",[,,,100]], //Magneton
-	[617,Ar,"wanderer",[,,,100]], //Accelgor
-	[549,Ar,"wanderer",[,,,,,,100]], //Lilligant
-	[662,Ar,"wanderer",[,,,,,,100]], //Fletchinder
-	[663,Ar,"wanderer",[,,,,,,100]], //Talonflame
-	[212,Ar,"wanderer",[,,,,,,,100]], //Scizor
-	[558,Ar,"wanderer",[,,,,,,,100]], //Crustle
-	[227,Ar,"wanderer",[,,,,,,,100]], //Skarmory
-	[589,Ar,"wanderer",[,,,,,,,100]], //Escavalier
-	[782,SwAr,"wanderer",[,,,,,,,100]], //Jangmo-o
-	[40,Ar,"wanderer",[,,,,,,,,100]], //Wigglytuff
-	[764,Ar,"wanderer",[,,,,,,,,100]], //Comfey
-	[426,Ar,"wanderer",[,,,,,,,,100]], //Drifblim
-	[184,Ar,"wanderer",[,,,,,,,,100]], //Azumarill
-	[282,Ar,"wanderer",[,,,,,,,,100]], //Gardevoir
+	[508,Ar,'wanderer',[100]], //Stoutland
+	[115,Ar,'wanderer',[100,100]], //Kangaskhan
+	[123,Ar,'wanderer',[100,,,,,,100]], //Scyther
+	[127,SwAr,'wanderer',[100,,,,,,100]], //Pinsir
+	[128,Ar,'wanderer'], //Tauros
+	[507,Ar,'wanderer',[100,,,,,,,,100]], //Herdier
+	[55,Ar,'wanderer',[100,100,100,100,,,100]], //Golduck
+	[241,Ar,'wanderer',[100,100,,,,,100]], //Miltank
+	[99,Ar,'wanderer',[100,100,100,100,,,100,100]], //Kingler
+	[214,ShAr,'wanderer',[100,,,,,,100]], //Heracross
+	[847,Ar,'wanderer_surf',[100,,100,100,,,100,100,100]], //Barraskewda
+	[625,Ar,'wanderer',[,100]], //Bisharp
+	[452,Ar,'wanderer',[,100,,,,,100]], //Drapion
+	[528,Ar,'wanderer',[,100]], //Swoobat
+	[588,Ar,'wanderer',[,100]], //Karrablast
+	[687,Ar,'wanderer',[,100,100]], //Malamar
+	[342,Ar,'wanderer_surf',[,100]], //Crawdaunt
+	[279,Ar,'wanderer',[,,100]], //Pelipper
+	[616,Ar,'wanderer',[,,100]], //Shelmet
+	[560,SwAr,'wanderer',[,,100,100]], //Scrafty
+	[454,ShAr,'wanderer',[,,100,100]], //Toxicroak
+	[405,Ar,'wanderer',[,,,100]], //Luxray
+	[404,Ar,'wanderer',[,,,100]], //Luxio
+	[82,Ar,'wanderer',[,,,100]], //Magneton
+	[617,Ar,'wanderer',[,,,100]], //Accelgor
+	[549,Ar,'wanderer',[,,,,,,100]], //Lilligant
+	[662,Ar,'wanderer',[,,,,,,100]], //Fletchinder
+	[663,Ar,'wanderer',[,,,,,,100]], //Talonflame
+	[212,Ar,'wanderer',[,,,,,,,100]], //Scizor
+	[558,Ar,'wanderer',[,,,,,,,100]], //Crustle
+	[227,Ar,'wanderer',[,,,,,,,100]], //Skarmory
+	[589,Ar,'wanderer',[,,,,,,,100]], //Escavalier
+	[782,SwAr,'wanderer',[,,,,,,,100]], //Jangmo-o
+	[40,Ar,'wanderer',[,,,,,,,,100]], //Wigglytuff
+	[764,Ar,'wanderer',[,,,,,,,,100]], //Comfey
+	[426,Ar,'wanderer',[,,,,,,,,100]], //Drifblim
+	[184,Ar,'wanderer',[,,,,,,,,100]], //Azumarill
+	[282,Ar,'wanderer',[,,,,,,,,100]], //Gardevoir
 
 	generateRaidDen('A49',119,120),
 	generateRaidDen('A50',154,145),
@@ -4528,84 +4542,84 @@ const LOCATIONS=[
 	generateRaidDen('A55',101,102)
 ]},
 {name:['Warm-Up Tunnel',,,,'Gruta Calentamiento'],encounters:[ //90875F718CA13690
-	[27,Ar,"overworld",56],
-	[104,Ar,"overworld",32],
-	[324,Ar,"overworld",5],
-	[115,Ar,"overworld",5],
-	[113,Ar,"overworld",[2,2,2,2,,,2,2]],
-	[242,Ar,"overworld",[,,,,,,,,2]]
+	[27,Ar,'overworld',56],
+	[104,Ar,'overworld',32],
+	[324,Ar,'overworld',5],
+	[115,Ar,'overworld',5],
+	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
+	[242,Ar,'overworld',[,,,,,,,,2]]
 ]},
 {name:['Potbottom Desert',,,,'Cuenca Arenosa'],encounters:[ //908760718CA13843
-	[551,Ar,"overworld",[56,36,36,56,,,36,36,56]],
-	[111,Ar,"overworld",32],
-	[324,Ar,"overworld",5],
-	[627,SwAr,"overworld",5],
-	[113,Ar,"overworld",[2,2,2,2,,,2,2]],
-	[624,SwAr,"overworld",[,10]],
-	[782,SwAr,"overworld",[,10]],
-	[403,Ar,"overworld",[,,20]],
-	[661,Ar,"overworld",[,,,,,,20]],
-	[843,SwAr,"overworld",[,,,,,,,10]],
-	[559,SwAr,"overworld",[,,,,,,,10]],
-	[242,Ar,"overworld",[,,,,,,,,2]],
-	[629,ShAr,"overworld",5],
-	[624,ShAr,"overworld",[,20]],
-	[843,ShAr,"overworld",[,,,,,,,20]],
+	[551,Ar,'overworld',[56,36,36,56,,,36,36,56]],
+	[111,Ar,'overworld',32],
+	[324,Ar,'overworld',5],
+	[627,SwAr,'overworld',5],
+	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
+	[624,SwAr,'overworld',[,10]],
+	[782,SwAr,'overworld',[,10]],
+	[403,Ar,'overworld',[,,20]],
+	[661,Ar,'overworld',[,,,,,,20]],
+	[843,SwAr,'overworld',[,,,,,,,10]],
+	[559,SwAr,'overworld',[,,,,,,,10]],
+	[242,Ar,'overworld',[,,,,,,,,2]],
+	[629,ShAr,'overworld',5],
+	[624,ShAr,'overworld',[,20]],
+	[843,ShAr,'overworld',[,,,,,,,20]],
 
-	[464,Ar,"wanderer",[100,,,,,,100,100,100]], //Rhyperior
-	[105,Ar,"wanderer",[100,,,,,,100,,100]], //Marowak
-	[112,Ar,"wanderer",[100,,,,,,100,100]], //Rhydon
-	[844,Ar,"wanderer",[100,,,,,,100,,100]], //Sandaconda
-	[628,SwAr,"wanderer"], //Braviary
-	[630,ShAr,"wanderer"], //Mandibuzz
-	[553,Ar,"wanderer",[,100,100,100]], //Krookodile
-	[552,Ar,"wanderer",[,100,100,100]], //Krokorok
-	[324,Ar,"wanderer",[,,,,,,100,,100]], //Torkoal
-	[637,Ar,"wanderer",[,,,,,,100]], //Volcarona
-	[28,Ar,"wanderer",[,,,,,,,100]], //Sandslash
+	[464,Ar,'wanderer',[100,,,,,,100,100,100]], //Rhyperior
+	[105,Ar,'wanderer',[100,,,,,,100,,100]], //Marowak
+	[112,Ar,'wanderer',[100,,,,,,100,100]], //Rhydon
+	[844,Ar,'wanderer',[100,,,,,,100,,100]], //Sandaconda
+	[628,SwAr,'wanderer'], //Braviary
+	[630,ShAr,'wanderer'], //Mandibuzz
+	[553,Ar,'wanderer',[,100,100,100]], //Krookodile
+	[552,Ar,'wanderer',[,100,100,100]], //Krokorok
+	[324,Ar,'wanderer',[,,,,,,100,,100]], //Torkoal
+	[637,Ar,'wanderer',[,,,,,,100]], //Volcarona
+	[28,Ar,'wanderer',[,,,,,,,100]], //Sandslash
 
 	generateRaidDen('A56',103,150),
 	generateRaidDen('A57',113,114),
 	generateRaidDen('A58',115,116)
 ]},
 {name:['Workout Sea',,,,'Mar Gimnástico'],encounters:[ //909170718CA9A7F8
-	[132,Ar,"overworld",82],
-	[102,Ar,"overworld",16],
-	[113,Ar,"overworld",[2,2,2,2,,,2,2]],
-	[242,Ar,"overworld",[,,,,,,,,2]],
-	[824,Ar,"hidden",30],
-	[132,Ar,"hidden",30],
-	[102,Ar,"hidden",30],
-	[440,Ar,"hidden",10],
-	[819,Ar,"shake_tree",70],
-	[840,Ar,"shake_tree",30],
-	[129,Ar,"fish",50],
-	[223,Ar,"fish",40],
-	[224,Ar,"fish",10],
+	[132,Ar,'overworld',82],
+	[102,Ar,'overworld',16],
+	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
+	[242,Ar,'overworld',[,,,,,,,,2]],
+	[824,Ar,'hidden',30],
+	[132,Ar,'hidden',30],
+	[102,Ar,'hidden',30],
+	[440,Ar,'hidden',10],
+	[819,Ar,'shake_tree',70],
+	[840,Ar,'shake_tree',30],
+	[129,Ar,'fish',50],
+	[223,Ar,'fish',40],
+	[224,Ar,'fish',10],
 
-	[278,Ar,"surf",30],
-	[72,Ar,"surf",[28,27,28,21,,,28,28,27]],
-	[458,Ar,"surf",[35,20,20,16,,,20,35,20]],
-	[692,SwAr,"surf",5],
-	[130,Ar,"surf",1],
-	[693,SwAr,"surf",1],
-	[73,Ar,"surf",[,15]],
-	[593,Ar,"surf",[,1,,,,,,,1]],
-	[279,Ar,"surf",[,,15,15]],
-	[170,Ar,"surf",[,,,10]],
-	[171,Ar,"surf",[,,,1]],
-	[662,Ar,"surf",[,,,,,,15]],
-	[425,Ar,"surf",[,,,,,,,,15]],
-	[690,ShAr,"surf",5],
-	[691,ShAr,"surf",1],
+	[278,Ar,'surf',30],
+	[72,Ar,'surf',[28,27,28,21,,,28,28,27]],
+	[458,Ar,'surf',[35,20,20,16,,,20,35,20]],
+	[692,SwAr,'surf',5],
+	[130,Ar,'surf',1],
+	[693,SwAr,'surf',1],
+	[73,Ar,'surf',[,15]],
+	[593,Ar,'surf',[,1,,,,,,,1]],
+	[279,Ar,'surf',[,,15,15]],
+	[170,Ar,'surf',[,,,10]],
+	[171,Ar,'surf',[,,,1]],
+	[662,Ar,'surf',[,,,,,,15]],
+	[425,Ar,'surf',[,,,,,,,,15]],
+	[690,ShAr,'surf',5],
+	[691,ShAr,'surf',1],
 	
-	[319,Ar,"surf",100],
+	[319,Ar,'surf',100],
 	
-	[321,Ar,"interact"], //Wailord
+	[321,Ar,'interact'], //Wailord
 
-	[103,Ar,"wanderer",[100,,,,,,100]], //Exeggutor
-	[132,Ar,"wanderer"], //Ditto
-	[479,Ar,"wanderer"], //Rotom
+	[103,Ar,'wanderer',[100,,,,,,100]], //Exeggutor
+	[132,Ar,'wanderer'], //Ditto
+	[479,Ar,'wanderer'], //Rotom
 
 	generateRaidDen('A59',155,146),
 	generateRaidDen('A60',139,140),
@@ -4616,44 +4630,44 @@ const LOCATIONS=[
 	generateRaidDen('A64',131,132)
 ]},
 {name:['Stepping-Stone Sea',,,,'Mar Andana'],encounters:[ //909173718CA9AD11
-	[278,Ar,"overworld",82],
-	[102,Ar,"overworld",16],
-	[113,Ar,"overworld",[2,2,2,2,,,2,2]],
-	[242,Ar,"overworld",[,,,,,,,,2]],
-	[824,Ar,"hidden",30],
-	[819,Ar,"hidden",30],
-	[102,Ar,"hidden",30],
-	[440,Ar,"hidden",10],
-	[819,Ar,"shake_tree",60],
-	[840,Ar,"shake_tree",30],
-	[841,SwAr,"shake_tree",10],
-	[129,Ar,"fish",60],
-	[746,Ar,"fish",40],
-	[842,ShAr,"shake_tree",10],
+	[278,Ar,'overworld',82],
+	[102,Ar,'overworld',16],
+	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
+	[242,Ar,'overworld',[,,,,,,,,2]],
+	[824,Ar,'hidden',30],
+	[819,Ar,'hidden',30],
+	[102,Ar,'hidden',30],
+	[440,Ar,'hidden',10],
+	[819,Ar,'shake_tree',60],
+	[840,Ar,'shake_tree',30],
+	[841,SwAr,'shake_tree',10],
+	[129,Ar,'fish',60],
+	[746,Ar,'fish',40],
+	[842,ShAr,'shake_tree',10],
 	
-	[278,Ar,"surf",30],
-	[72,Ar,"surf",[28,27,28,21,,,28,28,27]],
-	[458,Ar,"surf",[15,,,,,,,15]],
-	[592,Ar,"surf",[20,20,20,16,,,20,20,20]],
-	[692,SwAr,"surf",5],
-	[130,Ar,"surf",1],
-	[693,SwAr,"surf",1],
-	[73,Ar,"surf",[,15]],
-	[593,Ar,"surf",[,1,,,,,,,1]],
-	[279,Ar,"surf",[,,15,15]],
-	[170,Ar,"surf",[,,,10]],
-	[171,Ar,"surf",[,,,1]],
-	[662,Ar,"surf",[,,,,,,15]],
-	[425,Ar,"surf",[,,,,,,,,15]],
-	[319,Ar,"surf",100],
-	[690,ShAr,"surf",5],
-	[691,ShAr,"surf",1],
+	[278,Ar,'surf',30],
+	[72,Ar,'surf',[28,27,28,21,,,28,28,27]],
+	[458,Ar,'surf',[15,,,,,,,15]],
+	[592,Ar,'surf',[20,20,20,16,,,20,20,20]],
+	[692,SwAr,'surf',5],
+	[130,Ar,'surf',1],
+	[693,SwAr,'surf',1],
+	[73,Ar,'surf',[,15]],
+	[593,Ar,'surf',[,1,,,,,,,1]],
+	[279,Ar,'surf',[,,15,15]],
+	[170,Ar,'surf',[,,,10]],
+	[171,Ar,'surf',[,,,1]],
+	[662,Ar,'surf',[,,,,,,15]],
+	[425,Ar,'surf',[,,,,,,,,15]],
+	[319,Ar,'surf',100],
+	[690,ShAr,'surf',5],
+	[691,ShAr,'surf',1],
 	{
 		group:['Area 2',,,,'Área 2'],encounters:[
-			[819,Ar,"overworld",82],
-			[102,Ar,"overworld",16],
-			[113,Ar,"overworld",[2,2,2,2,,,2,2]],
-			[242,Ar,"overworld",[,,,,,,,,2]]
+			[819,Ar,'overworld',82],
+			[102,Ar,'overworld',16],
+			[113,Ar,'overworld',[2,2,2,2,,,2,2]],
+			[242,Ar,'overworld',[,,,,,,,,2]]
 		]
 	},
 
@@ -4668,40 +4682,40 @@ const LOCATIONS=[
 	generateRaidDen('A73',107,108)
 ]},
 {name:['Insular Sea',,,,'Mar Islejos'],encounters:[ //909172718CA9AB5E
-	[824,Ar,"hidden",30],
-	[278,Ar,"hidden",30],
-	[102,Ar,"hidden",30],
-	[440,Ar,"hidden",10],
-	[819,Ar,"shake_tree",70],
-	[840,Ar,"shake_tree",30],
-	[129,Ar,"fish",60],
-	[746,Ar,"fish",40],
+	[824,Ar,'hidden',30],
+	[278,Ar,'hidden',30],
+	[102,Ar,'hidden',30],
+	[440,Ar,'hidden',10],
+	[819,Ar,'shake_tree',70],
+	[840,Ar,'shake_tree',30],
+	[129,Ar,'fish',60],
+	[746,Ar,'fish',40],
 	
-	[278,Ar,"surf",30],
-	[72,Ar,"surf",[28,27,28,21,,,28,28,27]],
-	[458,Ar,"surf",[15,,,,,,,15]],
-	[116,Ar,"surf",[20,20,20,16,,,20,20,20]],
-	[692,SwAr,"surf",5],
-	[130,Ar,"surf",1],
-	[693,SwAr,"surf",1],
-	[73,Ar,"surf",[,15]],
-	[593,Ar,"surf",[,1,,,,,,,1]],
-	[279,Ar,"surf",[,,15,15]],
-	[170,Ar,"surf",[,,,10]],
-	[171,Ar,"surf",[,,,1]],
-	[662,Ar,"surf",[,,,,,,15]],
-	[425,Ar,"surf",[,,,,,,,,15]],
-	[319,Ar,"surf",100],
-	[690,ShAr,"surf",5],
-	[691,ShAr,"surf",1],
+	[278,Ar,'surf',30],
+	[72,Ar,'surf',[28,27,28,21,,,28,28,27]],
+	[458,Ar,'surf',[15,,,,,,,15]],
+	[116,Ar,'surf',[20,20,20,16,,,20,20,20]],
+	[692,SwAr,'surf',5],
+	[130,Ar,'surf',1],
+	[693,SwAr,'surf',1],
+	[73,Ar,'surf',[,15]],
+	[593,Ar,'surf',[,1,,,,,,,1]],
+	[279,Ar,'surf',[,,15,15]],
+	[170,Ar,'surf',[,,,10]],
+	[171,Ar,'surf',[,,,1]],
+	[662,Ar,'surf',[,,,,,,15]],
+	[425,Ar,'surf',[,,,,,,,,15]],
+	[319,Ar,'surf',100],
+	[690,ShAr,'surf',5],
+	[691,ShAr,'surf',1],
 
-	[103,Ar,"wanderer",[100,,100,,,,100,100]], //Exeggutor
-	[571,Ar,"wanderer",[,100]], //Zoroark
-	[279,Ar,"wanderer",[,100,100,100]], //Pelipper
-	[462,Ar,"wanderer",[,,,100]], //Magnezone
-	[637,Ar,"wanderer",[,,,,,,100]], //Volcarona
-	[65,Ar,"wanderer",[,,,,,,,,100]], //Alakazam
-	[764,Ar,"wanderer",[,,,,,,,,100]], //Comfey
+	[103,Ar,'wanderer',[100,,100,,,,100,100]], //Exeggutor
+	[571,Ar,'wanderer',[,100]], //Zoroark
+	[279,Ar,'wanderer',[,100,100,100]], //Pelipper
+	[462,Ar,'wanderer',[,,,100]], //Magnezone
+	[637,Ar,'wanderer',[,,,,,,100]], //Volcarona
+	[65,Ar,'wanderer',[,,,,,,,,100]], //Alakazam
+	[764,Ar,'wanderer',[,,,,,,,,100]], //Comfey
 
 	generateRaidDen('A74',125,126),
 	generateRaidDen('A75',99,100),
@@ -4710,36 +4724,36 @@ const LOCATIONS=[
 	generateRaidDen('A78',137,147)
 ]},
 {name:['Honeycalm Sea',,,,'Mar Meloso'],encounters:[ //909175718CA9B077
-	[415,Ar,"overworld",82],
-	[548,Ar,"overworld",16],
-	[113,Ar,"overworld",[2,2,2,2,,,2,2]],
-	[242,Ar,"overworld",[,,,,,,,,2]],
-	[824,Ar,"hidden",30],
-	[415,Ar,"hidden",30],
-	[548,Ar,"hidden",30],
-	[440,Ar,"hidden",10],
-	[129,Ar,"fish",60],
-	[746,Ar,"fish",40],
+	[415,Ar,'overworld',82],
+	[548,Ar,'overworld',16],
+	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
+	[242,Ar,'overworld',[,,,,,,,,2]],
+	[824,Ar,'hidden',30],
+	[415,Ar,'hidden',30],
+	[548,Ar,'hidden',30],
+	[440,Ar,'hidden',10],
+	[129,Ar,'fish',60],
+	[746,Ar,'fish',40],
 
-	[278,Ar,"surf",30],
-	[72,Ar,"surf",[28,27,28,21,,,28,28,27]],
-	[458,Ar,"surf",[15,,,,,,,15]],
-	[320,Ar,"surf",[20,20,20,16,,,20,20,20]],
-	[692,SwAr,"surf",5],
-	[130,Ar,"surf",1],
-	[693,SwAr,"surf",1],
-	[73,Ar,"surf",[,15]],
-	[593,Ar,"surf",[,1,,,,,,,1]],
-	[279,Ar,"surf",[,,15,15]],
-	[170,Ar,"surf",[,,,10]],
-	[171,Ar,"surf",[,,,1]],
-	[662,Ar,"surf",[,,,,,,15]],
-	[425,Ar,"surf",[,,,,,,,,15]],
-	[690,ShAr,"surf",5],
-	[691,ShAr,"surf",1],
+	[278,Ar,'surf',30],
+	[72,Ar,'surf',[28,27,28,21,,,28,28,27]],
+	[458,Ar,'surf',[15,,,,,,,15]],
+	[320,Ar,'surf',[20,20,20,16,,,20,20,20]],
+	[692,SwAr,'surf',5],
+	[130,Ar,'surf',1],
+	[693,SwAr,'surf',1],
+	[73,Ar,'surf',[,15]],
+	[593,Ar,'surf',[,1,,,,,,,1]],
+	[279,Ar,'surf',[,,15,15]],
+	[170,Ar,'surf',[,,,10]],
+	[171,Ar,'surf',[,,,1]],
+	[662,Ar,'surf',[,,,,,,15]],
+	[425,Ar,'surf',[,,,,,,,,15]],
+	[690,ShAr,'surf',5],
+	[691,ShAr,'surf',1],
 	
-	[117,Ar,"wanderer_surf",[100,100,100,,,,100,100,100]], //Seadra
-	[230,Ar,"wanderer_surf",[,,,100]], //Kingdra
+	[117,Ar,'wanderer_surf',[100,100,100,,,,100,100,100]], //Seadra
+	[230,Ar,'wanderer_surf',[,,,100]], //Kingdra
 
 	generateRaidDen('A79',131,132),
 	generateRaidDen('A80',123,124),
@@ -4748,31 +4762,31 @@ const LOCATIONS=[
 	generateRaidDen('A83',105,106)
 ]},
 {name:['Honeycalm Island',,,,'Isla Melosa'],encounters:[ //908DEC718CA691D5
-	[72,Ar,"hidden",100],
-	[129,Ar,"fish",60],
-	[746,Ar,"fish",40],
+	[72,Ar,'hidden',100],
+	[129,Ar,'fish',60],
+	[746,Ar,'fish',40],
 	
-	[278,Ar,"surf",30],
-	[72,Ar,"surf",[28,27,28,21,,,28,28,27]],
-	[458,Ar,"surf",[15,,,,,,,15]],
-	[320,Ar,"surf",[20,20,20,16,,,20,20,20]],
-	[692,SwAr,"surf",5],
-	[130,Ar,"surf",1],
-	[693,SwAr,"surf",1],
-	[73,Ar,"surf",[,15]],
-	[593,Ar,"surf",[,1,,,,,,,1]],
-	[279,Ar,"surf",[,,15,15]],
-	[170,Ar,"surf",[,,,10]],
-	[171,Ar,"surf",[,,,1]],
-	[662,Ar,"surf",[,,,,,,15]],
-	[425,Ar,"surf",[,,,,,,,,15]],
-	[319,Ar,"surf",100],
-	[690,ShAr,"surf",5],
-	[691,ShAr,"surf",1],
+	[278,Ar,'surf',30],
+	[72,Ar,'surf',[28,27,28,21,,,28,28,27]],
+	[458,Ar,'surf',[15,,,,,,,15]],
+	[320,Ar,'surf',[20,20,20,16,,,20,20,20]],
+	[692,SwAr,'surf',5],
+	[130,Ar,'surf',1],
+	[693,SwAr,'surf',1],
+	[73,Ar,'surf',[,15]],
+	[593,Ar,'surf',[,1,,,,,,,1]],
+	[279,Ar,'surf',[,,15,15]],
+	[170,Ar,'surf',[,,,10]],
+	[171,Ar,'surf',[,,,1]],
+	[662,Ar,'surf',[,,,,,,15]],
+	[425,Ar,'surf',[,,,,,,,,15]],
+	[319,Ar,'surf',100],
+	[690,ShAr,'surf',5],
+	[691,ShAr,'surf',1],
 
-	[549,Ar,"wanderer",[100,,,,,,100,100]], //Lilligant
-	[415,Ar,"wanderer",[,100,100,100]], //Combee
-	[764,Ar,"wanderer",[,,,,,,,,100]], //Comfey
+	[549,Ar,'wanderer',[100,,,,,,100,100]], //Lilligant
+	[415,Ar,'wanderer',[,100,100,100]], //Combee
+	[764,Ar,'wanderer',[,,,,,,,,100]], //Comfey
 
 	generateRaidDen('A84',143,144) //all dens here are the same
 	/*generateRaidDen('A85',143,144),
@@ -4781,6 +4795,558 @@ const LOCATIONS=[
 	generateRaidDen('A88',143,144),
 	generateRaidDen('A89',143,144)*/
 ]},
+
+
+
+
+
+
+
+
+
+{name:['Crown Tundra',,,,'Nieves de la Corona'],encounters:[
+	[alternateForm(144,1),Cr,'roaming']
+]},
+{name:['Slippery Slope',,,,'Campo Deslizante'],encounters:[
+	[832,Cr,'overworld',[30,,,,,,20]],
+	[872,Cr,'overworld',[25,22,,,30,30,25,,22]],
+	[221,Cr,'overworld',[24,22,,,29,29,24,,22]],
+	[124,Cr,'overworld',[10,10,,,10,10,10,,10]],
+	[698,Cr,'overworld',[10,10,,,10,10,10,,10]],
+	[531,Cr,'overworld',[1,1,,,1,1,1,,1]],
+	[333,Cr,'overworld',[,15]],
+	[215,Cr,'overworld',[,10]],
+	[708,Cr,'overworld',[,10]],
+	[615,Cr,'overworld',[,,100,100,20,20,,100]],
+	[126,Cr,'overworld',[,,,,,,10]],
+	[856,Cr,'overworld',[,,,,,,,,10]],
+	[859,Cr,'overworld',[,,,,,,,,10]],
+	[575,SwCr,'overworld',[,,,,,,,,10]],
+	[578,ShCr,'overworld',[,,,,,,,,10]],
+	[778,Cr,'overworld',[,,,,,,,,5]],
+	[439,Cr,'hidden',[20,20,100,100,25,25,16,100,16]],
+	[872,Cr,'hidden',[20,20,,,25,25,16,,16]],
+	[238,Cr,'hidden',[20,20,,,25,25,16,,16]],
+	[220,Cr,'hidden',[20,20,,,25,25,16,,16]],
+	[831,Cr,'hidden',[20,,,,,,18]],
+	[333,Cr,'hidden',[,20]],
+	[240,Cr,'hidden',[,,,,,,18]],
+	[856,Cr,'hidden',[,,,,,,,,18]],
+	[574,SwCr,'hidden',[,,,,,,,,18]],
+	[577,ShCr,'hidden',[,,,,,,,,18]],
+	[819,Cr,'shake_tree',70],
+	[820,Cr,'shake_tree',30],
+
+	{group:['Max Lair',,,,'Supernido Dinamax'],encounters:[
+		[803,Cr,'gift'],
+
+		[252,Cr,'raid_special'],
+		[253,Cr,'raid_special'],
+		[254,Cr,'raid_special'],
+		[255,Cr,'raid_special'],
+		[256,Cr,'raid_special'],
+		[257,Cr,'raid_special'],
+		[258,Cr,'raid_special'],
+		[259,Cr,'raid_special'],
+		[260,Cr,'raid_special'],
+
+		[144,Cr,'raid_special'],
+		[145,Cr,'raid_special'],
+		[146,Cr,'raid_special'],
+		[150,Cr,'raid_special'],
+		[243,Cr,'raid_special'],
+		[244,Cr,'raid_special'],
+		[245,Cr,'raid_special'],
+		[249,Cr,'raid_special'],
+		[250,Cr,'raid_special'],
+		[380,Cr,'raid_special'],
+		[381,Cr,'raid_special'],
+		[382,Cr,'raid_special'],
+		[383,SwCr,'raid_special'],
+		[384,ShCr,'raid_special'],
+		[480,Cr,'raid_special'],
+		[481,Cr,'raid_special'],
+		[482,Cr,'raid_special'],
+		[483,SwCr,'raid_special'],
+		[484,ShCr,'raid_special'],
+		[485,Cr,'raid_special'],
+		[487,Cr,'raid_special'],
+		[488,Cr,'raid_special'],
+		[641,SwCr,'raid_special'],
+		[642,ShCr,'raid_special'],
+		[643,SwCr,'raid_special'],
+		[644,ShCr,'raid_special'],
+		[645,Cr,'raid_special'],
+		[646,Cr,'raid_special'],
+		[716,SwCr,'raid_special'],
+		[717,ShCr,'raid_special'],
+		[718,Cr,'raid_special'],
+		[785,Cr,'raid_special'],
+		[786,Cr,'raid_special'],
+		[787,Cr,'raid_special'],
+		[788,Cr,'raid_special'],
+		[791,SwCr,'raid_special'],
+		[792,ShCr,'raid_special'],
+		[793,Cr,'raid_special'],
+		[794,Cr,'raid_special'],
+		[795,Cr,'raid_special'],
+		[796,Cr,'raid_special'],
+		[797,Cr,'raid_special'],
+		[798,Cr,'raid_special'],
+		[799,Cr,'raid_special'],
+		[800,Cr,'raid_special'],
+		[805,Cr,'raid_special'],
+		[806,Cr,'raid_special']
+	]}
+]},
+{name:['Freezington',,,,'Villa Helada'],encounters:[
+	[789,Cr,'gift']
+]},
+{name:['Frostpoint Field',,,,'Campo Bajocero'],encounters:[
+	[460,Cr,'overworld',[49,49,,,39,39,49,,49]],
+	[832,Cr,'overworld',[30,,,,,,20]],
+	[124,Cr,'overworld',[10,10,,,10,10,10,,10]],
+	[698,Cr,'overworld',[10,10,,,10,10,10,,10]],
+	[531,Cr,'overworld',[1,1,,,1,1,1,,1]],
+	[333,Cr,'overworld',[,20]],
+	[215,Cr,'overworld',[,10]],
+	[615,Cr,'overworld',[,,100,100,20,20,,100]],
+	[126,Cr,'overworld',[,,,,,,10]],
+	[583,Cr,'overworld',[,,,,20,20]],
+	[857,Cr,'overworld',[,,,,,,,,15]],
+	[575,SwCr,'overworld',[,,,,,,,,10]],
+	[578,ShCr,'overworld',[,,,,,,,,10]],
+	[778,Cr,'overworld',[,,,,,,,,5]],
+	[439,Cr,'hidden',[25,25,100,100,25,25,20,100,20]],
+	[459,Cr,'hidden',[25,25,,,25,25,20,,20]],
+	[238,Cr,'hidden',[25,25,,,25,25,20,,20]],
+	[831,Cr,'hidden',[25,,,,,,20]],
+	[333,Cr,'hidden',[,25]],
+	[240,Cr,'hidden',[,,,,,,20]],
+	[582,Cr,'hidden',[,,,,25,25]],
+	[856,Cr,'hidden',[,,,,,,,,20]],
+	[574,SwCr,'hidden',[,,,,,,,,20]],
+	[577,ShCr,'hidden',[,,,,,,,,20]],
+	[819,Cr,'shake_tree',70],
+	[820,Cr,'shake_tree',30]
+]},
+{name:['Giant\'s Bed',,,,'Lecho del Gigante'],encounters:[	[32,SwCr,'overworld',[21,21,21,21,21,19,19,100,17]],
+	[29,SwCr,'overworld',[21,21,21,21,21,19,19,,17]],
+	[32,ShCr,'overworld',[26,26,26,26,26,24,24,100,22]],
+	[874,SwCr,'overworld',[15,15,15,15,15,15,15,,15]],
+	[29,ShCr,'overworld',[26,26,26,26,26,24,24,,22]],
+	[832,Cr,'overworld',[15,,,,,,15]],
+	[437,SwCr,'overworld',[12,12,12,12,12,11,11,,10]],
+	[437,ShCr,'overworld',[17,17,17,17,17,16,16,,15]],
+	[533,Cr,'overworld',[10]],
+	[133,Cr,'overworld',[5]],
+	[531,Cr,'overworld',[1,1,1,1,1,1,1,,1]],
+	[333,Cr,'overworld',[,15]],
+	[alternateForm(264,1),Cr,'overworld',[,10]],
+	[608,Cr,'overworld',[,5,,,,,,,10]],
+	[752,Cr,'overworld',[,,30,10]],
+	[125,Cr,'overworld',[,,,10]],
+	[596,Cr,'overworld',[,,,10]],
+	[126,Cr,'overworld',[,,,,,,10]],
+	[631,Cr,'overworld',[,,,,,,5]],
+	[632,Cr,'overworld',[,,,,,,5]],
+	[615,Cr,'overworld',[,,,,10,10]],
+	[583,Cr,'overworld',[,,,,10,10]],
+	[361,Cr,'overworld',[,,,,10,10]],
+	[359,Cr,'overworld',[,,,,,5]],
+	[857,Cr,'overworld',[,,,,,,,,10]],
+	[860,Cr,'overworld',[,,,,,,,,10]],
+	[778,Cr,'overworld',[,,,,,,,,5]],
+	[35,Cr,'overworld',[,,,,,,,,5]],
+	[439,Cr,'hidden',[20,20,20,16,20,20,16,100,20]],
+	[32,Cr,'hidden',[20,20,20,16,20,20,16,,20]],
+	[29,Cr,'hidden',[20,20,20,16,20,20,16,,20]],
+	[616,Cr,'hidden',[20,20,20,16,20,20,16,,20]],
+	[831,Cr,'hidden',[20,,,,,,18]],
+	[333,Cr,'hidden',[,20]],
+	[751,Cr,'hidden',[,,20,18]],
+	[239,Cr,'hidden',[,,,18]],
+	[240,Cr,'hidden',[,,,,,,18]],
+	[582,Cr,'hidden',[,,,,20,20]],
+	[856,Cr,'hidden',[,,,,,,,,20]],
+	[819,Cr,'shake_tree',80],
+	[820,Cr,'shake_tree',20],
+	[129,Cr,'fish',20],
+	[339,Cr,'fish',20],
+	[550,SwCr,'fish',20],
+	[alternateForm(550,1),ShCr,'fish',20],
+	[130,Cr,'fish',15],
+	[340,Cr,'fish',15],
+	[345,Cr,'fish',10],
+
+	[339,Cr,'surf',[33,33,33,33,25,25,33,100,33]],
+	[550,SwCr,'surf',[33,33,33,33,25,25,33,,33]],
+	[alternateForm(550,1),ShCr,'surf',[33,33,33,33,25,25,33,,33]],
+	[129,Cr,'surf',[33,33,33,33,25,25,33,,33]],
+	[349,Cr,'surf',[1,1,1,1,1,1,1,,1]],
+	[583,Cr,'surf',[,,,,24,24]],
+
+	[486,Cr,'raid_special'],
+	[640,Cr,'interact'],
+
+	{group:['Rock Peak Ruins',,,,'Ruinas Pico Roca'],encounters:[
+		[377,Cr,'interact']
+	]},
+	{group:['Iron Ruins',,,,'Ruinas Hierro'],encounters:[
+		[379,Cr,'interact']
+	]}
+]},
+{name:['Old Cemetery',,,,'Viejo Cementerio'],encounters:[
+	[32,SwCr,'overworld',[35,20,25,20,20,20,25,,22]],
+	[32,ShCr,'overworld',[35,20,25,20,20,20,25,,17]],
+	[29,SwCr,'overworld',[35,20,25,20,20,20,25,,22]],
+	[29,ShCr,'overworld',[35,20,25,20,20,20,25,,17]],
+	[854,Cr,'overworld',[19,19,19,19,19,20,19,,20]],
+	[886,Cr,'overworld',[9,9,9,9,9,9,9,100,9]],
+	[531,Cr,'overworld',[1,1,1,1,1,1,1,,1]],
+	[alternateForm(854,1),Cr,'overworld',[1,1,1,1,1,1,1,,1]],
+	[608,Cr,'overworld',[,15,,,,,,,10]],
+	[708,Cr,'overworld',[,15]],
+	[752,Cr,'overworld',[,,20,10]],
+	[596,Cr,'overworld',[,,,10]],
+	[125,Cr,'overworld',[,,,10]],
+	[126,Cr,'overworld',[,,,,,,10]],
+	[631,Cr,'overworld',[,,,,,,5]],
+	[632,Cr,'overworld',[,,,,,,5]],
+	[615,Cr,'overworld',[,,,,15,12]],
+	[583,Cr,'overworld',[,,,,15,12]],
+	[359,Cr,'overworld',[,,,,,5]],
+	[857,Cr,'overworld',[,,,,,,,,10]],
+	[778,Cr,'overworld',[,,,,,,,,5]],
+	[alternateForm(77,1),ShCr,'overworld',[,,,,,,,,10]],
+	[439,Cr,'hidden',[20,16,16,14,16,16,16,100,16]],
+	[32,Cr,'hidden',[20,16,16,14,16,16,16,,16]],
+	[29,Cr,'hidden',[20,16,16,14,16,16,16,,16]],
+	[588,Cr,'hidden',[20,16,16,14,16,16,16,,16]],
+	[854,Cr,'hidden',[19,17,17,13,17,17,17,,17]],
+	[alternateForm(854,1),Cr,'hidden',[1,1,1,1,1,1,1,,1]],
+	[708,Cr,'hidden',[,18]],
+	[751,Cr,'hidden',[,,18,15]],
+	[239,Cr,'hidden',[,,,15]],
+	[240,Cr,'hidden',[,,,,,,18]],
+	[582,Cr,'hidden',[,,,,18,18]],
+	[856,Cr,'hidden',[,,,,,,,,18]],
+
+	[897,Cr,'interact']
+]},
+{name:['Snowslide Slope',,,,'Desfiladero Nevado'],encounters:[
+	[872,SwCr,'overworld',[35,35,,,25,20,30,,35]],
+	[872,ShCr,'overworld',[35,35,,,25,25,30,,35]],
+	[374,SwCr,'overworld',[24,24,100,100,19,14,24,100,24]],
+	[374,ShCr,'overworld',[24,24,100,100,19,19,24,100,24]],
+	[832,Cr,'overworld',[20,,,,,,15]],
+	[698,Cr,'overworld',[10,10,,,10,10,10,,10]],
+	[621,Cr,'overworld',[10,,,,,,10]],
+	[531,Cr,'overworld',[1,1,,,1,1,1,,1]],
+	[708,Cr,'overworld',[,20]],
+	[215,Cr,'overworld',[,10]],
+	[126,Cr,'overworld',[,,,,,,10]],
+	[615,Cr,'overworld',[,,,,10,10]],
+	[361,Cr,'overworld',[,,,,10,10]],
+	[583,Cr,'overworld',[,,,,10,10]],
+	[614,Cr,'overworld',[,,,,10,10]],
+	[225,Cr,'overworld',[,,,,5]],
+	[alternateForm(554,1),SwCr,'overworld',[,,,,,10]],
+	[359,Cr,'overworld',[,,,,,5]],
+	[860,Cr,'overworld',[,,,,,,,,20]],
+	[778,Cr,'overworld',[,,,,,,,,5]],
+	[35,Cr,'overworld',[,,,,,,,,5]],
+	[439,Cr,'hidden',[25,25,100,100,25,25,20,100,33]],
+	[374,Cr,'hidden',[25,25,,,25,25,20,,33]],
+	[872,Cr,'hidden',[25,25,,,25,25,20,,34]],
+	[831,Cr,'hidden',[25,,,,,,20]],
+	[708,Cr,'hidden',[,25]],
+	[240,Cr,'hidden',[,,,,,,20]],
+	[582,Cr,'hidden',[,,,,25,25]],
+	[129,Cr,'fish',45],
+	[550,SwCr,'fish',40],
+	[alternateForm(550,1),ShCr,'fish',40],
+	[130,Cr,'fish',15],
+
+	[896,Cr,'interact'],
+
+	{group:['Iceberg Ruins',,,,'Ruinas Iceberg'],encounters:[
+		[378,Cr,'interact']
+	]}
+]},
+{name:['Tunnel to the Top',,,,'Túnel Ascensión'],encounters:[
+	[41,Cr,'overworld',40],
+	[703,Cr,'overworld',24],
+	[361,Cr,'overworld',20],
+	[371,SwCr,'overworld',10],
+	[443,ShCr,'overworld',10],
+	[35,Cr,'overworld',5],
+	[531,Cr,'overworld',1]
+]},
+{name:['Path to the Peak',,,,'Senda Blancacima'],encounters:[
+	[873,Cr,'overworld',[70,70,100,100,80,70,70,100,80]],
+	[872,Cr,'overworld',[19,19,,,19,19,19,,19]],
+	[621,Cr,'overworld',[10,,,,,,10]],
+	[531,Cr,'overworld',[1,1,,,1,1,1,,1]],
+	[333,Cr,'overworld',[,10]],
+	[359,Cr,'overworld',[,,,,,10]]
+]},
+{name:['Crown Shrine',,,,'Templo Corona'],encounters:[
+	[898,Cr,'interact']
+]},
+{name:['Giant\'s Foot',,,,'Suela del Gigante'],encounters:[
+	[879,SwCr,'overworld',[24,24,24,19,22,19,24,,24]],
+	[879,ShCr,'overworld',[31,31,31,26,29,26,31,,31]],
+	[437,SwCr,'overworld',[15,15,15,10,12,10,15,,15]],
+	[437,ShCr,'overworld',[23,23,23,18,20,18,23,,23]],
+	[874,SwCr,'overworld',[15,15,15,15,15,15,15,,15]],
+	[851,Cr,'overworld',[15,,,,,,15]],
+	[566,Cr,'overworld',[10,10,10,10,10,10,10,100,10]],
+	[344,Cr,'overworld',[10,10,10,10,10,10,10,,10]],
+	[533,Cr,'overworld',[10]],
+	[531,Cr,'overworld',[1,1,1,1,1,1,1,,1]],
+	[333,Cr,'overworld',[,15]],
+	[708,Cr,'overworld',[,10]],
+	[752,Cr,'overworld',[,,25,15]],
+	[596,Cr,'overworld',[,,,10]],
+	[125,Cr,'overworld',[,,,10]],
+	[126,Cr,'overworld',[,,,,,,10]],
+	[615,Cr,'overworld',[,,,,10,10]],
+	[583,Cr,'overworld',[,,,,10,10]],
+	[361,Cr,'overworld',[,,,,10,10]],
+	[359,Cr,'overworld',[,,,,,5]],
+	[857,Cr,'overworld',[,,,,,,,,10]],
+	[860,Cr,'overworld',[,,,,,,,,10]],
+	[778,Cr,'overworld',[,,,,,,,,5]],
+	[439,Cr,'hidden',[25,25,25,20,25,25,20,100,25]],
+	[878,Cr,'hidden',[25,25,25,20,25,25,20,,25]],
+	[436,Cr,'hidden',[25,25,25,20,25,25,20,,25]],
+	[850,Cr,'hidden',[25,,,,,,20]],
+	[708,Cr,'hidden',[,25]],
+	[751,Cr,'hidden',[,,25,20]],
+	[239,Cr,'hidden',[,,,20]],
+	[240,Cr,'hidden',[,,,,,,20]],
+	[582,Cr,'hidden',[,,,,25,25]],
+	[856,Cr,'hidden',[,,,,,,,,25]],
+	[819,Cr,'shake_tree',80],
+	[820,Cr,'shake_tree',20],
+	[129,Cr,'fish',20],
+	[339,Cr,'fish',20],
+	[550,SwCr,'fish',20],
+	[alternateForm(550,1),ShCr,'fish',20],
+	[340,Cr,'fish',15],
+	[130,Cr,'fish',15],
+	[345,Cr,'fish',10],
+
+	[339,Cr,'surf',[33,33,33,33,25,25,33,100,33]],
+	[550,SwCr,'surf',[33,33,33,33,25,25,33,,33]],
+	[alternateForm(550,1),ShCr,'surf',[33,33,33,33,25,25,33,,33]],
+	[129,Cr,'surf',[33,33,33,33,25,25,33,,33]],
+	[349,Cr,'surf',[1,1,1,1,1,1,1,,1]],
+	[583,Cr,'surf',[,,,,24,24]],
+]},
+{name:['Roaring-Sea Caves',,,,'Grutas Sonamar'],encounters:[
+	[41,Cr,'overworld',40],
+	[703,Cr,'overworld',24],
+	[221,Cr,'overworld',20],
+	[633,SwCr,'overworld',10],
+	[246,ShCr,'overworld',10],
+	[447,Cr,'overworld',5],
+	[531,Cr,'overworld',1],
+
+	[339,Cr,'surf',[25,25,25,25,20,20,25,100,25]],
+	[550,SwCr,'surf',[25,25,25,25,20,20,25,,25]],
+	[alternateForm(550,1),ShCr,'surf',[25,25,25,25,20,20,25,,25]],
+	[129,Cr,'surf',[25,25,25,25,20,20,25,,25]],
+	[138,SwCr,'surf',[24,24,24,24,20,20,24,,24]],
+	[140,ShCr,'surf',[24,24,24,24,20,20,24,,24]],
+	[349,Cr,'surf',[1,1,1,1,1,1,1,,1]],
+	[583,Cr,'surf',[,,,,19,19]]
+]},
+{name:['Frigid Sea',,,,'Mar Gélido'],encounters:[
+	[363,SwCr,'overworld',[45,30,30,25,30,27,100,100,32]],
+	[363,ShCr,'overworld',[37,22,22,17,22,20,100,100,25]],
+	[713,SwCr,'overworld',[44,29,29,24,29,27,,,32]],
+	[713,ShCr,'overworld',[37,22,22,17,22,19,,,24]],
+	[875,ShCr,'overworld',[15,15,15,15,15,15,,,15]],
+	[564,Cr,'overworld',[10,10,10,10,10,10,,,10]],
+	[531,Cr,'overworld',[1,1,1,1,1,1,,,1]],
+	[333,Cr,'overworld',[,15]],
+	[215,Cr,'overworld',[,15]],
+	[752,Cr,'overworld',[,,30,20]],
+	[125,Cr,'overworld',[,,,10]],
+	[871,Cr,'overworld',[,,,10]],
+	[583,Cr,'overworld',[,,,,15,15]],
+	[614,Cr,'overworld',[,,,,15,15]],
+	[359,Cr,'overworld',[,,,,,5]],
+	[857,Cr,'overworld',[,,,,,,,,20]],
+	[778,Cr,'overworld',[,,,,,,,,5]],
+	[712,Cr,'hidden',[34,34,25,20,25,25,,,25]],
+	[439,Cr,'hidden',[33,33,25,20,25,25,100,100,25]],
+	[363,Cr,'hidden',[33,33,25,20,25,25,,,25]],
+	[751,Cr,'hidden',[,,25,20]],
+	[239,Cr,'hidden',[,,,20]],
+	[582,Cr,'hidden',[,,,,25,25]],
+	[856,Cr,'hidden',[,,,,,,,,25]],
+	[129,Cr,'fish',30],
+	[550,SwCr,'fish',30],
+	[alternateForm(550,1),ShCr,'fish',30],
+	[320,Cr,'fish',20],
+	[130,Cr,'fish',15],
+	[781,Cr,'fish',5],
+	
+	[713,SwCr,'surf',[45,45,45,35,30,30,100,100,45]],
+	[713,ShCr,'surf',[38,38,38,28,22,22,100,100,38]],
+	[320,SwCr,'surf',[45,45,45,35,29,29,,,45]],
+	[320,ShCr,'surf',[37,37,37,27,22,22,,,37]],
+	[875,ShCr,'surf',[15,15,15,15,15,15,,,15]],
+	[564,Cr,'surf',[10,10,10,10,10,10,,,10]],
+	[871,Cr,'surf',[,,,20]],
+	[615,Cr,'surf',[,,,,15,15]],
+	[583,Cr,'surf',[,,,,15,15]],
+	[131,Cr,'surf',[,,,,1,1]],
+
+	[638,Cr,'interact']
+]},
+{name:['Three-Point Pass',,,,'Encrucijada Tresvías'],encounters:[
+	[437,Cr,'overworld',[27,27,27,27,27,30,22,100,30]],
+	[713,Cr,'overworld',[27,27,27,27,27,20,22,,29]],
+	[832,Cr,'overworld',[20,,,,,,10]],
+	[344,Cr,'overworld',[15,15,15,15,15,15,15,,15]],
+	[623,Cr,'overworld',[10,,,,,,,,10]],
+	[531,Cr,'overworld',[1,1,1,1,1,20,1,,1]],
+	[333,Cr,'overworld',[,15]],
+	[708,Cr,'overworld',[,15]],
+	[752,Cr,'overworld',[,,30,10]],
+	[596,Cr,'overworld',[,,,10]],
+	[125,Cr,'overworld',[,,,10]],
+	[126,Cr,'overworld',[,,,,,,10]],
+	[621,Cr,'overworld',[,,,,,,10]],
+	[631,Cr,'overworld',[,,,,,,5]],
+	[632,Cr,'overworld',[,,,,,,5]],
+	[615,Cr,'overworld',[,,,,15,10]],
+	[583,Cr,'overworld',[,,,,15,4]],
+	[359,Cr,'overworld',[,,,,,1]],
+	[857,Cr,'overworld',[,,,,,,,,10]],
+	[778,Cr,'overworld',[,,,,,,,,5]],
+	[439,Cr,'hidden',[25,25,25,20,25,25,20,100,25]],
+	[436,Cr,'hidden',[25,25,25,20,25,25,20,,25]],
+	[712,Cr,'hidden',[25,25,25,20,25,25,20,,25]],
+	[831,Cr,'hidden',[25,,,,,,20]],
+	[708,Cr,'hidden',[,25]],
+	[751,Cr,'hidden',[,,25,20]],
+	[239,Cr,'hidden',[,,,20]],
+	[240,Cr,'hidden',[,,,,,,20]],
+	[582,Cr,'hidden',[,,,,25,25]],
+	[856,Cr,'hidden',[,,,,,,,,25]],
+
+	{group:['Split-Decision Ruins',,,,'Ruinas del Dilema'],encounters:[
+		[894,Cr,'interact'],
+		[895,Cr,'interact']
+	]},
+]},
+{name:['Ballimere Lake',,,,'Lago Bolaguna'],encounters:[
+	[819,Cr,'overworld',[20,20,25,20,25,100,20,100,30]],
+	[836,Cr,'overworld',[19,19,24,19,24,,19,,29]],
+	[696,Cr,'overworld',[10,10,10,10,10,,10,,10]],
+	[829,Cr,'overworld',[10,,,,,,10]],
+	[546,Cr,'overworld',[10,,10]],
+	[822,Cr,'overworld',[10,,,,10]],
+	[213,Cr,'overworld',[10,,,,,,10]],
+	[133,Cr,'overworld',[5]],
+	[876,SwCr,'overworld',[5,,,,,,,,5]],
+	[alternateForm(876,1),ShCr,'overworld',[5,,,,,,,,5]],
+	[531,Cr,'overworld',[1,1,1,1,1,,1,,1]],
+	[333,Cr,'overworld',[,15]],
+	[alternateForm(264,1),Cr,'overworld',[,15]],
+	[877,Cr,'overworld',[,10,,10]],
+	[715,Cr,'overworld',[,10,10]],
+	[752,Cr,'overworld',[,,20,15]],
+	[596,Cr,'overworld',[,,,15]],
+	[125,Cr,'overworld',[,,,10]],
+	[838,Cr,'overworld',[,,,,,,20]],
+	[126,Cr,'overworld',[,,,,,,10]],
+	[615,Cr,'overworld',[,,,,15]],
+	[583,Cr,'overworld',[,,,,15]],
+	[857,Cr,'overworld',[,,,,,,,,20]],
+	[778,Cr,'overworld',[,,,,,,,,5]],
+	[439,Cr,'hidden',[19,31,19,19,23,100,19,100,23]],
+	[819,Cr,'hidden',[19,32,19,19,24,,19,,24]],
+	[835,Cr,'hidden',[19,32,19,19,24,,19,,24]],
+	[829,Cr,'hidden',[19,,,,,,19]],
+	[546,Cr,'hidden',[19,,19]],
+	[446,Cr,'hidden',[5,5,5,5,5,,5,,5]],
+	[751,Cr,'hidden',[,,19,19]],
+	[239,Cr,'hidden',[,,,19]],
+	[240,Cr,'hidden',[,,,,,,19]],
+	[582,Cr,'hidden',[,,,,24]],
+	[856,Cr,'hidden',[,,,,,,,,24]],
+	[819,Cr,'shake_tree',60],
+	[820,Cr,'shake_tree',30],
+	[446,Cr,'shake_tree',10],
+	[129,Cr,'fish',20],
+	[550,SwCr,'fish',20],
+	[alternateForm(550,1),ShCr,'fish',20],
+	[339,Cr,'fish',20],
+	[130,Cr,'fish',15],
+	[340,Cr,'fish',15],
+	[349,Cr,'fish',5],
+	[147,Cr,'fish',5],
+
+	[339,Cr,'surf',[27,27,27,27,20,,27,,27]],
+	[129,Cr,'surf',[27,27,27,27,20,,27,,27]],
+	[550,SwCr,'surf',[26,26,26,26,20,100,26,100,26]],
+	[alternateForm(550,1),ShCr,'surf',[26,26,26,26,20,100,26,100,26]],
+	[347,Cr,'surf',[10,10,10,10,10,,10,,10]],
+	[147,Cr,'surf',[5,5,5,5,5,,5,,5]],
+	[369,Cr,'surf',[5,5,5,5,5,,5,,5]],
+	[583,Cr,'surf',[,,,,20]],
+
+	[647,Cr,'interact']
+]},
+{name:['Lakeside Cave',,,,'Gruta del Lago'],encounters:[
+	[41,Cr,'overworld',20],
+	[304,Cr,'overworld',20],
+	[703,Cr,'overworld',15],
+	[838,Cr,'overworld',15],
+	[597,Cr,'overworld',10],
+	[303,SwCr,'overworld',10],
+	[302,ShCr,'overworld',10],
+	[715,Cr,'overworld',9],
+	[531,Cr,'overworld',1],
+	
+	[639,Cr,'interact']
+]},
+{name:['Dyna Tree Hill',,,,'Colina del Maxiárbol'],encounters:[
+]},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {name:['Pokémon Home'],showAsGrid:true,encounters:[
 	[alternateForm(25,1),,'transfer'],
 	[alternateForm(25,2),,'transfer'],
@@ -4789,33 +5355,17 @@ const LOCATIONS=[
 	[alternateForm(25,5),,'transfer'],
 	[alternateForm(25,6),,'transfer'],
 	[alternateForm(25,7),,'transfer'],
+
 	[alternateForm(422,0),,'transfer'],
 	[alternateForm(423,0),,'transfer'],
-	[150,,'transfer'],
+	
 	[151,,'transfer'],
 	[251,,'transfer'],
 	[385,,'transfer'],
-	[638,,'transfer'],
-	[639,,'transfer'],
-	[640,,'transfer'],
-	[643,,'transfer'],
-	[644,,'transfer'],
-	[646,,'transfer'],
-	[647,,'transfer'],
-	[722,,'transfer'],
-	[723,,'transfer'],
-	[724,,'transfer'],
-	[725,,'transfer'],
-	[726,,'transfer'],
-	[727,,'transfer'],
-	[728,,'transfer'],
-	[729,,'transfer'],
-	[730,,'transfer'],
-	[789,,'transfer'],
-	[790,,'transfer'],
-	[791,,'transfer'],
-	[792,,'transfer'],
-	[800,,'transfer'],
+	[494,,'transfer'],
+	[649,,'transfer'],
+	[719,,'transfer'],
+	[721,,'transfer'],
 	[alternateForm(801,1),,'transfer'],
 	[802,,'transfer'],
 	[807,,'transfer'],
@@ -4843,7 +5393,13 @@ function generateRaidDen2(pool, encounterType, encounters, defaultGame){
 function generateRaidDen(index, pool1, pool2){
 	var group={group:['Raid Den #'+index,,,,'Nido #'+index], encounters:[], showAsGrid:true}
 
-	var game=typeof index==='string'?Ar:0;
+	var game=0;
+	if(index==='string')
+		if(/^A/.test(index))
+			game=Ar;
+		else if(/^C/.test(index))
+			game=Cr;
+
 	generateRaidDen2(RAID_POOLS[pool1], 'raid', group.encounters, game);
 	generateRaidDen2(RAID_POOLS[pool2], 'rare_raid', group.encounters, game);
 
