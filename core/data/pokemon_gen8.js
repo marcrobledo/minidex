@@ -76,7 +76,7 @@
 ,
 ["Ponyta",9,[50,18,49],77,[alternateForm(78,1),"levelup",40],[,[["Galarian",,,,"Galar"],13,[50,257,107]]]],
 ["Rapidash",9,[50,18,49],77,,[,[["Galarian",,,,"Galar"],[13,17],[50,257,107]]]],
-["Slowpoke",[10,13],[12,20,144],79,[[80,"levelup",37],[199,"trade_holding","kings_rock"],[alternateForm(80,1),"use_item","galarica_cuff"]],[,[["Galarian",,,,"Galar"],13,[82,20,144]]]],
+["Slowpoke",[10,13],[12,20,144],79,[[80,"levelup",37],[199,"trade_holding","kings_rock"],[alternateForm(80,1),"use_item","galarica_cuff"],[alternateForm(199,1),"use_item","galarica_wreath"]],[,[["Galarian",,,,"Galar"],13,[82,20,144]]]],
 ["Slowbro",[10,13],[12,20,144],79,,[,[["Galarian",,,,"Galar"],[3,13],[259,20,144]]]],
 ["Magnemite",[12,8],[42,5,148],81,[82,"levelup",30]],
 ["Magneton",[12,8],[42,5,148],81,[462,"levelup_at","magnetic_field"]],
@@ -141,9 +141,9 @@
 ["Kabutops",[5,10],[33,4,133],140],
 ["Aerodactyl",[5,2],[69,46,127],142],
 ["Snorlax",0,[17,47,82],446,,[,["gigantamax"]]],
-["Articuno",[14,2],[46,,81],144,,[,[["Galarian",,,,"Galar"],[13,2]]]],
-["Zapdos",[12,2],[46,,9],145,,[,[["Galarian",,,,"Galar"],[1,2]]]],
-["Moltres",[9,2],[46,,49],146,,[,[["Galarian",,,,"Galar"],[16,2]]]],
+["Articuno",[14,2],[46,,81],144,,[,[["Galarian",,,,"Galar"],[13,2],172]]],
+["Zapdos",[12,2],[46,,9],145,,[,[["Galarian",,,,"Galar"],[1,2],128]]],
+["Moltres",[9,2],[46,,49],146,,[,[["Galarian",,,,"Galar"],[16,2],201]]],
 ["Dratini",15,[61,,63],147,[148,"levelup",30]],
 ["Dragonair",15,[61,,63],147,[149,"levelup",55]],
 ["Dragonite",[15,2],[39,,136],147],
@@ -196,7 +196,7 @@
 ["Espeon",13,[28,,156],133],
 ["Umbreon",16,[28,,39],133],
 ,
-["Slowking",[10,13],[12,20,144],79,,[,[["Galarian",,,,"Galar"],[3,13],0]]],
+["Slowking",[10,13],[12,20,144],79,,[,[["Galarian",,,,"Galar"],[3,13],[261,20,144]]]],
 ,
 ,
 ["Wobbuffet",13,[23,,140],360],
@@ -891,11 +891,11 @@
 ["Kubfu",1,16,891,[[alternateForm(892,0),"evo_kubfu1"],[alternateForm(892,1),"evo_kubfu2"]]],
 ["Urshifu",[1,16],260,891,,[[["Single Strike Style",,,,"Estilo Brusco"]],[["Rapid Strike Style",,,,"Estilo Fluido"],[1,10]],[["Gigantamax SSS",,,,"Gigamax Brusco"]],[["Gigantamax RSS",,,,"Gigamax Fluido"],[1,10]]]],
 ["Zarude",[16,11],102,893,,[,["Dada"]]],
-["Regieleki",12,0,894],
-["Regidrago",15,0,895],
-["Glastrier",0,0,896],
-["Spectrier",0,0,897],
-["Calyrex",[13,11],0,898,,[,,,]]
+["Regieleki",12,262,894],
+["Regidrago",15,263,895],
+["Glastrier",14,264,896],
+["Spectrier",7,265,897],
+["Calyrex",[13,11],127,898,,[,[["Ice Rider",,,,["Jinete Glacial"]],[13,14],266],[["Shadow Rider",,,,["Jinete Espectral"]],[13,7],267]]]
 ];
 
 

@@ -44,22 +44,6 @@
 		else if(location.protocol==='https:' && 'serviceWorker' in navigator)
 			navigator.serviceWorker.register('/minidex/swsh/_cache_service_worker.js', {scope: '/minidex/swsh/'});
 	--></script>
-
-	<!-- fix for DLC2 dexes rearrangement -->
-	<script type="text/javascript"><!--
-		if(typeof(Storage)!=='undefined' && localStorage.getItem('minidex-swsh')){
-			var tempSettings=JSON.parse(localStorage.getItem('minidex-swsh'));
-			
-			if(tempSettings.caughtDatabase && tempSettings.caughtDatabase.realLength<901){
-				for(var i=20; i<tempSettings.caughtDatabase._array.length; i++){
-					tempSettings.caughtDatabase._array[i]=0x00;
-				}
-				alert('Pokémon have been rearranged for Crown of Tundra.');
-				
-				localStorage.setItem('minidex-swsh', JSON.stringify(tempSettings));
-			}
-		}
-	--></script>
 </head>
 
 <body>

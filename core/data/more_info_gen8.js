@@ -23,7 +23,7 @@ const MORE_INFO=[
 			return null;
 		}
 	},{
-		title:['Max Raid den map (Isle of Armor)',,,,'Mapa de nidos (Isla de la armadura)'],
+		title:['Max Raid den map: Isle of Armor',,,,'Mapa de nidos: Isla de la Armadura'],
 		getInfo:function(nationalId, encounters){
 			for(var i=0; i<encounters.length; i++){ //search a raid encounter
 				if(encounters[i][1] & Ar && /raid_/.test(encounters[i][2])){
@@ -33,7 +33,7 @@ const MORE_INFO=[
 			return null;
 		}
 	},{
-		title:['Max Raid den map (Crown of Tundra)',,,,'Mapa de nidos (Nieves de la Corona)'],
+		title:['Max Raid den map: Crown of Tundra',,,,'Mapa de nidos: Nieves de la Corona'],
 		getInfo:function(nationalId, encounters){
 			for(var i=0; i<encounters.length; i++){ //search a raid encounter
 				if(encounters[i][1] & Cr && /raid_/.test(encounters[i][2])){

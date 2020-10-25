@@ -1,9 +1,4 @@
-/*
-	NOTE: Isle of Armor is incomplete, missing flying & wanderer Pokémon and probably more
-	
-	
-	https://www.pokeatlas.com/isle-of-armor
-*/
+/* note: missing CoT wanderers + berry map */
 
 const Sw=1<<0;
 const Sh=1<<1;
@@ -17,7 +12,7 @@ const ShCr=Sh|Cr;
 
 
 const RAID_POOLS=[,
-[ //1676046420423018998
+[ //0x17428356dc6109f6
 	[236,35], //Tyrogue
 	[66,35], //Machop
 	[532,20,30], //Timburr
@@ -32,7 +27,7 @@ const RAID_POOLS=[,
 	[237,,,,[0,25],[10,20]], //Hitmontop
 	[453,[0,10],[0,30]], //Croagunk
 	[454,,,[0,20],[0,25],[0,30]] //Toxicroak
-],[ //1676045320911390787
+],[ //0x17428256dc610843
 	[280,35], //Ralts
 	[517,30], //Munna
 	[677,20,30], //Espurr
@@ -50,7 +45,7 @@ const RAID_POOLS=[,
 	[578,,,[0,20],[0,30]], //Duosion
 	[579,,,,[0,10],[0,25]], //Reuniclus
 	[337,,,,,[0,25]] //Lunatone
-],[ //1676044221399762576
+],[ //0x17428156dc610690
 	[438,35], //Bonsly
 	[524,[35,20],[0,30]], //Roggenrola
 	[688,[20,35],[30,0]], //Binacle
@@ -63,7 +58,7 @@ const RAID_POOLS=[,
 	[558,,,,[50,0],[25,20]], //Crustle
 	[526,,,,[0,50],[20,25]], //Gigalith
 	[213,,,,,20] //Shuckle
-],[ //1676051917981160053
+],[ //0x17428856dc611275
 	[10,35], //Caterpie
 	[736,35], //Grubbin
 	[290,20,30], //Nincada
@@ -75,7 +70,7 @@ const RAID_POOLS=[,
 	[12,,,20,20,25], //Butterfree
 	[596,,,,50,25], //Galvantula
 	[738,,,,,20] //Vikavolt
-],[ //1676050818469531842
+],[ //0x17428756dc6110c2
 	[10,35], //Caterpie
 	[415,35], //Combee
 	[742,20,30], //Cutiefly
@@ -88,7 +83,7 @@ const RAID_POOLS=[,
 	[743,,,,50,25], //Ribombee
 	[416,,,,,20], //Vespiquen
 	[826,,,,,20] //Orbeetle
-],[ //1676049718957903631
+],[ //0x17428656dc610f0f
 	[92,35], //Gastly
 	[355,30], //Duskull
 	[425,20,30], //Drifloon
@@ -101,7 +96,7 @@ const RAID_POOLS=[,
 	[709,,,,[50,40],[25,20]], //Trevenant
 	[711,,,,,20], //Gourgeist
 	[593,,,,,20] //Jellicent
-],[ //1676048619446275420
+],[ //0x17428556dc610d5c
 	[129,35], //Magikarp
 	[458,35], //Mantyke
 	[223,20,30], //Remoraid
@@ -115,7 +110,7 @@ const RAID_POOLS=[,
 	[746,,,,,20], //Wishiwashi
 	[130,,,,,20], //Gyarados
 	[alternateForm(550,1),,[0,20],[0,30]] //Basculin-1
-],[ //1676056316027672897
+],[ //0x17428c56dc611941
 	[833,35], //Chewtle
 	[846,35], //Arrokuda
 	[alternateForm(422,1),20,30], //Shellos-1
@@ -129,7 +124,7 @@ const RAID_POOLS=[,
 	[alternateForm(423,1),,,,,20], //Gastrodon-1
 	[321,,,,,20], //Wailord
 	[alternateForm(550,1),,[0,20],[0,30]] //Basculin-1
-],[ //1676055216516044686
+],[ //0x17428b56dc61178e
 	[833,35], //Chewtle
 	[194,35], //Wooper
 	[535,20,30], //Tympole
@@ -142,7 +137,7 @@ const RAID_POOLS=[,
 	[91,,,,50,25], //Cloyster
 	[537,,,,,20], //Seismitoad
 	[342,,,,,20] //Crawdaunt
-],[ //1675055760446190112
+],[ //0x173efe56dc5df220
 	[236,35], //Tyrogue
 	[759,35,[0,20]], //Stufful
 	[852,20,30], //Clobbopus
@@ -156,7 +151,7 @@ const RAID_POOLS=[,
 	[853,,,,,25], //Grapploct
 	[870,,,,,10], //Falinks
 	[538,,[0,20],[0,40]] //Throh
-],[ //1675056859957818323
+],[ //0x173eff56dc5df3d3
 	[599,35], //Klink
 	[alternateForm(52,2),35], //Meowth-2
 	[436,20,30], //Bronzor
@@ -169,7 +164,7 @@ const RAID_POOLS=[,
 	[625,,,,25,30], //Bisharp
 	[601,,,,,10], //Klinklang
 	[879,,,,,10] //Copperajah
-],[ //1675057959469446534
+],[ //0x173f0056dc5df586
 	[599,35,20], //Klink
 	[436,35,20,40], //Bronzor
 	[597,20,30], //Ferroseed
@@ -180,7 +175,7 @@ const RAID_POOLS=[,
 	[625,,,,25,30], //Bisharp
 	[303,,,,,[10,0]], //Mawile
 	[777,,,,,10] //Togedemaru
-],[ //1675059058981074745
+],[ //0x173f0156dc5df739
 	[439,35], //Mime Jr.
 	[824,35], //Blipbug
 	[177,20,30], //Natu
@@ -196,7 +191,7 @@ const RAID_POOLS=[,
 	[alternateForm(876,1),,,[0,20],[0,25],[0,25]], //Indeedee-1
 	[765,,,,[0,10],[0,25]], //Oranguru
 	[alternateForm(78,1),,,,,[0,25]] //Rapidash-1
-],[ //1675060158492702956
+],[ //0x173f0256dc5df8ec
 	[439,35], //Mime Jr.
 	[360,35], //Wynaut
 	[177,20,30], //Natu
@@ -210,7 +205,7 @@ const RAID_POOLS=[,
 	[866,,,,,25], //Mr. Rime
 	[202,,,,,25], //Wobbuffet
 	[alternateForm(876,1),,,[0,20],[0,25],[0,25]] //Indeedee-1
-],[ //1675061258004331167
+],[ //0x173f0356dc5dfa9f
 	[837,35], //Rolycoly
 	[524,[35,20],[0,30]], //Roggenrola
 	[557,[20,35],[30,0]], //Dwebble
@@ -223,7 +218,7 @@ const RAID_POOLS=[,
 	[839,,,[0,20],[50,20],25], //Coalossal
 	[526,,,,[0,50],[30,25]], //Gigalith
 	[464,,,,,5] //Rhyperior
-],[ //1675062357515959378
+],[ //0x173f0456dc5dfc52
 	[50,35], //Diglett
 	[749,35], //Mudbray
 	[290,20,30], //Nincada
@@ -236,7 +231,7 @@ const RAID_POOLS=[,
 	[51,,,,50,25], //Dugtrio
 	[530,,,,,30], //Excadrill
 	[750,,,,,10] //Mudsdale
-],[ //1675063457027587589
+],[ //0x173f0556dc5dfe05
 	[843,35], //Silicobra
 	[alternateForm(562,1),35], //Yamask-1
 	[449,20,30], //Hippopotas
@@ -249,7 +244,7 @@ const RAID_POOLS=[,
 	[450,,,,[50,0],[25,35]], //Hippowdon
 	[330,,,,[0,50],[35,25]], //Flygon
 	[844,,,,,10] //Sandaconda
-],[ //1675064556539215800
+],[ //0x173f0656dc5dffb8
 	[37,[35,0]], //Vulpix
 	[850,35], //Sizzlipede
 	[757,20,30], //Salandit
@@ -264,7 +259,7 @@ const RAID_POOLS=[,
 	[alternateForm(555,2),,,,,[10,0]], //Darmanitan-2
 	[58,[0,35]], //Growlithe
 	[59,,,[0,20],[0,20],[0,10]] //Arcanine
-],[ //1675065656050844011
+],[ //0x173f0756dc5e016b
 	[37,[10,0],[30,0]], //Vulpix
 	[757,35,20], //Salandit
 	[607,20,30], //Litwick
@@ -276,7 +271,7 @@ const RAID_POOLS=[,
 	[776,,,,,[5,0]], //Turtonator
 	[58,[0,10],[0,30]], //Growlithe
 	[59,,,[0,20],[0,25],[0,5]] //Arcanine
-],[ //1677890301423150395
+],[ //0x17491056dc66653b
 	[37,[35,0]], //Vulpix
 	[850,35], //Sizzlipede
 	[757,20,30], //Salandit
@@ -291,7 +286,7 @@ const RAID_POOLS=[,
 	[alternateForm(555,2),,,,,[10,0]], //Darmanitan-2
 	[58,[0,35]], //Growlithe
 	[59,,,[0,20],[0,20],[0,10]] //Arcanine
-],[ //1677889201911522184
+],[ //0x17490f56dc666388
 	[582,35], //Vanillite
 	[220,35], //Swinub
 	[459,20,35], //Snover
@@ -304,7 +299,7 @@ const RAID_POOLS=[,
 	[91,,,,[50,15],[25,20]], //Cloyster
 	[584,,,,,[30,15]], //Vanilluxe
 	[131,,,,,[10,5]] //Lapras
-],[ //1677892500446406817
+],[ //0x17491256dc6668a1
 	[220,35], //Swinub
 	[613,35], //Cubchoo
 	[872,20,30], //Snom
@@ -317,7 +312,7 @@ const RAID_POOLS=[,
 	[473,,,,15,[30,20]], //Mamoswine
 	[873,,,,,[20,15]], //Frosmoth
 	[461,,,,,[10,5]] //Weavile
-],[ //1677891400934778606
+],[ //0x17491156dc6666ee
 	[361,35], //Snorunt
 	[872,35], //Snom
 	[alternateForm(554,1),[20,0],[30,0]], //Darumaka-1
@@ -332,7 +327,7 @@ const RAID_POOLS=[,
 	[alternateForm(555,2),,,,,[10,0]], //Darmanitan-2
 	[225,[0,5],[0,5]], //Delibird
 	[875,,,,,[0,5]] //Eiscue
-],[ //1677894699469663239
+],[ //0x17491456dc666c07
 	[172,35], //Pichu
 	[309,35], //Electrike
 	[595,20,30], //Joltik
@@ -344,7 +339,7 @@ const RAID_POOLS=[,
 	[596,,,,15,[30,20]], //Galvantula
 	[738,,,,,[10,15]], //Vikavolt
 	[26,,,,,[10,5]] //Raichu
-],[ //1677893599958035028
+],[ //0x17491356dc666a54
 	[835,35], //Yamper
 	[694,35], //Helioptile
 	[848,20,30], //Toxel
@@ -357,7 +352,7 @@ const RAID_POOLS=[,
 	[871,,,,15,20], //Pincurchin
 	[777,,,,,[10,15]], //Togedemaru
 	[877,,,,,5] //Morpeko
-],[ //1677896898492919661
+],[ //0x17491656dc666f6d
 	[406,35], //Budew
 	[273,[35,0]], //Seedot
 	[761,20,30], //Bounsweet
@@ -373,7 +368,7 @@ const RAID_POOLS=[,
 	[270,[0,35]], //Lotad
 	[271,,[0,20]], //Lombre
 	[272,,,[0,20],[0,25],[0,30]] //Ludicolo
-],[ //1677895798981291450
+],[ //0x17491556dc666dba
 	[406,35], //Budew
 	[829,35], //Gossifleur
 	[546,20,30], //Cottonee
@@ -387,7 +382,7 @@ const RAID_POOLS=[,
 	[547,,,,,[10,15]], //Whimsicott
 	[841,,,,,[2,0]], //Flapple
 	[842,,,,,[0,5]] //Appletun
-],[ //1677881505330124707
+],[ //0x17490856dc6657a3
 	[710,40,5,,,1], //Pumpkaboo
 	[708,35], //Phantump
 	[755,15,35], //Morelull
@@ -397,7 +392,7 @@ const RAID_POOLS=[,
 	[709,,,20,25,30], //Trevenant
 	[711,,,,15,29], //Gourgeist
 	[781,,,,,10] //Dhelmise
-],[ //1677880405818496496
+],[ //0x17490756dc6655f0
 	[434,35], //Stunky
 	[568,35], //Trubbish
 	[451,20,30], //Skorupi
@@ -410,7 +405,7 @@ const RAID_POOLS=[,
 	[748,,,,[15,0],[20,5]], //Toxapex
 	[569,,,,,15], //Garbodor
 	[435,,,,[0,15],[5,20]] //Skuntank
-],[ //1676898541934693298
+],[ //0x17458a56dc634bb2
 	[848,35], //Toxel
 	[92,35], //Gastly
 	[451,20,30], //Skorupi
@@ -423,7 +418,7 @@ const RAID_POOLS=[,
 	[315,,,,15,20], //Roselia
 	[849,,,,,15], //Toxtricity
 	[alternateForm(110,1),,,,,5] //Weezing-1
-],[ //1676899641446321509
+],[ //0x17458b56dc634d65
 	[519,35], //Pidove
 	[163,35], //Hoothoot
 	[177,20,30], //Natu
@@ -438,7 +433,7 @@ const RAID_POOLS=[,
 	[561,,,,,5], //Sigilyph
 	[629,[0,10],[0,30]], //Vullaby
 	[630,,,,,[0,15]] //Mandibuzz
-],[ //1676896342911436876
+],[ //0x17458856dc63484c
 	[821,35], //Rookidee
 	[714,35], //Noibat
 	[278,20,30], //Wingull
@@ -451,7 +446,7 @@ const RAID_POOLS=[,
 	[823,,,,15,20], //Corviknight
 	[701,,,,,15], //Hawlucha
 	[845,,,,,5] //Cramorant
-],[ //1676897442423065087
+],[ //0x17458956dc6349ff
 	[173,35], //Cleffa
 	[175,35], //Togepi
 	[742,20,30], //Cutiefly
@@ -466,7 +461,7 @@ const RAID_POOLS=[,
 	[468,,,,,5], //Togekiss
 	[682,[0,10],[0,30]], //Spritzee
 	[683,,,,,[0,15]] //Aromatisse
-],[ //1676894143888180454
+],[ //0x17458656dc6344e6
 	[439,35], //Mime Jr.
 	[868,35], //Milcery
 	[859,20,30], //Impidimp
@@ -480,7 +475,7 @@ const RAID_POOLS=[,
 	[303,,,,,[15,0]], //Mawile
 	[861,,,,,5], //Grimmsnarl
 	[alternateForm(78,1),,,,,[0,15]] //Rapidash-1
-],[ //1676895243399808665
+],[ //0x17458756dc634699
 	[509,35], //Purrloin
 	[434,35], //Stunky
 	[215,20,30], //Sneasel
@@ -494,7 +489,7 @@ const RAID_POOLS=[,
 	[342,,,,,15], //Crawdaunt
 	[275,,,,,[5,0]], //Shiftry
 	[302,,,,,[0,5]] //Sableye
-],[ //1676891944864924032
+],[ //0x17458456dc634180
 	[827,35], //Nickit
 	[alternateForm(263,1),35], //Zigzagoon-1
 	[509,20,30], //Purrloin
@@ -510,7 +505,7 @@ const RAID_POOLS=[,
 	[629,,[0,20]], //Vullaby
 	[630,,,,[0,15],[0,20]], //Mandibuzz
 	[248,,,,,[0,5]] //Tyranitar
-],[ //1676893044376552243
+],[ //0x17458556dc634333
 	[714,10,30], //Noibat
 	[328,[35,20],[0,30]], //Trapinch
 	[610,[20,35],[30,0]], //Axew
@@ -526,7 +521,7 @@ const RAID_POOLS=[,
 	[705,,,[0,20],[0,25],[0,30]], //Sliggoo
 	[780,,,,,[0,15]], //Drampa
 	[706,,,,,[0,5]] //Goodra
-],[ //1676907338027718986
+],[ //0x17459256dc63594a
 	[714,35,30], //Noibat
 	[840,35,30,40], //Applin
 	[782,[20,0],[30,0]], //Jangmo-o
@@ -541,7 +536,7 @@ const RAID_POOLS=[,
 	[705,,,[0,25],[0,35],[0,35]], //Sliggoo
 	[706,,,,[0,20],[0,20]], //Goodra
 	[842,,,,,[0,5]] //Appletun
-],[ //1676908437539347197
+],[ //0x17459356dc635afd
 	[659,35], //Bunnelby
 	[163,35], //Hoothoot
 	[519,20,30], //Pidove
@@ -554,7 +549,7 @@ const RAID_POOLS=[,
 	[695,,,,15,20], //Heliolisk
 	[573,,,,,15], //Cinccino
 	[760,,,,,5] //Bewear
-],[ //1679873820400064589
+],[ //0x17501c56dc6c984d
 	[819,35], //Skwovet
 	[831,35], //Wooloo
 	[alternateForm(263,1),20,40], //Zigzagoon-1
@@ -568,7 +563,7 @@ const RAID_POOLS=[,
 	[143,,,,,5], //Snorlax
 	[alternateForm(876,1),,[0,10]], //Indeedee-1
 	[765,,,,,[0,15]] //Oranguru
-],[ //1679872720888436378
+],[ //0x17501b56dc6c969a
 	[535,35], //Tympole
 	[90,35], //Shellder
 	[170,20,30], //Chinchou
@@ -581,7 +576,7 @@ const RAID_POOLS=[,
 	[537,,,,[50,0],[25,20]], //Seismitoad
 	[847,,,,,20], //Barraskewda
 	[748,,,[0,20],[0,10],[20,0]] //Toxapex
-],[ //1679871621376808167
+],[ //0x17501a56dc6c94e7
 	[alternateForm(422,1),35], //Shellos-1
 	[98,35], //Krabby
 	[341,20,30], //Corphish
@@ -594,7 +589,7 @@ const RAID_POOLS=[,
 	[alternateForm(423,1),,,,50,25], //Gastrodon-1
 	[593,,,,,20], //Jellicent
 	[834,,,,,20] //Drednaw
-],[ //13438842885794419703
+],[ //0xba805c67100fd3f7
 	[92,35], //Gastly
 	[alternateForm(562,1),35], //Yamask-1
 	[854,20,30], //Sinistea
@@ -610,7 +605,7 @@ const RAID_POOLS=[,
 	[alternateForm(222,1),,[0,20],[0,40],[0,20]], //Corsola-1
 	[302,,,,,[0,1]], //Sableye
 	[864,,,,[0,40],[0,35]] //Cursola
-],[ //13438843985306047914
+],[ //0xba805d67100fd5aa
 	[129,68], //Magikarp
 	[349,2], //Feebas
 	[846,20,30], //Arrokuda
@@ -624,7 +619,7 @@ const RAID_POOLS=[,
 	[131,,,,,10], //Lapras
 	[350,,,,,2], //Milotic
 	[alternateForm(550,1),,[0,20],[0,40]] //Basculin-1
-],[ //13438845084817676125
+],[ //0xba805e67100fd75d
 	[447,35], //Riolu
 	[436,35], //Bronzor
 	[624,20,30], //Pawniard
@@ -637,7 +632,7 @@ const RAID_POOLS=[,
 	[208,,,,40,30], //Steelix
 	[601,,,,,15], //Klinklang
 	[448,,,,,5] //Lucario
-],[ //13438837388236278648
+],[ //0xba805767100fcb78
 	[767,35], //Wimpod
 	[824,35], //Blipbug
 	[588,[20,0],[30,20],[0,20]], //Karrablast
@@ -651,7 +646,7 @@ const RAID_POOLS=[,
 	[589,,,,,[15,0]], //Escavalier
 	[292,,,,,5], //Shedinja
 	[617,,,,,[0,15]] //Accelgor
-],[ //13438838487747906859
+],[ //0xba805867100fcd2b
 	[679,35], //Honedge
 	[alternateForm(562,1),35], //Yamask-1
 	[854,20,30], //Sinistea
@@ -666,7 +661,7 @@ const RAID_POOLS=[,
 	[alternateForm(222,1),,[0,20],[0,40],[0,10]], //Corsola-1
 	[302,,,[0,20],[0,20],[0,35]], //Sableye
 	[864,,,,[0,40],[0,29]] //Cursola
-],[ //13438839587259535070
+],[ //0xba805967100fcede
 	[447,35], //Riolu
 	[66,35], //Machop
 	[559,[20,0],[30,0]], //Scraggy
@@ -682,7 +677,7 @@ const RAID_POOLS=[,
 	[453,[0,20],[0,30]], //Croagunk
 	[454,,,[0,20],[0,20],[0,35]], //Toxicroak
 	[701,,,,[0,40],[0,25]] //Hawlucha
-],[ //13438840686771163281
+],[ //0xba805a67100fd091
 	[alternateForm(52,2),35], //Meowth-2
 	[436,35], //Bronzor
 	[624,20,30], //Pawniard
@@ -695,7 +690,7 @@ const RAID_POOLS=[,
 	[alternateForm(618,1),,,,40,25], //Stunfisk-1
 	[879,,,,,15], //Copperajah
 	[884,,,,,5] //Duraludon
-],[ //13438832990189765804
+],[ //0xba805367100fc4ac
 	[686,35], //Inkay
 	[280,35], //Ralts
 	[alternateForm(122,1),20,30], //Mr. Mime-1
@@ -708,7 +703,7 @@ const RAID_POOLS=[,
 	[866,,,,40,30], //Mr. Rime
 	[687,,,,,15], //Malamar
 	[282,,,,,5] //Gardevoir
-],[ //13438834089701394015
+],[ //0xba805467100fc65f
 	[557,35], //Dwebble
 	[438,35], //Bonsly
 	[837,20,30], //Rolycoly
@@ -725,7 +720,7 @@ const RAID_POOLS=[,
 	[246,,[0,20],[0,40]], //Larvitar
 	[247,,,[0,20],[0,20]], //Pupitar
 	[248,,,,,[0,5]] //Tyranitar
-],[ //13439833545771248589
+],[ //0xba83e1671012ebcd
 	[194,35], //Wooper
 	[339,35], //Barboach
 	[alternateForm(562,1),20,30], //Yamask-1
@@ -738,7 +733,7 @@ const RAID_POOLS=[,
 	[537,,,,40,30], //Seismitoad
 	[867,,,,,1], //Runerigus
 	[464,,,,,4] //Rhyperior
-],[ //13439832446259620378
+],[ //0xba83e0671012ea1a
 	[37,[35,0]], //Vulpix
 	[850,35], //Sizzlipede
 	[607,20,30], //Litwick
@@ -752,7 +747,7 @@ const RAID_POOLS=[,
 	[6,,,,,5], //Charizard
 	[58,[0,35]], //Growlithe
 	[59,,,,[0,40],[0,30]] //Arcanine
-],[ //13439831346747992167
+],[ //0xba83df671012e867
 	[37,[35,0]], //Vulpix
 	[850,35], //Sizzlipede
 	[607,20,30], //Litwick
@@ -768,7 +763,7 @@ const RAID_POOLS=[,
 	[58,[0,35]], //Growlithe
 	[59,,,,[0,20],[0,30]], //Arcanine
 	[758,,,,,[0,5]] //Salazzle
-],[ //13439830247236363956
+],[ //0xba83de671012e6b4
 	[582,35], //Vanillite
 	[alternateForm(554,1),[35,0]], //Darumaka-1
 	[alternateForm(122,1),20,30], //Mr. Mime-1
@@ -783,7 +778,7 @@ const RAID_POOLS=[,
 	[alternateForm(555,2),,,,,[5,0]], //Darmanitan-2
 	[613,[0,35]], //Cubchoo
 	[875,,,,,[0,5]] //Eiscue
-],[ //13439829147724735745
+],[ //0xba83dd671012e501
 	[835,35], //Yamper
 	[848,35], //Toxel
 	[25,20,30], //Pikachu
@@ -796,7 +791,7 @@ const RAID_POOLS=[,
 	[596,,,,40,25], //Galvantula
 	[777,,,,,15], //Togedemaru
 	[877,,,,,5] //Morpeko
-],[ //13439828048213107534
+],[ //0xba83dc671012e34e
 	[172,35], //Pichu
 	[309,35], //Electrike
 	[848,20,30], //Toxel
@@ -808,7 +803,7 @@ const RAID_POOLS=[,
 	[alternateForm(479,3),,,,40,25], //Rotom-3
 	[alternateForm(479,2),,,,,15], //Rotom-2
 	[alternateForm(479,1),,,,,5] //Rotom-1
-],[ //13439826948701479323
+],[ //0xba83db671012e19b
 	[406,35], //Budew
 	[273,[35,0]], //Seedot
 	[829,20,30], //Gossifleur
@@ -825,7 +820,7 @@ const RAID_POOLS=[,
 	[271,,[0,20],[0,20]], //Lombre
 	[272,,,[0,20],[0,20],[0,20]], //Ludicolo
 	[842,,,,,[0,5]] //Appletun
-],[ //13439825849189851112
+],[ //0xba83da671012dfe8
 	[420,35], //Cherubi
 	[273,[35,0]], //Seedot
 	[829,20,30], //Gossifleur
@@ -841,7 +836,7 @@ const RAID_POOLS=[,
 	[270,[0,35]], //Lotad
 	[271,,[0,20],[0,20]], //Lombre
 	[272,,,,,[0,15]] //Ludicolo
-],[ //13439824749678222901
+],[ //0xba83d9671012de35
 	[434,35], //Stunky
 	[568,35], //Trubbish
 	[451,20,30], //Skorupi
@@ -856,7 +851,7 @@ const RAID_POOLS=[,
 	[748,,,,,[5,0]], //Toxapex
 	[757,,[0,20],[0,20]], //Salandit
 	[758,,,,,[0,5]] //Salazzle
-],[ //13439823650166594690
+],[ //0xba83d8671012dc82
 	[177,35], //Natu
 	[163,35], //Hoothoot
 	[821,20,30], //Rookidee
@@ -869,7 +864,7 @@ const RAID_POOLS=[,
 	[701,,,,40,25], //Hawlucha
 	[823,,,,,15], //Corviknight
 	[225,,,,,5] //Delibird
-],[ //13440790120887602934
+],[ //0xba8747671015cef6
 	[175,35], //Togepi
 	[755,35], //Morelull
 	[859,20,30], //Impidimp
@@ -883,7 +878,7 @@ const RAID_POOLS=[,
 	[861,,,,,15], //Grimmsnarl
 	[778,,,,,5], //Mimikyu
 	[alternateForm(78,1),,,[0,20],[0,20],[0,20]] //Rapidash-1
-],[ //13440791220399231145
+],[ //0xba8748671015d0a9
 	[827,35], //Nickit
 	[alternateForm(263,1),35], //Zigzagoon-1
 	[559,[20,0],[30,0]], //Scraggy
@@ -899,7 +894,7 @@ const RAID_POOLS=[,
 	[629,[0,20],[0,30]], //Vullaby
 	[630,,,,[0,40],[0,25]], //Mandibuzz
 	[248,,,,,[0,5]] //Tyranitar
-],[ //13440787921864346512
+],[ //0xba8745671015cb90
 	[328,[35,20],[0,30]], //Trapinch
 	[840,35], //Applin
 	[610,[20,35],[30,0]], //Axew
@@ -918,7 +913,7 @@ const RAID_POOLS=[,
 	[780,,,[0,20],[0,20],[0,20]], //Drampa
 	[706,,,,[0,20],[0,25]], //Goodra
 	[330,,,,,[0,15]] //Flygon
-],[ //13440789021375974723
+],[ //0xba8746671015cd43
 	[659,35], //Bunnelby
 	[519,35], //Pidove
 	[819,20,40], //Skwovet
@@ -932,9 +927,9 @@ const RAID_POOLS=[,
 	[143,,,,,5], //Snorlax
 	[765,,,,[0,20],[0,25]], //Oranguru
 	[alternateForm(876,1),,,,[0,40],[0,25]] //Indeedee-1
-],[ //13440794518934115778
+],[ //0xba874b671015d5c2
 	[132,25,25,25,25,25] //Ditto
-],[ //13440795618445743989
+],[ //0xba874c671015d775
 	[458,68], //Mantyke
 	[341,2], //Corphish
 	[846,20,30], //Arrokuda
@@ -948,7 +943,7 @@ const RAID_POOLS=[,
 	[131,,,,,10], //Lapras
 	[134,,,,,5], //Vaporeon
 	[alternateForm(550,1),,[0,20],[0,40]] //Basculin-1
-],[ //13440792319910859356
+],[ //0xba8749671015d25c
 	[686,35], //Inkay
 	[436,35], //Bronzor
 	[alternateForm(122,1),20,30], //Mr. Mime-1
@@ -961,7 +956,7 @@ const RAID_POOLS=[,
 	[866,,,,40,30], //Mr. Rime
 	[858,,,,,15], //Hatterene
 	[196,,,,,5] //Espeon
-],[ //13440793419422487567
+],[ //0xba874a671015d40f
 	[827,35], //Nickit
 	[alternateForm(263,1),35], //Zigzagoon-1
 	[686,20,30], //Inkay
@@ -974,7 +969,7 @@ const RAID_POOLS=[,
 	[687,,,,40,25], //Malamar
 	[862,,,,,15], //Obstagoon
 	[197,,,,,5] //Umbreon
-],[ //13440798916980628622
+],[ //0xba874f671015dc8e
 	[420,35], //Cherubi
 	[761,35], //Bounsweet
 	[829,20,30], //Gossifleur
@@ -987,7 +982,7 @@ const RAID_POOLS=[,
 	[763,,,,40,25], //Tsareena
 	[547,,,,,15], //Whimsicott
 	[470,,,,,5] //Leafeon
-],[ //13440800016492256833
+],[ //0xba8750671015de41
 	[37,[10,0],[30,0]], //Vulpix
 	[850,35], //Sizzlipede
 	[607,20,30], //Litwick
@@ -1000,7 +995,7 @@ const RAID_POOLS=[,
 	[609,,,,,15], //Chandelure
 	[136,,,,,5], //Flareon
 	[58,[0,10],[0,30]] //Growlithe
-],[ //13441641142887649023
+],[ //0xba8a4d6710180eff
 	[835,35], //Yamper
 	[848,35], //Toxel
 	[25,20,30,,,15], //Pikachu
@@ -1012,7 +1007,7 @@ const RAID_POOLS=[,
 	[695,,,,20,25], //Heliolisk
 	[738,,,,40,25], //Vikavolt
 	[135,,,,,5] //Jolteon
-],[ //13441640043376020812
+],[ //0xba8a4c6710180d4c
 	[582,35], //Vanillite
 	[872,35], //Snom
 	[alternateForm(122,1),20,30], //Mr. Mime-1
@@ -1025,7 +1020,7 @@ const RAID_POOLS=[,
 	[866,,,,40,25], //Mr. Rime
 	[478,,,,,10], //Froslass
 	[471,,,,,5] //Glaceon
-],[ //13441643341910905445
+],[ //0xba8a4f6710181265
 	[175,35], //Togepi
 	[684,[35,0]], //Swirlix
 	[859,20,30], //Impidimp
@@ -1040,7 +1035,7 @@ const RAID_POOLS=[,
 	[700,,,,,5], //Sylveon
 	[682,[0,35]], //Spritzee
 	[683,,,[0,20],[0,20],[0,10]] //Aromatisse
-],[ //13441642242399277234
+],[ //0xba8a4e67101810b2
 	[129,68], //Magikarp
 	[751,2], //Dewpider
 	[194,20,30], //Wooper
@@ -1053,7 +1048,7 @@ const RAID_POOLS=[,
 	[195,,,,40,35], //Quagsire
 	[752,,,,,10], //Araquanid
 	[130,,,,,10] //Gyarados
-],[ //13441636744841136179
+],[ //0xba8a496710180833
 	[458,68], //Mantyke
 	[223,2], //Remoraid
 	[320,20,30], //Wailmer
@@ -1067,7 +1062,7 @@ const RAID_POOLS=[,
 	[321,,,,,10], //Wailord
 	[226,,,,,10], //Mantine
 	[alternateForm(550,1),,,[0,20],[0,20],[0,10]] //Basculin-1
-],[ //4972150845118706103
+],[ //0x4500a0d99cf571b7
 	[37,[35,0]], //Vulpix
 	[850,35], //Sizzlipede
 	[607,20,30], //Litwick
@@ -1081,7 +1076,7 @@ const RAID_POOLS=[,
 	[alternateForm(6,1),,,,,5], //Charizard-3
 	[58,[0,35]], //Growlithe
 	[59,,,,[0,40],[0,30]] //Arcanine
-],[ //4972151944630334314
+],[ //0x4500a1d99cf5736a
 	[129,35], //Magikarp
 	[846,35], //Arrokuda
 	[833,20,30], //Chewtle
@@ -1095,7 +1090,7 @@ const RAID_POOLS=[,
 	[alternateForm(423,1),,,,,15], //Gastrodon-1
 	[alternateForm(834,1),,,,,5], //Drednaw-1
 	[alternateForm(550,1),,[0,20],[0,40]] //Basculin-1
-],[ //4972153044141962525
+],[ //0x4500a2d99cf5751d
 	[406,35], //Budew
 	[273,[35,0]], //Seedot
 	[829,20,30], //Gossifleur
@@ -1112,7 +1107,7 @@ const RAID_POOLS=[,
 	[271,,[0,20],[0,20]], //Lombre
 	[272,,,[0,20],[0,20],[0,20]], //Ludicolo
 	[alternateForm(842,1),,,,,[0,5]] //Appletun-1
-],[ //4972145347560565048
+],[ //0x45009bd99cf56938
 	[37,[35,0]], //Vulpix
 	[850,35], //Sizzlipede
 	[607,20,30], //Litwick
@@ -1127,7 +1122,7 @@ const RAID_POOLS=[,
 	[alternateForm(851,1),,,,,5], //Centiskorch-1
 	[58,[0,35]], //Growlithe
 	[59,,,,[0,20],[0,35]] //Arcanine
-],[ //4972146447072193259
+],[ //0x45009cd99cf56aeb
 	[447,[35,0]], //Riolu
 	[66,[35,0]], //Machop
 	[759,[20,0],[30,0]], //Stufful
@@ -1152,7 +1147,7 @@ const RAID_POOLS=[,
 	[864,,,,[0,40],[0,25]], //Cursola
 	[867,,,,,[0,1]], //Runerigus
 	[alternateForm(94,1),,,,,[0,5]] //Gengar-2
-],[ //4972147546583821470
+],[ //0x45009dd99cf56c9e
 	[175,35], //Togepi
 	[755,[35,0]], //Morelull
 	[859,20,30], //Impidimp
@@ -1167,7 +1162,7 @@ const RAID_POOLS=[,
 	[alternateForm(869,9),,,,,5], //Alcremie-9
 	[alternateForm(77,1),[0,35]], //Ponyta-1
 	[alternateForm(78,1),,,[0,20],[0,20],[0,10]] //Rapidash-1
-],[ //4972148646095449681
+],[ //0x45009ed99cf56e51
 	[557,[35,0]], //Dwebble
 	[438,[35,0]], //Bonsly
 	[837,[20,0],[30,0]], //Rolycoly
@@ -1192,7 +1187,7 @@ const RAID_POOLS=[,
 	[866,,,,[0,40],[0,35]], //Mr. Rime
 	[875,,,,,[0,15]], //Eiscue
 	[alternateForm(131,1),,,,,[0,5]] //Lapras-1
-],[ //4972140949514052204
+],[ //0x450097d99cf5626c
 	[447,35], //Riolu
 	[436,35], //Bronzor
 	[624,20,30], //Pawniard
@@ -1205,7 +1200,7 @@ const RAID_POOLS=[,
 	[208,,,,40,35], //Steelix
 	[601,,,,,15], //Klinklang
 	[alternateForm(884,1),,,,,5] //Duraludon-1
-],[ //4972142049025680415
+],[ //0x450098d99cf5641f
 	[alternateForm(52,2),35], //Meowth-2
 	[436,35], //Bronzor
 	[624,20,30], //Pawniard
@@ -1218,7 +1213,7 @@ const RAID_POOLS=[,
 	[alternateForm(618,1),,,,40,35], //Stunfisk-1
 	[884,,,,,15], //Duraludon
 	[alternateForm(879,1),,,,,5] //Copperajah-1
-],[ //4973141505095534989
+],[ //0x450425d99cf8898d
 	[434,35], //Stunky
 	[568,35], //Trubbish
 	[451,20,30], //Skorupi
@@ -1233,7 +1228,7 @@ const RAID_POOLS=[,
 	[alternateForm(569,1),,,,,5], //Garbodor-1
 	[757,,[0,20],[0,20]], //Salandit
 	[758,,,,,[0,15]] //Salazzle
-],[ //4973140405583906778
+],[ //0x450424d99cf887da
 	[175,35], //Togepi
 	[684,[35,0]], //Swirlix
 	[859,20,30], //Impidimp
@@ -1248,7 +1243,7 @@ const RAID_POOLS=[,
 	[alternateForm(858,1),,,,,5], //Hatterene-1
 	[682,[0,35]], //Spritzee
 	[683,,,[0,20],[0,20]] //Aromatisse
-],[ //4973139306072278567
+],[ //0x450423d99cf88627
 	[827,35], //Nickit
 	[alternateForm(263,1),35], //Zigzagoon-1
 	[559,[20,0],[30,0]], //Scraggy
@@ -1264,7 +1259,7 @@ const RAID_POOLS=[,
 	[629,[0,20],[0,30]], //Vullaby
 	[630,,,,[0,40],[0,35]], //Mandibuzz
 	[248,,,,,[0,15]] //Tyranitar
-],[ //4973138206560650356
+],[ //0x450422d99cf88474
 	[177,35], //Natu
 	[163,35], //Hoothoot
 	[821,20,30], //Rookidee
@@ -1277,7 +1272,7 @@ const RAID_POOLS=[,
 	[701,,,,35,35], //Hawlucha
 	[561,,,,,15], //Sigilyph
 	[alternateForm(823,1),,,,,5] //Corviknight-1
-],[ //4973137107049022145
+],[ //0x450421d99cf882c1
 	[767,30], //Wimpod
 	[824,20], //Blipbug
 	[588,[20,0],[25,20],[0,20]], //Karrablast
@@ -1291,7 +1286,7 @@ const RAID_POOLS=[,
 	[589,,,,,[15,0]], //Escavalier
 	[alternateForm(12,1),10,10,10,10,10], //Butterfree-1
 	[617,,,,,[0,15]] //Accelgor
-],[ //4973136007537393934
+],[ //0x450420d99cf8810e
 	[341,40], //Corphish
 	[98,25], //Krabby
 	[846,25,25], //Arrokuda
@@ -1305,7 +1300,7 @@ const RAID_POOLS=[,
 	[131,,,,,15], //Lapras
 	[alternateForm(99,1),,10,10,10,10], //Kingler-1
 	[alternateForm(550,1),,[0,20],[0,30]] //Basculin-1
-],[ //4973134908025765723
+],[ //0x45041fd99cf87f5b
 	[767,35], //Wimpod
 	[824,35], //Blipbug
 	[588,[20,0],[30,20],[0,20]], //Karrablast
@@ -1319,7 +1314,7 @@ const RAID_POOLS=[,
 	[589,,,,,[15,0]], //Escavalier
 	[alternateForm(826,1),,,10,10,10], //Orbeetle-1
 	[617,,,,,[0,15]] //Accelgor
-],[ //4973133808514137512
+],[ //0x45041ed99cf87da8
 	[194,35], //Wooper
 	[339,35], //Barboach
 	[alternateForm(562,1),20,30], //Yamask-1
@@ -1332,17 +1327,17 @@ const RAID_POOLS=[,
 	[537,,,,30,30], //Seismitoad
 	[464,,,,,15], //Rhyperior
 	[alternateForm(844,1),,,,10,10] //Sandaconda-1
-],[ //7556351317940148695
+],[ //0x68dd8d7d07e099d7
 	[819,8,8,8,25,10] //Skwovet
-],[ //7556352417451776906
+],[ //0x68dd8e7d07e09b8a
 	[819,8,8,8,25,10] //Skwovet
-],[ //7556353516963405117
+],[ //0x68dd8f7d07e09d3d
 	[819,8,8,8,25,10] //Skwovet
-],[ //7556345820382007640
+],[ //0x68dd887d07e09158
 	[819,100,100,100,25,10] //Skwovet
-],[ //2498979820391853709
+],[ //0x22ae28e80f536e8d
 	[819,10,20,20,25,10] //Skwovet
-],[ //2447364886159768926
+],[ //0x21f6c965b3513d5e
 	[113,,,5,5,5], //Chansey
 	[174,60,30], //Igglybuff
 	[506,40,25], //Lillipup
@@ -1353,7 +1348,7 @@ const RAID_POOLS=[,
 	[40,,,,15,20], //Wigglytuff
 	[206,,,,,15], //Dunsparce
 	[508,,,,,15] //Stoutland
-],[ //15632276665898509590
+],[ //0xd8f100cde5822516
 	[242,,,5,5,5], //Blissey
 	[506,60,30], //Lillipup
 	[759,40,25], //Stufful
@@ -1365,7 +1360,7 @@ const RAID_POOLS=[,
 	[508,,,,15,20], //Stoutland
 	[760,,,,,20], //Bewear
 	[40,,,,,15] //Wigglytuff
-],[ //2447363786648140715
+],[ //0x21f6c865b3513bab
 	[113,,,5,5,5], //Chansey
 	[293,60,30], //Whismur
 	[108,40,25,15,25], //Lickitung
@@ -1375,7 +1370,7 @@ const RAID_POOLS=[,
 	[128,,,,15,20], //Tauros
 	[295,,,,,15], //Exploud
 	[463,,,,,15] //Lickilicky
-],[ //15632275566386881379
+],[ //0xd8f0ffcde5822363
 	[242,,,5,5,5], //Blissey
 	[293,60,30], //Whismur
 	[128,40,25,,15,20], //Tauros
@@ -1385,7 +1380,7 @@ const RAID_POOLS=[,
 	[295,,,,15,20], //Exploud
 	[573,,,,15,20], //Cinccino
 	[463,,,,,15] //Lickilicky
-],[ //6984833918694526192
+],[ //0x60ef1d711ae30cf0
 	[113,,,5,5,5], //Chansey
 	[27,60,20,25], //Sandshrew
 	[551,40,25], //Sandile
@@ -1396,7 +1391,7 @@ const RAID_POOLS=[,
 	[105,,,,15,20], //Marowak
 	[553,,,,,15], //Krookodile
 	[115,,,,,15] //Kangaskhan
-],[ //14413583907274219616
+],[ //0xc80756327d5de060
 	[242,,,5,5,5], //Blissey
 	[27,60,30], //Sandshrew
 	[104,40,25], //Cubone
@@ -1408,7 +1403,7 @@ const RAID_POOLS=[,
 	[115,,,,15,20], //Kangaskhan
 	[330,,,,,20], //Flygon
 	[623,,,,,15] //Golurk
-],[ //7956530560371257544
+],[ //0x6e6b46639f77f0c8
 	[113,,,5,5,5], //Chansey
 	[702,60,30,25,15,25], //Dedenne
 	[81,40,25], //Magnemite
@@ -1419,7 +1414,7 @@ const RAID_POOLS=[,
 	[871,,,,15,20], //Pincurchin
 	[405,,,,,15], //Luxray
 	[462,,,,,15] //Magnezone
-],[ //2024757571205803752
+],[ //0x1c1962488c012ee8
 	[242,,,5,5,5], //Blissey
 	[403,60,30], //Shinx
 	[172,40,25], //Pichu
@@ -1432,7 +1427,7 @@ const RAID_POOLS=[,
 	[310,,,,15,20], //Manectric
 	[405,,,,,20], //Luxray
 	[462,,,,,15] //Magnezone
-],[ //11635283243122928556
+],[ //0xa178d4769765abac
 	[113,,,5,5,5], //Chansey
 	[661,60,30], //Fletchling
 	[527,40,25], //Woobat
@@ -1444,7 +1439,7 @@ const RAID_POOLS=[,
 	[663,,,,,15], //Talonflame
 	[629,,[0,25],[0,30]], //Vullaby
 	[630,,,,[0,15],[0,15]] //Mandibuzz
-],[ //17629394089387610164
+],[ //0xf4a830850f51d034
 	[242,,,5,5,5], //Blissey
 	[163,60,30], //Hoothoot
 	[519,40,25], //Pidove
@@ -1458,7 +1453,7 @@ const RAID_POOLS=[,
 	[628,,,,,[20,0]], //Braviary
 	[629,,[0,25],[0,30]], //Vullaby
 	[630,,,,,[0,20]] //Mandibuzz
-],[ //7854659797556875545
+],[ //0x6d015b7858eb5119
 	[113,,,5,5,5], //Chansey
 	[127,[60,0],[20,0],[25,0],[15,0],[20,0]], //Pinsir
 	[557,40,25], //Dwebble
@@ -1468,7 +1463,7 @@ const RAID_POOLS=[,
 	[826,,,,,15], //Orbeetle
 	[212,,,,,15], //Scizor
 	[214,[0,60],[0,20],[0,25],[0,15],[0,20]] //Heracross
-],[ //5999950843982638879
+],[ //0x53441b80e563ef1f
 	[242,,,5,5,5], //Blissey
 	[123,60,30,25,25], //Scyther
 	[127,[40,0],[25,0],,,[20,0]], //Pinsir
@@ -1480,7 +1475,7 @@ const RAID_POOLS=[,
 	[589,,,,15,20], //Escavalier
 	[212,,,,,15], //Scizor
 	[214,[0,40],[0,25],,,[0,20]] //Heracross
-],[ //2997411918588892139
+],[ //0x2998f2424d0353eb
 	[113,,,5,5,5], //Chansey
 	[590,60,30], //Foongus
 	[753,40,25], //Fomantis
@@ -1490,7 +1485,7 @@ const RAID_POOLS=[,
 	[114,,,15,25], //Tangela
 	[549,,,,15,20], //Lilligant
 	[465,,,,,15] //Tangrowth
-],[ //12562706121429926817
+],[ //0xae57b2a84974c3a1
 	[242,,,5,5,5], //Blissey
 	[114,60,30], //Tangela
 	[753,40,25], //Fomantis
@@ -1501,7 +1496,7 @@ const RAID_POOLS=[,
 	[591,,,,15,20], //Amoonguss
 	[465,,,,15,20], //Tangrowth
 	[460,,,,,15] //Abomasnow
-],[ //6589539950519384197
+],[ //0x5b72bfac0ff3f885
 	[113,,,5,5,5], //Chansey
 	[661,60,30], //Fletchling
 	[757,40,20,25], //Salandit
@@ -1511,7 +1506,7 @@ const RAID_POOLS=[,
 	[663,,,,15,20], //Talonflame
 	[758,,,,15,20], //Salazzle
 	[637,,,,,15] //Volcarona
-],[ //3561902408726248099
+],[ //0x316e6b5e74bc7aa3
 	[242,,,5,5,5], //Blissey
 	[636,60,25,30], //Larvesta
 	[607,40,25], //Litwick
@@ -1524,7 +1519,7 @@ const RAID_POOLS=[,
 	[38,,,,,[20,0]], //Ninetales
 	[6,,,,,15], //Charizard
 	[59,,,,,[0,20]] //Arcanine
-],[ //8769170721942624824
+],[ //0x79b25a4f80255a38
 	[113,,,5,5,5], //Chansey
 	[524,60,30], //Roggenrola
 	[111,40,25], //Rhyhorn
@@ -1536,7 +1531,7 @@ const RAID_POOLS=[,
 	[745,,,,,[15,0]], //Lycanroc
 	[464,,,,,15], //Rhyperior
 	[alternateForm(745,1),,,,,[0,15]] //Lycanroc-1
-],[ //14477537978666912344
+],[ //0xc8ea8c1618ab0a58
 	[242,,,5,5,5], //Blissey
 	[744,60,20,25], //Rockruff
 	[438,40,25], //Bonsly
@@ -1549,7 +1544,7 @@ const RAID_POOLS=[,
 	[558,,,,,20], //Crustle
 	[464,,,,,15], //Rhyperior
 	[alternateForm(745,1),,,,[0,15],[0,20]] //Lycanroc-1
-],[ //13305292637317525948
+],[ //0xb8a5e528bfee71bc
 	[113,,,5,5,5], //Chansey
 	[102,60,30], //Exeggcute
 	[63,40,25], //Abra
@@ -1561,7 +1556,7 @@ const RAID_POOLS=[,
 	[65,,,,,15], //Alakazam
 	[121,,,,,15], //Starmie
 	[765,,,[0,15],[0,25]] //Oranguru
-],[ //16069264858016261892
+],[ //0xdf017f3fefba2704
 	[242,,,5,5,5], //Blissey
 	[605,60,20,25], //Elgyem
 	[63,40,25], //Abra
@@ -1575,7 +1570,7 @@ const RAID_POOLS=[,
 	[765,,,[0,25],[0,25]], //Oranguru
 	[alternateForm(876,1),,,,[0,15],[0,20]], //Indeedee-1
 	[alternateForm(678,1),,,,,[0,15]] //Meowstic-1
-],[ //6672704941776910536
+],[ //0x5c9a35ca819b38c8
 	[113,,,5,5,5], //Chansey
 	[543,60,30], //Venipede
 	[451,40,25], //Skorupi
@@ -1584,7 +1579,7 @@ const RAID_POOLS=[,
 	[452,,,,15,20], //Drapion
 	[73,,,,15,15], //Tentacruel
 	[545,,,,,15] //Scolipede
-],[ //17951961757311600360
+],[ //0xf9222e1acdf486e8
 	[242,,,5,5,5], //Blissey
 	[747,60,30], //Mareanie
 	[211,40,25,25,25], //Qwilfish
@@ -1594,7 +1589,7 @@ const RAID_POOLS=[,
 	[545,,,,15,15], //Scolipede
 	[452,,,,15,20], //Drapion
 	[alternateForm(110,1),,,,,20] //Weezing-1
-],[ //14284833672245134656
+],[ //0xc63dec8a65b5c540
 	[113,,,5,5,5], //Chansey
 	[318,60,25,30], //Carvanha
 	[624,40,25], //Pawniard
@@ -1604,7 +1599,7 @@ const RAID_POOLS=[,
 	[452,,,,15,25], //Drapion
 	[625,,,,15,20], //Bisharp
 	[571,,,,,15] //Zoroark
-],[ //7704513452465554544
+],[ //0x6aebee2a2d6d8470
 	[242,,,5,5,5], //Blissey
 	[570,60,25,30], //Zorua
 	[318,40,25], //Carvanha
@@ -1616,7 +1611,7 @@ const RAID_POOLS=[,
 	[319,,,,15,20], //Sharpedo
 	[510,,,,,20], //Liepard
 	[553,,,,,15] //Krookodile
-],[ //13563999851587423716
+],[ //0xbc3d01fff751cde4
 	[113,,,5,5,5], //Chansey
 	[619,60,25,30], //Mienfoo
 	[852,40,25], //Clobbopus
@@ -1627,7 +1622,7 @@ const RAID_POOLS=[,
 	[853,,,[0,25],[0,25],15], //Grapploct
 	[453,,[0,20],[0,25]], //Croagunk
 	[454,,,[0,15],[0,15],[0,20]] //Toxicroak
-],[ //502513031628180988
+],[ //0x6f948f09933cdfc
 	[242,,,5,5,5], //Blissey
 	[619,60,30], //Mienfoo
 	[559,[40,0],[25,0]], //Scraggy
@@ -1641,7 +1636,7 @@ const RAID_POOLS=[,
 	[453,[0,40],[0,25]], //Croagunk
 	[538,,[0,25],[0,30],[0,15],[0,20]], //Throh
 	[454,,,,[0,15],[0,20]] //Toxicroak
-],[ //16341001078884806474
+],[ //0xe2c6e5e725342f4a
 	[113,,,5,5,5], //Chansey
 	[174,60,30], //Igglybuff
 	[298,40,25], //Azurill
@@ -1652,7 +1647,7 @@ const RAID_POOLS=[,
 	[184,,,,15,20], //Azumarill
 	[40,,,,15,20], //Wigglytuff
 	[282,,,,,15] //Gardevoir
-],[ //9913932150092391706
+],[ //0x89955cc3a594e51a
 	[242,,,5,5,5], //Blissey
 	[173,60,30], //Cleffa
 	[755,40,25], //Morelull
@@ -1665,7 +1660,7 @@ const RAID_POOLS=[,
 	[282,,,,15,20], //Gardevoir
 	[756,,,,,20], //Shiinotic
 	[184,,,,,15] //Azumarill
-],[ //342604449375897784
+],[ //0x4c12cee7784c8b8
 	[113,,,5,5,5], //Chansey
 	[769,60,30], //Sandygast
 	[592,40,25], //Frillish
@@ -1675,7 +1670,7 @@ const RAID_POOLS=[,
 	[426,,,15,15,20], //Drifblim
 	[770,,,,15,15], //Palossand
 	[105,,,,,15] //Marowak
-],[ //8253110425161551320
+],[ //0x7288f0346fd3cdd8
 	[242,,,5,5,5], //Blissey
 	[769,60,25,30], //Sandygast
 	[592,40,25], //Frillish
@@ -1688,7 +1683,7 @@ const RAID_POOLS=[,
 	[alternateForm(711,3),,,,,20], //Gourgeist-3
 	[770,,,,,[15,0]], //Palossand
 	[864,,,,,[0,15]] //Cursola
-],[ //5830741396702654597
+],[ //0x50eaf4685fa07085
 	[113,,,5,5,5], //Chansey
 	[707,60,30,,15,20], //Klefki
 	[81,40,20,25], //Magnemite
@@ -1697,7 +1692,7 @@ const RAID_POOLS=[,
 	[82,,,15,15,25], //Magneton
 	[625,,,,15,20], //Bisharp
 	[462,,,,,15] //Magnezone
-],[ //17953607996949684899
+],[ //0xf9280759d6cc62a3
 	[242,,,5,5,5], //Blissey
 	[81,60,30], //Magnemite
 	[227,40,25,,15,20], //Skarmory
@@ -1709,7 +1704,7 @@ const RAID_POOLS=[,
 	[863,,,,15,20], //Perrserker
 	[448,,,,,20], //Lucario
 	[625,,,,,15] //Bisharp
-],[ //12738905581603037598
+],[ //0xb0c9af2202b0a19e
 	[113,,,5,5,5], //Chansey
 	[782,[60,0],[30,0]], //Jangmo-o
 	[116,40,25], //Horsea
@@ -1725,7 +1720,7 @@ const RAID_POOLS=[,
 	[705,,,[0,15],[0,25]], //Sliggoo
 	[842,,,,[0,15],[0,20]], //Appletun
 	[706,,,,,[0,15]] //Goodra
-],[ //4426791916416848726
+],[ //0x3d6f1fcb3898d356
 	[242,,,5,5,5], //Blissey
 	[116,60,30], //Horsea
 	[621,40,25,,15,20], //Druddigon
@@ -1740,7 +1735,7 @@ const RAID_POOLS=[,
 	[704,,[0,20],[0,25]], //Goomy
 	[705,,,[0,15],[0,25]], //Sliggoo
 	[706,,,,,[0,15]] //Goodra
-],[ //4780541378243794326
+],[ //0x4257e50e1c471596
 	[113,,,5,5,5], //Chansey
 	[60,60,30], //Poliwag
 	[194,40,25], //Wooper
@@ -1751,7 +1746,7 @@ const RAID_POOLS=[,
 	[195,,,,15,20], //Quagsire
 	[62,,,,,15], //Poliwrath
 	[186,,,,,15] //Politoed
-],[ //18345017229883237822
+],[ //0xfe9697f9799c65be
 	[242,,,5,5,5], //Blissey
 	[341,60,30], //Corphish
 	[751,40,25], //Dewpider
@@ -1763,7 +1758,7 @@ const RAID_POOLS=[,
 	[62,,,,15,20], //Poliwrath
 	[752,,,,,20], //Araquanid
 	[186,,,,,15] //Politoed
-],[ //4780540278732166115
+],[ //0x4257e40e1c4713e3
 	[113,,,5,5,5], //Chansey
 	[54,60,30], //Psyduck
 	[833,40,25], //Chewtle
@@ -1774,7 +1769,7 @@ const RAID_POOLS=[,
 	[847,,,,15,20], //Barraskewda
 	[834,,,,15,20], //Drednaw
 	[340,,,,,15] //Whiscash
-],[ //18345016130371609611
+],[ //0xfe9696f9799c640b
 	[242,,,5,5,5], //Blissey
 	[846,60,30], //Arrokuda
 	[535,40,25], //Tympole
@@ -1787,7 +1782,7 @@ const RAID_POOLS=[,
 	[130,,,,,20], //Gyarados
 	[550,,,,,[15,0]], //Basculin
 	[alternateForm(550,1),,,,,[0,15]] //Basculin-1
-],[ //4780539179220537904
+],[ //0x4257e30e1c471230
 	[113,,,5,5,5], //Chansey
 	[72,60,25,30], //Tentacool
 	[98,40,25], //Krabby
@@ -1798,7 +1793,7 @@ const RAID_POOLS=[,
 	[226,,,,15,20], //Mantine
 	[99,,,,15,20], //Kingler
 	[91,,,,,15] //Cloyster
-],[ //18345015030859981400
+],[ //0xfe9695f9799c6258
 	[242,,,5,5,5], //Blissey
 	[90,60,30], //Shellder
 	[688,40,25], //Binacle
@@ -1811,7 +1806,7 @@ const RAID_POOLS=[,
 	[689,,,,15,20], //Barbaracle
 	[91,,,,,20], //Cloyster
 	[748,,,,,15] //Toxapex
-],[ //4780546875801935381
+],[ //0x4257ea0e1c471e15
 	[113,,,5,5,5], //Chansey
 	[170,60,30], //Chinchou
 	[692,[40,0],[25,0],[30,0]], //Clauncher
@@ -1825,7 +1820,7 @@ const RAID_POOLS=[,
 	[319,,,,,15], //Sharpedo
 	[690,[0,40],[0,25],[0,30]], //Skrelp
 	[691,,,,,[0,15]] //Dragalge
-],[ //18345022727441378877
+],[ //0xfe969cf9799c6e3d
 	[242,,,5,5,5], //Blissey
 	[692,[60,0],[30,0]], //Clauncher
 	[120,40,25], //Staryu
@@ -1838,22 +1833,22 @@ const RAID_POOLS=[,
 	[319,,,,,15], //Sharpedo
 	[690,[0,60],[0,30]], //Skrelp
 	[691,,,,[0,15],[0,20]] //Dragalge
-],[ //15336172135299617393
+],[ //0xd4d5074d72c71271
 	[440,25,20,25], //Happiny
 	[113,,,20,15,20], //Chansey
 	[242,,,,,15] //Blissey
-],[ //11188576017968089319
+],[ //0x9b45ce9bd57148e7
 	[113,25,20,20,25], //Chansey
 	[242,,,,15,15] //Blissey
-],[ //16882931869395424672
+],[ //0xea4c3915ea6f95a0
 	[113,,,5,6,7], //Chansey
 	[415,40,20,15,25], //Combee
 	[416,,,,15,15] //Vespiquen
-],[ //4515385547978135952
+],[ //0x3ea9df3b7b2b5990
 	[242,,,5,6,7], //Blissey
 	[415,40,20,25], //Combee
 	[416,,,15,15,15] //Vespiquen
-],[ //5701088864462885848
+],[ //0x4f1e561dd73ed3d8
 	[242,,,5,5,5], //Blissey
 	[590,60,30], //Foongus
 	[102,40,25], //Exeggcute
@@ -1864,7 +1859,7 @@ const RAID_POOLS=[,
 	[465,,,,15,20], //Tangrowth
 	[407,,,,,20], //Roserade
 	[alternateForm(3,1),,,,,5] //Venusaur-1
-],[ //5701092162997770481
+],[ //0x4f1e591dd73ed8f1
 	[242,,,5,5,5], //Blissey
 	[129,60,30], //Magikarp
 	[72,40,25], //Tentacool
@@ -1875,7 +1870,7 @@ const RAID_POOLS=[,
 	[121,,,,15,20], //Starmie
 	[689,,,,,20], //Barbaracle
 	[alternateForm(9,1),,,,,5] //Blastoise-1
-],[ //5701091063486142270
+],[ //0x4f1e581dd73ed73e
 	[242,,,5,5,5], //Blissey
 	[98,60,30], //Krabby
 	[688,40,25], //Binacle
@@ -1888,7 +1883,7 @@ const RAID_POOLS=[,
 	[99,,,,15,20], //Kingler
 	[91,,,,,15], //Cloyster
 	[alternateForm(99,1),,,,,10] //Kingler-1
-],[ //5701094362021026903
+],[ //0x4f1e5b1dd73edc57
 	[242,,,5,5,5], //Blissey
 	[833,60,30], //Chewtle
 	[54,40,25], //Psyduck
@@ -1900,7 +1895,7 @@ const RAID_POOLS=[,
 	[340,,,,,15], //Whiscash
 	[alternateForm(834,1),,,,,10], //Drednaw-1
 	[alternateForm(550,1),,[0,20],[0,25],[0,15],[0,20]] //Basculin-1
-],[ //5701093262509398692
+],[ //0x4f1e5a1dd73edaa4
 	[242,,,5,5,5], //Blissey
 	[824,60,30], //Blipbug
 	[742,40,25], //Cutiefly
@@ -1913,7 +1908,7 @@ const RAID_POOLS=[,
 	[743,,,,15,20], //Ribombee
 	[alternateForm(826,1),,,,,10], //Orbeetle-1
 	[214,,[0,20],[0,25]] //Heracross
-],[ //5701096561044283325
+],[ //0x4f1e5d1dd73edfbd
 	[242,,,5,5,5], //Blissey
 	[843,60,25,30], //Silicobra
 	[529,40,20,25], //Drilbur
@@ -1923,10 +1918,11 @@ const RAID_POOLS=[,
 	[553,,,,15,15], //Krookodile
 	[530,,,,15,20], //Excadrill
 	[alternateForm(844,1),,,,,10] //Sandaconda-1
-],[ //5701095461532655114
+],[ //0x4f1e5c1dd73ede0a
 	[242,,,5,5,5], //Blissey
 	[840,60,20,25], //Applin
-	[420,40,25,30], //Cherubi
+	[761,40,25], //Bounsweet
+	[420,,25,30], //Cherubi
 	[762,,,25,25], //Steenee
 	[841,,,[15,0],[15,0],[25,0]], //Flapple
 	[820,,,,15,20], //Greedent
@@ -1934,13 +1930,13 @@ const RAID_POOLS=[,
 	[alternateForm(841,1),,,,,[10,0]], //Flapple-1
 	[842,,,[0,15],[0,15],[0,25]], //Appletun
 	[alternateForm(842,1),,,,,[0,10]] //Appletun-1
-],[ //4665094036540599430
+],[ //0x40bdbe4f3bcbac86
 	[113,,,5,5,5], //Chansey
 	[132,25,25,20,20,20] //Ditto
-],[ //11519945754184084270
+],[ //0x9fdf11a0cde96b2e
 	[242,,,5,5,5], //Blissey
 	[132,25,25,20,20,20] //Ditto
-],[ //15818376695778914966
+],[ //0xdb8629cba3383296
 	[113,,,5,5,5], //Chansey
 	[590,60,30], //Foongus
 	[102,40,25,15,25], //Exeggcute
@@ -1951,7 +1947,7 @@ const RAID_POOLS=[,
 	[591,,,,15,25], //Amoonguss
 	[465,,,,,15], //Tangrowth
 	[3,,,,,10] //Venusaur
-],[ //7725829814153603264
+],[ //0x6b37a94863bf68c0
 	[113,,,5,5,5], //Chansey
 	[129,60,30], //Magikarp
 	[72,40,25], //Tentacool
@@ -1962,21 +1958,472 @@ const RAID_POOLS=[,
 	[121,,,,15,20], //Starmie
 	[91,,,,,15], //Cloyster
 	[9,,,,,10] //Blastoise
-],[ //6162140483756004486
+],[ //0x5584521f1e549486
 	[113,,,5,5,5], //Chansey
 	[744,50,20,20,40], //Rockruff
 	[alternateForm(744,1),,,5,5], //Rockruff-1
 	[745,,,,[20,10],20], //Lycanroc
 	[alternateForm(745,1),,,,[10,20],20], //Lycanroc-1
 	[alternateForm(745,2),,,,,5] //Lycanroc-2
-],[ //6162171270081594394
+],[ //0x55846e1f1e54c41a
 	[242,,,5,5,5], //Blissey
 	[744,50,20,20,30], //Rockruff
 	[alternateForm(744,1),,,15,15], //Rockruff-1
 	[745,,,,[30,15],[40,35]], //Lycanroc
 	[alternateForm(745,1),,,,[15,30],[35,40]], //Lycanroc-1
 	[alternateForm(745,2),,,,5,20] //Lycanroc-2
+],[ //0x2640fa844b19c3cf
+	[531,,,5,5,5], //Audino
+	[333,60,25,30], //Swablu
+	[831,40,25], //Wooloo
+	[446,,20,25], //Munchlax
+	[820,,,25,25], //Greedent
+	[832,,,15,15,20], //Dubwool
+	[334,,,,15,20], //Altaria
+	[143,,,,,15] //Snorlax
+],[ //0x422f95fb66a95706
+	[225,,,5,5,5], //Delibird
+	[333,60,25,30], //Swablu
+	[819,40,25], //Skwovet
+	[820,,20,25,25], //Greedent
+	[832,,,15,15,20], //Dubwool
+	[334,,,,15,20], //Altaria
+	[143,,,,,20], //Snorlax
+	[alternateForm(143,1),,,,,15] //Snorlax-1
+],[ //0x3a41c5c485d3edee
+	[531,,,5,5,5], //Audino
+	[240,60,25,30], //Magby
+	[850,40,25], //Sizzlipede
+	[631,,20,15,25], //Heatmor
+	[608,,,25,25], //Lampent
+	[126,,,,15,15], //Magmar
+	[851,,,,15,20], //Centiskorch
+	[609,,,,15,20], //Chandelure
+	[467,,,,,15] //Magmortar
+],[ //0x6c364ecc3616af63
+	[225,,,5,5,5], //Delibird
+	[240,40,25], //Magby
+	[126,,25,25,25], //Magmar
+	[631,,20,25], //Heatmor
+	[851,,,15,25], //Centiskorch
+	[609,,,,15,20], //Chandelure
+	[38,,,,[15,0],[20,0]], //Ninetales
+	[467,,,,15,20], //Magmortar
+	[alternateForm(851,1),,,,,15], //Centiskorch-1
+	[59,,,,[0,15],[0,20]] //Arcanine
+],[ //0xf6389ad0bc9aaeb
+	[531,,,5,5,5], //Audino
+	[138,[60,0],[25,0],[30,0]], //Omanyte
+	[349,40,20,25], //Feebas
+	[340,,,25,25], //Whiscash
+	[550,,,[15,0],[15,0],[20,0]], //Basculin
+	[139,,,,[15,0],[25,0]], //Omastar
+	[130,,,,15,20], //Gyarados
+	[350,,,,,15], //Milotic
+	[369,,,,,15], //Relicanth
+	[140,[0,60],[0,25],[0,30]], //Kabuto
+	[alternateForm(550,1),,,[0,15],[0,15],[0,20]], //Basculin-1
+	[141,,,,[0,15],[0,25]] //Kabutops
+],[ //0x277effbe0b116e4a
+	[225,,,5,5,5], //Delibird
+	[349,60,25,30], //Feebas
+	[138,[40,0],[25,0]], //Omanyte
+	[369,,20,25,15,20], //Relicanth
+	[550,,,[25,0],[25,0]], //Basculin
+	[99,,,15,25], //Kingler
+	[139,,,,[15,0],[20,0]], //Omastar
+	[350,,,,15,20], //Milotic
+	[130,,,,,20], //Gyarados
+	[alternateForm(99,1),,,,,15], //Kingler-1
+	[140,[0,40],[0,25]], //Kabuto
+	[alternateForm(550,1),,,[0,25],[0,25]], //Basculin-1
+	[141,,,,[0,15],[0,20]] //Kabutops
+],[ //0xe234e939402a736b
+	[531,,,5,5,5], //Audino
+	[239,60,25,30], //Elekid
+	[595,40,25], //Joltik
+	[871,,20,25,15,20], //Pincurchin
+	[125,,,25,25,15], //Electabuzz
+	[778,,,15,25], //Mimikyu
+	[596,,,,15,25], //Galvantula
+	[836,,,,15,20], //Boltund
+	[466,,,,,15] //Electivire
+],[ //0x3b3c0865d15b0aca
+	[225,,,5,5,5], //Delibird
+	[239,40,25], //Elekid
+	[702,,25,30], //Dedenne
+	[596,,20,25], //Galvantula
+	[125,,,25,25], //Electabuzz
+	[836,,,15,25], //Boltund
+	[849,,,,[15,0],[20,0]], //Toxtricity
+	[871,,,,15,20], //Pincurchin
+	[466,,,,15,20], //Electivire
+	[alternateForm(849,1),,,,[0,15],15] //Toxtricity-1
+],[ //0x779e9eb99c1292c
+	[531,,,5,5,5], //Audino
+	[829,60,30], //Gossifleur
+	[347,[40,0],[25,20],25,[25,0]], //Anorith
+	[345,[0,40],[20,25],25,[0,25]], //Lileep
+	[830,,,15,15,20], //Eldegoss
+	[348,,,,[15,0],[25,15]], //Armaldo
+	[752,,,,15,20], //Araquanid
+	[598,,,,,15], //Ferrothorn
+	[346,,,,[0,15],[15,25]] //Cradily
+],[ //0x93a637943a964e41
+	[225,,,5,5,5], //Delibird
+	[347,[60,40],[25,20],[30,25]], //Anorith
+	[345,[40,60],[20,25],[25,30]], //Lileep
+	[752,,,25,25], //Araquanid
+	[12,,,15,25], //Butterfree
+	[348,,,,15,20], //Armaldo
+	[346,,,,15,20], //Cradily
+	[830,,,,15,20], //Eldegoss
+	[alternateForm(12,1),,,,,15] //Butterfree-1
+],[ //0x685db02aaedbcf61
+	[531,,,5,5,5], //Audino
+	[238,60,25,30], //Smoochum
+	[alternateForm(554,1),[40,0],[25,0]], //Darumaka-1
+	[698,,20,25], //Amaura
+	[221,,,25,25], //Piloswine
+	[460,,,15,25], //Abomasnow
+	[124,,,,15,25], //Jynx
+	[873,,,,15,20], //Frosmoth
+	[alternateForm(555,2),,,,[15,0],[20,0]], //Darmanitan-2
+	[699,,,,,15], //Aurorus
+	[362,,,,,15], //Glalie
+	[220,[0,40],[0,25]] //Swinub
+],[ //0x2cd8cf9a88739f98
+	[225,,,5,5,5], //Delibird
+	[361,[60,40],[30,25]], //Snorunt
+	[alternateForm(554,1),[40,0],[25,0]], //Darumaka-1
+	[238,,25,30], //Smoochum
+	[698,,20,25], //Amaura
+	[362,,,25,25], //Glalie
+	[460,,,15,25], //Abomasnow
+	[124,,,,15,20], //Jynx
+	[873,,,,15,20], //Frosmoth
+	[alternateForm(555,2),,,,[15,0],[20,0]], //Darmanitan-2
+	[699,,,,,20], //Aurorus
+	[473,,,,,15] //Mamoswine
+],[ //0x685dad2aaedbca48
+	[531,,,5,5,5], //Audino
+	[613,[60,0],[30,0]], //Cubchoo
+	[363,40,25,30], //Spheal
+	[712,,[20,0],[25,0]], //Bergmite
+	[364,,,25,25], //Sealeo
+	[615,,,15,25], //Cryogonal
+	[584,,,,15,25], //Vanilluxe
+	[614,,,,15,20], //Beartic
+	[365,,,,15,20], //Walrein
+	[713,,,,,15], //Avalugg
+	[131,,,,,15], //Lapras
+	[875,[0,60],[0,20],[0,25]] //Eiscue
+],[ //0x12ad4e9a799417a5
+	[225,,,5,5,5], //Delibird
+	[131,60,30,,15,[15,20]], //Lapras
+	[363,40,25], //Spheal
+	[364,,20,25], //Sealeo
+	[713,,,25,25], //Avalugg
+	[615,,,15,25], //Cryogonal
+	[365,,,,15,20], //Walrein
+	[584,,,,15,20], //Vanilluxe
+	[alternateForm(131,1),,,,,[0,15]] //Lapras-1
+],[ //0x75319113c8c3b924
+	[531,,,5,5,5], //Audino
+	[532,60,30], //Timburr
+	[622,40,25,30], //Golett
+	[838,,20,25], //Carkol
+	[533,,,25,25], //Gurdurr
+	[623,,,15,15,15], //Golurk
+	[534,,,,15,15], //Conkeldurr
+	[839,,,,15,20] //Coalossal
+],[ //0x314acb827c75109
+	[225,,,5,5,5], //Delibird
+	[870,60,30,25,25], //Falinks
+	[236,40,25], //Tyrogue
+	[533,,[25,20],[30,25]], //Gurdurr
+	[alternateForm(83,1),,[20,0],[25,0]], //Farfetch’d-1
+	[623,,,15,25], //Golurk
+	[865,,,,[15,0],[20,0]], //Sirfetch’d
+	[534,,,,15,20], //Conkeldurr
+	[106,,,,[15,0],[20,0]], //Hitmonlee
+	[237,,,,,20], //Hitmontop
+	[alternateForm(68,1),,,,,[15,0]], //Machamp-1
+	[107,,,,[0,15],[0,20]], //Hitmonchan
+	[68,,,,,[0,15]] //Machamp
+],[ //0x52a7dfe87897d15d
+	[531,,,5,5,5], //Audino
+	[29,[60,0],[25,20],[30,25]], //Nidoran♀
+	[41,40,25], //Zubat
+	[32,[0,60],[20,25],[25,30]], //Nidoran♂
+	[30,,,[25,15],25], //Nidorina
+	[33,,,[15,25],25], //Nidorino
+	[31,,,,[15,0],15], //Nidoqueen
+	[42,,,,15,20], //Golbat
+	[34,,,,[0,15],15] //Nidoking
+],[ //0xc88b8a5990a8ea5c
+	[225,,,5,5,5], //Delibird
+	[41,60,30], //Zubat
+	[568,40,25], //Trubbish
+	[30,,[25,0],[30,0]], //Nidorina
+	[alternateForm(79,1),,20,25], //Slowpoke-1
+	[42,,,25,25], //Golbat
+	[569,,,15,25], //Garbodor
+	[31,,,,15,20], //Nidoqueen
+	[34,,,,15,20], //Nidoking
+	[169,,,,,20], //Crobat
+	[alternateForm(569,1),,,,,15], //Garbodor-1
+	[33,,[0,25],[0,30]] //Nidorino
+],[ //0x42b21efc37c7b974
+	[531,,,5,5,5], //Audino
+	[41,60,30], //Zubat
+	[714,40,25], //Noibat
+	[333,,25,30], //Swablu
+	[42,,20,25,15,25], //Golbat
+	[822,,,15,25], //Corvisquire
+	[334,,,,15,20], //Altaria
+	[715,,,,15,20], //Noivern
+	[823,,,,,15], //Corviknight
+	[169,,,,,15] //Crobat
+],[ //0x9d415f6a7a841dd9
+	[225,,,5,5,5], //Delibird
+	[41,60,30], //Zubat
+	[527,40,25], //Woobat
+	[822,,25,30], //Corvisquire
+	[42,,20,25], //Golbat
+	[528,,,25,25], //Swoobat
+	[823,,,15,25], //Corviknight
+	[142,,,,15,20], //Aerodactyl
+	[334,,,,15,20], //Altaria
+	[169,,,,15,20], //Crobat
+	[715,,,,,20], //Noivern
+	[alternateForm(823,1),,,,,15] //Corviknight-1
+],[ //0x17d327792698d15f
+	[531,,,5,5,5], //Audino
+	[439,60,30], //Mime Jr.
+	[343,[40,0],[25,0]], //Baltoy
+	[436,,25,30], //Bronzor
+	[alternateForm(122,1),,20,25], //Mr. Mime-1
+	[575,,,[25,0],[25,0]], //Gothorita
+	[344,,,15,[15,25],[20,0]], //Claydol
+	[876,,,,[15,0],[25,0]], //Indeedee
+	[576,,,,[15,0],[20,0]], //Gothitelle
+	[866,,,,,15], //Mr. Rime
+	[437,,,,,15], //Bronzong
+	[alternateForm(77,1),[0,40],[0,25]], //Ponyta-1
+	[578,,,[0,25],[0,25]], //Duosion
+	[alternateForm(876,1),,,,[0,15],[0,25]], //Indeedee-1
+	[579,,,,[0,15],[0,20]], //Reuniclus
+	[alternateForm(78,1),,,,[0,15],[0,20]] //Rapidash-1
+],[ //0xb20a5ed251cd0456
+	[225,,,5,5,5], //Delibird
+	[876,[60,0],[30,0],[15,0],[15,0],[20,0]], //Indeedee
+	[574,[40,0],[25,0]], //Gothita
+	[alternateForm(122,1),,25,30], //Mr. Mime-1
+	[alternateForm(79,1),,20,25], //Slowpoke-1
+	[375,,,25,25], //Metang
+	[866,,,,15,20], //Mr. Rime
+	[576,,,,[15,0],[20,0]], //Gothitelle
+	[376,,,,,15], //Metagross
+	[alternateForm(876,1),[0,60],[0,30],[0,15],[0,15],[0,20]], //Indeedee-1
+	[577,[0,40],[0,25]], //Solosis
+	[579,,,,[0,15],[0,20]] //Reuniclus
+],[ //0x55e4467f01ec60bb
+	[531,,,5,5,5], //Audino
+	[874,[60,0],[20,0],[25,0],[25,0]], //Stonjourner
+	[304,40,25,30], //Aron
+	[305,,,15,15,20], //Lairon
+	[303,,,,[15,0],[25,0]], //Mawile
+	[703,,,,15,20], //Carbink
+	[306,,,,,15], //Aggron
+	[839,,,,,15], //Coalossal
+	[837,[0,60],[0,30]], //Rolycoly
+	[838,,[0,20],[0,25],[0,25]], //Carkol
+	[302,,,,[0,15],[0,25]] //Sableye
+],[ //0xa5696e4aa8d625a
+	[225,,,5,5,5], //Delibird
+	[303,[60,0],[30,0],[15,0],[15,0],[20,0]], //Mawile
+	[304,40,25], //Aron
+	[305,,20,25], //Lairon
+	[213,,,25,25], //Shuckle
+	[839,,,,15,[20,15]], //Coalossal
+	[306,,,,15,20], //Aggron
+	[alternateForm(839,1),,,,,[15,0]], //Coalossal-1
+	[302,[0,60],[0,30],[0,15],[0,15],[0,20]] //Sableye
+],[ //0x47a5d8b98dd573ab
+	[531,,,5,5,5], //Audino
+	[885,60,30], //Dreepy
+	[708,40,25], //Phantump
+	[778,,25,15,25,15], //Mimikyu
+	[361,,20,25], //Snorunt
+	[886,,,25,25], //Drakloak
+	[303,,,,[15,0],[25,0]], //Mawile
+	[362,,,,15,20], //Glalie
+	[478,,,,15,20], //Froslass
+	[709,,,,,15], //Trevenant
+	[302,,,,[0,15],[0,25]] //Sableye
+],[ //0xa23ec426e4e9430a
+	[225,,,5,5,5], //Delibird
+	[885,40,25,30], //Dreepy
+	[93,,[20,0],[25,0]], //Haunter
+	[303,,,[25,0],[15,0],[20,0]], //Mawile
+	[709,,,15,[15,25],[20,0]], //Trevenant
+	[887,,,,15,20], //Dragapult
+	[94,,,,,[15,0]], //Gengar
+	[alternateForm(222,1),,[0,20],[0,25]], //Corsola-1
+	[302,,,[0,25],[0,15],[0,20]], //Sableye
+	[864,,,,[0,15],[0,20]], //Cursola
+	[alternateForm(94,1),,,,,[0,15]] //Gengar-2
+],[ //0x3d2f6b02fc6dd797
+	[531,,,5,5,5], //Audino
+	[621,60,30,,15,20], //Druddigon
+	[371,[40,0],[25,0],[30,0]], //Bagon
+	[696,,20,25], //Tyrunt
+	[372,,,[25,0],[15,0],[25,0]], //Shelgon
+	[147,,,15,25], //Dratini
+	[697,,,,15,20], //Tyrantrum
+	[373,,,,,[15,0]], //Salamence
+	[443,[0,40],[0,25],[0,30]], //Gible
+	[444,,,[0,25],[0,15],[0,25]], //Gabite
+	[445,,,,,[0,15]] //Garchomp
+],[ //0xf9d3242b837d627e
+	[225,,,5,5,5], //Delibird
+	[884,60,30,15,25], //Duraludon
+	[371,[40,0],[25,0]], //Bagon
+	[696,,25,30], //Tyrunt
+	[776,,[20,0],[25,0]], //Turtonator
+	[372,,,[25,0],[25,0]], //Shelgon
+	[149,,,,15,20], //Dragonite
+	[697,,,,15,20], //Tyrantrum
+	[373,,,,[15,0],[20,0]], //Salamence
+	[alternateForm(884,1),,,,,15], //Duraludon-1
+	[443,[0,40],[0,25]], //Gible
+	[780,,[0,20],[0,25]], //Drampa
+	[444,,,[0,25],[0,25]], //Gabite
+	[445,,,,[0,15],[0,20]] //Garchomp
+],[ //0x9ab5727f28c3d593
+	[531,,,5,5,5], //Audino
+	[215,60,30,25,25], //Sneasel
+	[859,40,25,30], //Impidimp
+	[860,,20,25], //Morgrem
+	[alternateForm(264,1),,,15,25], //Linoone-1
+	[861,,,,15,25], //Grimmsnarl
+	[359,,,,15,15], //Absol
+	[862,,,,15,20], //Obstagoon
+	[461,,,,,15] //Weavile
+],[ //0x1928030ad989ad02
+	[225,,,5,5,5], //Delibird
+	[859,60,30], //Impidimp
+	[359,40,25,,15,20], //Absol
+	[215,,20,25], //Sneasel
+	[828,,,25,25], //Thievul
+	[510,,,15,25], //Liepard
+	[861,,,,15,20], //Grimmsnarl
+	[461,,,,15,20], //Weavile
+	[alternateForm(861,1),,,,,15] //Grimmsnarl-1
+],[ //0x7ea57d4a1ef4c796
+	[531,,,5,5,5], //Audino
+	[304,60,25,30], //Aron
+	[632,40,25,,15,20], //Durant
+	[374,,20,25], //Beldum
+	[305,,,25,25], //Lairon
+	[375,,,15,25], //Metang
+	[823,,,,15,25], //Corviknight
+	[879,,,,15,20], //Copperajah
+	[306,,,,,15] //Aggron
+],[ //0xe0236c3b91edbebb
+	[225,,,5,5,5], //Delibird
+	[304,60,30], //Aron
+	[alternateForm(52,2),40,25], //Meowth-2
+	[632,,25,30], //Durant
+	[305,,20,25], //Lairon
+	[863,,,15,25], //Perrserker
+	[879,,,,15,20], //Copperajah
+	[306,,,,15,20], //Aggron
+	[376,,,,15,20], //Metagross
+	[alternateForm(879,1),,,,,15] //Copperajah-1
+],[ //0xc862667fc72ee059
+	[531,,,5,5,5], //Audino
+	[173,60,20,25], //Cleffa
+	[703,40,25,,15,20], //Carbink
+	[856,,25,30], //Hatenna
+	[857,,,25,25], //Hattrem
+	[35,,,15,25], //Clefairy
+	[36,,,,15,20], //Clefable
+	[547,,,,,15], //Whimsicott
+	[858,,,,,15] //Hatterene
+],[ //0x72f9d87337338120
+	[225,,,5,5,5], //Delibird
+	[703,60,20,25,25], //Carbink
+	[546,40,25], //Cottonee
+	[35,,25,30], //Clefairy
+	[547,,,15,25], //Whimsicott
+	[alternateForm(110,1),,,,15,20], //Weezing-1
+	[858,,,,15,20], //Hatterene
+	[36,,,,15,20], //Clefable
+	[alternateForm(858,1),,,,,15] //Hatterene-1
+],[ //0xf01dfb231a467c06
+	[531,,,5,5,5], //Audino
+	[854,40,20,17,10,20], //Sinistea
+	[alternateForm(854,1),,,3,4,5] //Sinistea-1
+],[ //0x8b5a3178ae3f236b
+	[225,,,5,5,5], //Delibird
+	[854,99,20,90,[15,73],[20,0]], //Sinistea
+	[alternateForm(854,1),1,3,5,7], //Sinistea-1
+	[855,,,,,51], //Polteageist
+	[alternateForm(855,1),,,,,9], //Polteageist-1
+	[alternateForm(869,9),,,,,15], //Alcremie-9
+	[869,,,,[0,15],[0,20]] //Alcremie
+],[ //0xe78d0a25d0c67a32
+	[531,,,5,5,5], //Audino
+	[133,10,20,18,10,4], //Eevee
+	[136,,,4,8,11], //Flareon
+	[135,,,4,8,11], //Jolteon
+	[134,,,4,8,11], //Vaporeon
+	[196,,,4,8,11], //Espeon
+	[197,,,4,8,11], //Umbreon
+	[470,,,4,8,11], //Leafeon
+	[471,,,4,8,11], //Glaceon
+	[700,,,4,8,11] //Sylveon
+],[ //0xbdf065bb6332909f
+	[225,,,5,5,5], //Delibird
+	[133,10,20,18,10,4], //Eevee
+	[136,,,4,8,11], //Flareon
+	[135,,,4,8,11], //Jolteon
+	[134,,,4,8,11], //Vaporeon
+	[196,,,4,8,11], //Espeon
+	[197,,,4,8,11], //Umbreon
+	[470,,,4,8,11], //Leafeon
+	[471,,,4,8,11], //Glaceon
+	[700,,,4,8,11] //Sylveon
+],[ //0x58c3011eda59ea53
+	[531,,,5,5,5], //Audino
+	[138,[60,0],[30,0]], //Omanyte
+	[347,[40,0],[25,0]], //Anorith
+	[696,,[25,20],[30,25]], //Tyrunt
+	[698,,[20,25],[25,30]], //Amaura
+	[348,,,[25,15],[15,25],[20,0]], //Armaldo
+	[346,,,[15,25],[25,15],[0,20]], //Cradily
+	[139,,,,[15,0],[25,0]], //Omastar
+	[697,,,,[15,0],[20,15]], //Tyrantrum
+	[699,,,,[0,15],[15,20]], //Aurorus
+	[142,,,,,15], //Aerodactyl
+	[140,[0,60],[0,30]], //Kabuto
+	[345,[0,40],[0,25]], //Lileep
+	[141,,,,[0,15],[0,25]] //Kabutops
+],[ //0xb4dbd8428706d1c2
+	[225,,,5,5,5], //Delibird
+	[138,[100,0],[100,0]], //Omanyte
+	[139,,,[15,0]], //Omastar
+	[142,,,40,21,15], //Aerodactyl
+	[881,,,[20,0],[30,7],[30,10]], //Arctozolt
+	[880,,,[20,0],[30,7],[30,10]], //Dracozolt
+	[882,,,[0,20],[7,30],[10,30]], //Dracovish
+	[883,,,[0,20],[7,30],[10,30]], //Arctovish
+	[140,[0,100],[0,100]], //Kabuto
+	[141,,,[0,15]] //Kabutops
 ]];
+
 
 
 const LOCATIONS=[
@@ -4837,9 +5284,16 @@ const LOCATIONS=[
 	[819,Cr,'shake_tree',70],
 	[820,Cr,'shake_tree',30],
 
-	{group:['Max Lair',,,,'Supernido Dinamax'],encounters:[
-		[803,Cr,'gift'],
+	[803,Cr,'gift'],
 
+	generateRaidDen('C01',166,167),
+	generateRaidDen('C02',180,181),
+	generateRaidDen('C03',168,169),
+	generateRaidDen('C04',168,169),
+	generateRaidDen('C05',158,159),
+	generateRaidDen('C06',182,183),
+
+	{group:['Max Lair',,,,'Supernido Dinamax'],showAsGrid:true,encounters:[
 		[252,Cr,'raid_special'],
 		[253,Cr,'raid_special'],
 		[254,Cr,'raid_special'],
@@ -4928,9 +5382,16 @@ const LOCATIONS=[
 	[574,SwCr,'hidden',[,,,,,,,,20]],
 	[577,ShCr,'hidden',[,,,,,,,,20]],
 	[819,Cr,'shake_tree',70],
-	[820,Cr,'shake_tree',30]
+	[820,Cr,'shake_tree',30],
+
+	generateRaidDen('C07',190,191),
+	generateRaidDen('C08',172,173),
+	generateRaidDen('C09',176,177),
+	generateRaidDen('C10',186,187),
+	generateRaidDen('C11',164,165),
 ]},
-{name:['Giant\'s Bed',,,,'Lecho del Gigante'],encounters:[	[32,SwCr,'overworld',[21,21,21,21,21,19,19,100,17]],
+{name:['Giant\'s Bed',,,,'Lecho del Gigante'],encounters:[
+	[32,SwCr,'overworld',[21,21,21,21,21,19,19,100,17]],
 	[29,SwCr,'overworld',[21,21,21,21,21,19,19,,17]],
 	[32,ShCr,'overworld',[26,26,26,26,26,24,24,100,22]],
 	[874,SwCr,'overworld',[15,15,15,15,15,15,15,,15]],
@@ -4989,6 +5450,29 @@ const LOCATIONS=[
 	[486,Cr,'raid_special'],
 	[640,Cr,'interact'],
 
+	generateRaidDen('C12',188,189),
+	generateRaidDen('C13',160,161),
+	generateRaidDen('C14',180,181),
+	generateRaidDen('C15',174,175),
+	generateRaidDen('C16',186,187),
+	generateRaidDen('C17',192,193),
+	generateRaidDen('C18',174,175),
+	generateRaidDen('C19',162,163),
+	generateRaidDen('C20',158,159),
+	generateRaidDen('C21',170,171),
+	generateRaidDen('C22',184,185),
+	generateRaidDen('C23',172,173),
+	generateRaidDen('C24',166,167),
+	generateRaidDen('C25',160,161),
+	generateRaidDen('C26',178,179),
+	generateRaidDen('C27',158,159),
+	generateRaidDen('C28',190,191),
+	generateRaidDen('C29',164,165),
+	generateRaidDen('C30',176,177),
+	generateRaidDen('C31',180,181),
+	generateRaidDen('C32',162,163),
+	generateRaidDen('C33',170,171),
+
 	{group:['Rock Peak Ruins',,,,'Ruinas Pico Roca'],encounters:[
 		[377,Cr,'interact']
 	]},
@@ -5032,7 +5516,10 @@ const LOCATIONS=[
 	[582,Cr,'hidden',[,,,,18,18]],
 	[856,Cr,'hidden',[,,,,,,,,18]],
 
-	[897,Cr,'interact']
+	[897,Cr,'interact'],
+	
+	generateRaidDen('C34',182,183),
+	generateRaidDen('C35',192,193)
 ]},
 {name:['Snowslide Slope',,,,'Desfiladero Nevado'],encounters:[
 	[872,SwCr,'overworld',[35,35,,,25,20,30,,35]],
@@ -5069,6 +5556,16 @@ const LOCATIONS=[
 	[130,Cr,'fish',15],
 
 	[896,Cr,'interact'],
+	
+	generateRaidDen('C36',180,181),
+	generateRaidDen('C37',172,173),
+	generateRaidDen('C38',186,187),
+	generateRaidDen('C39',190,191),
+	generateRaidDen('C40',168,169),
+	generateRaidDen('C41',188,189),
+	generateRaidDen('C42',196,197),
+	generateRaidDen('C43',160,161),
+	generateRaidDen('C44',178,179),
 
 	{group:['Iceberg Ruins',,,,'Ruinas Iceberg'],encounters:[
 		[378,Cr,'interact']
@@ -5089,10 +5586,16 @@ const LOCATIONS=[
 	[621,Cr,'overworld',[10,,,,,,10]],
 	[531,Cr,'overworld',[1,1,,,1,1,1,,1]],
 	[333,Cr,'overworld',[,10]],
-	[359,Cr,'overworld',[,,,,,10]]
+	[359,Cr,'overworld',[,,,,,10]],
+
+	generateRaidDen('C45',188,189),
+	generateRaidDen('C46',184,185),
+	generateRaidDen('C47',178,179)
 ]},
 {name:['Crown Shrine',,,,'Templo Corona'],encounters:[
-	[898,Cr,'interact']
+	[898,Cr,'interact'],
+	
+	generateRaidDen('C48',166,167)
 ]},
 {name:['Giant\'s Foot',,,,'Suela del Gigante'],encounters:[
 	[879,SwCr,'overworld',[24,24,24,19,22,19,24,,24]],
@@ -5144,6 +5647,11 @@ const LOCATIONS=[
 	[129,Cr,'surf',[33,33,33,33,25,25,33,,33]],
 	[349,Cr,'surf',[1,1,1,1,1,1,1,,1]],
 	[583,Cr,'surf',[,,,,24,24]],
+
+	generateRaidDen('C49',162,163),
+	generateRaidDen('C50',166,167),
+	generateRaidDen('C51',182,183),
+	generateRaidDen('C52',186,187)
 ]},
 {name:['Roaring-Sea Caves',,,,'Grutas Sonamar'],encounters:[
 	[41,Cr,'overworld',40],
@@ -5206,7 +5714,22 @@ const LOCATIONS=[
 	[583,Cr,'surf',[,,,,15,15]],
 	[131,Cr,'surf',[,,,,1,1]],
 
-	[638,Cr,'interact']
+	[638,Cr,'interact'],
+
+	generateRaidDen('C53',170,171),
+	generateRaidDen('C54',184,185),
+	generateRaidDen('C55',174,175),
+	generateRaidDen('C56',186,187),
+	generateRaidDen('C57',190,191),
+	generateRaidDen('C58',162,163),
+	generateRaidDen('C59',176,177),
+	generateRaidDen('C60',188,189),
+	generateRaidDen('C61',164,165),
+	generateRaidDen('C62',170,171),
+	generateRaidDen('C63',182,183),
+	generateRaidDen('C64',168,169),
+	generateRaidDen('C65',172,173),
+	generateRaidDen('C66',170,171)
 ]},
 {name:['Three-Point Pass',,,,'Encrucijada Tresvías'],encounters:[
 	[437,Cr,'overworld',[27,27,27,27,27,30,22,100,30]],
@@ -5244,6 +5767,9 @@ const LOCATIONS=[
 		[894,Cr,'interact'],
 		[895,Cr,'interact']
 	]},
+	
+	generateRaidDen('C67',184,185),
+	generateRaidDen('C68',164,165)
 ]},
 {name:['Ballimere Lake',,,,'Lago Bolaguna'],encounters:[
 	[819,Cr,'overworld',[20,20,25,20,25,100,20,100,30]],
@@ -5302,7 +5828,25 @@ const LOCATIONS=[
 	[369,Cr,'surf',[5,5,5,5,5,,5,,5]],
 	[583,Cr,'surf',[,,,,20]],
 
-	[647,Cr,'interact']
+	[647,Cr,'interact'],
+
+	generateRaidDen('C69',158,159),
+	generateRaidDen('C70',176,177),
+	generateRaidDen('C71',174,175),
+	generateRaidDen('C72',180,181),
+	generateRaidDen('C73',160,161),
+	generateRaidDen('C74',166,167),
+	generateRaidDen('C75',160,161),
+	generateRaidDen('C76',174,175),
+	generateRaidDen('C77',164,165),
+	generateRaidDen('C78',172,173),
+	generateRaidDen('C79',190,191),
+	generateRaidDen('C80',192,193),
+	generateRaidDen('C81',194,195),
+	generateRaidDen('C82',162,163),
+	generateRaidDen('C83',178,179),
+	generateRaidDen('C84',182,183),
+	generateRaidDen('C85',184,185)
 ]},
 {name:['Lakeside Cave',,,,'Gruta del Lago'],encounters:[
 	[41,Cr,'overworld',20],
@@ -5318,6 +5862,7 @@ const LOCATIONS=[
 	[639,Cr,'interact']
 ]},
 {name:['Dyna Tree Hill',,,,'Colina del Maxiárbol'],encounters:[
+	generateRaidDen('C86',176,177)
 ]},
 
 
@@ -5394,7 +5939,7 @@ function generateRaidDen(index, pool1, pool2){
 	var group={group:['Raid Den #'+index,,,,'Nido #'+index], encounters:[], showAsGrid:true}
 
 	var game=0;
-	if(index==='string')
+	if(typeof index==='string')
 		if(/^A/.test(index))
 			game=Ar;
 		else if(/^C/.test(index))

@@ -14,7 +14,7 @@
 */
 
 var PRECACHE_ID='minidex-swsh';
-var PRECACHE_VERSION='v5b';
+var PRECACHE_VERSION='v5c';
 var PRECACHE_URLS=[
 '/minidex/swsh/index.html','/minidex/swsh/',
 '/minidex/swsh/manifest.json',
@@ -39,6 +39,7 @@ var PRECACHE_URLS=[
 '/minidex/swsh/resources/swsh_wild_area_map.png',
 '/minidex/swsh/resources/swsh_wild_area_map_es.png',
 '/minidex/swsh/resources/swsh_dlc1_map.png',
+'/minidex/swsh/resources/swsh_dlc2_map.png',
 
 /* common assets */
 '/minidex/core/pokemon_top.png',
