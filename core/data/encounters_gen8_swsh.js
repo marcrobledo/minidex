@@ -1,5 +1,3 @@
-/* note: missing CoT wanderers + berry map */
-
 const Sw=1<<0;
 const Sh=1<<1;
 const Ar=1<<2;
@@ -5235,12 +5233,14 @@ const LOCATIONS=[
 	[415,Ar,'wanderer',[,100,100,100]], //Combee
 	[764,Ar,'wanderer',[,,,,,,,,100]], //Comfey
 
-	generateRaidDen('A84',143,144) //all dens here are the same
+	generateRaidDen('A84',143,144), //all dens here are the same
 	/*generateRaidDen('A85',143,144),
 	generateRaidDen('A86',143,144),
 	generateRaidDen('A87',143,144),
 	generateRaidDen('A88',143,144),
 	generateRaidDen('A89',143,144)*/
+
+	[416,Ar,'raid_special']
 ]},
 
 
@@ -5286,6 +5286,28 @@ const LOCATIONS=[
 
 	[803,Cr,'gift'],
 
+	[143,Cr,'wanderer',[100,,,,,,100]], //Snorlax
+	[333,Cr,'wanderer',[,100,100,100,100]], //Swablu
+	[473,Cr,'wanderer',[100,100,100,100,100,100,100,100]], //Mamoswine
+	[698,Cr,'wanderer',[,100,100,100,100,100,,100]], //Amaura
+	[778,Cr,'wanderer',[,,,,,,,,100]], //Mimikyu
+	[124,Cr,'wanderer',[,,,,100,100,,100,100]], //Jynx
+	[615,Cr,'wanderer',[,,,,100,100,,100]], //Cryogonal
+	[709,Cr,'wanderer',[,100,100,100]], //Trevenant
+	[832,Cr,'wanderer',[100,,,,,,100]], //Dubwool
+	[857,Cr,'wanderer',[,,,,,,,,100]], //Hattrem
+	[872,Cr,'wanderer',[100,,,,,,,,100]], //Snom
+	[461,Cr,'wanderer',[,100,100,100]], //Weavile
+	[126,Cr,'wanderer',[,,,,,,100]], //Magmar
+	[861,Cr,'wanderer',[,,,,,,,,100]], //Grimmsnarl
+	[362,Cr,'wanderer',[,,,,,100,,100]], //Glalie
+	[460,Cr,'wanderer',[,,,,100,,,100]], //Abomasnow
+	[576,Cr,'wanderer',[,,,,,,,,100]], //Gothitelle
+	[579,Cr,'wanderer',[,,,,,,,,100]], //Reuniclus
+	[478,Cr,'wanderer',[,,,,,100,,100]], //Froslass
+	[467,Cr,'wanderer',[,,,,,,100]], //Magmortar
+	[531,Cr,'wanderer'], //Audino
+
 	generateRaidDen('C01',166,167),
 	generateRaidDen('C02',180,181),
 	generateRaidDen('C03',168,169),
@@ -5294,13 +5316,10 @@ const LOCATIONS=[
 	generateRaidDen('C06',182,183),
 
 	{group:['Max Lair',,,,'Supernido Dinamax'],showAsGrid:true,encounters:[
-		[252,Cr,'raid_special'],
 		[253,Cr,'raid_special'],
 		[254,Cr,'raid_special'],
-		[255,Cr,'raid_special'],
 		[256,Cr,'raid_special'],
 		[257,Cr,'raid_special'],
-		[258,Cr,'raid_special'],
 		[259,Cr,'raid_special'],
 		[260,Cr,'raid_special'],
 
@@ -5384,6 +5403,26 @@ const LOCATIONS=[
 	[819,Cr,'shake_tree',70],
 	[820,Cr,'shake_tree',30],
 
+	[29,Cr,'wanderer',[100,100,100,100,100,100,100,100]], //Nidoran♀
+	[32,Cr,'wanderer',[100,100,100,100,100,100,100,100]], //Nidoran♂
+	[778,Cr,'wanderer',[,,,,,,,,100]], //Mimikyu
+	[124,Cr,'wanderer',[,,,,100,,,,100]], //Jynx
+	[143,Cr,'wanderer',[100,100,100,100,,,100]], //Snorlax
+	[461,Cr,'wanderer',[,100,100,100]], //Weavile
+	[584,Cr,'wanderer',[,,,,100,100,,100]], //Vanilluxe
+	[698,Cr,'wanderer',[100,,,,100,100,,100]], //Amaura
+	[126,Cr,'wanderer',[,,,,,,100]], //Magmar
+	[333,Cr,'wanderer',[,100,100,100]], //Swablu
+	[615,Cr,'wanderer',[,,,,100,100,,100]], //Cryogonal
+	[832,Cr,'wanderer',[100,,,,,,100]], //Dubwool
+	[460,Cr,'wanderer',[100,100,,,100,,100,100]], //Abomasnow
+	[858,Cr,'wanderer',[,,,,,,,,100]], //Hatterene
+	[359,Cr,'wanderer',[,,,,,100]], //Absol
+	[576,SwCr,'wanderer',[,,,,,,,,100]], //Gothitelle
+	[579,ShCr,'wanderer',[,,,,,,,,100]], //Reuniclus
+	[133,Cr,'wanderer',[,,,,,100,,100]], //Eevee
+	[531,Cr,'wanderer'], //Audino
+
 	generateRaidDen('C07',190,191),
 	generateRaidDen('C08',172,173),
 	generateRaidDen('C09',176,177),
@@ -5449,6 +5488,54 @@ const LOCATIONS=[
 
 	[486,Cr,'raid_special'],
 	[640,Cr,'interact'],
+
+	[437,Cr,'wanderer'], //Bronzong
+	[29,Cr,'wanderer',[100,,100,100,,,100]], //Nidoran♀
+	[30,Cr,'wanderer'], //Nidorina
+	[32,Cr,'wanderer',[,100,,,100,100,,100]], //Nidoran♂
+	[33,Cr,'wanderer'], //Nidorino
+	[31,Cr,'wanderer',[100,100,100,,100,100,100,100,100]], //Nidoqueen
+	[34,Cr,'wanderer',[100,100,100,100,100,100,,100,100]], //Nidoking
+	[125,Cr,'wanderer',[,,,100]], //Electabuzz
+	[126,Cr,'wanderer',[,,,,,,100]], //Magmar
+	[359,Cr,'wanderer',[,,,,,100,,100]], //Absol
+	[861,Cr,'wanderer',[,,,,,,,,100]], //Grimmsnarl
+	[596,Cr,'wanderer',[,,,100]], //Galvantula
+	[615,Cr,'wanderer',[,,,,100,100,,100]], //Cryogonal
+	[631,Cr,'wanderer',[,,,,,,100]], //Heatmor
+	[36,Cr,'wanderer',[,,,,,,,,100]], //Clefable
+	[584,Cr,'wanderer',[,,,,100,100,,100]], //Vanilluxe
+	[632,Cr,'wanderer',[,,,,,,100]], //Durant
+	[752,Cr,'wanderer',[,,100,100]], //Araquanid
+	[832,Cr,'wanderer',[100]], //Dubwool
+	[862,Cr,'wanderer',[,100,100]], //Obstagoon
+	[133,Cr,'wanderer',[100]], //Eevee
+	[196,Cr,'wanderer',[,,,,100]], //Espeon
+	[197,Cr,'wanderer',[,100]], //Umbreon
+	[362,Cr,'wanderer',[,,,,100,100,,100]], //Glalie
+	[471,Cr,'wanderer',[,,,,,100,,100]], //Glaceon
+	[534,Cr,'wanderer',[100]], //Conkeldurr
+	[609,Cr,'wanderer',[,100,,,,,,,100]], //Chandelure
+	[778,Cr,'wanderer',[,,,,,,,,100]], //Mimikyu
+	[874,SwCr,'wanderer'], //Stonjourner
+	[143,ShCr,'wanderer'], //Snorlax
+	[333,Cr,'wanderer',[,100]], //Swablu
+	[820,Cr,'wanderer',[100,100,100,100,100,100,,100,100]], //Greedent
+	[470,Cr,'wanderer',[100]], //Leafeon
+	[478,Cr,'wanderer',[,,,,100,100,,100]], //Froslass
+	[136,Cr,'wanderer',[,,,,,,100]], //Flareon
+	[858,Cr,'wanderer',[,,,,,,,,100]], //Hatterene
+	[134,Cr,'wanderer',[,,100]], //Vaporeon
+	[466,Cr,'wanderer',[,,,100]], //Electivire
+	[467,Cr,'wanderer',[,,,,,,100]], //Magmortar
+	[135,Cr,'wanderer',[,,,100]], //Jolteon
+	[334,Cr,'wanderer',[,100]], //Altaria
+	[700,Cr,'wanderer',[,,,,,,,,100]], //Sylveon
+	[340,Cr,'wanderer_surf'], //Whiscash
+	[130,Cr,'wanderer_surf',[100,100,100,100,100,100,100,100]], //Gyarados
+	[350,Cr,'wanderer_surf',[,,,,,,,,100]], //Milotic
+	[142,Cr,'flying'], //Aerodactyl
+	[531,Cr,'wanderer'], //Audino
 
 	generateRaidDen('C12',188,189),
 	generateRaidDen('C13',160,161),
@@ -5518,6 +5605,13 @@ const LOCATIONS=[
 
 	[897,Cr,'interact'],
 	
+	[alternateForm(78,1),ShCr,'wanderer',[,,,,,,,,100]], //Rapidash-1
+	[478,Cr,'wanderer',[,,,,100,100,,100]], //Froslass
+	[709,Cr,'wanderer',[,100]], //Trevenant
+	[778,SwCr,'wanderer',[,,,,,,,,100]], //Mimikyu
+	[855,Cr,'wanderer',[100,,100,100,,100,100,100,100]], //Polteageist
+	[887,Cr,'wanderer',[100,100,100,100,100,,100]], //Dragapult
+
 	generateRaidDen('C34',182,183),
 	generateRaidDen('C35',192,193)
 ]},
@@ -5556,7 +5650,30 @@ const LOCATIONS=[
 	[130,Cr,'fish',15],
 
 	[896,Cr,'interact'],
-	
+
+	[615,Cr,'wanderer',[,,,,100,100,,100]], //Cryogonal
+	[698,Cr,'wanderer',[100,100,100,100,,,,,100]], //Amaura
+	[832,Cr,'wanderer',[100,,,,,,100]], //Dubwool
+	[872,Cr,'wanderer',[100,100,100,100]], //Snom
+	[36,Cr,'wanderer',[,,,,,,,,100]], //Clefable
+	[126,Cr,'wanderer',[,,,,,,100]], //Magmar
+	[362,SwCr,'wanderer',[,,,,100]], //Glalie
+	[362,ShCr,'wanderer',[,,,,100,100,,100]], //Glalie
+	[584,Cr,'wanderer',[,,,,100,100,,100]], //Vanilluxe
+	[359,Cr,'wanderer',[,,,,,100,,100]], //Absol
+	[461,Cr,'wanderer',[,100,100,100]], //Weavile
+	[621,Cr,'wanderer',[100,,,,,,100]], //Druddigon
+	[778,Cr,'wanderer',[,,,,,,,,100]], //Mimikyu
+	[375,Cr,'wanderer'], //Metang
+	[614,Cr,'wanderer',[,,,,100,100,,100]], //Beartic
+	[709,Cr,'wanderer',[,100,100,100]], //Trevenant
+	[861,Cr,'wanderer',[,,,,,,,,100]], //Grimmsnarl
+	[467,Cr,'wanderer',[,,,,,,100]], //Magmortar
+	[478,Cr,'wanderer',[,,,,100,100,,100]], //Froslass
+	[699,Cr,'wanderer',[100,100,100,100,100,100,,100,100]], //Aurorus
+	[376,Cr,'wanderer'], //Metagross
+	[alternateForm(555,2),SwCr,'wanderer',[,,,,,100,,100]], //Darmanitan-2
+
 	generateRaidDen('C36',180,181),
 	generateRaidDen('C37',172,173),
 	generateRaidDen('C38',186,187),
@@ -5578,7 +5695,18 @@ const LOCATIONS=[
 	[371,SwCr,'overworld',10],
 	[443,ShCr,'overworld',10],
 	[35,Cr,'overworld',5],
-	[531,Cr,'overworld',1]
+	[531,Cr,'overworld',1],
+
+	[41,Cr,'wanderer'], //Zubat
+	[371,SwCr,'wanderer'], //Bagon
+	[443,ShCr,'wanderer'], //Gible
+	[478,Cr,'wanderer'], //Froslass
+	[373,SwCr,'wanderer'], //Salamence
+	[445,ShCr,'wanderer'], //Garchomp
+	[703,Cr,'wanderer'], //Carbink
+	[42,Cr,'wanderer'], //Golbat
+	[36,Cr,'wanderer'], //Clefable
+	[621,Cr,'wanderer'] //Druddigon
 ]},
 {name:['Path to the Peak',,,,'Senda Blancacima'],encounters:[
 	[873,Cr,'overworld',[70,70,100,100,80,70,70,100,80]],
@@ -5587,6 +5715,13 @@ const LOCATIONS=[
 	[531,Cr,'overworld',[1,1,,,1,1,1,,1]],
 	[333,Cr,'overworld',[,10]],
 	[359,Cr,'overworld',[,,,,,10]],
+
+	[873,Cr,'wanderer'], //Frosmoth
+	[334,Cr,'wanderer',[,100]], //Altaria
+	[359,Cr,'wanderer',[,,,,,100,,100]], //Absol
+	[373,SwCr,'wanderer',[,,,,,,100]], //Salamence
+	[445,ShCr,'wanderer',[,,,,,,100]], //Garchomp
+	[621,Cr,'wanderer',[100]], //Druddigon
 
 	generateRaidDen('C45',188,189),
 	generateRaidDen('C46',184,185),
@@ -5648,6 +5783,23 @@ const LOCATIONS=[
 	[349,Cr,'surf',[1,1,1,1,1,1,1,,1]],
 	[583,Cr,'surf',[,,,,24,24]],
 
+	[851,Cr,'wanderer',[100,,,,,,100]], //Centiskorch
+	[879,Cr,'wanderer',[,100,100,100,100,100,,100,100]], //Copperajah
+	[344,Cr,'wanderer',[,100,100,100,100,100,100,100,100]], //Claydol
+	[437,Cr,'wanderer',[100,100]], //Bronzong
+	[125,Cr,'wanderer',[,,,100]], //Electabuzz
+	[126,Cr,'wanderer',[,,,,,,100]], //Magmar
+	[334,Cr,'wanderer',[,100]], //Altaria
+	[359,Cr,'wanderer',[,,,,,100,,100]], //Absol
+	[534,Cr,'wanderer',[100]], //Conkeldurr
+	[615,Cr,'wanderer',[,,,,100,100,,100]], //Cryogonal
+	[752,Cr,'wanderer',[,,100]], //Araquanid
+	[778,Cr,'wanderer',[,,,,,,,,100]], //Mimikyu
+	[566,Cr,'wanderer'], //Archen
+	[138,SwCr,'wanderer_surf'], //Omanyte
+	[140,ShCr,'wanderer_surf'], //Kabuto
+	[531,Cr,'wanderer'], //Audino
+
 	generateRaidDen('C49',162,163),
 	generateRaidDen('C50',166,167),
 	generateRaidDen('C51',182,183),
@@ -5669,7 +5821,15 @@ const LOCATIONS=[
 	[138,SwCr,'surf',[24,24,24,24,20,20,24,,24]],
 	[140,ShCr,'surf',[24,24,24,24,20,20,24,,24]],
 	[349,Cr,'surf',[1,1,1,1,1,1,1,,1]],
-	[583,Cr,'surf',[,,,,19,19]]
+	[583,Cr,'surf',[,,,,19,19]],
+
+	[41,Cr,'wanderer'], //Zubat
+	[448,Cr,'wanderer'], //Lucario
+	[42,Cr,'wanderer'], //Golbat
+	[635,SwCr,'wanderer'], //Hydreigon
+	[248,ShCr,'wanderer'], //Tyranitar
+	[139,SwCr,'wanderer'], //Omastar
+	[141,ShCr,'wanderer'] //Kabutops
 ]},
 {name:['Frigid Sea',,,,'Mar Gélido'],encounters:[
 	[363,SwCr,'overworld',[45,30,30,25,30,27,100,100,32]],
@@ -5715,6 +5875,21 @@ const LOCATIONS=[
 	[131,Cr,'surf',[,,,,1,1]],
 
 	[638,Cr,'interact'],
+
+	[363,Cr,'wanderer'], //Spheal
+	[564,Cr,'wanderer',[100,100,100,100,,,100,100,100]], //Tirtouga
+	[334,Cr,'wanderer',[,100]], //Altaria
+	[466,Cr,'wanderer',[,,,100]], //Electivire
+	[467,Cr,'wanderer',[,,,,,,100]], //Magmortar
+	[614,Cr,'wanderer',[,,,,100,100,,100]], //Beartic
+	[713,Cr,'wanderer'], //Avalugg
+	[858,Cr,'wanderer',[,,,,,,,,100]], //Hatterene
+	[871,Cr,'wanderer',[,,,100]], //Pincurchin
+	[364,Cr,'wanderer'], //Sealeo
+	[365,Cr,'wanderer',[100,100,,,100,100,,100,100]], //Walrein
+	[565,Cr,'wanderer',[100,,100,100,,,100]], //Carracosta
+	[713,SwCr,'wanderer_surf'], //Avalugg
+	[875,ShCr,'wanderer_surf'], //Eiscue
 
 	generateRaidDen('C53',170,171),
 	generateRaidDen('C54',184,185),
@@ -5762,6 +5937,10 @@ const LOCATIONS=[
 	[240,Cr,'hidden',[,,,,,,20]],
 	[582,Cr,'hidden',[,,,,25,25]],
 	[856,Cr,'hidden',[,,,,,,,,25]],
+
+	[623,Cr,'wanderer'], //Golurk
+	[466,Cr,'wanderer',[,,,100]], //Electivire
+	[887,Cr,'wanderer',[100,100,100,,100,100,100,100,100]], //Dragapult
 
 	{group:['Split-Decision Ruins',,,,'Ruinas del Dilema'],encounters:[
 		[894,Cr,'interact'],
@@ -5830,6 +6009,42 @@ const LOCATIONS=[
 
 	[647,Cr,'interact'],
 
+	[442,Cr,'interact'],
+
+	[466,Cr,'wanderer',[,,,100]], //Electivire
+	[467,Cr,'wanderer',[,,,,,,100]], //Magmortar
+	[715,Cr,'wanderer',[,100,100]], //Noivern
+	[823,Cr,'wanderer',[100,,,,100,100,,100]], //Corviknight
+	[858,Cr,'wanderer',[,,,,,,,,100]], //Hatterene
+	[862,Cr,'wanderer',[,100]], //Obstagoon
+	[334,Cr,'wanderer',[,100]], //Altaria
+	[547,Cr,'wanderer',[100,,100]], //Whimsicott
+	[615,Cr,'wanderer',[,,,,100,100,,100]], //Cryogonal
+	[778,Cr,'wanderer',[,,,,,,,,100]], //Mimikyu
+	[830,Cr,'wanderer',[,,100,,,,100]], //Eldegoss
+	[836,Cr,'wanderer',[100,,100,100,100,100,,100,100]], //Boltund
+	[696,Cr,'wanderer'], //Tyrunt
+	[213,Cr,'wanderer',[100,,,,,,100]], //Shuckle
+	[820,Cr,'wanderer'], //Greedent
+	[876,SwCr,'wanderer',[100,,,,,,,,100]], //Indeedee
+	[alternateForm(876,1),ShCr,'wanderer',[100,,,,,,,,100]], //Indeedee
+	[584,Cr,'wanderer',[,,,,100,100,,100]], //Vanilluxe
+	[596,Cr,'wanderer',[,,,100]], //Galvantula
+	[877,Cr,'wanderer',[,100,,100]], //Morpeko
+	[125,Cr,'wanderer',[,,,100]], //Electabuzz
+	[126,Cr,'wanderer',[,,,,,,100]], //Magmar
+	[752,Cr,'wanderer',[,,100]], //Araquanid
+	[839,Cr,'wanderer',[100,,,100,100,100,100,100,100]], //Coalossal
+	[149,Cr,'wanderer',[,,100,100]], //Dragonite
+	[697,Cr,'wanderer'], //Tyrantrum
+	[348,Cr,'wanderer',[,,100,100]], //Armaldo
+	[531,Cr,'wanderer'], //Audino
+	[304,Cr,'wanderer'], //Aron
+	[347,Cr,'wanderer_surf'], //Anorith
+	[369,Cr,'wanderer_surf',[100,100,100,100,100,100,100,100]], //Relicanth
+	[147,Cr,'wanderer_surf',[,,100,,,,,,100]], //Dratini
+	[148,Cr,'wanderer_surf',[,,,100,,,,,100]], //Dragonair
+
 	generateRaidDen('C69',158,159),
 	generateRaidDen('C70',176,177),
 	generateRaidDen('C71',174,175),
@@ -5859,10 +6074,20 @@ const LOCATIONS=[
 	[715,Cr,'overworld',9],
 	[531,Cr,'overworld',1],
 	
-	[639,Cr,'interact']
+	[639,Cr,'interact'],
+
+	[306,Cr,'wanderer'], //Aggron
+	[598,Cr,'wanderer'], //Ferrothorn
+	[839,Cr,'wanderer'], //Coalossal
+	[305,Cr,'wanderer'], //Lairon
+	[715,Cr,'wanderer'] //Noivern
 ]},
 {name:['Dyna Tree Hill',,,,'Colina del Maxiárbol'],encounters:[
-	generateRaidDen('C86',176,177)
+	generateRaidDen('C86',176,177),
+
+	[820,Cr,'raid_special'],
+	
+	[820,Cr,'wanderer'] //Greedent
 ]},
 
 

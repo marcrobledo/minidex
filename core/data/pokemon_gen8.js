@@ -1,4 +1,4 @@
-/* to-do: https://bulbapedia.bulbagarden.net/wiki/The_Crown_Tundra#Pok.C3.A9mon, slowpoke -> king evo, slowking: type and ability,new legendaries:correct number, type and ability*/var POKEMON=[,["Bulbasaur",[11,3],[65,,34],1,[2,"levelup",16]],
+var POKEMON=[,["Bulbasaur",[11,3],[65,,34],1,[2,"levelup",16]],
 ["Ivysaur",[11,3],[65,,34],1,[3,"levelup",32]],
 ["Venusaur",[11,3],[65,,34],1,,[,["gigantamax"]]],
 ["Charmander",9,[66,,94],4,[5,"levelup",16]],
