@@ -236,7 +236,7 @@ STRINGS:{
 'extension_nds_pt':'Platinum extension',
 'extension_nds_hg':'HeartGold extension',
 'extension_nds_ss':'SoulSilver extension',
-'extension_alpha':'Alfa extension',
+'extension_alpha':'Alpha extension',
 'extension_beta':'Beta extension',
 'extension_omega':'Omega extension',
 
