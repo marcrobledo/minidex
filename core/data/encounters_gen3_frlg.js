@@ -3,7 +3,7 @@ const LG=1<<1;
 
 const LOCATIONS=[
 {
-	name:['Pallet Town','Bourg Palette',,'Biancavilla','Pueblo Paleta'],encounters:[
+	name:['Pallet Town','Bourg Palette','Alabastia','Biancavilla','Pueblo Paleta'],encounters:[
 		[72,,'surf',100],
 		[129,,'fish_old',100],
 		[98,FR,'fish_good',20],
