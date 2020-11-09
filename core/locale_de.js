@@ -29,7 +29,7 @@ STRINGS:{
 'learnset_levelup':'Attacken durch Levelaufstieg',
 'learnset_machine':'TM &amp; VM',
 'learnset_machine7':'TM',
-'learnset_machine8':'TM &amp; TR',
+'learnset_machine8':'TM &amp; TP',
 'learnset_egg':'Durch Vererbbarkeit',
 'learnset_tutor':'Durch Attacken-Lehrer',
 'learnset_special':'Durch Events',
