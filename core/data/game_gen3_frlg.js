@@ -1,12 +1,12 @@
 const GENERATION=3;
 const GAME_ID='frlg';
 const GAMES=[
-	['Fire Red',,,,'Rojo Fuego'],
-	['Leaf Green',,,,'Verde Hoja']
+	['Fire Red',,'Feuerrot',,'Rojo Fuego'],
+	['Leaf Green',,'Blattgrün',,'Verde Hoja']
 ];
 const REGIONAL_DEXES=[
-	[['Kanto Pokédex',,,,'Pokédex de Kanto'],(function(){var a=[];for(var i=1;i<=151;i++)a.push(i);return a})()],
-	[['Sevii Islands',,,,'Islas Sete'], [161,165,167,175,177,179,183,187,190,193,194,198,200,201,202,204,206,211,213,214,215,216,218,219,220,223,225,226,227,228,231,234,235,243,244,245,246,249,250,386]]
+	[['Kanto Pokédex',,'Kanto-Pokédex',,'Pokédex de Kanto'],(function(){var a=[];for(var i=1;i<=151;i++)a.push(i);return a})()],
+	[['Sevii Islands',,'Sevii Eiland',,'Islas Sete'], [161,165,167,175,177,179,183,187,190,193,194,198,200,201,202,204,206,211,213,214,215,216,218,219,220,223,225,226,227,228,231,234,235,243,244,245,246,249,250,386]]
 ];
 const NATIONAL_DEX=true;
 const MAX_NATIONAL=386;

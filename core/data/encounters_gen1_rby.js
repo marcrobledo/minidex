@@ -7,7 +7,7 @@ const BY=B|Y;
 
 const LOCATIONS=[
 {
-	name:['Pallet Town','Bourg Palette',,'Biancavilla','Pueblo Paleta'],encounters:[
+	name:['Pallet Town','Bourg Palette','Alabastia','Biancavilla','Pueblo Paleta'],encounters:[
 		[129,,'fish_old',100],
 		[60,,'fish_good',50],
 		[118,,'fish_good',50],

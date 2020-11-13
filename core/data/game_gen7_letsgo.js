@@ -5,7 +5,7 @@ const GAMES=[
 	['Let\'s go, Eevee!']
 ];
 const REGIONAL_DEXES=[
-	[['Kanto Pokédex',,,,'Pokédex de Kanto'],(function(){var a=[];for(var i=1;i<=151;i++)a.push(i);return a})().concat([808,809])]
+	[['Kanto Pokédex',,'Kanto-Pokédex',,'Pokédex de Kanto'],(function(){var a=[];for(var i=1;i<=151;i++)a.push(i);return a})().concat([808,809])]
 ];
 const NATIONAL_DEX=false;
 const MAX_NATIONAL=809;
