@@ -1076,6 +1076,8 @@ function createExternalLink(title, href){
 function getAbilityLink(abilityIndex){
 	if(MinidexSettings.lang===4)
 		return 'https://www.wikidex.net/wiki/'+LANG_ES.ABILITIES[abilityIndex].replace(/ /g, '_')
+	else if(MinidexSettings.lang===6)
+		return 'https://wiki.52poke.com/wiki/'+LANG_CN.ABILITIES[abilityIndex].replace(/ /g, '_')+'（特性）'
 	else
 		return 'https://bulbapedia.bulbagarden.net/wiki/'+LANG_EN.ABILITIES[abilityIndex].replace(/ /g, '_')+'_(Ability)';
 
@@ -1083,6 +1085,8 @@ function getAbilityLink(abilityIndex){
 function getMoveLink(moveIndex){
 	if(MinidexSettings.lang===4)
 		return 'https://www.wikidex.net/wiki/'+(MOVES[moveIndex][0][4] || MOVES[moveIndex][0][0]).replace(/ /g, '_')
+	else if(MinidexSettings.lang===6)
+		return 'https://wiki.52poke.com/wiki/'+MOVES[moveIndex][0][6].replace(/ /g, '_')+'（招式）'
 	else
 		return 'https://bulbapedia.bulbagarden.net/wiki/'+MOVES[moveIndex][0][0].replace(/ /g, '_')+'_(move)';
 }
