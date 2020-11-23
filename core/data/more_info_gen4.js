@@ -31,6 +31,11 @@ const MORE_INFO=[
 			return 'https://www.smogon.com/dex/dp/pokemon/'+getPokeNameEn(nationalId).slug()+'/';
 		}
 	},{
+		title:'中文百科52poke',
+		getInfo:function(nationalId){
+			return 'https://wiki.52poke.com/wiki/'+getPokeName(nationalId).replace(/ /g,'_')
+		}
+	},{
 		title:'Wikidex',
 		getInfo:function(nationalId){
 			if(MinidexSettings.lang===4){
