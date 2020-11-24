@@ -1794,6 +1794,8 @@ var MinidexSettings=(function(){
 		defaultLanguage=4;
 	else if(userLang==='jp')
 		defaultLanguage=5;
+	else if(userLang==='cn')
+		defaultLanguage=6;
 
 
 
