@@ -2112,6 +2112,8 @@ function resetGUIStrings(l){
 }
 function getRegionName(){
 	if(GAME_ID==='xy'){
+		if(MinidexSettings.lang===6)
+			return '卡洛斯地区';
 		return 'Kalos';
 	}else if(GENERATION===5){
 		if(MinidexSettings.lang===1)
@@ -2122,7 +2124,33 @@ function getRegionName(){
 			return 'Unima';
 		else if(MinidexSettings.lang===4)
 			return 'Teselia';
+		else if(MinidexSettings.lang===6)
+			return '合众地区';
 		return 'Unova';
+	}else if(GENERATION===1||GAME_ID==='frlg'||GAME_ID==='letsgo'){
+		if(MinidexSettings.lang===6)
+			return '关都地区';
+		return 'Kanto';
+	}else if(GENERATION===2||GAME_ID==='hgss'){
+		if(MinidexSettings.lang===6)
+			return '城都地区';
+		return 'Johto';
+	}else if(GAME_ID==='rse'||GAME_ID==='oras'){
+		if(MinidexSettings.lang===6)
+			return '丰缘地区';
+		return 'Hoenn';
+	}else if(GAME_ID==='dppt'){
+		if(MinidexSettings.lang===6)
+			return '神奥地区';
+		return 'Sinnoh';
+	}else if(GAME_ID==='sm'||GAME_ID==='usum'){
+		if(MinidexSettings.lang===6)
+			return '阿罗拉地区';
+		return 'Alola';
+	}else if(GENERATION===8){
+		if(MinidexSettings.lang===6)
+			return '伽勒尔地区';
+		return 'Galar';
 	}else{
 		return REGIONAL_DEXES[0][0][0].replace(' Pokédex', '');
 	}
