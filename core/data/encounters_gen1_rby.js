@@ -658,7 +658,7 @@ const LOCATIONS=[
 		[47,Y,['trade',114]]
 	]
 },{
-	name:['Route 17',,'Radweg','Pista Ciclabile','Camino de bicis',,'17号道路'],encounters:[
+	name:['Route 17',,'Radweg','Pista Ciclabile','Camino de bicis',,'自行车道'],encounters:[
 		[20,RB,'grass',30],
 		[21,RB,'grass',40],
 		[22,RB,'grass',5],

@@ -16,7 +16,7 @@ const LANG_CN = {
         'damage_taken': '属性相性（受到伤害）',
         'national_dex': '第 %s 世代宝可梦',
         'search_national': '搜索游戏世代',
-        'search_regional': '搜索 %s',
+        'search_regional': '搜索%s',
         'donate_intro': '如果你发现这个软件有所帮助，考虑一下小小的捐赠!!',
         'donate': '捐赠',
         'donate_no': '下次一定',
@@ -97,7 +97,7 @@ const LANG_CN = {
         'evo_kubfu1': 'Train in the Tower of Darkness',
         'evo_kubfu2': 'Train in the Tower of Waters',
 
-        'not_available': 'Not available',
+        'not_available': '无',
         'breed': 'Breed',
         'breed_with': 'Breed with %s',
         'evolve': 'Evolve',

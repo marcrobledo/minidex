@@ -1645,7 +1645,7 @@ const LOCATIONS=[
 		[218,C,'grass',[,5]]
 	]
 },{
-	name:['Route 17',,'Radweg','Pista Ciclabile','Camino de bicis',,'17号道路'],encounters:[
+	name:['Route 17',,'Radweg','Pista Ciclabile','Camino de bicis',,'自行车道'],encounters:[
 		[22,,'grass',[40,40]],
 		[88,GS,'grass',[50,20,80]],
 		[88,C,'grass',[55,20,95]],
