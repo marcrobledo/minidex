@@ -225,16 +225,16 @@ const LOCATIONS=[
 		[60,,'fish_super',70],
 		[61,,'fish_super',10],
 		[129,,'fish_super',20],
-		{group:['After Kabuto puzzle (A-K)',,,,'Despues del puzzle Kabuto (A-K)',,'拼图化石盔(A-K)'],encounters:[
+		{group:['After Kabuto puzzle (A-K)',,,,'Despues del puzzle Kabuto (A-K)',,'化石盔拼图谜题之后(A-K)'],encounters:[
 			[alternateForm(201,0),,'cave',100],
 		]},
-		{group:['After Omanyte puzzle (L-R)',,,,'Despues del puzzle Omanyte (L-R)',,'拼图菊石兽(L-R)'],encounters:[
+		{group:['After Omanyte puzzle (L-R)',,,,'Despues del puzzle Omanyte (L-R)',,'菊石兽拼图谜题之后(L-R)'],encounters:[
 			[alternateForm(201,11),,'cave',100],
 		]},
-		{group:['After Aerodactyl puzzle (S-W)',,,,'Despues del puzzle Aerodactyl (S-W)',,'拼图化石翼龙(S-W)'],encounters:[
+		{group:['After Aerodactyl puzzle (S-W)',,,,'Despues del puzzle Aerodactyl (S-W)',,'化石翼龙拼图谜题之后(S-W)'],encounters:[
 			[alternateForm(201,18),,'cave',100],
 		]},
-		{group:['After Ho-oh puzzle (X-Z)',,,,'Despues del puzzle Ho-oh (X-Z)',,'拼图凤王(X-Z)'],encounters:[
+		{group:['After Ho-oh puzzle (X-Z)',,,,'Despues del puzzle Ho-oh (X-Z)',,'凤王拼图谜题之后(X-Z)'],encounters:[
 			[alternateForm(201,23),,'cave',100],
 		]}
 	]
@@ -681,7 +681,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Roaming Johto'],encounters:[
+	name:['Roaming Johto',,,,,,'城都地区野外遭遇'],encounters:[
 		[243,,'roaming'],
 		[244,,'roaming'],
 		[245,GS,'roaming']

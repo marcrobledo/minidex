@@ -1664,7 +1664,7 @@ const LOCATIONS=[
 		[356,DP,'pokeradar',20]
 	]
 },{
-	name:['Roaming Sinnoh'],encounters:[
+	name:['Roaming Sinnoh',,,,,,'神奥地区野外遭遇'],encounters:[
 		[144,Pt,'roaming'],
 		[145,Pt,'roaming'],
 		[146,Pt,'roaming'],

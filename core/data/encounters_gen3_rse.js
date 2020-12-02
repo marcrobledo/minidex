@@ -1107,7 +1107,7 @@ const LOCATIONS=[
 		[235,E,'cave',100]
 	]
 },{
-	name:['Roaming Hoenn'],encounters:[
+	name:['Roaming Hoenn',,,,,,'丰缘地区野外遭遇'],encounters:[
 		[380,S,'roaming'],
 		[381,R,'roaming']
 	]

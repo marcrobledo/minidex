@@ -786,7 +786,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Roaming Kanto'],encounters:[
+	name:['Roaming Kanto',,,,,,'关都地区野外遭遇'],encounters:[
 		[243,,'roaming'],
 		[244,,'roaming'],
 		[245,,'roaming']
