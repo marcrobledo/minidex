@@ -3,19 +3,19 @@ const Y=1<<1;
 
 const LOCATIONS=[
 {
-	name:['Vaniville Town','Bourg Croquis','Escissia','Borgo Bozzetto','Pueblo Boceto'],encounters:[
+	name:['Vaniville Town','Bourg Croquis','Escissia','Borgo Bozzetto','Pueblo Boceto',,'朝香镇'],encounters:[
 		[650,,'trade'],
 		[653,,'trade'],
 		[656,,'trade']
 	]
 },{
-	name:['Aquacorde Town','Quarellis','Aquarellia','Rio Acquerello','Pueblo Acuarela'],encounters:[
+	name:['Aquacorde Town','Quarellis','Aquarellia','Rio Acquerello','Pueblo Acuarela',,'名水镇'],encounters:[
 		[650,,'starter'],
 		[653,,'starter'],
 		[656,,'starter']
 	]
 },{
-	name:['Route 2',,,'Percorso 2','Ruta 2'],encounters:[
+	name:['Route 2',,,'Percorso 2','Ruta 2',,'2号道路'],encounters:[
 		[10,Y,'grass',11],
 		[13,X,'grass',11],
 		[16,,'grass',14],
@@ -25,7 +25,7 @@ const LOCATIONS=[
 		[664,,'grass',20]
 	]
 },{
-	name:['Santalune Forest','Forêt de Neuvartault','Nouvaria-Wald','Bosco Novartopoli','Bosque de Novarte'],encounters:[
+	name:['Santalune Forest','Forêt de Neuvartault','Nouvaria-Wald','Bosco Novartopoli','Bosque de Novarte',,'白檀森林'],encounters:[
 		[10,Y,'grass',20],
 		[10,X,'grass',10],
 		[11,Y,'grass',4],
@@ -40,7 +40,7 @@ const LOCATIONS=[
 		[664,,'grass',20]
 	]
 },{
-	name:['Route 3',,,'Percorso 3','Ruta 3'],encounters:[
+	name:['Route 3',,,'Percorso 3','Ruta 3',,'3号道路'],encounters:[
 		[16,,'grass',10],
 		[25,,'grass',5],
 		[206,,'grass',5],
@@ -59,11 +59,11 @@ const LOCATIONS=[
 		[342,,'fish_super',5]
 	]
 },{
-	name:['Santalune City','Neuvartault','Nouvaria City','Novartopoli','Ciudad Novarte'],encounters:[
+	name:['Santalune City','Neuvartault','Nouvaria City','Novartopoli','Ciudad Novarte',,'白檀市'],encounters:[
 		[83,,['trade',659]]
 	]
 },{
-	name:['Route 4',,,'Percorso 4','Ruta 4'],encounters:[
+	name:['Route 4',,,'Percorso 4','Ruta 4',,'4号道路'],encounters:[
 		[165,,'flowers_yellow',10],
 		[280,,'flowers_yellow',5],
 		[300,,'flowers_yellow',10],
@@ -82,14 +82,14 @@ const LOCATIONS=[
 		[alternateForm(669,4),,'flowers_red',1]
 	]
 },{
-	name:['Centrico Plaza','Place Centrale','Zentral-Plaza','Piazza Centrale','Plaza Central'],encounters:[
+	name:['Centrico Plaza','Place Centrale','Zentral-Plaza','Piazza Centrale','Plaza Central',,'中央广场'],encounters:[
 		[1,,'gift'],
 		[4,,'gift'],
 		[7,,'gift'],
 		[280,,'trade']
 	]
 },{
-	name:['Route 5',,,'Percorso 5','Ruta 5'],encounters:[
+	name:['Route 5',,,'Percorso 5','Ruta 5',,'5号道路'],encounters:[
 		[63,,'grass',5],
 		[84,,'grass',10],
 		[311,X,'grass',5],
@@ -114,12 +114,12 @@ const LOCATIONS=[
 		[559,,'horde',35]
 	]
 },{
-	name:['Camphrier Town','Fort-Vanitas','Vanitéa','Castel Vanità','Pueblo Vánitas'],encounters:[
+	name:['Camphrier Town','Fort-Vanitas','Vanitéa','Castel Vanità','Pueblo Vánitas',,'古木镇'],encounters:[
 		[129,,['trade',130]],
 		[133,,'trade']
 	]
 },{
-	name:['Route 7',,,'Percorso 7','Ruta 7'],encounters:[
+	name:['Route 7',,,'Percorso 7','Ruta 7',,'7号道路'],encounters:[
 		[235,,'grass',10],
 		[313,,'grass',10],
 		[314,,'grass',10],
@@ -158,7 +158,7 @@ const LOCATIONS=[
 		[143,,'interact']
 	]
 },{
-	name:['Berry fields','Champ de Baies','Beerenfeld','Orto delle bacche','Huerto de bayas'],encounters:[
+	name:['Berry fields','Champ de Baies','Beerenfeld','Orto delle bacche','Huerto de bayas',,'树果园'],encounters:[
 		[165,,['berry_tree_red'],100],
 		[313,,['berry_tree_blue'],100],
 		[314,,['berry_tree_purple'],100],
@@ -167,7 +167,7 @@ const LOCATIONS=[
 		[665,,['berry_tree_pink'],100]
 	]
 },{
-	name:['Route 6',,,'Percorso 6','Ruta 6'],encounters:[
+	name:['Route 6',,,'Percorso 6','Ruta 6',,'6号道路'],encounters:[
 		[43,,'grass_tall',30],
 		[161,,'grass_tall',20],
 		[290,,'grass_tall',10],
@@ -178,7 +178,7 @@ const LOCATIONS=[
 		[531,,'bush',20]
 	]
 },{
-	name:['Parfum Palace','Palais Chaydeuvre','Magnum-Opus-Palast','Reggia Aurea','Palacio Cénit'],encounters:[
+	name:['Parfum Palace','Palais Chaydeuvre','Magnum-Opus-Palast','Reggia Aurea','Palacio Cénit',,'巴尔法姆香殿'],encounters:[
 		[129,,'fish_old',100],
 		[118,,'fish_good',65],
 		[341,,'fish_good',35],
@@ -187,7 +187,7 @@ const LOCATIONS=[
 		[342,,'fish_super',5]
 	]
 },{
-	name:['Connecting Cave','Antre Nosferapti','Zubat-Nest','Tana degli Zubat','Escondrijo Zubat'],encounters:[
+	name:['Connecting Cave','Antre Nosferapti','Zubat-Nest','Tana degli Zubat','Escondrijo Zubat',,'串连地洞'],encounters:[
 		[41,,'cave',30],
 		[293,,'cave',30],
 		[307,,'cave',30],
@@ -197,7 +197,7 @@ const LOCATIONS=[
 		[610,,'horde',5]
 	]
 },{
-	name:['Route 8',,,'Percorso 8','Ruta 8'],encounters:[
+	name:['Route 8',,,'Percorso 8','Ruta 8',,'8号道路'],encounters:[
 		[325,,'grass',20],
 		[335,X,'grass',10],
 		[336,Y,'grass',10],
@@ -234,7 +234,7 @@ const LOCATIONS=[
 		[693,X,'fish_super',35]
 	]
 },{
-	name:['Ambrette Town','Roche-sur-Gliffe','Petrophia','Petroglifari','Pueblo Petroglifo'],encounters:[
+	name:['Ambrette Town','Roche-sur-Gliffe','Petrophia','Petroglifari','Pueblo Petroglifo',,'古香鎮'],encounters:[
 		[557,,'rock_smash',66],
 		[688,,'rock_smash',34],
 		[72,,'surf',69],
@@ -262,13 +262,13 @@ const LOCATIONS=[
 		[133,,'trade']
 	]
 },{
-	name:['Route 9',,,'Percorso 9','Ruta 9'],encounters:[
+	name:['Route 9',,,'Percorso 9','Ruta 9',,'9号道路'],encounters:[
 		[449,,'walk',40],
 		[551,,'walk',40],
 		[694,,'walk',20]
 	]
 },{
-	name:['Glittering Cave','Grotte Étincelante','Leuchthöhle','Grotta dei Bagliori','Cueva Brillante'],encounters:[
+	name:['Glittering Cave','Grotte Étincelante','Leuchthöhle','Grotta dei Bagliori','Cueva Brillante',,'闪耀洞窟'],encounters:[
 		[66,,'cave',30],
 		[95,,'cave',10],
 		[104,,'cave',20],
@@ -283,7 +283,7 @@ const LOCATIONS=[
 		[557,,'rock_smash',65]
 	]
 },{
-	name:['Cyllage City','Relifac-le-Haut','Relievera City','Altoripoli','Ciudad Relieve'],encounters:[
+	name:['Cyllage City','Relifac-le-Haut','Relievera City','Altoripoli','Ciudad Relieve',,'遥香市'],encounters:[
 		[95,X,'rock_smash',35],
 		[557,X,'rock_smash',65],
 		[557,Y,'rock_smash',66],
@@ -303,7 +303,7 @@ const LOCATIONS=[
 		[133,,'trade']
 	]
 },{
-	name:['Route 10',,,'Percorso 10','Ruta 10'],encounters:[
+	name:['Route 10',,,'Percorso 10','Ruta 10',,'10号道路'],encounters:[
 		[133,,'grass',5],
 		[209,,'grass',10],
 		[228,X,'grass',10],
@@ -326,12 +326,12 @@ const LOCATIONS=[
 		[309,Y,'horde',5]
 	]
 },{
-	name:['Geosenge Town','Cromlac\'h','Cromlexia','Cromleburgo','Pueblo Crómlech'],encounters:[
+	name:['Geosenge Town','Cromlac\'h','Cromlexia','Cromleburgo','Pueblo Crómlech',,'石香镇'],encounters:[
 		[129,,['trade',130]],
 		[133,,'trade']
 	]
 },{
-	name:['Route 11',,,'Percorso 11','Ruta 11'],encounters:[
+	name:['Route 11',,,'Percorso 11','Ruta 11',,'11号道路'],encounters:[
 		[30,,'grass',5],
 		[33,,'grass',10],
 		[297,,'grass',20],
@@ -347,7 +347,7 @@ const LOCATIONS=[
 		[434,,'horde',35]
 	]
 },{
-	name:['Reflection Cave','Grotte Miroitante','Spiegelhöhle','Grotta dei Riflessi','Cueva Reflejos'],encounters:[
+	name:['Reflection Cave','Grotte Miroitante','Spiegelhöhle','Grotta dei Riflessi','Cueva Reflejos',,'镜穴'],encounters:[
 		[122,,'cave',20],
 		[202,,'cave',10],
 		[302,,'cave',5],
@@ -363,7 +363,7 @@ const LOCATIONS=[
 		[597,,'ceiling',20]
 	]
 },{
-	name:['Shalour City','Yantreizh','Yantara City','Yantaropoli','Ciudad Yantra'],encounters:[
+	name:['Shalour City','Yantreizh','Yantara City','Yantaropoli','Ciudad Yantra',,'娑羅市'],encounters:[
 		[72,,'surf',84],
 		[458,,'surf',16],
 		[370,,'fish_old',100],
@@ -374,11 +374,11 @@ const LOCATIONS=[
 		[594,,'fish_super',60]
 	]
 },{
-	name:['Tower of Mastery','Tour Maîtrise','Turm der Erkenntnis','Torre Maestra','Torre Maestra'],encounters:[
+	name:['Tower of Mastery','Tour Maîtrise','Turm der Erkenntnis','Torre Maestra','Torre Maestra',,'精练之塔'],encounters:[
 		[448,,'gift']
 	]
 },{
-	name:['Route 12',,,'Percorso 12','Ruta 12'],encounters:[
+	name:['Route 12',,,'Percorso 12','Ruta 12',,'12号道路'],encounters:[
 		[79,,'grass',30],
 		[102,,'grass',10],
 		[127,X,'grass',5],
@@ -414,7 +414,7 @@ const LOCATIONS=[
 		[131,,'gift']
 	]
 },{
-	name:['Azure Bay','Baie Azur','Azurbucht','Baia Azzurra','Bahía Azul'],encounters:[
+	name:['Azure Bay','Baie Azur','Azurbucht','Baia Azzurra','Bahía Azul',,'蔚蓝湾'],encounters:[
 		[79,,'grass',40],
 		[102,,'grass',10],
 		[441,,'grass',35],
@@ -435,12 +435,12 @@ const LOCATIONS=[
 		[688,,'rock_smash',34]
 	]
 },{
-	name:['Coumarine City','Port Tempères','Tempera City','Temperopoli','Ciudad Témpera'],encounters:[
+	name:['Coumarine City','Port Tempères','Tempera City','Temperopoli','Ciudad Témpera',,'比翼市'],encounters:[
 		[129,,['trade',130]],
 		[133,,'trade']
 	]
 },{
-	name:['Route 13',,,'Percorso 13','Ruta 13'],magneticField:true,encounters:[
+	name:['Route 13',,,'Percorso 13','Ruta 13',,'13号道路'],magneticField:true,encounters:[
 		[51,,'dust_cloud',40],
 		[328,,'dust_cloud',40],
 		[443,,'dust_cloud',20],
@@ -448,7 +448,7 @@ const LOCATIONS=[
 		[218,,'rock_smash',34]
 	]
 },{
-	name:['Route 14',,,'Percorso 14','Ruta 14'],encounters:[
+	name:['Route 14',,,'Percorso 14','Ruta 14',,'14号道路'],encounters:[
 		[70,,'grass',20],
 		[93,,'grass',5],
 		[195,,'grass',10],
@@ -477,7 +477,7 @@ const LOCATIONS=[
 		[340,,'fish_super',35]
 	]
 },{
-	name:['Laverre City','Romant-sous-Bois','Romantia City','Romantopoli','Ciudad Romantis'],encounters:[
+	name:['Laverre City','Romant-sous-Bois','Romantia City','Romantopoli','Ciudad Romantis',,'香薰市'],encounters:[
 		[60,,'fish_old',100],
 		[61,,'fish_good',35],
 		[550,,'fish_good',65],
@@ -485,7 +485,7 @@ const LOCATIONS=[
 		[550,,'fish_super',35]
 	]
 },{
-	name:['Route 15',,,'Percorso 15','Ruta 15'],encounters:[
+	name:['Route 15',,,'Percorso 15','Ruta 15',,'15号道路'],encounters:[
 		[262,X,'grass',30],
 		[451,,'grass',20],
 		[505,,'grass',10],
@@ -512,7 +512,7 @@ const LOCATIONS=[
 		[550,,'fish_super',35]
 	]
 },{
-	name:['Lost Hotel','Hôtel Désolation','Hotelruine','Albergo Diroccato','Hotel Desolación'],encounters:[
+	name:['Lost Hotel','Hôtel Désolation','Hotelruine','Albergo Diroccato','Hotel Desolación',,'荒废饭店'],encounters:[
 		[82,,'walk',20],
 		[101,,'walk',20],
 		[607,,'walk',20],
@@ -528,7 +528,7 @@ const LOCATIONS=[
 		[alternateForm(479,5),,['interact','tuesday'],'rare']
 	]
 },{
-	name:['Route 16',,,'Percorso 16','Ruta 16'],encounters:[
+	name:['Route 16',,,'Percorso 16','Ruta 16',,'16号道路'],encounters:[
 		[590,,'grass_tall',20],
 		[707,,'grass_tall',9],
 		[708,,'grass_tall',10],
@@ -551,7 +551,7 @@ const LOCATIONS=[
 		[550,,'fish_super',35]
 	]
 },{
-	name:['Frost Cavern','Caverne Gelée','Frosthöhle','Caverna Gelata','Gruta Helada'],iceRock:true,encounters:[
+	name:['Frost Cavern','Caverne Gelée','Frosthöhle','Caverna Gelata','Gruta Helada',,'冰结洞窟'],iceRock:true,encounters:[
 		[124,,'cave',20],
 		[221,,'cave',20],
 		[614,,'cave',20],
@@ -566,30 +566,30 @@ const LOCATIONS=[
 		[550,,'fish_good',65],
 		[61,,'fish_super',65],
 		[550,,'fish_super',35],
-		{group:['1F/2F Ice Rock room/3F',,,,'P1/P2 Sala Roca Helada/P3'],encounters:[
+		{group:['1F/2F Ice Rock room/3F',,,,'P1/P2 Sala Roca Helada/P3',,'1F/2F 被冰覆盖着的岩石/3F'],encounters:[
 			[93,,'cave',16],
 			[615,,'cave',4]
 		]},
-		{group:['2F main area',,,,'P2 area principal'],encounters:[
+		{group:['2F main area',,,,'P2 area principal',,'2F 主要区域'],encounters:[
 			[93,X,'cave',16],
 			[93,Y,'cave',20],
 			[615,X,'cave',4]
 		]}
 	]
 },{
-	name:['Route 17',,,'Percorso 17','Ruta 17'],encounters:[
+	name:['Route 17',,,'Percorso 17','Ruta 17',,'17号道路'],encounters:[
 		[215,,'snow',29],
 		[225,,'snow',40],
 		[459,,'snow',30],
 		[460,,'snow',1]
 	]
 },{
-	name:['Team Flare Secret HQ','Repaire Team Flare','Flare-Geheimbasis','Covo del Team Flare','Guarida Team Flare'],encounters:[
+	name:['Team Flare Secret HQ','Repaire Team Flare','Flare-Geheimbasis','Covo del Team Flare','Guarida Team Flare',,'闪焰队秘密基地'],encounters:[
 		[716,X,'interact'],
 		[717,Y,'interact']
 	]
 },{
-	name:['Route 18',,,'Percorso 18','Ruta 18'],encounters:[
+	name:['Route 18',,,'Percorso 18','Ruta 18',,'18号道路'],encounters:[
 		[28,,'grass',10],
 		[75,,'grass',15],
 		[247,Y,'grass',10],
@@ -616,7 +616,7 @@ const LOCATIONS=[
 		[213,,'rock_smash',5]
 	]
 },{
-	name:['Couriway Town','Mozheim','Mosaia','Ponte Mosaico','Pueblo Mosaico'],encounters:[
+	name:['Couriway Town','Mozheim','Mosaia','Ponte Mosaico','Pueblo Mosaico',,'连理镇'],encounters:[
 		[271,,'surf',66],
 		[419,,'surf',34],
 		[60,,'fish_old',100],
@@ -628,7 +628,7 @@ const LOCATIONS=[
 		[133,,'trade']
 	]
 },{
-	name:['Route 19',,,'Percorso 19','Ruta 19'],encounters:[
+	name:['Route 19',,,'Percorso 19','Ruta 19',,'19号道路'],encounters:[
 		[70,,'flowers_purple',20],
 		[93,,'flowers_purple',5],
 		[195,,'flowers_purple',10],
@@ -666,11 +666,11 @@ const LOCATIONS=[
 		[340,,'fish_super',35]
 	]
 },{
-	name:['Snowbelle City','Auffrac-les-Congères','Fractalia City','Fractalopoli','Ciudad Fractal'],encounters:[
+	name:['Snowbelle City','Auffrac-les-Congères','Fractalia City','Fractalopoli','Ciudad Fractal',,'映雪市'],encounters:[
 		[625,,['trade',39]]
 	]
 },{
-	name:['Route 20',,,'Percorso 20','Ruta 20'],mossRock:true,encounters:[
+	name:['Route 20',,,'Percorso 20','Ruta 20',,'20号道路'],mossRock:true,encounters:[
 		[39,,'grass',20],
 		[164,,'grass',30],
 		[571,,'grass',5],
@@ -689,7 +689,7 @@ const LOCATIONS=[
 		[709,,['horde_with',185],5]
 	]
 },{
-	name:['Pokémon Village','Village Pokémon','Pokémon-Dorf','Valle dei Pokémon','Villa Pokémon'],encounters:[
+	name:['Pokémon Village','Village Pokémon','Pokémon-Dorf','Valle dei Pokémon','Villa Pokémon',,'宝可梦村'],encounters:[
 		[39,,'flowers_yellow',10],
 		[132,,'flowers_yellow',20],
 		[164,,'flowers_yellow',10],
@@ -716,7 +716,7 @@ const LOCATIONS=[
 		[354,,['interact','thursday'],100]
 	]
 },{
-	name:['Route 21',,,'Percorso 21','Ruta 21'],encounters:[
+	name:['Route 21',,,'Percorso 21','Ruta 21',,'21号道路'],encounters:[
 		[123,,'flowers_purple',10],
 		[217,,'flowers_purple',10],
 		[327,,'flowers_purple',20],
@@ -741,7 +741,7 @@ const LOCATIONS=[
 		[550,,'fish_super',35]
 	]
 },{
-	name:['Route 22',,,'Percorso 22','Ruta 22'],encounters:[
+	name:['Route 22',,,'Percorso 22','Ruta 22',,'22号道路'],encounters:[
 		[54,,'grass',10],
 		[83,,'grass',10],
 		[206,,'grass',5],
@@ -768,7 +768,7 @@ const LOCATIONS=[
 		[319,,'fish_super',5]
 	]
 },{
-	name:['Victory Road','Route Victoire','Siegesstraße','Via Vittoria','Calle Victoria'],encounters:[
+	name:['Victory Road','Route Victoire','Siegesstraße','Via Vittoria','Calle Victoria',,'冠军之路'],encounters:[
 		[75,,'cave',20],
 		[93,,'cave',10],
 		[108,,'cave',15],
@@ -787,12 +787,12 @@ const LOCATIONS=[
 		[61,,'fish_good',35],
 		[550,,'fish_good',65],
 		[550,,'fish_super',35],
-		{group:['Caves 1/4',,,,'Cuevas 1/4'],encounters:[
+		{group:['Caves 1/4',,,,'Cuevas 1/4',,'洞口1/4'],encounters:[
 			[74,,'horde',60],
 			[108,,'horde',5],
 			[419,,'horde',35]
 		]},
-		{group:['Caves 2/3',,,,'Cuevas 2/3'],encounters:[
+		{group:['Caves 2/3',,,,'Cuevas 2/3',,'洞口2/3'],encounters:[
 			[74,,'horde',60],
 			[75,,'horde',35],
 			[108,,'horde',5]
@@ -805,17 +805,17 @@ const LOCATIONS=[
 			[61,,'surf',66],
 			[419,,'surf',34]
 		]},
-		{group:['Outside/Caves 1-3',,,,'Exterior/Cuevas 1-3'],encounters:[
+		{group:['Outside/Caves 1-3',,,,'Exterior/Cuevas 1-3',,'外部/洞口1-3'],encounters:[
 			[61,,'fish_super',65],
 		]},
-		{group:['Cave 4',,,,'Cueva 4'],encounters:[
+		{group:['Cave 4',,,,'Cueva 4',,'洞口4'],encounters:[
 			[61,,'fish_super',60],
 			[62,,'fish_super',5]
 		]}
 	]
 },{
-	name:['Friend Safari','Safari des Amis','Kontaktsafari','Safari Amici','Safari Amistad'],encounters:[
-		{group:['Normal type',,,,'Tipo normal'],showAsGrid:true,encounters:[
+	name:['Friend Safari','Safari des Amis','Kontaktsafari','Safari Amici','Safari Amistad',,'朋友狩猎'],encounters:[
+		{group:['Normal type',,,,'Tipo normal',,'一般（属性）'],showAsGrid:true,encounters:[
 			[190,,'grass','friend_safari_1'],
 			[206,,'grass','friend_safari_1'],
 			[216,,'grass','friend_safari_1'],
@@ -829,7 +829,7 @@ const LOCATIONS=[
 			[133,,'grass','friend_safari_3'],
 			[235,,'grass','friend_safari_3']
 		]},
-		{group:['Fighting type',,,,'Tipo lucha'],showAsGrid:true,encounters:[
+		{group:['Fighting type',,,,'Tipo lucha',,'格斗（属性）'],showAsGrid:true,encounters:[
 			[56,,'grass','friend_safari_1'],
 			[67,,'grass','friend_safari_1'],
 			[307,,'grass','friend_safari_1'],
@@ -842,7 +842,7 @@ const LOCATIONS=[
 			[297,,'grass','friend_safari_3'],
 			[447,,'grass','friend_safari_3']
 		]},
-		{group:['Flying type',,,,'Tipo volador'],showAsGrid:true,encounters:[
+		{group:['Flying type',,,,'Tipo volador',,'飞行（属性）'],showAsGrid:true,encounters:[
 			[16,,'grass','friend_safari_1'],
 			[21,,'grass','friend_safari_1'],
 			[83,,'grass','friend_safari_1'],
@@ -856,7 +856,7 @@ const LOCATIONS=[
 			[662,,'grass','friend_safari_3'],
 			[701,,'grass','friend_safari_3']
 		]},
-		{group:['Poison type',,,,'Tipo veneno'],showAsGrid:true,encounters:[
+		{group:['Poison type',,,,'Tipo veneno',,'毒（属性）'],showAsGrid:true,encounters:[
 			[14,,'grass','friend_safari_1'],
 			[44,,'grass','friend_safari_1'],
 			[268,,'grass','friend_safari_1'],
@@ -870,7 +870,7 @@ const LOCATIONS=[
 			[454,,'grass','friend_safari_3'],
 			[544,,'grass','friend_safari_3']
 		]},
-		{group:['Ground type',,,,'Tipo tierra'],showAsGrid:true,encounters:[
+		{group:['Ground type',,,,'Tipo tierra',,'地面（属性）'],showAsGrid:true,encounters:[
 			[27,,'grass','friend_safari_1'],
 			[194,,'grass','friend_safari_1'],
 			[231,,'grass','friend_safari_1'],
@@ -883,7 +883,7 @@ const LOCATIONS=[
 			[536,,'grass','friend_safari_3'],
 			[660,,'grass','friend_safari_3']
 		]},
-		{group:['Rock type',,,,'Tipo roca'],showAsGrid:true,encounters:[
+		{group:['Rock type',,,,'Tipo roca',,'岩石（属性）'],showAsGrid:true,encounters:[
 			[299,,'grass','friend_safari_1'],
 			[525,,'grass','friend_safari_1'],
 			[557,,'grass','friend_safari_1'],
@@ -895,7 +895,7 @@ const LOCATIONS=[
 			[213,,'grass','friend_safari_3'],
 			[689,,'grass','friend_safari_3']
 		]},
-		{group:['Bug type',,,,'Tipo bicho'],showAsGrid:true,encounters:[
+		{group:['Bug type',,,,'Tipo bicho',,'虫（属性）'],showAsGrid:true,encounters:[
 			[12,,'grass','friend_safari_1'],
 			[46,,'grass','friend_safari_1'],
 			[165,,'grass','friend_safari_1'],
@@ -909,7 +909,7 @@ const LOCATIONS=[
 			[214,,'grass','friend_safari_3'],
 			[666,,'grass','friend_safari_3']
 		]},
-		{group:['Ghost type',,,,'Tipo fantasma'],showAsGrid:true,encounters:[
+		{group:['Ghost type',,,,'Tipo fantasma',,'幽灵（属性）'],showAsGrid:true,encounters:[
 			[353,,'grass','friend_safari_1'],
 			[608,,'grass','friend_safari_1'],
 			[708,,'grass','friend_safari_2'],
@@ -919,7 +919,7 @@ const LOCATIONS=[
 			[442,,'grass','friend_safari_3'],
 			[623,,'grass','friend_safari_3']
 		]},
-		{group:['Steel type',,,,'Tipo acero'],showAsGrid:true,encounters:[
+		{group:['Steel type',,,,'Tipo acero',,'钢（属性）'],showAsGrid:true,encounters:[
 			[82,,'grass','friend_safari_1'],
 			[303,,'grass','friend_safari_1'],
 			[597,,'grass','friend_safari_1'],
@@ -931,7 +931,7 @@ const LOCATIONS=[
 			[530,,'grass','friend_safari_3'],
 			[707,,'grass','friend_safari_3']
 		]},
-		{group:['Fire type',,,,'Tipo fuego'],showAsGrid:true,encounters:[
+		{group:['Fire type',,,,'Tipo fuego',,'火（属性）'],showAsGrid:true,encounters:[
 			[58,,'grass','friend_safari_1'],
 			[77,,'grass','friend_safari_1'],
 			[126,,'grass','friend_safari_1'],
@@ -944,7 +944,7 @@ const LOCATIONS=[
 			[654,,'grass','friend_safari_3'],
 			[662,,'grass','friend_safari_3']
 		]},
-		{group:['Water type',,,,'Tipo agua'],showAsGrid:true,encounters:[
+		{group:['Water type',,,,'Tipo agua',,'水（属性）'],showAsGrid:true,encounters:[
 			[98,,'grass','friend_safari_1'],
 			[224,,'grass','friend_safari_1'],
 			[400,,'grass','friend_safari_1'],
@@ -957,7 +957,7 @@ const LOCATIONS=[
 			[184,,'grass','friend_safari_3'],
 			[657,,'grass','friend_safari_3']
 		]},
-		{group:['Grass type',,,,'Tipo planta'],showAsGrid:true,encounters:[
+		{group:['Grass type',,,,'Tipo planta',,'草（属性）'],showAsGrid:true,encounters:[
 			[43,,'grass','friend_safari_1'],
 			[114,,'grass','friend_safari_1'],
 			[191,,'grass','friend_safari_1'],
@@ -970,7 +970,7 @@ const LOCATIONS=[
 			[651,,'grass','friend_safari_3'],
 			[673,,'grass','friend_safari_3']
 		]},
-		{group:['Electric type',,,,'Tipo eléctrico'],showAsGrid:true,encounters:[
+		{group:['Electric type',,,,'Tipo eléctrico',,'电（属性）'],showAsGrid:true,encounters:[
 			[101,,'grass','friend_safari_1'],
 			[417,,'grass','friend_safari_1'],
 			[587,,'grass','friend_safari_1'],
@@ -984,7 +984,7 @@ const LOCATIONS=[
 			[523,,'grass','friend_safari_3'],
 			[596,,'grass','friend_safari_3']
 		]},
-		{group:['Psychic type',,,,'Tipo psíquico'],showAsGrid:true,encounters:[
+		{group:['Psychic type',,,,'Tipo psíquico',,'超能力（属性）'],showAsGrid:true,encounters:[
 			[63,,'grass','friend_safari_1'],
 			[96,,'grass','friend_safari_1'],
 			[326,,'grass','friend_safari_1'],
@@ -997,7 +997,7 @@ const LOCATIONS=[
 			[575,,'grass','friend_safari_3'],
 			[578,,'grass','friend_safari_3']
 		]},
-		{group:['Ice type',,,,'Tipo hielo'],showAsGrid:true,encounters:[
+		{group:['Ice type',,,,'Tipo hielo',,'冰（属性）'],showAsGrid:true,encounters:[
 			[225,,'grass','friend_safari_1'],
 			[361,,'grass','friend_safari_1'],
 			[363,,'grass','friend_safari_1'],
@@ -1010,7 +1010,7 @@ const LOCATIONS=[
 			[131,,'grass','friend_safari_3'],
 			[221,,'grass','friend_safari_3']
 		]},
-		{group:['Dragon type',,,,'Tipo dragón'],showAsGrid:true,encounters:[
+		{group:['Dragon type',,,,'Tipo dragón',,'龙（属性）'],showAsGrid:true,encounters:[
 			[444,,'grass','friend_safari_1'],
 			[611,,'grass','friend_safari_1'],
 			[148,,'grass','friend_safari_2'],
@@ -1019,7 +1019,7 @@ const LOCATIONS=[
 			[621,,'grass','friend_safari_3'],
 			[705,,'grass','friend_safari_3']
 		]},
-		{group:['Dark type',,,,'Tipo siniestro'],showAsGrid:true,encounters:[
+		{group:['Dark type',,,,'Tipo siniestro',,'恶（属性）'],showAsGrid:true,encounters:[
 			[262,,'grass','friend_safari_1'],
 			[274,,'grass','friend_safari_1'],
 			[624,,'grass','friend_safari_1'],
@@ -1033,7 +1033,7 @@ const LOCATIONS=[
 			[510,,'grass','friend_safari_3'],
 			[686,,'grass','friend_safari_3']
 		]},
-		{group:['Fairy type',,,,'Tipo hada'],showAsGrid:true,encounters:[
+		{group:['Fairy type',,,,'Tipo hada',,'妖精（属性）'],showAsGrid:true,encounters:[
 			[175,,'grass','friend_safari_1'],
 			[209,,'grass','friend_safari_1'],
 			[281,,'grass','friend_safari_1'],
@@ -1047,7 +1047,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Sea Spirit\'s Den','Antre Néréen','Meerestitanenhöhle','Antro Talassico','Cueva Talasia'],encounters:[
+	name:['Sea Spirit\'s Den','Antre Néréen','Meerestitanenhöhle','Antro Talassico','Cueva Talasia',,'海神之穴'],encounters:[
 		[144,,'interact'],
 		[145,,'interact'],
 		[146,,'interact']
@@ -1059,11 +1059,11 @@ const LOCATIONS=[
 		[146,,['roaming','if_starter_water']]
 	]
 },{
-	name:['Unknown Dungeon','Grotte Inconnue','Geheimdungeon','Grotta Ignota','Mazmorra Rara'],encounters:[
+	name:['Unknown Dungeon','Grotte Inconnue','Geheimdungeon','Grotta Ignota','Mazmorra Rara',,'无名洞窟'],encounters:[
 		[150,,'interact']
 	]
 },{
-	name:['Terminus Cave','Grotte Coda','Omega-Höhle','Grotta Climax','Cueva Desenlace'],encounters:[
+	name:['Terminus Cave','Grotte Coda','Omega-Höhle','Grotta Climax','Cueva Desenlace',,'终结洞窟'],encounters:[
 		[28,,'cave',20],
 		[75,,'cave',20],
 		[247,Y,'cave',20],
