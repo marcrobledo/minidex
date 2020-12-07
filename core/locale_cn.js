@@ -171,7 +171,7 @@ const LANG_CN = {
         'fish_super': '垂钓 (厉害钓竿)',
         'feebas_tile': '特殊地形',
         'ingame_trade': '游戏里交易 (%s)',
-        'starter': '初始宝可梦'',
+        'starter': '初始宝可梦',
         'gift': '礼物',
         'gift_egg': '礼物 (蛋)',
         'roaming': '移动',

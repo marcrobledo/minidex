@@ -511,7 +511,7 @@ const LOCATIONS=[
 		[352,,'interact']
 	]
 },{
-	name:['Weather Institute','Centre Météo','Klima-Institut','Istituto Meteo','Instituto Meteorológico',,''],encounters:[
+	name:['Weather Institute','Centre Météo','Klima-Institut','Istituto Meteo','Instituto Meteorológico',,'天气研究所'],encounters:[
 		[351,,'gift']
 	]
 },{

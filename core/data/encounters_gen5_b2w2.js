@@ -497,7 +497,7 @@ const LOCATIONS=[
 			[605,,'walk',25],
 			[607,,'walk',65]
 		]},
-		{group:['Roof',,''],encounters:[
+		{group:['Roof'],encounters:[
 			[42,,'walk',20],
 			[605,,'walk',40],
 			[607,,'walk',40],

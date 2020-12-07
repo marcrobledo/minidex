@@ -1171,7 +1171,7 @@ const LOCATIONS=[
 		[42,,'cave',20],
 		[198,FR,'cave',5],
 		[200,LG,'cave',5],
-		{group:['Item room',,,,'Sala de objetos',,''],encounters:[
+		{group:['Item room',,,,'Sala de objetos',,'道具房间'],encounters:[
 			[93,,'cave',30],
 			[41,,'cave',20],
 			[92,,'cave',20],
