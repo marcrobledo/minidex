@@ -1076,6 +1076,8 @@ function createExternalLink(title, href){
 function getAbilityLink(abilityIndex){
 	if(MinidexSettings.lang===4)
 		return 'https://www.wikidex.net/wiki/'+LANG_ES.ABILITIES[abilityIndex].replace(/ /g, '_')
+	else if(MinidexSettings.lang===6)
+		return 'https://wiki.52poke.com/wiki/'+LANG_CN.ABILITIES[abilityIndex].replace(/ /g, '_')+'（特性）'
 	else
 		return 'https://bulbapedia.bulbagarden.net/wiki/'+LANG_EN.ABILITIES[abilityIndex].replace(/ /g, '_')+'_(Ability)';
 
@@ -1083,6 +1085,8 @@ function getAbilityLink(abilityIndex){
 function getMoveLink(moveIndex){
 	if(MinidexSettings.lang===4)
 		return 'https://www.wikidex.net/wiki/'+(MOVES[moveIndex][0][4] || MOVES[moveIndex][0][0]).replace(/ /g, '_')
+	else if(MinidexSettings.lang===6)
+		return 'https://wiki.52poke.com/wiki/'+MOVES[moveIndex][0][6].replace(/ /g, '_')+'（招式）'
 	else
 		return 'https://bulbapedia.bulbagarden.net/wiki/'+MOVES[moveIndex][0][0].replace(/ /g, '_')+'_(move)';
 }
@@ -1790,6 +1794,8 @@ var MinidexSettings=(function(){
 		defaultLanguage=4;
 	else if(userLang==='jp')
 		defaultLanguage=5;
+	else if(userLang==='cn')
+		defaultLanguage=6;
 
 
 
@@ -2069,6 +2075,11 @@ function setLanguage(l){
 		ABILITIES=LANG_JP.ABILITIES;
 		POKEMON_NAMES=LANG_JP.POKEMON_NAMES;
 		STRINGS=LANG_JP.STRINGS;
+	}else if(l===6){
+		TYPES=LANG_CN.TYPES;
+		ABILITIES=LANG_CN.ABILITIES;
+		POKEMON_NAMES=LANG_CN.POKEMON_NAMES;
+		STRINGS=LANG_CN.STRINGS;
 	}
 	 else{
 		TYPES=LANG_EN.TYPES;
@@ -2101,6 +2112,8 @@ function resetGUIStrings(l){
 }
 function getRegionName(){
 	if(GAME_ID==='xy'){
+		if(MinidexSettings.lang===6)
+			return '卡洛斯地区';
 		return 'Kalos';
 	}else if(GENERATION===5){
 		if(MinidexSettings.lang===1)
@@ -2111,7 +2124,33 @@ function getRegionName(){
 			return 'Unima';
 		else if(MinidexSettings.lang===4)
 			return 'Teselia';
+		else if(MinidexSettings.lang===6)
+			return '合众地区';
 		return 'Unova';
+	}else if(GENERATION===1||GAME_ID==='frlg'||GAME_ID==='letsgo'){
+		if(MinidexSettings.lang===6)
+			return '关都地区';
+		return 'Kanto';
+	}else if(GENERATION===2||GAME_ID==='hgss'){
+		if(MinidexSettings.lang===6)
+			return '城都地区';
+		return 'Johto';
+	}else if(GAME_ID==='rse'||GAME_ID==='oras'){
+		if(MinidexSettings.lang===6)
+			return '丰缘地区';
+		return 'Hoenn';
+	}else if(GAME_ID==='dppt'){
+		if(MinidexSettings.lang===6)
+			return '神奥地区';
+		return 'Sinnoh';
+	}else if(GAME_ID==='sm'||GAME_ID==='usum'){
+		if(MinidexSettings.lang===6)
+			return '阿罗拉地区';
+		return 'Alola';
+	}else if(GENERATION===8){
+		if(MinidexSettings.lang===6)
+			return '伽勒尔地区';
+		return 'Galar';
 	}else{
 		return REGIONAL_DEXES[0][0][0].replace(' Pokédex', '');
 	}

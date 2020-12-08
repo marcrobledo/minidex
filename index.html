@@ -203,20 +203,20 @@ footer a:hover{color:white}
 	<script type="text/javascript"><!--
 
 const GAMES=[
-	['Sword Shield',,'Schwert Schild',,'Espada Escudo'],
-	['Let\'s go!',,'Let\'s go!',,'Let\'s go!'],
-	['Ultra Sun Ultra Moon',,'Ultra Sonne Ultra Mond',,'Ultra Sol Ultra Luna'],
-	['Sun Moon',,'Sonne Mond',,'Sol Luna'],
-	['Omega Ruby Alpha Sapphire',,'Omega Rubin Alpha Saphir',,'Rubí Omega Zafiro Alfa'],
-	['XY',,'XY',,'XY'],
-	['Black 2 White 2',,'Schwarz 2 Weiß 2',,'Negro 2 Blanco 2'],
-	['Black White',,'Schwarz Weiß',,'Negro Blanco'],
-	['HeartGold SoulSilver',,'HeartGold SoulSilver',,'HeartGold SoulSilver'],
-	['Diamond Pearl Platinum',,'Diamant Perl Platin',,'Diamante Perla Platino'],
-	['Fire Red Leaf Green',,'Feuerrot Blattgrün',,'Rojo Fuego Verde Hoja'],
-	['Ruby Sapphire Emerald',,'Rubin Saphir Smaragd',,'Rubí Zafiro Esmeralda'],
-	['Gold Silver Crystal',,'Gold Silber Kristall',,'Oro Plata Cristal'],
-	['Red Blue Yellow',,'Rot Blau Gelb',,'Rojo Azul Amarillo']
+	['Sword Shield',,'Schwert Schild',,'Espada Escudo',,'剑／盾'],
+	['Let\'s go!',,'Let\'s go!',,'Let\'s go!',,'Let\'s go!'],
+	['Ultra Sun Ultra Moon',,'Ultra Sonne Ultra Mond',,'Ultra Sol Ultra Luna',,'究极之日／究极之月'],
+	['Sun Moon',,'Sonne Mond',,'Sol Luna',,'太阳／月亮'],
+	['Omega Ruby Alpha Sapphire',,'Omega Rubin Alpha Saphir',,'Rubí Omega Zafiro Alfa',,'欧米伽红宝石／阿尔法蓝宝石'],
+	['XY',,'XY',,'XY',,'XY'],
+	['Black 2 White 2',,'Schwarz 2 Weiß 2',,'Negro 2 Blanco 2',,'黑 2／白 2'],
+	['Black White',,'Schwarz Weiß',,'Negro Blanco',,'黑／白'],
+	['HeartGold SoulSilver',,'HeartGold SoulSilver',,'HeartGold SoulSilver',,'心金／魂银'],
+	['Diamond Pearl Platinum',,'Diamant Perl Platin',,'Diamante Perla Platino',,'钻石／珍珠'],
+	['Fire Red Leaf Green',,'Feuerrot Blattgrün',,'Rojo Fuego Verde Hoja',,'火红／叶绿'],
+	['Ruby Sapphire Emerald',,'Rubin Saphir Smaragd',,'Rubí Zafiro Esmeralda',,'红宝石／蓝宝石'],
+	['Gold Silver Crystal',,'Gold Silber Kristall',,'Oro Plata Cristal',,'金／银／水晶'],
+	['Red Blue Yellow',,'Rot Blau Gelb',,'Rojo Azul Amarillo',,'红／绿／蓝']
 ];
 
 function setLanguage(langIndex){
@@ -224,7 +224,7 @@ function setLanguage(langIndex){
 	for(var i=0; i<lis.length; i++)
 		lis[i].children[0].children[1].innerHTML=GAMES[i][langIndex] || GAMES[i][0];
 
-	for(var i=0; i<6; i++)
+	for(var i=0; i<7; i++)
 		document.getElementById('description-'+i).style.display=langIndex===i?'block':'none';
 }
 
@@ -247,6 +247,7 @@ window.addEventListener('load', function(evt){
 			<option value="3">Italiano*</option>
 			<option value="4">Español</option>
 			<option value="5">日本語*</option>
+			<option value="6">中文</option>
 		</select>
 	</div>
 
@@ -271,6 +272,10 @@ window.addEventListener('load', function(evt){
 		<p id="description-5" lang="jp" class="hidden">
 			This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
 			<strong>Note: Japanese translation is incomplete.</strong>
+		</p>
+		<p id="description-6" lang="cn" class="hidden">
+			这个轻量级和极简的网页app包含了了该系列中每个游戏中所有宝可梦的所有位置。快速找到宝可梦信息并跟踪你的图鉴进度。无需注册或安装!
+			<strong>注:中文翻译可能有误请见谅.</strong>
 		</p>
 		<ul id="games">
 			<li class="game gen8swsh"><a href="swsh/"><small>Gen VIII</small><span>Sword Shield</span></a></li>
