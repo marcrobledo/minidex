@@ -1817,7 +1817,7 @@ var MinidexSettings=(function(){
 
 			if(IS_STORAGE_AVAILABLE && localStorage.getItem('minidex-'+GAME_ID)){				
 				var loadedSettings=JSON.parse(localStorage.getItem('minidex-'+GAME_ID));
-				if(typeof loadedSettings.lang==='number' && loadedSettings.lang>=0 && loadedSettings.lang<=4){
+				if(typeof loadedSettings.lang==='number' && loadedSettings.lang>=0 && loadedSettings.lang<=6){
 					this.lang=loadedSettings.lang;
 				}
 
