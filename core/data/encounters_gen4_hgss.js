@@ -149,7 +149,7 @@ const LOCATIONS=[
 		[95,,['trade',69]]
 	]
 },{
-	name:['Sprout Tower',,'Knofensaturm','Torre Sprout','Torre Bellsprout',,'喇叭芽之塔'],encounters:[
+	name:['Sprout Tower','Tour Chétiflor','Knofensaturm','Torre Sprout','Torre Bellsprout',,'喇叭芽之塔'],encounters:[
 		[19,,'walk',[100,100,15]],
 		[92,,'walk',[,,85]],
 		[263,,'sound_hoenn',20],
@@ -191,7 +191,7 @@ const LOCATIONS=[
 		[418,,'sound_sinnoh',20]
 	]
 },{
-	name:['Union Cave','Canada','Einheitstunnel','Grotta di Mezzo','Cueva Unión',,'互连洞'],encounters:[
+	name:['Union Cave','Caves Jumelles','Einheitstunnel','Grotta di Mezzo','Cueva Unión',,'互连洞'],encounters:[
 		[129,,'fish_old',85],
 		[129,,'fish_good',40],
 		[296,,'sound_hoenn',20],
@@ -272,7 +272,7 @@ const LOCATIONS=[
 		[21,,'headbutt_b',80]
 	]
 },{
-	name:['Slowpoke Well',,'Flegmon-Brunnen','Pozzo Slowpoke','Pozo Slowpoke',,'呆呆兽之井'],encounters:[
+	name:['Slowpoke Well','Puits Ramoloss','Flegmon-Brunnen','Pozzo Slowpoke','Pozo Slowpoke',,'呆呆兽之井'],encounters:[
 		[79,,'cave',15],
 		[118,,'fish_old',5],
 		[129,,'fish_old',95],
@@ -297,7 +297,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Ilex Forest','Canada','Steineichenwald','Bosco di Lecci','Encinar',,'桐树林'],encounters:[
+	name:['Ilex Forest','Bois aux Chênes','Steineichenwald','Bosco di Lecci','Encinar',,'桐树林'],encounters:[
 		[10,HG,'grass',[50,60]],
 		[11,HG,'grass',[30,30]],
 		[13,SS,'grass',[50,60]],
@@ -398,7 +398,7 @@ const LOCATIONS=[
 		[418,,'sound_sinnoh',20]
 	]
 },{
-	name:['National Park',,'Nationalpark','Parco Nazionale','Parque Nacional',,'自然公园'],encounters:[
+	name:['National Park','Parc Naturel','Nationalpark','Parco Nazionale','Parque Nacional',,'自然公园'],encounters:[
 		[10,HG,'grass',[50,30]],
 		[11,HG,'grass',[30,30]],
 		[13,SS,'grass',[50,30]],
@@ -416,7 +416,7 @@ const LOCATIONS=[
 		[311,,'sound_hoenn',20],
 		[312,,'sound_hoenn',20],
 		[403,,'sound_sinnoh',40],
-		{group:['Bug-Catching Contest',,,,'Concurso de Captura de Bichos',,'捕虫大赛'],encounters:[
+		{group:['Bug-Catching Contest','Concours de Capture d\'insecte','Käferturnier','Gara Pigliamosche','Concurso de Captura de Bichos',,'捕虫大赛'],encounters:[
 			{group:'before_natdex',encounters:[
 				[123,,'grass',5],
 				[127,,'grass',5],
@@ -544,7 +544,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Roaming Johto',,,,,,'城都地区野外遭遇'],encounters:[
+	name:['Johto',,,,,,'城都'],encounters:[
 		[243,,'roaming'],
 		[244,,'roaming']
 	]
@@ -683,7 +683,7 @@ const LOCATIONS=[
 		[418,,'sound_sinnoh',20]
 	]
 },{
-	name:['Mt. Mortar',,'Kesselberg','Monte Scodella','Mt. Mortero',,'擂钵山'],encounters:[
+	name:['Mt. Mortar','Mont Creuset','Kesselberg','Monte Scodella','Mt. Mortero',,'擂钵山'],encounters:[
 		[296,,'sound_hoenn',20],
 		[359,,'sound_hoenn',20],
 		[433,,'sound_sinnoh',20],
@@ -771,7 +771,7 @@ const LOCATIONS=[
 		[418,,'sound_sinnoh',20]
 	]
 },{
-	name:['Lake of Rage',,'Garados-See','Lago dei Gyarados','Lago de Gyarados',,'愤怒之湖'],encounters:[
+	name:['Lake of Rage','Lac Colère','See des Zorns','Lago d\'Ira','Lago de la Furia',,'愤怒之湖'],encounters:[
 		[129,,'surf',90],
 		[130,,'surf',10],
 		[129,,'fish_old',100],
@@ -818,7 +818,7 @@ const LOCATIONS=[
 		[418,,'sound_sinnoh',20]
 	]
 },{
-	name:['Ice Path',,'Eispfad','Via Gelata','Ruta Helada',,'冰雪小径'],encounters:[
+	name:['Ice Path','Route de Glace','Eispfad','Via Gelata','Ruta Helada',,'冰雪小径'],encounters:[
 		[41,HG,'cave',[25,20,25]],
 		[41,SS,'cave',[5,,5]],
 		[42,,'cave',30],
@@ -1094,7 +1094,7 @@ const LOCATIONS=[
 		[418,,'sound_sinnoh',20]
 	]
 },{
-	name:['Saffron City',,'Saffronia City','Zafferanopoli','Ciudad Azafrán',,'金黄市'],encounters:[
+	name:['Saffron City','Safrania','Saffronia City','Zafferanopoli','Ciudad Azafrán',,'金黄市'],encounters:[
 		[25,,['trade',25]]
 	]
 },{
@@ -1161,7 +1161,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Power Plant',,'Kraftwerk','Centrale Elettrica','Central Energía',,'无人发电厂'],encounters:[
+	name:['Power Plant','Centrale','Kraftwerk','Centrale Elettrica','Central Energía',,'无人发电厂'],encounters:[
 		[82,,['trade',51]]
 	]
 },{
@@ -1192,7 +1192,7 @@ const LOCATIONS=[
 		[418,,'sound_sinnoh',20]
 	]
 },{
-	name:['Cerulean City',,'Azuria City','Celestopoli','Ciudad Celeste',,'华蓝市'],encounters:[
+	name:['Cerulean City','Azuria','Azuria City','Celestopoli','Ciudad Celeste',,'华蓝市'],encounters:[
 		[118,,'surf',90],
 		[119,,'surf',10],
 		[118,,'fish_old',5],
@@ -1321,7 +1321,7 @@ const LOCATIONS=[
 		[403,,'sound_sinnoh',40]
 	]
 },{
-	name:['Route 17',,'Radweg','Pista Ciclabile','Camino de bicis',,'自行车道'],encounters:[
+	name:['Route 17',,,'Percorso 17','Ruta 17',,'自行车道'],encounters:[
 		[88,,'grass',[50,50,80]],
 		[22,,'grass',[40,40]],
 		[89,,'grass',[5,5,15]],
@@ -1505,7 +1505,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Viridian Forest','Canada','Vertania Wald','Bosco Smeraldo','Bosque Verde',,'常青森林'],encounters:[
+	name:['Viridian Forest','Forêt de Jade','Vertania Wald','Bosco Smeraldo','Bosque Verde',,'常青森林'],encounters:[
 		[10,HG,'grass',[40,40]],
 		[13,SS,'grass',[40,40]],
 		[11,HG,'grass',[30,30]],
@@ -1571,7 +1571,7 @@ const LOCATIONS=[
 		[403,,'sound_sinnoh',40]
 	]
 },{
-	name:['Mt. Moon',,'Mondberg','Monte Luna','Monte Luna',,'月见山'],encounters:[
+	name:['Mt. Moon','Mont Sélénite','Mondberg','Monte Luna',,,'月见山'],encounters:[
 		[41,HG,'cave',30],
 		[41,SS,'cave',50],
 		[74,HG,'cave',30],
@@ -1816,7 +1816,7 @@ const LOCATIONS=[
 		[366,,'swarm',60]
 	]
 },{
-	name:['Cerulean Cave','Canada','Azuria-Höhle','Grotta Celeste','Cueva Celeste',,'华蓝洞窟'],encounters:[
+	name:['Cerulean Cave','Caverne Azurée','Azuria-Höhle','Grotta Celeste','Cueva Celeste',,'华蓝洞窟'],encounters:[
 		[101,,'cave',5],
 		[202,,'cave',5],
 		[296,,'sound_hoenn',20],
@@ -2092,7 +2092,7 @@ const LOCATIONS=[
 		[418,,'sound_sinnoh',20]
 	]
 },{
-	name:['Embedded Tower',,'Felsenherzturm','Torre Occulta','Torre Oculta',,'埋藏之塔'],encounters:[
+	name:['Embedded Tower','Tour Enfouie','Felsenherzturm','Torre Occulta','Torre Oculta',,'埋藏之塔'],encounters:[
 		[382,HG,'interact'],
 		[383,SS,'interact'],
 		[384,,'interact']
@@ -2118,12 +2118,12 @@ const LOCATIONS=[
 		[403,,'sound_sinnoh',40]
 	]
 },{
-	name:['Roaming Kanto',,,,,,'关都地区野外遭遇'],encounters:[
+	name:['Kanto',,,,,,'關都'],encounters:[
 		[380,HG,'roaming'],
 		[381,SS,'roaming']
 	]
 },{
-	name:['Cliff Edge Gate',,'Felsklippentor','Passo Falesia','Paso Acantilado',,'断崖入口'],encounters:[
+	name:['Cliff Edge Gate','Portail Falaise','Felsklippentor','Passo Falesia','Paso Acantilado',,'断崖入口'],encounters:[
 		[194,,'surf',90],
 		[195,,'surf',10],
 		[129,,'fish_old',100],
@@ -2133,7 +2133,7 @@ const LOCATIONS=[
 		[129,,'fish_super',90]
 	]
 },{
-	name:['Cliff Cave',,'Felsschlundhöhle','Grotta Falesia','Cueva Acantilado',,'断崖洞窟'],encounters:[
+	name:['Cliff Cave','Grotte Falaise','Felsschlundhöhle','Grotta Falesia','Cueva Acantilado',,'断崖洞窟'],encounters:[
 		[41,,'cave',[,,5]],
 		[42,,'cave',[20,20,24]],
 		[66,,'cave',10],
@@ -2155,7 +2155,7 @@ const LOCATIONS=[
 		[436,,'sound_sinnoh',20]
 	]
 },{
-	name:['Ruins of Alph',,'Alph-Ruinen','Rovine d\'Alfa','Ruinas Alfa',,'阿露福遗迹'],encounters:[
+	name:['Ruins of Alph','Ruines d\'Alpha','Alph-Ruinen','Rovine d\'Alfa','Ruinas Alfa',,'阿露福遗迹'],encounters:[
 		{group:'exterior',encounters:[
 			[177,,'grass',90],
 			[235,,'grass',10],
@@ -2198,7 +2198,7 @@ const LOCATIONS=[
 		[487,,'interact']
 	]
 },{
-	name:['Tohjo Falls',,'Tohjo-Fälle','Cascate Tohjo','Cataratas Tohjo',,'都城瀑布'],encounters:[
+	name:['Tohjo Falls','Chutes Tohjo','Tohjo-Fälle','Cascate Tohjo','Cataratas Tohjo',,'都城瀑布'],encounters:[
 		[20,,'cave',30],
 		[41,,'cave',30],
 		[42,,'cave',20],
@@ -2413,7 +2413,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Safari Zone Gate',,'Safari-Eingang','Ingresso Safari','Entrada Safari',,'狩猎地带入口'],encounters:[
+	name:['Safari Zone Gate','Portail Safari','Safari-Eingang','Ingresso Safari','Entrada Safari',,'狩猎地带入口'],encounters:[
 		[102,,'headbutt',20],
 		[163,,'headbutt',50],
 		[165,SS,'headbutt',30],

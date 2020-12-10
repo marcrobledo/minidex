@@ -582,7 +582,7 @@ const LOCATIONS=[
 		[132,,'interact']
 	]
 },{
-	name:['Konikoni City',,,,'Ciudad Konikoni',,'可霓可市'],encounters:[
+	name:['Konikoni City','Konikoni',,'Konikoni','Ciudad Konikoni',,'可霓可市'],encounters:[
 		[132,,'interact']
 	]
 },{
@@ -1148,7 +1148,7 @@ const LOCATIONS=[
 		[803,,'gift']
 	]
 },{
-	name:['Mount Lanakila','Route Victoire','Siegesstraße','Via Vittoria','Calle Victoria',,'拉纳基拉山'],iceRock:true,encounters:[
+	name:['Mount Lanakila','Mont Lanakila',,'Monte Lanakila','Monte Lanakila',,'拉纳基拉山'],iceRock:true,encounters:[
 		{group:'base',encounters:[
 			[alternateForm(20,1),,'grass',[,20]],
 			[alternateForm(27,1),UM,'grass',30],

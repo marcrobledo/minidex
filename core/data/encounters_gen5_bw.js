@@ -96,7 +96,7 @@ const LOCATIONS=[
 		[314,W,'swarm',40]
 	]
 },{
-	name:['Wellspring Cave',,'Grundwassersenke','Falda Sotterranea','Cueva Manantial',,'地下水脉之穴'],encounters:[
+	name:['Wellspring Cave','Veine Souterraine','Grundwassersenke','Falda Sotterranea','Cueva Manantial',,'地下水脉之穴'],encounters:[
 		[524,,'cave',50],
 		[527,,'cave',50],
 		[529,,'dust_cloud',100],
@@ -165,7 +165,7 @@ const LOCATIONS=[
 			[119,,'fish_special',10],
 			[550,,'fish_special',30]
 		]},
-		{group:['Rumination Field',,,,'Claro Filosofía',,'思索之原'],encounters:[
+		{group:['Rumination Field','Clairière Réflexion','Feld der Besinnung','Radura Filosofia','Claro Filosofía',,'思索之原'],encounters:[
 			[640,,'interact']
 		]}
 	]
@@ -245,7 +245,7 @@ const LOCATIONS=[
 		[235,,'swarm',40]
 	]
 },{
-	name:['Driftveil Drawbridge',,'Glurak-Brücke','Ponte Charizard','Puente Charizard',,'帆巴吊桥'],encounters:[
+	name:['Driftveil Drawbridge','Pont Yoneuve','Glurak-Brücke','Ponte Charizard','Puente Charizard',,'帆巴吊桥'],encounters:[
 		[580,,'from_sky',100]
 	]
 },{
@@ -263,7 +263,7 @@ const LOCATIONS=[
 		[550,,['trade',572]]
 	]
 },{
-	name:['Cold Storage',,'Tiefkühlcontainer','Deposito Frigo','Almacenes Frigoríficos',,'冷冻仓库'],encounters:[
+	name:['Cold Storage','Hangar Frigorifique','Tiefkühlcontainer','Deposito Frigo','Almacenes Frigoríficos',,'冷冻仓库'],encounters:[
 		[507,,'grass',35],
 		[532,,'grass',20],
 		[572,,'grass',15],
@@ -323,12 +323,12 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Mistralton Cave',,'Kammer der Weisung','Sala della Guida','Estancia Orientación',,'吹寄洞穴'],encounters:[
+	name:['Mistralton Cave','Grotte Parsemille','Kammer der Weisung','Sala della Guida','Estancia Orientación',,'吹寄洞穴'],encounters:[
 		[525,,'cave',50],
 		[527,,'cave',30],
 		[610,,'cave',20],
 		[529,,'dust_cloud',100],
-		{group:['Guidance Chamber',,,,'Estancia Orientación',,'引导之间'],encounters:[
+		{group:['Guidance Chamber','Espace Guide','Kammer der Weisung','Sala della Guida','Estancia Orientación',,'引导之间'],encounters:[
 			[638,,'interact']
 		]}
 	]
@@ -353,7 +353,7 @@ const LOCATIONS=[
 		[161,,'swarm',40]
 	]
 },{
-	name:['Celestial Tower',,'Turm des Himmels','Torre Cielo','Torre de los Cielos',,'天堂之塔'],encounters:[
+	name:['Celestial Tower','Tour des Cieux','Turm des Himmels','Torre Cielo','Torre de los Cielos',,'天堂之塔'],encounters:[
 		{group:'2f',encounters:[
 			[607,,'walk',100]
 		]},
@@ -411,7 +411,7 @@ const LOCATIONS=[
 		[636,,'gift_egg']
 	]
 },{
-	name:['P2 Laboratory',,'P2-Labor','Laboratorio P&P','Laboratorio P+P',,'P2 实验室'],encounters:[
+	name:['P2 Laboratory','Labo P2','P2-Labor','Laboratorio P&P','Laboratorio P+P',,'P2 实验室'],encounters:[
 		[505,,'grass',36],
 		[507,,'grass',36],
 		[559,,'grass',14],
@@ -523,7 +523,7 @@ const LOCATIONS=[
 		[453,,'swarm',[40,40,40]]
 	]
 },{
-	name:['Moor of Icirrus',,'Moor von Nevaio','Palude Mistralopoli','Pantano Teja',,'雪花湿地'],encounters:[
+	name:['Moor of Icirrus','Tourbière Flocombe','Moor von Nevaio','Palude Mistralopoli','Pantano Teja',,'雪花湿地'],encounters:[
 		[536,,'puddle',[40,40,40]],
 		[616,,'puddle',[40,40,40]],
 		[618,,'puddle',[20,20,20]],
@@ -586,11 +586,11 @@ const LOCATIONS=[
 },{
 	name:['Victory Road','Route Victoire','Siegesstraße','Via Vittoria','Calle Victoria',,'冠军之路'],encounters:[
 		{group:'exterior',encounters:[
-			[611,,'rough',5],
-			[619,,'rough',15],
-			[627,W,'rough',35],
-			[629,B,'rough',35],
-			[631,,'rough',45]
+			[611,,'walk',5],
+			[619,,'walk',15],
+			[627,W,'walk',35],
+			[629,B,'walk',35],
+			[631,,'walk',45]
 		]},
 		{group:['1F (middle and east)',,,,'P1 (centro y este)',,'1F (中部和东部)'],encounters:[
 			[525,,'cave',20],
@@ -639,12 +639,12 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['N\'s Castle',,'Schloss von N','Palazzo di N','Palacio de N',,'Ｎ的城堡'],encounters:[
+	name:['N\'s Castle','Palais de N','Schloss von N','Palazzo di N','Palacio de N',,'Ｎ的城堡'],encounters:[
 		[643,B,'interact'],
 		[644,W,'interact']
 	]
 },{
-	name:['Challenger\'s Cave',,'Höhle der Schulung','Caverna Ascesi','Gruta Superación',,'修行岩洞'],encounters:[
+	name:['Challenger\'s Cave','Antre d\'Entraînement','Höhle der Schulung','Caverna Ascesi','Gruta Superación',,'修行岩洞'],encounters:[
 		[75,,'cave',20],
 		[302,,'cave',10],
 		[303,,'cave',10],
@@ -704,7 +704,7 @@ const LOCATIONS=[
 		[285,B,'swarm',40]
 	]
 },{
-	name:['Village Bridge',,'Dorfbrücke','Ponte Villaggio','Puente Villa',,'村庄桥'],encounters:[
+	name:['Village Bridge','Pont du Hameau','Dorfbrücke','Ponte Villaggio','Puente Villa',,'村庄桥'],encounters:[
 		[55,,'grass',25],
 		[400,,'grass',25],
 		[629,B,'grass',20],
@@ -898,7 +898,7 @@ const LOCATIONS=[
 		[446,,['trade',573]]
 	]
 },{
-	name:['Undella Bay',,'Bucht von Ondula','Baia Spiraria','Bahía Arenisca',,'涟漪湾'],encounters:[
+	name:['Undella Bay','Baie Vaguelone','Bucht von Ondula','Baia Spiraria','Bahía Arenisca',,'涟漪湾'],encounters:[
 		[278,,'surf',60],
 		[279,,'surf',10],
 		[458,,'surf',[30,30,30]],
@@ -950,7 +950,7 @@ const LOCATIONS=[
 		[193,,'swarm',40]
 	]
 },{
-	name:['Abundant Shrine',,'Schrein der Ernte','Tempio Abbondanza','Santuario Abundancia',,'丰饶之社'],encounters:[
+	name:['Abundant Shrine','Autel Abondance','Schrein der Ernte','Tempio Abbondanza','Santuario Abundancia',,'丰饶之社'],encounters:[
 		[37,,'grass',20],
 		[164,,'grass',15],
 		[198,B,'grass',5],
@@ -1139,7 +1139,7 @@ const LOCATIONS=[
 		[479,,['trade',132]]
 	]
 },{
-	name:['Marvelous Bridge',,'Wunderbrücke','Ponte Meraviglie','Puente Progreso',,'奇幻桥'],encounters:[
+	name:['Marvelous Bridge','Pont de l\'Inconnu','Wunderbrücke','Ponte Meraviglie','Puente Progreso',,'奇幻桥'],encounters:[
 		[581,,'from_sky',100],
 		[129,,'gift']
 	]
@@ -1161,16 +1161,16 @@ const LOCATIONS=[
 		[204,,'swarm',40]
 	]
 },{
-	name:['Roaming Unova',,,,,,'合众地区野外遭遇'],encounters:[
+	name:['Unova','Unys','Einall','Unima','Teselia',,'合众'],encounters:[
 		[641,B,'roaming'],
 		[642,W,'roaming']
 	]
 },{
-	name:['Liberty Garden',,'Freiheitsgarten','Isola Libertà','Isla Libertad',,'自由庭园岛'],encounters:[
+	name:['Liberty Garden','Île Liberté','Freiheitsgarten','Isola Libertà','Isla Libertad',,'自由庭园岛'],encounters:[
 		[494,,'event']
 	]
 },{
-	name:['Lostlorn Forest',,'Hain der Täuschung','Bosco Smarrimento','Bosque de los Perdidos',,'迷幻森林'],encounters:[
+	name:['Lostlorn Forest','Bois des Illusions','Hain der Täuschung','Bosco Smarrimento','Bosque de los Perdidos',,'迷幻森林'],encounters:[
 		[520,,'grass',15],
 		[541,,'grass',35],
 		[543,,'grass',15],

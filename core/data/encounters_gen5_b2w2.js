@@ -279,7 +279,7 @@ const LOCATIONS=[
 		[204,,'swarm',40]
 	]
 },{
-	name:['Lostlorn Forest',,'Hain der Täuschung','Bosco Smarrimento','Bosque de los Perdidos',,'迷幻森林'],encounters:[
+	name:['Lostlorn Forest','Bois des Illusions','Hain der Täuschung','Bosco Smarrimento','Bosque de los Perdidos',,'迷幻森林'],encounters:[
 		[127,W2,'grass',5],
 		[214,B2,'grass',5],
 		[315,,'grass',15],
@@ -344,7 +344,7 @@ const LOCATIONS=[
 		[590,,'hidden_grotto',15]
 	]
 },{
-	name:['Driftveil Drawbridge',,'Glurak-Brücke','Ponte Charizard','Puente Charizard',,'帆巴吊橋'],encounters:[
+	name:['Driftveil Drawbridge','Pont Yoneuve','Glurak-Brücke','Ponte Charizard','Puente Charizard',,'帆巴吊橋'],encounters:[
 		[580,,'from_sky',100]
 	]
 },{
@@ -483,7 +483,7 @@ const LOCATIONS=[
 		[590,,'interact']
 	]
 },{
-	name:['Celestial Tower',,'Turm des Himmels','Torre Cielo','Torre de los Cielos',,'天堂之塔'],encounters:[
+	name:['Celestial Tower','Tour des Cieux','Turm des Himmels','Torre Cielo','Torre de los Cielos',,'天堂之塔'],encounters:[
 		{group:'2f',encounters:[
 			[607,,'walk',100]
 		]},
@@ -573,7 +573,7 @@ const LOCATIONS=[
 		[370,,'fish_special',30]
 	]
 },{
-	name:['Undella Bay',,'Bucht von Ondula','Baia Spiraria','Bahía Arenisca',,'涟漪湾'],encounters:[
+	name:['Undella Bay','Baie Vaguelone','Bucht von Ondula','Baia Spiraria','Bahía Arenisca',,'涟漪湾'],encounters:[
 		[223,,'surf',5],
 		[363,,'surf',[,,,30]],
 		[458,,'surf',[30,30,30]],
@@ -658,7 +658,7 @@ const LOCATIONS=[
 		[84,,'swarm',40]
 	]
 },{
-	name:['Village Bridge',,'Dorfbrücke','Ponte Villaggio','Puente Villa',,'村庄桥'],encounters:[
+	name:['Village Bridge','Pont du Hameau','Dorfbrücke','Ponte Villaggio','Puente Villa',,'村庄桥'],encounters:[
 		[55,,'grass',35],
 		[183,,'grass',35],
 		[335,,'grass',15],
@@ -767,7 +767,7 @@ const LOCATIONS=[
 		[465,,['trade',226]]
 	]
 },{
-	name:['Route 22',,,'Percorso 22','Ruta 22',,'27号道路'],encounters:[
+	name:['Route 22',,,'Percorso 22','Ruta 22',,'22号道路'],encounters:[
 		[55,,'grass',10],
 		[183,,'grass',10],
 		[225,,'grass',5],
@@ -979,7 +979,7 @@ const LOCATIONS=[
 		[591,,'interact']
 	]
 },{
-	name:['Victory Road',,'Siegesstraße','Via Vittoria','Calle Victoria',,'冠军之路'],encounters:[
+	name:['Victory Road','Route Victoire','Siegesstraße','Via Vittoria','Calle Victoria',,'冠军之路'],encounters:[
 		{group:['Ruins',,,,'Ruinas',,'遗迹'],encounters:[
 			[354,,'cave',70],
 			[623,,'cave',30],
@@ -1136,7 +1136,7 @@ const LOCATIONS=[
 		[550,,'fish_special',30]
 	]
 },{
-	name:['Abundant Shrine',,'Schrein der Ernte','Tempio Abbondanza','Santuario Abundancia',,'丰饶之社'],encounters:[
+	name:['Abundant Shrine','Autel Abondance','Schrein der Ernte','Tempio Abbondanza','Santuario Abundancia',,'丰饶之社'],encounters:[
 		[37,,'grass',10],
 		[55,,'grass',10],
 		[183,,'grass',10],
@@ -1203,7 +1203,7 @@ const LOCATIONS=[
 		[479,,['trade',132]]
 	]
 },{
-	name:['Marvelous Bridge',,'Wunderbrücke','Ponte Meraviglie','Puente Progreso',,'奇幻桥'],encounters:[
+	name:['Marvelous Bridge','Pont de l\'Inconnu','Wunderbrücke','Ponte Meraviglie','Puente Progreso',,'奇幻桥'],encounters:[
 		[581,,'from_sky',100],
 		[129,,'gift'],
 		[488,,'interact']
@@ -1228,7 +1228,7 @@ const LOCATIONS=[
 		[195,,'swarm',[40,40,40]]
 	]
 },{
-	name:['Moor of Icirrus',,'Moor von Nevaio','Palude Mistralopoli','Pantano Teja',,'雪花湿地'],encounters:[
+	name:['Moor of Icirrus','Tourbière Flocombe','Moor von Nevaio','Palude Mistralopoli','Pantano Teja',,'雪花湿地'],encounters:[
 		[453,,'puddle',[15,15,15]],
 		[536,,'puddle',[40,40,40]],
 		[588,B2,'puddle',[5,5,5]],
@@ -1445,7 +1445,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Wellspring Cave',,'Grundwassersenke','Falda Sotterranea','Cueva Manantial',,'地下水脉之穴'],encounters:[
+	name:['Wellspring Cave','Veine Souterraine','Grundwassersenke','Falda Sotterranea','Cueva Manantial',,'地下水脉之穴'],encounters:[
 		[530,,'dust_cloud',100],
 		[550,,'surf',100],
 		[550,,'surf_special',100],
@@ -1597,7 +1597,7 @@ const LOCATIONS=[
 		[441,,'hidden_grotto',4]
 	]
 },{
-	name:['P2 Laboratory',,'P2-Labor','Laboratorio P&P','Laboratorio P+P',,'P2 实验室'],encounters:[
+	name:['P2 Laboratory','Labo P2','P2-Labor','Laboratorio P&P','Laboratorio P+P',,'P2 实验室'],encounters:[
 		[82,,'grass',15],
 		[110,,'grass',15],
 		[505,,'grass',20],

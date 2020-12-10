@@ -17,64 +17,32 @@
 	<link rel="apple-touch-icon" sizes="16x16" href="./core/favicon16.png" />
 	<link rel="apple-touch-icon" href="./core/favicon192.png" />
 
+	<!-- social network metatags -->
+	<meta name="twitter:site" content="@marc_robledo">
+	<meta name="twitter:creator" content="@marc_robledo">
+	<meta name="twitter:domain" content="marcrobledo.com">
+	<meta property="og:title" content="Minidex">
+	<meta name="twitter:title" content="Minidex">
+	<meta name="twitter:description" content="This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!">
+	<meta property="og:image" content="https://www.marcrobledo.com/minidex/core/thumbnail.jpg">
+	<meta name="twitter:image" content="https://www.marcrobledo.com/minidex/core/thumbnail.jpg">
+	<meta name="twitter:card" content="photo">
 
 
+	<link type="text/css" rel="stylesheet" href="./core/minidex_v1b.css" media="all"/>
 	<style type="text/css">
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500;700&display=swap');
-
-body{
-	font:15px 'Roboto', sans-serif;
-	margin:0;
-	background-color:#202b37;
-
-	-webkit-touch-callout:none;
-	-webkit-user-select:none;
-	-khtml-user-select:none;
-	-moz-user-select:none;
-	-ms-user-select:none;
-	user-select:none;
-	cursor:default
-}
-
-.hidden{display:none}
-.text-center{text-align:center}
-.text-right{text-align:right}
-
-main,footer{
-	text-align:center;
-	max-width:540px;
-	margin: 0 auto;
-}
-
-
-header{
-	background: #33414e; /* Old browsers */
-	background-repeat: no-repeat;
-
-	height:380px;
-	background-size:540px auto, 1920px auto, auto auto;
-	background-position:center 88px, center bottom, 0% 0%;
-
-	background-image: url(./core/header_gen1.png), url(./core/header_common.png), -moz-linear-gradient(bottom, #3a5369 0%, #273a4b 100%); /* FF3.6-15 */
-	background-image: url(./core/header_gen1.png), url(./core/header_common.png), -webkit-linear-gradient(bottom, #3a5369 0%,#273a4b 100%); /* Chrome10-25,Safari5.1-6 */
-	background-image: url(./core/header_gen1.png), url(./core/header_common.png), linear-gradient(to bottom, #3a5369 0%,#273a4b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-}
-
-h1{
-	display:inline-block;
-	font-size:220%;
-	border-top:5px solid #f94343;
-	margin: 20px 0;
-	text-transform:uppercase;
-	color:white;
-}
+.hide{display:none}
 
 main{
+	text-align:center;
+	max-width:540px;
+	margin: -50px auto 0;
+
 	color:white;
 	padding-left:10px;padding-right:10px;
-	margin-top:-50px;
 }
+
+
 ul{
 	list-style:none;
 	margin:0;
@@ -109,14 +77,6 @@ ul small{
 
 
 
-footer{
-	text-align:center;
-	color:#425060;
-	margin-bottom:10px;
-}
-footer a{color:#708091}
-footer a:hover{color:white}
-
 
 
 
@@ -145,54 +105,12 @@ footer a:hover{color:white}
 
 
 
-#select-language{
-	font-family:inherit;
-	font-size:100%;
-	border:0;
-	background-color:#334251;
-	background-color:#2f4457;
-	color:inherit;
-	text-align:center;
-	color:white;
-
-	-webkit-appearance:none;
-	-moz-appearance:none;
-	text-overflow:'';
-	vertical-align:middle;
-	padding: 4px 2px 4px 2px;
-	border-radius:80px;
-	
-	position:absolute;
-	top:16px;
-	right:16px;
-}
-#select-language:hover{
-	cursor:pointer;
-	background-color:#181c20;
-}
-#select-language option{background-color:#282e36}
-
 
 
 /* RESPONSIVE DESIGN */
 @media only screen and (max-width:641px){
-	body{
-		font-size:14px;
-		margin:0 auto
-	}
 
-	#select-language{
-		font-size:13px;
 
-		top:16px;
-		right:12px;
-	}
-
-	header{
-		height:200px;
-		background-size:264px auto, auto 80px, auto auto;
-		background-position:center 72px, center 160px, 0% 0%;
-	}
 	main{
 		margin-top:-10px;
 	}
@@ -201,105 +119,197 @@ footer a:hover{color:white}
 	</style>
 	
 	<script type="text/javascript"><!--
+function el(e){return document.getElementById(e)}
+function addEvent(e,v,f){e.addEventListener(v,f,false)}
+function stopPropagation(e){if(typeof e.stopPropagation!=='undefined')e.stopPropagation();else e.cancelBubble=true}
 
 const GAMES=[
-	['Sword Shield',,'Schwert Schild',,'Espada Escudo',,'剑／盾'],
-	['Let\'s go!',,'Let\'s go!',,'Let\'s go!',,'Let\'s go!'],
-	['Ultra Sun Ultra Moon',,'Ultra Sonne Ultra Mond',,'Ultra Sol Ultra Luna',,'究极之日／究极之月'],
-	['Sun Moon',,'Sonne Mond',,'Sol Luna',,'太阳／月亮'],
-	['Omega Ruby Alpha Sapphire',,'Omega Rubin Alpha Saphir',,'Rubí Omega Zafiro Alfa',,'欧米伽红宝石／阿尔法蓝宝石'],
-	['XY',,'XY',,'XY',,'XY'],
-	['Black 2 White 2',,'Schwarz 2 Weiß 2',,'Negro 2 Blanco 2',,'黑 2／白 2'],
-	['Black White',,'Schwarz Weiß',,'Negro Blanco',,'黑／白'],
-	['HeartGold SoulSilver',,'HeartGold SoulSilver',,'HeartGold SoulSilver',,'心金／魂银'],
-	['Diamond Pearl Platinum',,'Diamant Perl Platin',,'Diamante Perla Platino',,'钻石／珍珠'],
-	['Fire Red Leaf Green',,'Feuerrot Blattgrün',,'Rojo Fuego Verde Hoja',,'火红／叶绿'],
-	['Ruby Sapphire Emerald',,'Rubin Saphir Smaragd',,'Rubí Zafiro Esmeralda',,'红宝石／蓝宝石'],
-	['Gold Silver Crystal',,'Gold Silber Kristall',,'Oro Plata Cristal',,'金／银／水晶'],
-	['Red Blue Yellow',,'Rot Blau Gelb',,'Rojo Azul Amarillo',,'红／绿／蓝']
+	['Sword / Shield','Épée / Bouclier','Schwert / Schild','Spada / Scudo','Espada / Escudo',,'剑／盾'],
+	['Let\'s go!'],
+	['Ultra Sun / Ultra Moon','Ultra-Soleil / Ultra-Lune','Ultra Sonne / Ultra Mond','Ultra Sole / Ultra Luna','Ultra Sol / Ultra Luna',,'究极之日／究极之月'],
+	['Sun / Moon','Soleil / Lune','Sonne / Mond','Sole / Luna','Sol / Luna',,'太阳／月亮'],
+	['Omega Ruby / Alpha Sapphire','Rubis Oméga / Saphir Alpha','Omega Rubin / Alpha Saphir','Rubino Omega / Zaffiro Alpha','Rubí Omega / Zafiro Alfa',,'欧米伽红宝石／阿尔法蓝宝石'],
+	['X / Y'],
+	['Black 2 / White 2','Noir 2 / Blanc 2','Schwarz 2 / Weiß 2','Nero 2 / Bianco 2','Negro 2 / Blanco 2',,'黑 2／白 2'],
+	['Black / White','Noir / Blanc','Schwarz / Weiß','Nero / Bianco','Negro / Blanco',,'黑／白'],
+	['HeartGold / SoulSilver',,,,,,'心金／魂银'],
+	['Diamond / Pearl / Platinum','Diamant / Perle / Platine','Diamant / Perl / Platin','Diamante / Perla / Platino','Diamante / Perla / Platino',,'钻石／珍珠'],
+	['Fire Red / Leaf Green','Rouge Feu / Vert Feuille','Feuerrot / Blattgrün','Rosso Fuoco / Verde Foglia','Rojo Fuego / Verde Hoja',,'火红／叶绿'],
+	['Ruby / Sapphire / Emerald','Rubis / Saphir / Émeraude','Rubin / Saphir / Smaragd','Rubino / Zaffiro / Smeraldo','Rubí / Zafiro / Esmeralda',,'红宝石／蓝宝石'],
+	['Gold / Silver / Crystal','Or / Argent / Cristal','Gold / Silber / Kristall','Oro / Argento / Cristallo','Oro / Plata / Cristal',,'金／银／水晶'],
+	['Red / Blue / Yellow','Rouge / Bleu / Jaune','Rot / Blau / Gelb','Rosso / Blu / Giallo','Rojo / Azul / Amarillo',,'红／绿／蓝']
 ];
 
-function setLanguage(langIndex){
-	var lis=document.getElementById('games').children;
-	for(var i=0; i<lis.length; i++)
-		lis[i].children[0].children[1].innerHTML=GAMES[i][langIndex] || GAMES[i][0];
-
-	for(var i=0; i<7; i++)
-		document.getElementById('description-'+i).style.display=langIndex===i?'block':'none';
+function showMenu(doNotPush){
+	document.body.className='menu-open';
+	document.body.scrollTop=0
+}
+function hideMenu(click){
+	document.body.className='';
+}
+function toggleMenu(){
+	if(/menu-open/.test(document.body.className))
+		hideMenu(true);
+	else
+		showMenu();
 }
 
 
+function setLanguage(l){
+	MinidexSettings.lang=l;
+
+	var lis=document.getElementById('games').children;
+	for(var i=0; i<lis.length; i++)
+		lis[i].children[0].children[1].innerHTML=GAMES[i][l] || GAMES[i][0];
+
+	for(var i=0; i<7; i++)
+		document.getElementById('description-'+i).style.display=l===i?'block':'none';
+}
+var MinidexSettings=(function(){
+	var IS_STORAGE_AVAILABLE=typeof(Storage)!=='undefined';
+
+	var defaultLanguage=0;
+	var userLang=(navigator.language || navigator.userLanguage).substr(0,2);
+	if(userLang==='fr')
+		defaultLanguage=1;
+	else if(userLang==='de')
+		defaultLanguage=2;
+	else if(userLang==='it')
+		defaultLanguage=3;
+	else if(userLang==='es')
+		defaultLanguage=4;
+	else if(userLang==='jp')
+		defaultLanguage=5;
+	else if(userLang==='zh')
+		defaultLanguage=6;
+
+
+
+	return{
+		/* default settings */
+		lang:defaultLanguage,
+		donateWarning:0,
+
+		save:function(){
+			if(IS_STORAGE_AVAILABLE){
+				localStorage.setItem('minidex', JSON.stringify({lang:this.lang,donateWarning:this.donateWarning}));
+			}
+		},
+		load:function(){
+			if(IS_STORAGE_AVAILABLE && localStorage.getItem('minidex')){
+				var loadedSettings=JSON.parse(localStorage.getItem('minidex'));
+
+				if(typeof loadedSettings.lang==='number' && loadedSettings.lang>=0 && loadedSettings.lang<=6)
+					this.lang=loadedSettings.lang;
+
+				if(typeof loadedSettings.donateWarning==='number')
+					this.donateWarning=loadedSettings.donateWarning;
+			}
+		},
+		checkUnknownLanguage:function(){
+			return IS_STORAGE_AVAILABLE && !localStorage.getItem('minidex') && defaultLanguage===0;
+		}
+	}
+}());
+
+
 window.addEventListener('load', function(evt){
-	if(document.getElementById('select-language').selectedIndex)
-		setLanguage(document.getElementById('select-language').selectedIndex);
+	/* startup, load settings */
+	MinidexSettings.load();
+	el('select-language').value=MinidexSettings.lang;
+	setLanguage(MinidexSettings.lang);
+
+	/* menu events */
+	addEvent(el('overlay'), 'click', function(evt){
+		hideMenu(true);
+	});
+	addEvent(el('overlay2'), 'click', stopPropagation);
+	addEvent(el('button-menu'), 'click', toggleMenu);
+	addEvent(el('select-language'), 'change', function(evt){
+		setLanguage(this.selectedIndex);
+		hideMenu(true);
+		MinidexSettings.save();
+	});
 }, false);
 	--></script>
 </head>
 
 <body>
-	<header><div class="text-center"><h1>Minidex</h1></div></header>
-
-	<div class="text-right">
-		<select id="select-language" onchange="setLanguage(this.selectedIndex)">
-			<option value="0">English</option>
-			<option value="1">Français*</option>
-			<option value="2">Deutsch</option>
-			<option value="3">Italiano*</option>
-			<option value="4">Español</option>
-			<option value="5">日本語*</option>
-			<option value="6">中文</option>
-		</select>
+	<div id="overlay">
+		<div id="overlay2">
+			<div>
+				<label><i class="sprite globe"></i> <span data-translate="language">Language</span><select id="select-language" class="clickable" dir="rtl">
+					<option value="0">English</option>
+					<option value="1">Français*</option>
+					<option value="2">Deutsch</option>
+					<option value="3">Italiano*</option>
+					<option value="4">Español</option>
+					<option value="5">日本語*</option>
+					<option value="6">中文</option>
+				</select></label>
+			</div>
+		</div>
 	</div>
 
-	<main>
-		<p id="description-0" lang="en">
-			This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
-		</p>
-		<p id="description-1" lang="fr" class="hidden">
-			This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
-			<strong>Note: French translation is incomplete.</strong>
-		</p>
-		<p id="description-2" lang="de" class="hidden">
-			Diese minimalistische und schlanke Webapp stellt Informationen über die Fundorte aller Pokémon aus allen Spielen zusammen. Finde Informationen schnell und halte den Fortschritt von deinem Pokédex fest. Keine Anmeldung/Installation notwendig!
-		</p>
-		<p id="description-3" lang="it" class="hidden">
-			This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
-			<strong>Note: Italian translation is incomplete.</strong>
-		</p>
-		<p id="description-4" lang="es" class="hidden">
-			Esta webapp minimalista y ligera recopila todas las localizaciones de todos los Pokémon a lo largo de cada juego de la saga. Encuentra información de los Pokémon rápidamente y mantén un seguimiento del progreso de tu Pokédex. ¡No requiere registro ni instalación!
-		</p>
-		<p id="description-5" lang="jp" class="hidden">
-			This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
-			<strong>Note: Japanese translation is incomplete.</strong>
-		</p>
-		<p id="description-6" lang="cn" class="hidden">
-			这个轻量级和极简的网页app包含了了该系列中每个游戏中所有宝可梦的所有位置。快速找到宝可梦信息并跟踪你的图鉴进度。无需注册或安装!
-			<strong>注:中文翻译可能有误请见谅.</strong>
-		</p>
-		<ul id="games">
-			<li class="game gen8swsh"><a href="swsh/"><small>Gen VIII</small><span>Sword Shield</span></a></li>
-			<li class="game gen7letsgo"><a href="letsgo/"><small>Gen VII</small><span>Let's go!</span></a></li>
-			<li class="game gen7usum"><a href="usum/"><small>Gen VII</small><span>Ultra Sun Ultra Moon</span></a></li>
-			<li class="game gen7sm"><a href="sm/"><small>Gen VII</small><span>Sun Moon</span></a></li>
-			<li class="game gen6oras"><a href="oras/"><small>Gen VI</small><span>Omega Ruby Alpha Sapphire</span></a></li>
-			<li class="game gen6xy"><a href="xy/"><small>Gen VI</small><span>XY</span></a></li>
-			<li class="game gen5b2w2"><a href="b2w2/"><small>Gen V</small><span>Black 2 White 2</span></a></li>
-			<li class="game gen5bw"><a href="bw/"><small>Gen V</small><span>Black White</span></a></li>
-			<li class="game gen4hgss"><a href="hgss/"><small>Gen IV</small><span>HeartGold SoulSilver</span></a></li>
-			<li class="game gen4dppt"><a href="dppt/"><small>Gen IV</small><span>Diamond Pearl Platinum</span></a></li>
-			<li class="game gen3frlg"><a href="frlg/"><small>Gen III</small><span>Fire Red Leaf Green</span></a></li>
-			<li class="game gen3rse"><a href="rse/"><small>Gen III</small><span>Ruby Sapphire Emerald</span></a></li>
-			<li class="game gen2gsc"><a href="gsc/"><small>Gen II</small><span>Gold Silver Crystal</span></a></li>
-			<li class="game gen1rby"><a href="rby/"><small>Gen I</small><span>Red Blue Yellow</span></a></li>
-		</ul>
-	</main>
-	<footer>
-		Developed and designed by <a href="https://www.marcrobledo.com">Marc Robledo</a><br/><a href="https://github.com/marcrobledo/minidex/" target="_blank">View on GitHub</a><br/><br/>
-		<small>
-			This is a fan created site, no copyright or trademark infringement is intended.<br/>
-			Pokémon and all respective names are trademark &amp; &copy; of Nintendo/Creatures Inc./GAME FREAK inc. TM 1996-2020
-		</small>
-	</footer>
+	<div id="home">
+		<header><div class="text-center"><h1>Minidex</h1></div></header>
+
+		<div id="button-menu" class="clickable"><i class="sprite menu"></i></div>
+
+
+		<main>
+			<p id="description-0" lang="en">
+				This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
+			</p>
+			<p id="description-1" lang="fr" class="hide">
+				This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
+				<strong>Note: French translation is incomplete.</strong>
+			</p>
+			<p id="description-2" lang="de" class="hide">
+				This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
+				<strong>Note: German translation is incomplete.</strong>
+			</p>
+			<p id="description-3" lang="it" class="hide">
+				This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
+				<strong>Note: Italian translation is incomplete.</strong>
+			</p>
+			<p id="description-4" lang="es" class="hide">
+				Esta webapp minimalista y ligera recopila todas las localizaciones de todos los Pokémon a lo largo de cada juego de la saga. Encuentra información de los Pokémon rápidamente y mantén un seguimiento del progreso de tu Pokédex. ¡No requiere registro ni instalación!
+			</p>
+			<p id="description-5" lang="jp" class="hide">
+				This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!
+				<strong>Note: Japanese translation is incomplete.</strong>
+			</p>
+			<p id="description-6" lang="zh" class="hide">
+				这个轻量级和极简的网页app包含了了该系列中每个游戏中所有宝可梦的所有位置。快速找到宝可梦信息并跟踪你的图鉴进度。无需注册或安装!
+				<strong>注:中文翻译可能有误请见谅.</strong>
+			</p>
+			<ul id="games">
+				<li class="game gen8swsh"><a href="swsh/"><small>Gen VIII</small><span>Sword Shield</span></a></li>
+				<li class="game gen7letsgo"><a href="letsgo/"><small>Gen VII</small><span>Let's go!</span></a></li>
+				<li class="game gen7usum"><a href="usum/"><small>Gen VII</small><span>Ultra Sun Ultra Moon</span></a></li>
+				<li class="game gen7sm"><a href="sm/"><small>Gen VII</small><span>Sun Moon</span></a></li>
+				<li class="game gen6oras"><a href="oras/"><small>Gen VI</small><span>Omega Ruby Alpha Sapphire</span></a></li>
+				<li class="game gen6xy"><a href="xy/"><small>Gen VI</small><span>XY</span></a></li>
+				<li class="game gen5b2w2"><a href="b2w2/"><small>Gen V</small><span>Black 2 White 2</span></a></li>
+				<li class="game gen5bw"><a href="bw/"><small>Gen V</small><span>Black White</span></a></li>
+				<li class="game gen4hgss"><a href="hgss/"><small>Gen IV</small><span>HeartGold SoulSilver</span></a></li>
+				<li class="game gen4dppt"><a href="dppt/"><small>Gen IV</small><span>Diamond Pearl Platinum</span></a></li>
+				<li class="game gen3frlg"><a href="frlg/"><small>Gen III</small><span>Fire Red Leaf Green</span></a></li>
+				<li class="game gen3rse"><a href="rse/"><small>Gen III</small><span>Ruby Sapphire Emerald</span></a></li>
+				<li class="game gen2gsc"><a href="gsc/"><small>Gen II</small><span>Gold Silver Crystal</span></a></li>
+				<li class="game gen1rby"><a href="rby/"><small>Gen I</small><span>Red Blue Yellow</span></a></li>
+			</ul>
+		</main>
+
+		<footer>
+			<span data-translate="developed_by">Developed and designed by</span> <a href="https://www.marcrobledo.com">Marc Robledo</a><br/>
+			<a href="https://github.com/marcrobledo/minidex/" target="_blank" data-translate="view_on_github">View on GitHub</a><br/><br/>
+			<small>
+				This is a fan created site, no copyright or trademark infringement is intended.<br/>
+				Pokémon and all respective names are trademark &amp; &copy; of Nintendo/Creatures Inc./GAME FREAK inc. TM 1996-2021
+			</small>
+		</footer>
+	</div>
 </body>
 </html>

@@ -2428,13 +2428,13 @@ const LOCATIONS=[
 {name:['Events',,,,'Eventos',,'活动赠送'],encounters:[
 	[alternateForm(52,3),,'event']
 ]},
-{name:['Postwick',,,,'Pueblo Yarda',,'化朗镇'],encounters:[
+{name:['Postwick','Paddoxton','Furlongham','Furlongham','Pueblo Yarda',,'化朗镇'],encounters:[
 	[810,,'starter'],
 	[813,,'starter'],
 	[816,,'starter'],
 	[4,,['gift','postgame']]
 ]},
-{name:['Slumbering Weald',,,,'Bosque Oniria',,'微寐森林'],encounters:[
+{name:['Slumbering Weald','Forêt de Sleepwood','Schlummerwald','Bosco Assopito','Bosque Oniria',,'微寐森林'],encounters:[
 	{group:'east',encounters:[
 		[819,,'overworld',40],
 		[821,,'overworld',30],
@@ -2464,7 +2464,7 @@ const LOCATIONS=[
 		[889,Sh,'interact']
 	]}
 ]},
-{name:['Route 1',,,,'Ruta 1',,'1号道路'],encounters:[
+{name:['Route 1',,,'Percorso 1','Ruta 1',,'1号道路'],encounters:[
 	[819,,'overworld',50],
 	[821,,'overworld',30],
 	[831,,'overworld',15],
@@ -2475,7 +2475,7 @@ const LOCATIONS=[
 	[736,,'hidden',10],
 	[163,,'hidden',5]
 ]},
-{name:['Route 2',,,,'Ruta 2',,'2号道路'],encounters:[
+{name:['Route 2',,,'Percorso 2','Ruta 2',,'2号道路'],encounters:[
 	{group:'main',encounters:[
 		[819,,'overworld',38],
 		[821,,'overworld',30],
@@ -2520,13 +2520,13 @@ const LOCATIONS=[
 		[349,,'fish',1]
 	]}
 ]},
-{name:['City of Motostoke',,,,'Ciudad Pistón',,'机擎市'],encounters:[
+{name:['Motostoke','Motorby','Engine City','Steamington','Ciudad Pistón',,'机擎市'],encounters:[
 	[129,,'fish',50],
 	[833,,'fish',40],
 	[339,,'fish',10],
 	[819,,['trade',659]]
 ]},
-{name:['Route 3',,,,'Ruta 3',,'3号道路'],encounters:[
+{name:['Route 3',,,'Percorso 3','Ruta 3',,'3号道路'],encounters:[
 	[alternateForm(263,1),,'overworld',38],
 	[829,,'overworld',30],
 	[37,Sw,'overworld',15],
@@ -2548,7 +2548,7 @@ const LOCATIONS=[
 		[568,,'overworld',1]
 	]}
 ]},
-{name:['Galar Mine',,,,'Mina de Galar',,'伽勒尔矿山'],encounters:[
+{name:['Galar Mine','Mine de Galar','Galar-Mine 1','Miniera di Galar','Mina de Galar',,'伽勒尔矿山'],encounters:[
 	[837,,'overworld',35],
 	[532,Sw,'overworld',25],
 	[524,Sh,'overworld',25],
@@ -2569,7 +2569,7 @@ const LOCATIONS=[
 	[524,Sw,'hidden',5],
 	[532,Sh,'hidden',5]
 ]},
-{name:['Route 4',,,,'Ruta 4',,'4号道路'],encounters:[
+{name:['Route 4',,,'Percorso 4','Ruta 4',,'4号道路'],encounters:[
 	[309,,'overworld',30],
 	[alternateForm(52,2),,'overworld',23],
 	[835,,'overworld',20],
@@ -2591,11 +2591,11 @@ const LOCATIONS=[
 	[118,,'fish',10],
 	[50,,'wanderer']
 ]},
-{name:['Turrfield',,,,'Pueblo Hoyuelo',,'草路镇'],encounters:[
+{name:['Turrfield','Greenbury',,,'Pueblo Hoyuelo',,'草路镇'],encounters:[
 	[342,,'wanderer_one'],
 	[52,,['trade',alternateForm(52,2)]]
 ]},
-{name:['Route 5',,,,'Ruta 5',,'5号道路'],encounters:[
+{name:['Route 5',,,'Percorso 5','Ruta 5',,'5号道路'],encounters:[
 	[759,,'overworld',35],
 	[684,Sw,'overworld',30],
 	[682,Sh,'overworld',30],
@@ -2620,7 +2620,7 @@ const LOCATIONS=[
 	[830,,'wanderer'],
 	[848,,'gift_egg']
 ]},
-{name:['Town of Hulbury',,,,'Pueblo Amura',,'水舟镇'],encounters:[
+{name:['Hulbury','Skifford','Keelton','Keelford','Pueblo Amura',,'水舟镇'],encounters:[
 	[846,,'fish',50],
 	[170,,'fish',20],
 	[833,,'fish',15],
@@ -2629,7 +2629,7 @@ const LOCATIONS=[
 	[alternateForm(550,1),Sh,'fish',10],
 	[546,,['trade',572]]
 ]},
-{name:['Galar Mine No. 2',,,,'Mina de Galar n.º 2',,'第二矿山'],encounters:[
+{name:['Galar Mine No. 2','Mine de Galar nº 2','Galar-Mine 2','Miniera 2','Mina de Galar n.º 2',,'第二矿山'],encounters:[
 	[alternateForm(422,1),,'overworld',25],
 	[767,,'overworld',25],
 	[688,,'overworld',15],
@@ -2654,7 +2654,7 @@ const LOCATIONS=[
 	[834,,'wanderer_one'],
 	[423,,'wanderer_one']
 ]},
-{name:['Motostoke Outskirts',,,,'Afueras de pistón',,'机擎市郊外'],encounters:[
+{name:['Motostoke Outskirts','Abords de Motorby','Engine-Ortsrand','Perif. Steamington','Afueras de pistón',,'机擎市郊外'],encounters:[
 	[164,Sw,'overworld',40],
 	[164,Sh,'overworld',35],
 	[185,,'overworld',30],
@@ -2670,10 +2670,10 @@ const LOCATIONS=[
 	[833,,'hidden',10],
 	[859,,'hidden',5]
 ]},
-{name:['Hammerlocke',,,,'Ciudad Artejo',,'拳关丘陵'],encounters:[
+{name:['Hammerlocke','Kickenham','Claw City','Knuckleburgh','Ciudad Artejo',,'拳关丘陵'],encounters:[
 	[175,,['trade',848]]
 ]},
-{name:['Route 6',,,,'Ruta 6',,'6号道路'],encounters:[
+{name:['Route 6',,,'Percorso 6','Ruta 6',,'6号道路'],encounters:[
 	[alternateForm(562,1),,'overworld',35],
 	[694,,'overworld',29],
 	[51,,'overworld',20],
@@ -2701,11 +2701,11 @@ const LOCATIONS=[
 	[882,,'revive_fossil','fossil_882'],
 	[883,,'revive_fossil','fossil_883']
 ]},
-{name:['Stow-on-Side',,,,'Pueblo Ladera',,'溯传镇'],encounters:[
+{name:['Stow-on-Side','Old Chister','Passbeck','Latermore','Pueblo Ladera',,'溯传镇'],encounters:[
 	[856,Sw,['trade',556]],
 	[859,Sh,['trade',556]]
 ]},
-{name:['Glimwood Tangle',,,,'Bosque Lumirinto',,'迷光森林'],encounters:[
+{name:['Glimwood Tangle','Forêt de Lumirinth','Wirrschein-Wald','Bosco Brillabirinto','Bosque Lumirinto',,'迷光森林'],encounters:[
 	[860,,'overworld',20],
 	[756,,'overworld',20],
 	[857,Sw,'overworld',20],
@@ -2739,10 +2739,10 @@ const LOCATIONS=[
 	[859,,'wanderer'],
 	[860,,'wanderer']
 ]},
-{name:['Ballonlea',,,,'Pueblo Plié',,'舞姿镇'],encounters:[
+{name:['Ballonlea','Corrifey','Fairballey','Piquedilly','Pueblo Plié',,'舞姿镇'],encounters:[
 	[562,,['trade',alternateForm(562,1)]]
 ]},
-{name:['Route 7',,,,'Ruta 7',,'7号道路'],encounters:[
+{name:['Route 7',,,'Percorso 7','Ruta 7',,'7号道路'],encounters:[
 	[863,,'overworld',30],
 	[828,,'overworld',20],
 	[596,,'overworld',20],
@@ -2761,7 +2761,7 @@ const LOCATIONS=[
 	[537,,'hidden',[5,10,10,10,10,10,10,10,10]],
 	[820,,'shake_tree',100]
 ]},
-{name:['Route 8',,,,'Ruta 8',,'8号道路'],encounters:[
+{name:['Route 8',,,'Percorso 8','Ruta 8',,'8号道路'],encounters:[
 	{group:'main',encounters:[
 		[622,,'overworld',25],
 		[533,Sw,'overworld',25],
@@ -2785,7 +2785,7 @@ const LOCATIONS=[
 		[558,,'wanderer'],
 		[870,,'wanderer_one']
 	]},
-	{group:['Steamdrift Way',,,,'Senda Vaporosa',,'泉烟小路'],encounters:[
+	{group:['Steamdrift Way','Sentier des Sources','Dampfschwaden-Pfad','Sentiero del Vapore','Senda Vaporosa',,'泉烟小路'],encounters:[
 		[872,,'overworld',40],
 		[361,,'overworld',25],
 		[215,,'overworld',20],
@@ -2800,11 +2800,11 @@ const LOCATIONS=[
 		[538,Sh,'overworld',5]
 	]}
 ]},
-{name:['Circhester',,,,'Pueblo Auriga',,'战竞镇'],encounters:[
+{name:['Circhester','Ludester',,,'Pueblo Auriga',,'战竞镇'],encounters:[
 	[538,Sw,['trade',583]],
 	[539,Sh,['trade',583]]
 ]},
-{name:['Route 9',,,,'Ruta 9',,'9号道路'],encounters:[
+{name:['Route 9',,,'Percorso 9','Ruta 9',,'9号道路'],encounters:[
 	{group:'main',encounters:[
 		[279,,'overworld',40],
 		[747,Sw,'overworld',35],
@@ -2826,7 +2826,7 @@ const LOCATIONS=[
 		[458,,'surf',25],
 		[593,,'surf',5]
 	]},
-	{group:['Circhester Bay',,,,'Bahía de Auriga',,'战竞湾'],encounters:[
+	{group:['Circhester Bay','Baie de Ludester','Circhester-Bucht','Baia di Circhester','Bahía de Auriga',,'战竞湾'],encounters:[
 		[852,,'overworld',30],
 		[224,,'overworld',24],
 		[748,Sw,'overworld',20],
@@ -2852,7 +2852,7 @@ const LOCATIONS=[
 		[223,,'surf',15],
 		[226,,'surf',10]
 	]},
-	{group:['Outer Spikemuth',,,,'Afueras de Crampón',,'尖钉镇郊外'],encounters:[
+	{group:['Outer Spikemuth','Abords de Smashings','Spikeford-Ortsrand','Perif. di Spikeville','Afueras de Crampón',,'尖钉镇郊外'],encounters:[
 		[712,,'overworld',40],
 		[852,,'overworld',30],
 		[747,,'overworld',24],
@@ -2866,7 +2866,7 @@ const LOCATIONS=[
 		[820,,'shake_tree',100]
 	]}
 ]},
-{name:['Route 10',,,,'Ruta 10',,'10号道路'],encounters:[
+{name:['Route 10',,,'Percorso 10','Ruta 10',,'10号道路'],encounters:[
 	{group:'south',encounters:[
 		[alternateForm(122,1),,'overworld',30],
 		[613,,'overworld',30],
@@ -2898,29 +2898,31 @@ const LOCATIONS=[
 		[614,,'wanderer']
 	]}
 ]},
-{name:['Spikemuth',,,,'Pueblo Crampón',,'尖钉镇'],encounters:[
+{name:['Spikemuth','Smashings','Spikeford','Spikeville','Pueblo Crampón',,'尖钉镇'],encounters:[
 	[122,Sw,['trade',862]]
 ]},
-{name:['Wyndon',,,,'Ciudad Puntera',,'宫门市'],encounters:[
+{name:['Wyndon','Winscor','Score City','Goalwick','Ciudad Puntera',,'宫门市'],encounters:[
 	[884,Sw,['trade',873]]
 ]},
-{name:['Battle Tower',,,,'Torre Batalla',,'对战塔'],encounters:[
+{name:['Battle Tower','Tour de Combat','Kampfturm','Torre Lotta','Torre Batalla',,'对战塔'],encounters:[
 	[772,,['gift','postgame']]
 ]},	
 
-{name:['Wild Area',,,,'Área Silvestre',,'旷野地带'],encounters:[
+{name:['Wild Area','Terres Sauvages','Naturzone','Terre Selvagge','Área Silvestre',,'旷野地带'],encounters:[
+	[alternateForm(52,3),,'event'],
+	[alternateForm(25,9),,'event'],
+	[alternateForm(133,1),,'event'],
 	[alternateForm(143,1),,'event'],
-	[alternateForm(849,2),,'event'],
-	
+	[alternateForm(849,2),,'event'],	
 	
 	[alternateForm(145,1),Cr,'roaming']
 ]},
-{name:['Meetup Spot',,,,'Punto de Encuentro',,'集汇空地'],encounters:[
+{name:['Meetup Spot','Sentier de la Gare','Treffpunkt','Piazzale Adunanza','Punto de Encuentro',,'集汇空地'],encounters:[
 	[alternateForm(25,9),,'gift'],
 	[alternateForm(133,1),,'gift'],
 	[alternateForm(79,1),,'gift']
 ]},
-{name:['Rolling Fields',,,,'Pradera Radiante',,'煦丽草原'],encounters:[
+{name:['Rolling Fields','Plaine Verdoyante','Wonnewiesen','Pianura Serena','Pradera Radiante',,'煦丽草原'],encounters:[
 	[415,,'overworld',60],
 	[659,,'overworld',[25,60,25,25,25,25,25,25,25]],
 	[11,,'overworld',10],
@@ -2984,6 +2986,21 @@ const LOCATIONS=[
 	[282,,'wanderer',[,,,,,,,,100]], //Gardevoir
 	[281,,'wanderer',[,,,,,,,,100]], //Kirlia
 
+	
+	{group:['Western grass field',,,,'Zona hierba oeste'],encounters:[
+		[674,,'overworld',60],
+		[415,,'overworld',[25]],
+		[11,,'overworld',10],
+		[236,,'overworld',[5,28,5,5,5,5,5,5,5]],
+		[280,,'overworld',[,2,,,,,,,25]],
+		[278,,'overworld',[,,25]],
+		[309,,'overworld',[,,,25]],
+		[37,Sw,'overworld',[,,,,,,25]],
+		[58,Sh,'overworld',[,,,,,,25]],
+		[582,,'overworld',[,,,,25,25]],
+		[343,,'overworld',[,,,,,,,25]]
+	]},
+
 	generateRaidDen(1, 33, 62),
 	generateRaidDen(2, 3, 51),
 	generateRaidDen(3, 4, 46),
@@ -2994,20 +3011,7 @@ const LOCATIONS=[
 	generateRaidDen(8, 31, 90),
 	generateRaidDen(9, 1, 48)
 ]},
-{name:['Rolling Fields (Area 2)',,,,'Pradera Radiante (Area 2)',,'煦丽草原(区域 2)'],encounters:[
-	[674,,'overworld',60],
-	[415,,'overworld',[25]],
-	[11,,'overworld',10],
-	[236,,'overworld',[5,28,5,5,5,5,5,5,5]],
-	[280,,'overworld',[,2,,,,,,,25]],
-	[278,,'overworld',[,,25]],
-	[309,,'overworld',[,,,25]],
-	[37,Sw,'overworld',[,,,,,,25]],
-	[58,Sh,'overworld',[,,,,,,25]],
-	[582,,'overworld',[,,,,25,25]],
-	[343,,'overworld',[,,,,,,,25]]
-]},
-{name:['Dappled Grove',,,,'Arboleda Claroscuro',,'沐光森林'],encounters:[
+{name:['Dappled Grove','Bois de Clairjour','Wipfelscheinwald','Boschetto Ombraluce','Arboleda Claroscuro',,'沐光森林'],encounters:[
 	[43,,'overworld',[60,60,25,10]],
 	[163,,'overworld',[25,28,,,10,,,10,10]],
 	[659,,'overworld',[10,,10,,25,10,28,25]],
@@ -3066,7 +3070,7 @@ const LOCATIONS=[
 	generateRaidDen(13, 26, 58),
 	generateRaidDen(14, 28, 79)
 ]},
-{name:['Watchtower Ruins',,,,'Antigua Atalaya',,'瞭望塔旧址'],encounters:[
+{name:['Watchtower Ruins','Tour en ruines','Wachturmruine','Torre Diroccata','Antigua Atalaya',,'瞭望塔旧址'],encounters:[
 	[622,,'overworld',[60]],
 	[355,,'overworld',[25,60,50,35,15,,28,,25]],
 	[425,,'overworld',[15,5,,10,60,,60]],
@@ -3116,7 +3120,7 @@ const LOCATIONS=[
 	generateRaidDen(15, 2, 50),
 	generateRaidDen(16, 6, 47)
 ]},
-{name:['East Lake Axewell',,,,'Lago Axew (este)',,'牙牙湖东岸'],encounters:[
+{name:['East Lake Axewell','Lac Coupenotte Est','Milza-See (Osten)','Lago Axew (est)','Lago Axew (este)',,'牙牙湖东岸'],encounters:[
 	[759,,'overworld',[50,50,35,25,25,25,10,10,25]],
 	[43,,'overworld',[35,15,,10,,,,,15]],
 	[761,,'overworld',[15]],
@@ -3183,11 +3187,7 @@ const LOCATIONS=[
 	generateRaidDen(20, 31, 61),
 	generateRaidDen(21, 7, 44)
 ]},
-{name:['East Lake Axewell (Area 2)',,,,'Lago Axew (este, area 2)',,'牙牙湖东岸(区域 2)'],encounters:[
-	[12,,'flying',[75,25,75,75,75,75,75,75,25]],
-	[519,,'flying',[25,75,25,25,25,25,25,25,75]]
-]},
-{name:['West Lake Axewell',,,,'Lago Axew (oeste)',,'牙牙湖西岸'],encounters:[
+{name:['West Lake Axewell','Lac Coupenotte Ouest','Milza-See (Westen)','Lago Axew (ovest)','Lago Axew (oeste)',,'牙牙湖西岸'],encounters:[
 	[535,,'overworld',[60,25,5,5,25,10,,,25]],
 	[194,,'overworld',[25,,50,50,,,,,5]],
 	[98,,'overworld',[10,,10,,,5]],
@@ -3255,7 +3255,7 @@ const LOCATIONS=[
 	generateRaidDen(26, 42, 44),
 	generateRaidDen(27, 7, 44)
 ]},
-{name:['Axew\'s Eye',,,,'Ojo de Axew',,'牙牙湖之眼'],encounters:[
+{name:['Axew\'s Eye','Œil du Lac','Milza-See (Auge)','Occhio del Lago Axew','Ojo de Axew',,'牙牙湖之眼'],encounters:[
 	[760,,'overworld',[60,60,25,5,10,10,25,25,5]],
 	[99,,'overworld',[25,5,,10]],
 	[610,,'overworld',[10,10,10,,,,,,10]],
@@ -3309,28 +3309,49 @@ const LOCATIONS=[
 
 	generateRaidDen(28, 38, 64)
 ]},
-{name:['South Lake Miloch',,,,'Lago Milotic (sur)',,'美纳斯湖南岸'],encounters:[
-	[341,,'overworld',[30,10,10,30,10,,,,10]],
-	[98,,'overworld',[30,10,10,30,10]],
-	[434,,'overworld',[25,25,,,,,5,5]],
-	[66,,'overworld',[10,50,10,,10,10,60,15]],
-	[274,Sw,'overworld',[5,5]],
-	[271,Sh,'overworld',[5,5]],
-	[535,,'overworld',[,,45,28]],
-	[129,,'overworld',[,,25]],
-	[595,,'overworld',[,,,10]],
-	[771,,'overworld',[,,,2]],
-	[37,Sw,'overworld',[,,,,,,25]],
-	[58,Sh,'overworld',[,,,,,,25]],
-	[749,,'overworld',[,,,,,,10,55]],
-	[582,,'overworld',[,,,,45,60]],
-	[459,,'overworld',[,,,,25]],
-	[599,,'overworld',[,,,,,25]],
-	[225,,'overworld',[,,,,,5]],
-	[557,,'overworld',[,,,,,,,25]],
-	[425,,'overworld',[,,,,,,,,60]],
-	[436,,'overworld',[,,,,,,,,25]],
-	[280,,'overworld',[,,,,,,,,5]],
+{name:['South Lake Miloch','Lac Milobellus Sud','Milotic-See (Süden)','Lago Milotic (sud)','Lago Milotic (sur)',,'美纳斯湖南岸'],encounters:[
+	{group:['Central and northern grass fields',,,,'Hierba central y norte'],encounters:[
+		[66,,'overworld',[80,60,70,60,80,35,80,60,60]],
+		[434,,'overworld',[15,35,25,35]],
+		[236,,'overworld',5],
+		[37,Sw,'overworld',[,,,,,,15]],
+		[58,Sh,'overworld',[,,,,,,15]],
+		[459,,'overworld',[,,,,15,60]],
+		[557,,'overworld',[,,,,,,,35]],
+		[436,,'overworld',[,,,,,,,,35]]
+	]},
+	{group:['Central and northern grass fields',,,,'Hierba central y norte'],encounters:[
+		[341,,'overworld',[30,10,10,30,10,,,,10]],
+		[98,,'overworld',[30,10,10,30,10]],
+		[434,,'overworld',[25,25,,,,,5,5]],
+		[66,,'overworld',[10,50,10,,10,10,60,15]],
+		[274,Sw,'overworld',[5,5]],
+		[271,Sh,'overworld',[5,5]],
+		[535,,'overworld',[,,45,28]],
+		[129,,'overworld',[,,25]],
+		[595,,'overworld',[,,,10]],
+		[771,,'overworld',[,,,2]],
+		[37,Sw,'overworld',[,,,,,,25]],
+		[58,Sh,'overworld',[,,,,,,25]],
+		[749,,'overworld',[,,,,,,10,55]],
+		[582,,'overworld',[,,,,45,60]],
+		[459,,'overworld',[,,,,25]],
+		[599,,'overworld',[,,,,,25]],
+		[225,,'overworld',[,,,,,5]],
+		[557,,'overworld',[,,,,,,,25]],
+		[425,,'overworld',[,,,,,,,,60]],
+		[436,,'overworld',[,,,,,,,,25]],
+		[280,,'overworld',[,,,,,,,,5]],
+
+		[118,,'surf',[60,5,60,25,25,10,10,10,5]],
+		[278,,'surf',[25,10,5,5,,,5,25,10]],
+		[425,,'surf',[10,60,25,10,5,25,25,5,60]],
+		[339,,'surf',[5,25,10,60,10,5,60,60,25]],
+		[582,,'surf',[,,,,60,60]],
+
+		[278,,'flying',85],
+		[425,,'flying',15]
+	]},
 
 	[66,,'hidden',[40,20,20,10,10,10,,,20]],
 	[278,,'hidden',[30,,10]],
@@ -3352,19 +3373,10 @@ const LOCATIONS=[
 	[177,,'hidden',[,,,,,,,,40]],
 	[280,,'hidden',[,,,,,,,,10]],
 
-	[118,,'surf',[60,5,60,25,25,10,10,10,5]],
-	[278,,'surf',[25,10,5,5,,,5,25,10]],
-	[425,,'surf',[10,60,25,10,5,25,25,5,60]],
-	[339,,'surf',[5,25,10,60,10,5,60,60,25]],
-	[582,,'surf',[,,,,60,60]],
-
 	[129,,'fish',50],
 	[223,,'fish',40],
 	[339,,'fish',9],
 	[771,,'fish',1],
-
-	[278,,'flying',85],
-	[425,,'flying',15],
 
 	[596,,'wanderer'], //Galvantula
 	[67,,'wanderer'], //Machoke
@@ -3382,17 +3394,7 @@ const LOCATIONS=[
 	generateRaidDen(32, 41, 76),
 	generateRaidDen(33, 41, 76)
 ]},
-{name:['South Lake Miloch (2)',,,,'Lago Milotic (sur, area 2)',,'美纳斯湖南岸(区域 2)'],encounters:[
-	[66,,'overworld',[80,60,70,60,80,35,80,60,60]],
-	[434,,'overworld',[15,35,25,35]],
-	[236,,'overworld',5],
-	[37,Sw,'overworld',[,,,,,,15]],
-	[58,Sh,'overworld',[,,,,,,15]],
-	[459,,'overworld',[,,,,15,60]],
-	[557,,'overworld',[,,,,,,,35]],
-	[436,,'overworld',[,,,,,,,,35]]
-]},
-{name:['Giant\'s Seat',,,,'Silla del Gigante',,'巨人凳岩'],encounters:[
+{name:['Giant\'s Seat','Siège du Géant','Sitz des Giganten','Sedia del Gigante','Silla del Gigante',,'巨人凳岩'],encounters:[
 	[436,,'overworld',[60,10,25,28,5,10,10,25]],
 	[274,Sw,'overworld',[25,,60]],
 	[271,Sh,'overworld',[25,,60]],
@@ -3467,7 +3469,7 @@ const LOCATIONS=[
 	generateRaidDen(37, 15, 51),
 	generateRaidDen(38, 15, 83)
 ]},
-{name:['North Lake Miloch',,,,'Lago Milotic (norte)',,'美纳斯湖北岸'],encounters:[
+{name:['North Lake Miloch','Lac Milobellus Nord','Milotic-See (Norden)','Lago Milotic (nord)','Lago Milotic (norte)',,'美纳斯湖北岸'],encounters:[
 	[434,,'overworld',[50,55,,,,,60,25,28]],
 	[659,,'overworld',[30,,,,,,25,10]],
 	[44,,'overworld',[20,10,20,30]],
@@ -3535,7 +3537,7 @@ const LOCATIONS=[
 	generateRaidDen(43, 41, 76),
 	generateRaidDen(44, 41, 76)
 ]},
-{name:['Motostoke Riverbank',,,,'Ribera de Pistón',,'机擎河岸'],encounters:[
+{name:['Motostoke Riverbank','Berges de Motorby','Engine-Flussufer','Fiume di Steamington','Ribera de Pistón',,'机擎河岸'],encounters:[
 	[451,,'overworld',[40,,40,,,,,20]],
 	[829,,'overworld',[25]],
 	[509,,'overworld',[20,20,20,20,20,20,,20,20]],
@@ -3629,7 +3631,7 @@ const LOCATIONS=[
 	generateRaidDen(47, 14, 50),
 	generateRaidDen(48, 30, 60)
 ]},
-{name:['Bridge Field',,,,'Valle Entrepuentes',,'桥间空地'],encounters:[
+{name:['Bridge Field','Prairie Entre-Ponts','Brückental','Piana dei Ponti','Valle Entrepuentes',,'桥间空地'],encounters:[
 	[alternateForm(263,1),,'overworld',[34,35,33,30,35,10,5,25,10]],
 	[742,,'overworld',[30,25,,,,,20,,30]],
 	[202,,'overworld',[10,,,,,,15]],
@@ -3734,32 +3736,87 @@ const LOCATIONS=[
 	generateRaidDen(56, 40, 65),
 	generateRaidDen(57, 34, 82)
 ]},
-{name:['Stony Wilderness',,,,'Llanura Pétrea',,'巨石原野'],encounters:[
-	[alternateForm(263,1),,'overworld',[35,15,10,,30,10,30,30,10]],
-	[291,,'overworld',[30,,35]],
-	[236,,'overworld',[15]],
-	[343,,'overworld',[10,10,,,,,10,10]],
-	[622,,'overworld',10],
-	[67,,'overworld',[,35]],
-	[559,Sw,'overworld',[,30]],
-	[453,Sh,'overworld',[,30]],
-	[751,,'overworld',[,,30,30]],
-	[343,Sw,'overworld',[,,10,10,10,10,,,10]],
-	[436,Sh,'overworld',[,,10,10,10,10,,,10]],
-	[845,,'overworld',[,,5]],
-	[835,,'overworld',[,,,35]],
-	[848,,'overworld',[,,,10]],
-	[25,,'overworld',[,,,5]],
-	[556,,'overworld',[,,,,,,35]],
-	[757,,'overworld',[,,,,,,15]],
-	[613,,'overworld',[,,,,35,30]],
-	[215,,'overworld',[,,,,15,35]],
-	[597,,'overworld',[,,,,,5]],
-	[438,,'overworld',[,,,,,,,35]],
-	[557,,'overworld',[,,,,,,,15]],
-	[856,,'overworld',[,,,,,,,,35]],
-	[517,,'overworld',[,,,,,,,,30]],
-	[827,,'overworld',[,,,,,,,,5]],
+{name:['Stony Wilderness','Plaine Rocheuse','Megalithen-Ebene','Landa delle Pietre','Llanura Pétrea',,'巨石原野'],encounters:[
+	{group:['Two northwestern-most fields of grass',,,,'Dos zonas de hierba noroeste'],encounters:[
+		[761,,'overworld',[50,50,60,35,35,35,,35,35]],
+		[66,,'overworld',[35,35]],
+		[236,,'overworld',[15]],
+		[559,Sw,'overworld',[,15]],
+		[453,Sh,'overworld',[,15]],
+		[751,,'overworld',[,,35]],
+		[845,,'overworld',[,,5]],
+		[751,Sw,'overworld',[,,,45]],
+		[751,Sh,'overworld',[,,,50]],
+		[848,,'overworld',[,,,10]],
+		[25,Sw,'overworld',[,,,10]],
+		[25,Sh,'overworld',[,,,5]],
+		[556,,'overworld',[,,,,,,50]],
+		[761,Sw,'overworld',[,,,,,,45]],
+		[761,Sh,'overworld',[,,,,,,35]],
+		[757,Sw,'overworld',[,,,,,,5]],
+		[757,Sh,'overworld',[,,,,,,15]],
+		[613,,'overworld',[,,,,50,10]],
+		[215,,'overworld',[,,,,15,50]],
+		[597,,'overworld',[,,,,,5]],
+		[438,,'overworld',[,,,,,,,50]],
+		[557,,'overworld',[,,,,,,,15]],
+		[856,,'overworld',[,,,,,,,,50]],
+		[517,,'overworld',[,,,,,,,,10]],
+		[827,,'overworld',[,,,,,,,,5]]
+	]},
+	{group:['Most fields of grass',,,,'Casi todas las zonas de hierba'],encounters:[
+		[alternateForm(263,1),,'overworld',[35,15,10,,30,10,30,30,10]],
+		[291,,'overworld',[30,,35]],
+		[236,,'overworld',[15]],
+		[343,,'overworld',[10,10,,,,,10,10]],
+		[622,,'overworld',10],
+		[67,,'overworld',[,35]],
+		[559,Sw,'overworld',[,30]],
+		[453,Sh,'overworld',[,30]],
+		[751,,'overworld',[,,30,30]],
+		[343,Sw,'overworld',[,,10,10,10,10,,,10]],
+		[436,Sh,'overworld',[,,10,10,10,10,,,10]],
+		[845,,'overworld',[,,5]],
+		[835,,'overworld',[,,,35]],
+		[848,,'overworld',[,,,10]],
+		[25,,'overworld',[,,,5]],
+		[556,,'overworld',[,,,,,,35]],
+		[757,,'overworld',[,,,,,,15]],
+		[613,,'overworld',[,,,,35,30]],
+		[215,,'overworld',[,,,,15,35]],
+		[597,,'overworld',[,,,,,5]],
+		[438,,'overworld',[,,,,,,,35]],
+		[557,,'overworld',[,,,,,,,15]],
+		[856,,'overworld',[,,,,,,,,35]],
+		[517,,'overworld',[,,,,,,,,30]],
+		[827,,'overworld',[,,,,,,,,5]]
+	]},
+
+	{group:['Field of brown grass',,,,'Zona de hierba marrón'],encounters:[
+		[557,,'overworld',[45,15,35,,35,10,35,35,10]],
+		[291,,'overworld',[35,,15]],
+		[236,,'overworld',[15]],
+		[627,Sw,'overworld',5],
+		[629,Sh,'overworld',5],
+		[67,,'overworld',[,45]],
+		[559,Sw,'overworld',[,35]],
+		[454,Sh,'overworld',[,35]],
+		[751,,'overworld',[,,45,35]],
+		[835,,'overworld',[,,,45]],
+		[848,,'overworld',[,,,10]],
+		[25,,'overworld',[,,,5]],
+		[556,,'overworld',[,,,,,,45]],
+		[524,Sw,'overworld',[,,,,,,15]],
+		[757,Sh,'overworld',[,,,,,,15]],
+		[613,,'overworld',[,,,,45,35]],
+		[215,,'overworld',[,,,,15,45]],
+		[597,,'overworld',[,,,,,5]],
+		[438,,'overworld',[,,,,,,,45]],
+		[524,,'overworld',[,,,,,,,15]],
+		[856,,'overworld',[,,,,,,,,45]],
+		[517,,'overworld',[,,,,,,,,35]],
+		[827,,'overworld',[,,,,,,,,5]]
+	]},
 	
 	[533,Sw,'hidden',[40,,,30,10,,30]],
 	[525,Sh,'hidden',[40,,,30,10,,30,40]],
@@ -3815,59 +3872,7 @@ const LOCATIONS=[
 	generateRaidDen(68, 6, 43),
 	generateRaidDen(69, 19, 80)
 ]},
-{name:['Stony Wilderness (Area 2)',,,,'Llanura Pétrea (Área 2)',,'巨石原野(区域 2)'],encounters:[
-	[557,,'overworld',[45,15,35,,35,10,35,35,10]],
-	[291,,'overworld',[35,,15]],
-	[236,,'overworld',[15]],
-	[627,Sw,'overworld',5],
-	[629,Sh,'overworld',5],
-	[67,,'overworld',[,45]],
-	[559,Sw,'overworld',[,35]],
-	[454,Sh,'overworld',[,35]],
-	[751,,'overworld',[,,45,35]],
-	[835,,'overworld',[,,,45]],
-	[848,,'overworld',[,,,10]],
-	[25,,'overworld',[,,,5]],
-	[556,,'overworld',[,,,,,,45]],
-	[524,Sw,'overworld',[,,,,,,15]],
-	[757,Sh,'overworld',[,,,,,,15]],
-	[613,,'overworld',[,,,,45,35]],
-	[215,,'overworld',[,,,,15,45]],
-	[597,,'overworld',[,,,,,5]],
-	[438,,'overworld',[,,,,,,,45]],
-	[524,,'overworld',[,,,,,,,15]],
-	[856,,'overworld',[,,,,,,,,45]],
-	[517,,'overworld',[,,,,,,,,35]],
-	[827,,'overworld',[,,,,,,,,5]]
-]},
-{name:['Stony Wilderness (Area 3)',,,,'Llanura Pétrea (Área 3)',,'巨石原野(区域 3)'],encounters:[
-	[761,,'overworld',[50,50,60,35,35,35,,35,35]],
-	[66,,'overworld',[35,35]],
-	[236,,'overworld',[15]],
-	[559,Sw,'overworld',[,15]],
-	[453,Sh,'overworld',[,15]],
-	[751,,'overworld',[,,35]],
-	[845,,'overworld',[,,5]],
-	[751,Sw,'overworld',[,,,45]],
-	[751,Sh,'overworld',[,,,50]],
-	[848,,'overworld',[,,,10]],
-	[25,Sw,'overworld',[,,,10]],
-	[25,Sh,'overworld',[,,,5]],
-	[556,,'overworld',[,,,,,,50]],
-	[761,Sw,'overworld',[,,,,,,45]],
-	[761,Sh,'overworld',[,,,,,,35]],
-	[757,Sw,'overworld',[,,,,,,5]],
-	[757,Sh,'overworld',[,,,,,,15]],
-	[613,,'overworld',[,,,,50,10]],
-	[215,,'overworld',[,,,,15,50]],
-	[597,,'overworld',[,,,,,5]],
-	[438,,'overworld',[,,,,,,,50]],
-	[557,,'overworld',[,,,,,,,15]],
-	[856,,'overworld',[,,,,,,,,50]],
-	[517,,'overworld',[,,,,,,,,10]],
-	[827,,'overworld',[,,,,,,,,5]]
-]},
-{name:['Dusty Bowl',,,,'Cuenca Polvorienta',,'沙尘洼地'],encounters:[
+{name:['Dusty Bowl','Fosse des Sables','Sandsturmkessel','Conca delle Sabbie','Cuenca Polvorienta',,'沙尘洼地'],encounters:[
 	[827,,'overworld',[50,35,10,35,,,5]],
 	[109,,'overworld',[35,,5]],
 	[559,Sw,'overworld',[15,60]],
@@ -3964,7 +3969,7 @@ const LOCATIONS=[
 	generateRaidDen(77, 17, 52),
 	generateRaidDen(78, 15, 93)
 ]},
-{name:['Giant\'s Mirror',,,,'Espejo del Gigante',,'巨人镜池'],encounters:[
+{name:['Giant\'s Mirror','Miroir du Géant','Spiegel des Giganten','Specchio del Gigante','Espejo del Gigante',,'巨人镜池'],encounters:[
 	[527,,'overworld',[35]],
 	[710,,'overworld',[41]],
 	[520,,'overworld',[10,35,,,,,45,15]],
@@ -4058,7 +4063,7 @@ const LOCATIONS=[
 	generateRaidDen(82, 36, 69),
 	generateRaidDen(83, 27, 70)
 ]},
-{name:['Hammerlocke Hills',,,,'Cornisa de Artejo',,'拳关丘陵'],encounters:[
+{name:['Hammerlocke Hills','Plateau de Kickenham','Claw-Plateau','Colle Knuckleburgh','Cornisa de Artejo',,'拳关丘陵'],encounters:[
 	[202,,'overworld',[45,29,29,24,5,10,5,13]],
 	[759,,'overworld',[29,45]],
 	[185,,'overworld',[10,,,,,,40,40]],
@@ -4129,27 +4134,73 @@ const LOCATIONS=[
 	generateRaidDen(89, 30, 57),
 	generateRaidDen(90, 23, 73)
 ]},
-{name:['Giant\'s Cap',,,,'Gorro del Gigante',,'巨人帽岩'],encounters:[
-	[164,,'overworld',[40,5,10,5,5,,5,10,10]],
-	[alternateForm(264,1),,'overworld',[35,40,5,,10,10,,,5]],
-	[510,,'overworld',[10]],
-	[572,,'overworld',10],
-	[559,Sw,'overworld',[5,35]],
-	[453,Sh,'overworld',[5,35]],
-	[44,,'overworld',[,10]],
-	[834,,'overworld',[,,40,35]],
-	[195,,'overworld',[,,35,40]],
-	[310,,'overworld',[,,,10]],
-	[838,,'overworld',[,,,,,,40,40]],
-	[660,,'overworld',[,,,,,,35,35]],
-	[324,,'overworld',[,,,,,,10]],
-	[582,,'overworld',[,,,,40,35]],
-	[215,,'overworld',[,,,,35,40]],
-	[447,,'overworld',[,,,,,5]],
-	[213,,'overworld',[,,,,,,,5]],
-	[574,Sw,'overworld',[,,,,,,,,40]],
-	[577,Sh,'overworld',[,,,,,,,,40]],
-	[35,,'overworld',[,,,,,,,,35]],
+{name:['Giant\'s Cap','Coiffe du Géant','Hut des Giganten','Berretto del Gigante','Gorro del Gigante',,'巨人帽岩'],encounters:[
+	{group:['Most fields of grass',,,,'Casi todas las zonas de hierba'],encounters:[
+		[164,,'overworld',[40,5,10,5,5,,5,10,10]],
+		[alternateForm(264,1),,'overworld',[35,40,5,,10,10,,,5]],
+		[510,,'overworld',[10]],
+		[572,,'overworld',10],
+		[559,Sw,'overworld',[5,35]],
+		[453,Sh,'overworld',[5,35]],
+		[44,,'overworld',[,10]],
+		[834,,'overworld',[,,40,35]],
+		[195,,'overworld',[,,35,40]],
+		[310,,'overworld',[,,,10]],
+		[838,,'overworld',[,,,,,,40,40]],
+		[660,,'overworld',[,,,,,,35,35]],
+		[324,,'overworld',[,,,,,,10]],
+		[582,,'overworld',[,,,,40,35]],
+		[215,,'overworld',[,,,,35,40]],
+		[447,,'overworld',[,,,,,5]],
+		[213,,'overworld',[,,,,,,,5]],
+		[574,Sw,'overworld',[,,,,,,,,40]],
+		[577,Sh,'overworld',[,,,,,,,,40]],
+		[35,,'overworld',[,,,,,,,,35]]
+	]},
+
+	{group:['Northwestern-most field of grass',,,,'Zona de hierba noroeste'],encounters:[
+		[833,,'overworld',[50,50,50,50,35,35,35,35,35]],
+		[824,,'overworld',[35]],
+		[alternateForm(263,1),,'overworld',[10,5,10,5,5,,5,10,5]],
+		[559,Sw,'overworld',[5,35]],
+		[453,Sh,'overworld',[5,35]],
+		[44,,'overworld',[,10,5,35]],
+		[194,,'overworld',[,,35,10]],
+		[837,,'overworld',[,,,,,,50]],
+		[324,,'overworld',[,,,,,,10]],
+		[582,,'overworld',[,,,,50,10]],
+		[215,,'overworld',[,,,,10,50]],
+		[447,,'overworld',[,,,,,5]],
+		[659,,'overworld',[,,,,,,,50]],
+		[213,,'overworld',[,,,,,,,5]],
+		[575,Sw,'overworld',[,,,,,,,,50]],
+		[577,Sh,'overworld',[,,,,,,,,50]],
+		[35,,'overworld',[,,,,,,,,10]]
+	]},
+
+	{group:['Clifftop field of grass',,,,'Hierba en el punto más alto del acantilado'],encounters:[
+		[825,,'overworld',[50,50,50,50,35,35,35,35,35]],
+		[824,,'overworld',[35]],
+		[163,,'overworld',[10,5,10,5,5,,5,10,5]],
+		[559,Sw,'overworld',[5,35]],
+		[453,Sh,'overworld',[5,35]],
+		[44,,'overworld',[,10]],
+		[194,,'overworld',[,,35,10]],
+		[833,,'overworld',[,,5,35]],
+		[837,,'overworld',[,,,,,,50]],
+		[324,,'overworld',[,,,,,,10]],
+		[582,,'overworld',[,,,,50,10]],
+		[215,,'overworld',[,,,,10,50]],
+		[447,,'overworld',[,,,,,5]],
+		[659,,'overworld',[,,,,,,,50]],
+		[213,,'overworld',[,,,,,,,5]],
+		[574,Sw,'overworld',[,,,,,,,,50]],
+		[577,Sh,'overworld',[,,,,,,,,50]],
+		[35,,'overworld',[,,,,,,,,10]],
+
+		[338,Sw,'underground',100],
+		[337,Sh,'underground',100]
+	]},
 
 	[274,Sw,'hidden',[40]],
 	[271,Sh,'hidden',[40]],
@@ -4212,49 +4263,7 @@ const LOCATIONS=[
 	generateRaidDen(94, 18, 71),
 	generateRaidDen(95, 30, 60)
 ]},
-{name:['Giant\'s Cap (Area 2)',,,,'Gorro del Gigante (Área 2)',,'巨人帽岩(区域 2)'],encounters:[
-	[825,,'overworld',[50,50,50,50,35,35,35,35,35]],
-	[824,,'overworld',[35]],
-	[163,,'overworld',[10,5,10,5,5,,5,10,5]],
-	[559,Sw,'overworld',[5,35]],
-	[453,Sh,'overworld',[5,35]],
-	[44,,'overworld',[,10]],
-	[194,,'overworld',[,,35,10]],
-	[833,,'overworld',[,,5,35]],
-	[837,,'overworld',[,,,,,,50]],
-	[324,,'overworld',[,,,,,,10]],
-	[582,,'overworld',[,,,,50,10]],
-	[215,,'overworld',[,,,,10,50]],
-	[447,,'overworld',[,,,,,5]],
-	[659,,'overworld',[,,,,,,,50]],
-	[213,,'overworld',[,,,,,,,5]],
-	[574,Sw,'overworld',[,,,,,,,,50]],
-	[577,Sh,'overworld',[,,,,,,,,50]],
-	[35,,'overworld',[,,,,,,,,10]],
-
-	[338,Sw,'underground',100],
-	[337,Sh,'underground',100]
-]},
-{name:['Giant\'s Cap (Area 3)',,,,'Gorro del Gigante (Área 3)',,'巨人帽岩(区域 3)'],encounters:[
-	[833,,'overworld',[50,50,50,50,35,35,35,35,35]],
-	[824,,'overworld',[35]],
-	[alternateForm(263,1),,'overworld',[10,5,10,5,5,,5,10,5]],
-	[559,Sw,'overworld',[5,35]],
-	[453,Sh,'overworld',[5,35]],
-	[44,,'overworld',[,10,5,35]],
-	[194,,'overworld',[,,35,10]],
-	[837,,'overworld',[,,,,,,50]],
-	[324,,'overworld',[,,,,,,10]],
-	[582,,'overworld',[,,,,50,10]],
-	[215,,'overworld',[,,,,10,50]],
-	[447,,'overworld',[,,,,,5]],
-	[659,,'overworld',[,,,,,,,50]],
-	[213,,'overworld',[,,,,,,,5]],
-	[575,Sw,'overworld',[,,,,,,,,50]],
-	[577,Sh,'overworld',[,,,,,,,,50]],
-	[35,,'overworld',[,,,,,,,,10]]
-]},
-{name:['Lake of Outrage',,,,'Lago del Enfado',,'逆鳞湖'],encounters:[
+{name:['Lake of Outrage','Lac Ouragan','Wutanfall-See','Lago Dragofuria','Lago del Enfado',,'逆鳞湖'],encounters:[
 	[606,,'overworld',[32]],
 	[628,Sw,'overworld',[25]],
 	[630,Sh,'overworld',[25]],
@@ -4414,7 +4423,7 @@ const LOCATIONS=[
 
 
 
-{name:['Isle of Armor',,,,'Isla Armadura',,'铠岛'],encounters:[
+{name:['Isle of Armor','Isolarmure','Rüstungsinsel','Isola dell\'Armatura','Isla de la Armadura',,'铠岛'],encounters:[
 	[52,Ar,['trade',alternateForm(52,2)]],
 	[83,SwAr,['trade',alternateForm(83,1)]],
 	[222,ShAr,['trade',alternateForm(222,1)]],
@@ -4430,13 +4439,13 @@ const LOCATIONS=[
 	
 	[alternateForm(146,1),Cr,'roaming']
 ]},
-{name:['Master Dojo',,,,,,'马师傅武馆'],encounters:[
+{name:['Master Dojo','Dojo de la Maîtrise','Master-Dojo','Dojo Master','Dojo Maestro',,'马师傅武馆'],encounters:[
 	[1,Ar,'gift'],
 	[7,Ar,'gift'],
 	[891,Ar,'gift'],
 	[137,Ar,'gift']
 ]},
-{name:['Fields of Honor',,,,'Prado Reverencia',,'揖礼原野'],encounters:[ //908A64718CA374E6
+{name:['Fields of Honor','Plaine Salutation','Grußgefilde','Pianura Inchino','Prado Reverencia',,'揖礼原野'],encounters:[
 	[alternateForm(52,1),Ar,'gift'],
 	[alternateForm(79,0),Ar,'gift'],
 	[alternateForm(37,1),Ar,'gift'],
@@ -4509,7 +4518,7 @@ const LOCATIONS=[
 	generateRaidDen('A09',123,124),
 	generateRaidDen('A10',137,138)	
 ]},
-{name:['Soothing Wetlands',,,,'Humedal Frescor',,'清涼湿原'],encounters:[ //908A63718CA37333
+{name:['Soothing Wetlands','Lande Boldair','Balsamsumpf','Acquitrino Fresco','Humedal Frescor',,'清涼湿原'],encounters:[
 	[451,Ar,'overworld',[56,36,36,36,,,36,56,56]],
 	[206,Ar,'overworld',16],
 	[194,Ar,'overworld',16],
@@ -4577,7 +4586,7 @@ const LOCATIONS=[
 	generateRaidDen('A18',99,100),
 	generateRaidDen('A19',133,134)
 ]},
-{name:['Forest of Focus',,,,'Bosque Concentración',,'专注森林'],encounters:[ //908A62718CA37180
+{name:['Forest of Focus','Forêt Flexion','Fokusforst','Bosco Concentrazione','Bosque Concentración',,'专注森林'],encounters:[
 	[543,Ar,'overworld',[56,36,36,36,,,36,46,46]],
 	[590,Ar,'overworld',16],
 	[114,Ar,'overworld',16],
@@ -4649,23 +4658,6 @@ const LOCATIONS=[
 	[282,Ar,'wanderer',[,,,,,,,,100]], //Gardevoir
 	[39,Ar,'wanderer',[,,,,,,,,100]], //Jigglypuff
 
-	{
-		group:['Area 2',,,,'Área 2',,'区域 2'],encounters:[
-			[824,Ar,'hidden',30],
-			[427,Ar,'hidden',30],
-			[39,Ar,'hidden',[30,15,15,15,,,15,30,30]],
-			[440,Ar,'hidden',10],
-			[686,Ar,'hidden',[,15]],
-			[403,Ar,'hidden',[,,15,15]],
-			[753,Ar,'hidden',[,,,,,,15]],
-			[819,Ar,'shake_tree',70],
-			[840,Ar,'shake_tree',30],
-			[129,Ar,'fish',50],
-			[746,Ar,'fish',40],
-			[781,Ar,'fish',10]
-		]
-	},
-
 	generateRaidDen('A20',109,110),
 	generateRaidDen('A21',154,145),
 	generateRaidDen('A22',105,106),
@@ -4673,7 +4665,7 @@ const LOCATIONS=[
 	generateRaidDen('A24',119,120),
 	generateRaidDen('A25',135,136)
 ]},
-{name:['Challenge Beach',,,,'Playa Desafío',,'挑战海灘'],encounters:[ //908A69718CA37D65
+{name:['Challenge Beach','Plage de l\'Épreuve','Strand der Prüfung','Spiaggia Sfida','Playa Desafío',,'挑战海灘'],encounters:[
 	[81,Ar,'overworld',[56,36,36,36,,,36,56,56]],
 	[54,Ar,'overworld',32],
 	[702,Ar,'overworld',5],
@@ -4683,7 +4675,19 @@ const LOCATIONS=[
 	[403,Ar,'overworld',[,,20,20]],
 	[753,Ar,'overworld',[,,,,,,20]],
 	[242,Ar,'overworld',[,,,,,,,,2]],
-	
+
+	[824,Ar,'hidden',30],
+	[427,Ar,'hidden',30],
+	[39,Ar,'hidden',[30,15,15,15,,,15,30,30]],
+	[440,Ar,'hidden',10],
+	[686,Ar,'hidden',[,15]],
+	[403,Ar,'hidden',[,,15,15]],
+	[753,Ar,'hidden',[,,,,,,15]],
+	[819,Ar,'shake_tree',70],
+	[840,Ar,'shake_tree',30],
+	[129,Ar,'fish',50],
+	[746,Ar,'fish',40],
+	[781,Ar,'fish',10],
 	[120,Ar,'underground',100],
 
 	[72,Ar,'surf',[50,35,35,35,,,50,50,35]],
@@ -4738,7 +4742,7 @@ const LOCATIONS=[
 	generateRaidDen('A32',103,104),
 	generateRaidDen('A33',127,128)
 ]},
-{name:['Brawlers\' Cave',,,,'Cueva Contienda',,'战斗洞窟'],encounters:[ //908A68718CA37BB2
+{name:['Brawlers\' Cave','Grotte du Pugilat','Kämpfergrotte','Antro Scontro','Cueva Contienda',,'战斗洞窟'],encounters:[
 	[293,Ar,'overworld',56],
 	[527,Ar,'overworld',16],
 	[60,Ar,'overworld',[16,16,16,16,,,16]],
@@ -4761,7 +4765,7 @@ const LOCATIONS=[
 
 	generateRaidDen('A34',129,130)
 ]},
-{name:['Challenge Road',,,,'Ruta Desafío',,'挑战之路'],encounters:[ //908A67718CA379FF
+{name:['Challenge Road','Route de l\'Épreuve','Pfad der Prüfung','Cammino Sfida','Ruta Desafío',,'挑战之路'],encounters:[
 	[524,Ar,'overworld',[56,36,36,36,,,36,36,56]],
 	[619,Ar,'overworld',16],
 	[757,Ar,'overworld',16],
@@ -4811,7 +4815,7 @@ const LOCATIONS=[
 	generateRaidDen('A37',107,108),
 	generateRaidDen('A38',121,122)
 ]},
-{name:['Courageous Cavern',,,,'Cueva Tenacidad',,'斗志洞窟'],encounters:[ //908A66718CA3784C
+{name:['Courageous Cavern','Caverne Pugnacité','Tapferkeitshöhle','Grotta Grinta','Cueva Tenacidad',,'斗志洞窟'],encounters:[
 	[833,Ar,'overworld',56],
 	[527,Ar,'overworld',16],
 	[767,Ar,'overworld',16],
@@ -4842,7 +4846,7 @@ const LOCATIONS=[
 	generateRaidDen('A43',133,134),
 	generateRaidDen('A44',101,102)
 ]},
-{name:['Loop Lagoon',,,,'Bahía Circular',,'圆环海湾'],encounters:[ //908A6D718CA38431
+{name:['Loop Lagoon','Lagune Circulaire','Ringbucht','Baia Circolare','Bahía Circular',,'圆环海湾'],encounters:[
 	[852,Ar,'overworld',[56,36,36,36,,,36,56,36]],
 	[278,Ar,'overworld',16],
 	[747,Ar,'overworld',16],
@@ -4906,7 +4910,7 @@ const LOCATIONS=[
 	generateRaidDen('A47',137,138),
 	generateRaidDen('A48',107,108)
 ]},
-{name:['Training Lowlands',,,,'Llano Entrenamiento',,'锻炼平原'],encounters:[ //908A6C718CA3827E
+{name:['Training Lowlands','Plaine des Efforts','Fleißebene','Piana Addestramento','Llano Entrenamiento',,'锻炼平原'],encounters:[
 	[824,Ar,'hidden',30],
 	[506,Ar,'hidden',[60,45,45,45,,,45,45,60]],
 	[440,Ar,'hidden',10],
@@ -4986,7 +4990,7 @@ const LOCATIONS=[
 	generateRaidDen('A54',109,149),
 	generateRaidDen('A55',101,102)
 ]},
-{name:['Warm-Up Tunnel',,,,'Gruta Calentamiento',,'热身洞穴'],encounters:[ //90875F718CA13690
+{name:['Warm-Up Tunnel','Voie des Étirements','Aufwärmtunnel','Tunnel Riscaldamento','Gruta Calentamiento',,'热身洞穴'],encounters:[
 	[27,Ar,'overworld',56],
 	[104,Ar,'overworld',32],
 	[324,Ar,'overworld',5],
@@ -4994,7 +4998,7 @@ const LOCATIONS=[
 	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
 	[242,Ar,'overworld',[,,,,,,,,2]]
 ]},
-{name:['Potbottom Desert',,,,'Cuenca Arenosa',,'锅底沙漠'],encounters:[ //908760718CA13843
+{name:['Potbottom Desert','Sables de Kudsac','Wüstensenke','Deserto Paiolo','Cuenca Arenosa',,'锅底沙漠'],encounters:[
 	[551,Ar,'overworld',[56,36,36,56,,,36,36,56]],
 	[111,Ar,'overworld',32],
 	[324,Ar,'overworld',5],
@@ -5027,7 +5031,7 @@ const LOCATIONS=[
 	generateRaidDen('A57',113,114),
 	generateRaidDen('A58',115,116)
 ]},
-{name:['Workout Sea',,,,'Mar Gimnástico',,'健身之海'],encounters:[ //909170718CA9A7F8
+{name:['Workout Sea','Mer Eau-Hisse','Fitnessmeer','Mar Ginnico','Mar Gimnástico',,'健身之海'],encounters:[
 	[132,Ar,'overworld',82],
 	[102,Ar,'overworld',16],
 	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
@@ -5074,8 +5078,8 @@ const LOCATIONS=[
 	generateRaidDen('A63',107,108),
 	generateRaidDen('A64',131,132)
 ]},
-{name:['Stepping-Stone Sea',,,,'Mar Andana',,'列岛海域'],encounters:[ //909173718CA9AD11
-	[278,Ar,'overworld',82],
+{name:['Stepping-Stone Sea','Mer Align\'Îlots','Inselkettenmeer','Mar Lineapelago','Mar Andana',,'列岛海域'],encounters:[
+	[819,Ar,'overworld',82],
 	[102,Ar,'overworld',16],
 	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
 	[242,Ar,'overworld',[,,,,,,,,2]],
@@ -5107,14 +5111,6 @@ const LOCATIONS=[
 	[319,Ar,'surf',100],
 	[690,ShAr,'surf',5],
 	[691,ShAr,'surf',1],
-	{
-		group:['Area 2',,,,'Área 2',,'区域 2'],encounters:[
-			[819,Ar,'overworld',82],
-			[102,Ar,'overworld',16],
-			[113,Ar,'overworld',[2,2,2,2,,,2,2]],
-			[242,Ar,'overworld',[,,,,,,,,2]]
-		]
-	},
 
 	generateRaidDen('A65',103,104),
 	generateRaidDen('A66',117,118),
@@ -5126,7 +5122,11 @@ const LOCATIONS=[
 	generateRaidDen('A72',139,140),
 	generateRaidDen('A73',107,108)
 ]},
-{name:['Insular Sea',,,,'Mar Islejos',,'离岛海域'],encounters:[ //909172718CA9AB5E
+{name:['Insular Sea','Mer Isol\'Îlots','Fernarchipel','Mar Sperdipelago','Mar Islejos',,'离岛海域'],encounters:[
+	[278,Ar,'overworld',82],
+	[102,Ar,'overworld',16],
+	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
+	[242,Ar,'overworld',[,,,,,,,,2]],
 	[824,Ar,'hidden',30],
 	[278,Ar,'hidden',30],
 	[102,Ar,'hidden',30],
@@ -5168,7 +5168,7 @@ const LOCATIONS=[
 	generateRaidDen('A77',139,140),
 	generateRaidDen('A78',137,147)
 ]},
-{name:['Honeycalm Sea',,,,'Mar Meloso',,'蜂巢海'],encounters:[ //909175718CA9B077
+{name:['Honeycalm Sea','Mer Calméole','Wabenmeer','Mar Quietarnia','Mar Meloso',,'蜂巢海'],encounters:[
 	[415,Ar,'overworld',82],
 	[548,Ar,'overworld',16],
 	[113,Ar,'overworld',[2,2,2,2,,,2,2]],
@@ -5206,7 +5206,7 @@ const LOCATIONS=[
 	generateRaidDen('A82',139,140),
 	generateRaidDen('A83',105,106)
 ]},
-{name:['Honeycalm Island',,,,'Isla Melosa',,'蜂巢島'],encounters:[ //908DEC718CA691D5
+{name:['Honeycalm Island','Îlot Calméole','Wabeninsel','Isola Quietarnia','Isla Melosa',,'蜂巢島'],encounters:[
 	[72,Ar,'hidden',100],
 	[129,Ar,'fish',60],
 	[746,Ar,'fish',40],
@@ -5251,10 +5251,10 @@ const LOCATIONS=[
 
 
 
-{name:['Crown Tundra',,,,'Nieves de la Corona',,'王冠雪原'],encounters:[
+{name:['Crown Tundra','Couronneige','Kronen-Schneelande','Landa Corona','Nieves de la Corona',,'王冠雪原'],encounters:[
 	[alternateForm(144,1),Cr,'roaming']
 ]},
-{name:['Slippery Slope',,,,'Campo Deslizante',,'起橇雪原'],encounters:[
+{name:['Slippery Slope','Plateau Beau-Gant','Schlitterfeld','Nevi Primoscivolo','Campo Deslizante',,'起橇雪原'],encounters:[
 	[832,Cr,'overworld',[30,,,,,,20]],
 	[872,Cr,'overworld',[25,22,,,30,30,25,,22]],
 	[221,Cr,'overworld',[24,22,,,29,29,24,,22]],
@@ -5315,7 +5315,7 @@ const LOCATIONS=[
 	generateRaidDen('C05',158,159),
 	generateRaidDen('C06',182,183),
 
-	{group:['Max Lair',,,,'Supernido Dinamax',,'极巨巢穴'],showAsGrid:true,encounters:[
+	{group:['Max Lair','Grand Antre Dynamax','Dyna-Riesennest','Dynatana max','Supernido Dinamax',,'极巨巢穴'],showAsGrid:true,encounters:[
 		[253,Cr,'raid_special'],
 		[254,Cr,'raid_special'],
 		[256,Cr,'raid_special'],
@@ -5372,10 +5372,10 @@ const LOCATIONS=[
 		[806,Cr,'raid_special']
 	]}
 ]},
-{name:['Freezington',,,,'Villa Helada',,'冻凝村'],encounters:[
+{name:['Freezington','Hameau Gelé','Freezedale','Freezedale','Villa Helada',,'冻凝村'],encounters:[
 	[789,Cr,'gift']
 ]},
-{name:['Frostpoint Field',,,,'Campo Bajocero',,'冰点雪原'],encounters:[
+{name:['Frostpoint Field','Plaine Granfroy','Frostfeld','Piana Sottozero','Campo Bajocero',,'冰点雪原'],encounters:[
 	[460,Cr,'overworld',[49,49,,,39,39,49,,49]],
 	[832,Cr,'overworld',[30,,,,,,20]],
 	[124,Cr,'overworld',[10,10,,,10,10,10,,10]],
@@ -5429,7 +5429,7 @@ const LOCATIONS=[
 	generateRaidDen('C10',186,187),
 	generateRaidDen('C11',164,165),
 ]},
-{name:['Giant\'s Bed',,,,'Lecho del Gigante',,'巨人睡榻'],encounters:[
+{name:['Giant\'s Bed','Repos du Géant','Bett des Giganten','Letto del Gigante','Lecho del Gigante',,'巨人睡榻'],encounters:[
 	[32,SwCr,'overworld',[21,21,21,21,21,19,19,100,17]],
 	[29,SwCr,'overworld',[21,21,21,21,21,19,19,,17]],
 	[32,ShCr,'overworld',[26,26,26,26,26,24,24,100,22]],
@@ -5560,14 +5560,14 @@ const LOCATIONS=[
 	generateRaidDen('C32',162,163),
 	generateRaidDen('C33',170,171),
 
-	{group:['Rock Peak Ruins',,,,'Ruinas Pico Roca',,'岩山遗迹'],encounters:[
+	{group:['Rock Peak Ruins','Ruines Pic Roche','Gipfelruinen','Rovine Picco','Ruinas Pico Roca',,'岩山遗迹'],encounters:[
 		[377,Cr,'interact']
 	]},
-	{group:['Iron Ruins',,,,'Ruinas Hierro',,'黑金遗迹'],encounters:[
+	{group:['Iron Ruins','Ruines de Fer','Eisen-Ruinen','Rovine Ferro','Ruinas Hierro',,'黑金遗迹'],encounters:[
 		[379,Cr,'interact']
 	]}
 ]},
-{name:['Old Cemetery',,,,'Viejo Cementerio',,'远古墓地'],encounters:[
+{name:['Old Cemetery','Cimetière Ancien','Uralter Friedhof','Cimitero Antico','Viejo Cementerio',,'远古墓地'],encounters:[
 	[32,SwCr,'overworld',[35,20,25,20,20,20,25,,22]],
 	[32,ShCr,'overworld',[35,20,25,20,20,20,25,,17]],
 	[29,SwCr,'overworld',[35,20,25,20,20,20,25,,22]],
@@ -5615,7 +5615,7 @@ const LOCATIONS=[
 	generateRaidDen('C34',182,183),
 	generateRaidDen('C35',192,193)
 ]},
-{name:['Snowslide Slope',,,,'Desfiladero Nevado',,'雪中溪谷'],encounters:[
+{name:['Snowslide Slope','Pente Enneigée','Schneeschlucht','Valle Innevata','Desfiladero Nevado',,'雪中溪谷'],encounters:[
 	[872,SwCr,'overworld',[35,35,,,25,20,30,,35]],
 	[872,ShCr,'overworld',[35,35,,,25,25,30,,35]],
 	[374,SwCr,'overworld',[24,24,100,100,19,14,24,100,24]],
@@ -5684,11 +5684,11 @@ const LOCATIONS=[
 	generateRaidDen('C43',160,161),
 	generateRaidDen('C44',178,179),
 
-	{group:['Iceberg Ruins',,,,'Ruinas Iceberg',,'冰山遗跡'],encounters:[
+	{group:['Iceberg Ruins','Ruines Iceberg','Eisberg-Ruinen','Rovine Iceberg','Ruinas Iceberg',,'冰山遗跡'],encounters:[
 		[378,Cr,'interact']
 	]}
 ]},
-{name:['Tunnel to the Top',,,,'Túnel Ascensión',,'登顶隧道'],encounters:[
+{name:['Tunnel to the Top','Galeries Monte-Pic','Aufstiegstunnel','Tunnel Scalata','Túnel Ascensión',,'登顶隧道'],encounters:[
 	[41,Cr,'overworld',40],
 	[703,Cr,'overworld',24],
 	[361,Cr,'overworld',20],
@@ -5708,7 +5708,7 @@ const LOCATIONS=[
 	[36,Cr,'wanderer'], //Clefable
 	[621,Cr,'wanderer'] //Druddigon
 ]},
-{name:['Path to the Peak',,,,'Senda Blancacima',,'通顶雪道'],encounters:[
+{name:['Path to the Peak','Sentier Blanche-Cime','Schneegipfelpfad','Sentiero Biancacima','Senda Blancacima',,'通顶雪道'],encounters:[
 	[873,Cr,'overworld',[70,70,100,100,80,70,70,100,80]],
 	[872,Cr,'overworld',[19,19,,,19,19,19,,19]],
 	[621,Cr,'overworld',[10,,,,,,10]],
@@ -5727,12 +5727,12 @@ const LOCATIONS=[
 	generateRaidDen('C46',184,185),
 	generateRaidDen('C47',178,179)
 ]},
-{name:['Crown Shrine',,,,'Templo Corona',,'王冠神殿'],encounters:[
+{name:['Crown Shrine','Temple Couronne','Kronentempel','Tempio Corona','Templo Corona',,'王冠神殿'],encounters:[
 	[898,Cr,'interact'],
 	
 	generateRaidDen('C48',166,167)
 ]},
-{name:['Giant\'s Foot',,,,'Suela del Gigante',,'巨人鞋底'],encounters:[
+{name:['Giant\'s Foot','Empreinte du Géant','Sohle des Giganten','Suola del Gigante','Suela del Gigante',,'巨人鞋底'],encounters:[
 	[879,SwCr,'overworld',[24,24,24,19,22,19,24,,24]],
 	[879,ShCr,'overworld',[31,31,31,26,29,26,31,,31]],
 	[437,SwCr,'overworld',[15,15,15,10,12,10,15,,15]],
@@ -5805,7 +5805,7 @@ const LOCATIONS=[
 	generateRaidDen('C51',182,183),
 	generateRaidDen('C52',186,187)
 ]},
-{name:['Roaring-Sea Caves',,,,'Grutas Sonamar',,'海鸣洞窟'],encounters:[
+{name:['Roaring-Sea Caves','Cavernes Gronde-Mer','Rauschende Höhlen','Grotte Fragormare','Grutas Sonamar',,'海鸣洞窟'],encounters:[
 	[41,Cr,'overworld',40],
 	[703,Cr,'overworld',24],
 	[221,Cr,'overworld',20],
@@ -5831,7 +5831,7 @@ const LOCATIONS=[
 	[139,SwCr,'wanderer'], //Omastar
 	[141,ShCr,'wanderer'] //Kabutops
 ]},
-{name:['Frigid Sea',,,,'Mar Gélido',,'冻海'],encounters:[
+{name:['Frigid Sea','Mer Banquise','Schollenmeer','Mar Gelido','Mar Gélido',,'冻海'],encounters:[
 	[363,SwCr,'overworld',[45,30,30,25,30,27,100,100,32]],
 	[363,ShCr,'overworld',[37,22,22,17,22,20,100,100,25]],
 	[713,SwCr,'overworld',[44,29,29,24,29,27,,,32]],
@@ -5906,7 +5906,7 @@ const LOCATIONS=[
 	generateRaidDen('C65',172,173),
 	generateRaidDen('C66',170,171)
 ]},
-{name:['Three-Point Pass',,,,'Encrucijada Tresvías',,'三岔平原'],encounters:[
+{name:['Three-Point Pass','Croisée Trois-Voies','Dreiwegpass','Campo Trivio','Encrucijada Tresvías',,'三岔平原'],encounters:[
 	[437,Cr,'overworld',[27,27,27,27,27,30,22,100,30]],
 	[713,Cr,'overworld',[27,27,27,27,27,20,22,,29]],
 	[832,Cr,'overworld',[20,,,,,,10]],
@@ -5942,7 +5942,7 @@ const LOCATIONS=[
 	[466,Cr,'wanderer',[,,,100]], //Electivire
 	[887,Cr,'wanderer',[100,100,100,,100,100,100,100,100]], //Dragapult
 
-	{group:['Split-Decision Ruins',,,,'Ruinas del Dilema',,'抉择遗迹'],encounters:[
+	{group:['Split-Decision Ruins','Ruines du Choix','Zwiespaltruinen','Rovine della Scelta','Ruinas del Dilema',,'抉择遗迹'],encounters:[
 		[894,Cr,'interact'],
 		[895,Cr,'interact']
 	]},
@@ -5950,7 +5950,7 @@ const LOCATIONS=[
 	generateRaidDen('C67',184,185),
 	generateRaidDen('C68',164,165)
 ]},
-{name:['Ballimere Lake',,,,'Lago Bolaguna',,'球湖湖畔'],encounters:[
+{name:['Ballimere Lake','Lac Poké Ball','Ballsee-Ufer','Riva del Lago Ball','Lago Bolaguna',,'球湖湖畔'],encounters:[
 	[819,Cr,'overworld',[20,20,25,20,25,100,20,100,30]],
 	[836,Cr,'overworld',[19,19,24,19,24,,19,,29]],
 	[696,Cr,'overworld',[10,10,10,10,10,,10,,10]],
@@ -6063,7 +6063,7 @@ const LOCATIONS=[
 	generateRaidDen('C84',182,183),
 	generateRaidDen('C85',184,185)
 ]},
-{name:['Lakeside Cave',,,,'Gruta del Lago',,'湖畔洞窟'],encounters:[
+{name:['Lakeside Cave','Grotte du Lac','Ballsee-Höhle','Grotta Rivalago','Gruta del Lago',,'湖畔洞窟'],encounters:[
 	[41,Cr,'overworld',20],
 	[304,Cr,'overworld',20],
 	[703,Cr,'overworld',15],
@@ -6082,7 +6082,7 @@ const LOCATIONS=[
 	[305,Cr,'wanderer'], //Lairon
 	[715,Cr,'wanderer'] //Noivern
 ]},
-{name:['Dyna Tree Hill',,,,'Colina del Maxiárbol',,'巨树丘陵'],encounters:[
+{name:['Dyna Tree Hill','Butte du Dynarbre','Hügel des Dyna-Baums','Collina Dynalbero','Colina del Maxiárbol',,'巨树丘陵'],encounters:[
 	generateRaidDen('C86',176,177),
 
 	[820,Cr,'raid_special'],

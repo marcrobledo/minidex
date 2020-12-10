@@ -50,7 +50,7 @@ const LOCATIONS=[
 		[122,Y,['trade',35]]
 	]
 },{
-	name:['Viridian Forest','Canada','Vertania Wald','Bosco Smeraldo','Bosque Verde',,'常青森林'],encounters:[
+	name:['Viridian Forest','Forêt de Jade','Vertania Wald','Bosco Smeraldo','Bosque Verde',,'常青森林'],encounters:[
 		[10,R,'grass',5],
 		[10,B,'grass',50],
 		[10,Y,'grass',55],
@@ -76,7 +76,7 @@ const LOCATIONS=[
 		[56,Y,'grass',15]
 	]
 },{
-	name:['Mt. Moon',,'Mondberg','Monte Luna',,'月见山'],encounters:[
+	name:['Mt. Moon','Mont Sélénite','Mondberg','Monte Luna',,,'月见山'],encounters:[
 		{group:'1f',encounters:[
 			[27,Y,'cave',4],
 			[35,,'cave',1],
@@ -126,7 +126,7 @@ const LOCATIONS=[
 		[129,,'gift']
 	]
 },{
-	name:['Cerulean City',,'Azuria City','Celestopoli','Ciudad Celeste',,'华蓝市'],encounters:[
+	name:['Cerulean City','Azuria','Azuria City','Celestopoli','Ciudad Celeste',,'华蓝市'],encounters:[
 		[129,,'fish_old',100],
 		[60,,'fish_good',50],
 		[118,,'fish_good',50],
@@ -270,7 +270,7 @@ const LOCATIONS=[
 		[51,Y,['trade',108]]
 	]
 },{
-	name:['Diglett\'s Cave','Cave Taupiqueur','Digdas Höhle','Grotta Diglett','Cueva Diglett',,'地鼠洞穴'],encounters:[
+	name:['Diglett\'s Cave','Cave Taupiqueur','Digdas Höhle','Grotta Diglett','Cueva de Diglett',,'地鼠洞穴'],encounters:[
 		[50,,'cave',95],
 		[51,,'cave',5]
 	]
@@ -425,7 +425,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Saffron City',,'Saffronia City','Zafferanopoli','Ciudad Azafrán',,'金黄市'],encounters:[
+	name:['Saffron City','Safrania','Saffronia City','Zafferanopoli','Ciudad Azafrán',,'金黄市'],encounters:[
 		[106,,'gift'],
 		[107,,'gift']
 	]
@@ -534,7 +534,7 @@ const LOCATIONS=[
 		[130,Y,'fish_super',10]
 	]
 },{
-	name:['Safari Zone',,'Safarizone','Zona Safari','Zona Safari',,'狩猎地带'],encounters:[
+	name:['Safari Zone','Parc Safari','Safarizone','Zona Safari','Zona Safari',,'狩猎地带'],encounters:[
 		[129,,'fish_old',100],
 		[60,,'fish_good',50],
 		[118,,'fish_good',50],
@@ -658,7 +658,7 @@ const LOCATIONS=[
 		[47,Y,['trade',114]]
 	]
 },{
-	name:['Route 17',,'Radweg','Pista Ciclabile','Camino de bicis',,'自行车道'],encounters:[
+	name:['Route 17',,,'Percorso 17','Ruta 17',,'自行车道'],encounters:[
 		[20,RB,'grass',30],
 		[21,RB,'grass',40],
 		[22,RB,'grass',5],
@@ -690,7 +690,7 @@ const LOCATIONS=[
 		[143,,'interact']
 	]
 },{
-	name:['Power Plant',,'Kraftwerk','Centrale Elettrica','Central Energía',,'无人发电厂 '],encounters:[
+	name:['Power Plant','Centrale','Kraftwerk','Centrale Elettrica','Central Energía',,'无人发电厂'],encounters:[
 		[25,RB,'walk',25],
 		[26,B,'walk',5],
 		[81,RB,'walk',25],
@@ -878,7 +878,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Pokémon Mansion',,'Pokémon-Haus','Villa Pokémon','Mansión Pokémon',,'神奇宝贝屋'],encounters:[
+	name:['Pokémon Mansion','Manoir Pokémon','Pokémon-Haus','Villa Pokémon','Mansión Pokémon',,'神奇宝贝屋'],encounters:[
 		[88,R,'walk',5],
 		[89,R,'walk',1],
 		[109,B,'walk',5],
@@ -1048,7 +1048,7 @@ const LOCATIONS=[
 		[60,,'fish_good',50]
 	]
 },{
-	name:['Cerulean Cave','Canada','Geheimdungeon','Grotta Ignota','Mazmorra Rara',,'华蓝洞窟'],encounters:[
+	name:['Unknown Dungeon','Grotte Inconnue','Geheimdungeon','Grotta Ignota','Mazmorra Rara',,'华蓝洞窟'],encounters:[
 		[42,Y,'cave',40],
 		[75,Y,'cave',15],
 		[129,,'fish_old',100],

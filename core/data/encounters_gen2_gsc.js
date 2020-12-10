@@ -163,7 +163,7 @@ const LOCATIONS=[
 		[95,,['trade',69]]
 	]
 },{
-	name:['Sprout Tower',,'Knofensaturm','Torre Sprout','Torre Bellsprout',,'喇叭芽之塔'],encounters:[
+	name:['Sprout Tower','Tour Chétiflor','Knofensaturm','Torre Sprout','Torre Bellsprout',,'喇叭芽之塔'],encounters:[
 		[19,,'walk',[100,100,15]],
 		[92,,'walk',[,,85]]
 	]
@@ -210,7 +210,7 @@ const LOCATIONS=[
 		[211,,'swarm']
 	]
 },{
-	name:['Ruins of Alph',,'Alph-Ruinen','Rovine d\'Alfa','Ruinas Alfa',,'阿尔芙遗迹'],encounters:[
+	name:['Ruins of Alph','Ruines d\'Alpha','Alph-Ruinen','Rovine d\'Alfa','Ruinas Alfa',,'阿尔芙遗迹'],encounters:[
 		[177,,'grass',90],
 		[194,C,'grass',[,,5]],
 		[195,C,'grass',[,,5]],
@@ -239,7 +239,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Union Cave','Canada','Einheitstunnel','Grotta di Mezzo','Cueva Unión',,'互连洞'],encounters:[
+	name:['Union Cave','Caves Jumelles','Einheitstunnel','Grotta di Mezzo','Cueva Unión',,'互连洞'],encounters:[
 		[129,,'fish_old',85],
 		[129,,'fish_good',35],
 		{group:'1f',encounters:[
@@ -350,7 +350,7 @@ const LOCATIONS=[
 		[190,C,'headbutt_low',20]
 	]
 },{
-	name:['Slowpoke Well',,'Flegmon-Brunnen','Pozzo Slowpoke','Pozo Slowpoke',,'呆呆兽之井'],encounters:[
+	name:['Slowpoke Well','Puits Ramoloss','Flegmon-Brunnen','Pozzo Slowpoke','Pozo Slowpoke',,'呆呆兽之井'],encounters:[
 		[79,,'cave',15],
 		[118,,'fish_old',15],
 		[129,,'fish_old',85],
@@ -371,7 +371,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Ilex Forest','Canada','Steineichenwald','Bosco di Lecci','Encinar',,'桐树林'],encounters:[
+	name:['Ilex Forest','Bois aux Chênes','Steineichenwald','Bosco di Lecci','Encinar',,'桐树林'],encounters:[
 		[10,G,'grass',[50,60]],
 		[10,C,'grass',[30,30]],
 		[11,G,'grass',[30,30]],
@@ -464,7 +464,7 @@ const LOCATIONS=[
 		[102,C,'headbutt_low',20],
 		[163,C,'headbutt_low',50],
 		[204,,'headbutt_low',30],
-		{group:['Daycare Center',,,,'Guardería Pokémon',,'培育屋'],encounters:[
+		{group:['Daycare Center','Pension Pokémon','Pokémon-Pension','Pensione Pokémon','Guardería Pokémon',,'培育屋'],encounters:[
 			[172,C,'gift_egg'],
 			[173,C,'gift_egg'],
 			[174,C,'gift_egg'],
@@ -534,7 +534,7 @@ const LOCATIONS=[
 		[21,,'gift']
 	]
 },{
-	name:['National Park',,'Nationalpark','Parco Nazionale','Parque Nacional',,'自然公园'],encounters:[
+	name:['National Park','Parc Naturel','Nationalpark','Parco Nazionale','Parque Nacional',,'自然公园'],encounters:[
 		[10,G,'grass',[50,30]],
 		[10,C,'grass',[5,5]],
 		[11,G,'grass',[30,30]],
@@ -554,7 +554,7 @@ const LOCATIONS=[
 		[191,GS,'grass',[,25]],
 		[191,C,'grass',[,20]],
 		[98,,'fish_super',100],
-		{group:['Bug-Catching Contest',,,,'Concurso de Captura de Bichos',,'捕虫大赛'],encounters:[
+		{group:['Bug-Catching Contest','Concours de Capture d\'insecte','Käferturnier','Gara Pigliamosche','Concurso de Captura de Bichos',,'捕虫大赛'],encounters:[
 			[10,,'grass',20],
 			[11,,'grass',10],
 			[12,,'grass',5],
@@ -681,7 +681,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Roaming Johto',,,,,,'城都地区野外遭遇'],encounters:[
+	name:['Johto',,,,,,'城都'],encounters:[
 		[243,,'roaming'],
 		[244,,'roaming'],
 		[245,GS,'roaming']
@@ -911,7 +911,7 @@ const LOCATIONS=[
 		[214,GS,'headbutt_low',30]
 	]
 },{
-	name:['Lake of Rage',,'Garados-See','Lago dei Gyarados','Lago de la Furia',,'愤怒之湖'],encounters:[
+	name:['Lake of Rage','Lac Colère','See des Zorns','Lago d\'Ira','Lago de la Furia',,'愤怒之湖'],encounters:[
 		[129,,'surf',90],
 		[130,,'surf',10],
 		[129,,'fish_old',100],
@@ -974,7 +974,7 @@ const LOCATIONS=[
 		[223,GS,'swarm']
 	]
 },{
-	name:['Ice Path',,'Eispfad','Via Gelata','Ruta Helada',,'冰雪小径'],encounters:[
+	name:['Ice Path','Route de Glace','Eispfad','Via Gelata','Ruta Helada',,'冰雪小径'],encounters:[
 		[41,G,'cave',[25,20,25]],
 		[41,C,'cave',30],
 		[124,GS,'cave',[5,10,5]],
@@ -1038,7 +1038,7 @@ const LOCATIONS=[
 		[147,C,'gift']
 	]
 },{
-	name:['Mt. Mortar',,'Kesselberg','Monte Scodella','Mt. Mortero',,'擂钵山'],encounters:[
+	name:['Mt. Mortar','Mont Creuset','Kesselberg','Monte Scodella','Mt. Mortero',,'擂钵山'],encounters:[
 		{group:'entrance',encounters:[
 			[19,GS,'cave',14],
 			[19,C,'cave',30],
@@ -1326,7 +1326,7 @@ const LOCATIONS=[
 		[204,,'headbutt_low',30]
 	]
 },{
-	name:['Tohjo Falls',,'Tohjo-Fälle','Cascate Tohjo','Cataratas Tohjo',,'都城瀑布'],encounters:[
+	name:['Tohjo Falls','Chutes Tohjo','Tohjo-Fälle','Cascate Tohjo','Cataratas Tohjo',,'都城瀑布'],encounters:[
 		[20,,'cave',30],
 		[41,,'cave',30],
 		[42,,'cave',20],
@@ -1471,7 +1471,7 @@ const LOCATIONS=[
 		[129,,'fish_super',20]
 	]
 },{
-	name:['Kanto Power Plant',,'Kraftwerk','Centrale Elettrica','Central Energía',,'无人发电厂'],encounters:[
+	name:['Power Plant','Centrale','Kraftwerk','Centrale Elettrica','Central Energía',,'无人发电厂'],encounters:[
 		[82,C,['trade',51]]
 	]
 },{
@@ -1532,7 +1532,7 @@ const LOCATIONS=[
 		[129,,'fish_super',20]
 	]
 },{
-	name:['Cerulean City',,'Azuria City','Celestopoli','Ciudad Celeste',,'华蓝市'],encounters:[
+	name:['Cerulean City','Azuria','Azuria City','Celestopoli','Ciudad Celeste',,'华蓝市'],encounters:[
 		[118,,'surf',90],
 		[119,,'surf',10],
 		[98,,'fish_old',15],
@@ -1645,7 +1645,7 @@ const LOCATIONS=[
 		[218,C,'grass',[,5]]
 	]
 },{
-	name:['Route 17',,'Radweg','Pista Ciclabile','Camino de bicis',,'自行车道'],encounters:[
+	name:['Route 17',,,'Percorso 17','Ruta 17',,'自行车道'],encounters:[
 		[22,,'grass',[40,40]],
 		[88,GS,'grass',[50,20,80]],
 		[88,C,'grass',[55,20,95]],
@@ -1773,7 +1773,7 @@ const LOCATIONS=[
 		[187,C,'grass',[35,35]]
 	]
 },{
-	name:['Digglet\'s Cave','Cave Taupiqueur','Digdas Höhle','Grotta Diglett','Cueva Diglett',,'地鼠洞穴'],encounters:[
+	name:['Digglet\'s Cave','Cave Taupiqueur','Digdas Höhle','Grotta Diglett','Cueva de Diglett',,'地鼠洞穴'],encounters:[
 		[50,,'cave',90],
 		[51,,'cave',10]
 	]
@@ -1827,7 +1827,7 @@ const LOCATIONS=[
 		[41,C,'grass',[,,10]]
 	]
 },{
-	name:['Mt. Moon',,'Mondberg',,,,'月见山'],encounters:[
+	name:['Mt. Moon','Mont Sélénite','Mondberg','Monte Luna',,,'月见山'],encounters:[
 		[27,G,'cave',20],
 		[27,C,'cave',[20,20]],
 		[28,G,'cave',5],
@@ -1885,7 +1885,7 @@ const LOCATIONS=[
 		[20,C,'grass',[,,5]]
 	]
 },{
-	name:['Pallet Town','Bourg Palette',,'Biancavilla','Pueblo Paleta',,'真新镇'],encounters:[
+	name:['Pallet Town','Bourg Palette','Alabastia','Biancavilla','Pueblo Paleta',,'真新镇'],encounters:[
 		[72,,'surf',90],
 		[73,,'surf',10],
 		[72,,'fish_old',15],
@@ -2012,7 +2012,7 @@ const LOCATIONS=[
 		[61,,'fish_super',10]
 	]
 },{
-	name:['Mt. Silver',,'Silberberg','Monte Argento',,'白银山'],encounters:[
+	name:['Mt. Silver','Mont Argenté','Silberberg','Monte Argento','Monte Plateado',,'白银山'],encounters:[
 		{group:'exterior',encounters:[
 			[24,C,'grass',[,20]],
 			[42,C,'grass',[,,30]],

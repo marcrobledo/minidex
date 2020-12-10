@@ -104,7 +104,7 @@ const LOCATIONS=[
 		[129,,'fish_super',100]
 	]
 },{
-	name:['Petalburg Woods',,'Blütenburgwald','Bosco Petalo','Bosque Petalia',,'橙华森林'],encounters:[
+	name:['Petalburg Woods','Bois Clémenti','Blütenburgwald','Bosco Petalo','Bosque Petalia',,'橙华森林'],encounters:[
 		[261,E,'grass',30],
 		[263,RS,'grass',30],
 		[265,,'grass',25],
@@ -134,7 +134,7 @@ const LOCATIONS=[
 		[300,,'swarm',50]
 	]
 },{
-	name:['Rusturf Tunnel','Canada','Metaflurtunnel','Tunnel Menferro','Túnel Fervergal',,'卡绿隧道'],encounters:[
+	name:['Rusturf Tunnel','Tunnel Mérazon','Metaflurtunnel','Tunnel Menferro','Túnel Fervergal',,'卡绿隧道'],encounters:[
 		[293,,'cave',100]
 	]
 },{
@@ -150,7 +150,7 @@ const LOCATIONS=[
 		[320,,'fish_super',100]
 	]
 },{
-	name:['Island Cave',,'Inselhöhle','Grotta Insulare','Cueva Insular',,'小岛横穴'],encounters:[
+	name:['Island Cave','Grotte Island','Inselhöhle','Grotta Insulare','Cueva Insular',,'小岛横穴'],encounters:[
 		[378,,'interact']
 	]
 },{
@@ -178,7 +178,7 @@ const LOCATIONS=[
 		[320,,'fish_super',100]
 	]
 },{
-	name:['Granite Cave',,'Granithöhle','Grotta Pietrosa','Cueva Granito',,'石之洞窟'],encounters:[
+	name:['Granite Cave','Grotte Granite','Granithöhle','Grotta Pietrosa','Cueva Granito',,'石之洞窟'],encounters:[
 		[41,,'cave',30],
 		[63,,'cave',10],
 		{group:'1f',encounters:[
@@ -274,7 +274,7 @@ const LOCATIONS=[
 		[320,,'fish_super',100]
 	]
 },{
-	name:['New Mauville',,'Neu Malvenfroh','Ciclanova','Malvalanova',,'新紫堇'],encounters:[
+	name:['New Mauville','New Lavandia','Neu Malvenfroh','Ciclanova','Malvalanova',,'新紫堇'],encounters:[
 		[100,,'interact'],
 		{group:'entrance',encounters:[
 			[81,,'walk',50],
@@ -333,7 +333,7 @@ const LOCATIONS=[
 		[339,,'fish_super',100]
 	]
 },{
-	name:['Mirage Tower',,'Wunderturm','Torre Miraggio','Torre Espejismo',,'幻影之塔'],encounters:[
+	name:['Mirage Tower','Tour Mirage','Wunderturm','Torre Miraggio','Torre Espejismo',,'幻影之塔'],encounters:[
 		[27,E,'walk',50],
 		[328,E,'walk',50]
 	]
@@ -392,7 +392,7 @@ const LOCATIONS=[
 		[274,E,'swarm',50]
 	]
 },{
-	name:['Meteor Falls',,'Meteorfälle','Cascate Meteora','Cascada Meteoro',,'流星瀑布'],encounters:[
+	name:['Meteor Falls','Site Météore','Meteorfälle','Cascate Meteora','Cascada Meteoro',,'流星瀑布'],encounters:[
 		[337,S,'surf',10],
 		[338,RE,'surf',10],
 		[118,,'fish_old',30],
@@ -456,7 +456,7 @@ const LOCATIONS=[
 		[320,,'fish_super',100]
 	]
 },{
-	name:['Abandoned Ship',,'Schiffswrack','Vecchia Nave','Nao Abandonada',,'弃船'],encounters:[
+	name:['Abandoned Ship','Épave','Schiffswrack','Vecchia Nave','Nao Abandonada',,'弃船'],encounters:[
 		[72,,'surf',99],
 		[73,,'surf',1],
 		[72,,'fish_old',30],
@@ -486,7 +486,7 @@ const LOCATIONS=[
 		[319,,'fish_super',40]
 	]
 },{
-	name:['Terra Cave',,'Terrahöhle','Grotta Terra','Cueva Terrena',,'陆之窟'],encounters:[
+	name:['Terra Cave','Grotte Terra','Terrahöhle','Grotta Terra','Cueva Terrena',,'陆之窟'],encounters:[
 		[383,E,'interact']
 	]
 },{
@@ -682,7 +682,7 @@ const LOCATIONS=[
 		[320,,'fish_super',60]
 	]
 },{
-	name:['Mt. Pyre',,'Pyroberg','Monte Pira','Monte Pírico',,'送神山'],encounters:[
+	name:['Mt. Pyre','Mont Mémoria','Pyroberg','Monte Pira','Monte Pírico',,'送神山'],encounters:[
 		{group:['1F-3F',,,,'P1-P3'],encounters:[
 			[353,SE,'walk',100],
 			[355,R,'walk',100]
@@ -875,7 +875,7 @@ const LOCATIONS=[
 		[130,,'fish_super',20]
 	]
 },{
-	name:['Cave of Origin',,'Urzeithöhle','Grotta dei Tempi','Cueva Ancestral',,'觉醒祠堂'],encounters:[
+	name:['Cave of Origin','Grotte Origine','Urzeithöhle','Grotta dei Tempi','Cueva Ancestral',,'觉醒祠堂'],encounters:[
 		[42,,'cave',10],
 		[382,S,'interact'],
 		[383,R,'interact'],
@@ -903,12 +903,12 @@ const LOCATIONS=[
 		[320,,'fish_super',60]
 	]
 },{
-	name:['Marine Cave',,'Ozeanhöhle','Grotta Mare','Cueva Marina',,'海之窟'],encounters:[
+	name:['Marine Cave','Grotte Marine','Ozeanhöhle','Grotta Mare','Cueva Marina',,'海之窟'],encounters:[
 		[382,E,'interact']
 	]
 },{
 	name:['Route 130',,,'Percorso 130','Ruta 130',,'130号水路'],encounters:[
-		{group:['Mirage Island',,'Wundereiland','Isola Miraggio','Isla Espejismo',,'幻之岛'], encounters:[
+		{group:['Mirage Island','Ile Mirage','Wundereiland','Isola Miraggio','Isla Espejismo',,'幻之岛'], encounters:[
 			[360,,'grass',100]
 		]},
 		[72,,'surf',60],
@@ -1103,11 +1103,11 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Artisan Cave',,'Höhlenatelier','Grotta Artistica','Cueva Taller',,'工匠之穴'],encounters:[
+	name:['Artisan Cave','Grotte Atelier','Höhlenatelier','Grotta Artistica','Cueva Taller',,'工匠之穴'],encounters:[
 		[235,E,'cave',100]
 	]
 },{
-	name:['Roaming Hoenn',,,,,,'丰缘地区野外遭遇'],encounters:[
+	name:['Hoenn',,,,,,'豐緣'],encounters:[
 		[380,S,'roaming'],
 		[381,R,'roaming']
 	]

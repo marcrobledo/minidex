@@ -12,7 +12,7 @@ const LOCATIONS=[
 		[151,,'event']
 	]
 },{
-	name:['Pallet Town','Bourg Palette',,'Biancavilla','Pueblo Paleta',,'真新镇'],encounters:[
+	name:['Pallet Town','Bourg Palette','Alabastia','Biancavilla','Pueblo Paleta',,'真新镇'],encounters:[
 		[16,,'flying',60],
 		[17,,'flying',35],
 		[18,,'flying',5],
@@ -75,7 +75,7 @@ const LOCATIONS=[
 		[149,,'flying','very_rare']
 	]
 },{
-	name:['Viridian Forest','Canada','Vertania-Wald','Bosco Smeraldo','Bosque Verde',,'常青森林'],encounters:[
+	name:['Viridian Forest','Forêt de Jade','Vertania-Wald','Bosco Smeraldo','Bosque Verde',,'常青森林'],encounters:[
 		[10,P,'grass',25],
 		[10,E,'grass',24],
 		[11,,'grass',10],
@@ -424,7 +424,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Route 12','Pont du Silence','Schweigebrücke','Ponte Silenzio','Puente Silencio',,'寂静桥'],encounters:[
+	name:['Route 12',,,'Percorso 12','Ruta 12',,'寂静桥'],encounters:[
 		[16,,'grass',20],
 		[17,,'grass',20],
 		[43,P,'grass',15],
@@ -594,7 +594,7 @@ const LOCATIONS=[
 		[143,,'interact']
 	]
 },{
-	name:['Saffron City',,'Saffronia City','Zafferanopoli','Ciudad Azafrán',,'金黄市'],encounters:[
+	name:['Saffron City','Safrania','Saffronia City','Zafferanopoli','Ciudad Azafrán',,'金黄市'],encounters:[
 		[137,,'gift'],
 		[alternateForm(26,1),,['trade',26]]
 	]
@@ -774,7 +774,7 @@ const LOCATIONS=[
 		[alternateForm(103,1),,['trade',103]]
 	]
 },{
-	name:['Cerulean Cave','Canada','Geheimdungeon','Grotta Ignota','Mazmorra Rara',,'华蓝洞窟'],encounters:[
+	name:['Cerulean Cave','Caverne Azurée','Azuria-Höhle','Grotta Celeste','Cueva Celeste',,'华蓝洞窟'],encounters:[
 		[111,,'cave',10],
 		[132,,'cave',5],
 		[143,,'cave','very_rare'],

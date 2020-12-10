@@ -4,7 +4,7 @@ const SM=S|M;
 
 const LOCATIONS=[
 {
-	name:['Iki Town',,,'Lili','Pueblo Lilii',,'利利小镇'],encounters:[
+	name:['Iki Town','Lili\'i','Lili\'i','Lili','Pueblo Lilii',,'利利小镇'],encounters:[
 		[722,,'starter'],
 		[725,,'starter'],
 		[728,,'starter']
@@ -429,7 +429,7 @@ const LOCATIONS=[
 		[41,,'cave',70],
 		[50,,'cave',30],
 		[796,,'cave'],
-		{group:['Central area',,,,'Area central',,'中心区域'],encounters:[
+		{group:['Central area',,,,'Área central',,'中心区域'],encounters:[
 			[10,,'grass',10],
 			[12,,['sos_ally',10]],
 			[11,,'grass',10],
@@ -475,7 +475,7 @@ const LOCATIONS=[
 		[746,,'fish',10]
 	]
 },{
-	name:['Konikoni City',,,,'Ciudad Konikoni',,'可霓可市'],encounters:[
+	name:['Konikoni City','Konikoni',,'Konikoni','Ciudad Konikoni',,'可霓可市'],encounters:[
 		[61,,['trade',41]]
 	]
 },{

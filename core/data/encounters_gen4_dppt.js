@@ -21,7 +21,7 @@ const LOCATIONS=[
 		[119,,'fish_super',35]
 	]
 },{
-	name:['Lake Verity',,'See der Wahrheit','Lago Verità','Lago Veraz',,'心齐湖'],encounters:[
+	name:['Lake Verity','Lac Vérité','See der Wahrheit','Lago Verità','Lago Veraz',,'心齐湖'],encounters:[
 		[396,DP,'grass',[50,50,40]],
 		[396,Pt,'grass',50],
 		[399,DP,'grass',[50,50,60]],
@@ -108,7 +108,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Ravaged Path',,'Verwüsteter Pfad','Cammino Roccioso','Senda Desolada',,'荒芜小道'],encounters:[
+	name:['Ravaged Path','Chemin Rocheux','Verwüsteter Pfad','Cammino Roccioso','Senda Desolada',,'荒芜小道'],encounters:[
 		[41,DP,'cave',78],
 		[41,Pt,'cave',65],
 		[54,DP,'cave',2],
@@ -151,7 +151,7 @@ const LOCATIONS=[
 		[281,DP,'pokeradar',1]
 	]
 },{
-	name:['Oreburgh Gate',,'Erzelingen-Tor','Varco Mineropoli','Puerta Pirita',,'黑金关口'],encounters:[
+	name:['Oreburgh Gate','Entrée Charbourg','Erzelingen-Tor','Varco Mineropoli','Puerta Pirita',,'黑金关口'],encounters:[
 		[41,,'surf',60],
 		[42,,'surf',5],
 		[54,,'surf',30],
@@ -267,7 +267,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Valley Windworks',,'Windkraftwerk','Impianto Turbine','Valle Eólico',,'山谷发电厂'],encounters:[
+	name:['Valley Windworks','Les Éoliennes','Windkraftwerk','Impianto Turbine','Valle Eólico',,'山谷发电厂'],encounters:[
 		[399,DP,'grass',10],
 		[403,Pt,'grass',20],
 		[417,DP,'grass',25],
@@ -296,7 +296,7 @@ const LOCATIONS=[
 		[425,,['interact','friday']]
 	]
 },{
-	name:['Eterna Forest',,'Ewigwald','Bosco Evopoli','Bosque Vetusto',,'百代森林'],mossRock:true,encounters:[
+	name:['Eterna Forest','Forêt Vestigion','Ewigwald','Bosco Evopoli','Bosque Vetusto',,'百代森林'],mossRock:true,encounters:[
 		[92,Pt,'grass',4],
 		[163,Pt,'grass',[,,10]],
 		[198,D,'grass',[,,20]],
@@ -369,7 +369,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Mt. Coronet',,'Kraterberg','Monte Corona','Monte Corona',,'天冠山'],magneticField:true,encounters:[
+	name:['Mt. Coronet','Mont Couronné','Kraterberg','Monte Corona','Monte Corona',,'天冠山'],magneticField:true,encounters:[
 		{group:['1F (Route 207 entrance)',,,,'P1 (entrada Ruta 207)',,'1F (207号道路入口)'],encounters:[
 			[35,Pt,'cave',[10,,10]],
 			[41,DP,'cave',[10,20,20]],
@@ -583,7 +583,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Old Chateau',,'Alte Villa','Antico Château','Vieja Mansión',,'森之洋馆'],encounters:[
+	name:['Old Chateau','Vieux Château','Alte Villa','Antico Château','Vieja Mansión',,'森之洋馆'],encounters:[
 		[92,,'walk',100],
 		[479,,['interact','postgame','night']],
 		{group:['Normal rooms (without eyes)',,,,'Salas normales (sin ojos)',,'普通的房间（没有画中眼睛）'],encounters:[
@@ -595,7 +595,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Route 206',,,'Percorso 206','Ruta 206',,'Radweg','Pista Ciclabile','Camino de bicis',,'206号道路'],encounters:[
+	name:['Route 206',,,'Percorso 206','Ruta 206',,'206号道路'],encounters:[
 		[41,,'grass',[,,10]],
 		[66,Pt,'grass',20],
 		[74,P,'grass',35],
@@ -615,7 +615,7 @@ const LOCATIONS=[
 		[343,,'pokeradar',22]
 	]
 },{
-	name:['Wayward Cave',,'Bizarre Höhle','Grotta Labirinto','Cueva Extravío',,'迷幻洞窟'],encounters:[
+	name:['Wayward Cave','Grotte Revêche','Bizarre Höhle','Grotta Labirinto','Cueva Extravío',,'迷幻洞窟'],encounters:[
 		[95,Pt,'cave',15],
 		[436,DP,'cave',40],
 		[436,Pt,'cave',30],
@@ -700,7 +700,7 @@ const LOCATIONS=[
 		[442,,'interact']
 	]
 },{
-	name:['Lost Tower',,'Turm der Ruhenden','Torre Memoria','Torre Perdida',,'迷失塔'],encounters:[
+	name:['Lost Tower','Tour Perdue','Turm der Ruhenden','Torre Memoria','Torre Perdida',,'迷失塔'],encounters:[
 		[92,DP,'walk',[50,50,40]],
 		[198,D,'walk',[,,20]],
 		[200,P,'walk',[,,20]],
@@ -917,7 +917,7 @@ const LOCATIONS=[
 		[224,,'fish_super',35]
 	]
 },{
-	name:['Great Marsh',,'Großmoor','Gran Palude','Gran Pantano',,'大湿地'],encounters:[
+	name:['Great Marsh','Grand Marais','Großmoor','Gran Palude','Gran Pantano',,'大湿地'],encounters:[
 		[54,DP,'surf',5],
 		[183,DP,'surf',30],
 		[194,DP,'surf',60],
@@ -1135,7 +1135,7 @@ const LOCATIONS=[
 		[342,,'fish_super',5]
 	]
 },{
-	name:['Fuego Ironworks',,'Feuriohütte','Fonderie Fuego','Forja Fuego',,'多多罗铁工厂'],encounters:[
+	name:['Fuego Ironworks','Forge Fuego','Feuriohütte','Fonderie Fuego','Forja Fuego',,'多多罗铁工厂'],encounters:[
 		[81,Pt,'grass',30],
 		[126,Pt,'grass',[30,30,20]],
 		[278,DP,'grass',10],
@@ -1280,7 +1280,7 @@ const LOCATIONS=[
 		[457,,'fish_super',35]
 	]
 },{
-	name:['Iron Island',,'Eiseninsel','Isola Ferrosa','Isla Hierro',,'钢铁岛'],encounters:[
+	name:['Iron Island','Île de Fer','Eiseninsel','Isola Ferrosa','Isla Hierro',,'钢铁岛'],encounters:[
 		{group:'exterior',encounters:[
 			[72,DP,'surf',60],
 			[72,Pt,'surf',30],
@@ -1349,7 +1349,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Lake Valor',,'See der Kühnheit','Lago Valore','Lago Valor',,'立志湖'],encounters:[
+	name:['Lake Valor','Lac Courage','See der Kühnheit','Lago Valore','Lago Valor',,'立志湖'],encounters:[
 		[54,DP,'grass',20],
 		[54,Pt,'grass',15],
 		[55,Pt,'grass',15],
@@ -1429,7 +1429,7 @@ const LOCATIONS=[
 		[93,,['trade',308]]
 	]
 },{
-	name:['Lake Acuity',,'See der Stärke','Lago Arguzia','Lago Agudeza',,'睿智湖'],encounters:[
+	name:['Lake Acuity','Lac Savoir','See der Stärke','Lago Arguzia','Lago Agudeza',,'睿智湖'],encounters:[
 		[54,DP,'grass',[30,30,20]],
 		[54,Pt,'grass',5],
 		[55,Pt,'grass',15],
@@ -1457,7 +1457,7 @@ const LOCATIONS=[
 		[480,,'interact']
 	]
 },{
-	name:['Spear Pillar',,'Speersäule','Vetta Lancia','Columna Lanza',,'枪之柱'],encounters:[
+	name:['Spear Pillar','Colonnes Lances','Speersäule','Vetta Lancia','Columna Lanza',,'枪之柱'],encounters:[
 		[483,DPt,'interact'],
 		[484,PPt,'interact']
 	]
@@ -1526,7 +1526,7 @@ const LOCATIONS=[
 		[321,,'fish_super',5]
 	]
 },{
-	name:['Victory Road',,'Siegesstraße','Via Vittoria','Calle Victoria',,'冠軍之路'],encounters:[
+	name:['Victory Road','Route Victoire','Siegesstraße','Via Vittoria','Calle Victoria',,'冠軍之路'],encounters:[
 		[42,DP,'cave',20],
 		[308,DP,'cave',15],
 		[444,Pt,'cave',5],
@@ -1664,7 +1664,7 @@ const LOCATIONS=[
 		[356,DP,'pokeradar',20]
 	]
 },{
-	name:['Roaming Sinnoh',,,,,,'神奥地区野外遭遇'],encounters:[
+	name:['Sinnoh',,,,,,'神奧'],encounters:[
 		[144,Pt,'roaming'],
 		[145,Pt,'roaming'],
 		[146,Pt,'roaming'],
@@ -1672,7 +1672,7 @@ const LOCATIONS=[
 		[488,,'roaming']
 	]
 },{
-	name:['Sendoff Spring',,'Scheidequelle','Fonte Saluto','Fuente Despedida',,'送泉'],encounters:[
+	name:['Sendoff Spring','Source Adieu','Scheidequelle','Fonte Saluto','Fuente Despedida',,'送泉'],encounters:[
 		[42,Pt,'grass',[,,10]],
 		[55,DP,'grass',20],
 		[75,Pt,'grass',[35,35,25]],
@@ -1694,7 +1694,7 @@ const LOCATIONS=[
 		[338,,['dualslot','ruby'],8]
 	]
 },{
-	name:['Turnback Cave',,'Höhle der Umkehr','Grotta Ritorno','Cueva Retorno',,'归途洞窟'],encounters:[
+	name:['Turnback Cave','Grotte Retour','Höhle der Umkehr','Grotta Ritorno','Cueva Retorno',,'归途洞窟'],encounters:[
 		[42,DP,'cave',30],
 		[42,Pt,'cave',25],
 		[356,Pt,'cave',[,,10]],
@@ -1876,7 +1876,7 @@ const LOCATIONS=[
 		[324,,'pokeradar',22]
 	]
 },{
-	name:['Stark Mountain',,'Kahlberg','Monte Ostile','Montaña Dura',,'嚴酷山'],encounters:[
+	name:['Stark Mountain','Mont Abrupt','Kahlberg','Monte Ostile','Montaña Dura',,'嚴酷山'],encounters:[
 		{group:'exterior',encounters:[
 			[22,,'grass',[20,20,10]],
 			[42,,'grass',[,,10]],
@@ -1994,7 +1994,7 @@ const LOCATIONS=[
 		[271,,['dualslot','sapphire'],8]
 	]
 },{
-	name:['Resort Area',,'Erholungsgebiet','Area Svago','Zona Descanso',,'名胜区'],encounters:[
+	name:['Resort Area','Aire de Détente','Erholungsgebiet','Area Svago','Zona Descanso',,'名胜区'],encounters:[
 		[54,Pt,'surf',10],
 		[55,DP,'surf',100],
 		[55,Pt,'surf',90],
@@ -2045,7 +2045,7 @@ const LOCATIONS=[
 		[175,,'pokeradar',22]
 	]
 },{
-	name:['Hall of Origin',,'Halle des Beginns','Spazio Origine','Sala del Origen',,'初始之间'],encounters:[
+	name:['Hall of Origin','Salle Originelle','Halle des Beginns','Spazio Origine','Sala del Origen',,'初始之间'],encounters:[
 		[493,,'event']
 	]
 },{
@@ -2084,7 +2084,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Newmoon Island',,'Neumond-Insel','Isola Lunanuova','Isla Lunanueva',,'新月岛'],encounters:[
+	name:['Newmoon Island','Île Nouvellelune','Neumond-Insel','Isola Lunanuova','Isla Lunanueva',,'新月岛'],encounters:[
 		[491,,'event']
 	]
 }

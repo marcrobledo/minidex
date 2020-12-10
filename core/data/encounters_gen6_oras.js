@@ -163,7 +163,7 @@ const LOCATIONS=[
 		[595,,['grass','dexnav']]
 	]
 },{
-	name:['Rusturf Tunnel','Canada','Metaflurtunnel','Tunnel Menferro','Túnel Fervergal',,'卡绿隧道'],encounters:[
+	name:['Rusturf Tunnel','Tunnel Mérazon','Metaflurtunnel','Tunnel Menferro','Túnel Fervergal',,'卡绿隧道'],encounters:[
 		[293,,'cave',100],
 		[293,,'horde',100],
 		[74,,'rock_smash',100]
@@ -213,7 +213,7 @@ const LOCATIONS=[
 		[320,,'fish_super',100]
 	]
 },{
-	name:['Granite Cave',,'Granithöhle','Grotta Pietrosa','Cueva Granito',,'石之洞窟'],encounters:[
+	name:['Granite Cave','Grotte Granite','Granithöhle','Grotta Pietrosa','Cueva Granito',,'石之洞窟'],encounters:[
 		[41,,'horde',60],
 		[95,,['cave','dexnav']],
 		[532,,['cave','dexnav']],
@@ -473,7 +473,7 @@ const LOCATIONS=[
 		[74,,'rock_smash',100]
 	]
 },{
-	name:['Meteor Falls',,'Meteorfälle','Cascate Meteora','Cascada Meteoro',,'流星瀑布'],encounters:[
+	name:['Meteor Falls','Site Météore','Meteorfälle','Cascate Meteora','Cascada Meteoro',,'流星瀑布'],encounters:[
 		[337,AS,'cave',25],
 		[338,OR,'cave',25],
 		[35,,['cave','dexnav']],
@@ -716,7 +716,7 @@ const LOCATIONS=[
 		[320,,'fish_super',100]
 	]
 },{
-	name:['Mt. Pyre',,'Pyroberg','Monte Pira','Monte Pírico',,'送神山'],encounters:[
+	name:['Mt. Pyre','Mont Mémoria','Pyroberg','Monte Pira','Monte Pírico',,'送神山'],encounters:[
 		{group:'interior',encounters:[
 			[353,,'walk',65],
 			[355,,'walk',35],
@@ -982,7 +982,7 @@ const LOCATIONS=[
 		[130,,'fish_super',5]
 	]
 },{
-	name:['Cave of Origin',,'Urzeithöhle','Grotta dei Tempi','Cueva Ancestral',,'觉醒祠堂'],encounters:[
+	name:['Cave of Origin','Grotte Origine','Urzeithöhle','Grotta dei Tempi','Cueva Ancestral',,'觉醒祠堂'],encounters:[
 		[42,,'cave',69],
 		[302,AS,'cave',31],
 		[303,OR,'cave',31],
@@ -1133,7 +1133,7 @@ const LOCATIONS=[
 		[320,,'fish_super',60]
 	]
 },{
-	name:['Island Cave',,'Inselhöhle','Grotta Insulare','Cueva Insular',,'小岛横穴'],encounters:[
+	name:['Island Cave','Grotte de l\'Îlot','Inselhöhle','Grotta Insulare','Cueva Insular',,'小岛横穴'],encounters:[
 		[378,,'interact'],
 		[486,,'interact']
 	]
@@ -1472,7 +1472,7 @@ const LOCATIONS=[
 		[323,,'gift']
 	]
 },{
-	name:['Crescent Isle',,'Sichelinsel','Isola Arcodiluna','Isla Creciente',,'弓形之島'],encounters:[
+	name:['Crescent Isle','Île de l\'Arc','Sichelinsel','Isola Arcodiluna','Isla Creciente',,'弓形之島'],encounters:[
 		[488,,'interact']
 	]
 },{
@@ -1481,23 +1481,23 @@ const LOCATIONS=[
 		[644,AS,'interact']
 	]
 },{
-	name:['Gnarled Den',,'Höhle der Spaltung','Fossa Informe','Boquete Irregular',,'歪曲洞穴'],encounters:[
+	name:['Gnarled Den','Gouffre Informe','Höhle der Spaltung','Fossa Informe','Boquete Irregular',,'歪曲洞穴'],encounters:[
 		[646,,'interact']
 	]
 },{
-	name:['Nameless Cavern',,'Unerforschte Höhle','Caverna Ignota','Cueva Ignota',,'未知洞窟'],encounters:[
+	name:['Nameless Cavern','Grotte Oubliée','Unerforschte Höhle','Caverna Ignota','Cueva Ignota',,'未知洞窟'],encounters:[
 		[480,,'interact'],
 		[481,,'interact'],
 		[482,,'interact']
 	]
 },{
-	name:['Pathless Plain',,'Namenlose Ebene','Piana Senza Nome','Llanura Sinnombre',,'无名平原'],encounters:[
+	name:['Pathless Plain','Plaine Sans Nom','Namenlose Ebene','Piana Senza Nome','Llanura Sinnombre',,'无名平原'],encounters:[
 		[638,,['interact','sunday','wednesday','friday']],
 		[639,,['interact','tuesday','saturday']],
 		[640,,['interact','monday','thursday']]
 	]
 },{
-	name:['Trackless Forest',,'Wilder Wald','Foresta Vergine','Bosque Virgen',,'原始森林'],encounters:[
+	name:['Trackless Forest','Forêt Impénétrable','Wilder Wald','Foresta Vergine','Bosque Virgen',,'原始森林'],encounters:[
 		[243,,'interact'],
 		[244,,'interact'],
 		[245,,'interact']

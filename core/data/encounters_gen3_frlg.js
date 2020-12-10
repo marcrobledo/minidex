@@ -52,7 +52,7 @@ const LOCATIONS=[
 		[122,,['trade',63]]
 	]
 },{
-	name:['Viridian Forest','Canada','Vertania Wald','Bosco Smeraldo','Bosque Verde',,'常青森林'],encounters:[
+	name:['Viridian Forest','Forêt de Jade','Vertania Wald','Bosco Smeraldo','Bosque Verde',,'常青森林'],encounters:[
 		[10,,'grass',40],
 		[11,FR,'grass',5],
 		[11,LG,'grass',10],
@@ -94,7 +94,7 @@ const LOCATIONS=[
 		[129,,'gift']
 	]
 },{
-	name:['Mt. Moon',,'Mondberg','Monte Luna','Mt. Moon',,'月见山'],encounters:[
+	name:['Mt. Moon','Mont Sélénite','Mondberg','Monte Luna',,,'月见山'],encounters:[
 		{group:'1f',encounters:[
 			[41,,'cave',69],
 			[74,,'cave',25],
@@ -112,7 +112,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Cerulean City',,'Azuria City','Celestopoli','Ciudad Celeste',,'华蓝市'],encounters:[
+	name:['Cerulean City','Azuria','Azuria City','Celestopoli','Ciudad Celeste',,'华蓝市'],encounters:[
 		[72,,'surf',100],
 		[129,,'fish_old',100],
 		[98,FR,'fish_good',20],
@@ -252,7 +252,7 @@ const LOCATIONS=[
 		[33,LG,['trade',30]]
 	]
 },{
-	name:['Diglett\'s Cave','Cave Taupiqueur','Digdas Höhle','Grotta Diglett','Cueva Diglett',,'地鼠洞穴'],encounters:[
+	name:['Diglett\'s Cave','Cave Taupiqueur','Digdas Höhle','Grotta Diglett','Cueva de Diglett',,'地鼠洞穴'],encounters:[
 		[50,,'cave',95],
 		[51,,'cave',5]
 	]
@@ -360,7 +360,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Saffron City',,'Saffronia City','Zafferanopoli','Ciudad Azafrán',,'金黄市'],encounters:[
+	name:['Saffron City','Safrania','Saffronia City','Zafferanopoli','Ciudad Azafrán',,'金黄市'],encounters:[
 		[106,,'gift'],
 		[107,,'gift']
 	]
@@ -450,7 +450,7 @@ const LOCATIONS=[
 		[79,LG,'fish_super',5]
 	]
 },{
-	name:['Safari Zone',,'Safarizone','Zona Safari','Zona Safari',,'狩猎地带'],encounters:[
+	name:['Safari Zone','Parc Safari','Safarizone','Zona Safari','Zona Safari',,'狩猎地带'],encounters:[
 		[29,LG,'grass',20],
 		[30,LG,'grass',10],
 		[32,FR,'grass',20],
@@ -468,7 +468,7 @@ const LOCATIONS=[
 		[119,,'fish_super',40],
 		[147,,'fish_super',15],
 		[148,,'fish_super',1],
-		{group:['Center Area',,,,'Area central',,'中心区域'],encounters:[
+		{group:['Center Area',,,,'Área central',,'中心区域'],encounters:[
 			[30,FR,'grass',5],
 			[33,LG,'grass',5],
 			[47,,'grass',5],
@@ -518,7 +518,7 @@ const LOCATIONS=[
 		[108,LG,['trade',80]]
 	]
 },{
-	name:['Route 17',,'Radweg','Pista Ciclabile','Camino de bicis',,'自行车道'],encounters:[
+	name:['Route 17',,,'Percorso 17','Ruta 17',,'自行车道'],encounters:[
 		[19,,'grass',5],
 		[20,,'grass',25],
 		[21,,'grass',30],
@@ -534,7 +534,7 @@ const LOCATIONS=[
 		[143,,'interact']
 	]
 },{
-	name:['Power Plant',,'Kraftwerk','Centrale Elettrica','Central Energía',,'无人发电厂'],encounters:[
+	name:['Power Plant','Centrale','Kraftwerk','Centrale Elettrica','Central Energía',,'无人发电厂'],encounters:[
 		[25,,'walk',25],
 		[81,,'walk',30],
 		[82,FR,'walk',10],
@@ -692,7 +692,7 @@ const LOCATIONS=[
 		}
 	]
 },{
-	name:['Pokémon Mansion',,'Pokémon-Haus','Villa Pokémon','Mansión Pokémon',,'宝可梦屋'],encounters:[
+	name:['Pokémon Mansion','Manoir Pokémon','Pokémon-Haus','Villa Pokémon','Mansión Pokémon',,'宝可梦屋'],encounters:[
 		[20,,'walk',30],
 		[37,LG,'walk',15],
 		[58,FR,'walk',15],
@@ -786,13 +786,13 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Roaming Kanto',,,,,,'关都地区野外遭遇'],encounters:[
+	name:['Kanto',,,,,,'關都'],encounters:[
 		[243,,'roaming'],
 		[244,,'roaming'],
 		[245,,'roaming']
 	]
 },{
-	name:['Cerulean Cave','Canada','Geheimdungeon','Grotta Ignota','Mazmorra Rara',,'华蓝洞窟'],encounters:[
+	name:['Cerulean Cave','Caverne Azurée','Azuria-Höhle','Grotta Celeste','Cueva Celeste',,'华蓝洞窟'],encounters:[
 		[54,FR,'surf',65],
 		[79,LG,'surf',65],
 		[55,FR,'surf',35],
@@ -925,7 +925,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Four Island',,'Eiland Vier','Quartisola','Isla Quarta',,'第４岛'],encounters:[
+	name:['Four Island','Île 4','Eiland Vier','Quartisola','Isla Quarta',,'第４岛'],encounters:[
 		[194,FR,'surf',70],
 		[183,LG,'surf',70],
 		[54,FR,'surf',30],
@@ -941,7 +941,7 @@ const LOCATIONS=[
 		[79,LG,'fish_super',5]
 	]
 },{
-	name:['Five Island',,'Eiland Fünf','Quintisola','Isla Inta',,'第５岛'],encounters:[
+	name:['Five Island','Île 5','Eiland Fünf','Quintisola','Isla Inta',,'第５岛'],encounters:[
 		[72,,'surf',65],
 		[187,,'surf',30],
 		[73,,'surf',5],
@@ -960,7 +960,7 @@ const LOCATIONS=[
 		[79,LG,'fish_super',1]
 	]
 },{
-	name:['Five Isle Meadow',,'Eiland 5-Weide','Prato Quintisola','Prado Isla Inta',,'第５岛空地'],encounters:[
+	name:['Five Isle Meadow','Pré Île 5','Eiland 5-Weide','Prato Quintisola','Prado Isla Inta',,'第５岛空地'],encounters:[
 		[161,,'grass',30],
 		[16,,'grass',20],
 		[17,,'grass',15],
@@ -997,7 +997,7 @@ const LOCATIONS=[
 		[250,,'event']
 	]
 },{
-	name:['Berry Forest',,'Beerenforst','Bosco Baccoso','Bosque Baya',,'果实森林'],encounters:[
+	name:['Berry Forest','Bois Baies','Beerenforst','Bosco Baccoso','Bosque Baya',,'果实森林'],encounters:[
 		[17,,'grass',20],
 		[44,FR,'grass',20],
 		[70,LG,'grass',20],
@@ -1054,7 +1054,7 @@ const LOCATIONS=[
 		[79,LG,'fish_super',1]
 	]
 },{
-	name:['Canyon Entrance',,'Schluchteingang','Ingresso Canyon','Entrada al Cañón',,'溪谷入口'],encounters:[
+	name:['Canyon Entrance','Entrée du Canyon','Schluchteingang','Ingresso Canyon','Entrada al Cañón',,'溪谷入口'],encounters:[
 		[161,,'grass',30],
 		[21,,'grass',20],
 		[22,,'grass',15],
@@ -1093,7 +1093,7 @@ const LOCATIONS=[
 		[79,LG,'fish_super',5]
 	]
 },{
-	name:['Green Path',,'Grüner Pfad','Via Verde','Vía Verde',,'绿之步道'],encounters:[
+	name:['Green Path','Chemin Vert','Grüner Pfad','Via Verde','Vía Verde',,'绿之步道'],encounters:[
 		[72,,'surf',95],
 		[73,,'surf',5],
 		[129,,'fish_old',100],
@@ -1111,7 +1111,7 @@ const LOCATIONS=[
 		[79,LG,'fish_super',1]
 	]
 },{
-	name:['Icefall Cave',,'Eiskaskadenhöhle','Grotta Gelata','Cueva Glaciada',,'冻瀑洞窟'],encounters:[
+	name:['Icefall Cave','Grotte de Glace','Eiskaskadenhöhle','Grotta Gelata','Cueva Glaciada',,'冻瀑洞窟'],encounters:[
 		[42,,'cave',25],
 		[41,,'cave',10],
 		[129,,'fish_old',100],
@@ -1160,11 +1160,11 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Three Isle Port','Canada','Tri-Eiland-Hafen','Porto Terzisola','Puerto Isla Tera',,'第3岛码头'],encounters:[
+	name:['Three Isle Port','Port Île 3','Tri-Eiland-Hafen','Porto Terzisola','Puerto Isla Tera',,'第3岛码头'],encounters:[
 		[206,,'grass',100]
 	]
 },{
-	name:['Lost Cave',,'Verlorene Höhle','Grotta Sperduta','Cueva Perdida',,'不归之穴'],encounters:[
+	name:['Lost Cave','Grotte Perdue','Verlorene Höhle','Grotta Sperduta','Cueva Perdida',,'不归之穴'],encounters:[
 		[93,,'cave',30],
 		[92,,'cave',25],
 		[41,,'cave',20],
@@ -1181,7 +1181,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Memorial Pillar',,'Gedenksäule','Colonna Rocciosa','Pilar Recuerdo',,'回忆之塔'],encounters:[
+	name:['Memorial Pillar','Pilar Recuerdo','Gedenksäule','Colonna Rocciosa','Pilar Recuerdo',,'回忆之塔'],encounters:[
 		[187,,'grass',100],
 		[72,,'surf',65],
 		[187,,'surf',30],
@@ -1201,7 +1201,7 @@ const LOCATIONS=[
 		[79,LG,'fish_super',1]
 	]
 },{
-	name:['Outcast Island',,'Fern-Eiland','Isola Solitaria','Isla Aislada',,'外岛'],encounters:[
+	name:['Outcast Island','Île du Lointain','Fern-Eiland','Isola Solitaria','Isla Aislada',,'外岛'],encounters:[
 		[72,,'surf',95],
 		[73,,'surf',5],
 		[129,,'fish_old',100],
@@ -1231,7 +1231,7 @@ const LOCATIONS=[
 		[235,,'event']
 	]
 },{
-	name:['Pattern Bush',,'Musterbuschwald','Bosco Disegnato','Bosquejo',,'记号树林'],encounters:[
+	name:['Pattern Bush','Forbuissons','Musterbuschwald','Bosco Disegnato','Bosquejo',,'记号树林'],encounters:[
 		[10,,'grass',10],
 		[11,FR,'grass',5],
 		[11,LG,'grass',20],
@@ -1264,7 +1264,7 @@ const LOCATIONS=[
 		[79,LG,'fish_super',1]
 	]
 },{
-	name:['Ruin Valley','Canada','Ruinental','Valle Antica','Valle Ruinas',,'遗迹山谷'],encounters:[
+	name:['Ruin Valley','Vallée Ruine','Ruinental','Valle Antica','Valle Ruinas',,'遗迹山谷'],encounters:[
 		[177,,'grass',25],
 		[21,,'grass',20],
 		[22,,'grass',10],
@@ -1289,7 +1289,7 @@ const LOCATIONS=[
 		[79,LG,'fish_super',5]
 	]
 },{
-	name:['Sevault Canyon',,'7-Schatzschlucht','Canyon Seption','Cañón Sétano',,'七宝溪谷'],encounters:[
+	name:['Sevault Canyon','Canyon Sesor','7-Schatzschlucht','Canyon Seption','Cañón Sétano',,'七宝溪谷'],encounters:[
 		[74,,'grass',20],
 		[231,,'grass',20],
 		[22,FR,'grass',10],
@@ -1370,7 +1370,7 @@ const LOCATIONS=[
 		[79,LG,'fish_super',1]
 	]
 },{
-	name:['Trainer Tower',,'Trainerturm','Torre Allenatori','Torre Desafío',,'训练家之塔'],encounters:[
+	name:['Trainer Tower','Tour Dresseurs','Trainerturm','Torre Allenatori','Torre Desafío',,'训练家之塔'],encounters:[
 		[72,FR,'surf',95],
 		[72,LG,'surf',90],
 		[73,,'surf',5],
@@ -1390,7 +1390,7 @@ const LOCATIONS=[
 		[79,LG,'fish_super',1]
 	]
 },{
-	name:['Treasure Beach',,'Schatzgestade','Riva del Tesoro','Playa Tesoro',,'宝物海滩'],encounters:[
+	name:['Treasure Beach','Plage Trésor','Schatzgestade','Riva del Tesoro','Playa Tesoro',,'宝物海滩'],encounters:[
 		[21,,'grass',30],
 		[114,,'grass',30],
 		[22,,'grass',20],
@@ -1413,7 +1413,7 @@ const LOCATIONS=[
 		[79,LG,'fish_super',1]
 	]
 },{
-	name:['Water Labyrinth','Canada','Wasserirrgarten','Labirinto Marino','Aquarinto',,'水之迷宫'],encounters:[
+	name:['Water Labyrinth','Labyrinthe d\'O','Wasserirrgarten','Labirinto Marino','Aquarinto',,'水之迷宫'],encounters:[
 		[72,,'surf',65],
 		[187,,'surf',30],
 		[73,,'surf',5],
@@ -1433,7 +1433,7 @@ const LOCATIONS=[
 		[175,,'gift_egg']
 	]
 },{
-	name:['Water Path',,'Wasserweg','Via Marina','Vía Acuática',,'水之步道'],encounters:[
+	name:['Water Path','Agualcanal','Wasserweg','Via Marina','Vía Acuática',,'水之步道'],encounters:[
 		[161,,'grass',30],
 		[21,,'grass',20],
 		[22,,'grass',15],

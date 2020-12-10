@@ -1053,7 +1053,7 @@ const LOCATIONS=[
 		[146,,'interact']
 	]
 },{
-	name:['Roaming Kalos',,,,,,'关都地区野外遭遇'],encounters:[
+	name:['Kalos',,,,,,'卡洛斯'],encounters:[
 		[144,,['roaming','if_starter_grass']],
 		[145,,['roaming','if_starter_fire']],
 		[146,,['roaming','if_starter_water']]
