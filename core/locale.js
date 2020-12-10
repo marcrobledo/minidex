@@ -36,7 +36,7 @@ STRINGS:{
 'more_info':['More information',,'Mehr Informationen',,'Más información',,'更多信息'],
 'share':['Share',,'Teilen',,'Compartir',,'分享'],
 'damage_taken':['Damage taken',,'Erlittener Schaden',,'Daño recibido',,'属性相性（受到伤害）'],
-'national_dex':['National Gen. %s',,'Regional Gen. %s',,'Nacional Gen. %s',,'第 %s 世代宝可梦'],
+'national_dex':['National Gen. %s',,,,'Nacional Gen. %s',,'第 %s 世代宝可梦'],
 'search_in':['Search %s',,'Suche in %s',,'Buscar en %s',,'搜索%s'],
 'search_filter_missing':['Not caught',,,,'Sin cazar'],
 'search_filter_type':['%s type',,,,'Tipo %s'],
