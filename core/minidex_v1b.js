@@ -2360,7 +2360,10 @@ function initialize(){
 			var matches=searchFilters.text.match(SEARCH_FILTER_TYPE);
 			if(matches){
 				for(var i=0; i<TYPES.length && !searchFilters.type; i++){
-					if(matches[1]===TYPES[i].toLowerCase() || matches[2]===TYPES[i].toLowerCase()){
+					if(
+						(MinidexSettings.lang<5 && (matches[1]===TYPES[i].slug() || matches[2]===TYPES[i].slug())) ||
+						(MinidexSettings.lang>=5 && (matches[1]===TYPES[i].toLowerCase() || matches[2]===TYPES[i].toLowerCase()))
+					){
 						createFilter('type', i+1);
 						searchFilters.text=this.value=searchFilters.text.replace(SEARCH_FILTER_TYPE,'');
 					}
