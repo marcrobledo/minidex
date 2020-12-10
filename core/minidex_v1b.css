@@ -385,7 +385,6 @@ h1{
 #progress-bar>div{
 	background-color:#f94085;
 	background-color:#f94343;
-	display:inline-block;
 	border-radius:8px;
 	height:100%;
 	transition:width .2s;
@@ -412,7 +411,7 @@ h1{
 }
 #dex-search-filters{
 	position:absolute;
-	top:14px;
+	top:10px;
 	left:15px;
 }
 .filter{
