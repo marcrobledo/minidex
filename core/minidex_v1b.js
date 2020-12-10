@@ -2104,13 +2104,7 @@ function setLanguage(l){
 			a.children[0].innerHTML=localize(LOCATIONS[a.locationIndex].name);
 	}
 	
-	
-	const GAMES=[
-	['Sword','Épée','Schwert','Spada','Espada',,'剑'],
-	['Shield','Bouclier','Schild','Scudo','Escudo',,'盾'],
-	['The Isle of Armor','L\'île solitaire de l\'Armure','Die Insel der Rüstung','L\'isola solitaria dell\'armatura','La isla de la armadura',,'铠岛'],
-	['The Crown Tundra','Les terres enneigées de la Couronne','Die Schneelande der Krone','Le terre innevate della corona','Las nieves de la corona',,'冠之雪原']
-];
+
 	/* translate game selector */
 	var games=[];
 	var nGames=GAME_ID==='swsh'?2:GAMES.length;
