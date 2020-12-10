@@ -1,4 +1,4 @@
-/* Minidex v20201207 - Marc Robledo 2013-2020 - http://www.marcrobledo.com/license */
+/* Minidex v20201210 - Marc Robledo 2013-2020 - http://www.marcrobledo.com/license */
 
 /*
 	to-do:
@@ -365,6 +365,7 @@ function showPokemon(id,form){
 
 	/* generate recursive evo line */
 	generateEvoBranch(start, previousLi);
+	generateIncenseBreeding(POKEMON[start]);
 
 	/* encounters */
 	empty('table-encounters');
@@ -1193,6 +1194,14 @@ function generateIcon(id,form,size/*,fixedSize*/){
 
 
 
+function generateIncenseBreeding(pokemon){
+	if(pokemon[6]){
+		var div=document.createElement('div');
+		div.className='text-center';
+		div.innerHTML='&laquo; '+localize('breed_with').replace('%s', localize(pokemon[6]));
+		el('evoline').appendChild(div);
+	}
+}
 function generateEvoBranch(id, previousLi){
 	if(!POKEMON[id][4])
 		return false;
@@ -1221,7 +1230,10 @@ function generateEvoBranch(id, previousLi){
 			var methodString=POKEMON[id][4][i][2];
 
 			if(method==='levelup_move')
-				methodString=localize(MOVES[methodString][0]);
+				if(competitiveDatabaseLoaded)
+					methodString=localize(MOVES[methodString][0]);
+				else
+					methodString='(move '+methodString+')'; //could not load database yet, show a placeholder
 			else if(method==='trade_for' || method==='breed_with')
 				methodString=getPokeName(methodString);
 			else if(method==='levelup_at' && locationsHash[toCamelCase(methodString)]){
