@@ -25,11 +25,16 @@ const MORE_INFO=[
 	},{
 		title:'Wikidex',
 		getInfo:function(nationalId){
-			if(MinidexSettings.lang===4){
-				return 'https://www.wikidex.net/wiki/'+getPokeName(nationalId).replace(/ /g,'_')
-			}else{
-				return null;
-			}
+			if(MinidexSettings.lang===4)
+				return 'https://www.wikidex.net/wiki/'+getPokeName(nationalId).replace(/ /g,'_');
+			return null
+		}
+	},{
+		title:'中文百科52poke',
+		getInfo:function(nationalId){
+			if(MinidexSettings.lang===6)
+				return 'https://wiki.52poke.com/wiki/'+getPokeName(nationalId).replace(/ /g,'_');
+			return null
 		}
 	}
 ];

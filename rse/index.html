@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Minidex RSE</title>
@@ -17,6 +17,17 @@
 	<link rel="apple-touch-icon" sizes="16x16" href="./resources/favicon16.png" />
 	<link rel="apple-touch-icon" href="./resources/favicon192.png" />
 
+	<!-- social network metatags -->
+	<meta name="twitter:site" content="@marc_robledo">
+	<meta name="twitter:creator" content="@marc_robledo">
+	<meta name="twitter:domain" content="marcrobledo.com">
+	<meta property="og:title" content="Minidex">
+	<meta name="twitter:title" content="Minidex">
+	<meta name="twitter:description" content="This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!">
+	<meta property="og:image" content="https://www.marcrobledo.com/minidex/core/thumbnail.jpg">
+	<meta name="twitter:image" content="https://www.marcrobledo.com/minidex/core/thumbnail.jpg">
+	<meta name="twitter:card" content="photo">
+
 	<!-- MANIFEST for Chrome-->	
 	<meta id="mobile-header-chrome" name="theme-color" content="#202b37"/><!-- <M46: specify Android bar color -->
 	<meta id="mobile-header-safari" name="apple-mobile-web-app-status-bar-style" content="#202b37"/><!-- Safari -->
@@ -24,14 +35,9 @@
 	<link rel="manifest" href="manifest.json"/> <!-- M39 -->
 
 	<!-- Minidex core -->
-	<link type="text/css" rel="stylesheet" href="../core/minidex_v1.css" media="all"/>
-	<script type="text/javascript" src="../core/minidex_v1.js"></script>
-	<script type="text/javascript" src="../core/locale_en.js"></script>
-	<script type="text/javascript" src="../core/locale_es.js"></script>
-	<script type="text/javascript" src="../core/locale_de.js"></script>
-	<script type="text/javascript" src="../core/locale_fr.js"></script>
-	<script type="text/javascript" src="../core/locale_it.js"></script>
-	<script type="text/javascript" src="../core/locale_jp.js"></script>
+	<link type="text/css" rel="stylesheet" href="../core/minidex_v1b.css" media="all"/>
+	<script type="text/javascript" src="../core/minidex_v1b.js"></script>
+	<script type="text/javascript" src="../core/locale.js"></script>
 
 	<!-- Specific game databases -->
 	<script type="text/javascript" src="../core/data/game_gen3_rse.js"></script>
@@ -45,26 +51,35 @@
 		const FORCE_HTTPS=true;
 		if(FORCE_HTTPS && location.protocol==='http:')
 			location.href=window.location.href.replace('http:','https:');
-		else if(location.protocol==='https:' && 'serviceWorker' in navigator)
+		else if(location.protocol==='https:' && 'serviceWorker' in navigator && window.location.hostname==='www.marcrobledo.com')
 			navigator.serviceWorker.register('/minidex/rse/_cache_service_worker.js', {scope: '/minidex/rse/'});
 	--></script>
 </head>
 
 <body>
+	<div id="overlay">
+		<div id="overlay2">
+			<div>
+				<label><i class="sprite game"></i> <span data-translate="game"></span><a id="current-game" href="../">More games</a></label>
+			</div>
+			<div>
+				<label><i class="sprite globe"></i> <span data-translate="language"></span><select id="select-language" class="clickable" dir="rtl">
+					<option value="0">English</option>
+					<option value="1">Français*</option>
+					<option value="2">Deutsch</option>
+					<option value="3">Italiano*</option>
+					<option value="4">Español</option>
+					<option value="5">日本語*</option>
+					<option value="6">中文</option>
+				</select></label>
+			</div>
+		</div>
+	</div>
+
 	<div id="home">
 		<header><div class="text-center"><h1>Minidex</h1></div></header>
 
-		<div class="text-right">
-			<select id="select-language" onchange="setLanguage(this.selectedIndex);MinidexSettings.save();">
-				<option value="0">English</option>
-				<option value="1">Français*</option>
-				<option value="2">Deutsch</option>
-				<option value="3">Italiano*</option>
-				<option value="4">Español</option>
-				<option value="5">日本語*</option>
-			</select>
-		</div>
-
+		<div id="button-menu" class="clickable"><i class="sprite menu"></i></div>
 		<nav>
 			<div id="dex-status" class="text-center">
 				<div id="dex-navigator"><ul></ul></div>
@@ -73,9 +88,11 @@
 
 			<div id="dex-search" class="text-center">
 				<input type="text" id="search" class="sprite" onfocus="this.select()" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+				<div id="dex-search-filters"></div>
 			</div>
+
 		</nav>
-		
+
 		<div id="donate-warning">
 			<p id="donate-intro" data-translate="donate_intro">Consider a small donation if you find this app useful!</p>
 			<p id="donate-actions">
@@ -85,21 +102,21 @@
 		</div>
 
 
-		<br style="clear:both; display:block" />
+		<br class="clearfix" />
 
 		<div id="dex-results"><div class="text-center">Now loading...</div></div>
 
-		<br style="clear:both;display:block" />
+		<br class="clearfix" />
 
 
 
 
 		<footer>
 			<span data-translate="developed_by">Developed and designed by</span> <a href="https://www.marcrobledo.com">Marc Robledo</a><br/>
-			<a href="../" target="_blank" data-translate="more_games">More games</a> | <a href="https://github.com/marcrobledo/minidex/" target="_blank" data-translate="view_on_github">View on GitHub</a><br/><br/>
+			<a href="https://github.com/marcrobledo/minidex/" target="_blank" data-translate="view_on_github">View on GitHub</a><br/><br/>
 			<small>
 				This is a fan created site, no copyright or trademark infringement is intended.<br/>
-				Pokémon and all respective names are trademark &amp; &copy; of Nintendo/Creatures Inc./GAME FREAK inc. TM 1996-2020
+				Pokémon and all respective names are trademark &amp; &copy; of Nintendo/Creatures Inc./GAME FREAK inc. TM 1996-2021
 			</small>
 		</footer>
 	</div>

@@ -14,6 +14,9 @@ body{
 	user-select:none;
 	cursor:default
 }
+body.menu-open{
+	overflow:hidden;
+}
 
 #donate-warning{
 	display:none;
@@ -61,6 +64,100 @@ body{
 #donate-warning span{display:inline-block;vertical-align:middle}
 
 
+
+
+
+/* overlay */
+#overlay{
+	position:fixed;
+	top:0;left:0;
+	width:100%;
+	height:100%;
+	z-index:10000;
+	background-color:rgba(0,0,0,.65);
+	visibility:hidden;opacity:0;transition:visibility 0s .35s,opacity .35s
+}
+body.menu-open #overlay{
+	visibility:visible;opacity:1;transition-delay:0s /* transition-delay fixes fade-in/fade-out in some browsers */
+}
+#overlay2{
+	position:fixed;
+	top:64px;left:8px;
+	width:calc(100% - 24px);
+	max-width:360px;
+	border-radius: 0 4px 4px 4px;
+	padding:12px;
+	box-sizing:border-box;
+	z-index:10001;
+	background-color:white;
+	font-size:110%;
+}
+#button-menu{
+	position:absolute;
+	top:20px;
+	left:8px;
+	z-index:10001;
+	padding: 12px;
+	border-radius: 4px 4px 0 0;
+	transition: background-color .35s;
+}
+body.menu-open #button-menu{
+	background-color:white;
+}
+#button-menu i{
+	background-color:transparent;
+	transition: all .35s;
+}
+body.menu-open #button-menu i{
+	background-color:white;
+	background-blend-mode:difference;
+}
+#overlay2 div{
+	position:relative;
+	border-bottom:1px solid #f0f0f0
+}
+#overlay2 div:last-child{
+	border-bottom:none
+}
+#overlay2 div:hover{
+	background-color:#f4f4f4
+}
+#overlay2 div .sprite{
+	margin-left:8px;
+	margin-right:8px;
+}
+#overlay2 span{
+	display:inline-block;
+}
+#overlay2 span,#overlay2 select,#overlay2 #current-game{
+	padding: 12px 2px;
+}
+#current-game, #select-language{
+	text-align:right;
+
+	position:absolute;
+	top:0;
+	right:0;
+
+	width:100%;
+}
+#current-game{
+	color:black;
+	text-decoration:none;
+}
+#overlay2 select{
+	background-color:transparent;
+	font-family:inherit;
+	font-size:100%;
+	
+	border:0;
+	outline:none;
+	
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	text-overflow:'';
+}
+
 /* nav */
 nav{
 	position:-webkit-sticky;
@@ -87,15 +184,16 @@ footer a:hover{color:white}
 
 
 .clickable:hover{cursor:pointer}
-/*.help{cursor:help}*/
+.help:hover{cursor:help}
 .mono{font-family:'Roboto Mono', monospace; font-weight:300; /* font-weight:bold; */}
 .text-center{text-align:center}
 .text-right{text-align:right}
 .no-wrap{white-space:nowrap;}
+.clearfix{display:block;clear:both}
 
 
 .sprite{
-	background-image:url(./sprites.png);
+	background-image:url(./sprites_v1b.png);
 	background-size:90px 304px;
 	background-repeat:no-repeat
 }
@@ -116,6 +214,11 @@ i.sprite{
 .sprite.pic{background-position:-76px -16px;width:14px;height:16px}
 .sprite.share{background-position:-76px -32px;width:14px;height:16px}
 
+.sprite.menu{background-position: -52px -252px;width:28px;height:20px;}
+.sprite.game{background-position: -72px -64px;width:20px;height:20px;}
+.sprite.globe{background-position: -70px -188px;width:20px;height:20px;}
+	
+	
 .sprite.heart{background-position: -24px -96px;width:20px;height:18px}
 .sprite.move-cat-0{background-position: -0 -184px;width:22px;height:16px}
 .sprite.move-cat-1{background-position: -22px -184px;width:18px;height:16px}
@@ -167,43 +270,7 @@ h1{
 	color:white;
 }
 
-label{
-	display:inline-block;
-	padding: 6px 0px;
-}
 
-
-#select-language{
-	font-family:inherit;
-	font-size:100%;
-	border:0;
-	background-color:#334251;
-	background-color:#2f4457;
-	color:inherit;
-	text-align:center;
-
-	-webkit-appearance:none;
-	-moz-appearance:none;
-	text-overflow:'';
-	vertical-align:middle;
-	padding: 4px 2px 4px 28px;
-	border-radius:80px;
-	
-	
-	background-image:url(./sprites.png);
-	background-size:90px 304px;
-	background-repeat:no-repeat;
-	background-position:-64px -184px;
-
-	position:absolute;
-	top:16px;
-	right:16px;
-}
-#select-language:hover{
-	cursor:pointer;
-	background-color:#181c20;
-}
-#select-language option{background-color:#282e36}
 
 #dex-results{
 	margin-bottom:40px
@@ -306,9 +373,9 @@ label{
 	margin-bottom:20px;
 }
 #progress-bar{
-	background-color:#1a232c;
-	background-color:#303a45;
-	height:6px;
+	background-color:#1b2128;
+	/*background-color:#303a45;*/
+	height:5px;
 	border-radius:8px;
 	width:200px;
 	display:inline-block;
@@ -318,7 +385,6 @@ label{
 #progress-bar>div{
 	background-color:#f94085;
 	background-color:#f94343;
-	display:inline-block;
 	border-radius:8px;
 	height:100%;
 	transition:width .2s;
@@ -337,19 +403,42 @@ label{
 
 
 
+#dex-search{
+	position:relative;
+	width:400px;
+	max-width:90%;
+	margin: 0 auto;
+}
+#dex-search-filters{
+	position:absolute;
+	top:10px;
+	left:15px;
+}
+.filter{
+	background-color:white;
+	color:black;
+	font-size:12px;
+	font-weight:bold;
+	padding: 2px 12px !important; border-radius:60px;
+	margin-right:4px;
+	text-transform: uppercase;
+}
+.filter-missing{
+	background-color:#383e44;
+	color:white;
+}
 #search{
 	font-family:inherit;
 	font-size:110%;
-	width:400px;
-	max-width:90%;
+	width:100%;
 	background-color:#181e24;
 	background-blend-mode:difference;
 	color:white;
 	border:none;
-	padding: 15px 30px 15px 15px;
+	padding: 15px 40px 15px 15px;
 	height:40px;
 	border-radius:20px;
-	transition: all .2s;
+	transition: background-color .2s, color .2s;
 	box-sizing:border-box;
 }
 #search:focus{
@@ -448,8 +537,8 @@ span.type{
 .type.type-15{background-color:#7b63e7}
 .type.type-16{background-color:#735a4a}
 .type.type-17{background-color:#f7b5f7}
-.type:first-child{border-top-left-radius:3px;border-bottom-left-radius:3px}
-.type:last-child{border-top-right-radius:3px;border-bottom-right-radius:3px}
+#pokemon .type:first-child{border-top-left-radius:3px;border-bottom-left-radius:3px}
+#pokemon .type:last-child{border-top-right-radius:3px;border-bottom-right-radius:3px}
 
 .table-moves tr>td:first-child div{white-space:nowrap;}
 .table-moves .type{display:inline-block;box-sizing:border-box;height:20px;text-align:center}
@@ -660,7 +749,7 @@ table td{
 
 
 .games .game-xy0, .games .game-xy1, .games .game-swsh0,.games .game-swsh1,.games .game-sm0,.games .game-sm1,.games .game-usum0,.games .game-usum1, .games .game-swsh2,.games .game-swsh3{
-	background-image:url(./sprites.png);
+	background-image:url(./sprites_v1b.png);
 	background-size:90px 304px;
 	background-repeat:no-repeat;
 	border-radius:0px;

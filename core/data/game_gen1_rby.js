@@ -1,12 +1,12 @@
 const GENERATION=1;
 const GAME_ID='rby';
 const GAMES=[
-	['Red',,'Rot',,'Rojo'],
-	['Blue',,'Blau',,'Azul'],
-	['Yellow',,'Gelb',,'Amarillo']
+	['Red','Rouge','Rot','Rosso','Rojo',,'红'],
+	['Blue','Bleu','Blau','Blu','Azul',,'蓝'],
+	['Yellow','Jaune','Gelb','Giallo','Amarillo',,'黄']
 ];
 const REGIONAL_DEXES=[
-	[['Kanto Pokédex',,'Kanto-Pokédex',,'Pokédex de Kanto'], (function(){var a=[];for(var i=1;i<=151;i++)a.push(i);return a})()]
+	[['Kanto Pokédex',,'Kanto-Pokédex',,'Pokédex de Kanto',,'关都地区宝可梦'], (function(){var a=[];for(var i=1;i<=151;i++)a.push(i);return a})()]
 ];
 const NATIONAL_DEX=false;
 const MAX_NATIONAL=151;

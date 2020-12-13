@@ -2,10 +2,10 @@ const GENERATION=7;
 const GAME_ID='letsgo';
 const GAMES=[
 	['Let\'s go, Pikachu!'],
-	['Let\'s go, Eevee!']
+	['Let\'s go, Eevee!','Let\'s go, Évoli!','Let\'s go, Evoli!']
 ];
 const REGIONAL_DEXES=[
-	[['Kanto Pokédex',,'Kanto-Pokédex',,'Pokédex de Kanto'],(function(){var a=[];for(var i=1;i<=151;i++)a.push(i);return a})().concat([808,809])]
+	[['Kanto Pokédex',,'Kanto-Pokédex',,'Pokédex de Kanto',,'关都地区宝可梦'],(function(){var a=[];for(var i=1;i<=151;i++)a.push(i);return a})().concat([808,809])]
 ];
 const NATIONAL_DEX=false;
 const MAX_NATIONAL=809;

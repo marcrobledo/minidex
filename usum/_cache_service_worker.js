@@ -14,16 +14,15 @@
 */
 
 var PRECACHE_ID='minidex-usum';
-var PRECACHE_VERSION='v5';
+var PRECACHE_VERSION='v6';
 var PRECACHE_URLS=[
 '/minidex/usum/index.html','/minidex/usum/',
 '/minidex/usum/manifest.json',
 
 /* core */
-'/minidex/core/minidex_v1.css',
-'/minidex/core/minidex_v1.js',
-'/minidex/core/locale_en.js',
-'/minidex/core/locale_es.js',
+'/minidex/core/minidex_v1b.css',
+'/minidex/core/minidex_v1b.js',
+'/minidex/core/locale.js',
 
 /* specific game data */
 '/minidex/core/data/game_gen7_usum.js',
@@ -44,7 +43,7 @@ var PRECACHE_URLS=[
 '/minidex/core/pokemon_header.png',
 '/minidex/core/header_common.png',
 '/minidex/core/header_gen1.png',
-'/minidex/core/sprites.png'
+'/minidex/core/sprites_v1b.png'
 ];
 
 

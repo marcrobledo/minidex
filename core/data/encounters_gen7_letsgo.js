@@ -8,11 +8,11 @@ const LOCATIONS=[
 		[808,,'event']
 	]
 },{
-	name:['Poké Ball Plus'],encounters:[
+	name:['Poké Ball Plus',,,,,,'精灵球 Plus'],encounters:[
 		[151,,'event']
 	]
 },{
-	name:['Pallet Town','Bourg Palette',,'Biancavilla','Pueblo Paleta'],encounters:[
+	name:['Pallet Town','Bourg Palette','Alabastia','Biancavilla','Pueblo Paleta',,'真新镇'],encounters:[
 		[16,,'flying',60],
 		[17,,'flying',35],
 		[18,,'flying',5],
@@ -20,7 +20,7 @@ const LOCATIONS=[
 		[alternateForm(133,1),E,'starter']
 	]
 },{
-	name:['Route 1',,,'Percorso 1','Ruta 1'],encounters:[
+	name:['Route 1',,,'Percorso 1','Ruta 1',,'1号道路'],encounters:[
 		[16,,'grass',40],
 		[19,,'grass',30],
 		[43,P,'grass',30],
@@ -35,13 +35,13 @@ const LOCATIONS=[
 		[149,,'flying','very_rare']
 	]
 },{
-	name:['Viridian City','Jadielle','Vertania City','Smeraldopoli','Ciudad Verde'],encounters:[
+	name:['Viridian City','Jadielle','Vertania City','Smeraldopoli','Ciudad Verde',,'常青市'],encounters:[
 		[16,,'flying',60],
 		[17,,'flying',35],
 		[18,,'flying',5]
 	]
 },{
-	name:['Route 22',,,'Percorso 22','Ruta 22'],encounters:[
+	name:['Route 22',,,'Percorso 22','Ruta 22',,'22号道路'],encounters:[
 		[19,,'grass',30],
 		[21,,'grass',30],
 		[29,,'grass',20],
@@ -58,7 +58,7 @@ const LOCATIONS=[
 		[149,,'flying','very_rare']
 	]
 },{
-	name:['Route 2',,,'Percorso 2','Ruta 2'],encounters:[
+	name:['Route 2',,,'Percorso 2','Ruta 2',,'2号道路'],encounters:[
 		[10,,'grass',15],
 		[13,,'grass',15],
 		[16,,'grass',30],
@@ -75,7 +75,7 @@ const LOCATIONS=[
 		[149,,'flying','very_rare']
 	]
 },{
-	name:['Viridian Forest','Canada','Vertania-Wald','Bosco Smeraldo','Bosque Verde'],encounters:[
+	name:['Viridian Forest','Forêt de Jade','Vertania-Wald','Bosco Smeraldo','Bosque Verde',,'常青森林'],encounters:[
 		[10,P,'grass',25],
 		[10,E,'grass',24],
 		[11,,'grass',10],
@@ -91,13 +91,13 @@ const LOCATIONS=[
 		[1,,'grass','very_rare']
 	]
 },{
-	name:['Pewter City','Argenta','Marmoria City','Plumbeopoli','Ciudad Plateada'],encounters:[
+	name:['Pewter City','Argenta','Marmoria City','Plumbeopoli','Ciudad Plateada',,'深灰市'],encounters:[
 		[16,,'flying',60],
 		[17,,'flying',35],
 		[18,,'flying',5]
 	]
 },{
-	name:['Route 3',,,'Percorso 3','Ruta 3'],encounters:[
+	name:['Route 3',,,'Percorso 3','Ruta 3',,'3号道路'],encounters:[
 		[19,P,'grass',30],
 		[19,E,'grass',40],
 		[21,P,'grass',30],
@@ -115,7 +115,7 @@ const LOCATIONS=[
 		[22,,'flying',40]
 	]
 },{
-	name:['Mt. Moon','Mont Sélénite','Mondberg','Monte Luna','Monte Moon'],encounters:[
+	name:['Mt. Moon','Mont Sélénite','Mondberg','Monte Luna','Monte Moon',,'月见山'],encounters:[
 		[41,,'cave',40],
 		[46,,'cave',15],
 		[95,,'cave',1],
@@ -131,7 +131,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Route 4',,,'Percorso 4','Ruta 4'],encounters:[
+	name:['Route 4',,,'Percorso 4','Ruta 4',,'4号道路'],encounters:[
 		[19,P,'grass',25],
 		[19,E,'grass',35],
 		[21,P,'grass',30],
@@ -154,7 +154,7 @@ const LOCATIONS=[
 		[129,,'gift']
 	]
 },{
-	name:['Cerulean City','Azuria','Azuria City','Celestopoli','Ciudad Celeste'],encounters:[
+	name:['Cerulean City','Azuria','Azuria City','Celestopoli','Ciudad Celeste',,'华蓝市'],encounters:[
 		[16,,'flying',60],
 		[17,,'flying',35],
 		[18,,'flying',5],
@@ -162,7 +162,7 @@ const LOCATIONS=[
 		[alternateForm(19,1),,['trade',19]]
 	]
 },{
-	name:['Route 24',,,'Percorso 24','Ruta 24'],encounters:[
+	name:['Route 24',,,'Percorso 24','Ruta 24',,'24号道路'],encounters:[
 		[16,P,'grass',30],
 		[16,E,'grass',20],
 		[43,P,'grass',20],
@@ -186,7 +186,7 @@ const LOCATIONS=[
 		[4,,'gift']
 	]
 },{
-	name:['Route 25',,,'Percorso 25','Ruta 25'],encounters:[
+	name:['Route 25',,,'Percorso 25','Ruta 25',,'25号道路'],encounters:[
 		[16,P,'grass',30],
 		[16,E,'grass',20],
 		[43,P,'grass',20],
@@ -209,7 +209,7 @@ const LOCATIONS=[
 		[18,,'flying',5]
 	]
 },{
-	name:['Route 5',,,'Percorso 5','Ruta 5'],encounters:[
+	name:['Route 5',,,'Percorso 5','Ruta 5',,'5号道路'],encounters:[
 		[16,,'grass',20],
 		[17,,'grass',10],
 		[19,,'grass',30],
@@ -223,7 +223,7 @@ const LOCATIONS=[
 		[18,,'flying',5]
 	]
 },{
-	name:['Route 6',,,'Percorso 6','Ruta 6'],encounters:[
+	name:['Route 6',,,'Percorso 6','Ruta 6',,'6号道路'],encounters:[
 		[16,,'grass',20],
 		[17,,'grass',10],
 		[19,,'grass',20],
@@ -246,7 +246,7 @@ const LOCATIONS=[
 		[129,,'sea_skim',45]
 	]
 },{
-	name:['Vermilion City','Carmin sur Mer','Orania City','Aranciopoli','Ciudad Carmín'],encounters:[
+	name:['Vermilion City','Carmin sur Mer','Orania City','Aranciopoli','Ciudad Carmín',,'枯叶市'],encounters:[
 		[16,,'flying',60],
 		[17,,'flying',35],
 		[18,,'flying',5],
@@ -256,7 +256,7 @@ const LOCATIONS=[
 		[alternateForm(74,1),,['trade',74]]
 	]
 },{
-	name:['Route 11',,,'Percorso 11','Ruta 11'],encounters:[
+	name:['Route 11',,,'Percorso 11','Ruta 11',,'11号道路'],encounters:[
 		[16,,'grass',25],
 		[17,,'grass',10],
 		[19,,'grass',25],
@@ -279,14 +279,14 @@ const LOCATIONS=[
 		[129,,'sea_skim',30]
 	]
 },{
-	name:['Diglett\'s Cave','Grotte Taupiqueur','Digda-Höhle','Grotta Diglett','Cueva Diglett'],encounters:[
+	name:['Diglett\'s Cave','Grotte Taupiqueur','Digda-Höhle','Grotta Diglett','Cueva Diglett',,'地鼠洞穴'],encounters:[
 		[41,,'cave',10],
 		[50,,'cave',85],
 		[51,,'cave',5],
 		[113,,'cave','very_rare']
 	]
 },{
-	name:['Route 9',,,'Percorso 9','Ruta 9'],encounters:[
+	name:['Route 9',,,'Percorso 9','Ruta 9',,'9号道路'],encounters:[
 		[19,,'grass',20],
 		[20,,'grass',10],
 		[21,,'grass',20],
@@ -305,7 +305,7 @@ const LOCATIONS=[
 		[22,,'flying',40]
 	]
 },{
-	name:['Rock Tunnel','Grotte Sombre','Felstunnel','Tunnel Roccioso','Túnel Roca'],encounters:[
+	name:['Rock Tunnel','Grotte Sombre','Felstunnel','Tunnel Roccioso','Túnel Roca',,'岩山隧道'],encounters:[
 		[66,,'cave',10],
 		[95,,'cave',10],
 		[104,,'cave',9],
@@ -326,7 +326,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Route 10',,,'Percorso 10','Ruta 10'],encounters:[
+	name:['Route 10',,,'Percorso 10','Ruta 10',,'10号道路'],encounters:[
 		[19,,'grass',15],
 		[20,,'grass',10],
 		[21,,'grass',15],
@@ -351,14 +351,14 @@ const LOCATIONS=[
 		[148,,'sea_skim',1]
 	]
 },{
-	name:['Lavender Town','Lavanville','Lavandia','Lavandonia','Pueblo Lavanda'],encounters:[
+	name:['Lavender Town','Lavanville','Lavandia','Lavandonia','Pueblo Lavanda',,'紫苑镇'],encounters:[
 		[16,,'flying',60],
 		[17,,'flying',35],
 		[18,,'flying',5],
 		[alternateForm(50,1),,['trade',50]]
 	]
 },{
-	name:['Route 8',,,'Percorso 8','Ruta 8'],encounters:[
+	name:['Route 8',,,'Percorso 8','Ruta 8',,'8号道路'],encounters:[
 		[16,,'grass',15],
 		[17,,'grass',15],
 		[19,,'grass',15],
@@ -381,7 +381,7 @@ const LOCATIONS=[
 		[149,,'flying','very_rare']
 	]
 },{
-	name:['Route 7',,,'Percorso 7','Ruta 7'],encounters:[
+	name:['Route 7',,,'Percorso 7','Ruta 7',,'7号道路'],encounters:[
 		[16,,'grass',15],
 		[17,,'grass',15],
 		[19,,'grass',15],
@@ -404,12 +404,12 @@ const LOCATIONS=[
 		[149,,'flying','very_rare']
 	]
 },{
-	name:['Celadon City','Céladopole','Prismania City','Azzurropoli','Ciudad Azulona'],encounters:[
+	name:['Celadon City','Céladopole','Prismania City','Azzurropoli','Ciudad Azulona',,'玉虹市'],encounters:[
 		[alternateForm(27,1),P,['trade',27]],
 		[alternateForm(37,1),E,['trade',37]]
 	]
 },{
-	name:['Pokémon Tower','Tour Pokémon','Pokémon-Turm','Torre Pokémon','Torre Pokémon'],encounters:[
+	name:['Pokémon Tower','Tour Pokémon','Pokémon-Turm','Torre Pokémon','Torre Pokémon',,'宝可梦塔'],encounters:[
 		[41,,'walk',5],
 		[42,,'walk',5],
 		[104,,'walk',10],
@@ -424,7 +424,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Route 12','Pont du Silence','Schweigebrücke','Ponte Silenzio','Puente Silencio'],encounters:[
+	name:['Route 12',,,'Percorso 12','Ruta 12',,'寂静桥'],encounters:[
 		[16,,'grass',20],
 		[17,,'grass',20],
 		[43,P,'grass',15],
@@ -451,7 +451,7 @@ const LOCATIONS=[
 		[143,,'interact']
 	]
 },{
-	name:['Route 13',,,'Percorso 13','Ruta 13'],encounters:[
+	name:['Route 13',,,'Percorso 13','Ruta 13',,'13号道路'],encounters:[
 		[16,,'grass',20],
 		[17,,'grass',20],
 		[43,P,'grass',15],
@@ -477,7 +477,7 @@ const LOCATIONS=[
 		[129,,'sea_skim',30]
 	]
 },{
-	name:['Route 14',,,'Percorso 14','Ruta 14'],encounters:[
+	name:['Route 14',,,'Percorso 14','Ruta 14',,'14号道路'],encounters:[
 		[16,,'grass',20],
 		[17,,'grass',20],
 		[43,P,'grass',15],
@@ -500,7 +500,7 @@ const LOCATIONS=[
 		[149,,'flying','very_rare']
 	]
 },{
-	name:['Route 15',,,'Percorso 15','Ruta 15'],encounters:[
+	name:['Route 15',,,'Percorso 15','Ruta 15',,'15号道路'],encounters:[
 		[16,,'grass',20],
 		[17,,'grass',20],
 		[43,P,'grass',15],
@@ -523,14 +523,14 @@ const LOCATIONS=[
 		[149,,'flying','very_rare']
 	]
 },{
-	name:['Fuchsia City','Parmanie','Fuchsania City','Fucsiapoli','Ciudad Fucsia'],encounters:[
+	name:['Fuchsia City','Parmanie','Fuchsania City','Fucsiapoli','Ciudad Fucsia',,'浅红市'],encounters:[
 		[16,,'flying',60],
 		[17,,'flying',35],
 		[18,,'flying',5],
 		[alternateForm(105,1),,['trade',105]]
 	]
 },{
-	name:['Route 18',,,'Percorso 18','Ruta 18'],encounters:[
+	name:['Route 18',,,'Percorso 18','Ruta 18',,'18号道路'],encounters:[
 		[16,,'grass',20],
 		[17,,'grass',20],
 		[19,,'grass',15],
@@ -553,7 +553,7 @@ const LOCATIONS=[
 		[129,,'sea_skim',30]
 	]
 },{
-	name:['Pokémon Road','Piste Pokémon','Pokémon-Weg','Passeggiata Pokémon','Camino de Pokémon'],encounters:[
+	name:['Pokémon Road','Piste Pokémon','Pokémon-Weg','Passeggiata Pokémon','Camino de Pokémon',,'宝可梦大道'],encounters:[
 		[16,,'grass',10],
 		[17,,'grass',10],
 		[19,,'grass',5],
@@ -575,7 +575,7 @@ const LOCATIONS=[
 		[149,,'flying','very_rare']
 	]
 },{
-	name:['Route 16',,,'Percorso 16','Ruta 16'],encounters:[
+	name:['Route 16',,,'Percorso 16','Ruta 16',,'16号道路'],encounters:[
 		[16,,'grass',20],
 		[17,,'grass',20],
 		[19,,'grass',15],
@@ -594,16 +594,16 @@ const LOCATIONS=[
 		[143,,'interact']
 	]
 },{
-	name:['Saffron City',,'Saffronia City','Zafferanopoli','Ciudad Azafrán'],encounters:[
+	name:['Saffron City','Safrania','Saffronia City','Zafferanopoli','Ciudad Azafrán',,'金黄市'],encounters:[
 		[137,,'gift'],
 		[alternateForm(26,1),,['trade',26]]
 	]
 },{
-	name:['Silph Co.','Sylphe SARL',,'Silph S.p.A.','Silph S. A.'],encounters:[
+	name:['Silph Co.','Sylphe SARL',,'Silph S.p.A.','Silph S. A.',,'西尔佛公司'],encounters:[
 		[131,,'gift']
 	]
 },{
-	name:['Route 19',,,'Percorso 19','Ruta 19'],encounters:[
+	name:['Route 19',,,'Percorso 19','Ruta 19',,'19号水路'],encounters:[
 		[72,,'sea_skim',30],
 		[73,,'sea_skim',9],
 		[120,,'sea_skim',30],
@@ -620,7 +620,7 @@ const LOCATIONS=[
 		[149,,'flying','very_rare']
 	]
 },{
-	name:['Seafoam Islands','Îles Écume','Seeschauminseln','Isole Spumarine','Islas Espuma'],encounters:[
+	name:['Seafoam Islands','Îles Écume','Seeschauminseln','Isole Spumarine','Islas Espuma',,'双子岛'],encounters:[
 		[41,,'cave',16],
 		[42,,'cave',20],
 		[79,,'cave',15],
@@ -637,7 +637,7 @@ const LOCATIONS=[
 		[144,,'interact',100]
 	]
 },{
-	name:['Route 20',,,'Percorso 20','Ruta 20'],encounters:[
+	name:['Route 20',,,'Percorso 20','Ruta 20',,'20号水路'],encounters:[
 		[72,,'sea_skim',45],
 		[73,,'sea_skim',5],
 		[129,,'sea_skim',45],
@@ -648,7 +648,7 @@ const LOCATIONS=[
 		[18,,'flying',5]
 	]
 },{
-	name:['Cinnabar Island','Cramois\'île','Zinnoberinsel','Isola Cannella','Isla Canela'],encounters:[
+	name:['Cinnabar Island','Cramois\'île','Zinnoberinsel','Isola Cannella','Isla Canela',,'红莲镇'],encounters:[
 		[16,,'flying',60],
 		[17,,'flying',35],
 		[18,,'flying',5],
@@ -659,7 +659,7 @@ const LOCATIONS=[
 		[142,,'revive_fossil']
 	]
 },{
-	name:['Pokémon Mansion','Manoir Pokémon','Pokémon-Villa','Villa Pokémon','Mansión Pokémon'],encounters:[
+	name:['Pokémon Mansion','Manoir Pokémon','Pokémon-Villa','Villa Pokémon','Mansión Pokémon',,'宝可梦屋'],encounters:[
 		[19,,'walk',20],
 		[20,,'walk',20],
 		[113,,'walk','very_rare'],
@@ -681,7 +681,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Route 21',,,'Percorso 21','Ruta 21'],encounters:[
+	name:['Route 21',,,'Percorso 21','Ruta 21',,'21号水路'],encounters:[
 		[16,,'grass',10],
 		[17,,'grass',20],
 		[19,,'grass',10],
@@ -709,7 +709,7 @@ const LOCATIONS=[
 		[129,,'sea_skim',30]
 	]
 },{
-	name:['Route 23',,,'Percorso 23','Ruta 23'],encounters:[
+	name:['Route 23',,,'Percorso 23','Ruta 23',,'23号道路'],encounters:[
 		[21,,'grass',10],
 		[22,,'grass',15],
 		[29,,'grass',10],
@@ -733,7 +733,7 @@ const LOCATIONS=[
 		[129,,'sea_skim',45]
 	]
 },{
-	name:['Victory Road','Route Victoire','Siegesstraße','Via Vittoria','Calle Victoria'],encounters:[
+	name:['Victory Road','Route Victoire','Siegesstraße','Via Vittoria','Calle Victoria',,'冠军之路'],encounters:[
 		[41,,'cave',10],
 		[42,,'cave',15],
 		[66,,'cave',10],
@@ -755,7 +755,7 @@ const LOCATIONS=[
 		]}
 	]
 },{
-	name:['Power Plant','Centrale abandonnée','Kraftwerk','Centrale Elettrica','Central de Energía'],encounters:[
+	name:['Power Plant','Centrale abandonnée','Kraftwerk','Centrale Elettrica','Central de Energía',,'无人发电厂'],encounters:[
 		[81,,'walk',23],
 		[82,,'walk',5],
 		[88,P,'walk',25],
@@ -770,11 +770,11 @@ const LOCATIONS=[
 		[145,,'interact']
 	]
 },{
-	name:['Indigo Plateau','Plateau Indigo',,'Altopiano Blu','Meseta Añil'],encounters:[
+	name:['Indigo Plateau','Plateau Indigo',,'Altopiano Blu','Meseta Añil',,'石英高原'],encounters:[
 		[alternateForm(103,1),,['trade',103]]
 	]
 },{
-	name:['Cerulean Cave','Canada','Geheimdungeon','Grotta Ignota','Mazmorra Rara'],encounters:[
+	name:['Cerulean Cave','Caverne Azurée','Azuria-Höhle','Grotta Celeste','Cueva Celeste',,'华蓝洞窟'],encounters:[
 		[111,,'cave',10],
 		[132,,'cave',5],
 		[143,,'cave','very_rare'],
