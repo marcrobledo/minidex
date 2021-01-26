@@ -1089,8 +1089,16 @@ function createExternalLink(title, href){
 	return a;
 }
 function getAbilityLink(abilityIndex){
-	if(MinidexSettings.lang===4)
+	if(MinidexSettings.lang===1)
+		return 'https://www.pokepedia.fr/'+LANGS.ABILITIES[1][abilityIndex].replace(/ /g, '_')+'_(talent)'
+	else if(MinidexSettings.lang===2)
+		return 'https://www.pokewiki.de/'+LANGS.ABILITIES[2][abilityIndex].replace(/ /g, '_')
+	else if(MinidexSettings.lang===3)
+		return 'https://wiki.pokemoncentral.it/'+LANGS.ABILITIES[3][abilityIndex].replace(/ /g, '_')
+	else if(MinidexSettings.lang===4)
 		return 'https://www.wikidex.net/wiki/'+LANGS.ABILITIES[4][abilityIndex].replace(/ /g, '_')
+	else if(MinidexSettings.lang===5)
+		return 'https://wiki.ポケモン.com/wiki/'+LANGS.ABILITIES[5][abilityIndex].replace(/ /g, '_')
 	else if(MinidexSettings.lang===6)
 		return 'https://wiki.52poke.com/wiki/'+LANGS.ABILITIES[6][abilityIndex].replace(/ /g, '_')+'（特性）'
 	else
@@ -1098,8 +1106,16 @@ function getAbilityLink(abilityIndex){
 
 }
 function getMoveLink(moveIndex){
-	if(MinidexSettings.lang===4)
+	if(MinidexSettings.lang===1)
+		return 'https://www.pokepedia.fr/'+(MOVES[moveIndex][0][1] || MOVES[moveIndex][0][0]).replace(/ /g, '_')
+	else if(MinidexSettings.lang===2)
+		return 'https://www.pokewiki.de/'+(MOVES[moveIndex][0][2] || MOVES[moveIndex][0][0]).replace(/ /g, '_')
+	else if(MinidexSettings.lang===3)
+		return 'https://wiki.pokemoncentral.it/'+(MOVES[moveIndex][0][3] || MOVES[moveIndex][0][0]).replace(/ /g, '_')
+	else if(MinidexSettings.lang===4)
 		return 'https://www.wikidex.net/wiki/'+(MOVES[moveIndex][0][4] || MOVES[moveIndex][0][0]).replace(/ /g, '_')
+	else if(MinidexSettings.lang===5)
+		return 'https://wiki.ポケモン.com/wiki/'+(MOVES[moveIndex][0][5] || MOVES[moveIndex][0][0]).replace(/ /g, '_')
 	else if(MinidexSettings.lang===6)
 		return 'https://wiki.52poke.com/wiki/'+MOVES[moveIndex][0][6].replace(/ /g, '_')+'（招式）'
 	else
