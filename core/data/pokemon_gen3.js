@@ -383,9 +383,9 @@ var POKEMON=[,["Bulbasaur",[11,3],65,1,[2,"levelup",16]],
 ["Groudon",4,70,383],
 ["Rayquaza",[15,2],76,384],
 ["Jirachi",[8,13],32,385],
-["Deoxys",13,46,386,,[[["Normal Forme",,,,"Forma normal"]],[["Attack Forme",,,,"Forma ataque"]],[["Defense Forme",,,,"Forma defensa"]],[["Speed Forme",,,,"Forma velocidad"]]]]
+["Deoxys",13,46,386,,[[["Normal Form",,'Normalform',,"Forma normal"]],[["Attack Form",,'Angriffsform',,"Forma ataque"]],[["Defense Form",,'Verteidigungsform',,"Forma defensa"]],[["Speed Form",,'Initiativeform',,"Forma velocidad"]]]]
 ];
 
 function isFormAvailable(id, form){
-	return !(GAME_ID==='frlg' && id===386 && form===3); //Deoxys (Speed Forme)
+	return !(GAME_ID==='frlg' && id===386 && form===3); //Deoxys (Speed Form)
 }
