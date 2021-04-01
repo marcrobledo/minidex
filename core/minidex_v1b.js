@@ -472,10 +472,10 @@ function showPokemon(id,form){
 	}
 
 	/* smooth scroll to top */
-	if(currentDistanceFromHome===0)
-		goToTop(true);
-	else
-		goToTop();
+//	if(currentDistanceFromHome===0)
+//		goToTop(true);
+//	else
+//		goToTop();
 }
 
 
