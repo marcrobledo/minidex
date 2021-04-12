@@ -31,10 +31,38 @@ const MORE_INFO=[
 			return 'https://www.smogon.com/dex/dp/pokemon/'+getPokeNameEn(nationalId).slug()+'/';
 		}
 	},{
+		title:'Poképédia',
+		getInfo:function(nationalId){
+			if(MinidexSettings.lang===1)
+				return 'https://www.pokepedia.fr/'+getPokeName(nationalId).replace(/ /g,'_');
+			return null
+		}
+	},{
+		title:'PokéWiki',
+		getInfo:function(nationalId){
+			if(MinidexSettings.lang===2)
+				return 'https://www.pokewiki.de/'+getPokeName(nationalId).replace(/ /g,'_');
+			return null
+		}
+	},{
+		title:'Pokémon Central Wiki',
+		getInfo:function(nationalId){
+			if(MinidexSettings.lang===3)
+				return 'https://wiki.pokemoncentral.it/'+getPokeName(nationalId).replace(/ /g,'_');
+			return null
+		}
+	},{
 		title:'Wikidex',
 		getInfo:function(nationalId){
 			if(MinidexSettings.lang===4)
 				return 'https://www.wikidex.net/wiki/'+getPokeName(nationalId).replace(/ /g,'_');
+			return null
+		}
+	},{
+		title:'ポケモンWiki',
+		getInfo:function(nationalId){
+			if(MinidexSettings.lang===5)
+				return 'https://wiki.ポケモン.com/wiki/'+getPokeName(nationalId).replace(/ /g,'_');
 			return null
 		}
 	},{
