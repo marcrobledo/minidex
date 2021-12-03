@@ -14,7 +14,7 @@
 */
 
 var PRECACHE_ID='minidex-bdsp';
-var PRECACHE_VERSION='v0';
+var PRECACHE_VERSION='v0b';
 var PRECACHE_URLS=[
 '/minidex/bdsp/index.html','/minidex/bdsp/',
 '/minidex/bdsp/manifest.json',
@@ -31,10 +31,10 @@ var PRECACHE_URLS=[
 '/minidex/bdsp/app/assets/minidex_home_header2.png',
 
 /* specific game data */
-'/minidex/swsh/app/data/bdsp_game.js',
-'/minidex/swsh/app/data/bdsp_pokemon.js',
-'/minidex/swsh/app/data/bdsp_encounters.js',
-'/minidex/swsh/app/data/gen8_competitive.js',
+'/minidex/bdsp/app/data/bdsp_game.js',
+'/minidex/bdsp/app/data/bdsp_pokemon.js',
+'/minidex/bdsp/app/data/bdsp_encounters.js',
+'/minidex/bdsp/app/data/gen8_competitive.js',
 /* specific assets */
 '/minidex/bdsp/app/assets/favicon16.png',
 '/minidex/bdsp/app/assets/favicon192.png',
