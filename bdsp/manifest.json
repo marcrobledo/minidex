@@ -5,7 +5,8 @@
 		{
 			"src": "/minidex/bdsp/app/assets/favicon16.png",
 			"sizes": "16x16",
-			"type": "image/png"
+			"type": "image/png",
+			"purpose": "any"
 		},
 		{
 			"src": "/minidex/bdsp/app/assets/favicon192.png",

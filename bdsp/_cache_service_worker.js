@@ -14,7 +14,7 @@
 */
 
 var PRECACHE_ID='minidex-bdsp';
-var PRECACHE_VERSION='v0b';
+var PRECACHE_VERSION='v0c';
 var PRECACHE_URLS=[
 '/minidex/bdsp/index.html','/minidex/bdsp/',
 '/minidex/bdsp/manifest.json',
