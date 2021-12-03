@@ -4,7 +4,7 @@ This lightweight and minimalist webapp compiles all the locations of all Pokémo
 ![Minidex preview](/core/thumbnail.jpg?raw=true)
 
 **Features:**
-* all regional+national Pokédex from RBY up to Sword and Shield+DLC
+* all regional+national Pokédex from RBY up to Brilliant Diamond and Shining Pearl
 * quick Pokémon search (name or number) at anytime
 * search also by location or Pokémon type
 * click in a location title to get a list of all Pokémon in that location

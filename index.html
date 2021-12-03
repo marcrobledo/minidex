@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Minidex</title>
@@ -8,14 +8,14 @@
 	<meta name="google" content="notranslate" />
 
 	<meta name="description" content="This lightweight and minimalist webapp compiles all the locations of all Pokémon across every game in the series. Find Pokémon information quickly and keep track of your Pokédex progress. No registration/installation required!"/>
-	<meta name="keywords" content="pokedex,online,pokemon,app,html5,webapp,pwa,minidex,sword,shield,espada,escudo,x,y,xy,oras,ruby,omega,rubi,alpha,alfa,zafiro,sapphire,ultra,sol,luna,sun,moon,lets go"/>
+	<meta name="keywords" content="pokedex,online,pokemon,app,html5,webapp,pwa,minidex,brilliant,diamond,shining,pearl,diamante,brillante,perla,reluciente,sword,shield,espada,escudo,x,y,xy,oras,ruby,omega,rubi,alpha,alfa,zafiro,sapphire,ultra,sol,luna,sun,moon,lets go"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
-	<link rel="shortcut icon" href="./core/favicon16.png" type="image/png" sizes="16x16"/>
-	<link rel="shortcut icon" href="./core/favicon192.png" type="image/png" sizes="192x192"/>
+	<link rel="shortcut icon" href="./core/assets/favicon16.png" type="image/png" sizes="16x16"/>
+	<link rel="shortcut icon" href="./core/assets/favicon192.png" type="image/png" sizes="192x192"/>
 	<!-- iOS icons -->
-	<link rel="apple-touch-icon" sizes="16x16" href="./core/favicon16.png" />
-	<link rel="apple-touch-icon" href="./core/favicon192.png" />
+	<link rel="apple-touch-icon" sizes="16x16" href="./core/assets/favicon16.png" />
+	<link rel="apple-touch-icon" href="./core/assets/favicon192.png" />
 
 	<!-- social network metatags -->
 	<meta name="twitter:site" content="@marc_robledo">
@@ -29,7 +29,7 @@
 	<meta name="twitter:card" content="photo">
 
 
-	<link type="text/css" rel="stylesheet" href="./core/minidex_v1b.css" media="all"/>
+	<link type="text/css" rel="stylesheet" href="./core/minidex.css" media="all"/>
 	<style type="text/css">
 .hide{display:none}
 
@@ -88,20 +88,21 @@ ul small{
 .game a:hover{
 	background-blend-mode:multiply;
 }
-.game.gen1rby a{background-image:url(./rby/resources/index_banner.jpg)}
-.game.gen2gsc a{background-image:url(./gsc/resources/index_banner.jpg)}
-.game.gen3rse a{background-image:url(./rse/resources/index_banner.jpg)}
-.game.gen3frlg a{background-image:url(./frlg/resources/index_banner.jpg)}
-.game.gen4dppt a{background-image:url(./dppt/resources/index_banner.jpg)}
-.game.gen4hgss a{background-image:url(./gsc/resources/index_banner.jpg)}
-.game.gen5bw a{background-image:url(./bw/resources/index_banner.jpg)}
-.game.gen5b2w2 a{background-image:url(./b2w2/resources/index_banner.jpg)}
-.game.gen6xy a{background-image:url(./xy/resources/index_banner.jpg)}
-.game.gen6oras a{background-image:url(./oras/resources/index_banner.jpg)}
-.game.gen7sm a{background-image:url(./sm/resources/index_banner.jpg)}
-.game.gen7usum a{background-image:url(./usum/resources/index_banner.jpg)}
-.game.gen7letsgo a{background-image:url(./letsgo/resources/index_banner.jpg)}
-.game.gen8swsh a{background-image:url(./swsh/resources/index_banner.jpg)}
+.game.gen1rby a{background-image:url(./core/assets/home/banner_gen1.jpg)}
+.game.gen2gsc a{background-image:url(./core/assets/home/banner_gen2.jpg)}
+.game.gen3rse a{background-image:url(./core/assets/home/banner_gen3rse.jpg)}
+.game.gen3frlg a{background-image:url(./core/assets/home/banner_gen3frlg.jpg)}
+.game.gen4dppt a{background-image:url(./core/assets/home/banner_gen4dppt.jpg)}
+.game.gen4hgss a{background-image:url(./core/assets/home/banner_gen2.jpg)}
+.game.gen5bw a{background-image:url(./core/assets/home/banner_gen5bw.jpg)}
+.game.gen5b2w2 a{background-image:url(./core/assets/home/banner_gen5b2w2.jpg)}
+.game.gen6xy a{background-image:url(./core/assets/home/banner_gen6xy.jpg)}
+.game.gen6oras a{background-image:url(./core/assets/home/banner_gen6oras.jpg)}
+.game.gen7sm a{background-image:url(./core/assets/home/banner_gen7sm.jpg)}
+.game.gen7usum a{background-image:url(./core/assets/home/banner_gen7usum.jpg)}
+.game.gen7letsgo a{background-image:url(./core/assets/home/banner_gen7letsgo.jpg)}
+.game.gen8swsh a{background-image:url(./core/assets/home/banner_gen8swsh.jpg)}
+.game.gen8bdsp a{background-image:url(./core/assets/home/banner_gen4dppt.jpg)}
 
 
 
@@ -109,8 +110,6 @@ ul small{
 
 /* RESPONSIVE DESIGN */
 @media only screen and (max-width:641px){
-
-
 	main{
 		margin-top:-10px;
 	}
@@ -124,6 +123,7 @@ function addEvent(e,v,f){e.addEventListener(v,f,false)}
 function stopPropagation(e){if(typeof e.stopPropagation!=='undefined')e.stopPropagation();else e.cancelBubble=true}
 
 const GAMES=[
+	['Brilliant Diamond / Shining Pearl','Diamant Étincelant / Perle Scintillante','Strahlender Diamant / Leuchtende Perle','Diamante Lucente / Perla Splendente','Diamante Brillante / Perla Reluciente',,'晶灿钻石／明亮珍珠'],
 	['Sword / Shield','Épée / Bouclier','Schwert / Schild','Spada / Scudo','Espada / Escudo',,'剑／盾'],
 	['Let\'s go!'],
 	['Ultra Sun / Ultra Moon','Ultra-Soleil / Ultra-Lune','Ultra Sonne / Ultra Mond','Ultra Sole / Ultra Luna','Ultra Sol / Ultra Luna',,'究极之日／究极之月'],
@@ -285,6 +285,7 @@ window.addEventListener('load', function(evt){
 				<strong>注:中文翻译可能有误请见谅.</strong>
 			</p>
 			<ul id="games">
+				<li class="game gen8bdsp"><a href="bdsp/"><small>Gen VIII</small><span>Brilliant Diamond Shining Pearl</span></a></li>
 				<li class="game gen8swsh"><a href="swsh/"><small>Gen VIII</small><span>Sword Shield</span></a></li>
 				<li class="game gen7letsgo"><a href="letsgo/"><small>Gen VII</small><span>Let's go!</span></a></li>
 				<li class="game gen7usum"><a href="usum/"><small>Gen VII</small><span>Ultra Sun Ultra Moon</span></a></li>
@@ -307,7 +308,7 @@ window.addEventListener('load', function(evt){
 			<a href="https://github.com/marcrobledo/minidex/" target="_blank" data-translate="view_on_github">View on GitHub</a><br/><br/>
 			<small>
 				This is a fan created site, no copyright or trademark infringement is intended.<br/>
-				Pokémon and all respective names are trademark &amp; &copy; of Nintendo/Creatures Inc./GAME FREAK inc. TM 1996-2021
+				Pokémon and all respective names are trademark &amp; &copy; of Nintendo/Creatures Inc./GAME FREAK inc. TM 1996-2022
 			</small>
 		</footer>
 	</div>
