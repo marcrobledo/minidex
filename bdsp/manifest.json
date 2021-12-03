@@ -5,14 +5,13 @@
 		{
 			"src": "/minidex/bdsp/app/assets/favicon16.png",
 			"sizes": "16x16",
-			"type": "image/png",
-			"purpose": "any"
+			"type": "image/png"
 		},
 		{
 			"src": "/minidex/bdsp/app/assets/favicon192.png",
 			"sizes": "192x192",
 			"type": "image/png",
-			"purpose": "maskable"
+			"purpose": "any maskable"
 		}
 	],
 	"start_url": "/minidex/bdsp/index.html",
