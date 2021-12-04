@@ -1,4 +1,4 @@
-/* Minidex v20211203 - Marc Robledo 2013-2021 - http://www.marcrobledo.com/license */
+/* Minidex v20211204 - Marc Robledo 2013-2021 - http://www.marcrobledo.com/license */
 
 /*
 	to-do:
@@ -227,17 +227,17 @@ function reqAnimFrame(f){
 		f.call()
 }
 
-function goToTop(noSmooth){
-	if(document.body.scroll && !noSmooth)
-		document.body.scroll({top:0, behavior:'smooth'});
+function scrollTo(offset, noSmooth){
+	if(document.documentElement.scroll && !noSmooth)
+		document.documentElement.scroll({top:offset, behavior:'smooth'});
 	else
-		document.body.scrollTop=0
+		document.documentElement.scrollTop=offset
+}
+function goToTop(noSmooth){
+	scrollTo(0, noSmooth);
 }
 function scrollHomeDexToTop(){
-	if(document.body.scroll)
-		document.body.scroll({top:el('dex-results').offsetTop-document.getElementsByTagName('nav')[0].offsetHeight, behavior:'smooth'});
-	else
-		document.body.scrollTop=el('dex-results').offsetTop-document.getElementsByTagName('nav')[0].offsetHeight
+	scrollTo(el('dex-results').offsetTop-document.getElementsByTagName('nav')[0].offsetHeight, false);
 }
 
 
@@ -296,7 +296,7 @@ function pushState(url,doNotPush){
 		hide('location');
 
 		if(homeScroll)
-			reqAnimFrame(function(){document.body.scrollTop=homeScroll;});
+			reqAnimFrame(function(){document.documentElement.scrollTop=homeScroll;});
 		else
 			goToTop();
 
@@ -1253,7 +1253,7 @@ function showMoveInfo(){
 function _clickLink(evt){
 	preventDefault(evt);
 	if(currentDistanceFromHome===0)
-		homeScroll=window.scrollY;
+		homeScroll=window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
 
 	if(typeof this.regionalDexIndex==='number')
 		currentRegionalNumeration=this.regionalDexIndex;
@@ -2515,8 +2515,8 @@ function initialize(){
 		
 		
 		refreshSearchResults();
-		if(document.body.scrollTop>(el('dex-results').offsetTop-document.getElementsByTagName('nav')[0].offsetHeight))
-			document.body.scrollTop=(el('dex-results').offsetTop-document.getElementsByTagName('nav')[0].offsetHeight);
+		if(document.documentElement.scrollTop>(el('dex-results').offsetTop-document.getElementsByTagName('nav')[0].offsetHeight))
+			scrollHomeDexToTop();
 	});
 	addEvent(el('search'),'keyup',function(evt){
 		if(evt.keyCode===13 && el('dex-results').children.length===1){

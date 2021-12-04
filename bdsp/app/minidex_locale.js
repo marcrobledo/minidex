@@ -203,34 +203,33 @@ STRINGS:{
 'ceiling':['Ceiling',,'Decke',,'Techo',,'洞窟的顶部'],
 'swamp':['Swamp',,'Sumpf',,'Pantano',,'沼泽'],
 'underground':['Underground',,'Untergrund',,'Bajo tierra',,'地下'],
-'sos_ally':['SOS ally with',,'Quereinsteiger mit',,'Aliado SOS con',,'同时出现'],
-'sos_ally_weather_rain':['SOS ally during rain',,'Quereinsteiger bei Regen',,'Aliado SOS con lluvia',,'在雨天同时出现'],
-'sos_ally_weather_hail':['SOS ally during hail',,'Quereinsteiger bei Hagelsturm',,'Aliado SOS con granizo',,'在冰雹同时出现'],
-'sos_ally_weather_sandstorm':['SOS ally during sandstorm',,'Quereinsteiger bei Sandsturm',,'Aliado SOS con tormenta de arena',,'在沙暴同时出现'],
-'sos_ally_weather_rain_sandstorm':['SOS ally during rain or sandstorm',,'Quereinsteiger bei Regen oder Sandsturm',,'Aliado SOS con lluvia o tormenta de arena',,'在雨天或沙暴同时出现'],
-'sos_ally_weather_rain_hail':['SOS ally during rain or hail',,'Quereinsteiger bei Regen oder Hagelsturm',,'Aliado SOS con lluvia o granizo',,'在雨天或冰雹同时出现'],
-'sos_ally_weather_hail_sandstorm':['SOS ally during hail or sandstorm',,'Quereinsteiger bei Hagelsturm oder Sandsturm',,'Aliado SOS con granizo o tormenta de arena',,'在冰雹或沙暴同时出现'],
 'flocks':['Flocks',,'Herden',,'Bandada',,'翱翔天空'],
 'postgame':['Postgame',,,,'Postjuego',,'赛后'],
 
-'friend_safari_1':['Slot 1',,,,'Ranura 1',,'位置 1'],
-'friend_safari_2':['Slot 2',,,,'Ranura 2',,'位置 2'],
-'friend_safari_3':['Slot 3',,,,'Ranura 3',,'位置 3'],
+'headbutt':['Headbutt',,'Kopfnuss',,'Golpe Cabeza',,'头锤'],
+'headbutt_low':['Headbutt (rare tree)',,'Kopfnuss (Baum: selten)',,'Golpe Cabeza (árbol raro)',,'头锤 (稀有的树)'],
+'headbutt_moderate':['Headbutt (common tree)',,'Kopfnuss (Baum: häufig)',,'Golpe Cabeza (árbol común)',,'头锤 (普通的树)'],
+'headbutt_a':['Headbutt (group A)',,'Kopfnuss (Gruppe A)',,'Golpe Cabeza (grupo A)',,'头锤 (A组)'],
+'headbutt_b':['Headbutt (group B)',,'Kopfnuss (Gruppe B)',,'Golpe Cabeza (grupo B)',,'头锤 (B组)'],
+'headbutt_special':['Headbutt (Special tree)',,'Kopfnuss (Baum: speziell)',,'Golpe Cabeza (Árbol especial)',,'头锤 (特殊的树)'],
 
+/* DPPt */
+'pokeradar':['Poké Radar',,'Pokéradar',,'Pokéradar',,'宝可追踪'],
+'dualslot':['GBA slot',,'GBA-Schacht',,'Cart. GBA'],
+'firered':['FireRed',,'Feuerrot',,'Rojo Fuego',,'火红'],
+'leafgreen':['LeafGreen',,'Blattgrün',,'Verde Hoja',,'叶绿'],
+'ruby':['Ruby',,'Rubin',,'Rubí',,'红宝石'],
+'sapphire':['Sapphire',,'Saphir',,'Zafiro',,'蓝宝石'],
+'emerald':['Emerald',,'Smaragd',,'Esmeralda',,'绿宝石'],
+
+/* HGSS */
 'sound_hoenn':['Hoenn sound',,'Hoenn-Sound',,'Sonidos de Hoenn',,'丰缘之声'],
 'sound_sinnoh':['Sinnoh sound',,'Sinnoh-Sound',,'Sonidos de Sinnoh',,'神奥之声'],
 'pokewalker_a':['A'],
 'pokewalker_b':['B'],
 'pokewalker_c':['C'],
 
-'berry_pile':['Berry pile',,'Beerenhaufen',,'Montón de bayas',,'树果堆'],
-'berry_tree_red':['Berry tree (red)',,'Beerenbaum (Rot)',,'Árbol de bayas (rojo)',,'树果的树 (红色)'],
-'berry_tree_blue':['Berry tree (blue)',,'Beerenbaum (Blau)',,'Árbol de bayas (azul)',,'树果的树 (蓝色)'],
-'berry_tree_purple':['Berry tree (purple)',,'Beerenbaum (Lila)',,'Árbol de bayas (lila)',,'树果的树 (紫色)'],
-'berry_tree_green':['Berry tree (green)',,'Beerenbaum (Grün)',,'Árbol de bayas (verde)',,'树果的树 (绿色)'],
-'berry_tree_yellow':['Berry tree (yellow)',,'Beerenbaum (Gelb)',,'Árbol de bayas (amarillo)',,'树果的树 (黄色)'],
-'berry_tree_pink':['Berry tree (pink)',,'Beerenbaum (Rosa)',,'Árbol de bayas (rosa)',,'树果的树 (粉红色)'],
-
+/* Gen V */
 'hidden_grotto':['Hidden grotto',,'Versteckte Höhle',,'Claro oculto',,'隐藏洞穴'],
 'n_pokemon':['N\'s Pokémon',,,,'Pokémon de N',,'N的宝可梦'],
 'dreamradar':['Dreamradar',,'Traumradar',,'RAdar',,'宝可梦ＡＲ搜寻器'],
@@ -247,29 +246,37 @@ STRINGS:{
 'extension_beta':['Beta extension',,'Beta-Erweiterung',,'Extensión Beta',,'Beta 扩展票'],
 'extension_omega':['Omega extension',,'Omega-Erweiterung',,'Extensión Omega',,'欧米伽扩展票'],
 
-'headbutt':['Headbutt',,'Kopfnuss',,'Golpe Cabeza',,'头锤'],
-'headbutt_low':['Headbutt (rare tree)',,'Kopfnuss (Baum: selten)',,'Golpe Cabeza (árbol raro)',,'头锤 (稀有的树)'],
-'headbutt_moderate':['Headbutt (common tree)',,'Kopfnuss (Baum: häufig)',,'Golpe Cabeza (árbol común)',,'头锤 (普通的树)'],
-'headbutt_a':['Headbutt (group A)',,'Kopfnuss (Gruppe A)',,'Golpe Cabeza (grupo A)',,'头锤 (A组)'],
-'headbutt_b':['Headbutt (group B)',,'Kopfnuss (Gruppe B)',,'Golpe Cabeza (grupo B)',,'头锤 (B组)'],
-'headbutt_special':['Headbutt (Special tree)',,'Kopfnuss (Baum: speziell)',,'Golpe Cabeza (Árbol especial)',,'头锤 (特殊的树)'],
+/* Gen VI */
+'friend_safari_1':['Slot 1',,,,'Ranura 1',,'位置 1'],
+'friend_safari_2':['Slot 2',,,,'Ranura 2',,'位置 2'],
+'friend_safari_3':['Slot 3',,,,'Ranura 3',,'位置 3'],
 'horde':['Horde',,'Massenbegegnung',,'Horda',,'群聚对战'],
 'horde_with':['Horde with',,'Massenbegegnung mit',,'Horda con',,'群聚对战'],
 'flowers_yellow':['Yellow flowers',,'Gelbe Blümchen',,'Flores amarillas',,'黄色的花朵'],
 'flowers_red':['Red flowers',,'Rote Blümchen',,'Flores rojas',,'红色的花朵'],
 'flowers_purple':['Purple flowers',,'Lila Blümchen',,'Flores lilas',,'紫色的花朵'],
-
-'dualslot':['GBA slot',,'GBA-Schacht',,'Cart. GBA'],
-'firered':['FireRed',,'Feuerrot',,'Rojo Fuego',,'火红'],
-'leafgreen':['LeafGreen',,'Blattgrün',,'Verde Hoja',,'叶绿'],
-'ruby':['Ruby',,'Rubin',,'Rubí',,'红宝石'],
-'sapphire':['Sapphire',,'Saphir',,'Zafiro',,'蓝宝石'],
-'emerald':['Emerald',,'Smaragd',,'Esmeralda',,'绿宝石'],
-
 'dexnav':['DexNav',,'Pokédex-Navi',,'图鉴领航'],
-'pokeradar':['Poké Radar',,'Pokéradar',,'Pokéradar',,'宝可追踪'],
 
+/* Gen VII */
+'berry_pile':['Berry pile',,'Beerenhaufen',,'Montón de bayas',,'树果堆'],
+'berry_tree_red':['Berry tree (red)',,'Beerenbaum (Rot)',,'Árbol de bayas (rojo)',,'树果的树 (红色)'],
+'berry_tree_blue':['Berry tree (blue)',,'Beerenbaum (Blau)',,'Árbol de bayas (azul)',,'树果的树 (蓝色)'],
+'berry_tree_purple':['Berry tree (purple)',,'Beerenbaum (Lila)',,'Árbol de bayas (lila)',,'树果的树 (紫色)'],
+'berry_tree_green':['Berry tree (green)',,'Beerenbaum (Grün)',,'Árbol de bayas (verde)',,'树果的树 (绿色)'],
+'berry_tree_yellow':['Berry tree (yellow)',,'Beerenbaum (Gelb)',,'Árbol de bayas (amarillo)',,'树果的树 (黄色)'],
+'berry_tree_pink':['Berry tree (pink)',,'Beerenbaum (Rosa)',,'Árbol de bayas (rosa)',,'树果的树 (粉红色)'],
 
+'island_scan':['Island Scan',,'Insel-Scanner',,'Escáner Insular',,'岛屿扫描'],
+
+'sos_ally':['SOS ally with',,'Quereinsteiger mit',,'Aliado SOS con',,'同时出现'],
+'sos_ally_weather_rain':['SOS ally during rain',,'Quereinsteiger bei Regen',,'Aliado SOS con lluvia',,'在雨天同时出现'],
+'sos_ally_weather_hail':['SOS ally during hail',,'Quereinsteiger bei Hagelsturm',,'Aliado SOS con granizo',,'在冰雹同时出现'],
+'sos_ally_weather_sandstorm':['SOS ally during sandstorm',,'Quereinsteiger bei Sandsturm',,'Aliado SOS con tormenta de arena',,'在沙暴同时出现'],
+'sos_ally_weather_rain_sandstorm':['SOS ally during rain or sandstorm',,'Quereinsteiger bei Regen oder Sandsturm',,'Aliado SOS con lluvia o tormenta de arena',,'在雨天或沙暴同时出现'],
+'sos_ally_weather_rain_hail':['SOS ally during rain or hail',,'Quereinsteiger bei Regen oder Hagelsturm',,'Aliado SOS con lluvia o granizo',,'在雨天或冰雹同时出现'],
+'sos_ally_weather_hail_sandstorm':['SOS ally during hail or sandstorm',,'Quereinsteiger bei Hagelsturm oder Sandsturm',,'Aliado SOS con granizo o tormenta de arena',,'在冰雹或沙暴同时出现'],
+
+/* SwSh */
 'hidden':['Hidden',,'Versteckt',,'Oculto',,'隐藏'],
 'wanderer':['Wanderer',,,,'Visible fijo',,'流浪者'],
 'wanderer_one':['Wanderer <small>(one)</small>',,'Wanderer <small>(einer)</small>',,'Visible fijo <small>(uno)</small>',,'流浪者 <small>(one)</small>'],
@@ -284,6 +291,14 @@ STRINGS:{
 'rare_raid_3s':['Rare raid 3&#9733;',,'Seltener Raid 3&#9733;',,'Incursión rara 3&#9733;',,'稀有几率 3&#9733;'],
 'rare_raid_4s':['Rare raid 4&#9733;',,'Seltener Raid 4&#9733;',,'Incursión rara 4&#9733;',,'稀有几率 4&#9733;'],
 'rare_raid_5s':['Rare raid 5&#9733;',,'Seltener Raid 5&#9733;',,'Incursión rara 5&#9733;',,'稀有几率 5&#9733;'],
+
+/* BDSP */
+'strength_obtained':['Strength HM obtained',,,,'MO Fuerza obtenido'],
+'defog_obtained':['Defog HM got',,,,'MO Despejar obtenido'],
+'icicle_badge_obtained':['Icicle Badge obtained',,,,'Medalla Carámbano obtenida'],
+'waterfall_obtained':['Cascade HM obtained',,,,'MO Cascada obtenido'],
+
+
 
 'main':['Main',,,,'Principal',,'主菜单'],
 'harbor':['Harbor',,'Hafen',,'Puerto',,'港口'],
@@ -323,11 +338,6 @@ STRINGS:{
 'saturday':['Saturday',,'Samstag',,'Sábado',,'星期六'],
 'sunday':['Sunday',,'Sonntag',,'Domingo',,'星期日'],
 
-'island_scan':['Island Scan',,'Insel-Scanner',,'Escáner Insular',,'岛屿扫描'],
-
-'after_getting_hm04':['After getting HM04 Strength',,,,'Despues de obtener MO04 Fuerza'],
-'after_getting_hm05':['After getting HM05 Defog',,,,'Despues de obtener MO05 Despejar'],
-'after_getting_hm07':['After getting HM07 Waterfall',,,,'Despues de obtener MO07 Cascada'],
 
 //Fossils
 'revive_fossil':['Revive %s',,'Erwecke %s',,'Revivir %s',,'复活 %s'],
