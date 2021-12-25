@@ -3,16 +3,15 @@
 	"name":"Minidex DPPt",
 	"icons":[
 		{
-			"src": "/minidex/dppt/resources/favicon16.png",
+			"src": "/minidex/dppt/app/assets/favicon16.png",
 			"sizes": "16x16",
-			"type": "image/png",
-			"density": "1.0"
+			"type": "image/png"
 		},
 		{
-			"src": "/minidex/dppt/resources/favicon192.png",
+			"src": "/minidex/dppt/app/assets/favicon192.png",
 			"sizes": "192x192",
 			"type": "image/png",
-			"density": "1.0"
+			"purpose": "any maskable"
 		}
 	],
 	"start_url": "/minidex/dppt/index.html",

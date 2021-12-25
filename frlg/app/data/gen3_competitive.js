@@ -1,0 +1,2460 @@
+/* Minidex - Competitive data - Gen III */ /* [name], type, category (0=PHYSICAL,1=SPECIAL,2=STATUS), pp, power, accuracy */const MOVES=[,[["Pound","Écras&#39;Face","Pfund","Botta","Destructor","はたく","拍击"],0,0,35,40,100],
+[["Karate Chop","Poing-Karaté","Karateschlag","Colpokarate","Golpe Karate","からてチョップ","空手劈"],1,0,25,50,100],
+[["Double Slap","Torgnoles","Duplexhieb","Doppiasberla","Doble Bofetón","おうふくビンタ","连环巴掌"],0,0,10,15,85],
+[["Comet Punch","Poing Comète","Kometenhieb","Cometapugno","Puño Cometa","れんぞくパンチ","连续拳"],0,0,15,18,85],
+[["Mega Punch","Ultimapoing","Megahieb","Megapugno","Megapuño","メガトンパンチ","百万吨重拳"],0,0,20,80,85],
+[["Pay Day","Jackpot","Zahltag","Giornopaga","Día de Pago","ネコにこばん","聚宝功"],0,0,20,40,100],
+[["Fire Punch","Poing de Feu","Feuerschlag","Fuocopugno","Puño Fuego","ほのおのパンチ","火焰拳"],9,1,15,75,100],
+[["Ice Punch","Poing-Glace","Eishieb","Gelopugno","Puño Hielo","れいとうパンチ","冰冻拳"],14,1,15,75,100],
+[["Thunder Punch","Poing-Éclair","Donnerschlag","Tuonopugno","Puño Trueno","かみなりパンチ","雷电拳"],12,1,15,75,100],
+[["Scratch","Griffe","Kratzer","Graffio","Arañazo","ひっかく","抓"],0,0,35,40,100],
+[["Vise Grip","Force Poigne","Klammer","Presa","Agarre","はさむ","夹住"],0,0,30,55,100],
+[["Guillotine",,,"Ghigliottina","Guillotina","ハサミギロチン","断头钳"],0,0,5,0,0],
+[["Razor Wind","Coupe-Vent","Klingensturm","Ventagliente","Viento Cortante","かまいたち","旋风刀"],0,0,10,80,100],
+[["Swords Dance","Danse-Lames","Schwerttanz","Danzaspada","Danza Espada","つるぎのまい","剑舞"],0,2,30,0,0],
+[["Cut","Coupe","Zerschneider","Taglio","Corte","いあいぎり","居合斩"],0,0,30,50,95],
+[["Gust","Tornade","Windstoß","Raffica","Tornado","かぜおこし","起风"],2,0,35,40,100],
+[["Wing Attack","Cru-Aile","Flügelschlag","Attacco d&#39;Ala","Ataque Ala","つばさでうつ","翅膀攻击"],2,0,35,60,100],
+[["Whirlwind","Cyclone","Wirbelwind","Turbine","Remolino","ふきとばし","吹飞"],0,2,20,0,100],
+[["Fly","Vol","Fliegen","Volo","Vuelo","そらをとぶ","飞翔"],2,0,15,70,95],
+[["Bind","Étreinte","Klammergriff","Legatutto","Atadura","しめつける","绑紧"],0,0,20,15,75],
+[["Slam","Souplesse",,"Schianto","Portazo","たたきつける","摔打"],0,0,20,80,75],
+[["Vine Whip","Fouet Lianes","Rankenhieb","Frustata","Látigo Cepa","つるのムチ","藤鞭"],11,1,10,35,100],
+[["Stomp","Écrasement","Stampfer","Pestone","Pisotón","ふみつけ","踩踏"],0,0,20,65,100],
+[["Double Kick","Double Pied","Doppelkick","Doppiocalcio","Doble Patada","にどげり","二连踢"],1,0,30,30,100],
+[["Mega Kick","Ultimawashi","Megakick","Megacalcio","Megapatada","メガトンキック","百万吨重踢"],0,0,5,120,75],
+[["Jump Kick","Pied Sauté","Sprungkick","Calciosalto","Patada Salto","とびげり","飞踢"],1,0,25,70,95],
+[["Rolling Kick","Mawashi Geri","Fegekick","Calciorullo","Patada Giro","まわしげり","回旋踢"],1,0,15,60,85],
+[["Sand Attack","Jet de Sable","Sandwirbel","Turbosabbia","Ataque Arena","すなかけ","泼沙"],4,2,15,0,100],
+[["Headbutt","Coup d&#39;Boule","Kopfnuss","Bottintesta","Golpe Cabeza","ずつき","头锤"],0,0,15,70,100],
+[["Horn Attack","Koud&#39;Korne","Hornattacke","Incornata","Cornada","つのでつく","角撞"],0,0,25,65,100],
+[["Fury Attack","Furie","Furienschlag","Furia","Ataque Furia","みだれづき","乱击"],0,0,20,15,85],
+[["Horn Drill","Empal&#39;Korne","Hornbohrer","Perforcorno","Perforador","つのドリル","角钻"],0,0,5,0,0],
+[["Tackle","Charge",,"Azione","Placaje","たいあたり","撞击"],0,0,35,35,95],
+[["Body Slam","Plaquage","Bodyslam","Corposcontro","Golpe Cuerpo","のしかかり","泰山压顶"],0,0,15,85,100],
+[["Wrap","Ligotage","Wickel","Avvolgibotta","Repetición","まきつく","紧束"],0,0,20,15,85],
+[["Take Down","Bélier","Bodycheck","Riduttore","Derribo","とっしん","猛撞"],0,0,20,90,85],
+[["Thrash","Mania","Fuchtler","Colpo","Golpe","あばれる","大闹一番"],0,0,20,90,100],
+[["Double-Edge","Damoclès","Risikotackle","Sdoppiatore","Doble Filo","すてみタックル","舍身冲撞"],0,0,15,120,100],
+[["Tail Whip","Mimi-Queue","Rutenschlag","Colpocoda","Látigo","しっぽをふる","摇尾巴"],0,2,30,0,100],
+[["Poison Sting","Dard-Venin","Giftstachel","Velenospina","Picotazo Ven","どくばり","毒针"],3,0,35,15,100],
+[["Twineedle","Double-Dard","Duonadel","Doppio Ago","Doble Ataque","ダブルニードル","双针"],6,0,20,25,100],
+[["Pin Missile","Dard-Nuée","Nadelrakete","Missilspillo","Pin Misil","ミサイルばり","飞弹针"],6,0,20,14,85],
+[["Leer","Groz&#39;Yeux","Silberblick","Fulmisguardo","Malicioso","にらみつける","瞪眼"],0,2,30,0,100],
+[["Bite","Morsure","Biss","Morso","Mordisco","かみつく","咬住"],16,1,25,60,100],
+[["Growl","Rugissement","Heuler","Ruggito","Gruñido","なきごえ","叫声"],0,2,40,0,100],
+[["Roar","Hurlement","Brüller","Boato","Rugido","ほえる","吼叫"],0,2,20,0,100],
+[["Sing","Berceuse","Gesang","Canto","Canto","うたう","唱歌"],0,2,15,0,55],
+[["Supersonic","Ultrason","Superschall","Supersuono","Supersónico","ちょうおんぱ","超音波"],0,2,20,0,55],
+[["Sonic Boom","Sonicboom","Ultraschall","Sonicboom","Bomba Sónica","ソニックブーム","音爆"],0,0,20,0,90],
+[["Disable","Entrave","Aussetzer","Inibitore","Anulación","かなしばり","定身法"],0,2,20,0,55],
+[["Acid","Acide","Säure","Acido","Ácido","ようかいえき","溶解液"],3,0,30,40,100],
+[["Ember","Flammèche","Glut","Braciere","Ascuas","ひのこ","火花"],9,1,25,40,100],
+[["Flamethrower","Lance-Flammes","Flammenwurf","Lanciafiamme","Lanzallamas","かえんほうしゃ","喷射火焰"],9,1,15,95,100],
+[["Mist","Brume","Weißnebel","Nebbia","Neblina","しろいきり","白雾"],14,2,30,0,0],
+[["Water Gun","Pistolet à O","Aquaknarre","Pistolacqua","Pistola Agua","みずでっぽう","水枪"],10,1,25,40,100],
+[["Hydro Pump","Hydrocanon","Hydropumpe","Idropompa","Hidrobomba","ハイドロポンプ","水炮"],10,1,5,120,80],
+[["Surf",,"Surfer",,,"なみのり","冲浪"],10,1,15,95,100],
+[["Ice Beam","Laser Glace","Eisstrahl","Geloraggio","Rayo Hielo","れいとうビーム","冰冻光束"],14,1,10,95,100],
+[["Blizzard",,,"Bora","Ventisca","ふぶき","暴风雪"],14,1,5,120,70],
+[["Psybeam","Rafale Psy","Psystrahl","Psicoraggio","Psicorrayo","サイケこうせん","幻象光线"],13,1,20,65,100],
+[["Bubble Beam","Bulles d&#39;O","Blubbstrahl","Bollaraggio","Rayo Burbuja","バブルこうせん","泡沫光线"],10,1,20,65,100],
+[["Aurora Beam","Onde Boréale","Aurorastrahl","Raggiaurora","Rayo Aurora","オーロラビーム","极光束"],14,1,20,65,100],
+[["Hyper Beam","Ultralaser","Hyperstrahl","Iper Raggio","Hiperrayo","はかいこうせん","破坏光线"],0,0,5,150,90],
+[["Peck","Picpic","Schnabel","Beccata","Picotazo","つつく","啄"],2,0,35,35,100],
+[["Drill Peck","Bec Vrille","Bohrschnabel","Perforbecco","Pico Taladro","ドリルくちばし","啄钻"],2,0,20,80,100],
+[["Submission","Sacrifice","Überroller","Sottomissione","Sumisión","じごくぐるま","地狱翻滚"],1,0,25,80,80],
+[["Low Kick","Balayage","Fußkick","Colpo Basso","Patada Baja","けたぐり","踢倒"],1,0,20,0,100],
+[["Counter","Riposte","Konter","Contatore","Contador","カウンター","双倍奉还"],1,0,20,0,100],
+[["Seismic Toss","Frappe Atlas","Geowurf","Movim. Sismico","Mov. Sísmico","ちきゅうなげ","地球上投"],1,0,20,0,100],
+[["Strength","Force","Stärke","Forza","Fuerza","かいりき","怪力"],0,0,15,80,100],
+[["Absorb","Vol-Vie","Absorber","Assorbimento","Absorber","すいとる","吸取"],11,1,20,20,100],
+[["Mega Drain","Méga-Sangsue","Megasauger","Megassorbimento","Megaagotar","メガドレイン","超级吸取"],11,1,10,40,100],
+[["Leech Seed","Vampigraine","Egelsamen","Parassiseme","Drenadoras","やどりぎのタネ","寄生种子"],11,2,10,0,90],
+[["Growth","Croissance","Wachstum","Crescita","Desarrollo","せいちょう","生长"],0,2,40,0,0],
+[["Razor Leaf","Tranch&#39;Herbe","Rasierblatt","Foglielama","Hoja Afilada","はっぱカッター","飞叶快刀"],11,1,25,55,95],
+[["Solar Beam","Lance-Soleil","Solarstrahl","Solarraggio","Rayo Solar","ソーラービーム","日光束"],11,1,10,120,100],
+[["Poison Powder","Poudre Toxik","Giftpuder","Velenpolvere","Polvo Veneno","どくのこな","毒粉"],3,2,35,0,75],
+[["Stun Spore","Para-Spore","Stachelspore","Paralizzante","Paralizador","しびれごな","麻痹粉"],11,2,30,0,75],
+[["Sleep Powder","Poudre Dodo","Schlafpuder","Sonnifero","Somnífero","ねむりごな","催眠粉"],11,2,15,0,75],
+[["Petal Dance","Danse-Fleur","Blättertanz","Petalodanza","Danza Pétalo","はなびらのまい","花瓣舞"],11,1,20,70,100],
+[["String Shot","Sécrétion","Fadenschuss","Millebave","Disp. Demora","いとをはく","吐丝"],6,2,40,0,95],
+[["Dragon Rage","Draco-Rage","Drachenwut","Ira di Drago","Furia Dragón","りゅうのいかり","龙之怒"],15,1,10,0,100],
+[["Fire Spin","Danse Flamme","Feuerwirbel","Turbofuoco","Giro Fuego","ほのおのうず","火焰旋涡"],9,1,15,15,70],
+[["Thunder Shock","Éclair","Donnerschock","Tuonoshock","Impactrueno","でんきショック","电击"],12,1,30,40,100],
+[["Thunderbolt","Tonnerre","Donnerblitz","Fulmine","Rayo","１０まんボルト","十万伏特"],12,1,15,95,100],
+[["Thunder Wave","Cage-Éclair","Donnerwelle","Tuononda","Onda Trueno","でんじは","电磁波"],12,2,20,0,100],
+[["Thunder","Fatal-Foudre","Donner","Tuono","Trueno","かみなり","打雷"],12,1,10,120,70],
+[["Rock Throw","Jet-Pierres","Steinwurf","Sassata","Lanzarrocas","いわおとし","落石"],5,0,15,50,90],
+[["Earthquake","Séisme","Erdbeben","Terremoto","Terremoto","じしん","地震"],4,0,10,100,100],
+[["Fissure","Abîme","Geofissur","Abisso","Fisura","じわれ","地裂"],4,0,5,0,0],
+[["Dig","Tunnel","Schaufler","Fossa","Excavar","あなをほる","挖洞"],4,0,10,60,100],
+[["Toxic","Toxik","Toxin","Tossina","Tóxico","どくどく","剧毒"],3,2,10,0,85],
+[["Confusion","Choc Mental","Konfusion","Confusione","Confusión","ねんりき","念力"],13,1,25,50,100],
+[["Psychic","Psyko","Psychokinese","Psichico","Psíquico","サイコキネシス","精神强念"],13,1,10,90,100],
+[["Hypnosis","Hypnose","Hypnose","Ipnosi","Hipnosis","さいみんじゅつ","催眠术"],13,2,20,0,60],
+[["Meditate","Yoga","Meditation","Meditazione","Meditación","ヨガのポーズ","瑜伽姿势"],13,2,40,0,0],
+[["Agility","Hâte","Agilität","Agilità","Agilidad","こうそくいどう","高速移动"],13,2,30,0,0],
+[["Quick Attack","Vive-attaque","Ruckzuckhieb","Attacco Rapido","Ataque Rápido","でんこうせっか","电光一闪"],0,0,30,40,100],
+[["Rage","Frénésie","Raserei","Ira","Furia","いかり","愤怒"],0,0,20,20,100],
+[["Teleport","Téléport",,"Teletrasporto","Teletransporte","テレポート","瞬间移动"],13,2,20,0,0],
+[["Night Shade","Ténèbres","Nachtnebel","Ombra Notturna","Tinieblas","ナイトヘッド","黑夜魔影"],7,0,15,0,100],
+[["Mimic","Copie","Mimikry","Mimica","Mimético","ものまね","模仿"],0,2,10,0,0],
+[["Screech","Grincement","Kreideschrei","Stridio","Chirrido","いやなおと","刺耳声"],0,2,40,0,85],
+[["Double Team","Reflet","Doppelteam","Doppioteam","Doble Equipo","かげぶんしん","影子分身"],0,2,15,0,0],
+[["Recover","Soin","Genesung","Ripresa","Recuperación","じこさいせい","自我再生"],0,2,20,0,0],
+[["Harden","Armure","Härtner","Rafforzatore","Fortaleza","かたくなる","变硬"],0,2,30,0,0],
+[["Minimize","Lilliput","Komprimator","Minimizzato","Reducción","ちいさくなる","变小"],0,2,20,0,0],
+[["Smokescreen","Brouillard","Rauchwolke","Muro di Fumo","Pantalla Humo","えんまく","烟幕"],0,2,20,0,100],
+[["Confuse Ray","Onde Folie","Konfustrahl","Stordiraggio","Rayo Confuso","あやしいひかり","奇异之光"],7,2,10,0,100],
+[["Withdraw","Repli","Panzerschutz","Ritirata","Refugio","からにこもる","缩入壳中"],10,2,40,0,0],
+[["Defense Curl","Boul&#39;Armure","Einigler","Ricciolscudo","Rizo Defensa","まるくなる","变圆"],0,2,40,0,0],
+[["Barrier","Bouclier","Barriere","Barriera","Barrera","バリアー","屏障"],13,2,30,0,0],
+[["Light Screen","Mur Lumière","Lichtschild","Schermoluce","Pantalla Luz","ひかりのかべ","光墙"],13,2,30,0,0],
+[["Haze","Buée Noire","Dunkelnebel","Nube","Niebla","くろいきり","黑雾"],14,2,30,0,0],
+[["Reflect","Protection","Reflektor","Riflesso","Reflejo","リフレクター","反射壁"],13,2,20,0,0],
+[["Focus Energy","Puissance","Energiefokus","Focalenergia","Foco Energía","きあいだめ","聚气"],0,2,30,0,0],
+[["Bide","Patience","Geduld","Pazienza","Venganza","がまん","忍耐"],0,0,10,0,100],
+[["Metronome","Métronome","Metronom","Metronomo","Metrónomo","ゆびをふる","挥指"],0,2,10,0,0],
+[["Mirror Move","Mimique","Spiegeltrick","Speculmossa","Mov. Espejo","オウムがえし","鹦鹉学舌"],2,2,20,0,0],
+[["Self-Destruct","Destruction","Finale","Autodistruz.","Autodestruc","じばく","自爆"],0,0,5,200,100],
+[["Egg Bomb","Bomb&#39;Œuf","Eierbombe","Uovobomba","Bomba Huevo","タマゴばくだん","炸蛋"],0,0,10,100,75],
+[["Lick","Léchouille","Schlecker","Leccata","Lengüetazo","したでなめる","舌舔"],7,0,30,20,100],
+[["Smog","Purédpois",,,"Polución","スモッグ","浊雾"],3,0,20,20,70],
+[["Sludge","Détritus","Schlammbad","Fango","Residuos","ヘドロこうげき","污泥攻击"],3,0,20,65,100],
+[["Bone Club","Massd&#39;Os","Knochenkeule","Ossoclava","Hueso Palo","ホネこんぼう","骨棒"],4,0,20,65,85],
+[["Fire Blast","Déflagration","Feuersturm","Fuocobomba","Llamarada","だいもんじ","大字爆炎"],9,1,5,120,85],
+[["Waterfall","Cascade","Kaskade","Cascata","Cascada","たきのぼり","攀瀑"],10,1,15,80,100],
+[["Clamp","Claquoir","Schnapper","Tenaglia","Tenaza","からではさむ","贝壳夹击"],10,1,10,35,75],
+[["Swift","Météores","Sternschauer","Comete","Rapidez","スピードスター","高速星星"],0,0,20,60,0],
+[["Skull Bash","Coud&#39;Krâne","Schädelwumme","Capocciata","Cabezazo","ロケットずつき","火箭头锤"],0,0,15,100,100],
+[["Spike Cannon","Picanon","Dornkanone","Sparalance","Clavo Cañón","とげキャノン","尖刺加农炮"],0,0,15,20,100],
+[["Constrict","Constriction","Umklammerung","Limitazione","Restricción","からみつく","缠绕"],0,0,35,10,100],
+[["Amnesia","Amnésie","Amnesie",,,"ドわすれ","瞬间失忆"],13,2,20,0,0],
+[["Kinesis","Télékinésie","Psykraft","Cinèsi","Kinético","スプーンまげ","折弯汤匙"],13,2,15,0,80],
+[["Soft-Boiled","E-Coque","Weichei","Covauova","Amortiguador","タマゴうみ","生蛋"],0,2,10,0,0],
+[["High Jump Kick","Pied Voltige","Turmkick","Calcinvolo","Pat. Salto Alta","とびひざげり","飞膝踢"],1,0,20,85,90],
+[["Glare","Intimidation","Giftblick","Bagliore","Deslumbrar","へびにらみ","大蛇瞪眼"],0,2,30,0,75],
+[["Dream Eater","Dévorêve","Traumfresser","Mangiasogni","Come Sueños","ゆめくい","食梦"],13,1,15,100,100],
+[["Poison Gas","Gaz Toxik","Giftwolke","Velenogas","Gas Venenoso","どくガス","毒瓦斯"],3,2,40,0,55],
+[["Barrage","Pilonnage","Stakkato","Attacco Pioggia","Presa","たまなげ","投球"],0,0,20,15,85],
+[["Leech Life","Vampirisme","Blutsauger","Sanguisuga","Chupavidas","きゅうけつ","吸血"],6,0,15,20,100],
+[["Lovely Kiss","Grobisou","Todeskuss","Demonbacio","Beso Amoroso","あくまのキッス","恶魔之吻"],0,2,10,0,75],
+[["Sky Attack","Piqué","Himmelsfeger","Aeroattacco","Ataque Aéreo","ゴッドバード","神鸟猛击"],2,0,5,120,90],
+[["Transform","Morphing","Wandler","Trasformazione","Transformación","へんしん","变身"],0,2,10,0,0],
+[["Bubble","Écume","Blubber","Bolla","Burbuja","あわ","泡沫"],10,1,30,20,100],
+[["Dizzy Punch","Uppercut","Irrschlag","Stordipugno","Puño Mareo","ピヨピヨパンチ","迷昏拳"],0,0,10,70,100],
+[["Spore",,"Pilzspore","Spora","Espora","キノコのほうし","蘑菇孢子"],11,2,15,0,100],
+[["Flash",,"Blitz",,"Destello","フラッシュ","闪光"],0,2,20,0,70],
+[["Psywave","Vague Psy","Psywelle","Psiconda","Psicoonda","サイコウェーブ","精神波"],13,1,15,0,80],
+[["Splash","Trempette","Platscher",,"Salpicadura","はねる","跃起"],0,2,40,0,0],
+[["Acid Armor","Acidarmure","Säurepanzer","Scudo Acido","Armadura Ácida","とける","溶化"],3,2,40,0,0],
+[["Crabhammer","Pince-Masse","Krabbhammer","Martellata","Martillazo","クラブハンマー","蟹钳锤"],10,1,10,90,85],
+[["Explosion",,,"Esplosione","Explosión","だいばくはつ","大爆炸"],0,0,5,250,100],
+[["Fury Swipes","Combo-Griffe","Kratzfurie","Sfuriate","Golpes Furia","みだれひっかき","乱抓"],0,0,15,18,80],
+[["Bonemerang","Osmerang","Knochmerang","Ossomerang","Huesomerang","ホネブーメラン","骨头回力镖"],4,0,10,50,90],
+[["Rest","Repos","Erholung","Riposo","Descanso","ねむる","睡觉"],13,2,10,0,0],
+[["Rock Slide","Éboulement","Steinhagel","Frana","Avalancha","いわなだれ","岩崩"],5,0,10,75,90],
+[["Hyper Fang","Croc de Mort","Hyperzahn","Iperzanna","Hipercolmillo","ひっさつまえば","必杀门牙"],0,0,15,80,90],
+[["Sharpen","Affûtage","Schärfer","Affilatore","Afilar","かくばる","棱角化"],0,2,30,0,0],
+[["Conversion","Adaptation","Umwandlung","Conversione","Conversión","テクスチャー","纹理"],0,2,30,0,0],
+[["Tri Attack","Triplattaque","Triplette","Tripletta","Triataque","トライアタック","三重攻击"],0,0,10,80,100],
+[["Super Fang","Croc Fatal","Superzahn","Superzanna","Superdiente","いかりのまえば","愤怒门牙"],0,0,10,0,90],
+[["Slash","Tranche","Schlitzer","Lacerazione","Cuchillada","きりさく","劈开"],0,0,20,70,100],
+[["Substitute","Clonage","Delegator","Sostituto","Sustituto","みがわり","替身"],0,2,10,0,0],
+[["Struggle","Lutte","Verzweifler","Scontro","Combate","わるあがき","挣扎"],0,0,1,50,100],
+[["Sketch","Gribouille","Nachahmer","Schizzo","Esquema","スケッチ","写生"],0,2,1,0,0],
+[["Triple Kick","Triple Pied","Dreifachkick","Triplocalcio","Triple Patada","トリプルキック","三连踢"],1,0,10,10,90],
+[["Thief","Larcin","Raub","Furto","Ladrón","どろぼう","小偷"],16,1,10,40,100],
+[["Spider Web","Toile","Spinnennetz","Ragnatela","Telaraña","クモのす","蛛网"],6,2,10,0,0],
+[["Mind Reader","Lire-Esprit","Willensleser","Leggimente","Telépata","こころのめ","心之眼"],0,2,5,0,100],
+[["Nightmare","Cauchemar","Nachtmahr","Incubo","Pesadilla","あくむ","恶梦"],7,2,15,0,0],
+[["Flame Wheel","Roue de Feu","Flammenrad","Ruotafuoco","Rueda Fuego","かえんぐるま","火焰轮"],9,1,25,60,100],
+[["Snore","Ronflement","Schnarcher","Russare","Ronquido","いびき","打鼾"],0,0,15,40,100],
+[["Curse","Malédiction","Fluch","Maledizione","Maldición","のろい","诅咒"],-1,2,10,0,0],
+[["Flail","Fléau","Dreschflegel","Flagello","Azote","じたばた","抓狂"],0,0,15,0,100],
+[["Conversion 2","Conversion2","Umwandlung2","Conversione2","Conversión2","テクスチャー２","纹理２"],0,2,30,0,0],
+[["Aeroblast","Aéroblast","Luftstoß","Aerocolpo","Aerochorro","エアロブラスト","气旋攻击"],2,0,5,100,95],
+[["Cotton Spore","Spore Coton","Baumwollsaat","Cottonspora","Esporagodón","わたほうし","棉孢子"],11,2,40,0,85],
+[["Reversal","Contre","Gegenschlag","Contropiede","Inversión","きしかいせい","起死回生"],1,0,15,0,100],
+[["Spite","Dépit","Groll","Dispetto","Rencor","うらみ","怨恨"],7,2,10,0,100],
+[["Powder Snow","Poudreuse","Pulverschnee","Polneve","Nieve Polvo","こなゆき","细雪"],14,1,25,40,100],
+[["Protect","Abri","Schutzschild","Protezione","Protección","まもる","守住"],0,2,10,0,0],
+[["Mach Punch",,"Tempohieb","Pugnorapido","Ultrapuño","マッハパンチ","音速拳"],1,0,30,40,100],
+[["Scary Face","Grimace","Grimasse","Visotruce","Cara Susto","こわいかお","鬼面"],0,2,10,0,90],
+[["Feint Attack","Feinte","Finte","Finta","Finta","だましうち","出奇一击"],16,1,20,60,0],
+[["Sweet Kiss","Doux Baiser","Bitterkuss","Dolcebacio","Beso Dulce","てんしのキッス","天使之吻"],0,2,10,0,75],
+[["Belly Drum","Cognobidon","Bauchtrommel","Panciamburo","Tambor","はらだいこ","腹鼓"],0,2,10,0,0],
+[["Sludge Bomb","Bomb-Beurk","Matschbombe","Fangobomba","Bomba Lodo","ヘドロばくだん","污泥炸弹"],3,0,10,90,100],
+[["Mud-Slap","Coud&#39;Boue","Lehmschelle","Fangosberla","Bofetón Lodo","どろかけ","掷泥"],4,0,10,20,100],
+[["Octazooka",,,,"Pulpocañón","オクタンほう","章鱼桶炮"],10,1,10,65,85],
+[["Spikes","Picots","Stachler","Punte","Púas","まきびし","撒菱"],4,2,20,0,0],
+[["Zap Cannon","Élecanon","Blitzkanone","Falcecannone","Electrocañón","でんじほう","电磁炮"],12,1,5,100,50],
+[["Foresight","Clairvoyance","Gesichte","Preveggenza","Profecía","みやぶる","识破"],0,2,40,0,100],
+[["Destiny Bond","Prélèvem. Destin","Abgangsbund","Destinobbligato","Mismo Destino","みちづれ","同命"],7,2,5,0,0],
+[["Perish Song","Requiem","Abgesang","Ultimocanto","Canto Mortal","ほろびのうた","灭亡之歌"],0,2,5,0,0],
+[["Icy Wind","Vent Glace","Eissturm","Ventogelato","Viento Hielo","こごえるかぜ","冰冻之风"],14,1,15,55,95],
+[["Detect","Détection","Scanner","Individua","Detección","みきり","看穿"],1,2,5,0,0],
+[["Bone Rush","Charge-Os","Knochenhatz","Ossoraffica","Ataque Óseo","ボーンラッシュ","骨棒乱打"],4,0,10,25,80],
+[["Lock-On","Verrouillage","Zielschuss","Localizza","Fijar Blanco","ロックオン","锁定"],0,2,5,0,100],
+[["Outrage","Colère","Wutanfall","Oltraggio","Enfado","げきりん","逆鳞"],15,1,15,90,100],
+[["Sandstorm","Tempête de Sable","Sandsturm","Terrempesta","Tormenta Arena","すなあらし","沙暴"],5,2,10,0,0],
+[["Giga Drain","Giga-Sangsue","Gigasauger","Gigassorbimento","Gigadrenado","ギガドレイン","终极吸取"],11,1,5,60,100],
+[["Endure","Ténacité","Ausdauer","Resistenza","Aguante","こらえる","挺住"],0,2,10,0,0],
+[["Charm","Charme","Charme","Fascino","Encanto","あまえる","撒娇"],0,2,20,0,100],
+[["Rollout","Roulade","Walzer","Rotolamento","Desenrollar","ころがる","滚动"],5,0,20,30,90],
+[["False Swipe","Faux-Chage","Trugschlag","Falsofinale","Falsotortazo","みねうち","点到为止"],0,0,40,40,100],
+[["Swagger","Vantardise","Angeberei","Bullo","Contoneo","いばる","虚张声势"],0,2,15,0,90],
+[["Milk Drink","Lait à Boire","Milchgetränk","Buonlatte","Batido","ミルクのみ","喝牛奶"],0,2,10,0,0],
+[["Spark","Étincelle","Funkensprung","Scintilla","Chispa","スパーク","电光"],12,1,20,65,100],
+[["Fury Cutter","Taillade","Zornklinge","Tagliofuria","Cortefuria","れんぞくぎり","连斩"],6,0,20,10,95],
+[["Steel Wing","Aile d&#39;Acier","Stahlflügel","Alacciaio","Ala De Acero","はがねのつばさ","钢翼"],8,0,25,70,90],
+[["Mean Look","Regard Noir","Horrorblick","Malosguardo","Mal De Ojo","くろいまなざし","黑色目光"],0,2,5,0,100],
+[["Attract","Attraction","Anziehung","Attrazione","Atracción","メロメロ","迷人"],0,2,15,0,100],
+[["Sleep Talk","Blabla Dodo","Schlafrede","Sonnolalia","Sonámbulo","ねごと","梦话"],0,2,10,0,0],
+[["Heal Bell","Glas de Soin","Vitalglocke","Rintoccasana","Campana Cura","いやしのすず","治愈铃声"],0,2,5,0,0],
+[["Return","Retour","Rückkehr","Ritorno","Retroceso","おんがえし","报恩"],0,0,20,0,100],
+[["Present","Cadeau","Geschenk","Regalino","Presente","プレゼント","礼物"],0,0,15,0,90],
+[["Frustration",,,"Frustrazione","Frustración","やつあたり","迁怒"],0,0,20,0,100],
+[["Safeguard","Rune Protect","Bodyguard","Salvaguardia","Velo Sagrado","しんぴのまもり","神秘守护"],0,2,25,0,0],
+[["Pain Split","Balance","Leidteiler","Malcomune","Divide Dolor","いたみわけ","分担痛楚"],0,2,20,0,0],
+[["Sacred Fire","Feu Sacré","Läuterfeuer","Magifuoco","Fuego Sagrado","せいなるほのお","神圣之火"],9,1,5,100,95],
+[["Magnitude","Ampleur","Intensität","Magnitudo","Magnitud","マグニチュード","震级"],4,0,30,0,100],
+[["Dynamic Punch","Dynamopoing","Wuchtschlag","Dinamipugno","Puño Dinámico","ばくれつパンチ","爆裂拳"],1,0,5,100,50],
+[["Megahorn","Mégacorne","Vielender","Megacorno","Megacuerno","メガホーン","超级角击"],6,0,10,120,85],
+[["Dragon Breath","Dracosouffle","Feuerodem","Dragospiro","Dragoaliento","りゅうのいぶき","龙息"],15,1,20,60,100],
+[["Baton Pass","Relais","Stafette","Staffetta","Relevo","バトンタッチ","接棒"],0,2,40,0,0],
+[["Encore",,"Zugabe","Ripeti","Otra Vez","アンコール","再来一次"],0,2,5,0,100],
+[["Pursuit","Poursuite","Verfolgung","Inseguimento","Persecución","おいうち","追打"],16,1,20,40,100],
+[["Rapid Spin","Tour Rapide","Turbodreher","Rapigiro","Giro Rápido","こうそくスピン","高速旋转"],0,0,40,20,100],
+[["Sweet Scent","Doux Parfum","Lockduft","Profumino","Dulce Aroma","あまいかおり","甜甜香气"],0,2,20,0,100],
+[["Iron Tail","Queue de Fer","Eisenschweif","Codacciaio","Cola Férrea","アイアンテール","铁尾"],8,0,15,100,75],
+[["Metal Claw","Griffe Acier","Metallklaue","Ferrartigli","Garra Metal","メタルクロー","金属爪"],8,0,35,50,95],
+[["Vital Throw","Corps Perdu","Überwurf","Vitaltiro","Tiro Vital","あてみなげ","借力摔"],1,0,10,70,0],
+[["Morning Sun","Aurore","Morgengrauen","Mattindoro","Sol Matinal","あさのひざし","晨光"],0,2,5,0,0],
+[["Synthesis","Synthèse","Synthese","Sintesi","Síntesis","こうごうせい","光合作用"],11,2,5,0,0],
+[["Moonlight","Rayon Lune","Mondschein","Lucelunare","Luz Lunar","つきのひかり","月光"],0,2,5,0,0],
+[["Hidden Power","Puissance Cachée","Kraftreserve","Introforza","Poder Oculto","めざめるパワー","觉醒力量"],0,-1,15,0,100],
+[["Cross Chop","Coup-Croix","Kreuzhieb","Incrocolpo","Tajo Cruzado","クロスチョップ","十字劈"],1,0,5,100,80],
+[["Twister","Ouragan","Windhose","Tornado","Ciclón","たつまき","龙卷风"],15,1,20,40,100],
+[["Rain Dance","Danse Pluie","Regentanz","Pioggiadanza","Danza Lluvia","あまごい","求雨"],10,2,5,0,0],
+[["Sunny Day","Zénith","Sonnentag","Giornodisole","Día Soleado","にほんばれ","大晴天"],9,2,5,0,0],
+[["Crunch","Mâchouille","Knirscher","Sgranocchio","Triturar","かみくだく","咬碎"],16,1,15,80,100],
+[["Mirror Coat","Voile Miroir","Spiegelcape","Specchiovelo","Manto Espejo","ミラーコート","镜面反射"],13,1,20,0,100],
+[["Psych Up","Boost","Psycho-Plus","Psicamisù","Más Psique","じこあんじ","自我暗示"],0,2,10,0,0],
+[["Extreme Speed","Vitesse Extrême","Turbotempo","Extrarapido","Veloc. Extrema","しんそく","神速"],0,0,5,80,100],
+[["Ancient Power","Pouvoir Antique","Antik-Kraft","Forzantica","Poder Pasado","げんしのちから","原始之力"],5,0,5,60,100],
+[["Shadow Ball","Ball&#39;Ombre","Spukball","Palla Ombra","Bola Sombra","シャドーボール","暗影球"],7,0,15,80,100],
+[["Future Sight","Prescience","Seher","Divinazione","Premonición","みらいよち","预知未来"],13,1,15,80,90],
+[["Rock Smash","Éclate-Roc","Zertrümmerer","Spaccaroccia","Golpe Roca","いわくだき","碎岩"],1,0,15,20,100],
+[["Whirlpool","Siphon",,"Mulinello","Torbellino","うずしお","潮旋"],10,1,15,15,70],
+[["Beat Up","Baston","Prügler","Picchiaduro","Paliza","ふくろだたき","围攻"],16,1,10,10,100],
+[["Fake Out","Bluff","Mogelhieb","Bruciapelo","Sorpresa","ねこだまし","击掌奇袭"],0,0,10,40,100],
+[["Uproar","Brouhaha","Aufruhr","Baraonda","Alboroto","さわぐ","吵闹"],0,0,10,50,100],
+[["Stockpile","Stockage","Horter","Accumulo","Reserva","たくわえる","蓄力"],0,2,10,0,0],
+[["Spit Up","Relâche","Entfessler","Sfoghenergia","Escupir","はきだす","喷出"],0,0,10,100,100],
+[["Swallow","Avale","Verzehrer","Intoenergia","Tragar","のみこむ","吞下"],0,2,10,0,0],
+[["Heat Wave","Canicule","Hitzewelle","Ondacalda","Onda Ígnea","ねっぷう","热风"],9,1,10,100,90],
+[["Hail","Grêle","Hagelsturm","Grandine","Granizo","あられ","冰雹"],14,2,10,0,0],
+[["Torment","Tourmente","Folterknecht","Attaccalite","Tormento","いちゃもん","无理取闹"],16,2,15,0,100],
+[["Flatter","Flatterie","Schmeichler","Adulazione","Camelo","おだてる","吹捧"],16,2,15,0,100],
+[["Will-O-Wisp","Feu Follet","Irrlicht","Fuocofatuo","Fuego Fatuo","おにび","鬼火"],9,2,15,0,75],
+[["Memento","Souvenir","Memento-Mori",,"Legado","おきみやげ","临别礼物"],16,2,10,0,0],
+[["Facade","Façade","Fassade","Facciata","Imagen","からげんき","硬撑"],0,0,20,70,100],
+[["Focus Punch","Mitra-Poing","Power-Punch","Centripugno","Puño Certero","きあいパンチ","真气拳"],1,0,20,150,100],
+[["Smelling Salts","Stimulant","Riechsalz","Maniereforti","Estímulo","きつけ","清醒"],0,0,10,60,100],
+[["Follow Me","Par Ici","Spotlight","Sonoqui","Señuelo","このゆびとまれ","看我嘛"],0,2,20,0,0],
+[["Nature Power","Force-Nature","Natur-Kraft","Naturforza","Adaptación","しぜんのちから","自然之力"],0,2,20,0,0],
+[["Charge","Chargeur","Ladevorgang","Sottocarica","Carga","じゅうでん","充电"],12,2,20,0,0],
+[["Taunt","Provoc","Verhöhner","Provocazione","Mofa","ちょうはつ","挑衅"],16,2,20,0,100],
+[["Helping Hand","Coup d&#39;Main","Rechte Hand","Altruismo","Refuerzo","てだすけ","帮助"],0,2,20,0,0],
+[["Trick","Tourmagik","Trickbetrug","Raggiro","Truco","トリック","戏法"],13,2,10,0,100],
+[["Role Play","Imitation","Rollentausch","Giocodiruolo","Imitación","なりきり","扮演"],13,2,10,0,0],
+[["Wish","Vœu","Wunschtraum","Desiderio","Deseo","ねがいごと","祈愿"],0,2,10,0,0],
+[["Assist","Assistance","Zuschuss","Assistente","Ayuda","ねこのて","借助"],0,2,20,0,0],
+[["Ingrain","Racines","Verwurzler","Radicamento","Arraigo","ねをはる","扎根"],11,2,20,0,0],
+[["Superpower","Surpuissance","Kraftkoloss","Troppoforte","Fuerza Bruta","ばかぢから","蛮力"],1,0,5,120,100],
+[["Magic Coat","Reflet Magik","Magiemantel","Magivelo","Capa Mágica","マジックコート","魔法反射"],13,2,15,0,0],
+[["Recycle","Recyclage","Aufbereitung","Riciclo","Reciclaje","リサイクル","回收利用"],0,2,10,0,0],
+[["Revenge","Vendetta","Vergeltung","Vendetta","Desquite","リベンジ","报复"],1,0,10,60,100],
+[["Brick Break","Casse-Brique","Durchbruch","Breccia","Demolición","かわらわり","劈瓦"],1,0,15,75,100],
+[["Yawn","Bâillement","Gähner","Sbadiglio","Bostezo","あくび","哈欠"],0,2,10,0,0],
+[["Knock Off","Sabotage","Abschlag","Privazione","Desarme","はたきおとす","拍落"],16,1,20,20,100],
+[["Endeavor","Effort","Notsituation","Rimonta","Esfuerzo","がむしゃら","蛮干"],0,0,5,0,100],
+[["Eruption","Éruption",,"Eruzione","Estallido","ふんか","喷火"],9,1,5,150,100],
+[["Skill Swap","Échange","Wertewechsel","Baratto","Intercambio","スキルスワップ","特性互换"],13,2,10,0,0],
+[["Imprison","Possessif","Begrenzer","Esclusiva","Cerca","ふういん","封印"],13,2,10,0,0],
+[["Refresh","Régénération","Heilung","Rinfrescata","Alivio","リフレッシュ","焕然一新"],0,2,20,0,0],
+[["Grudge","Rancune","Nachspiel","Rancore","Rabia","おんねん","怨念"],7,2,5,0,0],
+[["Snatch","Saisie","Übernahme","Scippo","Robo","よこどり","抢夺"],16,2,10,0,0],
+[["Secret Power","Force Cachée","Geheimpower","Forzasegreta","Daño Secreto","ひみつのちから","秘密之力"],0,0,20,70,100],
+[["Dive","Plongée","Taucher","Sub","Buceo","ダイビング","潜水"],10,1,10,60,100],
+[["Arm Thrust","Cogne","Armstoß","Sberletese","Empujón","つっぱり","猛推"],1,0,20,15,100],
+[["Camouflage",,"Tarnung","Camuffamento","Camuflaje","ほごしょく","保护色"],0,2,20,0,0],
+[["Tail Glow","Lumiqueue","Schweifglanz","Codadiluce","Ráfaga","ほたるび","萤火"],6,2,20,0,0],
+[["Luster Purge","Lumi-Éclat","Scheinwerfer","Abbagliante","Resplandor","ラスターパージ","洁净光芒"],13,1,5,70,100],
+[["Mist Ball","Ball&#39;Brume","Nebelball","Foschisfera","Bola Neblina","ミストボール","薄霧球"],13,1,5,70,100],
+[["Feather Dance","Danse-Plume","Daunenreigen","Danzadipiume","Danza Pluma","フェザーダンス","羽毛舞"],2,2,15,0,100],
+[["Teeter Dance","Danse-Folle","Taumeltanz","Strampadanza","Danza Caos","フラフラダンス","摇晃舞"],0,2,20,0,100],
+[["Blaze Kick","Pied Brûleur","Feuerfeger","Calciardente","Patada Ígnea","ブレイズキック","火焰踢"],9,1,10,85,90],
+[["Mud Sport","Lance-Boue","Lehmsuhler","Fangata","Chapoteo Lodo","どろあそび","玩泥巴"],4,2,15,0,0],
+[["Ice Ball","Ball&#39;Glace","Frostbeule","Palla Gelo","Bola Hielo","アイスボール","冰球"],14,1,20,30,90],
+[["Needle Arm","Poing Dard","Nietenranke","Pugnospine","Brazo Pincho","ニードルアーム","尖刺臂"],11,1,15,60,100],
+[["Slack Off","Paresse","Tagedieb","Pigro","Relajo","なまける","偷懒"],0,2,10,0,0],
+[["Hyper Voice","Mégaphone","Schallwelle","Granvoce","Vozarrón","ハイパーボイス","巨声"],0,0,10,90,100],
+[["Poison Fang","Crochet Venin","Giftzahn","Velenodenti","Colmillo Ven","どくどくのキバ","剧毒牙"],3,0,15,50,100],
+[["Crush Claw","Éclate Griffe","Zermalmklaue","Tritartigli","Garra Brutal","ブレイククロー","撕裂爪"],0,0,10,75,95],
+[["Blast Burn","Rafale Feu","Lohekanonade","Incendio","Anillo Ígneo","ブラストバーン","爆炸烈焰"],9,1,5,150,90],
+[["Hydro Cannon","Hydroblast","Aquahaubitze","Idrocannone","Hidrocañón","ハイドロカノン","加农水炮"],10,1,5,150,90],
+[["Meteor Mash","Poing Météor","Sternenhieb","Meteorpugno","Puño Meteoro","コメットパンチ","彗星拳"],8,0,10,100,85],
+[["Astonish","Étonnement","Erstauner","Sgomento","Impresionar","おどろかす","惊吓"],7,0,15,30,100],
+[["Weather Ball","Ball&#39;Météo","Meteorologe","Palla Clima","Meteorobola","ウェザーボール","气象球"],0,-1,10,50,100],
+[["Aromatherapy","Aromathérapi","Aromakur","Aromaterapia","Aromaterapia","アロマセラピー","芳香治疗"],11,2,5,0,0],
+[["Fake Tears","Croco Larme","Trugträne","Falselacrime","Llanto Falso","うそなき","假哭"],16,2,20,0,100],
+[["Air Cutter","Tranch&#39;Air","Windschnitt","Aerasoio","Aire Afilado","エアカッター","空气利刃"],2,0,25,55,95],
+[["Overheat","Surchauffe","Hitzekoller","Vampata","Sofoco","オーバーヒート","过热"],9,1,5,140,90],
+[["Odor Sleuth","Flair","Schnüffler","Segugio","Rastreo","かぎわける","气味侦测"],0,2,40,0,100],
+[["Rock Tomb","Tomberoche","Felsgrab","Rocciotomba","Tumba Rocas","がんせきふうじ","岩石封锁"],5,0,10,50,80],
+[["Silver Wind","Vent Argenté","Silberhauch","Ventargenteo","Viento Plata","ぎんいろのかぜ","银色旋风"],6,0,5,60,100],
+[["Metal Sound","Strido-Son","Metallsound","Ferrostrido","Eco Metálico","きんぞくおん","金属音"],8,2,40,0,85],
+[["Grass Whistle","Siffl&#39;Herbe","Grasflöte","Meloderba","Silbato","くさぶえ","草笛"],11,2,15,0,55],
+[["Tickle","Chatouille","Spaßkanone","Solletico","Cosquillas","くすぐる","挠痒"],0,2,20,0,100],
+[["Cosmic Power","Force Cosmik","Kosmik-Kraft","Cosmoforza","Masa Cósmica","コスモパワー","宇宙力量"],13,2,20,0,0],
+[["Water Spout","Giclédo","Fontränen","Zampillo","Salpicar","しおふき","喷水"],10,1,5,150,100],
+[["Signal Beam","Rayon Signal","Ampelleuchte","Segnoraggio","Doble Rayo","シグナルビーム","信号光束"],6,0,15,75,100],
+[["Shadow Punch","Poing Ombre","Finsterfaust","Pugnodombra","Puño Sombra","シャドーパンチ","暗影拳"],7,0,20,60,0],
+[["Extrasensory","Extrasenseur","Sondersensor","Extrasenso","Paranormal","じんつうりき","神通力"],13,1,30,80,100],
+[["Sky Uppercut","Stratopercut","Himmelhieb","Stramontante","Gancho Alto","スカイアッパー","冲天拳"],1,0,15,85,90],
+[["Sand Tomb","Tourbi-Sable","Sandgrab","Sabbiotomba","Bucle Arena","すなじごく","流沙地狱"],4,0,15,15,70],
+[["Sheer Cold","Glaciation","Eiseskälte","Purogelo","Frío Polar","ぜったいれいど","绝对零度"],14,1,5,0,0],
+[["Muddy Water","Ocroupi","Lehmbrühe","Fanghiglia","Agua Lodosa","だくりゅう","浊流"],10,1,10,95,85],
+[["Bullet Seed","Balle Graine","Kugelsaat","Semitraglia","Recurrente","タネマシンガン","种子机关枪"],11,1,30,10,100],
+[["Aerial Ace","Aéropique","Aero-Ass","Aeroassalto","Golpe Aéreo","つばめがえし","燕返"],2,0,20,60,0],
+[["Icicle Spear","Stalagtite","Eisspeer","Gelolancia","Carámbano","つららばり","冰锥"],14,1,30,10,100],
+[["Iron Defense","Mur de Fer","Eisenabwehr","Ferroscudo","Defensa Férrea","てっぺき","铁壁"],8,2,15,0,0],
+[["Block","Barrage","Rückentzug","Blocco","Bloqueo","とおせんぼう","挡路"],0,2,5,0,0],
+[["Howl","Grondement","Jauler","Gridodilotta","Aullido","とおぼえ","长嚎"],0,2,40,0,0],
+[["Dragon Claw","Dracogriffe","Drachenklaue","Dragartigli","Garra Dragón","ドラゴンクロー","龙爪"],15,1,15,80,100],
+[["Frenzy Plant","Végé-Attak","Fauna-Statue","Radicalbero","Planta Feroz","ハードプラント","疯狂植物"],11,1,5,150,90],
+[["Bulk Up","Gonflette","Protzer","Granfisico","Corpulencia","ビルドアップ","健美"],1,2,20,0,0],
+[["Bounce","Rebond","Sprungfeder","Rimbalzo","Bote","とびはねる","弹跳"],2,0,5,85,85],
+[["Mud Shot","Tir de Boue","Lehmschuss","Colpodifango","Disparo Lodo","マッドショット","泥巴射击"],4,0,15,55,95],
+[["Poison Tail","Queue-Poison","Giftschweif","Velenocoda","Cola Veneno","ポイズンテール","毒尾"],3,0,25,50,100],
+[["Covet","Implore","Bezirzer","Supplica","Antojo","ほしがる","渴望"],0,0,40,40,100],
+[["Volt Tackle","Électacle","Volttackle","Locomovolt","Placaje Eléctrico","ボルテッカー","伏特攻击"],12,1,15,120,100],
+[["Magical Leaf","Feuillemagik","Zauberblatt","Fogliamagica","Hoja Mágica","マジカルリーフ","魔法叶"],11,1,20,60,0],
+[["Water Sport","Tourniquet","Nassmacher","Docciascudo","Hidrochorro","みずあそび","玩水"],10,2,15,0,0],
+[["Calm Mind","Plénitude","Gedankengut","Calmamente","Paz Mental","めいそう","冥想"],13,2,20,0,0],
+[["Leaf Blade","Lame-Feuille","Laubklinge","Fendifoglia","Hoja Aguda","リーフブレード","叶刃"],11,1,15,70,100],
+[["Dragon Dance","Danse Draco","Drachentanz","Dragodanza","Danza Dragón","りゅうのまい","龙之舞"],15,2,20,0,0],
+[["Rock Blast","Boule Roc","Felswurf","Cadutamassi","Pedrada","ロックブラスト","岩石爆击"],5,0,10,25,80],
+[["Shock Wave","Onde de Choc","Schockwelle","Ondashock","Onda Voltio","でんげきは","电击波"],12,1,20,60,0],
+[["Water Pulse","Vibraqua","Aquawelle","Idropulsar","Hidropulso","みずのはどう","水之波动"],10,1,20,60,100],
+[["Doom Desire","Carnareket","Kismetwunsch","Obbliderio","Deseo Oculto","はめつのねがい","破灭之愿"],8,0,5,120,85],
+[["Psycho Boost",,"Psyschub","Psicoslancio","Psicoataque","サイコブースト","精神突进"],13,1,5,140,90]
+];
+
+const TM_GEN3=[,264,337,352,347,46,92,258,339,331,237,241,269,58,59,63,113,182,240,202,219,218,76,231,85,87,89,216,91,94,247,280,104,115,351,53,188,201,126,317,332,259,263,290,156,213,168,211,285,289,315];
+const HM_GEN3RSE=[,15,19,57,70,148,249,127,291];
+const LEARNSET_GAMES=[
+	{
+		icons:['rse0','rse1'],
+		title:['Ruby/Sapphire','Rubis/Saphir','Rubin/Saphir','Rubino/Zaffiro','Rubí/Zafiro',,'红宝石/蓝宝石'],
+		tms:TM_GEN3,
+		hms:HM_GEN3RSE
+	},{
+		icons:['rse2'],
+		title:['Emerald','Émeraude','Smaragd','Smeraldo','Esmeralda',,'绿宝石'],
+		tms:TM_GEN3,
+		hms:HM_GEN3RSE
+	},{
+		icons:['frlg0','frlg1'],
+		title:['Fire Red/Leaf Green','Rouge Feu/Vert Feuille','Feuerrot/Blattgrün','Rosso Fuoco/Verde Foglia','Rojo Fuego/Verde Hoja',,'火红/叶绿'],
+		tms:TM_GEN3,
+		hms:[,15,19,57,70,148,249,127]
+	}
+];
+
+/*
+	l: levelup
+		[moveIndex, level (all), level (frlg exclusive), level (emerald exclusive)]
+	m: machine
+	e: egg moves
+	t: tutors
+	s: special
+	-
+	1: ruby/sapphire exclusive
+	2: emerald exclusive
+	4: fr/lg exclusive
+*/
+var LEARNSETS=[,
+{//Bulbasaur
+l:[[33,1],[45,4],[73,7],[22,10],[77,15],[79,15],[75,20],[230,25],[74,32],[235,39],[76,46]],
+m:[92,331,237,241,182,202,218,76,216,104,188,263,290,156,213,15,70,148,249],
+e:[80,113,130,174,204,219,320,345],
+t6:[14,34,38,102,164],
+t2:[111,173,189,203,207,210,214]
+},{//Ivysaur
+l:[[33,1],[45,1],[73,1],[45,4],[73,7],[22,10],[77,15],[79,15],[75,22],[230,29],[74,38],[235,47],[76,56]],
+m:[92,331,237,241,182,202,218,76,216,104,188,263,290,156,213,15,70,148,249],
+t6:[14,34,38,102,164],
+t2:[111,173,189,203,207,210,214]
+},{//Venusaur
+l:[[22,1],[33,1],[45,1],[73,1],[45,4],[73,7],[22,10],[77,15],[79,15],[75,22],[230,29],[74,41],[235,53],[76,65]],
+m:[46,92,331,237,241,63,182,202,218,76,89,216,104,188,263,290,156,213,15,70,148,249],
+t6:[14,34,38,102,164],
+t2:[111,173,189,203,207,210,214],
+t4:[338]
+},{//Charmander
+l:[[10,1],[45,1],[52,7],[108,13,3],[232,13,4],[108,19,4],[99,19,3],[184,25],[53,31],[163,37],[82,43],[83,49]],
+m:[264,337,92,237,241,182,218,231,216,91,280,104,53,126,332,263,290,156,213,315,15,70,249],
+e:[14,44,157,187,200,246,251,349],
+t6:[5,14,25,34,38,68,69,102,157,164],
+t2:[7,111,129,173,189,203,207,210,214,223]
+},{//Charmeleon
+l:[[10,1],[45,1],[52,1],[52,7],[108,13,3],[232,13,4],[108,20,4],[99,20,3],[184,27],[53,34],[163,41],[82,48],[83,55]],
+m:[264,337,92,237,241,182,218,231,216,91,280,104,53,126,332,263,290,156,213,315,15,70,249],
+t6:[5,14,25,34,38,68,69,102,157,164],
+t2:[7,111,129,173,189,203,207,210,214,223]
+},{//Charizard
+l:[[10,1],[45,1],[52,1],[108,1,3],[257,1,4],[232,1,4],[52,7],[108,13],[232,13,4],[108,20,4],[99,20,3],[184,27],[53,34],[17,36],[163,44],[82,54],[83,64]],
+m:[264,337,46,92,237,241,63,182,218,231,89,216,91,280,104,53,126,332,263,290,156,213,211,315,15,19,70,249],
+t6:[5,14,25,34,38,68,69,102,157,164],
+t2:[7,111,129,173,189,203,207,210,214,223],
+t4:[307]
+},{//Squirtle
+l:[[33,1],[39,4],[145,7],[110,10],[55,13],[44,18],[229,23],[182,28],[240,33],[130,40],[56,47]],
+m:[264,352,92,258,237,58,59,182,240,218,231,216,91,280,104,263,290,156,213,57,70,249,127,291],
+e:[54,114,175,193,243,281,287,300],
+t6:[5,25,34,38,68,69,102,164],
+t2:[8,111,173,189,196,203,205,207,214,223]
+},{//Wartortle
+l:[[33,1],[39,1],[145,1],[39,4],[145,7],[110,10],[55,13],[44,19],[229,25],[182,31],[240,37],[130,45],[56,53]],
+m:[264,352,92,258,237,58,59,182,240,218,231,216,91,280,104,263,290,156,213,57,70,249,127,291],
+t6:[5,25,34,38,68,69,102,164],
+t2:[8,111,173,189,196,203,205,207,214,223]
+},{//Blastoise
+l:[[33,1],[39,1],[110,1],[145,1],[39,4],[145,7],[110,10],[55,13],[44,19],[229,25],[182,31],[240,42],[130,55],[56,68]],
+m:[264,352,46,92,258,237,58,59,63,182,240,218,231,89,216,91,280,104,263,290,156,213,57,70,249,127,291],
+t6:[5,25,34,38,68,69,102,164],
+t2:[8,111,173,189,196,203,205,207,214,223],
+t4:[308]
+},{//Caterpie
+l:[[33,1],[81,1]]
+},{//Metapod
+l:[[106,1],[106,7]]
+},{//Butterfree
+l:[[93,1],[93,10],[77,13],[78,14],[79,15],[48,18],[18,23],[16,28],[60,34],[219,40],[318,47]],
+m:[92,237,241,63,182,240,202,219,218,76,216,94,247,104,332,263,290,156,213,168,285,148],
+t6:[38,102,138,164],
+t2:[129,173,203,207,214]
+},{//Weedle
+l:[[40,1],[81,1]]
+},{//Kakuna
+l:[[106,1],[106,7]]
+},{//Beedrill
+l:[[31,1],[31,10],[116,15],[41,20],[99,25],[228,30],[42,35],[97,40],[283,45]],
+m:[92,237,241,63,182,202,218,76,216,280,104,188,332,263,290,156,213,168,15,249],
+t6:[14,38,102,164],
+t2:[129,173,203,207,210,214]
+},{//Pidgey
+l:[[33,1],[28,5],[16,9],[98,13],[18,19],[17,25],[297,31],[97,39],[119,47]],
+m:[92,237,241,182,240,218,216,104,332,263,290,156,213,168,211,19],
+e:[185,193,211,228,314],
+t6:[38,102,164],
+t2:[129,173,189,203,207,214]
+},{//Pidgeotto
+l:[[16,1],[28,1],[33,1],[28,5],[16,9],[98,13],[18,20],[17,27],[297,34],[97,43],[119,52]],
+m:[92,237,241,182,240,218,216,104,332,263,290,156,213,168,211,19],
+t6:[38,102,164],
+t2:[129,173,189,203,207,214]
+},{//Pidgeot
+l:[[16,1],[28,1],[33,1],[98,1],[28,5],[16,9],[98,13],[18,20],[17,27],[297,34],[97,48],[119,62]],
+m:[92,237,241,63,182,240,218,216,104,332,263,290,156,213,168,211,19],
+t6:[38,102,164],
+t2:[129,173,189,203,207,214]
+},{//Rattata
+l:[[33,1],[39,1],[98,7],[158,13],[116,20],[228,27],[162,34],[283,41]],
+m:[92,237,241,269,58,59,182,240,218,231,85,87,216,91,247,104,351,263,290,156,213,168,15,249],
+e:[44,68,103,154,172,179,207,253],
+t6:[34,38,68,86,102,164],
+t2:[111,129,173,189,196,203,207,214]
+},{//Raticate
+l:[[33,1],[39,1],[98,1],[98,7],[158,13],[184,20],[228,30],[162,40],[283,50]],
+m:[46,92,237,241,269,58,59,63,182,240,218,231,85,87,216,91,247,104,351,263,290,156,213,168,15,70,249],
+t6:[34,38,68,86,102,164],
+t2:[111,129,173,189,196,203,207,214]
+},{//Spearow
+l:[[45,1],[64,1],[43,7],[31,13],[228,19],[332,25],[119,31],[65,37],[97,43]],
+m:[92,237,241,182,240,218,216,104,332,263,290,156,213,168,211,19],
+e:[98,143,161,184,185,206,310],
+t6:[38,102,164],
+t2:[129,173,189,203,207,214]
+},{//Fearow
+l:[[31,1],[43,1],[45,1],[64,1],[43,7],[31,13],[228,26],[119,32],[65,40],[97,47]],
+m:[92,237,241,63,182,240,218,216,104,332,263,290,156,213,168,211,19],
+t6:[38,102,164],
+t2:[129,173,189,203,207,214]
+},{//Ekans
+l:[[35,1],[43,1],[40,8],[44,13],[137,20],[103,25],[51,32],[254,37],[255,37],[256,37],[114,44]],
+m:[92,237,241,182,240,202,218,231,89,216,91,104,188,259,263,290,156,213,168,289,70],
+e:[21,180,228,251,305],
+t6:[34,38,102,157,164],
+t2:[173,203,207,214]
+},{//Arbok
+l:[[35,1],[40,1],[43,1],[44,1],[40,8],[44,13],[137,20],[103,28],[51,38],[254,46],[255,46],[256,46],[114,56]],
+m:[92,237,241,63,182,240,202,218,231,89,216,91,104,188,259,263,290,156,213,168,289,70],
+t6:[34,38,102,157,164],
+t2:[173,203,207,214]
+},{//Pikachu
+l:[[45,1],[84,1],[39,6],[86,8],[98,11],[104,15],[21,20],[85,26],[97,33],[87,41],[113,50]],
+m:[264,92,237,113,182,240,218,231,85,87,216,91,280,104,351,263,290,156,213,70,148,249],
+t6:[5,25,34,38,68,69,86,102,164],
+t2:[9,111,129,173,189,203,205,207,214,223]
+},{//Raichu
+l:[[39,1],[84,1],[85,1],[98,1]],
+m:[264,92,237,63,113,182,240,218,231,85,87,216,91,280,104,351,263,290,156,213,168,70,148,249],
+t6:[5,25,34,38,68,69,86,102,164],
+t2:[9,111,129,173,189,203,205,207,214,223]
+},{//Sandshrew
+l:[[10,1],[111,6],[28,11],[40,17],[163,23],[129,30],[154,37],[328,45],[201,53]],
+m:[264,92,237,241,182,218,231,89,216,91,280,104,201,317,332,263,290,156,213,168,15,70,249],
+e:[14,68,157,175,219,229,232,306],
+t6:[14,34,38,68,69,102,157,164],
+t2:[111,129,173,189,203,205,207,210,214,223]
+},{//Sandslash
+l:[[10,1],[28,1],[111,1],[111,6],[28,11],[40,17],[163,24],[129,33],[154,42],[328,52],[201,62]],
+m:[264,92,237,241,63,182,218,231,89,216,91,280,104,201,317,332,263,290,156,213,168,15,70,249],
+t6:[14,34,38,68,69,102,157,164],
+t2:[111,129,173,189,203,205,207,210,214,223]
+},{//Nidoran♀
+l:[[10,1],[45,1],[39,8],[24,12],[40,17],[44,20],[270,23],[154,30],[260,38],[242,47]],
+m:[352,92,237,241,58,59,182,240,218,231,85,87,216,91,104,351,188,332,263,290,156,213,168,15,70,249],
+e:[36,48,50,68,116,204,251],
+t6:[34,38,68,102,164],
+t2:[111,173,189,203,207,214]
+},{//Nidorina
+l:[[10,1],[45,1],[39,8],[24,12],[40,18],[44,22],[270,26],[154,34],[260,43],[242,53]],
+m:[352,92,237,241,58,59,182,240,218,231,85,87,216,91,104,351,188,332,263,290,156,213,168,15,70,249],
+t6:[34,38,68,102,164],
+t2:[111,173,189,203,207,214]
+},{//Nidoqueen
+l:[[10,1],[24,1],[39,1],[40,1],[34,22,4],[34,23,3],[276,43,4]],
+m:[264,352,46,92,237,241,269,58,59,63,182,240,218,231,85,87,89,216,91,247,280,104,351,53,188,201,126,317,332,259,263,290,156,213,168,15,57,70,249],
+t6:[5,25,34,38,68,69,102,157,164],
+t2:[7,8,9,111,173,189,196,203,207,210,214,223]
+},{//Nidoran♂
+l:[[43,1],[64,1],[116,8],[24,12],[40,17],[30,20],[270,23],[31,30],[260,38],[32,47]],
+m:[352,92,237,241,58,59,182,240,218,231,85,87,216,91,104,351,188,263,290,156,213,168,15,70,249],
+e:[36,48,50,68,93,133,251],
+t6:[34,38,68,102,164],
+t2:[111,173,189,203,207,214]
+},{//Nidorino
+l:[[43,1],[64,1],[116,8],[24,12],[40,18],[30,22],[270,26],[31,34],[260,43],[32,53]],
+m:[352,92,237,241,58,59,182,240,218,231,85,87,216,91,104,351,188,263,290,156,213,168,15,70,249],
+t6:[34,38,68,102,164],
+t2:[111,173,189,203,207,214]
+},{//Nidoking
+l:[[24,1],[40,1],[64,1],[116,1],[37,22,4],[37,23,3],[224,43,4]],
+m:[264,352,46,92,237,241,269,58,59,63,182,240,218,231,85,87,89,216,91,247,280,104,351,53,188,201,126,317,259,263,290,156,213,168,15,57,70,249],
+t6:[5,25,34,38,68,69,102,157,164],
+t2:[7,8,9,111,173,189,196,203,207,210,214,223]
+},{//Clefairy
+l:[[1,1],[45,1],[227,5],[47,9],[3,13],[266,17],[107,21],[111,25],[118,29],[322,33],[236,37],[113,41],[309,45]],
+m:[264,352,347,92,237,241,58,59,113,182,240,219,218,76,231,85,87,216,91,94,247,280,104,115,351,53,126,263,290,156,213,289,70,148],
+t6:[5,25,34,38,68,69,86,102,118,135,138,164],
+t2:[7,8,9,111,173,189,203,205,207,214,223,244]
+},{//Clefable
+l:[[3,1],[47,1],[107,1],[118,1]],
+m:[264,352,347,92,237,241,58,59,63,113,182,240,219,218,76,231,85,87,216,91,94,247,280,104,115,351,53,126,263,290,156,213,289,70,148],
+t6:[5,25,34,38,68,69,86,102,118,135,138,164],
+t2:[7,8,9,111,173,189,203,205,207,214,223,244]
+},{//Vulpix
+l:[[52,1],[39,5],[46,9],[98,13],[261,17],[109,21],[286,25],[53,29],[219,33],[288,37],[83,41]],
+m:[46,92,237,241,182,219,218,231,216,91,104,53,126,263,290,156,213,315],
+e:[50,95,175,180,185,244,257,336],
+t6:[34,38,102,164],
+t2:[129,173,203,207,214]
+},{//Ninetales
+l:[[52,1],[98,1],[109,1],[219,1],[83,45]],
+m:[46,92,237,241,63,182,219,218,231,216,91,104,53,126,263,290,156,213,315],
+t6:[34,38,102,164],
+t2:[129,173,203,207,214]
+},{//Jigglypuff
+l:[[47,1],[111,4],[1,9],[50,14],[205,19],[3,24],[156,29],[34,34],[102,39],[304,44],[38,49]],
+m:[264,352,92,237,241,58,59,113,182,240,219,218,76,85,87,216,91,94,247,280,104,115,351,53,126,263,290,156,213,289,70,148],
+t6:[5,25,34,38,68,69,86,102,138,164],
+t2:[7,8,9,111,173,189,203,205,207,214,223,244]
+},{//Wigglytuff
+l:[[3,1],[47,1],[50,1],[111,1]],
+m:[264,352,92,237,241,58,59,63,113,182,240,219,218,76,85,87,216,91,94,247,280,104,115,351,53,126,263,290,156,213,289,70,148],
+t6:[5,25,34,38,68,69,86,102,138,164],
+t2:[7,8,9,111,173,189,203,205,207,214,223,244]
+},{//Zubat
+l:[[141,1],[48,6,3],[310,6,4],[48,11,4],[310,11,3],[44,16],[17,21],[109,26],[314,31],[212,36],[305,41],[114,46]],
+m:[92,237,241,269,182,240,202,218,216,247,104,188,332,259,263,290,156,213,168,211,289],
+e:[16,18,98,174,185,228],
+t6:[38,102,164],
+t2:[129,173,203,207,214]
+},{//Golbat
+l:[[48,1],[103,1],[141,1],[310,1],[310,6,4],[48,6,3],[48,11,4],[310,11,3],[44,16],[17,21],[109,28],[314,35],[212,42],[305,49],[114,56]],
+m:[92,237,241,269,63,182,240,202,218,216,247,104,188,332,259,263,290,156,213,168,211,289],
+t6:[38,102,164],
+t2:[129,173,203,207,214]
+},{//Oddish
+l:[[71,1],[230,7],[77,14],[78,16],[79,18],[51,23],[236,32],[80,39]],
+m:[92,331,237,241,182,202,218,76,216,104,188,263,290,156,213,15,148],
+e:[14,75,175,204,235,275],
+t6:[14,38,102,164],
+t2:[173,203,207,214]
+},{//Gloom
+l:[[71,1],[77,1],[230,1],[230,7],[77,14],[78,16],[79,18],[51,24],[236,35],[80,44]],
+m:[92,331,237,241,182,202,218,76,216,104,188,263,290,156,213,15,148],
+t6:[14,38,102,164],
+t2:[173,203,207,214]
+},{//Vileplume
+l:[[71,1],[72,1],[78,1],[312,1],[80,44]],
+m:[92,331,237,241,63,182,202,218,76,216,104,188,263,290,156,213,15,148],
+t6:[14,34,38,102,164],
+t2:[173,203,207,214]
+},{//Paras
+l:[[10,1],[78,7],[77,13],[141,19],[147,25],[163,31],[74,37],[202,43],[312,49]],
+m:[92,331,237,241,182,202,218,76,216,91,104,188,332,263,290,156,213,168,15,148,249],
+e:[60,68,103,113,175,206,228,230],
+t6:[14,34,38,68,102,164],
+t2:[173,203,207,210,214]
+},{//Parasect
+l:[[10,1],[77,1],[78,1],[78,7],[77,13],[141,19],[147,27],[163,35],[74,43],[202,51],[312,59]],
+m:[92,331,237,241,63,182,202,218,76,216,91,104,188,332,263,290,156,213,168,15,148,249],
+t6:[14,34,38,68,102,164],
+t2:[173,203,207,210,214]
+},{//Venonat
+l:[[33,1],[50,1],[193,1],[48,9],[93,17],[77,20],[141,25],[78,28],[60,33],[79,36],[94,41]],
+m:[92,237,241,182,202,218,76,216,94,104,188,263,290,156,213,168,285,148],
+e:[103,202,226,324],
+t6:[38,102,164],
+t2:[129,173,203,207,214]
+},{//Venomoth
+l:[[33,1],[48,1],[50,1],[193,1],[318,1],[48,9],[93,17],[77,20],[141,25],[78,28],[16,31],[60,36],[79,42],[94,52]],
+m:[92,237,241,63,182,202,218,76,216,94,104,188,332,263,290,156,213,168,285,148],
+t6:[38,102,164],
+t2:[129,173,203,207,214]
+},{//Diglett
+l:[[10,1],[28,1],[45,5],[222,9],[91,17],[154,21,4],[189,25],[163,33],[89,41],[90,49]],
+m:[92,237,241,182,218,89,216,91,104,188,317,332,263,290,156,213,168,15,249],
+e:[103,157,185,228,246,251,253],
+t6:[34,38,102,157,164],
+t2:[173,189,203,207,214]
+},{//Dugtrio
+l:[[10,1],[28,1],[45,1,3],[161,1],[45,5,4],[45,5],[222,9],[91,17],[154,21,4],[189,25],[328,26],[163,38],[89,51],[90,64]],
+m:[92,237,241,63,182,218,89,216,91,104,188,317,332,263,290,156,213,168,15,249],
+t6:[34,38,102,157,164],
+t2:[173,189,203,207,214]
+},{//Meowth
+l:[[10,1],[45,1],[44,10,4],[44,11,3],[6,18,4],[6,20,3],[185,25,4],[185,28,3],[103,31,4],[103,35,3],[154,36,4],[163,40,4],[154,41,3],[252,43,4],[207,45,4],[163,46,3],[252,50,3]],
+m:[352,92,237,241,269,182,240,218,231,85,87,216,91,247,104,351,332,259,263,290,156,213,168,289,15,148],
+e:[95,133,180,204,244,274],
+t6:[34,38,102,138,164],
+t2:[111,129,173,189,196,203,207,214,244]
+},{//Persian
+l:[[10,1],[44,1,3],[45,1],[44,10,4],[44,11],[6,18,4],[6,20,3],[185,25,4],[185,29,3],[103,34,4],[103,38,3],[154,42,4],[154,46,3],[163,49,4],[163,53,3],[252,55,4],[252,59,3],[207,61,4]],
+m:[352,46,92,237,241,269,63,182,240,218,231,85,87,216,91,247,104,351,332,259,263,290,156,213,168,289,15,148],
+t6:[34,38,102,138,164],
+t2:[111,129,173,189,196,203,207,214,244]
+},{//Psyduck
+l:[[10,1],[346,1],[39,5],[50,10],[93,16],[103,23],[244,31],[154,40],[56,50]],
+m:[264,352,347,92,258,237,58,59,182,240,218,231,216,91,280,104,332,263,290,156,213,57,70,148,249,127,291],
+e:[60,94,95,113,193,238,248,287],
+t6:[5,25,34,38,68,69,102,164],
+t2:[8,129,173,189,196,203,207,214,223,244]
+},{//Golduck
+l:[[10,1],[39,1],[50,1],[346,1],[39,5],[50,10],[93,16],[103,23],[244,31],[154,44],[56,58]],
+m:[264,352,347,92,258,237,58,59,63,182,240,218,231,216,91,280,104,332,263,290,156,213,57,70,148,249,127,291],
+t6:[5,25,34,38,68,69,102,164],
+t2:[8,129,173,189,196,203,207,210,214,223,244]
+},{//Mankey
+l:[[10,1],[43,1],[67,6,4],[67,9,3],[2,11,4],[2,15,3],[154,16,4],[154,21,3],[116,21,4],[69,26,4],[116,27,3],[238,31,4],[69,33,3],[207,36,4],[238,39,3],[103,41,4],[103,45,3],[37,46,4],[37,51,3]],
+m:[264,92,339,237,241,269,182,240,218,231,85,87,89,216,91,280,104,317,332,263,290,156,213,168,315,70,249],
+e:[68,96,157,179,193,251,265,279],
+t6:[5,25,34,38,68,69,102,118,157,164],
+t2:[7,8,9,111,129,173,189,203,207,214,223,244]
+},{//Primeape
+l:[[10,1],[43,1],[67,1,3],[99,1,3],[67,6,4],[67,9],[2,11,4],[2,15,3],[154,16,4],[154,21,3],[116,21,4],[69,26,4],[116,27,3],[99,28,4],[99,28],[238,35,4],[69,36,3],[207,44,4],[238,45,3],[103,53,4],[103,54,3],[37,62,4],[37,63,3]],
+m:[264,92,339,237,241,269,63,182,240,218,231,85,87,89,216,91,280,104,317,332,263,290,156,213,168,315,70,249],
+t6:[5,25,34,38,68,69,102,118,157,164],
+t2:[7,8,9,111,129,173,189,203,207,214,223,244]
+},{//Growlithe
+l:[[44,1],[46,1],[52,7],[43,13],[316,19],[36,25],[172,31],[270,37],[97,43],[53,49]],
+m:[46,92,237,241,182,218,231,216,91,104,53,126,332,263,290,156,213,168,315,70,249],
+e:[34,37,83,219,242,257,336],
+t6:[34,38,102,164],
+t2:[129,173,203,207,214]
+},{//Arcanine
+l:[[44,1],[46,1],[52,1],[316,1],[245,49]],
+m:[46,92,237,241,63,182,218,231,216,91,104,53,126,332,263,290,156,213,168,315,70,249],
+t6:[34,38,102,164],
+t2:[129,173,203,207,214]
+},{//Poliwag
+l:[[145,1],[95,7],[55,13],[3,19],[240,25],[34,31],[187,37],[56,43]],
+m:[352,92,258,237,58,59,182,240,218,216,91,94,104,263,290,156,213,168,57,127,291],
+e:[54,61,114,150,170,301,346],
+t6:[34,38,102,164],
+t2:[111,173,196,203,207,214]
+},{//Poliwhirl
+l:[[55,1],[95,1],[145,1],[95,7],[55,13],[3,19],[240,27],[34,35],[187,43],[56,51]],
+m:[264,352,92,258,237,58,59,182,240,218,89,216,91,94,280,104,263,290,156,213,168,57,70,249,127,291],
+t6:[5,25,34,38,68,69,102,118,164],
+t2:[8,111,173,189,196,203,207,214]
+},{//Poliwrath
+l:[[3,1],[55,1],[66,1],[95,1],[66,35],[170,51]],
+m:[264,352,92,258,339,237,58,59,63,182,240,218,89,216,91,94,280,104,317,263,290,156,213,168,57,70,249,127,291],
+t6:[5,25,34,38,68,69,102,118,164],
+t2:[8,111,173,189,196,203,207,214,223]
+},{//Abra
+l:[[100,1]],
+m:[264,347,92,237,241,269,113,182,240,219,218,231,216,94,247,104,115,351,259,263,290,156,213,168,285,289,148],
+e:[7,8,9,112,227,282],
+t6:[5,25,34,38,68,69,86,102,118,138,164],
+t2:[7,8,9,173,203,207,214,223,244]
+},{//Kadabra
+l:[[93,1],[100,1],[134,1],[93,16],[50,18],[60,21],[115,23],[105,25],[248,30],[272,33],[94,36],[271,43]],
+m:[264,347,92,237,241,269,113,182,240,219,218,231,216,94,247,104,115,351,259,263,290,156,213,168,285,289,148],
+t6:[5,25,34,38,68,69,86,102,118,138,164],
+t2:[7,8,9,173,203,207,214,223,244]
+},{//Alakazam
+l:[[93,1],[100,1],[134,1],[93,16],[50,18],[60,21],[115,23],[105,25],[248,30],[347,33],[94,36],[271,43]],
+m:[264,347,92,237,241,269,63,113,182,240,219,218,231,216,94,247,104,115,351,259,263,290,156,213,168,285,289,148],
+t6:[5,25,34,38,68,69,86,102,118,138,164],
+t2:[7,8,9,173,203,207,214,223,244]
+},{//Machop
+l:[[43,1],[67,1],[116,7],[2,13],[69,19],[193,22],[279,25],[233,31],[66,37],[238,40],[184,43],[223,49]],
+m:[264,92,339,237,241,182,240,218,89,216,91,280,104,53,126,317,263,290,156,213,168,70,249],
+e:[27,68,96,113,157,227,265],
+t6:[5,25,34,38,68,69,102,118,157,164],
+t2:[7,8,9,173,189,203,207,214,223]
+},{//Machoke
+l:[[43,1],[67,1],[116,1],[116,7],[2,13],[69,19],[193,22],[279,25],[233,33],[66,41],[238,46],[184,51],[223,59]],
+m:[264,92,339,237,241,182,240,218,89,216,91,280,104,53,126,317,263,290,156,213,168,70,249],
+t6:[5,25,34,38,68,69,102,118,157,164],
+t2:[7,8,9,173,189,203,207,214,223]
+},{//Machamp
+l:[[43,1],[67,1],[116,1],[116,7],[2,13],[69,19],[193,22],[279,25],[233,33],[66,41],[238,46],[184,51],[223,59]],
+m:[264,92,339,237,241,63,182,240,218,89,216,91,280,104,53,126,317,263,290,156,213,168,70,249],
+t6:[5,25,34,38,68,69,102,118,157,164],
+t2:[7,8,9,173,189,203,207,214,223]
+},{//Bellsprout
+l:[[22,1],[74,6],[35,11],[79,15],[77,17],[78,19],[51,23],[230,30],[75,37],[21,45]],
+m:[92,331,237,241,182,202,218,76,216,104,188,263,290,156,213,168,15,148],
+e:[14,115,141,227,235,275,345],
+t6:[14,38,102,164],
+t2:[173,203,207,214]
+},{//Weepinbell
+l:[[22,1],[35,1],[74,1],[74,6],[35,11],[79,15],[77,17],[78,19],[51,24],[230,33],[75,42],[21,54]],
+m:[92,331,237,241,182,202,218,76,216,104,188,263,290,156,213,168,15,148],
+t6:[14,38,102,164],
+t2:[173,203,207,214]
+},{//Victreebel
+l:[[22,1],[75,1],[79,1],[230,1],[254,1,4],[255,1,4],[256,1,4]],
+m:[92,331,237,241,63,182,202,218,76,216,104,188,263,290,156,213,168,15,148],
+t6:[14,34,38,102,164],
+t2:[173,203,207,214]
+},{//Tentacool
+l:[[40,1],[48,6],[132,12],[51,19],[61,25],[35,30],[112,36],[103,43],[56,49]],
+m:[352,92,258,237,58,59,182,240,202,218,216,104,188,263,290,156,213,168,15,57,127,291],
+e:[62,109,114,219,229,243],
+t6:[14,38,102,164],
+t2:[173,196,203,207,214]
+},{//Tentacruel
+l:[[40,1],[48,1],[132,1],[48,6],[132,12],[51,19],[61,25],[35,30],[112,38],[103,47],[56,55]],
+m:[352,92,258,237,58,59,63,182,240,202,218,216,104,188,263,290,156,213,168,15,57,127,291],
+t6:[14,38,102,164],
+t2:[173,196,203,207,214]
+},{//Geodude
+l:[[33,1],[111,1],[300,6],[88,11],[222,16],[120,21],[205,26],[350,31],[89,36],[153,41],[38,46]],
+m:[264,92,237,241,182,218,89,216,91,280,104,53,201,126,317,263,290,156,213,70,249],
+e:[5,157,335],
+t6:[5,34,38,68,69,102,118,153,157,164],
+t2:[7,111,173,189,203,205,207,214,223]
+},{//Graveler
+l:[[33,1],[88,1],[111,1],[300,1],[300,6],[88,11],[222,16],[120,21],[205,29],[350,37],[89,45],[153,53],[38,62]],
+m:[264,92,237,241,182,218,89,216,91,280,104,53,201,126,317,263,290,156,213,70,249],
+t6:[5,34,38,68,69,102,118,153,157,164],
+t2:[7,111,173,189,203,205,207,214,223]
+},{//Golem
+l:[[33,1],[88,1],[111,1],[300,1],[300,6],[88,11],[222,16],[120,21],[205,29],[350,37],[89,45],[153,53],[38,62]],
+m:[264,46,92,237,241,63,182,218,89,216,91,280,104,53,201,126,317,263,290,156,213,70,249],
+t6:[5,25,34,38,68,69,102,118,153,157,164],
+t2:[7,111,173,189,203,205,207,210,214,223]
+},{//Ponyta
+l:[[33,1],[98,1,4],[45,5],[39,9],[52,14],[23,19],[83,25],[36,31],[97,38],[340,45],[126,53]],
+m:[92,237,241,182,218,76,231,216,104,53,126,263,290,156,213,315,70],
+e:[24,37,38,95,172,204],
+t6:[34,38,102,164],
+t2:[129,173,203,207,214]
+},{//Rapidash
+l:[[33,1],[39,1,3],[45,1,3],[52,1,3],[98,1,4],[45,5,4],[45,5],[39,9,4],[39,9],[52,14,4],[52,14],[23,19],[83,25],[36,31],[97,38],[31,40],[340,50],[126,63]],
+m:[92,237,241,63,182,218,76,231,216,104,53,126,263,290,156,213,315,70],
+t6:[34,38,102,164],
+t2:[129,173,203,207,214]
+},{//Slowpoke
+l:[[33,1],[174,1],[281,1],[45,6],[55,13,4],[55,15,3],[93,17,4],[93,20,3],[50,24,4],[50,29,3],[29,29,4],[29,34,3],[133,36,4],[94,40,4],[133,43,3],[244,47,4],[94,48,3]],
+m:[352,347,92,258,237,241,58,59,182,240,219,218,231,89,216,91,94,247,104,53,126,263,290,156,213,285,57,70,148,291],
+e:[23,173,187,214,219,248,300],
+t6:[34,38,86,102,138,164],
+t2:[129,173,189,196,203,207,214,244]
+},{//Slowbro
+l:[[33,1],[45,1,3],[174,1],[281,1],[45,6,4],[45,6],[55,13,4],[55,15,3],[93,17,4],[93,20,3],[50,24,4],[50,29,3],[29,29,4],[29,34,3],[133,36,4],[110,37],[94,44,4],[133,46,3],[94,54,3],[244,55,4]],
+m:[264,352,347,92,258,237,241,58,59,63,182,240,219,218,231,89,216,91,94,247,280,104,53,126,263,290,156,213,285,57,70,148,249,291],
+t6:[5,25,34,38,68,69,86,102,138,164],
+t2:[8,129,173,189,196,203,207,210,214,223,244]
+},{//Magnemite
+l:[[33,1],[319,1],[84,6],[48,11],[49,16],[86,21],[209,26],[199,32],[129,38],[103,44],[192,50]],
+m:[92,237,241,182,240,218,85,87,216,104,115,351,263,290,156,148],
+t6:[38,86,102,164],
+t2:[129,173,203,205,207,214]
+},{//Magneton
+l:[[33,1],[48,1],[84,1],[319,1],[84,6],[48,11],[49,16],[86,21],[209,26],[199,35],[161,44],[103,53],[192,62]],
+m:[92,237,241,63,182,240,218,85,87,216,104,115,351,263,290,156,148],
+t6:[38,86,102,164],
+t2:[129,173,203,205,207,214]
+},{//Farfetch'd
+l:[[64,1],[28,6],[43,11],[31,16],[282,21],[210,26],[14,31],[97,36],[163,41],[206,46]],
+m:[92,237,241,182,218,231,216,104,332,263,290,156,213,168,211,15,19],
+e:[16,98,119,174,175,193,211,297],
+t6:[14,34,38,102,164],
+t2:[129,173,189,203,207,214,244]
+},{//Doduo
+l:[[45,1],[64,1],[228,9],[31,13],[161,21],[99,25],[253,33],[65,37],[97,45]],
+m:[92,237,241,182,218,216,104,332,263,290,156,213,168,211,19],
+e:[48,98,114,175,185,283],
+t6:[34,38,102,164],
+t2:[129,173,189,203,207,214]
+},{//Dodrio
+l:[[31,1],[45,1],[64,1],[228,1],[228,9],[31,13],[161,21],[99,25],[253,38],[65,47],[97,60]],
+m:[92,237,241,269,63,182,218,216,104,332,259,263,290,156,213,168,211,19],
+t6:[34,38,102,164],
+t2:[129,173,189,203,207,214]
+},{//Seel
+l:[[29,1],[45,9],[196,17],[62,21],[156,29],[36,37],[58,41],[219,49]],
+m:[352,92,258,237,58,59,182,240,219,218,216,104,263,290,156,213,168,57,127,291],
+e:[21,32,50,122,195,227,252,333],
+t6:[34,38,102,164],
+t2:[173,196,203,207,214]
+},{//Dewgong
+l:[[29,1],[45,1,3],[62,1,3],[196,1,3],[324,1,4],[45,9,4],[45,9],[196,17,4],[196,17],[62,21,4],[62,21],[156,29],[329,34],[36,42],[58,51],[219,64]],
+m:[352,92,258,237,58,59,63,182,240,219,218,216,104,263,290,156,213,168,57,127,291],
+t6:[34,38,102,164],
+t2:[173,196,203,207,214]
+},{//Grimer
+l:[[1,1],[139,1],[106,4],[50,8],[124,13],[107,19],[103,26],[151,34],[188,43],[262,53]],
+m:[92,237,241,269,182,240,202,218,85,87,216,91,104,351,53,188,126,317,259,263,290,156,213,168],
+e:[114,122,153,174,212,286,325],
+t6:[34,102,153,164],
+t2:[7,8,9,173,189,203,207,214,223]
+},{//Muk
+l:[[1,1],[106,1],[139,1],[106,4],[50,8],[124,13],[107,19],[103,26],[151,34],[188,47],[262,61]],
+m:[264,92,237,241,269,63,182,240,202,218,85,87,216,91,280,104,351,53,188,126,317,259,263,290,156,213,168,70,249],
+t6:[34,102,153,164],
+t2:[7,8,9,173,189,203,207,214,223]
+},{//Shellder
+l:[[33,1],[110,1],[333,8,4],[48,9,3],[48,15,4],[62,17,3],[62,22,4],[182,25,3],[182,29,4],[43,33,3],[43,36,4],[128,41,3],[128,43,4],[58,49,3],[58,50,4]],
+m:[352,92,258,237,58,59,182,240,218,216,104,263,290,156,213,57,291],
+e:[36,61,103,112,229,333],
+t6:[38,102,153,164],
+t2:[129,173,196,203,207,214]
+},{//Cloyster
+l:[[48,1],[62,1],[110,1],[182,1],[191,33,3],[191,36,4],[131,41,3],[131,43,4]],
+m:[352,92,258,237,58,59,63,182,240,218,216,104,259,263,290,156,213,57,291],
+t6:[38,102,153,164],
+t2:[129,173,196,203,207,214]
+},{//Gastly
+l:[[95,1],[122,1],[180,8],[212,13,3],[174,13,4],[174,16,3],[101,16,4],[101,21,3],[109,21,4],[109,28,3],[138,28,4],[138,33,3],[194,33,4],[194,36,3],[247,36,4],[171,41,4],[212,48,4]],
+m:[92,237,241,269,182,240,202,218,85,216,94,247,104,188,259,263,290,156,213,168,285,289],
+e:[114,149,153,195,261,288,310],
+t6:[102,138,153,164],
+t2:[173,203,207,214,244]
+},{//Haunter
+l:[[95,1],[122,1],[180,1,3],[180,8,4],[180,8],[212,13,3],[174,13,4],[174,16,3],[101,16,4],[101,21,3],[109,21,4],[325,25],[109,31,3],[138,31,4],[138,39,3],[194,39,4],[247,45,4],[194,48,3],[171,53,4],[212,64,4]],
+m:[92,237,241,269,182,240,202,218,85,216,94,247,104,188,259,263,290,156,213,168,285,289],
+t6:[102,138,153,164],
+t2:[173,203,207,214,244]
+},{//Gengar
+l:[[95,1],[122,1],[180,1,3],[180,8,4],[180,8],[212,13,3],[174,13,4],[174,16,3],[101,16,4],[101,21,3],[109,21,4],[325,25],[109,31,3],[138,31,4],[138,39,3],[194,39,4],[247,45,4],[194,48,3],[171,53,4],[212,64,4]],
+m:[264,92,237,241,269,63,182,240,202,218,85,87,216,94,247,280,104,188,259,263,290,156,213,168,285,289,70,249],
+t6:[5,25,34,38,68,69,102,118,138,153,164],
+t2:[7,8,9,173,203,207,214,223,244]
+},{//Onix
+l:[[33,1],[103,1],[20,8,4],[20,9,3],[88,12,4],[88,13,3],[106,19,4],[106,21,3],[99,23,4],[99,25,3],[225,30,4],[201,33,3],[201,34,4],[21,37,3],[21,41,4],[231,45],[328,49,3],[328,52,4],[38,56,4],[38,57,3]],
+m:[46,92,237,241,269,182,218,231,89,216,91,104,201,317,259,263,290,156,213,70,249],
+e:[153,157,175,335],
+t6:[34,38,102,153,157,164],
+t2:[173,189,203,207,214,244]
+},{//Drowzee
+l:[[1,1],[95,1],[50,7,4],[50,10,3],[93,11,4],[29,17,4],[93,18,3],[139,21,4],[29,25,3],[96,27,4],[139,31,3],[94,31,4],[96,36,3],[244,37,4],[94,40,3],[207,41,4],[244,43,3],[248,45,3],[248,47,4]],
+m:[264,347,92,237,241,269,113,182,240,219,218,216,94,247,280,104,115,259,263,290,156,213,168,285,289,148],
+e:[7,8,9,112,272,274],
+t6:[5,25,34,38,68,69,86,102,118,138,164],
+t2:[7,8,9,173,203,207,214,223,244]
+},{//Hypno
+l:[[1,1],[50,1,3],[93,1,3],[95,1],[171,1,4],[50,7,4],[50,10],[93,11,4],[29,17,4],[93,18],[139,21,4],[29,25,3],[96,29,4],[139,33,3],[94,35,4],[96,40,3],[244,43,4],[94,49,3],[207,49,4],[244,55,3],[248,57,4],[248,60,3]],
+m:[264,347,92,237,241,269,63,113,182,240,219,218,216,94,247,280,104,115,259,263,290,156,213,168,285,289,148],
+t6:[5,25,34,38,68,69,86,102,118,138,164],
+t2:[7,8,9,173,203,207,214,223,244]
+},{//Krabby
+l:[[145,1],[43,5],[11,12],[106,16],[341,23],[23,27],[12,34],[182,38,4],[182,41,3],[152,45],[175,49,4]],
+m:[352,92,258,237,58,59,182,240,218,216,91,104,317,263,290,156,213,168,15,57,70,249,291],
+e:[14,21,91,114,133,175,282],
+t6:[14,34,38,102,164],
+t2:[173,189,196,203,207,210,214]
+},{//Kingler
+l:[[11,1,3],[43,1,3],[145,1],[232,1,4],[106,1,4],[43,5,4],[43,5],[11,12,4],[11,12],[106,16,3],[341,23],[23,27],[12,38],[182,42,4],[182,49,3],[152,57],[175,65,4]],
+m:[352,92,258,237,58,59,63,182,240,218,216,91,104,317,263,290,156,213,168,15,57,70,249,291],
+t6:[14,34,38,102,164],
+t2:[173,189,196,203,207,210,214]
+},{//Voltorb
+l:[[33,1],[268,1],[103,8],[49,15],[209,21],[120,27],[205,32],[113,37],[129,42],[153,46],[243,49]],
+m:[92,237,269,113,182,240,218,85,87,216,104,351,259,263,290,156,168,148],
+t6:[86,102,153,164],
+t2:[129,173,203,205,207,214]
+},{//Electrode
+l:[[33,1],[49,1],[103,1],[268,1],[103,8],[49,15],[209,21],[120,27],[205,34],[113,41],[129,48],[153,54],[243,59]],
+m:[92,237,269,63,113,182,240,218,85,87,216,104,351,259,263,290,156,168,148],
+t6:[86,102,153,164],
+t2:[129,173,203,205,207,214]
+},{//Exeggcute
+l:[[95,1],[140,1],[253,1],[115,7],[73,13],[93,19],[78,25],[77,31],[79,37],[76,43]],
+m:[92,331,237,241,113,182,202,218,76,216,94,104,115,188,263,290,156,213,168,285,70,148],
+e:[115,174,235,236,244,246,275],
+t6:[38,102,138,153,164],
+t2:[173,203,205,207,214,244]
+},{//Exeggutor
+l:[[93,1],[95,1],[140,1],[23,19],[121,31]],
+m:[92,331,237,241,63,113,182,202,218,76,216,94,104,115,188,263,290,156,213,168,285,70,148],
+t6:[38,102,138,153,164],
+t2:[173,203,205,207,214,244]
+},{//Cubone
+l:[[45,1],[39,5],[125,9],[29,13],[43,17],[116,21],[155,25],[99,29],[206,33],[37,37],[198,41],[38,45]],
+m:[264,92,237,241,58,59,182,218,231,89,216,91,280,104,53,201,126,317,332,263,290,156,213,168,70,249],
+e:[14,103,130,157,187,195,246],
+t6:[5,14,25,34,38,68,69,102,157,164],
+t2:[7,9,173,189,196,203,207,214,223]
+},{//Marowak
+l:[[29,1],[39,1],[45,1],[125,1],[39,5],[125,9],[29,13],[43,17],[116,21],[155,25],[99,32],[206,39],[37,46],[198,53],[38,61]],
+m:[264,92,237,241,58,59,63,182,218,231,89,216,91,280,104,53,201,126,317,332,263,290,156,213,168,70,249],
+t6:[5,14,25,34,38,68,69,102,157,164],
+t2:[7,9,173,189,196,203,207,214,223]
+},{//Hitmonlee
+l:[[24,1],[279,1],[96,6],[27,11],[26,16],[280,20],[116,21],[136,26],[170,31],[193,36],[203,41],[25,46],[179,51]],
+m:[264,92,339,237,241,182,240,218,89,216,280,104,317,263,290,156,213,168,70,249],
+t6:[5,25,34,38,68,69,102,118,157,164],
+t2:[129,173,189,203,207,214,223]
+},{//Hitmonchan
+l:[[4,1],[279,1],[97,7],[228,13],[183,20],[7,26],[8,26],[9,26],[327,32],[5,38],[197,44],[68,50]],
+m:[264,92,339,237,241,182,240,218,89,216,280,104,317,263,290,156,213,168,70,249],
+t6:[5,25,34,38,68,69,102,118,157,164],
+t2:[7,8,9,129,173,189,203,207,214,223]
+},{//Lickitung
+l:[[122,1],[48,7],[111,12],[282,18],[23,23],[35,29],[50,34],[21,40],[103,45],[287,51]],
+m:[264,352,92,237,241,58,59,63,182,240,218,76,231,85,87,89,216,91,247,280,104,351,53,201,126,317,263,290,156,213,168,15,57,70,249],
+e:[34,164,173,174,187,214,222,265],
+t6:[5,14,25,34,38,68,69,102,138,157,164],
+t2:[7,8,9,111,173,189,196,203,205,207,214,223,244]
+},{//Koffing
+l:[[33,1],[139,1],[123,9],[120,17],[124,21],[108,25],[114,33],[153,41],[194,45],[262,49]],
+m:[92,237,241,269,182,240,218,85,87,216,247,104,351,53,188,126,259,263,290,156,213,168,148],
+e:[60,103,149,194,220,261],
+t6:[102,153,164],
+t2:[173,203,205,207,214]
+},{//Weezing
+l:[[33,1],[120,1],[123,1],[139,1],[123,9],[120,17],[124,21],[108,25],[114,33],[153,44],[194,51],[262,58]],
+m:[92,237,241,269,63,182,240,218,85,87,216,247,104,351,53,188,126,259,263,290,156,213,168,148],
+t6:[102,153,164],
+t2:[173,203,205,207,214]
+},{//Rhyhorn
+l:[[30,1],[39,1],[23,10],[31,15],[184,24],[350,29],[32,38],[36,43],[89,52],[224,57]],
+m:[46,92,237,241,58,59,182,240,218,231,85,87,89,216,91,104,351,53,201,126,317,263,290,156,213,168,70,249],
+e:[14,68,157,174,179,222,242,306],
+t6:[14,34,38,68,102,157,164],
+t2:[173,189,196,203,205,207,214]
+},{//Rhydon
+l:[[23,1],[30,1],[31,1],[39,1],[23,10],[31,15],[184,24],[350,29],[32,38],[36,46],[89,58],[224,66]],
+m:[264,46,92,237,241,58,59,63,182,240,218,231,85,87,89,216,91,280,104,351,53,201,126,317,263,290,156,213,168,15,57,70,249],
+t6:[5,14,25,34,38,68,69,102,157,164],
+t2:[7,9,173,189,196,203,205,207,210,214,223]
+},{//Chansey
+l:[[1,1],[45,1],[39,5],[287,9],[135,13],[3,17],[107,23],[47,29],[121,35],[111,41],[113,49],[38,57]],
+m:[264,352,347,92,258,237,241,58,59,63,113,182,240,219,218,76,231,85,87,89,216,94,247,280,104,351,53,201,126,317,263,290,156,213,285,289,70,148,249],
+e:[118,164,215,217,312],
+t6:[5,25,34,38,68,69,86,102,118,135,138,164],
+t2:[111,173,189,196,203,205,207,214,223,244]
+},{//Tangela
+l:[[132,1],[275,1],[79,4],[71,10],[74,13],[77,19],[22,22],[20,28],[72,31],[78,37],[21,40],[321,46]],
+m:[92,331,237,241,63,182,202,218,76,216,104,188,263,290,156,213,168,15,148,249],
+e:[72,73,93,115,133,175,267],
+t6:[14,34,38,102,164],
+t2:[173,203,207,214,244]
+},{//Kangaskhan
+l:[[4,1],[43,1],[44,7],[39,13],[252,19],[5,25],[99,31],[203,37],[146,43],[179,49]],
+m:[264,352,46,92,258,237,241,58,59,63,182,240,218,76,231,85,87,89,216,91,247,280,104,351,53,201,126,317,332,263,290,156,213,168,15,57,70,249],
+e:[23,50,68,116,164,193,219,306],
+t6:[5,25,34,38,68,69,102,157,164],
+t2:[7,8,9,173,189,196,203,207,210,214,223]
+},{//Horsea
+l:[[145,1],[108,8],[43,15],[55,22],[239,29],[97,36],[56,43],[349,50]],
+m:[352,92,258,237,58,59,182,240,218,216,104,263,290,156,213,57,127,291],
+e:[50,62,82,150,175,190,225],
+t6:[38,102,164],
+t2:[129,173,196,203,207,214]
+},{//Seadra
+l:[[43,1],[55,1],[108,1],[145,1],[108,8],[43,15],[55,22],[239,29],[97,40],[56,51],[349,62]],
+m:[352,92,258,237,58,59,63,182,240,218,216,104,263,290,156,213,57,127,291],
+t6:[38,102,164],
+t2:[129,173,196,203,207,214]
+},{//Goldeen
+l:[[39,1],[64,1],[346,1],[48,10],[30,15],[175,24],[31,29],[127,38],[32,43],[97,52],[224,57,4]],
+m:[352,92,258,237,58,59,182,240,218,216,104,263,290,156,213,57,127,291],
+e:[56,60,114,214,300],
+t6:[38,102,164],
+t2:[129,173,196,203,207,214]
+},{//Seaking
+l:[[39,1],[48,1,3],[64,1],[346,1],[48,10,4],[48,10],[30,15],[175,24],[31,29],[127,41],[32,49],[97,61],[224,69,4]],
+m:[352,92,258,237,58,59,63,182,240,218,216,104,263,290,156,213,57,127,291],
+t6:[38,102,164],
+t2:[129,173,196,203,207,214]
+},{//Staryu
+l:[[33,1],[106,1],[55,6],[229,10],[105,15],[293,19],[129,24],[61,28],[107,33],[113,37],[322,42],[56,46]],
+m:[352,92,258,237,58,59,113,182,240,218,85,87,216,94,104,115,263,290,156,57,148,127,291],
+t6:[38,86,102,164],
+t2:[129,173,196,203,207,214,244]
+},{//Starmie
+l:[[55,1],[105,1],[129,1],[229,1],[109,33]],
+m:[352,92,258,237,58,59,63,113,182,240,218,85,87,216,94,104,115,263,290,156,285,57,148,127,291],
+t6:[38,86,102,138,164],
+t2:[129,173,196,203,207,214,244]
+},{//Mr. Mime
+l:[[112,1],[93,5],[164,8,4],[164,9,3],[96,12,4],[96,13,3],[3,15,4],[3,17,3],[113,19,4],[115,19,4],[113,21,3],[115,21,3],[345,22,4],[227,25,3],[227,26,4],[60,29],[278,33],[271,36,4],[271,37,3],[272,40,4],[272,41,3],[94,43,4],[94,45,3],[226,47,4],[226,49,3],[219,50,4],[219,53,3]],
+m:[264,347,92,237,241,269,63,113,182,240,219,218,76,85,87,216,94,247,280,104,115,351,259,263,290,156,213,168,285,289,148],
+e:[95,102,244,248,252,271],
+t6:[5,25,34,38,68,69,86,102,118,138,164],
+t2:[7,8,9,173,189,203,207,214,244]
+},{//Scyther
+l:[[43,1],[98,1],[116,6],[228,11],[206,16],[97,21],[17,26],[163,31],[14,36],[104,41],[210,46]],
+m:[92,237,241,63,182,240,218,216,104,332,263,290,156,213,168,211,15,249],
+e:[13,68,113,179,203,219,226,318],
+t6:[14,38,68,102,164],
+t2:[129,173,203,207,210,214]
+},{//Jynx
+l:[[1,1],[122,1],[142,1],[181,1],[142,9],[181,13],[3,21],[8,25],[212,35],[313,41],[34,51],[195,57],[59,67]],
+m:[264,352,347,92,258,237,269,58,59,63,113,182,240,218,216,94,247,280,104,115,259,263,290,156,213,168,285,148],
+t6:[5,25,34,38,68,69,102,118,138,164],
+t2:[8,173,189,196,203,207,214,223,244]
+},{//Electabuzz
+l:[[9,1],[43,1],[98,1],[9,9],[113,17],[129,25],[103,36],[85,47],[87,58]],
+m:[264,92,237,63,113,182,240,218,231,85,87,216,94,280,104,351,263,290,156,213,168,70,148,249],
+t6:[5,25,34,38,68,69,86,102,164],
+t2:[7,8,9,129,173,189,203,207,214,223]
+},{//Magmar
+l:[[7,1],[43,1],[52,1],[123,1],[43,7],[123,13],[7,19],[108,25],[241,33],[53,41],[109,49],[126,57]],
+m:[264,92,237,241,63,182,218,231,216,94,280,104,53,126,263,290,156,213,168,70,249],
+t6:[5,25,34,38,68,69,102,164],
+t2:[7,9,173,189,203,207,214,223]
+},{//Pinsir
+l:[[11,1],[116,1],[20,7],[69,13],[106,19],[279,25],[280,31],[12,37],[66,43],[14,49]],
+m:[264,92,339,237,241,63,182,240,218,89,216,91,280,104,317,263,290,156,213,168,15,70,249],
+e:[31,175,185,206],
+t6:[14,34,38,69,102,157,164],
+t2:[173,203,207,210,214]
+},{//Tauros
+l:[[33,1],[39,1,4],[39,4,3],[99,4,4],[99,8,3],[30,8,4],[30,13,3],[184,13,4],[184,19,3],[228,19,4],[228,26,3],[207,26,4],[156,34],[37,43],[36,53]],
+m:[352,92,237,241,58,59,63,182,240,218,76,231,85,87,89,216,104,351,53,201,126,317,263,290,156,213,57,70,249],
+t6:[34,38,102,164],
+t2:[173,196,203,207,214]
+},{//Magikarp
+l:[[150,1],[33,15],[175,30]]
+},{//Gyarados
+l:[[37,1],[44,20],[82,25],[43,30],[239,35],[56,40],[240,45],[349,50],[63,55]],
+m:[352,46,92,258,237,269,58,59,63,182,240,218,85,87,89,216,104,53,201,126,259,263,290,156,213,57,70,249,127,291],
+t6:[34,38,86,102,164],
+t2:[173,196,203,207,214]
+},{//Lapras
+l:[[45,1],[47,1],[55,1],[54,7],[34,13],[109,19],[195,25],[58,31],[240,37],[219,43],[56,49],[329,55]],
+m:[352,46,92,258,237,58,59,63,182,240,219,218,231,85,87,216,94,104,351,263,290,156,213,57,70,249,127,291],
+e:[32,164,174,193,214,287,321,349],
+t6:[34,38,102,138,164],
+t2:[173,196,203,207,214]
+},{//Ditto
+l:[[144,1]]
+},{//Eevee
+l:[[33,1],[39,1],[270,1],[28,8],[45,16],[98,23],[44,30],[226,36],[36,42]],
+m:[92,237,241,182,240,218,231,216,91,247,104,263,290,156,213],
+e:[174,175,203,204,273,321],
+t6:[34,38,102,164],
+t2:[129,173,189,203,207,214]
+},{//Vaporeon
+l:[[33,1],[39,1],[270,1],[28,8],[55,16],[98,23],[44,30],[62,36],[114,42],[151,47],[56,52]],
+m:[352,46,92,258,237,241,58,59,63,182,240,218,231,216,91,247,104,263,290,156,213,57,127,291],
+t6:[34,38,102,164],
+t2:[129,173,189,196,203,207,214]
+},{//Jolteon
+l:[[33,1],[39,1],[270,1],[28,8],[84,16],[98,23],[24,30],[42,36],[86,42],[97,47],[87,52]],
+m:[46,92,237,241,63,182,240,218,231,85,87,216,91,247,104,351,263,290,156,213,148],
+t6:[34,38,86,102,164],
+t2:[129,173,189,203,207,214]
+},{//Flareon
+l:[[33,1],[39,1],[270,1],[28,8],[52,16],[98,23],[44,30],[83,36],[123,42],[43,47],[53,52]],
+m:[46,92,237,241,63,182,240,218,231,216,91,247,104,53,126,263,290,156,213,315],
+t6:[34,38,102,164],
+t2:[129,173,189,203,207,214]
+},{//Porygon
+l:[[33,1],[160,1],[176,1],[97,9],[60,12],[105,20],[159,24],[199,32],[161,36],[278,44],[192,48]],
+m:[92,237,241,58,59,63,182,240,218,76,231,85,87,216,94,247,104,351,332,263,290,156,168,148],
+t6:[38,86,102,138,164],
+t2:[129,173,196,203,207,214,244]
+},{//Omanyte
+l:[[110,1],[132,1],[44,13],[55,19],[341,25],[43,31],[182,37],[321,43],[246,49],[56,55]],
+m:[352,92,258,237,58,59,182,240,218,216,104,201,317,263,290,156,213,168,57,249,127,291],
+e:[21,48,61,62,114,157,191],
+t6:[34,38,102,157,164],
+t2:[173,196,203,205,207,214]
+},{//Omastar
+l:[[44,1,3],[110,1],[132,1],[55,1,4],[44,13,4],[44,13],[55,19,3],[341,25],[43,31],[182,37],[131,40],[321,46],[246,55],[56,65]],
+m:[352,92,258,237,58,59,63,182,240,218,216,104,201,317,263,290,156,213,168,57,249,127,291],
+t6:[34,38,69,102,157,164],
+t2:[173,196,203,205,207,214]
+},{//Kabuto
+l:[[10,1],[106,1],[71,13],[43,19],[341,25],[28,31],[203,37],[319,43],[72,49],[246,55]],
+m:[352,92,258,237,58,59,182,240,202,218,216,91,104,201,317,332,263,290,156,213,168,57,249,127],
+e:[61,62,91,109,175,229,282],
+t6:[34,38,102,157,164],
+t2:[173,196,203,205,207,214]
+},{//Kabutops
+l:[[10,1],[71,1,3],[106,1],[210,1,4],[43,1,4],[71,13,4],[71,13],[43,19,3],[341,25],[28,31],[203,37],[163,40],[319,46],[72,55],[246,65]],
+m:[352,92,258,237,58,59,63,182,240,202,218,216,91,280,104,201,317,332,263,290,156,213,168,15,57,249,127,291],
+t6:[14,25,34,38,69,102,157,164],
+t2:[173,196,203,205,207,210,214]
+},{//Aerodactyl
+l:[[17,1],[97,8],[44,15],[48,22],[246,29],[184,36],[36,43],[63,50]],
+m:[337,46,92,237,241,269,63,182,240,218,231,89,216,104,53,201,126,317,332,259,263,290,156,213,168,211,19,70,249],
+e:[18,174,193,211,225,228],
+t6:[38,102,157,164],
+t2:[129,173,203,207,214]
+},{//Snorlax
+l:[[33,1],[133,5,4],[133,6,3],[111,9,4],[111,10,3],[187,13,4],[187,15,3],[29,17,4],[29,19,3],[281,21,4],[281,24,3],[156,25,4],[156,28,3],[173,28,3],[173,29,4],[34,33],[335,37,3],[214,37,4],[335,41,4],[343,42,3],[343,45,4],[205,46,3],[205,49,4],[63,51,3],[63,53,4]],
+m:[264,352,92,237,241,58,59,63,182,240,218,76,85,87,89,216,94,247,280,104,351,53,201,126,317,263,290,156,213,57,70],
+e:[38,90,122,164,174,204],
+t6:[5,25,34,38,68,69,102,118,157,164],
+t2:[7,8,9,111,173,189,196,203,205,207,214,223,244]
+},{//Articuno
+l:[[16,1],[181,1],[54,13],[97,25],[170,37],[58,49],[115,61],[59,73],[329,85]],
+m:[352,46,92,258,237,241,58,59,63,182,240,218,216,104,115,201,332,263,290,156,211,19,249],
+t6:[38,102,164],
+t2:[129,173,189,196,203,207,214]
+},{//Zapdos
+l:[[64,1],[84,1],[86,13],[97,25],[197,37],[65,49],[268,61],[113,73],[87,85]],
+m:[46,92,237,241,63,113,182,240,218,85,87,216,104,351,201,332,263,290,156,211,19,148,249],
+t6:[38,86,102,164],
+t2:[129,173,189,203,207,214]
+},{//Moltres
+l:[[17,1],[52,1],[83,13],[97,25],[203,37],[53,49],[219,61],[257,73],[143,85]],
+m:[46,92,237,241,63,182,240,219,218,216,104,53,201,126,332,263,290,156,211,315,19,249],
+t6:[38,102,164],
+t2:[129,173,189,203,207,214]
+},{//Dratini
+l:[[35,1],[43,1],[86,8],[239,15],[82,22],[21,29],[97,36],[219,43],[200,50],[63,57]],
+m:[352,92,258,237,241,58,59,63,182,240,219,218,231,85,87,216,104,351,53,126,263,290,156,213,57,127],
+e:[48,54,113,114,225,349],
+t6:[34,38,86,102,164],
+t2:[129,173,196,203,207,214]
+},{//Dragonair
+l:[[35,1],[43,1],[86,1],[239,1],[86,8],[239,15],[82,22],[21,29],[97,38],[219,47],[200,56],[63,65]],
+m:[352,92,258,237,241,58,59,63,182,240,219,218,231,85,87,216,104,351,53,126,263,290,156,213,57,127],
+t6:[34,38,86,102,164],
+t2:[129,173,196,203,207,214]
+},{//Dragonite
+l:[[35,1],[43,1],[86,1],[239,1],[86,8],[239,15],[82,22],[21,29],[97,38],[219,47],[17,55],[200,61],[63,75]],
+m:[264,337,352,46,92,258,237,241,58,59,63,182,240,219,218,231,85,87,89,216,280,104,351,53,201,126,317,332,263,290,156,213,211,15,19,57,70,249,127,291],
+t6:[34,38,86,102,164],
+t2:[7,8,9,129,173,189,196,203,207,210,214,223]
+},{//Mewtwo
+l:[[50,1],[93,1],[112,11],[129,22,3],[54,22,4],[129,33,4],[244,33,3],[248,44,3],[105,44,4],[54,55,3],[219,55,4],[94,66],[244,77,4],[133,77,3],[248,88,4],[105,88,3],[133,99,4],[219,99,3]],
+m:[264,352,347,92,258,339,237,241,269,58,59,63,113,182,240,219,218,76,231,85,87,89,216,94,247,280,104,115,351,53,201,126,317,332,259,263,290,156,285,289,70,148,249],
+t6:[5,25,34,38,68,69,86,102,118,138,164],
+t2:[7,8,9,129,173,189,196,203,207,214,223,244]
+},{//Mew
+l:[[1,1],[144,10],[5,20],[118,30],[94,40],[246,50]],
+m:[264,337,352,347,46,92,258,339,331,237,241,269,58,59,63,113,182,240,202,219,218,76,231,85,87,89,216,91,94,247,280,104,115,351,53,188,201,126,317,332,259,263,290,156,213,168,211,285,289,315,15,19,57,70,148,249,127,291],
+t6:[5,14,25,34,38,68,69,86,102,118,135,138,153,157,164],
+t2:[7,8,9,111,129,173,189,196,203,205,207,210,214,223,244]
+},{//Chikorita
+l:[[33,1],[45,1],[75,8],[115,12],[77,15],[235,22],[34,29],[113,36],[219,43],[76,50]],
+m:[92,331,237,241,113,182,202,219,218,76,231,216,104,115,263,290,156,213,15,148],
+e:[22,68,73,175,246,267,275,320],
+t6:[14,34,38,68,102,164],
+t2:[173,189,203,207,214]
+},{//Bayleef
+l:[[33,1],[45,1],[75,1],[115,1],[75,8],[115,12],[77,15],[235,23],[34,31],[113,39],[219,47],[76,55]],
+m:[92,331,237,241,113,182,202,219,218,76,231,216,104,115,263,290,156,213,15,70,148,249],
+t6:[14,34,38,68,102,164],
+t2:[173,189,203,207,210,214]
+},{//Meganium
+l:[[33,1],[45,1],[75,1],[115,1],[75,8],[115,12],[77,15],[235,23],[34,31],[113,41],[219,51],[76,61]],
+m:[92,331,237,241,63,113,182,202,219,218,76,231,89,216,104,115,263,290,156,213,15,70,148,249],
+t6:[14,34,38,68,102,164],
+t2:[173,189,203,207,210,214]
+},{//Cyndaquil
+l:[[33,1],[43,1],[108,6],[52,12],[98,19],[172,27],[129,36],[53,46]],
+m:[92,237,241,182,218,216,91,104,53,126,332,263,290,156,213,315,15],
+e:[37,98,154,179,193,306,336,343],
+t6:[34,38,102,164],
+t2:[111,129,173,189,203,205,207,214]
+},{//Quilava
+l:[[33,1],[43,1],[108,1],[108,6],[52,12],[98,21],[172,31],[129,42],[53,54]],
+m:[264,46,92,237,241,182,218,216,91,280,104,53,126,332,263,290,156,213,315,15,70,249],
+t6:[34,38,102,164],
+t2:[111,129,173,189,203,205,207,210,214]
+},{//Typhlosion
+l:[[33,1],[43,1],[52,1],[108,1],[108,6],[52,12],[98,21],[172,31],[129,45],[53,60]],
+m:[264,46,92,237,241,63,182,218,89,216,91,280,104,53,126,332,263,290,156,213,315,15,70,249],
+t6:[5,25,34,38,68,69,102,157,164],
+t2:[7,9,111,129,173,189,203,205,207,210,214,223]
+},{//Totodile
+l:[[10,1],[43,1],[99,7],[55,13],[44,20],[184,27],[163,35],[103,43],[56,52]],
+m:[264,352,92,258,237,58,59,182,240,218,231,216,91,280,104,332,263,290,156,213,15,57,127,291],
+e:[37,56,157,242,246,300,337,346],
+t6:[5,14,25,34,38,68,69,102,157,164],
+t2:[8,173,189,196,203,207,214,223]
+},{//Croconaw
+l:[[10,1],[43,1],[99,1],[99,7],[55,13],[44,21],[184,28],[163,37],[103,45],[56,55]],
+m:[264,352,46,92,258,237,58,59,182,240,218,231,216,91,280,104,332,263,290,156,213,15,57,70,249,127,291],
+t6:[5,14,25,34,38,68,69,102,157,164],
+t2:[8,173,189,196,203,207,210,214,223]
+},{//Feraligatr
+l:[[10,1],[43,1],[55,1],[99,1],[99,7],[55,13],[44,21],[184,28],[163,38],[103,47],[56,58]],
+m:[264,337,352,46,92,258,237,58,59,63,182,240,218,231,89,216,91,280,104,332,263,290,156,213,15,57,70,249,127,291],
+t6:[5,14,25,34,38,68,69,102,157,164],
+t2:[8,173,189,196,203,207,210,214,223]
+},{//Sentret
+l:[[10,1],[111,4],[98,7],[154,12],[270,17],[21,24],[266,31],[156,40],[133,49]],
+m:[264,352,92,237,241,58,182,240,218,76,231,85,216,91,247,280,104,351,53,263,290,156,213,168,15,57],
+e:[38,116,163,164,179,228,271,274],
+t6:[34,38,102,164],
+t2:[7,8,9,111,129,173,189,203,205,207,210,214,223]
+},{//Furret
+l:[[10,1],[98,1],[111,1],[111,4],[98,7],[154,12],[270,19],[21,28],[266,37],[156,48],[133,59]],
+m:[264,352,92,237,241,58,59,63,182,240,218,76,231,85,87,216,91,247,280,104,351,53,263,290,156,213,168,15,57,70,249],
+t6:[34,38,102,164],
+t2:[7,8,9,111,129,173,189,203,205,207,210,214,223]
+},{//Hoothoot
+l:[[33,1],[45,1],[193,6],[64,11],[95,16],[115,22],[36,28],[93,34],[138,48]],
+m:[92,237,241,182,240,218,216,94,247,104,115,332,263,290,156,213,168,211,19,148],
+e:[17,18,48,119,143,185,297],
+t6:[38,102,138,164],
+t2:[129,173,189,203,207,214]
+},{//Noctowl
+l:[[33,1],[45,1],[64,1],[193,1],[193,6],[64,11],[95,16],[115,25],[36,33],[93,41],[138,57]],
+m:[92,237,241,63,182,240,218,216,94,247,104,115,332,263,290,156,213,168,211,19,148],
+t6:[38,102,138,164],
+t2:[129,173,189,203,207,214]
+},{//Ledyba
+l:[[33,1],[48,8],[4,15],[113,22],[115,22],[219,22],[226,29],[129,36],[97,43],[38,50]],
+m:[264,92,237,241,113,182,202,219,218,76,216,91,280,104,115,332,263,290,156,213,168,148],
+e:[60,117,318],
+t6:[5,14,38,102,164],
+t2:[8,9,129,173,203,205,207,214,223]
+},{//Ledian
+l:[[33,1],[48,1],[48,8],[4,15],[113,24],[115,24],[219,24],[226,33],[129,42],[97,51],[38,60]],
+m:[264,92,237,241,63,113,182,202,219,218,76,216,91,280,104,115,332,263,290,156,213,168,148],
+t6:[5,14,38,102,164],
+t2:[8,9,129,173,203,205,207,214,223]
+},{//Spinarak
+l:[[40,1],[81,1],[184,6],[132,11],[101,17],[141,23],[154,30],[169,37],[97,45],[94,53]],
+m:[92,237,241,182,202,218,76,216,91,94,104,188,263,290,156,213,168,148],
+e:[49,50,60,226,228,324],
+t6:[34,38,102,164],
+t2:[173,203,207,214]
+},{//Ariados
+l:[[40,1],[81,1],[132,1],[184,1],[184,6],[132,11],[101,17],[141,25],[154,34],[169,43],[97,53],[94,63]],
+m:[92,237,241,63,182,202,218,76,216,91,94,104,188,263,290,156,213,168,148],
+t6:[34,38,102,164],
+t2:[173,203,207,214]
+},{//Crobat
+l:[[48,1,3],[103,1],[141,1],[310,1,3],[310,6,4],[48,6],[48,11,4],[310,11],[44,16],[17,21],[109,28],[314,35],[212,42],[305,49],[114,56]],
+m:[92,237,241,269,63,182,240,202,218,216,247,104,188,332,259,263,290,156,213,168,211,289,19],
+t6:[38,102,164],
+t2:[129,173,203,207,214]
+},{//Chinchou
+l:[[86,1],[145,1],[48,5],[175,13],[55,17],[209,25],[109,29],[36,37],[56,41],[268,49]],
+m:[352,92,258,237,58,59,182,240,218,85,87,216,104,351,263,290,156,213,57,148,127,291],
+e:[103,133,175],
+t6:[38,86,102,164],
+t2:[173,203,207,214]
+},{//Lanturn
+l:[[48,1],[86,1],[145,1],[48,5],[175,13],[55,17],[209,25],[109,32],[36,43],[56,50],[268,61]],
+m:[352,92,258,237,58,59,63,182,240,218,85,87,216,104,351,263,290,156,213,57,148,127,291],
+t6:[38,86,102,164],
+t2:[173,203,207,214]
+},{//Pichu
+l:[[84,1],[204,1],[39,6],[86,8],[186,11]],
+m:[92,237,113,182,240,218,231,85,87,216,104,351,263,290,156,213,148],
+e:[3,117,179,217,227,268,273],
+e2:[344],
+t6:[5,25,34,38,68,69,86,102,164],
+t2:[111,129,173,189,203,205,207,214]
+},{//Cleffa
+l:[[1,1],[204,1],[227,4],[47,8],[186,13],[345,17,4]],
+m:[352,92,237,241,113,182,240,219,218,76,231,216,91,94,247,104,115,351,53,126,263,290,156,213,148],
+e:[102,118,133,150,164,187,217,273],
+t6:[5,25,34,38,68,69,86,102,118,135,138,164],
+t2:[111,173,189,196,203,205,207,214,244]
+},{//Igglybuff
+l:[[47,1],[204,1],[111,4],[1,9],[186,14]],
+m:[352,92,237,241,113,182,240,219,218,76,216,91,94,247,104,115,351,53,126,263,290,156,213,148],
+e:[185,195,217,273,313],
+t6:[5,25,34,38,68,69,86,102,138,164],
+t2:[111,173,189,196,203,205,207,214,244]
+},{//Togepi
+l:[[45,1],[204,1],[118,4,4],[118,6,3],[186,9,4],[186,11,3],[281,13,4],[281,16,3],[227,17,4],[227,21,3],[246,21,4],[266,25,4],[266,26,3],[273,29,4],[273,31,3],[219,33,4],[219,36,3],[38,37,4],[38,41,3],[226,41,4]],
+m:[352,92,237,241,113,182,240,219,218,76,216,94,247,104,115,351,53,126,263,290,156,213,148,249],
+e:[64,119,164,193,217,244,248],
+t6:[5,25,34,38,68,69,86,102,118,135,138,164],
+t2:[111,129,173,189,203,205,207,214,244]
+},{//Togetic
+l:[[45,1],[204,1],[345,1,4],[118,4,4],[118,6,3],[186,9,4],[186,11,3],[281,13,4],[281,16,3],[227,17,4],[227,21,3],[246,21,4],[266,25,4],[266,26,3],[273,29,4],[273,31,3],[219,33,4],[219,36,3],[38,37,4],[38,41,3],[226,41,4]],
+m:[264,352,92,237,241,63,113,182,240,219,218,76,216,94,247,280,104,115,351,53,126,332,263,290,156,213,211,19,148,249],
+t6:[5,25,34,38,68,69,86,102,118,135,138,164],
+t2:[111,129,173,189,203,205,207,214,244]
+},{//Natu
+l:[[43,1],[64,1],[101,10],[100,20],[248,30],[273,30],[109,40],[94,50]],
+m:[347,92,237,241,113,182,240,202,218,76,216,94,247,104,115,332,263,290,156,213,168,211,285,148],
+e:[65,98,114,185,211,244,287,297],
+t6:[38,86,102,138,164],
+t2:[129,173,203,207,214,244]
+},{//Xatu
+l:[[43,1],[64,1],[101,10],[100,20],[248,35],[273,35],[109,50],[94,65]],
+m:[347,92,237,241,63,113,182,240,202,218,76,216,94,247,104,115,332,263,290,156,213,168,211,285,19,148],
+t6:[38,86,102,138,164],
+t2:[129,173,203,207,214,244]
+},{//Mareep
+l:[[33,1],[45,1],[84,9],[86,16],[178,23],[113,30],[87,37]],
+m:[92,237,113,182,240,218,231,85,87,216,104,351,263,290,156,213,148],
+e:[34,36,103,115,219,268,316],
+t6:[34,38,86,102,164],
+t2:[111,129,173,203,207,214]
+},{//Flaaffy
+l:[[33,1],[45,1],[84,1],[84,9],[86,18],[178,27],[113,36],[87,45]],
+m:[264,92,237,113,182,240,218,231,85,87,216,280,104,351,263,290,156,213,70,148,249],
+t6:[5,25,34,38,68,69,86,102,164],
+t2:[7,9,111,129,173,203,207,214,223]
+},{//Ampharos
+l:[[33,1],[45,1],[84,1],[86,1],[84,9],[86,18],[178,27],[9,30],[113,42],[87,57]],
+m:[264,92,237,63,113,182,240,218,231,85,87,216,280,104,351,263,290,156,213,70,148,249],
+t6:[5,25,34,38,68,69,86,102,164],
+t2:[7,9,111,129,173,203,207,214,223]
+},{//Bellossom
+l:[[71,1],[78,1],[230,1],[345,1],[80,44],[76,55]],
+m:[92,331,237,241,63,182,202,219,218,76,216,104,188,263,290,156,213,15,148],
+t6:[14,38,102,164],
+t2:[173,203,207,214]
+},{//Marill
+l:[[33,1],[111,3],[39,6],[55,10],[205,15],[61,21],[38,28],[240,36],[56,45]],
+m:[264,352,92,258,237,58,59,182,240,218,231,216,91,280,104,263,290,156,213,57,70,249,127,291],
+e:[48,113,133,164,187,195,217,248],
+t6:[5,25,34,38,69,102,164],
+t2:[8,111,129,173,189,196,203,205,207,214,223]
+},{//Azumarill
+l:[[33,1],[39,1],[55,1],[111,1],[111,3],[39,6],[55,10],[205,15],[61,24],[38,34],[240,45],[56,57]],
+m:[264,352,92,258,237,58,59,63,182,240,218,231,216,91,280,104,263,290,156,213,57,70,249,127,291],
+t6:[5,25,34,38,69,102,164],
+t2:[8,111,129,173,189,196,203,205,207,214,223]
+},{//Sudowoodo
+l:[[88,1],[102,1],[175,9],[67,17],[157,25],[335,33],[185,41],[21,49],[38,57]],
+m:[264,347,92,237,241,269,182,218,89,216,91,280,104,201,317,263,290,156,213,168,70,249],
+e:[120],
+t6:[5,25,34,38,68,69,102,153,157,164],
+t2:[7,8,9,111,173,189,203,205,207,214,223,244]
+},{//Politoed
+l:[[3,1],[55,1],[95,1],[195,1],[195,35],[207,51]],
+m:[264,352,92,258,237,58,59,63,182,240,218,89,216,91,94,280,104,263,290,156,213,168,57,70,249,127,291],
+t6:[5,25,34,38,68,69,102,118,164],
+t2:[111,173,189,196,203,207,214,223]
+},{//Hoppip
+l:[[150,1],[39,5],[235,5],[33,10],[77,13],[78,15],[79,17],[73,20],[178,25],[72,30]],
+m:[92,331,237,241,182,202,218,76,216,104,332,263,290,156,213,148],
+e:[38,93,115,133,227,244,270],
+t6:[14,38,102,164],
+t2:[111,173,203,207,214]
+},{//Skiploom
+l:[[33,1],[39,1],[150,1],[235,1],[39,5],[235,5],[33,10],[77,13],[78,15],[79,17],[73,22],[178,29],[72,36]],
+m:[92,331,237,241,182,202,218,76,216,104,332,263,290,156,213,148],
+t6:[14,38,102,164],
+t2:[111,173,203,207,214]
+},{//Jumpluff
+l:[[33,1],[39,1],[150,1],[235,1],[39,5],[235,5],[33,10],[77,13],[78,15],[79,17],[73,22],[178,33],[72,44]],
+m:[92,331,237,241,63,182,202,218,76,216,104,332,263,290,156,213,148],
+t6:[14,38,102,164],
+t2:[111,173,203,207,214]
+},{//Aipom
+l:[[10,1],[39,1],[28,6],[310,13],[226,18],[321,25],[154,31],[129,38],[103,43],[97,50]],
+m:[264,352,92,237,241,269,182,240,218,76,231,85,87,216,91,247,280,104,351,332,263,290,156,213,168,289,15,70,249],
+e:[3,21,68,97,103,180,228,251],
+t6:[5,25,34,38,68,69,86,102,118,138,164],
+t2:[7,8,9,111,129,173,189,203,207,210,214,223]
+},{//Sunkern
+l:[[71,1],[74,6],[72,13],[275,18],[283,25],[241,30],[235,37],[202,42]],
+m:[92,331,237,241,113,182,202,219,218,76,216,104,188,263,290,156,213,15,148],
+e:[73,174,227,267,270,320],
+t6:[14,38,102,164],
+t2:[173,203,207,214]
+},{//Sunflora
+l:[[1,1],[71,1],[74,6],[75,13],[275,18],[331,25],[241,30],[80,37],[76,42]],
+m:[92,331,237,241,63,113,182,202,219,218,76,216,104,188,263,290,156,213,15,148],
+t6:[14,38,102,164],
+t2:[173,203,207,214]
+},{//Yanma
+l:[[33,1],[193,1],[98,6,4],[98,7,3],[104,12,4],[104,13,3],[49,17,4],[49,19,3],[95,23,4],[197,25,3],[197,28,4],[48,31,3],[253,34,4],[253,37,3],[17,39,4],[17,43,3],[48,45,4],[103,49,3],[103,50,4]],
+m:[92,237,241,182,202,218,76,216,94,247,104,332,263,290,156,213,168,211,148],
+e:[18,141,179,318,324],
+t6:[38,102,138,164],
+t2:[129,173,203,207,214]
+},{//Wooper
+l:[[39,1],[55,1],[21,11],[341,16],[133,21],[281,31],[89,36],[240,41],[54,51],[114,51]],
+m:[352,92,258,237,58,59,182,240,218,231,89,216,91,104,188,201,263,290,156,213,57,148,249,127,291],
+e:[34,174,219,246,254,255,256,300],
+t6:[34,38,102,164],
+t2:[8,111,173,189,203,205,207,214,223]
+},{//Quagsire
+l:[[39,1],[55,1],[21,11],[341,16],[133,23],[281,35],[89,42],[240,49],[54,61],[114,61]],
+m:[264,352,92,258,237,58,59,63,182,240,218,231,89,216,91,280,104,188,201,317,263,290,156,213,57,70,148,249,127,291],
+t6:[5,25,34,38,68,69,102,164],
+t2:[8,111,173,189,203,205,207,214,223]
+},{//Espeon
+l:[[33,1],[39,1],[270,1],[28,8],[93,16],[98,23],[129,30],[60,36],[244,42],[94,47],[234,52]],
+m:[347,92,237,241,63,113,182,240,218,231,216,91,94,247,104,115,263,290,156,213,285,15,148],
+t6:[34,38,102,138,164],
+t2:[129,173,189,203,207,214,244]
+},{//Umbreon
+l:[[33,1],[39,1],[270,1],[28,8],[228,16],[98,23],[109,30],[185,36],[212,42],[103,47],[236,52]],
+m:[92,237,241,269,63,182,240,218,231,216,91,94,247,104,259,263,290,156,213,289,15,148],
+t6:[34,38,102,138,164],
+t2:[129,173,189,203,207,214,244]
+},{//Murkrow
+l:[[64,1],[310,9],[228,14],[114,22],[101,27],[185,35],[269,40],[212,48]],
+m:[347,92,237,241,269,182,240,218,216,247,104,332,259,263,290,156,213,168,211,289,19],
+e:[17,18,65,109,119,143,195,297],
+t6:[38,86,102,138,164],
+t2:[129,173,189,196,203,207,214,244]
+},{//Slowking
+l:[[33,1],[174,1],[281,1],[45,6],[55,13,4],[55,15,3],[93,17,4],[93,20,3],[50,24,4],[50,29,3],[29,29,4],[29,34,3],[207,36,4],[94,40,4],[207,43,3],[244,47,4],[94,48,3]],
+m:[264,352,347,92,258,237,241,58,59,63,182,240,219,218,231,89,216,91,94,247,280,104,53,126,263,290,156,213,285,57,70,148,249,291],
+t6:[5,25,34,38,68,69,86,102,138,164],
+t2:[8,129,173,189,196,203,207,210,214,223,244]
+},{//Misdreavus
+l:[[45,1],[149,1],[180,6],[310,11],[109,17],[212,23],[60,30],[220,37],[195,45],[288,53]],
+m:[347,92,237,241,269,182,240,218,85,87,216,94,247,104,351,332,259,263,290,156,213,168,285,289,148],
+e:[103,194,244,286],
+t6:[38,86,102,138,164],
+t2:[111,129,173,203,207,214,244]
+},{//Unown
+l:[[237,1]]
+},{//Wobbuffet
+l:[[68,1],[194,1],[219,1],[243,1]]
+},{//Girafarig
+l:[[33,1],[45,1],[310,7],[93,13],[23,19],[316,25],[97,31],[226,37],[60,43],[242,49]],
+m:[347,92,237,241,113,182,240,218,231,85,87,89,216,94,247,104,115,351,263,290,156,213,168,285,70,148,249],
+e:[36,133,193,244,248,251,273,277],
+t6:[34,38,86,102,138,164],
+t2:[129,173,189,203,207,214,244]
+},{//Pineco
+l:[[33,1],[182,1],[120,8],[36,15],[229,22],[117,29],[153,36],[191,43],[38,50]],
+m:[92,237,241,113,182,202,218,76,89,216,91,104,115,201,263,290,156,213,70,249],
+e:[42,68,115,129,175,328],
+t6:[34,38,68,102,153,157,164],
+t2:[111,173,203,205,207,214]
+},{//Forretress
+l:[[33,1],[120,1,3],[182,1],[120,8,4],[120,8],[36,15],[229,22],[117,29],[192,31,4],[153,39],[191,49],[38,59]],
+m:[92,237,241,63,113,182,202,218,76,89,216,91,104,115,201,263,290,156,213,70,249],
+t6:[34,38,68,102,153,157,164],
+t2:[111,173,203,205,207,214]
+},{//Dunsparce
+l:[[99,1],[111,4],[281,11],[137,14],[180,21,3],[205,21,4],[180,24,4],[228,24,3],[228,31,4],[103,31,3],[103,34,4],[36,34,3],[36,41,4],[283,41,3],[175,44,4],[283,51,4]],
+m:[352,347,92,237,241,58,59,182,240,218,76,231,85,87,89,216,91,247,104,351,53,126,317,263,290,156,213,168,70,249],
+e:[29,44,117,157,174,246,310],
+t6:[34,38,68,86,102,138,157,164],
+t2:[111,173,189,203,205,207,214,244]
+},{//Gligar
+l:[[40,1],[28,6],[106,13],[98,20],[185,28],[163,36],[103,44],[12,52]],
+m:[92,237,241,182,240,218,231,89,216,91,104,188,201,317,332,263,290,156,213,168,211,15,70,249],
+e:[13,17,68,232,328],
+t6:[14,38,68,102,138,157,164],
+t2:[129,173,203,207,210,214]
+},{//Steelix
+l:[[33,1],[103,1],[20,8,4],[20,9,3],[88,12,4],[88,13,3],[106,19,4],[106,21,3],[99,23,4],[99,25,3],[225,30,4],[201,33,3],[201,34,4],[21,37,3],[21,41,4],[231,45],[242,49,3],[242,52,4],[38,56,4],[38,57,3]],
+m:[46,92,237,241,269,63,182,218,231,89,216,91,104,201,317,259,263,290,156,213,15,70,249],
+t6:[34,38,102,153,157,164],
+t2:[111,173,189,203,205,207,214]
+},{//Snubbull
+l:[[33,1],[184,1],[39,4],[204,8],[44,13],[122,19],[46,26],[99,34],[36,43],[242,53]],
+m:[264,352,46,92,339,237,241,269,182,240,218,76,85,87,89,216,91,247,280,104,351,53,188,126,259,263,290,156,213,168,315,70,249],
+e:[115,118,173,185,215,217,242,265],
+t6:[5,25,34,38,68,69,86,102,118,164],
+t2:[7,8,9,111,173,189,203,207,214,223]
+},{//Granbull
+l:[[33,1],[184,1],[39,4],[204,8],[44,13],[122,19],[46,28],[99,38],[36,49],[242,61]],
+m:[264,352,46,92,339,237,241,269,63,182,240,218,76,231,85,87,89,216,91,247,280,104,351,53,188,126,317,259,263,290,156,213,168,315,70,249],
+t6:[5,25,34,38,68,69,86,102,118,157,164],
+t2:[7,8,9,111,173,189,203,207,214,223]
+},{//Qwilfish
+l:[[33,1],[40,1],[191,1],[106,9,4],[107,9,4],[106,10,3],[107,10,3],[55,13,4],[55,19,3],[42,21,4],[279,25,4],[42,28,3],[36,33,4],[36,37,3],[56,37,4],[194,45,4],[56,46,3]],
+m:[352,92,258,237,58,59,182,240,218,216,247,104,351,188,263,290,156,213,57,127,291],
+e:[48,61,114,175,310],
+t6:[14,38,86,102,164],
+t2:[111,129,173,196,203,205,207,214]
+},{//Scizor
+l:[[43,1],[98,1],[116,6],[228,11],[206,16],[97,21],[232,26],[163,31],[14,36],[104,41],[334,41,4],[210,46]],
+m:[92,237,241,63,182,240,218,216,104,201,332,263,290,156,213,168,211,15,70,249],
+t6:[14,38,68,102,164],
+t2:[129,173,203,207,210,214]
+},{//Shuckle
+l:[[110,1],[132,1],[35,9],[227,14],[219,23],[117,28],[156,37]],
+m:[92,237,241,182,219,218,89,216,91,104,188,201,317,263,290,156,213,70,148,249],
+e:[230],
+t6:[34,38,102,157,164],
+t2:[111,173,189,203,205,207,214]
+},{//Heracross
+l:[[33,1],[43,1],[30,6],[203,11],[31,17],[280,23],[68,30],[36,37],[179,45],[224,53]],
+m:[264,92,339,237,241,63,182,240,218,89,216,91,280,104,317,263,290,156,213,168,15,70,249],
+e:[106,117,175,206],
+t6:[14,34,38,68,69,102,157,164],
+t2:[173,203,207,210,214]
+},{//Sneasel
+l:[[10,1],[43,1],[269,1],[98,8],[103,15],[185,22],[154,29],[97,36],[196,43],[163,50],[251,57],[232,64]],
+m:[264,347,92,258,237,241,269,58,59,182,240,218,231,216,91,247,280,104,332,259,263,290,156,213,168,289,15,57,70,249],
+e:[44,68,115,180,193,252,306],
+t6:[14,38,68,102,138,164],
+t2:[8,111,129,173,189,196,203,207,210,214,223,244]
+},{//Teddiursa
+l:[[10,1],[43,1],[122,7],[154,13],[313,19],[185,25],[156,31],[163,37],[173,43],[37,49]],
+m:[264,46,92,339,237,241,269,182,240,218,89,216,91,280,104,332,259,263,290,156,213,168,15,70,249],
+e:[36,68,69,214,232,242,281,313],
+t6:[5,14,25,34,38,68,69,102,118,164],
+t2:[7,8,9,111,129,173,189,203,205,207,210,214,223]
+},{//Ursaring
+l:[[10,1],[43,1],[122,1],[154,1],[122,7],[154,13],[313,19],[185,25],[156,31],[163,37],[173,43],[37,49]],
+m:[264,46,92,339,237,241,269,63,182,240,218,89,216,91,280,104,317,332,259,263,290,156,213,168,15,70,249],
+t6:[5,14,25,34,38,68,69,102,118,157,164],
+t2:[7,8,9,111,129,173,189,203,205,207,210,214,223]
+},{//Slugma
+l:[[123,1],[281,1],[52,8],[88,15],[106,22],[133,29],[53,36],[157,43],[34,50]],
+m:[92,237,241,113,182,218,216,104,115,53,126,263,290,156,213,315,249],
+e:[151,257],
+t6:[34,38,102,157,164],
+t2:[111,173,189,203,205,207,214]
+},{//Magcargo
+l:[[52,1],[88,1],[123,1],[281,1],[52,8],[88,15],[106,22],[133,29],[53,36],[157,48],[34,60]],
+m:[92,237,241,63,113,182,218,89,216,104,115,53,201,126,317,263,290,156,213,315,70,249],
+t6:[34,38,102,157,164],
+t2:[111,173,189,203,205,207,214]
+},{//Swinub
+l:[[33,1],[316,1],[181,10],[203,19],[36,28],[54,37],[59,46],[133,55]],
+m:[46,92,258,237,58,59,113,182,240,218,89,216,91,104,115,201,317,263,290,156,213,70,249],
+e:[34,36,38,44,157,246,333,341],
+t6:[34,38,102,157,164],
+t2:[111,173,189,196,203,207,214]
+},{//Piloswine
+l:[[30,1],[181,1],[203,1],[316,1],[181,10],[203,19],[36,28],[31,33],[54,42],[59,56],[133,70]],
+m:[46,92,258,237,58,59,63,113,182,240,218,89,216,91,104,115,201,317,263,290,156,213,70,249],
+t6:[34,38,102,157,164],
+t2:[111,173,189,196,203,207,214]
+},{//Corsola
+l:[[33,1],[106,6],[145,12],[105,17],[287,17],[61,23],[131,28],[350,34],[243,39],[246,45]],
+m:[352,347,92,258,237,241,58,59,113,182,240,219,218,89,216,91,94,247,104,115,201,317,263,290,156,213,57,70,249],
+e:[54,103,109,112,133,157,275,333],
+t6:[34,38,102,153,157,164],
+t2:[111,173,189,203,205,207,214]
+},{//Remoraid
+l:[[55,1],[199,11],[60,22],[61,22],[62,22],[116,33],[58,44],[63,55]],
+m:[352,92,237,241,58,59,63,182,240,218,216,94,104,53,126,263,290,156,213,168,57,127,291],
+e:[48,62,86,103,114,190,350],
+t6:[38,86,102,164],
+t2:[111,129,173,189,203,207,214]
+},{//Octillery
+l:[[55,1],[132,11],[60,22],[61,22],[62,22],[190,25],[116,38],[58,54],[63,70]],
+m:[352,92,331,237,241,58,59,63,182,240,218,216,94,104,53,188,126,263,290,156,213,168,57,127,291],
+t6:[38,69,86,102,164],
+t2:[111,129,173,189,203,207,214]
+},{//Delibird
+l:[[217,1]],
+m:[264,352,92,258,237,58,59,182,240,218,216,104,332,263,290,156,213,168,19],
+e:[62,98,150,229,248,301],
+t6:[5,25,34,38,68,69,102,164],
+t2:[129,173,189,196,203,207,214]
+},{//Mantine
+l:[[33,1],[145,1],[48,8],[61,15],[36,22],[97,29],[17,36],[352,43],[109,50]],
+m:[352,92,258,237,58,59,182,240,218,89,216,104,332,263,290,156,213,57,127,291],
+e:[21,56,114,157,239,300],
+t6:[34,38,102,164],
+t2:[129,173,189,196,203,207,214]
+},{//Skarmory
+l:[[43,1],[64,1],[28,10],[129,13],[97,16],[31,26],[314,29],[211,32],[191,42],[319,45]],
+m:[46,92,237,241,269,182,218,216,104,201,332,259,263,290,156,213,168,211,15,19,249],
+e:[18,65,143,174,228],
+t6:[38,68,102,157,164],
+t2:[129,173,189,203,207,214]
+},{//Houndour
+l:[[43,1],[52,1],[336,7],[123,13],[46,19],[44,25],[316,31],[185,37],[53,43],[242,49]],
+m:[46,92,237,241,269,182,218,76,231,216,247,104,53,188,126,259,263,290,156,213,168,289,315,249],
+e:[68,83,99,179,180,228,251,261],
+t6:[34,38,68,102,138,164],
+t2:[129,173,189,203,207,214]
+},{//Houndoom
+l:[[43,1],[52,1],[336,1],[336,7],[123,13],[46,19],[44,27],[316,35],[185,43],[53,51],[242,59]],
+m:[46,92,237,241,269,63,182,218,76,231,216,247,104,53,188,126,259,263,290,156,213,168,289,315,70,249],
+t6:[34,38,68,102,138,164],
+t2:[129,173,189,203,207,214]
+},{//Kingdra
+l:[[43,1],[55,1],[108,1],[145,1],[108,8],[43,15],[55,22],[239,29],[97,40],[56,51],[349,62]],
+m:[352,92,258,237,58,59,63,182,240,218,216,104,263,290,156,213,57,127,291],
+t6:[34,38,102,164],
+t2:[129,173,196,203,207,214]
+},{//Phanpy
+l:[[33,1],[45,1],[316,1],[111,9],[175,17],[36,25],[205,33],[203,41],[38,49]],
+m:[46,92,237,241,182,218,231,89,216,104,201,317,263,290,156,213,70,249],
+e:[34,68,90,116,173,246],
+t6:[34,38,68,102,164],
+t2:[111,173,189,203,205,207,214]
+},{//Donphan
+l:[[30,1],[45,1],[316,1],[111,9],[175,17],[31,25],[205,33],[229,41],[89,49]],
+m:[46,92,237,241,63,182,218,231,89,216,104,201,317,263,290,156,213,70,249],
+t6:[34,38,68,102,157,164],
+t2:[111,173,189,203,205,207,214]
+},{//Porygon2
+l:[[33,1],[160,1],[176,1],[97,9],[60,12],[105,20],[111,24],[199,32],[161,36],[278,44],[192,48]],
+m:[92,237,241,58,59,63,182,240,218,76,231,85,87,216,94,247,104,351,332,263,290,156,168,148],
+t6:[38,86,102,138,164],
+t2:[111,129,173,196,203,207,214,244]
+},{//Stantler
+l:[[33,1],[43,7],[310,11,4],[310,13,3],[95,17,4],[95,19,3],[23,21,4],[23,25,3],[28,27,4],[28,31,3],[272,31,4],[36,37],[109,41,4],[109,43,3],[347,47,4],[347,49,3]],
+m:[347,46,92,237,241,113,182,240,218,76,231,85,87,89,216,94,247,104,115,351,263,290,156,213,168,285,148],
+e:[44,50,180,207,244,326],
+t6:[34,38,86,102,138,164],
+t2:[129,173,189,203,207,214,244]
+},{//Smeargle
+l:[[166,1],[166,11],[166,21],[166,31],[166,41],[166,51],[166,61],[166,71],[166,81],[166,91]]
+},{//Tyrogue
+l:[[33,1]],
+m:[92,339,237,241,182,240,218,89,216,280,104,263,290,156,213,168,70,249],
+e:[136,170,183,229,270],
+t6:[25,34,38,68,69,102,157,164],
+t2:[129,173,189,203,207,214]
+},{//Hitmontop
+l:[[27,1],[279,1],[116,7],[228,13],[98,19],[167,20],[229,25],[68,31],[97,37],[197,43],[283,49]],
+m:[92,339,237,241,182,240,218,89,216,91,280,104,201,263,290,156,213,168,70,249],
+t6:[25,34,38,68,69,102,157,164],
+t2:[129,173,189,203,207,214]
+},{//Smoochum
+l:[[1,1],[122,1],[186,9],[181,13],[93,21],[47,25],[212,33],[313,37],[94,45],[195,49],[59,57]],
+m:[352,347,92,258,237,58,59,113,182,240,218,216,94,247,104,115,263,290,156,213,168,285,148],
+e:[8,96,244,252,273],
+t6:[5,25,34,38,68,69,102,118,138,164],
+t2:[8,173,189,196,203,207,214,223,244]
+},{//Elekid
+l:[[43,1],[98,1],[9,9],[113,17],[129,25],[103,33],[85,41],[87,49]],
+m:[264,92,237,113,182,240,218,85,87,216,94,280,104,351,263,290,156,213,168,148,249],
+e:[2,7,8,27,96,112,238],
+t6:[5,25,34,38,68,69,86,102,164],
+t2:[7,8,9,129,173,189,203,207,214,223]
+},{//Magby
+l:[[52,1],[43,7],[123,13],[7,19],[108,25],[241,31],[53,37],[109,43],[126,49]],
+m:[264,92,237,241,182,218,231,216,94,280,104,53,126,263,290,156,213,168,249],
+e:[2,5,9,103,112,238],
+t6:[5,25,34,38,68,69,102,164],
+t2:[7,9,173,189,203,207,214,223]
+},{//Miltank
+l:[[33,1],[45,4],[111,8],[23,13],[208,19],[117,26],[205,34],[34,43],[215,53]],
+m:[264,352,92,237,241,58,59,63,182,240,218,76,231,85,87,89,216,247,280,104,351,201,317,263,290,156,213,57,70,249],
+e:[69,174,179,203,214,217,244,270],
+t6:[5,25,34,38,68,69,86,102,118,157,164],
+t2:[7,8,9,111,173,189,196,203,205,207,214,223,244]
+},{//Blissey
+l:[[1,1],[45,1],[39,4],[287,7],[135,10],[3,13],[107,18],[47,23],[121,28],[111,33],[113,40],[38,47]],
+m:[264,352,347,92,258,237,241,58,59,63,113,182,240,219,218,76,231,85,87,89,216,94,247,280,104,351,53,201,126,317,263,290,156,213,285,289,70,148,249],
+t6:[5,25,34,38,68,69,86,102,118,135,138,164],
+t2:[111,173,189,196,203,205,207,214,223]
+},{//Raikou
+l:[[43,1],[44,1],[84,11],[46,21],[98,31],[209,41],[115,51],[242,61],[87,71],[347,81]],
+m:[347,46,92,237,241,63,182,240,218,231,85,87,216,91,104,115,351,201,263,290,156,15,70,148,249],
+t6:[34,38,86,102,164],
+t2:[129,173,189,203,207,214,244]
+},{//Entei
+l:[[43,1],[44,1],[52,11],[46,21],[83,31],[23,41],[53,51],[207,61],[126,71],[347,81]],
+m:[347,46,92,237,241,63,182,240,218,76,231,216,91,104,115,53,201,126,263,290,156,15,70,148,249],
+t6:[34,38,102,164],
+t2:[129,173,189,203,207,214,244]
+},{//Suicune
+l:[[43,1],[44,1],[61,11],[240,21],[16,31],[62,41],[54,51],[243,61],[56,71],[347,81]],
+m:[352,347,46,92,258,237,241,58,59,63,182,240,218,231,216,91,104,115,201,263,290,156,15,57,249,127,291],
+t6:[34,38,102,164],
+t2:[129,173,189,196,203,207,214,244]
+},{//Larvitar
+l:[[43,1],[44,1],[201,8],[103,15],[157,22],[37,29],[184,36],[242,43],[89,50],[63,57]],
+m:[92,237,241,269,63,182,240,218,89,216,91,280,104,201,259,263,290,156,213,249],
+e:[23,116,174,200,228,246,349],
+t6:[34,38,102,157,164],
+t2:[173,189,203,207,214]
+},{//Pupitar
+l:[[43,1],[44,1],[103,1],[201,1],[201,8],[103,15],[157,22],[37,29],[184,38],[242,47],[89,56],[63,65]],
+m:[92,237,241,269,63,182,240,218,89,216,91,280,104,201,259,263,290,156,213,249],
+t6:[34,38,102,157,164],
+t2:[173,189,203,207,214]
+},{//Tyranitar
+l:[[43,1],[44,1],[103,1],[201,1],[201,8],[103,15],[157,22],[37,29],[184,38],[242,47],[89,61],[63,75]],
+m:[264,337,352,46,92,237,241,269,58,59,63,182,240,218,231,85,87,89,216,91,280,104,351,53,201,126,317,332,259,263,290,156,213,15,57,70,249],
+t6:[5,25,34,38,68,69,86,102,157,164],
+t2:[7,173,189,203,207,210,214,223]
+},{//Lugia
+l:[[18,1],[219,11],[16,22],[105,33],[56,44],[240,55],[129,66],[177,77],[246,88],[248,99]],
+m:[352,347,46,92,258,237,241,58,59,63,113,182,240,202,219,218,231,85,87,89,216,94,247,104,115,351,201,332,263,290,156,211,285,19,57,70,249,127,291],
+t6:[34,38,86,102,138,164],
+t2:[129,173,189,196,203,207,214,244]
+},{//Ho-Oh
+l:[[18,1],[219,11],[16,22],[105,33],[126,44],[241,55],[129,66],[221,77],[246,88],[248,99]],
+m:[347,46,92,237,241,63,113,182,240,202,219,218,76,85,87,89,216,94,247,104,115,351,53,201,126,332,263,290,156,211,315,19,70,148,249],
+t6:[38,86,102,138,164],
+t2:[129,173,189,203,207,214,244]
+},{//Celebi
+l:[[73,1],[93,1],[105,1],[215,1],[219,10],[246,20],[248,30],[226,40],[195,50]],
+m:[352,347,92,237,241,63,113,182,240,202,219,218,76,216,94,247,104,115,351,201,332,263,290,156,285,15,148],
+t6:[14,38,102,118,138,164],
+t2:[111,129,173,189,203,207,214,244]
+},{//Treecko
+l:[[1,1],[43,1],[71,6],[98,11],[228,16],[103,21],[72,26],[97,31],[21,36],[197,41],[202,46]],
+m:[264,92,331,237,241,182,202,219,218,76,231,216,91,280,104,317,332,263,290,156,213,15,70,148,249],
+e:[73,225,242,283,300,306],
+t6:[5,14,25,34,38,68,69,102,164],
+t2:[9,129,173,189,203,207,210,214,223]
+},{//Grovyle
+l:[[1,1],[43,1],[71,1],[98,1],[71,6],[98,11],[210,16],[228,17],[103,23],[348,29],[97,35],[21,41],[197,47],[206,53]],
+m:[264,92,331,237,241,182,202,219,218,76,231,216,91,280,104,317,332,263,290,156,213,15,70,148,249],
+t6:[5,14,25,34,38,68,69,102,164],
+t2:[9,129,173,189,203,207,210,214,223]
+},{//Sceptile
+l:[[1,1],[43,1],[71,1],[98,1],[71,6],[98,11],[210,16],[228,17],[103,23],[348,29],[97,35],[21,43],[197,51],[206,59]],
+m:[264,337,46,92,331,237,241,63,182,202,219,218,76,231,89,216,91,280,104,317,332,263,290,156,213,15,70,148,249],
+t6:[5,14,25,34,38,68,69,102,164],
+t2:[9,129,173,189,203,207,210,214,223]
+},{//Torchic
+l:[[10,1],[45,1],[116,7],[52,10],[64,16],[28,19],[83,25],[98,28],[163,34],[119,37],[53,43]],
+m:[92,237,241,182,218,216,91,104,53,126,317,332,263,290,156,213,315,15,70,249],
+e:[68,157,179,203,207,265],
+t6:[5,14,25,34,38,68,69,102,157,164],
+t2:[129,173,189,203,207,214]
+},{//Combusken
+l:[[10,1],[45,1],[52,1],[116,1],[116,7],[52,13],[24,16],[64,17],[28,21],[339,28],[98,32],[163,39],[119,43],[327,50]],
+m:[264,92,339,237,241,182,218,216,91,280,104,53,126,317,332,263,290,156,213,315,15,70,249],
+t6:[5,14,25,34,38,68,69,102,157,164],
+t2:[7,9,129,173,189,203,207,210,214,223]
+},{//Blaziken
+l:[[7,1],[10,1],[45,1],[52,1],[116,1],[116,7],[52,13],[24,16],[64,17],[28,21],[339,28],[98,32],[299,36],[163,42],[119,49],[327,59]],
+m:[264,46,92,339,237,241,63,182,218,89,216,91,280,104,53,126,317,332,263,290,156,213,315,15,70,249],
+t6:[5,14,25,34,38,68,69,102,157,164],
+t2:[7,9,129,173,189,203,207,210,214,223]
+},{//Mudkip
+l:[[33,1],[45,1],[189,6],[55,10],[117,15],[193,19],[300,24],[36,28],[250,33],[182,37],[56,42],[283,46]],
+m:[352,92,258,237,58,59,182,240,218,231,216,91,104,317,263,290,156,213,57,70,249,127,291],
+e:[23,174,243,253,287,301],
+t6:[34,38,102,164],
+t2:[111,173,189,196,203,205,207,214]
+},{//Marshtomp
+l:[[33,1],[45,1],[55,1],[189,1],[189,6],[55,10],[117,15],[341,16],[193,20],[300,25],[36,31],[330,37],[182,42],[89,46],[283,53]],
+m:[352,92,258,237,58,59,182,240,218,231,89,216,91,104,317,263,290,156,213,57,70,249,127,291],
+t6:[5,25,34,38,68,69,102,157,164],
+t2:[8,111,173,189,196,203,205,207,214,223]
+},{//Swampert
+l:[[33,1],[45,1],[55,1],[189,1],[189,6],[55,10],[117,15],[341,16],[193,20],[300,25],[36,31],[330,39],[182,46],[89,52],[283,61]],
+m:[264,352,46,92,258,237,58,59,63,182,240,218,231,89,216,91,280,104,317,263,290,156,213,57,70,249,127,291],
+t6:[5,25,34,38,68,69,102,157,164],
+t2:[8,111,173,189,196,203,205,207,214,223]
+},{//Poochyena
+l:[[33,1],[336,5],[28,9],[44,13],[316,17],[46,21],[207,25],[184,29],[36,33],[269,37],[242,41],[168,45]],
+m:[46,92,237,241,269,182,240,218,231,216,91,247,104,259,263,290,156,213,168,289,249],
+e:[43,281,305,310,343],
+t6:[34,38,68,102,164],
+t2:[173,189,203,207,214,244]
+},{//Mightyena
+l:[[28,1],[33,1],[44,1],[336,1],[336,5],[28,9],[44,13],[316,17],[46,22],[207,27],[184,32],[36,37],[269,42],[242,47],[168,52]],
+m:[46,92,237,241,269,63,182,240,218,231,216,91,247,104,259,263,290,156,213,168,289,70,249],
+t6:[34,38,68,102,164],
+t2:[173,189,203,207,214,244]
+},{//Zigzagoon
+l:[[33,1],[45,1],[39,5],[29,9],[28,13],[316,17],[300,21],[42,25],[343,29],[175,33],[156,37],[187,41]],
+m:[352,92,237,241,58,59,182,240,218,231,85,87,216,91,247,104,351,263,290,156,213,168,15,57,249],
+e:[164,204,228,271,321],
+t6:[34,38,86,102,164],
+t2:[111,129,173,189,196,203,205,207,210,214]
+},{//Linoone
+l:[[29,1],[33,1],[39,1],[45,1],[39,5],[29,9],[28,13],[316,17],[300,23],[154,29],[343,35],[163,41],[156,47],[187,53]],
+m:[352,46,92,237,241,58,59,63,182,240,218,231,85,87,216,91,247,104,351,263,290,156,213,168,15,57,70,249],
+t6:[34,38,86,102,164],
+t2:[111,129,173,189,196,203,205,207,210,214]
+},{//Wurmple
+l:[[33,1],[81,1],[40,5]]
+},{//Silcoon
+l:[[106,1],[106,7]]
+},{//Beautifly
+l:[[71,1],[71,10],[16,13],[78,17],[234,20],[72,24],[18,27],[213,31],[318,34],[202,38]],
+m:[92,237,241,63,182,202,219,218,76,216,94,247,104,332,263,290,156,213,168,148],
+t6:[38,102,164],
+t2:[129,173,203,207,214]
+},{//Cascoon
+l:[[106,1],[106,7]]
+},{//Dustox
+l:[[93,1],[93,10],[16,13],[182,17],[236,20],[60,24],[18,27],[113,31],[318,34],[92,38]],
+m:[92,237,241,63,113,182,202,218,76,216,94,247,104,188,332,263,290,156,213,168,148],
+t6:[38,102,164],
+t2:[129,173,203,207,214]
+},{//Lotad
+l:[[310,1],[45,3],[71,7],[267,13],[54,21],[240,31],[72,43]],
+m:[352,92,258,331,237,241,58,59,182,240,202,218,76,216,104,263,290,156,213,168,57,148],
+e:[55,73,75,175,230,235],
+t6:[14,34,38,102,164],
+t2:[173,196,203,207,214]
+},{//Lombre
+l:[[310,1],[45,3],[71,7],[267,13],[252,19],[154,25],[346,31],[168,37],[253,43],[56,49]],
+m:[352,92,258,331,237,241,58,59,182,240,202,218,76,216,280,104,263,290,156,213,168,57,70,148,249,127,291],
+t6:[14,34,38,102,164],
+t2:[7,8,9,173,189,196,203,207,214,223]
+},{//Ludicolo
+l:[[45,1],[71,1],[267,1],[310,1]],
+m:[264,352,92,258,331,237,241,58,59,63,182,240,202,218,76,216,280,104,263,290,156,213,168,57,70,148,249,127,291],
+t6:[5,14,25,34,38,68,69,102,118,164],
+t2:[7,8,9,173,189,196,203,207,214,223]
+},{//Seedot
+l:[[117,1],[106,3],[74,7],[267,13],[235,21],[241,31],[153,43]],
+m:[92,331,237,241,182,202,218,76,216,91,247,104,263,290,156,213,148,249],
+e:[13,36,73,98,133,206],
+t6:[14,34,38,102,153,164],
+t2:[111,173,203,205,207,214]
+},{//Nuzleaf
+l:[[1,1],[106,3],[74,7],[267,13],[252,19],[259,25],[185,31],[13,37],[207,43],[326,49]],
+m:[92,331,237,241,63,182,202,218,76,216,91,247,280,104,317,259,263,290,156,213,168,15,70,148,249],
+t6:[14,25,34,38,102,153,164],
+t2:[111,129,173,189,203,205,207,210,214,244]
+},{//Shiftry
+l:[[1,1],[74,1],[106,1],[267,1]],
+m:[92,331,237,241,63,182,202,218,76,216,91,247,280,104,317,332,259,263,290,156,213,168,15,70,148,249],
+t6:[14,25,34,38,102,153,164],
+t2:[111,129,173,189,203,205,207,210,214,244]
+},{//Taillow
+l:[[45,1],[64,1],[116,4],[98,8],[17,13],[104,19],[283,26],[332,34],[97,43]],
+m:[92,237,241,182,240,218,216,104,332,263,290,156,213,168,211,19],
+e:[48,99,119,143,228,287],
+t6:[38,68,102,164],
+t2:[129,173,189,203,207,214]
+},{//Swellow
+l:[[45,1],[64,1],[98,1],[116,1],[116,4],[98,8],[17,13],[104,19],[283,28],[332,38],[97,49]],
+m:[92,237,241,63,182,240,218,216,104,332,263,290,156,213,168,211,19],
+t6:[38,68,102,164],
+t2:[129,173,189,203,207,214]
+},{//Wingull
+l:[[45,1],[55,1],[48,7],[17,13],[54,21],[98,31],[228,43],[97,55]],
+m:[352,92,258,237,58,59,182,240,218,216,104,351,332,263,290,156,213,168,211,19],
+e:[16,54,97,239,346],
+t6:[38,102,164],
+t2:[129,173,189,196,203,207,214]
+},{//Pelipper
+l:[[17,1],[45,1],[55,1],[346,1],[55,3],[48,7],[17,13],[54,21],[182,25],[254,33],[256,33],[255,47],[56,61]],
+m:[352,92,258,237,58,59,63,182,240,218,216,104,351,332,263,290,156,213,168,211,19,57],
+t6:[38,102,164],
+t2:[129,173,189,196,203,207,214]
+},{//Ralts
+l:[[45,1],[93,6],[104,11],[100,16],[347,21],[94,26],[286,31],[248,36],[95,41],[138,46]],
+m:[347,92,237,241,269,113,182,240,219,218,85,216,94,247,104,115,351,259,263,290,156,213,168,285,289,148],
+e:[50,194,212,261,262],
+t6:[34,38,86,102,138,164],
+t2:[7,8,9,111,173,189,196,203,207,214,244]
+},{//Kirlia
+l:[[45,1],[93,1,3],[100,1,3],[104,1,3],[345,1,4],[93,6,4],[93,6],[104,11,4],[104,11],[100,16,4],[100,16],[347,21],[94,26],[286,33],[248,40],[95,47],[138,54]],
+m:[347,92,237,241,269,113,182,240,219,218,85,216,94,247,104,115,351,259,263,290,156,213,168,285,289,148],
+t6:[34,38,86,102,138,164],
+t2:[7,8,9,111,173,189,196,203,207,214,244]
+},{//Gardevoir
+l:[[45,1],[93,1],[100,1],[104,1],[93,6],[104,11],[100,16],[347,21],[94,26],[286,33],[248,42],[95,51],[138,60]],
+m:[347,92,237,241,269,63,113,182,240,219,218,85,216,94,247,104,115,351,259,263,290,156,213,168,285,289,148],
+t6:[34,38,86,102,138,164],
+t2:[7,8,9,111,173,189,196,203,207,214,244]
+},{//Surskit
+l:[[145,1],[98,7],[230,13],[346,19],[61,25],[97,31],[54,37],[114,37]],
+m:[352,92,237,241,58,59,182,240,202,218,76,216,247,104,263,290,156,213,168,148],
+e:[56,60,170,193,341],
+t6:[38,102,164],
+t2:[129,173,196,203,207,214,244]
+},{//Masquerain
+l:[[98,1],[145,1],[230,1],[346,1],[98,7],[230,13],[346,19],[16,26],[184,33],[78,40],[318,47],[18,53]],
+m:[352,92,237,241,58,59,63,182,240,202,218,76,216,247,104,332,263,290,156,213,168,148],
+t6:[38,102,164],
+t2:[129,173,196,203,207,214,244]
+},{//Shroomish
+l:[[71,1],[33,4],[78,7],[73,10],[72,16],[29,22],[77,28],[74,36],[202,45],[147,54]],
+m:[92,331,237,241,182,202,219,218,76,216,104,188,263,290,156,213,289,148],
+e:[204,206,207,270,313],
+t6:[14,34,38,102,164],
+t2:[173,203,207,214]
+},{//Breloom
+l:[[33,1],[71,1],[73,1],[78,1],[33,4],[78,7],[73,10],[72,16],[29,22],[183,23],[68,28],[327,36],[170,45],[223,54]],
+m:[264,92,339,331,237,241,63,182,202,219,218,76,231,216,280,104,188,263,290,156,213,289,15,70,148,249],
+t6:[5,14,25,34,38,68,69,102,164],
+t2:[9,173,189,203,207,210,214,223]
+},{//Slakoth
+l:[[10,1],[281,1],[227,7],[303,13],[185,19],[133,25],[343,31],[68,37],[175,43]],
+m:[264,352,92,339,237,241,58,59,182,240,218,76,85,87,216,247,280,104,351,53,126,332,263,290,156,213,15,70,249],
+e:[34,163,173,174,214,228,306],
+t6:[5,25,34,38,68,69,102,157,164],
+t2:[7,8,9,173,189,196,203,207,210,214,223]
+},{//Vigoroth
+l:[[10,1],[116,1],[227,1],[253,1],[227,7],[253,13],[154,19],[203,25],[163,31],[68,37],[264,43],[179,49]],
+m:[264,352,46,92,339,237,241,269,58,59,182,240,218,76,85,87,89,216,247,280,104,351,53,126,332,263,290,156,213,15,70,249],
+t6:[5,25,34,38,68,69,102,157,164],
+t2:[7,8,9,173,189,196,203,207,210,214,223]
+},{//Slaking
+l:[[10,1],[227,1],[281,1],[303,1],[227,7],[303,13],[185,19],[133,25],[343,31],[207,36],[68,37],[175,43]],
+m:[264,352,46,92,339,237,241,269,58,59,63,182,240,218,76,85,87,89,216,247,280,104,351,53,126,332,263,290,156,213,15,70,249],
+t6:[5,25,34,38,68,69,102,157,164],
+t2:[7,8,9,173,189,196,203,207,210,214,223]
+},{//Nincada
+l:[[10,1],[106,1],[141,5],[28,9],[154,14],[170,19],[206,25],[189,31],[232,38],[91,45]],
+m:[92,237,241,182,202,218,76,216,91,247,104,201,332,263,290,156,15,148],
+e:[16,185,203,318],
+t6:[38,102,164],
+t2:[173,189,203,207,210,214]
+},{//Ninjask
+l:[[10,1],[28,1],[106,1],[141,1],[141,5],[28,9],[154,14],[170,19],[103,20],[104,20],[210,20],[14,25],[163,31],[97,38],[226,45]],
+m:[92,237,241,63,182,202,218,76,216,91,247,104,201,332,263,290,156,213,168,15,148],
+t6:[14,38,102,164],
+t2:[129,173,189,203,207,210,214]
+},{//Shedinja
+l:[[10,1],[106,1],[141,5],[28,9],[154,14],[170,19],[180,25],[109,31],[247,38],[288,45]],
+m:[92,237,241,63,182,202,218,76,216,91,247,104,201,332,263,290,156,168,15,148],
+t6:[38,102,138,164],
+t2:[173,189,203,207,210,214]
+},{//Whismur
+l:[[1,1],[253,5],[310,11],[336,15],[48,21],[23,25],[103,31],[46,35],[156,41],[214,41],[304,45]],
+m:[352,46,92,237,241,58,59,182,240,218,76,216,247,104,351,53,126,263,290,156,213],
+e:[36,173,207,265,326],
+t6:[5,25,34,38,68,69,102,164],
+t2:[7,8,9,111,173,189,196,203,205,207,214,223,244]
+},{//Loudred
+l:[[1,1],[253,1],[310,1],[336,1],[253,5],[310,11],[336,15],[48,23],[23,29],[103,37],[46,43],[156,51],[214,51],[304,57]],
+m:[352,46,92,237,241,269,58,59,182,240,218,76,89,216,247,280,104,351,53,126,259,263,290,156,213,315,70,249],
+t6:[5,25,34,38,68,69,102,157,164],
+t2:[7,8,9,111,173,189,196,203,205,207,214,223,244]
+},{//Exploud
+l:[[1,1],[253,1],[310,1],[336,1],[253,5],[310,11],[336,15],[48,23],[23,29],[103,37],[63,40],[46,45],[156,55],[214,55],[304,63]],
+m:[352,46,92,237,241,269,58,59,63,182,240,218,76,89,216,247,280,104,351,53,126,259,263,290,156,213,315,70,249],
+t6:[5,25,34,38,68,69,102,157,164],
+t2:[7,8,9,111,173,189,196,203,205,207,214,223,244]
+},{//Makuhita
+l:[[33,1],[116,1],[28,4],[292,10],[233,13],[252,19],[18,22],[282,28],[265,31],[187,37],[203,40],[69,46],[179,49]],
+m:[264,92,339,237,241,182,240,218,89,216,91,280,104,317,263,290,156,213,57,70,249],
+e:[68,185,193,197,223,238,270,279],
+t6:[5,25,34,38,68,69,102,118,157,164],
+t2:[7,8,9,173,189,203,207,214,223]
+},{//Hariyama
+l:[[28,1],[33,1],[116,1],[292,1],[28,4],[292,10],[233,13],[252,19],[18,22],[282,29],[265,33],[187,40],[203,44],[69,51],[179,55]],
+m:[264,92,339,237,241,63,182,240,218,89,216,91,280,104,317,263,290,156,213,57,70,249],
+t6:[5,25,34,38,68,69,102,118,157,164],
+t2:[7,8,9,173,189,203,207,214,223]
+},{//Azurill
+l:[[150,1],[204,3],[39,6],[145,10],[21,15],[55,21]],
+m:[352,92,258,237,58,59,182,240,218,231,216,104,263,290,156,213,57,127],
+e:[21,47,227,287,321],
+t6:[34,38,102,164],
+t2:[111,129,173,189,196,203,205,207,214]
+},{//Nosepass
+l:[[33,1],[106,7],[88,13],[335,16],[86,22],[157,28],[201,31],[156,37],[192,43],[199,46]],
+m:[92,237,241,269,182,218,85,87,89,216,104,351,201,317,259,263,290,156,213,70,249],
+e:[153,205,222],
+t6:[34,38,86,102,153,157,164],
+t2:[7,8,9,111,173,189,203,205,207,214,223]
+},{//Skitty
+l:[[33,1],[45,1],[39,3],[213,7],[47,13],[3,15],[274,19],[204,25],[185,27],[343,31],[215,37],[38,39]],
+m:[352,347,92,237,241,58,59,182,240,219,218,76,231,85,87,216,91,247,104,351,263,290,156,213,148],
+e:[164,226,244,253,270,273,313,321],
+t6:[34,38,86,102,138,164],
+t2:[111,129,173,189,196,203,205,207,214,244],
+s:[6]
+},{//Delcatty
+l:[[3,1],[45,1],[47,1],[213,1]],
+m:[352,347,92,237,241,58,59,63,182,240,219,218,76,231,85,87,216,91,247,104,351,263,290,156,213,70,148,249],
+t6:[34,38,86,102,138,164],
+t2:[111,129,173,189,196,203,205,207,214,244]
+},{//Sableye
+l:[[10,1],[43,1],[193,5],[101,9],[310,13],[154,17],[252,21],[197,25],[185,29],[282,33],[109,37],[247,41],[212,45]],
+m:[264,352,347,92,237,241,269,182,240,218,216,91,94,247,280,104,351,317,332,259,263,290,156,213,168,289,15,148,249],
+e:[105,236,244],
+t6:[5,25,34,38,68,69,102,118,138,164],
+t2:[7,8,9,173,189,203,207,210,214,223,244]
+},{//Mawile
+l:[[310,1],[313,6],[44,11],[230,16],[11,21],[185,26],[226,31],[242,36],[334,41],[254,46],[255,46],[256,46]],
+m:[264,92,237,241,269,58,63,182,240,218,76,216,280,104,53,188,201,126,317,259,263,290,156,213,70,249],
+e:[14,206,244,246,305,321],
+t6:[5,14,25,34,38,68,69,102,157,164],
+t2:[8,9,173,189,196,203,207,214,223,244]
+},{//Aron
+l:[[33,1],[106,4],[189,7],[29,10],[232,13],[334,17],[46,21],[36,25],[231,29],[182,34],[319,39],[38,44]],
+m:[352,46,92,237,241,182,240,218,231,89,216,91,104,351,201,317,332,263,290,156,213,15,70,249],
+e:[23,34,265,283],
+t6:[34,38,102,157,164],
+t2:[111,173,189,203,205,207,210,214]
+},{//Lairon
+l:[[29,1],[33,1],[106,1],[189,1],[106,4],[189,7],[29,10],[232,13],[334,17],[46,21],[36,25],[231,29],[182,37],[319,45],[38,53]],
+m:[352,46,92,237,241,182,240,218,231,89,216,91,104,351,201,317,332,263,290,156,213,15,70,249],
+t6:[34,38,102,157,164],
+t2:[111,173,189,203,205,207,210,214]
+},{//Aggron
+l:[[29,1],[33,1],[106,1],[189,1],[106,4],[189,7],[29,10],[232,13],[334,17],[46,21],[36,25],[231,29],[182,37],[319,50],[38,63]],
+m:[264,337,352,46,92,237,241,269,58,59,63,182,240,218,76,231,85,87,89,216,91,280,104,351,53,201,126,317,332,263,290,156,213,15,57,70,249],
+t6:[5,25,34,38,68,69,86,102,157,164],
+t2:[7,8,9,111,173,189,196,203,205,207,210,214,223]
+},{//Meditite
+l:[[117,1],[96,4],[93,9],[197,12],[237,17,4],[237,18,3],[207,20,4],[170,22,3],[170,25,4],[347,28],[136,32,3],[136,33,4],[244,36,4],[244,38,3],[179,41,4],[179,42,3],[105,44,4],[105,48,3]],
+m:[264,347,92,339,237,241,113,182,240,218,216,94,247,280,104,115,317,263,290,156,213,70,148,249],
+e:[7,8,9,193,223,226,252],
+t6:[5,25,34,38,68,69,102,118,138,164],
+t2:[7,8,9,129,173,189,203,207,214,223,244]
+},{//Medicham
+l:[[7,1],[8,1],[9,1],[93,1,3],[96,1,3],[117,1],[197,1,3],[96,4,4],[96,4],[93,9,4],[93,9],[197,12,4],[197,12],[237,17,4],[237,18,3],[207,20,4],[170,22,3],[170,25,4],[347,28],[136,32,3],[136,33,4],[244,36,4],[244,40,3],[179,46,3],[179,47,4],[105,54,3],[105,56,4]],
+m:[264,347,92,339,237,241,63,113,182,240,218,216,94,247,280,104,115,317,263,290,156,213,70,148,249],
+t6:[5,25,34,38,68,69,102,118,138,157,164],
+t2:[7,8,9,129,173,189,203,207,214,223,244]
+},{//Electrike
+l:[[33,1],[86,4],[43,9],[336,12],[98,17],[209,20],[316,25],[46,28],[44,33],[87,36],[268,41]],
+m:[46,92,237,182,240,218,231,85,87,216,104,351,263,290,156,213,168,70,148],
+e:[29,129,174,242,253],
+t6:[34,38,86,102,164],
+t2:[129,173,189,203,207,214]
+},{//Manectric
+l:[[33,1],[43,1],[86,1],[336,1],[86,4],[43,9],[336,12],[98,17],[209,20],[316,25],[46,31],[44,39],[87,45],[268,53]],
+m:[46,92,237,63,182,240,218,231,85,87,216,104,351,263,290,156,213,168,70,148],
+t6:[34,38,86,102,164],
+t2:[129,173,189,203,207,214]
+},{//Plusle
+l:[[45,1],[86,4],[98,10],[270,13],[209,19],[227,22],[313,28],[268,31],[87,37],[226,40],[97,47]],
+m:[92,237,113,182,240,218,231,85,87,216,104,351,263,290,156,213,148],
+e:[164,273],
+t6:[5,25,34,38,68,69,86,102,118,164],
+t2:[9,111,129,173,189,203,205,207,214,223]
+},{//Minun
+l:[[45,1],[86,4],[98,10],[270,13],[209,19],[227,22],[204,28],[268,31],[87,37],[226,40],[97,47]],
+m:[92,237,113,182,240,218,231,85,87,216,104,351,263,290,156,213,148],
+e:[164,273],
+t6:[5,25,34,38,68,69,86,102,118,164],
+t2:[9,111,129,173,189,203,205,207,214,223]
+},{//Volbeat
+l:[[33,1],[109,5],[104,9],[236,13],[98,17],[294,21],[324,25],[182,29],[270,33],[38,37]],
+m:[264,352,92,237,241,113,182,240,202,218,76,85,87,216,247,280,104,351,332,263,290,156,213,168,148],
+e:[226,271,318],
+t6:[5,25,34,38,68,69,86,102,118,164],
+t2:[8,9,129,173,189,203,207,214,223,244]
+},{//Illumise
+l:[[33,1],[230,5],[204,9],[236,13],[98,17],[273,21],[227,25],[260,29],[270,33],[343,37]],
+m:[264,352,92,237,241,113,182,240,202,218,76,85,87,216,247,280,104,351,332,263,290,156,213,168,148],
+e:[74,226,318],
+t6:[5,25,34,38,68,69,86,102,118,164],
+t2:[8,9,129,173,189,203,207,214,223,244]
+},{//Roselia
+l:[[71,1],[74,5],[40,9],[78,13],[72,17],[73,21],[345,25],[320,29],[202,33],[230,37],[275,41],[92,45],[80,49],[312,53],[235,57]],
+m:[92,331,237,241,182,202,218,76,216,247,104,188,263,290,156,213,15,148],
+e:[42,178,191,235],
+t6:[14,34,38,102,164],
+t2:[129,173,189,203,207,210,214,244]
+},{//Gulpin
+l:[[1,1],[281,6],[139,9],[124,14],[133,17],[227,23],[92,28],[254,34],[255,34],[256,34],[188,39]],
+m:[352,92,331,237,241,58,182,240,202,218,76,216,247,104,351,188,263,290,156,213,289,70,249],
+e:[123,138,151,220],
+t6:[34,38,68,102,138,153,164],
+t2:[7,8,9,111,173,189,203,205,207,214,223]
+},{//Swalot
+l:[[1,1],[124,1],[139,1],[281,1],[281,6],[139,9],[124,14],[133,17],[227,23],[34,26],[92,31],[254,40],[255,40],[256,40],[188,48]],
+m:[352,92,331,237,241,58,63,182,240,202,218,76,216,247,104,351,188,263,290,156,213,289,70,249],
+t6:[34,38,68,102,138,153,164],
+t2:[7,8,9,111,173,189,203,205,207,214,223]
+},{//Carvanha
+l:[[43,1],[44,1],[99,7],[116,13],[184,16],[242,22],[103,28],[36,31],[207,37],[97,43]],
+m:[352,92,258,237,269,58,59,182,240,218,216,104,259,263,290,156,213,168,57,127,291],
+e:[37,38,56],
+t6:[38,102,164],
+t2:[129,173,189,196,203,207,210,214]
+},{//Sharpedo
+l:[[43,1],[44,1],[99,1],[116,1],[99,7],[116,13],[184,16],[242,22],[103,28],[163,33],[269,38],[207,43],[130,48],[97,53]],
+m:[352,46,92,258,237,269,58,59,63,182,240,218,89,216,104,317,259,263,290,156,213,168,57,70,249,127,291],
+t6:[38,102,164],
+t2:[129,173,189,196,203,207,210,214]
+},{//Wailmer
+l:[[150,1],[45,5],[55,10],[205,14],[250,19],[310,23],[352,28],[54,32],[156,37],[323,41],[133,46],[56,50]],
+m:[352,46,92,258,237,58,59,182,240,218,89,216,104,317,263,290,156,213,57,70,249,127,291],
+e:[37,38,90,173,174,207,214,321],
+t6:[34,38,102,164],
+t2:[111,173,196,203,205,207,214]
+},{//Wailord
+l:[[45,1],[55,1],[150,1],[205,1],[45,5],[55,10],[205,14],[250,19],[310,23],[352,28],[54,32],[156,37],[323,44],[133,52],[56,59]],
+m:[352,46,92,258,237,58,59,63,182,240,218,89,216,104,317,263,290,156,213,57,70,249,127,291],
+t6:[34,38,102,164],
+t2:[111,173,196,203,205,207,214]
+},{//Numel
+l:[[33,1],[45,1],[52,11],[222,19],[116,25],[36,29],[133,31],[89,35],[53,41],[38,49]],
+m:[92,237,241,182,218,89,216,91,104,53,201,126,317,263,290,156,213,315,70,249],
+e:[23,34,111,184,205,336],
+t6:[34,38,102,157,164],
+t2:[111,173,189,203,205,207,214]
+},{//Camerupt
+l:[[33,1],[45,1],[52,1],[222,1],[52,11],[222,19],[116,25],[36,29],[133,31],[157,33],[89,37],[284,45],[90,55]],
+m:[46,92,237,241,63,182,218,89,216,91,104,53,201,126,317,263,290,156,213,315,70,249],
+t6:[34,38,102,153,157,164],
+t2:[111,173,189,203,205,207,214]
+},{//Torkoal
+l:[[52,1],[123,4],[174,7],[108,14],[83,17],[34,20],[182,27],[53,30],[334,33],[133,40],[175,43],[257,46]],
+m:[92,237,241,182,218,231,216,104,53,188,126,263,290,156,213,315,70,249],
+e:[203,214,281,284],
+t6:[34,38,102,153,157,164],
+t2:[173,189,203,207,214]
+},{//Spoink
+l:[[150,1],[149,7],[316,10],[60,16],[244,19],[109,25],[277,28],[94,34],[156,37],[173,37],[340,43]],
+m:[347,92,237,241,269,113,182,240,218,231,216,94,247,104,115,351,259,263,290,156,213,168,285,289,148],
+e:[164,248,271,326],
+t6:[34,38,102,138,164],
+t2:[129,173,196,203,207,214,244]
+},{//Grumpig
+l:[[60,1],[149,1],[150,1],[316,1],[149,7],[316,10],[60,16],[244,19],[109,25],[277,28],[94,37],[156,43],[173,43],[340,55]],
+m:[264,347,92,237,241,269,63,113,182,240,218,231,216,94,247,104,115,351,259,263,290,156,213,168,285,289,148],
+t6:[5,25,34,38,68,69,102,138,164],
+t2:[7,8,9,129,173,189,196,203,207,214,223,244]
+},{//Spinda
+l:[[33,1],[253,5],[185,12],[60,16],[95,23],[146,27],[298,34],[244,38],[38,45],[175,49],[37,56]],
+m:[264,352,347,92,237,241,182,240,219,218,216,91,94,247,280,104,351,317,263,290,156,213,168,285,289,70,148,249],
+e:[50,157,226,227,265,271,273,274],
+t6:[5,25,34,38,68,69,102,118,138,157,164],
+t2:[7,8,9,111,129,173,189,196,203,205,207,214,223,244]
+},{//Trapinch
+l:[[44,1],[28,9],[185,17],[328,25],[242,33],[91,41],[201,49],[63,57]],
+m:[92,237,241,63,182,202,218,76,89,216,91,104,201,317,263,290,156,213,70,249],
+e:[16,98,116],
+t6:[34,38,102,157,164],
+t2:[173,189,203,207,214]
+},{//Vibrava
+l:[[28,1],[44,1],[185,1],[328,1],[28,9],[185,17],[328,25],[242,33],[225,35],[103,41],[201,49],[63,57]],
+m:[92,237,241,63,182,202,218,76,89,216,91,104,201,317,263,290,156,213,211,19,70,249],
+t6:[34,38,102,157,164],
+t2:[129,173,189,203,207,214]
+},{//Flygon
+l:[[28,1],[44,1],[185,1],[328,1],[28,9],[185,17],[328,25],[242,33],[225,35],[103,41],[201,53],[63,65]],
+m:[337,92,237,241,63,182,202,218,76,231,89,216,91,104,53,201,126,317,263,290,156,213,211,19,70,249],
+t6:[34,38,102,157,164],
+t2:[7,129,173,189,203,207,210,214]
+},{//Cacnea
+l:[[40,1],[43,1],[71,5],[74,9],[73,13],[28,17],[42,21],[275,25],[185,29],[191,33],[302,37],[178,41],[201,45],[194,49,4]],
+m:[264,92,331,237,241,182,202,218,76,216,104,201,263,290,156,213,15,148],
+e:[51,68,223,298,320],
+t6:[5,14,34,38,68,69,102,164],
+t2:[9,173,189,203,207,210,214,223]
+},{//Cacturne
+l:[[40,1],[43,1],[71,1,3],[74,1,3],[279,1,4],[71,5,4],[71,5],[74,9,4],[74,9],[73,13],[28,17],[42,21],[275,25],[185,29],[191,35],[302,41],[178,47],[201,53],[194,59,4]],
+m:[264,92,331,237,241,63,182,202,218,76,216,104,201,263,290,156,213,15,70,148],
+t6:[5,14,25,34,38,68,69,102,164],
+t2:[9,173,189,203,207,210,214,223]
+},{//Swablu
+l:[[45,1],[64,1],[310,8],[47,11],[31,18],[219,21],[54,28],[36,31],[119,38],[287,41],[195,48]],
+m:[92,237,241,58,182,240,219,218,76,216,104,332,263,290,156,213,168,211,19],
+e:[97,99,114,228],
+t6:[34,38,102,138,164],
+t2:[129,173,189,203,207,214,244]
+},{//Altaria
+l:[[45,1],[47,1],[64,1],[310,1],[310,8],[47,11],[31,18],[219,21],[54,28],[36,31],[225,35],[349,40],[287,45],[195,54],[143,59]],
+m:[337,46,92,237,241,58,63,182,240,219,218,76,231,89,216,104,53,126,332,263,290,156,213,168,211,19,249],
+t6:[34,38,102,138,164],
+t2:[129,173,189,203,207,214,244]
+},{//Zangoose
+l:[[10,1],[43,4],[98,7],[14,10],[210,13],[163,19],[228,25],[306,31],[269,37],[197,46],[206,55]],
+m:[264,352,46,92,237,241,269,58,59,182,240,202,218,76,231,85,87,216,91,247,280,104,351,53,126,332,263,290,156,213,168,70,249],
+e:[13,24,46,68,174,175],
+t6:[5,14,25,34,38,68,69,86,102,157,164],
+t2:[7,8,9,111,129,173,189,196,203,205,207,210,214,223]
+},{//Seviper
+l:[[35,1],[122,7],[44,10],[342,16],[103,19],[137,25],[242,28],[305,34],[207,37],[114,43]],
+m:[92,237,241,269,182,240,202,218,231,89,216,91,104,53,188,263,290,156,213,168,289,70,249],
+e:[34,254,255,256],
+t6:[34,38,102,164],
+t2:[129,173,189,203,207,210,214]
+},{//Lunatone
+l:[[33,1],[106,1],[93,7],[88,13],[95,19],[149,25],[322,31],[94,37],[248,43],[153,49]],
+m:[347,92,237,58,63,113,182,240,219,218,89,216,94,247,104,115,201,317,263,290,156,285,148],
+t6:[34,38,102,138,153,157,164],
+t2:[111,129,173,203,205,207,214,244]
+},{//Solrock
+l:[[33,1],[106,1],[93,7],[88,13],[83,19],[149,25],[322,31],[157,37],[76,43],[153,49]],
+m:[347,92,237,241,63,113,182,219,218,76,89,216,94,247,104,115,53,201,126,317,263,290,156,285,315,148],
+t6:[34,38,102,138,153,157,164],
+t2:[111,129,173,203,205,207,214,244]
+},{//Barboach
+l:[[189,1],[300,6],[346,6],[55,11],[222,16],[133,21],[156,26],[173,26],[89,31],[248,36],[90,41]],
+m:[352,92,258,237,58,59,182,240,218,89,216,104,201,317,263,290,156,213,57,127,291],
+e:[37,209,250],
+t6:[38,102,164],
+t2:[173,189,196,203,207,214]
+},{//Whiscash
+l:[[189,1],[300,1],[321,1],[346,1],[300,6],[346,6],[55,11],[222,16],[133,21],[156,26],[173,26],[89,36],[248,46],[90,56]],
+m:[352,92,258,237,58,59,63,182,240,218,89,216,104,201,317,263,290,156,213,57,70,249,127,291],
+t6:[38,102,157,164],
+t2:[173,189,196,203,207,214]
+},{//Corphish
+l:[[145,1],[106,7],[11,10],[43,13],[61,19,4],[61,20,3],[182,22,4],[182,23,3],[282,25,4],[282,26,3],[269,31,4],[269,32,3],[152,34,4],[152,35,3],[14,37,4],[14,38,3],[242,43,4],[12,44,3],[12,46,4]],
+m:[352,92,258,237,269,58,59,182,240,218,216,91,280,104,188,317,332,263,290,156,213,15,57,70,249,127],
+e:[34,246,283,300],
+t6:[14,34,38,68,102,164],
+t2:[173,189,196,203,207,210,214]
+},{//Crawdaunt
+l:[[11,1,3],[43,1,3],[106,1,3],[145,1],[106,7,4],[106,7],[11,10,4],[11,10],[43,13,4],[43,13],[61,19,4],[61,20,3],[182,22,4],[182,23,3],[282,25,4],[282,26,3],[269,33,4],[269,34,3],[152,38,4],[152,39,3],[14,43,4],[14,44,3],[242,51,4],[12,52,3],[12,56,4]],
+m:[352,92,258,237,269,58,59,63,182,240,218,216,91,280,104,188,317,332,263,290,156,213,15,57,70,249,127,291],
+t6:[14,34,38,68,102,164],
+t2:[129,173,189,196,203,207,210,214]
+},{//Baltoy
+l:[[93,1],[106,3],[229,5],[189,7],[60,11],[317,15],[120,19],[246,25],[201,31],[322,37],[153,45]],
+m:[92,237,241,58,113,182,240,218,76,89,216,91,94,247,104,115,201,317,263,290,156,285,148],
+t6:[38,102,138,153,157,164],
+t2:[173,189,203,207,214,244]
+},{//Claydol
+l:[[93,1],[100,1],[106,1],[229,1],[106,3],[229,5],[189,7],[60,11],[317,15],[120,19],[246,25],[201,31],[63,36],[322,42],[153,55]],
+m:[92,237,241,58,63,113,182,240,218,76,89,216,91,94,247,104,115,201,317,263,290,156,285,70,148,249],
+t6:[38,102,138,153,157,164],
+t2:[173,189,203,207,214,244]
+},{//Lileep
+l:[[310,1],[132,8],[51,15],[275,22],[109,29],[133,36],[246,43],[254,50],[255,50],[256,50]],
+m:[92,331,237,241,182,202,218,76,216,104,188,201,263,290,156,213],
+e:[105,112,157,243],
+t6:[34,38,102,157,164],
+t2:[173,189,203,207,214,244]
+},{//Cradily
+l:[[51,1],[132,1],[275,1],[310,1],[132,8],[51,15],[275,22],[109,29],[133,36],[246,48],[254,60],[255,60],[256,60]],
+m:[92,331,237,241,63,182,202,218,76,89,216,104,188,201,317,263,290,156,213,70,249],
+t6:[34,38,102,157,164],
+t2:[173,189,203,207,214,244]
+},{//Anorith
+l:[[10,1],[106,7],[300,13],[55,19],[232,25],[182,31],[246,37],[210,43],[163,49],[350,55]],
+m:[352,92,237,241,182,218,216,91,280,104,201,317,332,263,290,156,213,15,249],
+e:[14,157,229,282],
+t6:[14,34,38,102,157,164],
+t2:[173,189,203,207,210,214]
+},{//Armaldo
+l:[[10,1],[55,1],[106,1],[300,1],[106,7],[300,13],[55,19],[232,25],[182,31],[246,37],[210,46],[163,55],[350,64]],
+m:[352,92,237,241,63,182,218,231,89,216,91,280,104,201,317,332,263,290,156,213,15,70,249],
+t6:[14,34,38,69,102,157,164],
+t2:[173,189,203,207,210,214]
+},{//Feebas
+l:[[150,1],[33,15],[175,30]],
+m:[352,92,258,237,58,59,182,240,218,216,104,263,290,156,213,57,127,291],
+e:[95,109,113,225,243,300],
+t6:[38,102,164],
+t2:[129,173,196,203,207,214]
+},{//Milotic
+l:[[55,1],[35,5],[346,10],[287,15],[352,20],[239,25],[105,30],[240,35],[56,40],[213,45],[219,50]],
+m:[352,92,258,237,58,59,63,182,240,219,218,231,216,104,263,290,156,213,57,127,291],
+t6:[34,38,102,164],
+t2:[129,173,189,196,203,207,214,244]
+},{//Castform
+l:[[33,1],[52,10],[55,10],[181,10],[240,20],[241,20],[258,20],[311,30]],
+m:[352,92,258,237,241,58,59,182,240,218,76,85,87,216,247,104,351,53,201,126,263,290,156,213,168,148],
+e:[244,248],
+t6:[34,38,86,102,164],
+t2:[111,129,173,196,203,207,214,244]
+},{//Kecleon
+l:[[10,1],[39,1],[122,1],[168,1],[310,1],[20,4],[185,7],[154,12],[60,17],[103,24],[163,31],[164,40],[246,49]],
+m:[264,352,92,237,241,58,59,182,240,218,76,231,85,87,216,91,247,280,104,351,53,126,317,332,263,290,156,213,168,285,289,15,70,148,249],
+e:[50,271,277],
+t6:[5,25,34,38,68,69,86,102,118,157,164],
+t2:[7,8,9,111,129,173,189,196,203,205,207,210,214,223,244]
+},{//Shuppet
+l:[[282,1],[103,8],[101,13],[174,20],[180,25],[261,32],[185,37],[247,44],[289,49],[288,56]],
+m:[347,92,237,241,269,182,240,218,85,87,216,94,247,104,351,259,263,290,156,213,168,285,289,148],
+e:[50,193,194,286,310],
+t6:[34,38,86,102,138,164],
+t2:[173,196,203,207,214,244]
+},{//Banette
+l:[[101,1],[103,1],[174,1],[282,1],[103,8],[101,13],[174,20],[180,25],[261,32],[185,39],[247,48],[289,55],[288,64]],
+m:[347,92,237,241,269,63,182,240,218,85,87,216,94,247,104,351,259,263,290,156,213,168,285,289,148],
+t6:[34,38,86,102,118,138,164],
+t2:[173,189,196,203,207,214,244]
+},{//Duskull
+l:[[43,1],[101,1],[50,5],[193,12],[310,16],[109,23],[228,27],[174,34],[261,38],[212,45],[248,49]],
+m:[347,92,237,241,269,58,59,182,240,218,216,94,247,104,259,263,290,156,213,168,285,289,148],
+e:[185,194,220,262,286,288],
+t6:[34,38,102,138,164],
+t2:[173,196,203,207,214,244]
+},{//Dusclops
+l:[[20,1],[43,1],[50,1],[101,1],[50,5],[193,12],[310,16],[109,23],[228,27],[174,34],[325,37],[261,41],[212,51],[248,58]],
+m:[264,347,92,237,241,269,58,59,63,182,240,218,89,216,94,247,104,317,259,263,290,156,213,168,285,289,70,148,249],
+t6:[5,25,34,38,68,69,102,118,138,157,164],
+t2:[7,8,9,173,189,196,203,207,214,223,244]
+},{//Tropius
+l:[[16,1],[43,1],[74,7],[75,11],[23,17],[230,21],[18,27],[345,31],[34,37],[76,41],[235,47]],
+m:[46,92,331,237,241,63,182,202,219,218,76,89,216,104,332,263,290,156,213,211,15,19,70,148,249],
+e:[13,21,29,73,267],
+t6:[14,34,38,102,164],
+t2:[173,189,203,207,210,214]
+},{//Chimecho
+l:[[35,1],[45,6],[310,9],[93,14],[36,17],[253,22],[281,25],[149,30],[38,33],[215,38],[219,41],[94,46]],
+m:[347,92,237,241,269,113,182,240,219,218,216,94,247,104,115,351,259,263,290,156,213,285,289,148],
+e:[50,95,138,174],
+t6:[38,102,138,164],
+t2:[111,173,196,203,205,207,214,244]
+},{//Absol
+l:[[10,1],[43,5],[269,9],[98,13],[13,17],[44,21],[14,26],[104,31],[163,36],[248,41],[195,46]],
+m:[352,347,92,258,237,241,269,58,59,63,182,240,218,231,85,87,216,247,104,351,53,201,126,332,259,263,290,156,213,168,289,15,70,148,249],
+e:[38,164,174,185,226,277],
+t6:[14,34,38,68,86,102,138,157,164],
+t2:[129,173,189,196,203,207,210,214,244]
+},{//Wynaut
+l:[[150,1],[204,1],[227,1],[68,15],[194,15],[219,15],[243,15]]
+},{//Snorunt
+l:[[43,1],[181,1],[104,7],[44,10],[196,16],[29,19],[182,25],[242,28],[58,34],[258,37],[59,43]],
+m:[352,92,258,237,58,59,113,182,240,219,218,216,247,104,263,290,156,213,148],
+e:[191,335],
+t6:[34,38,102,164],
+t2:[173,196,203,207,214]
+},{//Glalie
+l:[[43,1],[44,1],[104,1],[181,1],[104,7],[44,10],[196,16],[29,19],[182,25],[242,28],[58,34],[258,42],[59,53],[329,61]],
+m:[352,92,258,237,269,58,59,63,113,182,240,219,218,89,216,247,104,259,263,290,156,213,148],
+t6:[34,38,102,153,164],
+t2:[111,173,196,203,205,207,214]
+},{//Spheal
+l:[[45,1],[55,1],[181,1],[111,1,4],[227,7],[301,13],[34,19],[62,25],[258,31],[156,37],[173,37],[59,43],[329,49]],
+m:[352,92,258,237,58,59,182,240,218,231,89,216,104,317,263,290,156,213,57,70,249,127,291],
+e:[90,157,174,254,255,256,281,346],
+t6:[34,38,102,157,164],
+t2:[111,173,189,196,203,205,207,214]
+},{//Sealeo
+l:[[45,1],[55,1],[181,1],[227,1,3],[111,1,4],[227,7,4],[227,7],[301,13],[34,19],[62,25],[258,31],[156,39],[173,39],[59,47],[329,55]],
+m:[352,46,92,258,237,58,59,182,240,218,231,89,216,104,317,263,290,156,213,57,70,249,127,291],
+t6:[34,38,102,157,164],
+t2:[111,173,189,196,203,205,207,214]
+},{//Walrein
+l:[[45,1],[55,1],[181,1],[227,1,3],[111,1,4],[227,7,4],[227,7],[301,13],[34,19],[62,25],[258,31],[156,39],[173,39],[59,50],[329,61]],
+m:[352,46,92,258,237,58,59,63,182,240,218,231,89,216,104,317,263,290,156,213,57,70,249,127,291],
+t6:[34,38,102,157,164],
+t2:[111,173,189,196,203,205,207,214]
+},{//Clamperl
+l:[[55,1],[128,1],[250,1],[334,1]],
+m:[352,92,258,237,58,59,182,240,218,216,104,263,290,156,213,57,127,291],
+e:[34,48,109,112,287,300],
+t6:[34,38,102,164],
+t2:[173,196,203,207,214]
+},{//Huntail
+l:[[250,1],[44,8],[103,15],[352,22],[184,29],[242,36],[226,43],[56,50]],
+m:[352,92,258,237,58,59,63,182,240,218,216,104,317,263,290,156,213,289,57,127,291],
+t6:[34,38,102,164],
+t2:[129,173,189,196,203,207,214]
+},{//Gorebyss
+l:[[250,1],[93,8],[97,15],[352,22],[133,29],[94,36],[226,43],[56,50]],
+m:[352,92,258,237,58,59,63,182,240,219,218,216,94,247,104,263,290,156,213,57,127,291],
+t6:[34,38,102,164],
+t2:[129,173,189,196,203,207,214]
+},{//Relicanth
+l:[[33,1],[106,1],[55,8],[317,15],[281,22],[36,29],[300,36],[246,43],[156,50],[38,57],[56,64]],
+m:[352,347,92,258,237,58,59,63,182,240,219,218,89,216,104,201,317,263,290,156,213,57,249,127,291],
+e:[130,133,157,214,222,346],
+t6:[34,38,102,157,164],
+t2:[173,189,196,203,207,214,244]
+},{//Luvdisc
+l:[[33,1],[204,4],[55,12],[97,16],[36,24],[213,28],[186,36],[175,40],[219,48]],
+m:[352,92,258,237,58,59,182,240,219,218,216,104,263,290,156,213,57,127,291],
+e:[48,150,300,346],
+t6:[38,102,164],
+t2:[129,173,196,203,207,214,244]
+},{//Bagon
+l:[[99,1],[44,5],[43,9],[29,17],[116,21],[52,25],[225,33],[184,37],[242,41],[337,49],[38,53]],
+m:[337,46,92,237,241,182,240,218,216,280,104,53,126,317,332,263,290,156,213,15,70,249],
+e:[37,56,82,239,349],
+t6:[34,38,102,157,164],
+t2:[173,189,203,207,210,214]
+},{//Shelgon
+l:[[29,1],[43,1],[44,1],[99,1],[44,5],[43,9],[29,17],[116,21],[52,25],[182,30],[225,38],[184,47],[242,56],[337,69],[38,78]],
+m:[337,46,92,237,241,182,240,218,216,280,104,53,126,317,332,263,290,156,213,15,70,249],
+t6:[34,38,102,157,164],
+t2:[111,173,189,203,205,207,210,214]
+},{//Salamence
+l:[[29,1],[43,1],[44,1],[99,1],[44,5],[43,9],[29,17],[116,21],[52,25],[182,30],[225,38],[184,47],[19,50],[242,61],[337,79],[38,93]],
+m:[337,46,92,237,241,63,182,240,218,231,89,216,280,104,53,126,317,332,263,290,156,213,211,15,19,70,249],
+t6:[34,38,102,157,164],
+t2:[111,129,173,189,203,205,207,210,214]
+},{//Beldum
+l:[[36,1]]
+},{//Metang
+l:[[36,1],[93,20],[232,20],[184,26],[228,32],[94,38],[334,44],[309,50],[97,56],[63,62]],
+m:[92,237,241,63,113,182,240,218,89,216,94,247,280,104,115,188,201,317,332,263,290,156,15,70,148,249],
+t6:[34,38,102,153,157,164],
+t2:[8,9,111,129,173,189,196,203,205,207,210,214,223,244]
+},{//Metagross
+l:[[36,1],[93,1],[184,1],[232,1],[93,20],[232,20],[184,26],[228,32],[94,38],[334,44],[309,55],[97,66],[63,77]],
+m:[92,237,241,63,113,182,240,218,89,216,94,247,280,104,115,188,201,317,332,263,290,156,15,70,148,249],
+t6:[34,38,102,153,157,164],
+t2:[8,9,111,129,173,189,196,203,205,207,210,214,223,244]
+},{//Regirock
+l:[[153,1],[88,9],[174,17],[276,25],[246,33],[334,41],[192,49],[199,57],[63,65]],
+m:[264,92,237,241,63,182,219,218,85,87,89,216,91,280,104,351,201,317,263,290,156,70,249],
+t6:[5,25,34,38,68,69,86,102,153,157,164],
+t2:[7,8,9,111,173,189,203,205,207,214,223,244]
+},{//Regice
+l:[[153,1],[196,9],[174,17],[276,25],[246,33],[133,41],[192,49],[199,57],[63,65]],
+m:[264,92,258,237,58,59,63,182,240,219,218,85,87,89,216,280,104,351,263,290,156,70,249],
+t6:[5,25,34,38,68,69,86,102,153,157,164],
+t2:[8,9,111,173,189,196,203,205,207,214,223,244]
+},{//Registeel
+l:[[153,1],[232,9],[174,17],[276,25],[246,33],[133,41],[334,41],[192,49],[199,57],[63,65]],
+m:[264,92,237,241,63,182,240,219,218,85,87,89,216,280,104,351,201,317,332,263,290,156,70,249],
+t6:[5,25,34,38,68,69,86,102,153,157,164],
+t2:[8,9,111,173,189,203,205,207,214,223,244]
+},{//Latias
+l:[[149,1],[273,5],[270,10],[219,15],[225,20],[346,25],[287,30],[296,35],[94,40],[105,45],[204,50]],
+m:[337,352,347,46,92,237,241,58,63,113,182,240,219,218,76,85,87,89,216,94,247,104,115,351,201,332,263,290,156,213,211,15,19,57,148,127,291],
+t6:[34,38,86,102,138,164],
+t2:[129,173,189,196,203,207,210,214,244]
+},{//Latios
+l:[[149,1],[262,5],[270,10],[219,15],[225,20],[182,25],[287,30],[295,35],[94,40],[105,45],[349,50]],
+m:[337,352,347,46,92,237,241,58,63,113,182,240,219,218,76,85,87,89,216,94,247,104,115,351,201,332,263,290,156,213,211,15,19,57,148,127,291],
+t6:[34,38,86,102,138,164],
+t2:[129,173,189,196,203,207,210,214,244]
+},{//Kyogre
+l:[[352,1],[184,5],[246,15],[34,20],[347,30],[58,35],[56,45],[156,50],[329,60],[38,65],[323,75]],
+m:[352,347,46,92,258,237,58,59,63,182,240,219,218,85,87,89,216,280,104,351,317,263,290,156,57,70,249,127,291],
+t6:[34,38,86,102,157,164],
+t2:[111,129,173,189,196,203,207,214,244]
+},{//Groudon
+l:[[341,1],[184,5],[246,15],[163,20],[339,30],[89,35],[126,45],[156,50],[90,60],[76,65],[284,75]],
+m:[337,46,92,339,237,241,63,182,219,218,76,231,85,87,89,216,91,280,104,351,53,201,126,317,332,263,290,156,315,15,70,249],
+t6:[5,14,25,34,38,68,69,86,102,157,164],
+t2:[7,9,111,129,173,189,203,205,207,210,214,223,244]
+},{//Rayquaza
+l:[[239,1],[184,5],[246,15],[337,20],[349,30],[242,35],[19,45],[156,50],[245,60],[200,65],[63,75]],
+m:[337,352,46,92,339,237,241,58,59,63,182,240,218,76,231,85,87,89,216,280,104,351,53,201,126,332,263,290,156,315,19,57,70,249,127,291],
+t6:[34,38,86,102,157,164],
+t2:[129,173,189,196,203,207,210,214,244]
+},{//Jirachi
+l:[[93,1],[273,1],[156,5],[129,10],[270,15],[94,20],[287,25],[156,30],[38,35],[248,40],[322,45],[353,50]],
+m:[352,347,92,237,241,63,113,182,240,219,218,85,87,216,94,247,104,115,351,201,332,263,290,156,285,148],
+t6:[34,38,86,102,118,138,164],
+t2:[7,8,9,111,129,173,189,196,203,207,214,223,244]
+},{//Deoxys
+forms:[
+{
+	l:[[35,1,1],[43,1,1],[101,5,1],[100,10,1],[282,15,1],[228,20,1],[94,25,1],[289,30,1],[322,35,1],[105,40,1],[354,45,1],[63,50,1]]
+},{
+	l:[[35,1,4],[43,1,4],[101,5,4],[100,10,4],[269,15,4],[228,20,4],[94,25,4],[276,30,4],[322,35,4],[192,40,4],[354,45,4],[63,50,4]],
+	t4:[5,25,34,38,68,69,86,102,138,157,164]
+},{
+	l:[[35,1,4],[43,1,4],[101,5,4],[100,10,4],[282,15,4],[191,20,4],[94,25,4],[289,30,4],[133,35,4],[334,35,4],[105,40,4],[354,45,4],[68,50,4],[243,50,4]],
+	t4:[5,25,34,38,68,69,86,102,138,157,164]
+},{
+	l:[[35,1,2],[43,1,2],[101,5,2],[104,10,2],[282,15,2],[228,20,2],[94,25,2],[129,30,2],[97,35,2],[105,40,2],[354,45,2],[245,50,2]],
+	t2:[5,7,8,9,25,34,38,68,69,86,102,129,138,157,164,173,189,196,203,207,214,223,244]
+}
+],
+m:[264,352,347,92,237,241,269,58,63,113,182,240,219,218,76,85,87,216,94,247,280,104,115,351,317,332,259,263,290,156,285,289,15,70,148,249]
+}];

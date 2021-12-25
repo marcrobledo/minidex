@@ -14,38 +14,35 @@
 */
 
 var PRECACHE_ID='minidex-swsh';
-var PRECACHE_VERSION='v6';
+var PRECACHE_VERSION='v1';
 var PRECACHE_URLS=[
 '/minidex/swsh/index.html','/minidex/swsh/',
 '/minidex/swsh/manifest.json',
 
 /* core */
-'/minidex/core/minidex_v1b.css',
-'/minidex/core/minidex_v1b.js',
-'/minidex/core/locale.js',
+'/minidex/swsh/app/minidex.js',
+'/minidex/swsh/app/minidex_locale.js',
+'/minidex/swsh/app/minidex.css',
+'/minidex/swsh/app/assets/minidex_sprites.png',
+/* core assets */
+'/minidex/swsh/app/assets/minidex_dex_header1.png',
+'/minidex/swsh/app/assets/minidex_dex_header2.png',
+'/minidex/swsh/app/assets/minidex_home_header1.png',
+'/minidex/swsh/app/assets/minidex_home_header2.png',
 
 /* specific game data */
-'/minidex/core/data/game_gen8_swsh.js',
-'/minidex/core/data/pokemon_gen8.js',
-'/minidex/core/data/encounters_gen8_swsh.js',
-'/minidex/core/data/more_info_gen8.js',
-'/minidex/core/data/learnsets_gen8.js',
-
+'/minidex/swsh/app/data/swsh_game.js',
+'/minidex/swsh/app/data/swsh_pokemon.js',
+'/minidex/swsh/app/data/swsh_encounters.js',
+'/minidex/swsh/app/data/gen8_competitive.js',
 /* specific assets */
-'/minidex/swsh/resources/favicon16.png',
-'/minidex/swsh/resources/favicon192.png',
-'/minidex/core/icons_swsh.png',
-'/minidex/swsh/resources/swsh_wild_area_map.png',
-'/minidex/swsh/resources/swsh_wild_area_map_es.png',
-'/minidex/swsh/resources/swsh_dlc1_map.png',
-'/minidex/swsh/resources/swsh_dlc2_map.png',
-
-/* common assets */
-'/minidex/core/pokemon_top.png',
-'/minidex/core/pokemon_header.png',
-'/minidex/core/header_common.png',
-'/minidex/core/header_gen1.png',
-'/minidex/core/sprites_v1b.png'
+'/minidex/swsh/app/assets/favicon16.png',
+'/minidex/swsh/app/assets/favicon192.png',
+'/minidex/swsh/app/assets/swsh_icons.png',
+'/minidex/swsh/app/assets/swsh_map_wild_area.png',
+'/minidex/swsh/app/assets/swsh_map_wild_area_es.png',
+'/minidex/swsh/app/assets/swsh_map_dlc1.png',
+'/minidex/swsh/app/assets/swsh_map_dlc2.png'
 ];
 
 

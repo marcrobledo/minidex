@@ -3,16 +3,15 @@
 	"name":"Minidex FRLG",
 	"icons":[
 		{
-			"src": "/minidex/frlg/resources/favicon16.png",
+			"src": "/minidex/frlg/app/assets/favicon16.png",
 			"sizes": "16x16",
-			"type": "image/png",
-			"density": "1.0"
+			"type": "image/png"
 		},
 		{
-			"src": "/minidex/frlg/resources/favicon192.png",
+			"src": "/minidex/frlg/app/assets/favicon192.png",
 			"sizes": "192x192",
 			"type": "image/png",
-			"density": "1.0"
+			"purpose": "any maskable"
 		}
 	],
 	"start_url": "/minidex/frlg/index.html",

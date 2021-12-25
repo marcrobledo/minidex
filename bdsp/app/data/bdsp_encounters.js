@@ -278,17 +278,7 @@ const LOCATIONS=[
 			[130,,'fish_super',55],
 			[340,,'fish_super',45]
 		]},
-		{group:'2f',encounters:[
-			[35,,'cave',15],
-			[42,,'cave',10],
-			[67,,'cave',10],
-			[75,,'cave',20],
-			[308,,'cave',10],
-			[433,,'cave',10],
-			[436,,'cave',5],
-			[437,,'cave',20]
-		]},
-		{group:'3f',encounters:[
+		{group:['2F/3F',,,,'P2/P3'],encounters:[
 			[35,,'cave',15],
 			[42,,'cave',10],
 			[67,,'cave',10],
@@ -376,7 +366,9 @@ const LOCATIONS=[
 			[129,,'fish_good',55],
 			[339,,'fish_good',45],
 			[130,,'fish_super',55],
-			[340,,'fish_super',45],
+			[340,,'fish_super',45]
+		]},
+		{group:'b1f',encounters:[
 			[349,,['fish_old','feebas_tile'],50],
 			[349,,['fish_good','feebas_tile'],50],
 			[349,,['fish_super','feebas_tile'],50]

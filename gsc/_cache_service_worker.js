@@ -14,34 +14,31 @@
 */
 
 var PRECACHE_ID='minidex-gsc';
-var PRECACHE_VERSION='v6';
+var PRECACHE_VERSION='v1';
 var PRECACHE_URLS=[
 '/minidex/gsc/index.html','/minidex/gsc/',
 '/minidex/gsc/manifest.json',
 
 /* core */
-'/minidex/core/minidex_v1b.css',
-'/minidex/core/minidex_v1b.js',
-'/minidex/core/locale.js',
+'/minidex/gsc/app/minidex.js',
+'/minidex/gsc/app/minidex_locale.js',
+'/minidex/gsc/app/minidex.css',
+'/minidex/gsc/app/assets/minidex_sprites.png',
+/* core assets */
+'/minidex/gsc/app/assets/minidex_dex_header1.png',
+'/minidex/gsc/app/assets/minidex_dex_header2.png',
+'/minidex/gsc/app/assets/minidex_home_header1.png',
+'/minidex/gsc/app/assets/minidex_home_header2.png',
 
 /* specific game data */
-'/minidex/core/data/game_gen2_gsc.js',
-'/minidex/core/data/pokemon_gen2.js',
-'/minidex/core/data/encounters_gen2_gsc.js',
-'/minidex/core/data/more_info_gen2.js',
-'/minidex/core/data/learnsets_gen2.js',
-
+'/minidex/gsc/app/data/gsc_game.js',
+'/minidex/gsc/app/data/gsc_pokemon.js',
+'/minidex/gsc/app/data/gsc_encounters.js',
+'/minidex/gsc/app/data/gen2_competitive.js',
 /* specific assets */
-'/minidex/gsc/resources/favicon16.png',
-'/minidex/gsc/resources/favicon192.png',
-'/minidex/core/icons_3ds.png',
-
-/* common assets */
-'/minidex/core/pokemon_top.png',
-'/minidex/core/pokemon_header.png',
-'/minidex/core/header_common.png',
-'/minidex/core/header_gen1.png',
-'/minidex/core/sprites_v1b.png'
+'/minidex/gsc/app/assets/favicon16.png',
+'/minidex/gsc/app/assets/favicon192.png',
+'/minidex/gsc/app/assets/gsc_icons.png'
 ];
 
 

@@ -88,21 +88,22 @@ ul small{
 .game a:hover{
 	background-blend-mode:multiply;
 }
-.game.gen1rby a{background-image:url(./core/assets/home/banner_gen1.jpg)}
-.game.gen2gsc a{background-image:url(./core/assets/home/banner_gen2.jpg)}
-.game.gen3rse a{background-image:url(./core/assets/home/banner_gen3rse.jpg)}
-.game.gen3frlg a{background-image:url(./core/assets/home/banner_gen3frlg.jpg)}
-.game.gen4dppt a{background-image:url(./core/assets/home/banner_gen4dppt.jpg)}
-.game.gen4hgss a{background-image:url(./core/assets/home/banner_gen2.jpg)}
-.game.gen5bw a{background-image:url(./core/assets/home/banner_gen5bw.jpg)}
-.game.gen5b2w2 a{background-image:url(./core/assets/home/banner_gen5b2w2.jpg)}
-.game.gen6xy a{background-image:url(./core/assets/home/banner_gen6xy.jpg)}
-.game.gen6oras a{background-image:url(./core/assets/home/banner_gen6oras.jpg)}
-.game.gen7sm a{background-image:url(./core/assets/home/banner_gen7sm.jpg)}
-.game.gen7usum a{background-image:url(./core/assets/home/banner_gen7usum.jpg)}
-.game.gen7letsgo a{background-image:url(./core/assets/home/banner_gen7letsgo.jpg)}
-.game.gen8swsh a{background-image:url(./core/assets/home/banner_gen8swsh.jpg)}
-.game.gen8bdsp a{background-image:url(./core/assets/home/banner_gen4dppt.jpg)}
+.game.gen1rby a{background-image:url(./core/assets_home/banner_gen1.jpg)}
+.game.gen2gsc a{background-image:url(./core/assets_home/banner_gen2.jpg)}
+.game.gen3rse a{background-image:url(./core/assets_home/banner_gen3rse.jpg)}
+.game.gen3frlg a{background-image:url(./core/assets_home/banner_gen3frlg.jpg)}
+.game.gen4dppt a{background-image:url(./core/assets_home/banner_gen4dppt.jpg)}
+.game.gen4hgss a{background-image:url(./core/assets_home/banner_gen2.jpg)}
+.game.gen5bw a{background-image:url(./core/assets_home/banner_gen5bw.jpg)}
+.game.gen5b2w2 a{background-image:url(./core/assets_home/banner_gen5b2w2.jpg)}
+.game.gen6xy a{background-image:url(./core/assets_home/banner_gen6xy.jpg)}
+.game.gen6oras a{background-image:url(./core/assets_home/banner_gen6oras.jpg)}
+.game.gen7sm a{background-image:url(./core/assets_home/banner_gen7sm.jpg)}
+.game.gen7usum a{background-image:url(./core/assets_home/banner_gen7usum.jpg)}
+.game.gen7letsgo a{background-image:url(./core/assets_home/banner_gen7letsgo.jpg)}
+.game.gen8swsh a{background-image:url(./core/assets_home/banner_gen8swsh.jpg)}
+.game.gen8bdsp a{background-image:url(./core/assets_home/banner_gen4dppt.jpg)}
+/* .game.gen8legends a{background-image:url(./core/assets_home/banner_gen8legends.jpg)} */
 
 
 
@@ -123,6 +124,7 @@ function addEvent(e,v,f){e.addEventListener(v,f,false)}
 function stopPropagation(e){if(typeof e.stopPropagation!=='undefined')e.stopPropagation();else e.cancelBubble=true}
 
 const GAMES=[
+	//['Legends: Arceus','Légendes: Arceus','Legenden: Arceus','Leggende: Arceus','Leyendas: Arceus','LEGENDS アルセウス','寶可夢傳說 阿爾宙斯'],
 	['Brilliant Diamond / Shining Pearl','Diamant Étincelant / Perle Scintillante','Strahlender Diamant / Leuchtende Perle','Diamante Lucente / Perla Splendente','Diamante Brillante / Perla Reluciente',,'晶灿钻石／明亮珍珠'],
 	['Sword / Shield','Épée / Bouclier','Schwert / Schild','Spada / Scudo','Espada / Escudo',,'剑／盾'],
 	['Let\'s go!'],
@@ -285,6 +287,7 @@ window.addEventListener('load', function(evt){
 				<strong>注:中文翻译可能有误请见谅.</strong>
 			</p>
 			<ul id="games">
+				<!-- <li class="game gen8legends"><a href="legends/"><small>Gen VIII</small><span>Legends: Arceus</span></a></li> -->
 				<li class="game gen8bdsp"><a href="bdsp/"><small>Gen VIII</small><span>Brilliant Diamond Shining Pearl</span></a></li>
 				<li class="game gen8swsh"><a href="swsh/"><small>Gen VIII</small><span>Sword Shield</span></a></li>
 				<li class="game gen7letsgo"><a href="letsgo/"><small>Gen VII</small><span>Let's go!</span></a></li>

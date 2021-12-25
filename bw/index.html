@@ -11,11 +11,11 @@
 	<meta name="keywords" content="pokedex,online,pokemon,app,html5,webapp,pwa,responsive,minidex,sword,shield,espada,escudo,x,y,xy,oras,ruby,omega,rubi,alpha,alfa,zafiro,sapphire,ultra,sol,luna,sun,moon,lets go"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
-	<link rel="shortcut icon" href="./resources/favicon16.png" type="image/png" sizes="16x16"/>
-	<link rel="shortcut icon" href="./resources/favicon192.png" type="image/png" sizes="192x192"/>
+	<link rel="shortcut icon" href="./app/assets/favicon16.png" type="image/png" sizes="16x16"/>
+	<link rel="shortcut icon" href="./app/assets/favicon192.png" type="image/png" sizes="192x192"/>
 	<!-- iOS icons -->
-	<link rel="apple-touch-icon" sizes="16x16" href="./resources/favicon16.png" />
-	<link rel="apple-touch-icon" href="./resources/favicon192.png" />
+	<link rel="apple-touch-icon" sizes="16x16" href="./app/assets/favicon16.png" />
+	<link rel="apple-touch-icon" href="./app/assets/favicon192.png" />
 
 	<!-- social network metatags -->
 	<meta name="twitter:site" content="@marc_robledo">
@@ -35,15 +35,14 @@
 	<link rel="manifest" href="manifest.json"/> <!-- M39 -->
 
 	<!-- Minidex core -->
-	<link type="text/css" rel="stylesheet" href="../core/minidex_v1b.css" media="all"/>
-	<script type="text/javascript" src="../core/minidex_v1b.js"></script>
-	<script type="text/javascript" src="../core/locale.js"></script>
+	<link type="text/css" rel="stylesheet" href="./app/minidex.css" media="all"/>
+	<script type="text/javascript" src="./app/minidex.js"></script>
+	<script type="text/javascript" src="./app/minidex_locale.js"></script>
 
 	<!-- Specific game databases -->
-	<script type="text/javascript" src="../core/data/game_gen5_bw.js"></script>
-	<script type="text/javascript" src="../core/data/pokemon_gen5.js"></script>
-	<script type="text/javascript" src="../core/data/encounters_gen5_bw.js"></script>
-	<script type="text/javascript" src="../core/data/more_info_gen5.js"></script>
+	<script type="text/javascript" src="./app/data/bw_game.js"></script>
+	<script type="text/javascript" src="./app/data/bw_pokemon.js"></script>
+	<script type="text/javascript" src="./app/data/bw_encounters.js"></script>
 	<!-- learnset database is loaded on background after booting for speeding up purposes -->
 
 	<!-- Service worker for PWA -->
@@ -116,7 +115,7 @@
 			<a href="https://github.com/marcrobledo/minidex/" target="_blank" data-translate="view_on_github">View on GitHub</a><br/><br/>
 			<small>
 				This is a fan created site, no copyright or trademark infringement is intended.<br/>
-				Pokémon and all respective names are trademark &amp; &copy; of Nintendo/Creatures Inc./GAME FREAK inc. TM 1996-2021
+				Pokémon and all respective names are trademark &amp; &copy; of Nintendo/Creatures Inc./GAME FREAK inc. TM 1996-2022
 			</small>
 		</footer>
 	</div>

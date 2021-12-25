@@ -14,34 +14,31 @@
 */
 
 var PRECACHE_ID='minidex-oras';
-var PRECACHE_VERSION='v6';
+var PRECACHE_VERSION='v1';
 var PRECACHE_URLS=[
 '/minidex/oras/index.html','/minidex/oras/',
 '/minidex/oras/manifest.json',
 
 /* core */
-'/minidex/core/minidex_v1b.css',
-'/minidex/core/minidex_v1b.js',
-'/minidex/core/locale.js',
+'/minidex/oras/app/minidex.js',
+'/minidex/oras/app/minidex_locale.js',
+'/minidex/oras/app/minidex.css',
+'/minidex/oras/app/assets/minidex_sprites.png',
+/* core assets */
+'/minidex/oras/app/assets/minidex_dex_header1.png',
+'/minidex/oras/app/assets/minidex_dex_header2.png',
+'/minidex/oras/app/assets/minidex_home_header1.png',
+'/minidex/oras/app/assets/minidex_home_header2.png',
 
 /* specific game data */
-'/minidex/core/data/game_gen6_oras.js',
-'/minidex/core/data/pokemon_gen6.js',
-'/minidex/core/data/encounters_gen6_oras.js',
-'/minidex/core/data/more_info_gen6.js',
-'/minidex/core/data/learnsets_gen6.js',
-
+'/minidex/oras/app/data/oras_game.js',
+'/minidex/oras/app/data/oras_pokemon.js',
+'/minidex/oras/app/data/oras_encounters.js',
+'/minidex/oras/app/data/gen6_competitive.js',
 /* specific assets */
-'/minidex/oras/resources/favicon16.png',
-'/minidex/oras/resources/favicon192.png',
-'/minidex/core/icons_3ds.png',
-
-/* common assets */
-'/minidex/core/pokemon_top.png',
-'/minidex/core/pokemon_header.png',
-'/minidex/core/header_common.png',
-'/minidex/core/header_gen1.png',
-'/minidex/core/sprites_v1b.png'
+'/minidex/oras/app/assets/favicon16.png',
+'/minidex/oras/app/assets/favicon192.png',
+'/minidex/oras/app/assets/oras_icons.png'
 ];
 
 

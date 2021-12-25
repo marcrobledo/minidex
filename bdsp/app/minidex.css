@@ -1,4 +1,4 @@
-/* Minidex v20211203 - Marc Robledo 2013-2021 - http://www.marcrobledo.com/license */
+/* Minidex v20211213 - Marc Robledo 2013-2021 - http://www.marcrobledo.com/license */
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400;500;700&display=swap');
@@ -305,15 +305,14 @@ h1{
 #dex-results .mono{color: #4f5d6e}
 #dex-results a:hover .mono{color: #5f6d7e}
 
-.caught0, .caught1{
+.caught{
 	position:absolute;
 	right: 20px;
 	top:50%;
 	margin-top:-15px;
 	transition: transform .2s;
 }
-
-.caught0.clickable:hover, .caught1.clickable:hover{
+.caught.clickable:hover{
 	transform:scale(1.25);
 }
 
@@ -663,7 +662,7 @@ table td{
 	background-size:cover;
 	background-position:center center;
 }
-.block.block-red h2{background-color:#e63636}
+.block.block-red h2{background-color:#c72e2e}
 .block.block-blue h2{background-color:#5e66e1}
 .block.block-green h2{background-color:#58ae54}
 
@@ -699,6 +698,11 @@ table td{
 	/*background-color:#deecf1;*/
 	border-radius:20px;
 }
+.table-moves .games{margin:0}
+.table-moves-machine .games{display:inline}
+.table-moves .games .game{/*width:8px;height:8px;*/}
+
+
 .block-moreinfo .games{margin:0}
 .block-moreinfo .games:first-child{margin-left:4px}
 .block-moreinfo .game{

@@ -3,16 +3,15 @@
 	"name":"Minidex BW",
 	"icons":[
 		{
-			"src": "/minidex/bw/resources/favicon16.png",
+			"src": "/minidex/bw/app/assets/favicon16.png",
 			"sizes": "16x16",
-			"type": "image/png",
-			"density": "1.0"
+			"type": "image/png"
 		},
 		{
-			"src": "/minidex/bw/resources/favicon192.png",
+			"src": "/minidex/bw/app/assets/favicon192.png",
 			"sizes": "192x192",
 			"type": "image/png",
-			"density": "1.0"
+			"purpose": "any maskable"
 		}
 	],
 	"start_url": "/minidex/bw/index.html",

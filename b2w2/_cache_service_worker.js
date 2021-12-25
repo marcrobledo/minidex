@@ -14,34 +14,31 @@
 */
 
 var PRECACHE_ID='minidex-b2w2';
-var PRECACHE_VERSION='v6';
+var PRECACHE_VERSION='v1';
 var PRECACHE_URLS=[
 '/minidex/b2w2/index.html','/minidex/b2w2/',
 '/minidex/b2w2/manifest.json',
 
 /* core */
-'/minidex/core/minidex_v1b.css',
-'/minidex/core/minidex_v1b.js',
-'/minidex/core/locale.js',
+'/minidex/b2w2/app/minidex.js',
+'/minidex/b2w2/app/minidex_locale.js',
+'/minidex/b2w2/app/minidex.css',
+'/minidex/b2w2/app/assets/minidex_sprites.png',
+/* core assets */
+'/minidex/b2w2/app/assets/minidex_dex_header1.png',
+'/minidex/b2w2/app/assets/minidex_dex_header2.png',
+'/minidex/b2w2/app/assets/minidex_home_header1.png',
+'/minidex/b2w2/app/assets/minidex_home_header2.png',
 
 /* specific game data */
-'/minidex/core/data/game_gen5_b2w2.js',
-'/minidex/core/data/pokemon_gen5.js',
-'/minidex/core/data/encounters_gen5_b2w2.js',
-'/minidex/core/data/more_info_gen5.js',
-'/minidex/core/data/learnsets_gen5.js',
-
+'/minidex/b2w2/app/data/b2w2_game.js',
+'/minidex/b2w2/app/data/b2w2_pokemon.js',
+'/minidex/b2w2/app/data/b2w2_encounters.js',
+'/minidex/b2w2/app/data/gen5_competitive.js',
 /* specific assets */
-'/minidex/b2w2/resources/favicon16.png',
-'/minidex/b2w2/resources/favicon192.png',
-'/minidex/core/icons_3ds.png',
-
-/* common assets */
-'/minidex/core/pokemon_top.png',
-'/minidex/core/pokemon_header.png',
-'/minidex/core/header_common.png',
-'/minidex/core/header_gen1.png',
-'/minidex/core/sprites_v1b.png'
+'/minidex/b2w2/app/assets/favicon16.png',
+'/minidex/b2w2/app/assets/favicon192.png',
+'/minidex/b2w2/app/assets/b2w2_icons.png'
 ];
 
 

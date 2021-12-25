@@ -14,34 +14,31 @@
 */
 
 var PRECACHE_ID='minidex-letsgo';
-var PRECACHE_VERSION='v6';
+var PRECACHE_VERSION='v1';
 var PRECACHE_URLS=[
 '/minidex/letsgo/index.html','/minidex/letsgo/',
 '/minidex/letsgo/manifest.json',
 
 /* core */
-'/minidex/core/minidex_v1b.css',
-'/minidex/core/minidex_v1b.js',
-'/minidex/core/locale.js',
+'/minidex/letsgo/app/minidex.js',
+'/minidex/letsgo/app/minidex_locale.js',
+'/minidex/letsgo/app/minidex.css',
+'/minidex/letsgo/app/assets/minidex_sprites.png',
+/* core assets */
+'/minidex/letsgo/app/assets/minidex_dex_header1.png',
+'/minidex/letsgo/app/assets/minidex_dex_header2.png',
+'/minidex/letsgo/app/assets/minidex_home_header1.png',
+'/minidex/letsgo/app/assets/minidex_home_header2.png',
 
 /* specific game data */
-'/minidex/core/data/game_gen7_letsgo.js',
-'/minidex/core/data/pokemon_gen7_letsgo.js',
-'/minidex/core/data/encounters_gen7_letsgo.js',
-'/minidex/core/data/more_info_gen7.js',
-'/minidex/core/data/learnsets_gen7_letsgo.js',
-
+'/minidex/letsgo/app/data/letsgo_game.js',
+'/minidex/letsgo/app/data/letsgo_pokemon.js',
+'/minidex/letsgo/app/data/letsgo_encounters.js',
+'/minidex/letsgo/app/data/letsgo_competitive.js',
 /* specific assets */
-'/minidex/letsgo/resources/favicon16.png',
-'/minidex/letsgo/resources/favicon192.png',
-'/minidex/core/icons_letsgo.png',
-
-/* common assets */
-'/minidex/core/pokemon_top.png',
-'/minidex/core/pokemon_header.png',
-'/minidex/core/header_common.png',
-'/minidex/core/header_gen1.png',
-'/minidex/core/sprites_v1b.png'
+'/minidex/letsgo/app/assets/favicon16.png',
+'/minidex/letsgo/app/assets/favicon192.png',
+'/minidex/letsgo/app/assets/letsgo_icons.png'
 ];
 
 
