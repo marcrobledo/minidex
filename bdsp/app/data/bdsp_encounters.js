@@ -685,20 +685,27 @@ const LOCATIONS=[
 			[400,,'grass',20],
 			[406,,'grass',[10,10]]
 		]},
-		{group:['Changing Pokémon',,,,'Pokémon cambiantes',,'变化宝可梦'],encounters:[
-			[55,,['grass','before_natdex'],10],
-			[315,,['grass','before_natdex'],10],
-			[397,,['grass','before_natdex'],10],
-			[451,,['grass','before_natdex'],10],
-			[453,,['grass','before_natdex'],10],
-			[454,,['grass','before_natdex'],10],
-			[455,,['grass','before_natdex'],10],			
+		{group:['Changing Pokémon',,,,'Pokémon cambiantes',,'变化宝可梦'],showAsGrid:true,encounters:[
+			[55,,'grass',10],
+			[315,,'grass',10],
+			[397,,'grass',10],
+			[451,,'grass',10],
+			[453,,'grass',10],
+			[455,,'grass',10],
+			[183,,['grass','before_natdex'],10],
+			[194,,['grass','before_natdex'],10],
+			[195,,['grass','before_natdex'],10],
+			[298,,['grass','before_natdex'],10],
+			[399,,['grass','before_natdex'],10],
+			[400,,['grass','before_natdex'],10],
 			[46,,['grass','after_natdex'],10],
 			[102,,['grass','after_natdex'],10],
 			[115,,['grass','after_natdex'],10],
+			[193,,['grass','after_natdex'],10],
 			[285,,['grass','after_natdex'],10],
 			[316,,['grass','after_natdex'],10],
-			[193,,['grass','after_natdex'],10]
+			[452,,['grass','after_natdex'],10],
+			[454,,['grass','after_natdex'],10]
 		]}
 	]
 },{
